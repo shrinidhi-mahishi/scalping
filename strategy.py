@@ -1,11 +1,14 @@
 """
-Intraday Scalping Strategy for NSE 3-Minute Candles (v2)
+Intraday Scalping Strategy for NSE 3-Minute Candles (v3 — Regime-Aware)
 
 Indicators : Session VWAP, EMA(9/21), RSI(9), VolSMA(20), ATR(14)
+Regime gate : Daily 21-EMA determines allowed trade direction per bar
+HTF filter  : Optional 15-min 21-EMA trend confirmation
 Entry window: 10:00-12:00  and  14:00-15:00  (midday dead zone skipped)
 Squareoff   : 15:15 (MIS cutoff)
-Risk-Reward : 1 : 1.25 via ATR-based bracket (SL = 1×ATR, TP = 1.25×ATR)
+Risk-Reward : 1 : 1.5 via ATR-based bracket (SL = 1×ATR, TP = 1.5×ATR)
 Sizing      : qty = (Capital × risk_pct) / ATR  (1% risk per trade)
+Slippage    : 0.01% on stop/market orders; limit (TP) fills at exact price
 """
 
 from datetime import time
@@ -89,11 +92,12 @@ class IntradayScalpingStrategy(bt.Strategy):
         ("rr_multiplier", 1.5),
         ("risk_pct", 0.01),
         ("leverage_cap", 5.0),
-        ("trade_qty", 0),  # 0 = dynamic sizing via risk_pct
+        ("trade_qty", 0),
         ("htf_ema_period", 21),
-        ("allowed_dir", "both"),  # "both", "long", or "short"
+        ("use_htf_filter", False),
+        ("use_regime_filter", False),
+        ("regime_ema_period", 21),
         ("vol_mult", 1.0),
-        ("afternoon_vol_mult", 1.0),
         ("long_rsi_low", 40),
         ("long_rsi_high", 70),
         ("short_rsi_low", 30),
@@ -124,11 +128,15 @@ class IntradayScalpingStrategy(bt.Strategy):
         self.atr = bt.indicators.ATR(self.data, period=self.p.atr_period)
         self.ema_cross = bt.indicators.CrossOver(self.fast_ema, self.slow_ema)
 
-        self._has_htf = len(self.datas) > 1
-        if self._has_htf:
+        if self.p.use_htf_filter and len(self.datas) >= 2:
             self.htf_ema = bt.indicators.EMA(
                 self.data1.close, period=self.p.htf_ema_period
             )
+
+        self._daily_closes: list[float] = []
+        self._last_trading_date = None
+        self._prev_day_close = 0.0
+        self._regime_ema_val: float | None = None
 
         self._main_ref = None
         self._sl_ref = None
@@ -157,6 +165,27 @@ class IntradayScalpingStrategy(bt.Strategy):
         risk_qty = int(capital * self.p.risk_pct / atr_val)
         max_qty = int(capital * self.p.leverage_cap / self.data.close[0])
         return max(min(risk_qty, max_qty), 1)
+
+    def _update_regime(self) -> None:
+        """Maintain a running daily EMA from end-of-day closes."""
+        cur = self.data.datetime.date(0)
+        if cur != self._last_trading_date:
+            if self._last_trading_date is not None and self._prev_day_close > 0:
+                self._daily_closes.append(self._prev_day_close)
+                p = self.p.regime_ema_period
+                if len(self._daily_closes) >= p:
+                    if self._regime_ema_val is None:
+                        self._regime_ema_val = (
+                            sum(self._daily_closes[-p:]) / p
+                        )
+                    else:
+                        k = 2.0 / (p + 1)
+                        self._regime_ema_val = (
+                            self._daily_closes[-1] * k
+                            + self._regime_ema_val * (1 - k)
+                        )
+            self._last_trading_date = cur
+        self._prev_day_close = self.data.close[0]
 
     def _in_entry_window(self) -> bool:
         t = self.data.datetime.time(0)
@@ -297,6 +326,8 @@ class IntradayScalpingStrategy(bt.Strategy):
     # ── Core Logic ────────────────────────────────────────────────────────
 
     def next(self):
+        self._update_regime()
+
         if self._is_squareoff():
             if self.position:
                 self._cancel_bracket()
@@ -323,19 +354,22 @@ class IntradayScalpingStrategy(bt.Strategy):
         cross = self.ema_cross[0]
         atr_val = self.atr[0]
 
-        htf_ok_long = (not self._has_htf) or close > self.htf_ema[0]
-        htf_ok_short = (not self._has_htf) or close < self.htf_ema[0]
-        allow_long = self.p.allowed_dir in ("both", "long")
-        allow_short = self.p.allowed_dir in ("both", "short")
+        if self.p.use_regime_filter and self._regime_ema_val is not None:
+            allow_long = close > self._regime_ema_val
+            allow_short = close < self._regime_ema_val
+        else:
+            allow_long = True
+            allow_short = True
+
+        if self.p.use_htf_filter:
+            allow_long = allow_long and close > self.htf_ema[0]
+            allow_short = allow_short and close < self.htf_ema[0]
 
         vol_thresh = vol_avg * self.p.vol_mult
-        if self._in_afternoon():
-            vol_thresh *= self.p.afternoon_vol_mult
 
         # ── Long Entry ────────────────────────────────────────────────
         if (
             allow_long
-            and htf_ok_long
             and close > vwap
             and cross > 0
             and vol > vol_thresh
@@ -364,7 +398,6 @@ class IntradayScalpingStrategy(bt.Strategy):
         # ── Short Entry ───────────────────────────────────────────────
         elif (
             allow_short
-            and htf_ok_short
             and close < vwap
             and cross < 0
             and vol > vol_thresh

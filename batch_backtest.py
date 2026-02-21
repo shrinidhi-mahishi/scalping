@@ -24,11 +24,9 @@ from strategy import IndianBrokerCommission, IntradayScalpingStrategy
 STOCKS = [
     ("MARUTI", "Auto"),
     ("HDFCLIFE", "Finance"),
-    ("BHARTIARTL", "Telecom"),
-    ("ADANIPORTS", "Conglomerate"),
-    ("LT", "Infra"),
-    ("POWERGRID", "Energy"),
     ("TATASTEEL", "Metals"),
+    ("TITAN", "Consumer"),
+    ("ONGC", "Energy"),
 ]
 
 CASH = 50_000.0
@@ -79,52 +77,40 @@ def fetch_all(cached_only: bool = False) -> dict[str, pd.DataFrame]:
 # ─── Backtest Engine ──────────────────────────────────────────────────────────
 
 
-HTF_STOCKS = {"HDFCLIFE", "POWERGRID"}
-STOCK_AFTERNOON_VOL = {"HDFCLIFE": 1.25}
-STOCK_DIR = {
-    "ADANIPORTS": "short",
-    "LT": "short",
-    "TATASTEEL": "long",
-    "POWERGRID": "long",
-}
+HTF_STOCKS = {"MARUTI", "HDFCLIFE", "TATASTEEL", "ONGC"}
+REGIME_STOCKS: set[str] = set()
 
 
 def run_one(df: pd.DataFrame, symbol: str = "") -> tuple:
     cerebro = bt.Cerebro()
-    feed = bt.feeds.PandasData(
-        dataname=df,
-        datetime=None,
-        open="open",
-        high="high",
-        low="low",
-        close="close",
-        volume="volume",
-        openinterest=-1,
+    feed_kw = dict(
+        dataname=df, datetime=None,
+        open="open", high="high", low="low", close="close",
+        volume="volume", openinterest=-1,
     )
-    cerebro.adddata(feed)
-    if symbol in HTF_STOCKS:
-        feed_htf = bt.feeds.PandasData(
-            dataname=df, datetime=None,
-            open="open", high="high", low="low", close="close",
-            volume="volume", openinterest=-1,
-        )
-        cerebro.resampledata(feed_htf, timeframe=bt.TimeFrame.Minutes, compression=15)
-    allowed = STOCK_DIR.get(symbol, "both")
-    aftn_vol = STOCK_AFTERNOON_VOL.get(symbol, 1.0)
+    cerebro.adddata(bt.feeds.PandasData(**feed_kw))
+    cerebro.resampledata(
+        bt.feeds.PandasData(**feed_kw),
+        timeframe=bt.TimeFrame.Minutes, compression=15,
+    )
     cerebro.addstrategy(
         IntradayScalpingStrategy, printlog=False,
-        allowed_dir=allowed, afternoon_vol_mult=aftn_vol,
+        use_htf_filter=symbol in HTF_STOCKS,
+        use_regime_filter=symbol in REGIME_STOCKS,
     )
     cerebro.broker.setcash(CASH)
     cerebro.broker.addcommissioninfo(IndianBrokerCommission())
     cerebro.broker.set_checksubmit(False)
+    cerebro.broker.set_slippage_perc(
+        perc=0.0001, slip_open=True, slip_limit=False,
+        slip_match=True, slip_out=False,
+    )
     cerebro.addanalyzer(bta.TradeAnalyzer, _name="trades")
     cerebro.addanalyzer(bta.DrawDown, _name="drawdown")
     cerebro.addanalyzer(bta.SharpeRatio, _name="sharpe", riskfreerate=0.065 / 252)
 
     results = cerebro.run()
-    strat = results[0]
-    return cerebro, strat
+    return cerebro, results[0]
 
 
 # ─── Reporting ────────────────────────────────────────────────────────────────
@@ -317,9 +303,10 @@ def main():
     args = parser.parse_args()
 
     header = (
-        f"  INTRADAY SCALPING BACKTEST — {len(STOCKS)} STOCK SHORTLIST\n"
-        f"  Capital: {CASH:,.0f}  |  Sizing: 1% risk/ATR  |  RR 1:1.25  |  Brokerage: min(0.03%,Rs20)/leg\n"
-        f"  Entry: 10:00-12:00 & 14:00-15:00  |  Squareoff: 15:15"
+        f"  INTRADAY SCALPING BACKTEST v3 — {len(STOCKS)} STOCK SHORTLIST + HTF\n"
+        f"  Capital: {CASH:,.0f}  |  Sizing: 1% risk/ATR  |  RR 1:1.5  |  Brokerage: min(0.03%,Rs20)/leg\n"
+        f"  Entry: 10:00-12:00 & 14:00-15:00  |  Squareoff: 15:15\n"
+        f"  HTF: 15-min 21-EMA trend filter (all stocks)  |  Slippage: 0.01%"
     )
     print(f"\n{'=' * W}")
     print(header)

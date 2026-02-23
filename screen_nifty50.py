@@ -2,12 +2,18 @@
 """
 Nifty 50 Stock Screener for Intraday Scalping
 
-For each stock, runs the strategy in two modes:
-  1. Base   — no higher-timeframe filter
-  2. HTF    — 15-min 21-EMA trend confirmation
+For each stock, runs the strategy in four modes:
+  1. Base         — no higher-timeframe filter
+  2. HTF          — 15-min 21-EMA trend confirmation
+  3. Base + Stag  — stagnation exit (8 bars, < 0.2× ATR profit gate)
+  4. HTF  + Stag  — HTF filter + stagnation exit
 
-Picks the more profitable config per stock, ranks all stocks,
-and outputs a shortlist of tradeable candidates.
+Picks the most profitable config per stock, ranks all stocks,
+and outputs a shortlist of tradeable candidates with per-stock
+HTF and stagnation recommendations.
+
+All stocks are tested with all configs (no exemptions). The output
+recommends which stocks should use stagnation in live trading.
 
 Usage:
   python screen_nifty50.py              # fetch fresh 90-day data + screen
@@ -27,6 +33,7 @@ import pandas as pd
 
 from fetch_data import AngelOneClient, load_csv, save_csv
 from strategy import IndianBrokerCommission, IntradayScalpingStrategy
+from strategy_early_exit import EarlyExitStrategy
 
 # ─── All Nifty 50 Constituents ────────────────────────────────────────────────
 
@@ -82,7 +89,24 @@ STOCKS = [
 ]
 
 CASH = 50_000.0
-W = 110
+W = 120
+
+STAGNATION_SKIP = set()
+STAG_BARS = 8
+STAG_PROFIT_ATR = 0.2
+
+CONFIGS = [
+    ("BASE",   False, IntradayScalpingStrategy, {}),
+    ("HTF",    True,  IntradayScalpingStrategy, {}),
+    ("BASE+S", False, EarlyExitStrategy, {
+        "exit_mode": "stagnation", "max_trade_bars": STAG_BARS,
+        "min_profit_atr": STAG_PROFIT_ATR,
+    }),
+    ("HTF+S",  True,  EarlyExitStrategy, {
+        "exit_mode": "stagnation", "max_trade_bars": STAG_BARS,
+        "min_profit_atr": STAG_PROFIT_ATR,
+    }),
+]
 
 
 def csv_path(symbol: str) -> str:
@@ -127,7 +151,10 @@ def fetch_all(days: int, cached_only: bool = False) -> dict[str, pd.DataFrame]:
 # ─── Backtest Engine ──────────────────────────────────────────────────────────
 
 
-def run_one(df: pd.DataFrame, use_htf: bool = False):
+def run_one(df: pd.DataFrame, use_htf: bool = False,
+            strat_cls=None, strat_kw=None):
+    if strat_cls is None:
+        strat_cls = IntradayScalpingStrategy
     cerebro = bt.Cerebro()
     feed_kw = dict(
         dataname=df, datetime=None,
@@ -140,10 +167,10 @@ def run_one(df: pd.DataFrame, use_htf: bool = False):
             bt.feeds.PandasData(**feed_kw),
             timeframe=bt.TimeFrame.Minutes, compression=15,
         )
-    cerebro.addstrategy(
-        IntradayScalpingStrategy, printlog=False,
-        use_htf_filter=use_htf,
-    )
+    kw = {"printlog": False, "use_htf_filter": use_htf}
+    if strat_kw:
+        kw.update(strat_kw)
+    cerebro.addstrategy(strat_cls, **kw)
     cerebro.broker.setcash(CASH)
     cerebro.broker.addcommissioninfo(IndianBrokerCommission())
     cerebro.broker.set_checksubmit(False)
@@ -211,14 +238,17 @@ def extract_metrics(cerebro, strat) -> dict:
 # ─── Screening ────────────────────────────────────────────────────────────────
 
 
-def screen_stock(df: pd.DataFrame) -> tuple[dict, dict]:
-    c_base, strat_base = run_one(df, use_htf=False)
-    m_base = extract_metrics(c_base, strat_base)
-
-    c_htf, strat_htf = run_one(df, use_htf=True)
-    m_htf = extract_metrics(c_htf, strat_htf)
-
-    return m_base, m_htf
+def screen_stock(df: pd.DataFrame, symbol: str) -> tuple[dict[str, dict], str]:
+    """Run all 4 configs for a stock. Returns (config_results, best_config_name)."""
+    results: dict[str, dict] = {}
+    for name, use_htf, strat_cls, strat_kw in CONFIGS:
+        if symbol in STAGNATION_SKIP and "+S" in name:
+            results[name] = results[name.replace("+S", "")]
+        else:
+            c, s = run_one(df, use_htf=use_htf, strat_cls=strat_cls, strat_kw=strat_kw)
+            results[name] = extract_metrics(c, s)
+    best_name = max(results, key=lambda k: results[k]["net_pnl"])
+    return results, best_name
 
 
 def main():
@@ -233,7 +263,9 @@ def main():
     print(f"  NIFTY 50 INTRADAY SCALPING SCREENER")
     print(f"  Run: {run_date}  |  Lookback: {args.days}d  |  Capital: {CASH:,.0f}")
     print(f"  Strategy: EMA(9/21) + VWAP + RSI + Volume  |  RR 1:1.5  |  Slippage 0.01%")
-    print(f"  Testing each stock: BASE (no filter) vs HTF (15-min 21-EMA)")
+    print(f"  Configs : BASE · HTF · BASE+Stag · HTF+Stag  (stag: {STAG_BARS} bars, <{STAG_PROFIT_ATR}× ATR)")
+    skip_str = ", ".join(sorted(STAGNATION_SKIP))
+    print(f"  Stag skip: {skip_str}")
     print(f"{'=' * W}")
 
     # ── Fetch ──
@@ -247,9 +279,13 @@ def main():
         sys.exit(1)
 
     # ── Screen ──
-    print(f"  [2/3] SCREENING (2 backtests per stock) ...\n")
-    print(f"    {'Stock':<12} {'Base P&L':>10}  {'HTF P&L':>10}  {'Pick':>5}  {'Trades':>7}  {'Win%':>6}  {'PF':>5}  {'MaxDD':>6}")
-    print(f"    {'-' * 72}")
+    n_cfgs = len(CONFIGS)
+    print(f"  [2/3] SCREENING ({n_cfgs} configs per stock) ...\n")
+    print(
+        f"    {'Stock':<12} {'Base':>10}  {'HTF':>10}  {'Base+S':>10}  {'HTF+S':>10}"
+        f"  {'Pick':>6}  {'Trades':>7}  {'Win%':>6}  {'PF':>5}  {'MaxDD':>6}"
+    )
+    print(f"    {'-' * 100}")
 
     rows: list[dict] = []
 
@@ -258,26 +294,19 @@ def main():
             continue
 
         df = all_data[symbol]
-        m_base, m_htf = screen_stock(df)
-
-        htf_better = m_htf["net_pnl"] > m_base["net_pnl"]
-        best = m_htf if htf_better else m_base
-        pick = "HTF" if htf_better else "BASE"
+        configs, best_name = screen_stock(df, symbol)
+        best = configs[best_name]
 
         rows.append({
             "Symbol": symbol,
             "Sector": sector,
-            "HTF Recommended": pick,
-            "Base P&L": m_base["net_pnl"],
-            "Base Trades": m_base["total"],
-            "Base Win%": m_base["win_rate"],
-            "Base PF": m_base["pf"],
-            "Base MaxDD%": m_base["max_dd"],
-            "HTF P&L": m_htf["net_pnl"],
-            "HTF Trades": m_htf["total"],
-            "HTF Win%": m_htf["win_rate"],
-            "HTF PF": m_htf["pf"],
-            "HTF MaxDD%": m_htf["max_dd"],
+            "Config": best_name,
+            "HTF": "HTF" in best_name,
+            "Stag": "+S" in best_name,
+            "Base P&L": configs["BASE"]["net_pnl"],
+            "HTF P&L": configs["HTF"]["net_pnl"],
+            "Base+S P&L": configs["BASE+S"]["net_pnl"],
+            "HTF+S P&L": configs["HTF+S"]["net_pnl"],
             "Best P&L": best["net_pnl"],
             "Best Trades": best["total"],
             "Best Win%": best["win_rate"],
@@ -295,10 +324,14 @@ def main():
             "Verdict": best["verdict"],
         })
 
-        tag = "+" if best["net_pnl"] > 0 else " "
         print(
-            f"    {symbol:<12} {m_base['net_pnl']:>+10,.2f}  {m_htf['net_pnl']:>+10,.2f}"
-            f"  {pick:>5}  {best['total']:>7}  {best['win_rate']:>5.1f}%  {best['pf']:>5.2f}  {best['max_dd']:>5.2f}%"
+            f"    {symbol:<12}"
+            f" {configs['BASE']['net_pnl']:>+10,.2f}"
+            f"  {configs['HTF']['net_pnl']:>+10,.2f}"
+            f"  {configs['BASE+S']['net_pnl']:>+10,.2f}"
+            f"  {configs['HTF+S']['net_pnl']:>+10,.2f}"
+            f"  {best_name:>6}  {best['total']:>7}"
+            f"  {best['win_rate']:>5.1f}%  {best['pf']:>5.2f}  {best['max_dd']:>5.2f}%"
         )
 
     # ── Sort & Report ──
@@ -318,7 +351,7 @@ def main():
     for i, r in enumerate(rows, 1):
         pnl_s = f"{r['Best P&L']:>+12,.2f}"
         print(
-            f"  {i:>4}  {r['Symbol']:<12} {r['Sector']:<14} {r['HTF Recommended']:>6} "
+            f"  {i:>4}  {r['Symbol']:<12} {r['Sector']:<14} {r['Config']:>6} "
             f"{r['Best Trades']:>7} {r['Best Win%']:>5.1f}% {pnl_s} "
             f"{r['Best MaxDD%']:>6.2f}% {r['Best PF']:>6.2f} {r['Best Side']:<6} {r['Verdict']:<10}"
         )
@@ -336,16 +369,17 @@ def main():
         print(f"  RECOMMENDED SHORTLIST ({len(tradeable)} stocks)")
         print(f"  {'=' * (W - 4)}")
         print(
-            f"  {'Symbol':<12} {'Sector':<14} {'HTF':>4} {'Trades':>7} {'Win%':>6} "
+            f"  {'Symbol':<12} {'Sector':<14} {'HTF':>4} {'Stag':>5} {'Trades':>7} {'Win%':>6} "
             f"{'Net P&L':>12} {'MaxDD%':>7} {'PF':>6} {'Longs':>6} {'Shorts':>7} {'Side':<6}"
         )
         print(f"  {'-' * (W - 4)}")
         shortlist_pnl = 0.0
         for r in tradeable:
             pnl_s = f"{r['Best P&L']:>+12,.2f}"
-            htf_tag = "Yes" if r["HTF Recommended"] == "HTF" else "No"
+            htf_tag = "Yes" if r["HTF"] else "No"
+            stag_tag = "Yes" if r["Stag"] else "No"
             print(
-                f"  {r['Symbol']:<12} {r['Sector']:<14} {htf_tag:>4} "
+                f"  {r['Symbol']:<12} {r['Sector']:<14} {htf_tag:>4} {stag_tag:>5} "
                 f"{r['Best Trades']:>7} {r['Best Win%']:>5.1f}% {pnl_s} "
                 f"{r['Best MaxDD%']:>6.2f}% {r['Best PF']:>6.2f} "
                 f"{r['Longs']:>6} {r['Shorts']:>7} {r['Best Side']:<6}"
@@ -362,16 +396,19 @@ def main():
     df_out.to_csv(out_path, index=False)
     print(f"\n  Saved: {out_path} ({len(rows)} stocks)")
 
-    # ── Config snippet for batch_backtest.py ──
+    # ── Config snippet for live_signals.py ──
     if tradeable:
-        htf_set = [r["Symbol"] for r in tradeable if r["HTF Recommended"] == "HTF"]
-        print("\n  ── Copy into batch_backtest.py / generate_report.py ──")
+        htf_set = [r["Symbol"] for r in tradeable if r["HTF"]]
+        stag_skip = [r["Symbol"] for r in tradeable if not r["Stag"]]
+        print("\n  ── Copy into live_signals.py ──")
         print("  STOCKS = [")
         for r in tradeable:
             print(f'      ("{r["Symbol"]}", "{r["Sector"]}"),')
         print("  ]")
         htf_items = ", ".join(f'"{s}"' for s in htf_set)
         print(f"  HTF_STOCKS = {{{htf_items}}}")
+        stag_items = ", ".join(f'"{s}"' for s in stag_skip)
+        print(f"  STAGNATION_SKIP = {{{stag_items}}}")
 
     print()
 

@@ -104,7 +104,26 @@ All indicators are computed on 3-minute OHLCV candles using pure pandas/numpy.
 | **Leverage Cap** | 5x (MIS intraday margin) | — |
 | **Cooldown** | 15 minutes per stock after each signal | Prevents rapid-fire alerts |
 
-### 2.6 Signal Flow Diagram
+### 2.6 Stagnation Exit
+
+Tracks open positions after each entry signal and alerts to close if momentum fails.
+
+| Parameter | Value | Rationale |
+|-----------|-------|-----------|
+| **Trigger** | 8 bars (24 minutes) since entry | Enough time for 3-min momentum to establish |
+| **Profit Gate** | Unrealized profit < 0.2 × ATR | If you haven't cleared 0.2× ATR, the move was a fakeout |
+| **Exemption** | HDFCLIFE | Slower-trending stock — stagnation exit harms its natural rhythm |
+| **Action** | Console + Telegram EXIT alert | User manually cancels bracket order and closes at market |
+
+How it works:
+- After a LONG/SHORT signal fires, the script tracks entry price, ATR, and direction
+- Every 3-min scan checks: has the bracket order filled (SL/TP hit)? If yes, position silently removed
+- If position is still open after 8+ bars and profit < 0.2×ATR → stagnation exit alert fires
+- Does **not** apply to HDFCLIFE (backtested as harmful for this stock)
+
+Backtest result: +22.8% improvement over baseline across the shortlist.
+
+### 2.7 Signal Flow Diagram
 
 ```
 Every 3 minutes (at HH:MM:02)
@@ -115,8 +134,13 @@ Every 3 minutes (at HH:MM:02)
 │
 └── For each stock:
     │
+    ├── Has open position?
+    │   ├── Did bar hit SL or TP? ──────────── Yes ─→ Position closed (bracket filled)
+    │   └── Stagnation check (8+ bars, < 0.2× ATR) ─→ ⚠ EXIT alert
+    │
     ├── Is current time in entry window? ─── No ──→ Skip
     ├── Is stock on cooldown? ─────────────── Yes ─→ Skip
+    ├── Already in position? ─────────────── Yes ─→ Skip
     │
     ├── Regime check: Close vs Daily 21-EMA
     │   ├── Close > Daily EMA → Only LONG allowed
@@ -131,17 +155,17 @@ Every 3 minutes (at HH:MM:02)
     │   ├── EMA(9) just crossed above EMA(21)
     │   ├── Volume > Volume SMA(20)
     │   ├── 40 ≤ RSI(9) ≤ 70
-    │   └── All true? → ▲ LONG SIGNAL
+    │   └── All true? → ▲ LONG SIGNAL (track position)
     │
     └── SHORT candidate?
         ├── Close < VWAP
         ├── EMA(9) just crossed below EMA(21)
         ├── Volume > Volume SMA(20)
         ├── 30 ≤ RSI(9) ≤ 60
-        └── All true? → ▼ SHORT SIGNAL
+        └── All true? → ▼ SHORT SIGNAL (track position)
 ```
 
-### 2.7 Backtest vs Live Parity
+### 2.8 Backtest vs Live Parity
 
 The live signal script replicates the exact same indicator math and entry logic as `strategy.py` (used by the screener). Key implementation details ensuring parity:
 

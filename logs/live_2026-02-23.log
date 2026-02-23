@@ -1,0 +1,1102 @@
+09:00:24  WARMUP  HDFCLIFE     7875 bars  cache=2026-02-20
+09:00:24  WARMUP  TATASTEEL    7875 bars  cache=2026-02-20
+09:00:24  WARMUP  TITAN        7875 bars  cache=2026-02-20
+09:00:24  WARMUP  M&M          7875 bars  cache=2026-02-20
+09:00:24  WARMUP  ADANIPORTS   7875 bars  cache=2026-02-20
+09:00:24  WARMUP  ONGC         7875 bars  cache=2026-02-20
+09:00:24  WARMUP  BAJAJFINSV   7875 bars  cache=2026-02-20
+09:00:24  WARMUP  HINDALCO     7875 bars  cache=2026-02-20
+09:00:24  WARMUP  SBILIFE      7875 bars  cache=2026-02-20
+09:00:24  REGIME  HDFCLIFE     EMA=719.38  Close=728.65  Bullish
+09:00:25  REGIME  TATASTEEL    EMA=199.79  Close=208.36  Bullish
+09:00:25  REGIME  TITAN        EMA=4166.49  Close=4236.40  Bullish
+09:00:25  REGIME  M&M          EMA=3534.08  Close=3412.80  Bearish
+09:00:26  REGIME  ADANIPORTS   EMA=1506.71  Close=1511.50  Bullish
+09:00:26  REGIME  ONGC         EMA=265.45  Close=278.65  Bullish
+09:00:27  REGIME  BAJAJFINSV   EMA=2019.46  Close=2058.50  Bullish
+09:00:27  REGIME  HINDALCO     EMA=931.77  Close=935.70  Bullish
+09:00:28  REGIME  SBILIFE      EMA=2036.39  Close=2080.00  Bullish
+09:15:32  ======================================================================
+09:15:32  SESSION START  Capital=50000  RR=1:1.5  Risk=1%
+09:15:32  Stocks: HDFCLIFE, TATASTEEL, TITAN, M&M, ADANIPORTS, ONGC, BAJAJFINSV, HINDALCO, SBILIFE
+09:15:32  HTF stocks: BAJAJFINSV, HINDALCO, M&M, ONGC, SBILIFE, TATASTEEL
+09:15:32  Telegram: enabled
+09:15:32  PHASE 1  Warm-Up — connecting to Angel One
+09:15:32  API connected
+09:15:32  Fetching regime EMAs (60-day daily candles)
+09:15:32  REGIME  HDFCLIFE     EMA=720.53  Close=732.00  Bullish
+09:15:33  REGIME  TATASTEEL    EMA=200.63  Close=209.00  Bullish
+09:15:33  REGIME  TITAN        EMA=4173.60  Close=4244.80  Bullish
+09:15:34  REGIME  M&M          EMA=3524.13  Close=3424.60  Bearish
+09:15:34  REGIME  ADANIPORTS   EMA=1507.93  Close=1520.10  Bullish
+09:15:35  REGIME  ONGC         EMA=266.35  Close=275.30  Bullish
+09:15:35  REGIME  BAJAJFINSV   EMA=2022.45  Close=2052.30  Bullish
+09:15:35  REGIME  HINDALCO     EMA=932.51  Close=940.00  Bullish
+09:15:36  REGIME  SBILIFE      EMA=2040.86  Close=2085.50  Bullish
+09:15:36  Loading 2-day 3-min warmup data
+09:15:36  WARMUP  HDFCLIFE     7875 bars  cache=2026-02-20
+09:15:36  WARMUP  TATASTEEL    7875 bars  cache=2026-02-20
+09:15:36  WARMUP  TITAN        7875 bars  cache=2026-02-20
+09:15:36  WARMUP  M&M          7875 bars  cache=2026-02-20
+09:15:36  WARMUP  ADANIPORTS   7875 bars  cache=2026-02-20
+09:15:36  WARMUP  ONGC         7875 bars  cache=2026-02-20
+09:15:36  WARMUP  BAJAJFINSV   7875 bars  cache=2026-02-20
+09:15:36  WARMUP  HINDALCO     7875 bars  cache=2026-02-20
+09:15:36  WARMUP  SBILIFE      7875 bars  cache=2026-02-20
+09:15:36  Warm-up complete: 9 stocks loaded, 6 HTF, 9 regime
+09:15:37  PHASE  START → SILENT
+10:00:02  PHASE  SILENT → ACTIVE_AM
+10:27:04  STOPPED MANUALLY  0 signal(s), 0 scans
+10:27:08  ======================================================================
+10:27:08  SESSION START  Capital=50000  RR=1:1.5  Risk=1%
+10:27:08  Stocks: HDFCLIFE, TATASTEEL, TITAN, M&M, ADANIPORTS, ONGC, BAJAJFINSV, HINDALCO, SBILIFE
+10:27:08  HTF stocks: BAJAJFINSV, HINDALCO, M&M, ONGC, SBILIFE, TATASTEEL
+10:27:08  Telegram: enabled
+10:27:08  PHASE 1  Warm-Up — connecting to Angel One
+10:27:09  API connected
+10:27:09  Fetching regime EMAs (60-day daily candles)
+10:27:09  REGIME  HDFCLIFE     EMA=721.54  Close=743.10  Bullish
+10:27:10  REGIME  TATASTEEL    EMA=200.60  Close=208.75  Bullish
+10:27:10  REGIME  TITAN        EMA=4174.96  Close=4259.70  Bullish
+10:27:11  REGIME  M&M          EMA=3527.07  Close=3457.00  Bearish
+10:27:11  REGIME  ADANIPORTS   EMA=1511.18  Close=1555.90  Bullish
+10:27:12  REGIME  ONGC         EMA=266.17  Close=273.35  Bullish
+10:27:12  REGIME  BAJAJFINSV   EMA=2023.04  Close=2058.80  Bullish
+10:27:12  REGIME  HINDALCO     EMA=931.92  Close=933.45  Bullish
+10:27:13  REGIME  SBILIFE      EMA=2044.22  Close=2122.50  Bullish
+10:27:13  Loading 2-day 3-min warmup data
+10:27:13  WARMUP  HDFCLIFE     7875 bars  cache=2026-02-20
+10:27:13  WARMUP  TATASTEEL    7875 bars  cache=2026-02-20
+10:27:13  WARMUP  TITAN        7875 bars  cache=2026-02-20
+10:27:13  WARMUP  M&M          7875 bars  cache=2026-02-20
+10:27:13  WARMUP  ADANIPORTS   7875 bars  cache=2026-02-20
+10:27:13  WARMUP  ONGC         7875 bars  cache=2026-02-20
+10:27:13  WARMUP  BAJAJFINSV   7875 bars  cache=2026-02-20
+10:27:13  WARMUP  HINDALCO     7875 bars  cache=2026-02-20
+10:27:13  WARMUP  SBILIFE      7875 bars  cache=2026-02-20
+10:27:13  Warm-up complete: 9 stocks loaded, 6 HTF, 9 regime
+10:27:14  PHASE  START → ACTIVE_AM
+10:27:15  SCAN #1  10:27:14  phase=ACTIVE_AM  active=True
+10:27:15    HDFCLIFE     C=743.20  VWAP=742.47  EMA=UP  RSI=89  Vol=0.0x  HTF=-  → -  
+10:27:15    TATASTEEL    C=208.65  VWAP=208.71  EMA=--  RSI=55  Vol=0.0x  HTF=208.26  → -  
+10:27:15    TITAN        C=4258.70  VWAP=4260.67  EMA=UP  RSI=67  Vol=0.0x  HTF=-  → -  
+10:27:15  API  M&M          fetch error: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+10:27:15  API  ADANIPORTS   fetch error: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+10:27:16    ONGC         C=273.45  VWAP=273.62  EMA=--  RSI=18  Vol=0.0x  HTF=276.74  → -  
+10:27:16    BAJAJFINSV   C=2058.80  VWAP=2058.04  EMA=--  RSI=53  Vol=0.5x  HTF=2054.65  → -  
+10:27:16    HINDALCO     C=933.70  VWAP=934.43  EMA=UP  RSI=42  Vol=0.0x  HTF=928.75  → -  
+10:27:16  API  SBILIFE      fetch error: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+10:30:02  SCAN #2  10:30:02  phase=ACTIVE_AM  active=True
+10:30:02    HDFCLIFE     C=743.25  VWAP=742.61  EMA=UP  RSI=90  Vol=0.0x  HTF=-  → -  
+10:30:02    TATASTEEL    C=208.61  VWAP=208.68  EMA=--  RSI=54  Vol=0.0x  HTF=208.29  → -  
+10:30:02    TITAN        C=4257.90  VWAP=4260.02  EMA=UP  RSI=65  Vol=0.0x  HTF=-  → -  
+10:30:02  API  M&M          fetch error: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+10:30:02  API  ADANIPORTS   fetch error: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+10:30:03    ONGC         C=273.35  VWAP=273.46  EMA=--  RSI=18  Vol=0.0x  HTF=276.43  → -  
+10:30:03    BAJAJFINSV   C=2057.00  VWAP=2057.78  EMA=--  RSI=49  Vol=0.0x  HTF=2054.86  → -  
+10:30:03    HINDALCO     C=931.55  VWAP=933.71  EMA=DN  RSI=29  Vol=0.0x  HTF=929.01  → -  
+10:30:03  API  SBILIFE      fetch error: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+10:31:06  STOPPED MANUALLY  0 signal(s), 2 scans
+10:31:10  ======================================================================
+10:31:10  SESSION START  Capital=50000  RR=1:1.5  Risk=1%
+10:31:10  Stocks: HDFCLIFE, TATASTEEL, TITAN, M&M, ADANIPORTS, ONGC, BAJAJFINSV, HINDALCO, SBILIFE
+10:31:10  HTF stocks: BAJAJFINSV, HINDALCO, M&M, ONGC, SBILIFE, TATASTEEL
+10:31:10  Telegram: enabled
+10:31:10  PHASE 1  Warm-Up — connecting to Angel One
+10:31:10  API connected
+10:31:10  Fetching regime EMAs (60-day daily candles)
+10:31:11  REGIME  HDFCLIFE     EMA=721.58  Close=743.60  Bullish
+10:31:11  REGIME  TATASTEEL    EMA=200.59  Close=208.56  Bullish
+10:31:11  REGIME  TITAN        EMA=4174.96  Close=4259.70  Bullish
+10:31:12  REGIME  M&M          EMA=3526.61  Close=3451.90  Bearish
+10:31:12  REGIME  ADANIPORTS   EMA=1510.86  Close=1552.30  Bullish
+10:31:13  REGIME  ONGC         EMA=266.13  Close=272.95  Bullish
+10:31:13  REGIME  BAJAJFINSV   EMA=2022.87  Close=2057.00  Bullish
+10:31:14  REGIME  HINDALCO     EMA=931.72  Close=931.30  Bearish
+10:31:14  REGIME  SBILIFE      EMA=2044.13  Close=2121.50  Bullish
+10:31:14  Loading 2-day 3-min warmup data
+10:31:14  WARMUP  HDFCLIFE     7875 bars  cache=2026-02-20
+10:31:14  WARMUP  TATASTEEL    7875 bars  cache=2026-02-20
+10:31:14  WARMUP  TITAN        7875 bars  cache=2026-02-20
+10:31:14  WARMUP  M&M          7875 bars  cache=2026-02-20
+10:31:14  WARMUP  ADANIPORTS   7875 bars  cache=2026-02-20
+10:31:14  WARMUP  ONGC         7875 bars  cache=2026-02-20
+10:31:14  WARMUP  BAJAJFINSV   7875 bars  cache=2026-02-20
+10:31:14  WARMUP  HINDALCO     7875 bars  cache=2026-02-20
+10:31:14  WARMUP  SBILIFE      7875 bars  cache=2026-02-20
+10:31:14  Warm-up complete: 9 stocks loaded, 6 HTF, 9 regime
+10:31:15  PHASE  START → ACTIVE_AM
+10:31:16  SCAN #1  10:31:15  phase=ACTIVE_AM  active=True
+10:31:16    HDFCLIFE     C=743.65  VWAP=743.31  EMA=UP  RSI=90  Vol=0.4x  HTF=-  → -  
+10:31:17    TATASTEEL    C=208.61  VWAP=208.62  EMA=--  RSI=55  Vol=0.1x  HTF=208.29  → -  
+10:31:17    TITAN        C=4260.00  VWAP=4258.66  EMA=UP  RSI=71  Vol=0.3x  HTF=-  → -  
+10:31:18    M&M          C=3451.90  VWAP=3453.14  EMA=UP  RSI=81  Vol=0.2x  HTF=3424.30  → -  
+10:31:18    ADANIPORTS   C=1551.80  VWAP=1553.36  EMA=UP  RSI=85  Vol=0.5x  HTF=-  → -  
+10:31:19    ONGC         C=272.90  VWAP=273.19  EMA=DN  RSI=16  Vol=0.1x  HTF=276.39  → -  
+10:31:19    BAJAJFINSV   C=2056.90  VWAP=2057.43  EMA=--  RSI=49  Vol=0.1x  HTF=2054.85  → -  
+10:31:20    HINDALCO     C=931.05  VWAP=932.07  EMA=DN  RSI=28  Vol=0.1x  HTF=928.96  → -  
+10:31:20    SBILIFE      C=2121.50  VWAP=2121.26  EMA=UP  RSI=91  Vol=0.0x  HTF=2075.50  → -  
+10:33:02  SCAN #2  10:33:02  phase=ACTIVE_AM  active=True
+10:33:02    HDFCLIFE     C=743.85  VWAP=743.44  EMA=UP  RSI=90  Vol=0.0x  HTF=-  → -  
+10:33:03    TATASTEEL    C=208.60  VWAP=208.61  EMA=--  RSI=55  Vol=0.0x  HTF=208.29  → -  
+10:33:03    TITAN        C=4260.30  VWAP=4258.91  EMA=UP  RSI=71  Vol=0.0x  HTF=-  → -  
+10:33:03    M&M          C=3454.10  VWAP=3453.35  EMA=UP  RSI=83  Vol=0.0x  HTF=3424.48  → -  
+10:33:04    ADANIPORTS   C=1549.80  VWAP=1552.49  EMA=UP  RSI=81  Vol=0.0x  HTF=-  → -  
+10:33:04    ONGC         C=272.90  VWAP=273.12  EMA=--  RSI=17  Vol=0.0x  HTF=276.38  → -  
+10:33:05    BAJAJFINSV   C=2057.00  VWAP=2057.37  EMA=--  RSI=49  Vol=0.0x  HTF=2054.86  → -  
+10:33:05    HINDALCO     C=931.25  VWAP=931.92  EMA=--  RSI=29  Vol=0.0x  HTF=929.00  → -  
+10:33:06    SBILIFE      C=2120.10  VWAP=2121.08  EMA=UP  RSI=88  Vol=0.1x  HTF=2075.50  → -  
+10:36:02  SCAN #3  10:36:02  phase=ACTIVE_AM  active=True
+10:36:02    HDFCLIFE     C=744.10  VWAP=743.62  EMA=UP  RSI=90  Vol=0.0x  HTF=-  → -  
+10:36:03    TATASTEEL    C=208.58  VWAP=208.60  EMA=--  RSI=54  Vol=0.0x  HTF=208.29  → -  
+10:36:03    TITAN        C=4264.70  VWAP=4259.99  EMA=UP  RSI=74  Vol=0.0x  HTF=-  → -  
+10:36:04    M&M          C=3453.70  VWAP=3453.25  EMA=UP  RSI=83  Vol=0.0x  HTF=3424.48  → -  
+10:36:04    ADANIPORTS   C=1552.30  VWAP=1552.32  EMA=UP  RSI=82  Vol=0.0x  HTF=-  → -  
+10:36:05    ONGC         C=272.55  VWAP=272.97  EMA=--  RSI=15  Vol=0.0x  HTF=276.38  → -  
+10:36:05    BAJAJFINSV   C=2057.10  VWAP=2057.22  EMA=--  RSI=49  Vol=0.0x  HTF=2054.86  → -  
+10:36:06    HINDALCO     C=930.45  VWAP=931.46  EMA=--  RSI=26  Vol=0.0x  HTF=929.00  → -  
+10:36:06    SBILIFE      C=2116.80  VWAP=2120.36  EMA=UP  RSI=82  Vol=0.0x  HTF=2075.50  → -  
+10:39:02  SCAN #4  10:39:02  phase=ACTIVE_AM  active=True
+10:39:02    HDFCLIFE     C=742.10  VWAP=743.14  EMA=UP  RSI=79  Vol=0.0x  HTF=-  → -  
+10:39:02    TATASTEEL    C=208.34  VWAP=208.55  EMA=--  RSI=45  Vol=0.0x  HTF=208.29  → -  
+10:39:03    TITAN        C=4262.00  VWAP=4260.61  EMA=UP  RSI=69  Vol=0.0x  HTF=-  → -  
+10:39:03    M&M          C=3450.10  VWAP=3452.76  EMA=UP  RSI=76  Vol=0.0x  HTF=3424.48  → -  
+10:39:04    ADANIPORTS   C=1549.70  VWAP=1552.04  EMA=UP  RSI=77  Vol=0.0x  HTF=-  → -  
+10:39:04    ONGC         C=272.55  VWAP=272.91  EMA=--  RSI=15  Vol=0.0x  HTF=276.38  → -  
+10:39:05    BAJAJFINSV   C=2056.60  VWAP=2057.17  EMA=--  RSI=48  Vol=0.0x  HTF=2054.86  → -  
+10:39:05    HINDALCO     C=930.00  VWAP=931.06  EMA=--  RSI=26  Vol=0.0x  HTF=929.00  → -  
+10:39:06    SBILIFE      C=2114.10  VWAP=2119.35  EMA=UP  RSI=77  Vol=0.0x  HTF=2075.50  → -  
+10:42:02  SCAN #5  10:42:02  phase=ACTIVE_AM  active=True
+10:42:02    HDFCLIFE     C=742.35  VWAP=743.05  EMA=UP  RSI=79  Vol=0.0x  HTF=-  → -  
+10:42:03    TATASTEEL    C=208.20  VWAP=208.48  EMA=--  RSI=40  Vol=0.0x  HTF=208.29  → -  
+10:42:03    TITAN        C=4260.70  VWAP=4260.71  EMA=UP  RSI=67  Vol=0.0x  HTF=-  → -  
+10:42:04    M&M          C=3441.30  VWAP=3449.28  EMA=UP  RSI=62  Vol=0.0x  HTF=3424.48  → -  
+10:42:04    ADANIPORTS   C=1546.80  VWAP=1551.08  EMA=UP  RSI=72  Vol=0.0x  HTF=-  → -  
+10:42:04    ONGC         C=272.65  VWAP=272.87  EMA=--  RSI=16  Vol=0.0x  HTF=276.38  → -  
+10:42:05    BAJAJFINSV   C=2054.50  VWAP=2056.52  EMA=--  RSI=43  Vol=0.0x  HTF=2054.86  → -  
+10:42:05    HINDALCO     C=928.70  VWAP=930.73  EMA=--  RSI=24  Vol=0.0x  HTF=929.00  → -  
+10:42:06    SBILIFE      C=2114.20  VWAP=2119.06  EMA=UP  RSI=77  Vol=0.0x  HTF=2075.50  → -  
+10:45:02  SCAN #6  10:45:02  phase=ACTIVE_AM  active=True
+10:45:02    HDFCLIFE     C=742.20  VWAP=742.99  EMA=UP  RSI=79  Vol=0.0x  HTF=-  → -  
+10:45:02    TATASTEEL    C=207.71  VWAP=208.29  EMA=--  RSI=29  Vol=0.0x  HTF=208.23  → -  
+10:45:03    TITAN        C=4250.00  VWAP=4259.51  EMA=UP  RSI=51  Vol=0.0x  HTF=-  → -  
+10:45:03    M&M          C=3440.70  VWAP=3447.55  EMA=UP  RSI=61  Vol=0.0x  HTF=3425.95  → -  
+10:45:04    ADANIPORTS   C=1545.20  VWAP=1549.35  EMA=UP  RSI=69  Vol=0.0x  HTF=-  → -  
+10:45:04    ONGC         C=272.65  VWAP=272.85  EMA=--  RSI=16  Vol=0.0x  HTF=276.04  → -  
+10:45:05    BAJAJFINSV   C=2053.60  VWAP=2056.25  EMA=--  RSI=41  Vol=0.0x  HTF=2054.75  → -  
+10:45:06    HINDALCO     C=928.50  VWAP=930.43  EMA=--  RSI=22  Vol=0.0x  HTF=928.95  → -  
+10:45:06    SBILIFE      C=2111.00  VWAP=2118.10  EMA=UP  RSI=70  Vol=0.0x  HTF=2078.73  → -  
+10:48:02  SCAN #7  10:48:02  phase=ACTIVE_AM  active=True
+10:48:02    HDFCLIFE     C=742.05  VWAP=742.89  EMA=UP  RSI=78  Vol=0.0x  HTF=-  → -  
+10:48:02    TATASTEEL    C=207.84  VWAP=208.18  EMA=--  RSI=34  Vol=0.0x  HTF=208.25  → -  
+10:48:03    TITAN        C=4253.50  VWAP=4258.48  EMA=UP  RSI=55  Vol=0.4x  HTF=-  → -  
+10:48:03    M&M          C=3438.80  VWAP=3446.59  EMA=UP  RSI=58  Vol=0.0x  HTF=3425.81  → -  
+10:48:04    ADANIPORTS   C=1548.20  VWAP=1549.07  EMA=UP  RSI=71  Vol=0.0x  HTF=-  → -  
+10:48:04    ONGC         C=272.35  VWAP=272.77  EMA=--  RSI=15  Vol=0.0x  HTF=276.02  → -  
+10:48:05    BAJAJFINSV   C=2053.10  VWAP=2055.89  EMA=--  RSI=40  Vol=0.0x  HTF=2054.70  → -  
+10:48:05    HINDALCO     C=928.40  VWAP=930.21  EMA=--  RSI=23  Vol=0.0x  HTF=928.92  → -  
+10:48:06    SBILIFE      C=2110.30  VWAP=2116.87  EMA=UP  RSI=69  Vol=0.0x  HTF=2078.67  → -  
+10:51:02  SCAN #8  10:51:02  phase=ACTIVE_AM  active=True
+10:51:02    HDFCLIFE     C=742.35  VWAP=742.86  EMA=UP  RSI=78  Vol=0.0x  HTF=-  → -  
+10:51:03    TATASTEEL    C=207.65  VWAP=208.13  EMA=--  RSI=30  Vol=0.0x  HTF=208.25  → -  
+10:51:03    TITAN        C=4252.70  VWAP=4257.91  EMA=UP  RSI=54  Vol=0.1x  HTF=-  → -  
+10:51:04    M&M          C=3436.30  VWAP=3445.43  EMA=UP  RSI=54  Vol=0.0x  HTF=3425.81  → -  
+10:51:04    ADANIPORTS   C=1547.70  VWAP=1548.88  EMA=UP  RSI=69  Vol=0.1x  HTF=-  → -  
+10:51:05    ONGC         C=272.65  VWAP=272.75  EMA=--  RSI=21  Vol=0.0x  HTF=276.02  → -  
+10:51:05    BAJAJFINSV   C=2050.40  VWAP=2055.69  EMA=--  RSI=35  Vol=0.0x  HTF=2054.70  → -  
+10:51:06    HINDALCO     C=928.05  VWAP=929.86  EMA=--  RSI=21  Vol=0.0x  HTF=928.92  → -  
+10:51:06    SBILIFE      C=2111.20  VWAP=2116.53  EMA=UP  RSI=67  Vol=0.0x  HTF=2078.67  → -  
+10:54:02  SCAN #9  10:54:02  phase=ACTIVE_AM  active=True
+10:54:02    HDFCLIFE     C=742.90  VWAP=742.84  EMA=UP  RSI=80  Vol=0.0x  HTF=-  → -  
+10:54:02    TATASTEEL    C=207.91  VWAP=208.10  EMA=--  RSI=40  Vol=0.1x  HTF=208.25  → -  
+10:54:03    TITAN        C=4256.40  VWAP=4257.73  EMA=UP  RSI=59  Vol=0.0x  HTF=-  → -  
+10:54:03    M&M          C=3437.60  VWAP=3444.74  EMA=UP  RSI=56  Vol=0.0x  HTF=3425.81  → -  
+10:54:04    ADANIPORTS   C=1549.80  VWAP=1548.91  EMA=UP  RSI=71  Vol=0.0x  HTF=-  → -  
+10:54:04    ONGC         C=272.75  VWAP=272.76  EMA=--  RSI=23  Vol=0.0x  HTF=276.02  → -  
+10:54:05    BAJAJFINSV   C=2050.90  VWAP=2054.67  EMA=--  RSI=37  Vol=0.0x  HTF=2054.70  → -  
+10:54:05    HINDALCO     C=929.65  VWAP=929.67  EMA=--  RSI=38  Vol=0.0x  HTF=928.92  → -  
+10:54:06    SBILIFE      C=2113.00  VWAP=2116.36  EMA=UP  RSI=71  Vol=0.0x  HTF=2078.67  → -  
+10:57:02  SCAN #10  10:57:02  phase=ACTIVE_AM  active=True
+10:57:02    HDFCLIFE     C=744.00  VWAP=742.88  EMA=UP  RSI=82  Vol=0.0x  HTF=-  → -  
+10:57:02    TATASTEEL    C=207.72  VWAP=208.06  EMA=--  RSI=35  Vol=0.0x  HTF=208.25  → -  
+10:57:03    TITAN        C=4256.50  VWAP=4257.62  EMA=UP  RSI=59  Vol=0.0x  HTF=-  → -  
+10:57:03    M&M          C=3439.00  VWAP=3444.06  EMA=UP  RSI=58  Vol=0.0x  HTF=3425.81  → -  
+10:57:04    ADANIPORTS   C=1551.00  VWAP=1548.99  EMA=UP  RSI=72  Vol=0.0x  HTF=-  → -  
+10:57:04    ONGC         C=272.70  VWAP=272.75  EMA=--  RSI=22  Vol=0.0x  HTF=276.02  → -  
+10:57:05    BAJAJFINSV   C=2050.90  VWAP=2054.27  EMA=--  RSI=38  Vol=0.1x  HTF=2054.70  → -  
+10:57:05  STOPPED MANUALLY  0 signal(s), 10 scans
+10:57:13  ======================================================================
+10:57:13  SESSION START  Capital=50000  RR=1:1.5  Risk=1%
+10:57:13  Stocks: HDFCLIFE, TATASTEEL, TITAN, M&M, ADANIPORTS, ONGC, BAJAJFINSV, HINDALCO, SBILIFE
+10:57:13  HTF stocks: BAJAJFINSV, HINDALCO, M&M, ONGC, SBILIFE, TATASTEEL
+10:57:13  Telegram: enabled
+10:57:13  PHASE 1  Warm-Up — connecting to Angel One
+10:57:13  API connected
+10:57:13  Fetching regime EMAs (60-day daily candles)
+10:57:14  REGIME  HDFCLIFE     EMA=721.58  Close=743.60  Bullish
+10:57:14  REGIME  TATASTEEL    EMA=200.51  Close=207.69  Bullish
+10:57:14  REGIME  TITAN        EMA=4174.77  Close=4257.60  Bullish
+10:57:15  REGIME  M&M          EMA=3525.41  Close=3438.70  Bearish
+10:57:15  REGIME  ADANIPORTS   EMA=1510.76  Close=1551.20  Bullish
+10:57:16  REGIME  ONGC         EMA=266.10  Close=272.65  Bullish
+10:57:16  REGIME  BAJAJFINSV   EMA=2022.32  Close=2050.90  Bullish
+10:57:17  REGIME  HINDALCO     EMA=931.56  Close=929.50  Bearish
+10:57:17  REGIME  SBILIFE      EMA=2043.48  Close=2114.40  Bullish
+10:57:17  Loading 2-day 3-min warmup data
+10:57:18  WARMUP  HDFCLIFE     35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:19  WARMUP  TATASTEEL    35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:20  WARMUP  TITAN        35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:21  WARMUP  M&M          35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:22  WARMUP  ADANIPORTS   35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:23  WARMUP  ONGC         35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:23  WARMUP  BAJAJFINSV   35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:24  WARMUP  HINDALCO     35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:25  WARMUP  SBILIFE      35 bars  API 2026-02-23→2026-02-23 10:57:00
+10:57:26  Warm-up complete: 9 stocks loaded, 6 HTF, 9 regime
+10:57:26  PHASE  START → ACTIVE_AM
+10:57:27  SCAN #1  10:57:26  phase=ACTIVE_AM  active=True
+10:57:28    HDFCLIFE     C=743.60  VWAP=741.29  EMA=UP  RSI=68  Vol=0.3x  HTF=-  → -  
+10:57:28    TATASTEEL    C=207.70  VWAP=208.66  EMA=--  RSI=30  Vol=0.1x  HTF=208.73  → -  
+10:57:28    TITAN        C=4258.30  VWAP=4257.43  EMA=--  RSI=49  Vol=0.1x  HTF=-  → -  
+10:57:29    M&M          C=3439.00  VWAP=3443.50  EMA=--  RSI=36  Vol=0.0x  HTF=3435.43  → -  
+10:57:29    ADANIPORTS   C=1551.90  VWAP=1550.32  EMA=UP  RSI=55  Vol=0.1x  HTF=-  → -  
+10:57:30    ONGC         C=272.70  VWAP=273.59  EMA=--  RSI=36  Vol=0.2x  HTF=273.84  → -  
+10:57:30    BAJAJFINSV   C=2050.80  VWAP=2060.34  EMA=--  RSI=27  Vol=0.3x  HTF=2056.66  → -  
+10:57:31    HINDALCO     C=929.45  VWAP=937.71  EMA=--  RSI=29  Vol=0.1x  HTF=940.77  → -  
+10:57:31    SBILIFE      C=2113.50  VWAP=2113.70  EMA=--  RSI=43  Vol=0.0x  HTF=2103.52  → -  
+11:00:02  SCAN #2  11:00:01  phase=ACTIVE_AM  active=True
+11:00:02    HDFCLIFE     C=743.55  VWAP=741.32  EMA=UP  RSI=67  Vol=0.8x  HTF=-  → -  
+11:00:02    TATASTEEL    C=207.74  VWAP=208.64  EMA=--  RSI=31  Vol=0.9x  HTF=208.73  → -  
+11:00:03    TITAN        C=4260.50  VWAP=4257.46  EMA=--  RSI=53  Vol=0.8x  HTF=-  → -  
+11:00:03    M&M          C=3436.10  VWAP=3443.42  EMA=--  RSI=29  Vol=0.6x  HTF=3435.43  → -  
+11:00:04    ADANIPORTS   C=1553.00  VWAP=1550.35  EMA=UP  RSI=57  Vol=0.5x  HTF=-  → -  
+11:00:04    ONGC         C=273.15  VWAP=273.58  EMA=--  RSI=53  Vol=1.6x  HTF=273.84  → -  
+11:00:05    BAJAJFINSV   C=2051.40  VWAP=2060.25  EMA=--  RSI=30  Vol=0.7x  HTF=2056.66  → -  
+11:00:05    HINDALCO     C=928.60  VWAP=937.58  EMA=--  RSI=26  Vol=0.7x  HTF=940.77  → -  
+11:00:06    SBILIFE      C=2112.00  VWAP=2113.69  EMA=--  RSI=39  Vol=0.3x  HTF=2103.52  → -  
+11:03:02  SCAN #3  11:03:02  phase=ACTIVE_AM  active=True
+11:03:02    HDFCLIFE     C=744.00  VWAP=741.35  EMA=UP  RSI=70  Vol=0.5x  HTF=-  → -  
+11:03:03    TATASTEEL    C=208.24  VWAP=208.63  EMA=--  RSI=51  Vol=1.2x  HTF=208.69  → -  
+11:03:04    TITAN        C=4267.50  VWAP=4257.89  EMA=UP  RSI=63  Vol=2.8x  HTF=-  → ★ LONG  SL=4261.59  TP=4276.36  Qty=58
+11:03:04    M&M          C=3446.50  VWAP=3443.42  EMA=--  RSI=56  Vol=0.5x  HTF=3436.44  → -  
+11:03:05    ADANIPORTS   C=1552.00  VWAP=1550.37  EMA=UP  RSI=55  Vol=0.4x  HTF=-  → -  
+11:03:05    ONGC         C=273.20  VWAP=273.58  EMA=--  RSI=54  Vol=0.4x  HTF=273.78  → -  
+11:03:06    BAJAJFINSV   C=2054.90  VWAP=2059.94  EMA=--  RSI=47  Vol=1.9x  HTF=2056.50  → -  
+11:03:06    HINDALCO     C=929.10  VWAP=937.54  EMA=--  RSI=31  Vol=0.2x  HTF=939.70  → -  
+11:03:07    SBILIFE      C=2113.90  VWAP=2113.69  EMA=--  RSI=46  Vol=0.2x  HTF=2104.47  → -  
+11:06:02  SCAN #4  11:06:02  phase=ACTIVE_AM  active=True
+11:06:02    HDFCLIFE     C=743.00  VWAP=741.39  EMA=UP  RSI=57  Vol=0.7x  HTF=-  → -  
+11:06:02    TATASTEEL    C=207.80  VWAP=208.61  EMA=--  RSI=40  Vol=1.2x  HTF=208.69  → -  
+11:06:03    TITAN        C=4266.30  VWAP=4258.13  EMA=UP  RSI=61  Vol=1.3x  HTF=-  → LONG  in_position
+11:06:03    M&M          C=3443.20  VWAP=3443.44  EMA=--  RSI=49  Vol=0.6x  HTF=3436.44  → -  
+11:06:04    ADANIPORTS   C=1552.00  VWAP=1550.38  EMA=UP  RSI=55  Vol=0.5x  HTF=-  → -  
+11:06:04    ONGC         C=273.35  VWAP=273.57  EMA=--  RSI=59  Vol=1.0x  HTF=273.78  → -  
+11:06:05    BAJAJFINSV   C=2053.40  VWAP=2059.88  EMA=--  RSI=42  Vol=0.4x  HTF=2056.50  → -  
+11:06:05    HINDALCO     C=927.60  VWAP=937.44  EMA=--  RSI=26  Vol=0.4x  HTF=939.70  → -  
+11:06:06    SBILIFE      C=2112.70  VWAP=2113.68  EMA=--  RSI=42  Vol=0.7x  HTF=2104.47  → -  
+11:09:02  SCAN #5  11:09:02  phase=ACTIVE_AM  active=True
+11:09:02    HDFCLIFE     C=742.40  VWAP=741.41  EMA=UP  RSI=51  Vol=0.7x  HTF=-  → -  
+11:09:03    TATASTEEL    C=207.84  VWAP=208.59  EMA=--  RSI=41  Vol=0.8x  HTF=208.69  → -  
+11:09:03  BRACKET  TITAN        SL hit — position closed
+11:09:03    TITAN        C=4260.70  VWAP=4258.17  EMA=UP  RSI=50  Vol=0.5x  HTF=-  → -  cooldown_until_11:18
+11:09:03    M&M          C=3442.70  VWAP=3443.42  EMA=--  RSI=48  Vol=0.4x  HTF=3436.44  → -  
+11:09:04    ADANIPORTS   C=1550.90  VWAP=1550.38  EMA=UP  RSI=52  Vol=0.4x  HTF=-  → -  
+11:09:04    ONGC         C=272.95  VWAP=273.57  EMA=--  RSI=46  Vol=0.4x  HTF=273.78  → -  
+11:09:05    BAJAJFINSV   C=2051.90  VWAP=2059.85  EMA=--  RSI=38  Vol=0.2x  HTF=2056.50  → -  
+11:09:05    HINDALCO     C=925.70  VWAP=937.28  EMA=--  RSI=21  Vol=0.6x  HTF=939.70  → -  
+11:09:06    SBILIFE      C=2112.40  VWAP=2113.65  EMA=--  RSI=42  Vol=0.8x  HTF=2104.47  → -  
+11:12:02  SCAN #6  11:12:02  phase=ACTIVE_AM  active=True
+11:12:02    HDFCLIFE     C=743.25  VWAP=741.43  EMA=UP  RSI=58  Vol=0.7x  HTF=-  → -  
+11:12:02    TATASTEEL    C=207.79  VWAP=208.58  EMA=--  RSI=40  Vol=0.9x  HTF=208.69  → -  
+11:12:03    TITAN        C=4265.90  VWAP=4258.25  EMA=UP  RSI=58  Vol=0.7x  HTF=-  → -  cooldown_until_11:18
+11:12:03    M&M          C=3447.20  VWAP=3443.44  EMA=--  RSI=57  Vol=0.5x  HTF=3436.44  → -  
+11:12:04    ADANIPORTS   C=1551.90  VWAP=1550.39  EMA=UP  RSI=54  Vol=0.4x  HTF=-  → -  
+11:12:04    ONGC         C=273.75  VWAP=273.57  EMA=UP  RSI=64  Vol=1.0x  HTF=273.78  → -  
+11:12:05    BAJAJFINSV   C=2056.10  VWAP=2059.68  EMA=--  RSI=53  Vol=1.5x  HTF=2056.50  → -  
+11:12:05    HINDALCO     C=926.15  VWAP=936.86  EMA=--  RSI=25  Vol=1.6x  HTF=939.70  → -  
+11:12:06    SBILIFE      C=2115.00  VWAP=2113.66  EMA=--  RSI=52  Vol=0.8x  HTF=2104.47  → -  
+11:15:02  SCAN #7  11:15:02  phase=ACTIVE_AM  active=True
+11:15:02    HDFCLIFE     C=743.35  VWAP=741.47  EMA=UP  RSI=59  Vol=0.7x  HTF=-  → -  
+11:15:02    TATASTEEL    C=207.93  VWAP=208.57  EMA=--  RSI=45  Vol=0.6x  HTF=208.69  → -  
+11:15:03    TITAN        C=4265.40  VWAP=4258.32  EMA=UP  RSI=57  Vol=0.5x  HTF=-  → -  cooldown_until_11:18
+11:15:03    M&M          C=3446.00  VWAP=3443.47  EMA=--  RSI=54  Vol=0.6x  HTF=3436.44  → -  
+11:15:04    ADANIPORTS   C=1552.70  VWAP=1550.41  EMA=UP  RSI=57  Vol=0.5x  HTF=-  → -  
+11:15:04    ONGC         C=273.70  VWAP=273.57  EMA=UP  RSI=62  Vol=0.7x  HTF=273.78  → -  
+11:15:05    BAJAJFINSV   C=2060.90  VWAP=2059.67  EMA=--  RSI=64  Vol=1.7x  HTF=2056.50  → -  
+11:15:05    HINDALCO     C=924.80  VWAP=936.08  EMA=--  RSI=21  Vol=2.9x  HTF=939.70  → -  
+11:15:06    SBILIFE      C=2115.90  VWAP=2113.67  EMA=--  RSI=55  Vol=0.4x  HTF=2104.47  → -  
+11:18:02  SCAN #8  11:18:02  phase=ACTIVE_AM  active=True
+11:18:02    HDFCLIFE     C=743.45  VWAP=741.49  EMA=UP  RSI=60  Vol=0.5x  HTF=-  → -  
+11:18:02    TATASTEEL    C=207.89  VWAP=208.56  EMA=--  RSI=44  Vol=0.9x  HTF=208.61  → -  
+11:18:04    TITAN        C=4271.20  VWAP=4258.81  EMA=UP  RSI=64  Vol=2.4x  HTF=-  → ★ LONG  SL=4265.65  TP=4279.53  Qty=58
+11:18:04    M&M          C=3448.20  VWAP=3443.50  EMA=UP  RSI=58  Vol=0.5x  HTF=3437.51  → -  
+11:18:06    ADANIPORTS   C=1554.20  VWAP=1550.56  EMA=UP  RSI=61  Vol=2.5x  HTF=-  → ★ LONG  SL=1550.16  TP=1560.26  Qty=123
+11:18:06    ONGC         C=273.80  VWAP=273.57  EMA=UP  RSI=64  Vol=1.0x  HTF=273.78  → -  
+11:18:07    BAJAJFINSV   C=2060.00  VWAP=2059.67  EMA=--  RSI=61  Vol=0.4x  HTF=2056.82  → -  
+11:18:07    HINDALCO     C=924.55  VWAP=935.86  EMA=--  RSI=20  Vol=0.9x  HTF=938.33  → -  
+11:18:08    SBILIFE      C=2118.30  VWAP=2113.69  EMA=--  RSI=62  Vol=0.5x  HTF=2105.72  → -  
+11:21:02  SCAN #9  11:21:02  phase=ACTIVE_AM  active=True
+11:21:02    HDFCLIFE     C=743.35  VWAP=741.50  EMA=UP  RSI=59  Vol=0.4x  HTF=-  → -  
+11:21:02    TATASTEEL    C=207.50  VWAP=208.53  EMA=--  RSI=34  Vol=1.4x  HTF=208.61  → -  
+11:21:03    TITAN        C=4275.00  VWAP=4259.03  EMA=UP  RSI=68  Vol=0.9x  HTF=-  → -  in_position
+11:21:03    M&M          C=3442.40  VWAP=3443.51  EMA=DN  RSI=46  Vol=0.5x  HTF=3437.51  → -  
+11:21:04    ADANIPORTS   C=1553.70  VWAP=1550.58  EMA=UP  RSI=59  Vol=0.3x  HTF=-  → -  in_position
+11:21:04    ONGC         C=273.50  VWAP=273.57  EMA=UP  RSI=55  Vol=0.7x  HTF=273.78  → -  
+11:21:05    BAJAJFINSV   C=2058.80  VWAP=2059.67  EMA=UP  RSI=57  Vol=0.1x  HTF=2056.82  → -  
+11:21:05    HINDALCO     C=921.85  VWAP=935.45  EMA=--  RSI=15  Vol=1.4x  HTF=938.33  → -  
+11:21:06    SBILIFE      C=2118.00  VWAP=2113.72  EMA=UP  RSI=60  Vol=0.5x  HTF=2105.72  → -  
+11:24:02  SCAN #10  11:24:02  phase=ACTIVE_AM  active=True
+11:24:03    HDFCLIFE     C=742.75  VWAP=741.56  EMA=UP  RSI=51  Vol=1.6x  HTF=-  → ★ LONG  SL=741.56  TP=744.54  Qty=336
+11:24:03    TATASTEEL    C=207.30  VWAP=208.51  EMA=--  RSI=30  Vol=0.9x  HTF=208.61  → -  
+11:24:04    TITAN        C=4268.00  VWAP=4259.42  EMA=UP  RSI=55  Vol=2.0x  HTF=-  → LONG  in_position
+11:24:04    M&M          C=3439.50  VWAP=3443.49  EMA=--  RSI=41  Vol=0.6x  HTF=3437.51  → -  
+11:24:05    ADANIPORTS   C=1553.90  VWAP=1550.60  EMA=UP  RSI=59  Vol=0.6x  HTF=-  → -  in_position
+11:24:05    ONGC         C=273.30  VWAP=273.57  EMA=UP  RSI=50  Vol=0.5x  HTF=273.78  → -  
+11:24:06    BAJAJFINSV   C=2057.40  VWAP=2059.67  EMA=UP  RSI=52  Vol=0.2x  HTF=2056.82  → -  
+11:24:06    HINDALCO     C=920.60  VWAP=935.14  EMA=--  RSI=13  Vol=1.0x  HTF=938.33  → -  
+11:24:07    SBILIFE      C=2116.90  VWAP=2113.78  EMA=UP  RSI=55  Vol=0.9x  HTF=2105.72  → -  
+11:27:02  SCAN #11  11:27:02  phase=ACTIVE_AM  active=True
+11:27:02    HDFCLIFE     C=742.10  VWAP=741.58  EMA=UP  RSI=43  Vol=0.7x  HTF=-  → -  in_position
+11:27:02    TATASTEEL    C=207.04  VWAP=208.49  EMA=--  RSI=25  Vol=0.8x  HTF=208.61  → -  
+11:27:03  BRACKET  TITAN        SL hit — position closed
+11:27:03    TITAN        C=4268.60  VWAP=4259.53  EMA=UP  RSI=56  Vol=0.8x  HTF=-  → -  cooldown_until_11:33
+11:27:03    M&M          C=3443.60  VWAP=3443.48  EMA=--  RSI=50  Vol=0.7x  HTF=3437.51  → -  
+11:27:04    ADANIPORTS   C=1552.10  VWAP=1550.61  EMA=UP  RSI=51  Vol=0.6x  HTF=-  → -  in_position
+11:27:04    ONGC         C=273.35  VWAP=273.57  EMA=UP  RSI=51  Vol=1.0x  HTF=273.78  → -  
+11:27:05    BAJAJFINSV   C=2055.80  VWAP=2059.66  EMA=UP  RSI=47  Vol=0.2x  HTF=2056.82  → -  
+11:27:05    HINDALCO     C=919.35  VWAP=935.01  EMA=--  RSI=12  Vol=0.4x  HTF=938.33  → -  
+11:27:06    SBILIFE      C=2113.20  VWAP=2113.79  EMA=UP  RSI=42  Vol=0.5x  HTF=2105.72  → -  
+11:30:02  SCAN #12  11:30:02  phase=ACTIVE_AM  active=True
+11:30:02    HDFCLIFE     C=742.35  VWAP=741.58  EMA=UP  RSI=47  Vol=0.5x  HTF=-  → -  in_position
+11:30:02    TATASTEEL    C=206.90  VWAP=208.44  EMA=--  RSI=23  Vol=1.4x  HTF=208.61  → -  
+11:30:03    TITAN        C=4271.40  VWAP=4259.76  EMA=UP  RSI=60  Vol=1.3x  HTF=-  → LONG  cooldown_until_11:33
+11:30:03    M&M          C=3444.10  VWAP=3443.49  EMA=--  RSI=51  Vol=0.8x  HTF=3437.51  → -  
+11:30:04    ADANIPORTS   C=1551.60  VWAP=1550.62  EMA=UP  RSI=49  Vol=0.3x  HTF=-  → -  in_position
+11:30:04    ONGC         C=273.40  VWAP=273.57  EMA=UP  RSI=52  Vol=0.2x  HTF=273.78  → -  
+11:30:05    BAJAJFINSV   C=2056.80  VWAP=2059.65  EMA=UP  RSI=51  Vol=0.2x  HTF=2056.82  → -  
+11:30:05    HINDALCO     C=920.00  VWAP=934.79  EMA=--  RSI=17  Vol=0.7x  HTF=938.33  → -  
+11:30:06    SBILIFE      C=2113.60  VWAP=2113.78  EMA=DN  RSI=44  Vol=0.7x  HTF=2105.72  → -  
+11:33:02  SCAN #13  11:33:02  phase=ACTIVE_AM  active=True
+11:33:02    HDFCLIFE     C=741.90  VWAP=741.59  EMA=UP  RSI=42  Vol=0.5x  HTF=-  → -  in_position
+11:33:02    TATASTEEL    C=206.68  VWAP=208.42  EMA=--  RSI=20  Vol=0.6x  HTF=208.44  → -  
+11:33:03    TITAN        C=4269.80  VWAP=4259.88  EMA=UP  RSI=57  Vol=0.7x  HTF=-  → -  cooldown_until_11:33
+11:33:03    M&M          C=3446.30  VWAP=3443.51  EMA=--  RSI=55  Vol=0.6x  HTF=3438.31  → -  
+11:33:04  BRACKET  ADANIPORTS   SL hit — position closed
+11:33:04    ADANIPORTS   C=1549.60  VWAP=1550.60  EMA=UP  RSI=42  Vol=1.4x  HTF=-  → -  cooldown_until_11:33
+11:33:04    ONGC         C=273.25  VWAP=273.57  EMA=UP  RSI=48  Vol=0.8x  HTF=273.73  → -  
+11:33:05    BAJAJFINSV   C=2056.90  VWAP=2059.64  EMA=UP  RSI=51  Vol=0.2x  HTF=2056.82  → -  
+11:33:06    HINDALCO     C=918.70  VWAP=934.63  EMA=--  RSI=15  Vol=0.5x  HTF=936.54  → -  
+11:33:07    SBILIFE      C=2114.30  VWAP=2113.78  EMA=--  RSI=47  Vol=0.8x  HTF=2106.50  → -  
+11:36:02  SCAN #14  11:36:02  phase=ACTIVE_AM  active=True
+11:36:02  BRACKET  HDFCLIFE     SL hit — position closed
+11:36:02    HDFCLIFE     C=741.80  VWAP=741.59  EMA=DN  RSI=41  Vol=1.4x  HTF=-  → -  cooldown_until_11:39
+11:36:02    TATASTEEL    C=206.55  VWAP=208.40  EMA=--  RSI=19  Vol=0.8x  HTF=208.44  → -  
+11:36:03    TITAN        C=4272.50  VWAP=4260.04  EMA=UP  RSI=61  Vol=0.9x  HTF=-  → -  
+11:36:03    M&M          C=3446.20  VWAP=3443.58  EMA=UP  RSI=55  Vol=2.1x  HTF=3438.31  → -  
+11:36:04    ADANIPORTS   C=1548.70  VWAP=1550.59  EMA=DN  RSI=39  Vol=0.5x  HTF=-  → -  
+11:36:04    ONGC         C=273.25  VWAP=273.56  EMA=UP  RSI=48  Vol=0.4x  HTF=273.73  → -  
+11:36:05    BAJAJFINSV   C=2054.40  VWAP=2059.62  EMA=DN  RSI=43  Vol=0.4x  HTF=2056.82  → -  
+11:36:05    HINDALCO     C=917.70  VWAP=934.35  EMA=--  RSI=14  Vol=0.9x  HTF=936.54  → -  
+11:36:06    SBILIFE      C=2113.60  VWAP=2113.78  EMA=--  RSI=44  Vol=0.1x  HTF=2106.50  → -  
+11:39:02  SCAN #15  11:39:02  phase=ACTIVE_AM  active=True
+11:39:02    HDFCLIFE     C=742.35  VWAP=741.60  EMA=--  RSI=49  Vol=0.7x  HTF=-  → -  cooldown_until_11:39
+11:39:02    TATASTEEL    C=206.73  VWAP=208.36  EMA=--  RSI=28  Vol=1.1x  HTF=208.44  → -  
+11:39:04    TITAN        C=4270.60  VWAP=4260.23  EMA=UP  RSI=57  Vol=1.0x  HTF=-  → ★ LONG  SL=4265.11  TP=4278.84  Qty=58
+11:39:04    M&M          C=3451.20  VWAP=3443.76  EMA=UP  RSI=64  Vol=2.0x  HTF=3438.31  → -  
+11:39:05    ADANIPORTS   C=1551.80  VWAP=1550.59  EMA=UP  RSI=52  Vol=0.4x  HTF=-  → -  
+11:39:05    ONGC         C=273.25  VWAP=273.56  EMA=UP  RSI=48  Vol=0.4x  HTF=273.73  → -  
+11:39:06    BAJAJFINSV   C=2055.90  VWAP=2059.59  EMA=--  RSI=48  Vol=0.7x  HTF=2056.82  → -  
+11:39:06    HINDALCO     C=917.90  VWAP=934.23  EMA=--  RSI=16  Vol=0.4x  HTF=936.54  → -  
+11:39:07    SBILIFE      C=2115.90  VWAP=2113.79  EMA=--  RSI=54  Vol=0.4x  HTF=2106.50  → -  
+11:42:02  SCAN #16  11:42:02  phase=ACTIVE_AM  active=True
+11:42:02    HDFCLIFE     C=742.40  VWAP=741.60  EMA=--  RSI=49  Vol=0.4x  HTF=-  → -  
+11:42:02    TATASTEEL    C=206.48  VWAP=208.31  EMA=--  RSI=24  Vol=1.4x  HTF=208.44  → -  
+11:42:03    TITAN        C=4271.30  VWAP=4260.31  EMA=UP  RSI=58  Vol=0.4x  HTF=-  → -  in_position
+11:42:03    M&M          C=3450.00  VWAP=3443.87  EMA=UP  RSI=61  Vol=1.2x  HTF=3438.31  → -  
+11:42:04    ADANIPORTS   C=1549.20  VWAP=1550.59  EMA=DN  RSI=43  Vol=0.6x  HTF=-  → -  
+11:42:04    ONGC         C=273.25  VWAP=273.56  EMA=UP  RSI=48  Vol=0.5x  HTF=273.73  → -  
+11:42:05    BAJAJFINSV   C=2055.60  VWAP=2059.58  EMA=--  RSI=47  Vol=0.2x  HTF=2056.82  → -  
+11:42:05    HINDALCO     C=917.00  VWAP=934.00  EMA=--  RSI=14  Vol=0.8x  HTF=936.54  → -  
+11:42:06    SBILIFE      C=2115.00  VWAP=2113.79  EMA=--  RSI=50  Vol=0.5x  HTF=2106.50  → -  
+11:45:02  SCAN #17  11:45:02  phase=ACTIVE_AM  active=True
+11:45:02    HDFCLIFE     C=742.60  VWAP=741.61  EMA=--  RSI=52  Vol=0.5x  HTF=-  → -  
+11:45:02    TATASTEEL    C=206.38  VWAP=208.29  EMA=--  RSI=22  Vol=0.6x  HTF=208.44  → -  
+11:45:03    TITAN        C=4272.00  VWAP=4260.49  EMA=UP  RSI=59  Vol=1.1x  HTF=-  → LONG  in_position
+11:45:03    M&M          C=3450.80  VWAP=3443.99  EMA=UP  RSI=62  Vol=1.2x  HTF=3438.31  → -  
+11:45:04    ADANIPORTS   C=1548.80  VWAP=1550.58  EMA=--  RSI=42  Vol=0.4x  HTF=-  → -  
+11:45:04    ONGC         C=273.35  VWAP=273.56  EMA=UP  RSI=52  Vol=0.5x  HTF=273.73  → -  
+11:45:05    BAJAJFINSV   C=2055.90  VWAP=2059.57  EMA=--  RSI=49  Vol=0.2x  HTF=2056.82  → -  
+11:45:05    HINDALCO     C=916.60  VWAP=933.87  EMA=--  RSI=13  Vol=0.5x  HTF=936.54  → -  
+11:45:06    SBILIFE      C=2113.00  VWAP=2113.78  EMA=--  RSI=43  Vol=1.2x  HTF=2106.50  → -  
+11:48:02  SCAN #18  11:48:02  phase=ACTIVE_AM  active=True
+11:48:02    HDFCLIFE     C=742.00  VWAP=741.61  EMA=--  RSI=44  Vol=0.6x  HTF=-  → -  
+11:48:03    TATASTEEL    C=206.28  VWAP=208.23  EMA=--  RSI=21  Vol=1.7x  HTF=208.24  → -  
+11:48:03    TITAN        C=4275.00  VWAP=4260.69  EMA=UP  RSI=64  Vol=1.0x  HTF=-  → -  in_position
+11:48:03    M&M          C=3449.70  VWAP=3444.02  EMA=UP  RSI=59  Vol=0.4x  HTF=3439.34  → -  
+11:48:04    ADANIPORTS   C=1548.50  VWAP=1550.57  EMA=--  RSI=41  Vol=0.6x  HTF=-  → -  
+11:48:04    ONGC         C=273.40  VWAP=273.56  EMA=UP  RSI=55  Vol=0.7x  HTF=273.70  → -  
+11:48:05    BAJAJFINSV   C=2055.60  VWAP=2059.54  EMA=--  RSI=47  Vol=0.8x  HTF=2056.71  → -  
+11:48:05    HINDALCO     C=915.65  VWAP=933.66  EMA=--  RSI=12  Vol=0.7x  HTF=934.64  → -  
+11:48:06    SBILIFE      C=2113.00  VWAP=2113.78  EMA=--  RSI=43  Vol=1.3x  HTF=2107.09  → -  
+11:51:02  SCAN #19  11:51:02  phase=ACTIVE_AM  active=True
+11:51:02    HDFCLIFE     C=741.25  VWAP=741.61  EMA=--  RSI=36  Vol=1.9x  HTF=-  → -  
+11:51:03    TATASTEEL    C=206.07  VWAP=208.20  EMA=--  RSI=18  Vol=1.0x  HTF=208.24  → -  
+11:51:03  BRACKET  TITAN        SL hit — position closed
+11:51:03    TITAN        C=4261.50  VWAP=4260.82  EMA=UP  RSI=39  Vol=1.7x  HTF=-  → -  cooldown_until_11:54
+11:51:03    M&M          C=3441.40  VWAP=3444.03  EMA=UP  RSI=40  Vol=0.8x  HTF=3439.34  → -  
+11:51:04    ADANIPORTS   C=1547.70  VWAP=1550.55  EMA=--  RSI=38  Vol=1.0x  HTF=-  → -  
+11:51:05    ONGC         C=273.10  VWAP=273.56  EMA=UP  RSI=42  Vol=0.4x  HTF=273.70  → -  
+11:51:05    BAJAJFINSV   C=2053.00  VWAP=2059.50  EMA=--  RSI=38  Vol=0.7x  HTF=2056.71  → -  
+11:51:06    HINDALCO     C=913.55  VWAP=933.22  EMA=--  RSI=9  Vol=1.4x  HTF=934.64  → -  
+11:51:06    SBILIFE      C=2107.20  VWAP=2113.58  EMA=--  RSI=28  Vol=4.5x  HTF=2107.09  → -  
+11:54:02  SCAN #20  11:54:02  phase=ACTIVE_AM  active=True
+11:54:02    HDFCLIFE     C=741.70  VWAP=741.61  EMA=--  RSI=43  Vol=2.5x  HTF=-  → -  
+11:54:02    TATASTEEL    C=206.17  VWAP=208.18  EMA=--  RSI=23  Vol=0.4x  HTF=208.24  → -  
+11:54:03    TITAN        C=4267.10  VWAP=4260.87  EMA=UP  RSI=49  Vol=0.8x  HTF=-  → -  
+11:54:03    M&M          C=3442.60  VWAP=3444.01  EMA=UP  RSI=43  Vol=0.6x  HTF=3439.34  → -  
+11:54:04    ADANIPORTS   C=1550.20  VWAP=1550.54  EMA=--  RSI=50  Vol=0.7x  HTF=-  → -  
+11:54:04    ONGC         C=273.25  VWAP=273.55  EMA=UP  RSI=48  Vol=0.7x  HTF=273.70  → -  
+11:54:05    BAJAJFINSV   C=2055.00  VWAP=2059.47  EMA=--  RSI=47  Vol=0.5x  HTF=2056.71  → -  
+11:54:05    HINDALCO     C=912.80  VWAP=932.51  EMA=--  RSI=9  Vol=2.2x  HTF=934.64  → -  
+11:54:06    SBILIFE      C=2107.40  VWAP=2113.48  EMA=--  RSI=29  Vol=1.7x  HTF=2107.09  → -  
+11:57:02  SCAN #21  11:57:02  phase=ACTIVE_AM  active=True
+11:57:02    HDFCLIFE     C=742.40  VWAP=741.61  EMA=--  RSI=52  Vol=0.5x  HTF=-  → -  
+11:57:02    TATASTEEL    C=205.90  VWAP=208.16  EMA=--  RSI=20  Vol=0.7x  HTF=208.24  → -  
+11:57:03    TITAN        C=4267.30  VWAP=4260.95  EMA=UP  RSI=49  Vol=0.8x  HTF=-  → -  
+11:57:04    M&M          C=3442.00  VWAP=3444.00  EMA=DN  RSI=42  Vol=0.8x  HTF=3439.34  → -  
+11:57:04    ADANIPORTS   C=1549.80  VWAP=1550.54  EMA=--  RSI=48  Vol=0.5x  HTF=-  → -  
+11:57:04    ONGC         C=272.95  VWAP=273.55  EMA=DN  RSI=38  Vol=0.5x  HTF=273.70  → -  
+11:57:05    BAJAJFINSV   C=2055.00  VWAP=2059.46  EMA=--  RSI=47  Vol=0.3x  HTF=2056.71  → -  
+11:57:05    HINDALCO     C=912.70  VWAP=932.22  EMA=--  RSI=8  Vol=0.9x  HTF=934.64  → -  
+11:57:06    SBILIFE      C=2107.50  VWAP=2113.41  EMA=--  RSI=29  Vol=1.3x  HTF=2107.09  → -  
+12:00:02  PHASE  ACTIVE_AM → MIDDAY
+12:00:02  SCAN #22  12:00:02  phase=MIDDAY  active=False
+12:00:02    HDFCLIFE     C=742.05  VWAP=741.62  EMA=--  RSI=48  Vol=0.6x  HTF=-  → -  inactive_phase
+12:00:03    TATASTEEL    C=205.64  VWAP=208.11  EMA=--  RSI=17  Vol=1.2x  HTF=208.24  → -  inactive_phase
+12:00:07    TITAN        C=4267.30  VWAP=4261.03  EMA=UP  RSI=49  Vol=0.7x  HTF=-  → -  inactive_phase
+12:00:07    M&M          C=3438.10  VWAP=3443.96  EMA=--  RSI=35  Vol=0.7x  HTF=3439.34  → -  inactive_phase
+12:00:08    ADANIPORTS   C=1548.30  VWAP=1550.53  EMA=--  RSI=42  Vol=0.7x  HTF=-  → -  inactive_phase
+12:00:08    ONGC         C=272.80  VWAP=273.54  EMA=--  RSI=34  Vol=2.0x  HTF=273.70  → -  inactive_phase
+12:00:10    BAJAJFINSV   C=2053.80  VWAP=2059.45  EMA=--  RSI=42  Vol=0.3x  HTF=2056.71  → -  inactive_phase
+12:00:11    HINDALCO     C=911.70  VWAP=931.96  EMA=--  RSI=7  Vol=0.8x  HTF=934.64  → -  inactive_phase
+12:00:11    SBILIFE      C=2107.40  VWAP=2113.35  EMA=--  RSI=29  Vol=0.9x  HTF=2107.09  → -  inactive_phase
+12:03:02  SCAN #23  12:03:02  phase=MIDDAY  active=False
+12:03:02    HDFCLIFE     C=743.20  VWAP=741.67  EMA=--  RSI=60  Vol=2.7x  HTF=-  → -  inactive_phase
+12:03:03    TATASTEEL    C=206.08  VWAP=208.07  EMA=--  RSI=35  Vol=1.0x  HTF=208.05  → -  inactive_phase
+12:03:03    TITAN        C=4272.60  VWAP=4261.23  EMA=UP  RSI=58  Vol=1.4x  HTF=-  → LONG  inactive_phase
+12:03:04    M&M          C=3441.60  VWAP=3443.93  EMA=--  RSI=44  Vol=0.9x  HTF=3439.55  → -  inactive_phase
+12:03:04    ADANIPORTS   C=1547.80  VWAP=1550.52  EMA=--  RSI=41  Vol=0.4x  HTF=-  → -  inactive_phase
+12:03:05    ONGC         C=272.55  VWAP=273.54  EMA=--  RSI=29  Vol=0.8x  HTF=273.60  → -  inactive_phase
+12:03:05    BAJAJFINSV   C=2054.90  VWAP=2059.43  EMA=--  RSI=48  Vol=0.5x  HTF=2056.55  → -  inactive_phase
+12:03:05    HINDALCO     C=913.45  VWAP=931.71  EMA=--  RSI=25  Vol=0.8x  HTF=932.72  → -  inactive_phase
+12:03:06    SBILIFE      C=2108.80  VWAP=2113.35  EMA=--  RSI=37  Vol=0.2x  HTF=2107.25  → -  inactive_phase
+12:06:02  SCAN #24  12:06:02  phase=MIDDAY  active=False
+12:06:02    HDFCLIFE     C=743.50  VWAP=741.71  EMA=UP  RSI=63  Vol=1.6x  HTF=-  → LONG  inactive_phase
+12:06:02    TATASTEEL    C=206.45  VWAP=208.01  EMA=--  RSI=47  Vol=2.4x  HTF=208.05  → -  inactive_phase
+12:06:03    TITAN        C=4272.80  VWAP=4261.44  EMA=UP  RSI=58  Vol=1.3x  HTF=-  → LONG  inactive_phase
+12:06:03    M&M          C=3441.40  VWAP=3443.92  EMA=--  RSI=44  Vol=0.5x  HTF=3439.55  → -  inactive_phase
+12:06:04    ADANIPORTS   C=1546.60  VWAP=1550.49  EMA=--  RSI=36  Vol=1.7x  HTF=-  → -  inactive_phase
+12:06:04    ONGC         C=272.55  VWAP=273.53  EMA=--  RSI=29  Vol=0.7x  HTF=273.60  → -  inactive_phase
+12:06:05    BAJAJFINSV   C=2055.90  VWAP=2059.42  EMA=--  RSI=52  Vol=0.6x  HTF=2056.55  → -  inactive_phase
+12:06:05    HINDALCO     C=915.10  VWAP=931.23  EMA=--  RSI=38  Vol=1.7x  HTF=932.72  → -  inactive_phase
+12:06:06    SBILIFE      C=2110.00  VWAP=2113.34  EMA=--  RSI=44  Vol=0.2x  HTF=2107.25  → -  inactive_phase
+12:09:02  SCAN #25  12:09:02  phase=MIDDAY  active=False
+12:09:02    HDFCLIFE     C=743.65  VWAP=741.74  EMA=UP  RSI=64  Vol=1.2x  HTF=-  → LONG  inactive_phase
+12:09:02    TATASTEEL    C=206.84  VWAP=207.98  EMA=--  RSI=56  Vol=1.5x  HTF=208.05  → -  inactive_phase
+12:09:03    TITAN        C=4273.50  VWAP=4261.55  EMA=UP  RSI=59  Vol=0.7x  HTF=-  → -  inactive_phase
+12:09:03    M&M          C=3447.40  VWAP=3443.93  EMA=--  RSI=57  Vol=0.5x  HTF=3439.55  → -  inactive_phase
+12:09:04    ADANIPORTS   C=1548.00  VWAP=1550.47  EMA=--  RSI=44  Vol=0.7x  HTF=-  → -  inactive_phase
+12:09:04    ONGC         C=273.05  VWAP=273.53  EMA=--  RSI=50  Vol=1.1x  HTF=273.60  → -  inactive_phase
+12:09:05    BAJAJFINSV   C=2057.60  VWAP=2059.36  EMA=--  RSI=59  Vol=3.3x  HTF=2056.55  → -  inactive_phase
+12:09:05    HINDALCO     C=914.65  VWAP=930.97  EMA=--  RSI=36  Vol=1.0x  HTF=932.72  → -  inactive_phase
+12:09:06    SBILIFE      C=2110.60  VWAP=2113.32  EMA=--  RSI=47  Vol=0.8x  HTF=2107.25  → -  inactive_phase
+12:12:02  SCAN #26  12:12:02  phase=MIDDAY  active=False
+12:12:02    HDFCLIFE     C=743.90  VWAP=741.77  EMA=UP  RSI=66  Vol=1.0x  HTF=-  → -  inactive_phase
+12:12:02    TATASTEEL    C=206.97  VWAP=207.96  EMA=--  RSI=59  Vol=0.8x  HTF=208.05  → -  inactive_phase
+12:12:03    TITAN        C=4271.00  VWAP=4261.66  EMA=UP  RSI=53  Vol=0.8x  HTF=-  → -  inactive_phase
+12:12:03    M&M          C=3446.10  VWAP=3443.95  EMA=--  RSI=54  Vol=0.8x  HTF=3439.55  → -  inactive_phase
+12:12:04    ADANIPORTS   C=1547.70  VWAP=1550.46  EMA=--  RSI=43  Vol=0.6x  HTF=-  → -  inactive_phase
+12:12:04    ONGC         C=272.75  VWAP=273.52  EMA=--  RSI=41  Vol=1.1x  HTF=273.60  → -  inactive_phase
+12:12:05    BAJAJFINSV   C=2057.30  VWAP=2059.35  EMA=UP  RSI=58  Vol=0.7x  HTF=2056.55  → -  inactive_phase
+12:12:06    HINDALCO     C=913.95  VWAP=930.75  EMA=--  RSI=33  Vol=0.8x  HTF=932.72  → -  inactive_phase
+12:12:07    SBILIFE      C=2110.50  VWAP=2113.30  EMA=--  RSI=46  Vol=0.8x  HTF=2107.25  → -  inactive_phase
+12:15:02  SCAN #27  12:15:02  phase=MIDDAY  active=False
+12:15:02    HDFCLIFE     C=743.20  VWAP=741.80  EMA=UP  RSI=56  Vol=1.2x  HTF=-  → LONG  inactive_phase
+12:15:02    TATASTEEL    C=207.00  VWAP=207.95  EMA=--  RSI=59  Vol=0.9x  HTF=208.05  → -  inactive_phase
+12:15:03    TITAN        C=4274.80  VWAP=4261.84  EMA=UP  RSI=60  Vol=1.0x  HTF=-  → LONG  inactive_phase
+12:15:03    M&M          C=3445.90  VWAP=3443.95  EMA=--  RSI=53  Vol=0.4x  HTF=3439.55  → -  inactive_phase
+12:15:04    ADANIPORTS   C=1546.40  VWAP=1550.44  EMA=--  RSI=38  Vol=0.5x  HTF=-  → -  inactive_phase
+12:15:04    ONGC         C=272.75  VWAP=273.52  EMA=--  RSI=41  Vol=0.9x  HTF=273.60  → -  inactive_phase
+12:15:05    BAJAJFINSV   C=2056.00  VWAP=2059.34  EMA=UP  RSI=51  Vol=0.5x  HTF=2056.55  → -  inactive_phase
+12:15:05    HINDALCO     C=914.50  VWAP=930.58  EMA=--  RSI=37  Vol=0.7x  HTF=932.72  → -  inactive_phase
+12:15:06    SBILIFE      C=2110.90  VWAP=2113.29  EMA=--  RSI=48  Vol=0.3x  HTF=2107.25  → -  inactive_phase
+12:18:02  SCAN #28  12:18:02  phase=MIDDAY  active=False
+12:18:02    HDFCLIFE     C=743.70  VWAP=741.81  EMA=UP  RSI=61  Vol=0.7x  HTF=-  → -  inactive_phase
+12:18:02    TATASTEEL    C=207.12  VWAP=207.94  EMA=--  RSI=62  Vol=0.8x  HTF=207.96  → -  inactive_phase
+12:18:03    TITAN        C=4278.80  VWAP=4262.24  EMA=UP  RSI=66  Vol=1.8x  HTF=-  → LONG  inactive_phase
+12:18:03    M&M          C=3453.70  VWAP=3444.04  EMA=UP  RSI=67  Vol=1.3x  HTF=3440.83  → -  inactive_phase
+12:18:04    ADANIPORTS   C=1550.70  VWAP=1550.44  EMA=--  RSI=57  Vol=1.5x  HTF=-  → -  inactive_phase
+12:18:04    ONGC         C=272.95  VWAP=273.51  EMA=--  RSI=49  Vol=1.3x  HTF=273.54  → -  inactive_phase
+12:18:05    BAJAJFINSV   C=2057.70  VWAP=2059.33  EMA=UP  RSI=58  Vol=1.0x  HTF=2056.65  → -  inactive_phase
+12:18:05    HINDALCO     C=916.55  VWAP=930.09  EMA=--  RSI=51  Vol=2.3x  HTF=931.25  → -  inactive_phase
+12:18:06    SBILIFE      C=2115.00  VWAP=2113.29  EMA=--  RSI=66  Vol=0.6x  HTF=2107.95  → -  inactive_phase
+12:21:02  SCAN #29  12:21:02  phase=MIDDAY  active=False
+12:21:02    HDFCLIFE     C=743.70  VWAP=741.83  EMA=UP  RSI=61  Vol=0.7x  HTF=-  → -  inactive_phase
+12:21:02    TATASTEEL    C=207.10  VWAP=207.93  EMA=--  RSI=61  Vol=0.4x  HTF=207.96  → -  inactive_phase
+12:21:03    TITAN        C=4277.10  VWAP=4262.45  EMA=UP  RSI=62  Vol=0.9x  HTF=-  → -  inactive_phase
+12:21:03    M&M          C=3449.80  VWAP=3444.15  EMA=UP  RSI=58  Vol=1.6x  HTF=3440.83  → -  inactive_phase
+12:21:04    ADANIPORTS   C=1550.70  VWAP=1550.44  EMA=--  RSI=57  Vol=1.1x  HTF=-  → -  inactive_phase
+12:21:04    ONGC         C=272.80  VWAP=273.51  EMA=--  RSI=44  Vol=0.8x  HTF=273.54  → -  inactive_phase
+12:21:05    BAJAJFINSV   C=2057.40  VWAP=2059.32  EMA=UP  RSI=56  Vol=0.6x  HTF=2056.65  → -  inactive_phase
+12:21:05    HINDALCO     C=915.95  VWAP=929.95  EMA=--  RSI=47  Vol=0.7x  HTF=931.25  → -  inactive_phase
+12:21:06    SBILIFE      C=2111.50  VWAP=2113.27  EMA=--  RSI=50  Vol=4.2x  HTF=2107.95  → -  inactive_phase
+12:24:02  SCAN #30  12:24:02  phase=MIDDAY  active=False
+12:24:02    HDFCLIFE     C=743.55  VWAP=741.85  EMA=UP  RSI=58  Vol=0.7x  HTF=-  → -  inactive_phase
+12:24:02    TATASTEEL    C=207.04  VWAP=207.91  EMA=--  RSI=59  Vol=1.7x  HTF=207.96  → -  inactive_phase
+12:24:03    TITAN        C=4276.70  VWAP=4262.59  EMA=UP  RSI=60  Vol=0.7x  HTF=-  → -  inactive_phase
+12:24:03    M&M          C=3447.80  VWAP=3444.18  EMA=UP  RSI=53  Vol=0.6x  HTF=3440.83  → -  inactive_phase
+12:24:04    ADANIPORTS   C=1550.10  VWAP=1550.44  EMA=--  RSI=54  Vol=0.9x  HTF=-  → -  inactive_phase
+12:24:04    ONGC         C=272.65  VWAP=273.50  EMA=--  RSI=40  Vol=2.1x  HTF=273.54  → -  inactive_phase
+12:24:05    BAJAJFINSV   C=2057.20  VWAP=2059.32  EMA=UP  RSI=55  Vol=0.6x  HTF=2056.65  → -  inactive_phase
+12:24:05    HINDALCO     C=916.70  VWAP=929.64  EMA=--  RSI=52  Vol=1.7x  HTF=931.25  → -  inactive_phase
+12:24:06    SBILIFE      C=2111.50  VWAP=2113.27  EMA=--  RSI=50  Vol=0.3x  HTF=2107.95  → -  inactive_phase
+12:27:02  SCAN #31  12:27:02  phase=MIDDAY  active=False
+12:27:02    HDFCLIFE     C=743.90  VWAP=741.88  EMA=UP  RSI=62  Vol=1.1x  HTF=-  → LONG  inactive_phase
+12:27:02    TATASTEEL    C=206.90  VWAP=207.90  EMA=--  RSI=53  Vol=0.6x  HTF=207.96  → -  inactive_phase
+12:27:03    TITAN        C=4276.90  VWAP=4262.96  EMA=UP  RSI=61  Vol=1.9x  HTF=-  → LONG  inactive_phase
+12:27:03    M&M          C=3446.50  VWAP=3444.20  EMA=UP  RSI=50  Vol=1.0x  HTF=3440.83  → -  inactive_phase
+12:27:04    ADANIPORTS   C=1549.50  VWAP=1550.43  EMA=--  RSI=51  Vol=0.8x  HTF=-  → -  inactive_phase
+12:27:04    ONGC         C=272.50  VWAP=273.49  EMA=--  RSI=36  Vol=1.3x  HTF=273.54  → -  inactive_phase
+12:27:05    BAJAJFINSV   C=2057.20  VWAP=2059.31  EMA=UP  RSI=55  Vol=0.8x  HTF=2056.65  → -  inactive_phase
+12:27:05    HINDALCO     C=915.30  VWAP=929.57  EMA=--  RSI=44  Vol=0.4x  HTF=931.25  → -  inactive_phase
+12:27:06    SBILIFE      C=2111.40  VWAP=2113.26  EMA=--  RSI=49  Vol=1.0x  HTF=2107.95  → -  inactive_phase
+12:30:02  SCAN #32  12:30:02  phase=MIDDAY  active=False
+12:30:02    HDFCLIFE     C=744.75  VWAP=741.94  EMA=UP  RSI=70  Vol=1.7x  HTF=-  → -  inactive_phase
+12:30:03    TATASTEEL    C=206.91  VWAP=207.89  EMA=--  RSI=54  Vol=0.9x  HTF=207.96  → -  inactive_phase
+12:30:03    TITAN        C=4276.00  VWAP=4263.13  EMA=UP  RSI=58  Vol=0.9x  HTF=-  → -  inactive_phase
+12:30:03    M&M          C=3446.40  VWAP=3444.25  EMA=UP  RSI=50  Vol=1.2x  HTF=3440.83  → -  inactive_phase
+12:30:04    ADANIPORTS   C=1549.10  VWAP=1550.43  EMA=--  RSI=49  Vol=0.8x  HTF=-  → -  inactive_phase
+12:30:04    ONGC         C=272.65  VWAP=273.48  EMA=--  RSI=42  Vol=1.1x  HTF=273.54  → -  inactive_phase
+12:30:05    BAJAJFINSV   C=2057.70  VWAP=2059.31  EMA=UP  RSI=58  Vol=0.4x  HTF=2056.65  → -  inactive_phase
+12:30:05    HINDALCO     C=914.95  VWAP=929.47  EMA=--  RSI=42  Vol=0.5x  HTF=931.25  → -  inactive_phase
+12:30:06    SBILIFE      C=2111.40  VWAP=2113.25  EMA=--  RSI=49  Vol=0.5x  HTF=2107.95  → -  inactive_phase
+12:33:02  SCAN #33  12:33:02  phase=MIDDAY  active=False
+12:33:02    HDFCLIFE     C=744.80  VWAP=742.05  EMA=UP  RSI=71  Vol=2.4x  HTF=-  → -  inactive_phase
+12:33:02    TATASTEEL    C=206.92  VWAP=207.87  EMA=UP  RSI=54  Vol=1.1x  HTF=207.87  → -  inactive_phase
+12:33:03    TITAN        C=4273.80  VWAP=4263.27  EMA=UP  RSI=52  Vol=0.9x  HTF=-  → -  inactive_phase
+12:33:03    M&M          C=3449.00  VWAP=3444.33  EMA=UP  RSI=56  Vol=2.2x  HTF=3441.58  → -  inactive_phase
+12:33:04    ADANIPORTS   C=1548.50  VWAP=1550.42  EMA=--  RSI=46  Vol=0.8x  HTF=-  → -  inactive_phase
+12:33:04    ONGC         C=272.70  VWAP=273.48  EMA=--  RSI=44  Vol=0.8x  HTF=273.46  → -  inactive_phase
+12:33:05    BAJAJFINSV   C=2056.50  VWAP=2059.30  EMA=UP  RSI=50  Vol=0.6x  HTF=2056.64  → -  inactive_phase
+12:33:05    HINDALCO     C=912.70  VWAP=929.26  EMA=--  RSI=33  Vol=1.0x  HTF=929.56  → -  inactive_phase
+12:33:06    SBILIFE      C=2112.10  VWAP=2113.25  EMA=--  RSI=53  Vol=0.5x  HTF=2108.33  → -  inactive_phase
+12:36:02  SCAN #34  12:36:02  phase=MIDDAY  active=False
+12:36:02    HDFCLIFE     C=744.55  VWAP=742.09  EMA=UP  RSI=66  Vol=1.1x  HTF=-  → LONG  inactive_phase
+12:36:02    TATASTEEL    C=207.00  VWAP=207.86  EMA=UP  RSI=57  Vol=0.5x  HTF=207.87  → -  inactive_phase
+12:36:03    TITAN        C=4272.00  VWAP=4263.35  EMA=UP  RSI=47  Vol=0.7x  HTF=-  → -  inactive_phase
+12:36:03    M&M          C=3445.90  VWAP=3444.38  EMA=UP  RSI=48  Vol=1.7x  HTF=3441.58  → -  inactive_phase
+12:36:04    ADANIPORTS   C=1548.20  VWAP=1550.41  EMA=--  RSI=44  Vol=0.6x  HTF=-  → -  inactive_phase
+12:36:04    ONGC         C=272.70  VWAP=273.47  EMA=--  RSI=44  Vol=1.2x  HTF=273.46  → -  inactive_phase
+12:36:05    BAJAJFINSV   C=2057.60  VWAP=2059.25  EMA=UP  RSI=56  Vol=3.7x  HTF=2056.64  → -  inactive_phase
+12:36:05    HINDALCO     C=912.90  VWAP=929.19  EMA=--  RSI=34  Vol=0.3x  HTF=929.56  → -  inactive_phase
+12:36:06    SBILIFE      C=2110.20  VWAP=2113.19  EMA=--  RSI=43  Vol=2.1x  HTF=2108.33  → -  inactive_phase
+12:39:02  SCAN #35  12:39:02  phase=MIDDAY  active=False
+12:39:02    HDFCLIFE     C=744.90  VWAP=742.13  EMA=UP  RSI=69  Vol=1.0x  HTF=-  → LONG  inactive_phase
+12:39:02    TATASTEEL    C=207.14  VWAP=207.85  EMA=UP  RSI=62  Vol=1.5x  HTF=207.87  → -  inactive_phase
+12:39:03    TITAN        C=4275.60  VWAP=4263.50  EMA=UP  RSI=56  Vol=1.0x  HTF=-  → -  inactive_phase
+12:39:03    M&M          C=3449.80  VWAP=3444.41  EMA=UP  RSI=57  Vol=0.7x  HTF=3441.58  → -  inactive_phase
+12:39:04    ADANIPORTS   C=1547.50  VWAP=1550.39  EMA=--  RSI=41  Vol=1.4x  HTF=-  → -  inactive_phase
+12:39:04    ONGC         C=272.60  VWAP=273.47  EMA=--  RSI=41  Vol=1.1x  HTF=273.46  → -  inactive_phase
+12:39:05    BAJAJFINSV   C=2057.50  VWAP=2059.25  EMA=UP  RSI=55  Vol=0.2x  HTF=2056.64  → -  inactive_phase
+12:39:05    HINDALCO     C=913.10  VWAP=929.10  EMA=--  RSI=36  Vol=0.4x  HTF=929.56  → -  inactive_phase
+12:39:06    SBILIFE      C=2109.60  VWAP=2113.18  EMA=--  RSI=41  Vol=0.2x  HTF=2108.33  → -  inactive_phase
+12:42:02  SCAN #36  12:42:02  phase=MIDDAY  active=False
+12:42:02    HDFCLIFE     C=745.15  VWAP=742.18  EMA=UP  RSI=72  Vol=1.1x  HTF=-  → -  inactive_phase
+12:42:02    TATASTEEL    C=207.30  VWAP=207.84  EMA=UP  RSI=67  Vol=1.3x  HTF=207.87  → -  inactive_phase
+12:42:03    TITAN        C=4277.80  VWAP=4263.65  EMA=UP  RSI=61  Vol=0.8x  HTF=-  → -  inactive_phase
+12:42:04    M&M          C=3448.30  VWAP=3444.45  EMA=UP  RSI=53  Vol=1.1x  HTF=3441.58  → -  inactive_phase
+12:42:04    ADANIPORTS   C=1549.40  VWAP=1550.39  EMA=--  RSI=53  Vol=0.6x  HTF=-  → -  inactive_phase
+12:42:04    ONGC         C=272.85  VWAP=273.46  EMA=--  RSI=52  Vol=0.9x  HTF=273.46  → -  inactive_phase
+12:42:05    BAJAJFINSV   C=2057.90  VWAP=2059.25  EMA=UP  RSI=58  Vol=0.6x  HTF=2056.64  → -  inactive_phase
+12:42:05    HINDALCO     C=912.85  VWAP=928.99  EMA=--  RSI=35  Vol=0.5x  HTF=929.56  → -  inactive_phase
+12:42:06    SBILIFE      C=2109.00  VWAP=2113.15  EMA=--  RSI=38  Vol=0.8x  HTF=2108.33  → -  inactive_phase
+12:45:02  SCAN #37  12:45:02  phase=MIDDAY  active=False
+12:45:02    HDFCLIFE     C=745.55  VWAP=742.25  EMA=UP  RSI=75  Vol=1.5x  HTF=-  → -  inactive_phase
+12:45:02    TATASTEEL    C=207.35  VWAP=207.83  EMA=UP  RSI=69  Vol=0.4x  HTF=207.87  → -  inactive_phase
+12:45:03    TITAN        C=4278.70  VWAP=4263.82  EMA=UP  RSI=63  Vol=0.9x  HTF=-  → -  inactive_phase
+12:45:03    M&M          C=3450.30  VWAP=3444.49  EMA=UP  RSI=57  Vol=0.8x  HTF=3441.58  → -  inactive_phase
+12:45:04    ADANIPORTS   C=1550.00  VWAP=1550.38  EMA=--  RSI=56  Vol=1.2x  HTF=-  → -  inactive_phase
+12:45:04    ONGC         C=273.45  VWAP=273.46  EMA=--  RSI=68  Vol=1.8x  HTF=273.46  → -  inactive_phase
+12:45:05    BAJAJFINSV   C=2058.90  VWAP=2059.23  EMA=UP  RSI=64  Vol=3.5x  HTF=2056.64  → -  inactive_phase
+12:45:06    HINDALCO     C=913.45  VWAP=928.89  EMA=--  RSI=40  Vol=0.5x  HTF=929.56  → -  inactive_phase
+12:45:06    SBILIFE      C=2111.30  VWAP=2113.14  EMA=--  RSI=51  Vol=0.4x  HTF=2108.33  → -  inactive_phase
+12:48:02  SCAN #38  12:48:02  phase=MIDDAY  active=False
+12:48:02    HDFCLIFE     C=745.10  VWAP=742.29  EMA=UP  RSI=65  Vol=0.8x  HTF=-  → -  inactive_phase
+12:48:02    TATASTEEL    C=207.03  VWAP=207.83  EMA=UP  RSI=52  Vol=0.8x  HTF=207.79  → -  inactive_phase
+12:48:03    TITAN        C=4277.20  VWAP=4263.94  EMA=UP  RSI=57  Vol=0.7x  HTF=-  → -  inactive_phase
+12:48:03    M&M          C=3450.00  VWAP=3444.53  EMA=UP  RSI=56  Vol=0.8x  HTF=3442.34  → -  inactive_phase
+12:48:04    ADANIPORTS   C=1548.70  VWAP=1550.37  EMA=--  RSI=48  Vol=1.6x  HTF=-  → -  inactive_phase
+12:48:04    ONGC         C=273.05  VWAP=273.46  EMA=--  RSI=54  Vol=1.9x  HTF=273.42  → -  inactive_phase
+12:48:05    BAJAJFINSV   C=2057.70  VWAP=2059.20  EMA=UP  RSI=54  Vol=4.8x  HTF=2056.74  → -  inactive_phase
+12:48:05    HINDALCO     C=913.65  VWAP=928.73  EMA=--  RSI=42  Vol=0.8x  HTF=928.11  → -  inactive_phase
+12:48:06    SBILIFE      C=2108.50  VWAP=2113.13  EMA=--  RSI=40  Vol=0.4x  HTF=2108.35  → -  inactive_phase
+12:51:02  SCAN #39  12:51:02  phase=MIDDAY  active=False
+12:51:02    HDFCLIFE     C=745.40  VWAP=742.31  EMA=UP  RSI=68  Vol=0.3x  HTF=-  → -  inactive_phase
+12:51:02    TATASTEEL    C=207.00  VWAP=207.82  EMA=UP  RSI=51  Vol=0.9x  HTF=207.79  → -  inactive_phase
+12:51:03    TITAN        C=4276.40  VWAP=4264.00  EMA=UP  RSI=55  Vol=0.4x  HTF=-  → -  inactive_phase
+12:51:03    M&M          C=3446.50  VWAP=3444.55  EMA=UP  RSI=47  Vol=0.7x  HTF=3442.34  → -  inactive_phase
+12:51:04    ADANIPORTS   C=1547.80  VWAP=1550.36  EMA=--  RSI=43  Vol=0.9x  HTF=-  → -  inactive_phase
+12:51:04    ONGC         C=272.90  VWAP=273.45  EMA=--  RSI=50  Vol=1.8x  HTF=273.42  → -  inactive_phase
+12:51:05    BAJAJFINSV   C=2058.20  VWAP=2059.20  EMA=UP  RSI=57  Vol=0.2x  HTF=2056.74  → -  inactive_phase
+12:51:05    HINDALCO     C=913.60  VWAP=928.56  EMA=--  RSI=41  Vol=1.0x  HTF=928.11  → -  inactive_phase
+12:51:06    SBILIFE      C=2109.60  VWAP=2113.08  EMA=--  RSI=45  Vol=1.5x  HTF=2108.35  → -  inactive_phase
+12:54:02  SCAN #40  12:54:02  phase=MIDDAY  active=False
+12:54:02    HDFCLIFE     C=744.40  VWAP=742.33  EMA=UP  RSI=51  Vol=0.7x  HTF=-  → -  inactive_phase
+12:54:02    TATASTEEL    C=206.79  VWAP=207.81  EMA=UP  RSI=42  Vol=0.6x  HTF=207.79  → -  inactive_phase
+12:54:03    TITAN        C=4269.60  VWAP=4264.10  EMA=UP  RSI=38  Vol=1.1x  HTF=-  → -  inactive_phase
+12:54:03    M&M          C=3443.40  VWAP=3444.55  EMA=UP  RSI=41  Vol=0.8x  HTF=3442.34  → -  inactive_phase
+12:54:04    ADANIPORTS   C=1548.60  VWAP=1550.36  EMA=--  RSI=48  Vol=0.6x  HTF=-  → -  inactive_phase
+12:54:04    ONGC         C=272.75  VWAP=273.45  EMA=--  RSI=46  Vol=0.9x  HTF=273.42  → -  inactive_phase
+12:54:05    BAJAJFINSV   C=2057.90  VWAP=2059.20  EMA=UP  RSI=54  Vol=0.3x  HTF=2056.74  → -  inactive_phase
+12:54:05    HINDALCO     C=913.10  VWAP=928.45  EMA=--  RSI=38  Vol=0.6x  HTF=928.11  → -  inactive_phase
+12:54:06    SBILIFE      C=2110.40  VWAP=2113.08  EMA=--  RSI=49  Vol=0.2x  HTF=2108.35  → -  inactive_phase
+12:57:02  SCAN #41  12:57:02  phase=MIDDAY  active=False
+12:57:02    HDFCLIFE     C=745.00  VWAP=742.35  EMA=UP  RSI=58  Vol=0.5x  HTF=-  → -  inactive_phase
+12:57:03    TATASTEEL    C=206.99  VWAP=207.79  EMA=UP  RSI=51  Vol=1.3x  HTF=207.79  → -  inactive_phase
+12:57:03    TITAN        C=4269.70  VWAP=4264.17  EMA=UP  RSI=38  Vol=1.1x  HTF=-  → -  inactive_phase
+12:57:04    M&M          C=3445.20  VWAP=3444.56  EMA=UP  RSI=46  Vol=1.0x  HTF=3442.34  → -  inactive_phase
+12:57:04    ADANIPORTS   C=1548.90  VWAP=1550.35  EMA=--  RSI=50  Vol=0.6x  HTF=-  → -  inactive_phase
+12:57:04    ONGC         C=273.25  VWAP=273.44  EMA=UP  RSI=59  Vol=1.0x  HTF=273.42  → -  inactive_phase
+12:57:05    BAJAJFINSV   C=2056.60  VWAP=2059.20  EMA=UP  RSI=45  Vol=0.2x  HTF=2056.74  → -  inactive_phase
+12:57:05    HINDALCO     C=912.30  VWAP=928.32  EMA=--  RSI=33  Vol=0.7x  HTF=928.11  → -  inactive_phase
+12:57:06    SBILIFE      C=2108.10  VWAP=2113.05  EMA=--  RSI=40  Vol=1.0x  HTF=2108.35  → -  inactive_phase
+13:00:02  SCAN #42  13:00:02  phase=MIDDAY  active=False
+13:00:02    HDFCLIFE     C=744.25  VWAP=742.38  EMA=UP  RSI=48  Vol=0.9x  HTF=-  → -  inactive_phase
+13:00:03    TATASTEEL    C=206.96  VWAP=207.79  EMA=UP  RSI=50  Vol=0.4x  HTF=207.79  → -  inactive_phase
+13:00:03    TITAN        C=4265.30  VWAP=4264.19  EMA=DN  RSI=31  Vol=0.6x  HTF=-  → -  inactive_phase
+13:00:03    M&M          C=3440.30  VWAP=3444.53  EMA=DN  RSI=36  Vol=1.2x  HTF=3442.34  → SHORT  inactive_phase
+13:00:04    ADANIPORTS   C=1548.10  VWAP=1550.35  EMA=--  RSI=45  Vol=0.4x  HTF=-  → -  inactive_phase
+13:00:04    ONGC         C=272.80  VWAP=273.44  EMA=UP  RSI=47  Vol=0.8x  HTF=273.42  → -  inactive_phase
+13:00:05    BAJAJFINSV   C=2056.90  VWAP=2059.18  EMA=UP  RSI=47  Vol=1.3x  HTF=2056.74  → -  inactive_phase
+13:00:05    HINDALCO     C=910.60  VWAP=927.94  EMA=--  RSI=25  Vol=2.0x  HTF=928.11  → -  inactive_phase
+13:00:06    SBILIFE      C=2106.20  VWAP=2112.85  EMA=--  RSI=34  Vol=3.9x  HTF=2108.35  → -  inactive_phase
+13:03:02  SCAN #43  13:03:02  phase=MIDDAY  active=False
+13:03:02    HDFCLIFE     C=743.35  VWAP=742.38  EMA=UP  RSI=39  Vol=0.4x  HTF=-  → -  inactive_phase
+13:03:02    TATASTEEL    C=206.90  VWAP=207.79  EMA=UP  RSI=47  Vol=0.2x  HTF=207.71  → -  inactive_phase
+13:03:03    TITAN        C=4265.70  VWAP=4264.21  EMA=--  RSI=32  Vol=0.9x  HTF=-  → -  inactive_phase
+13:03:04    M&M          C=3439.80  VWAP=3444.50  EMA=--  RSI=36  Vol=0.8x  HTF=3442.11  → -  inactive_phase
+13:03:04    ADANIPORTS   C=1547.20  VWAP=1550.33  EMA=--  RSI=40  Vol=1.2x  HTF=-  → -  inactive_phase
+13:03:05    ONGC         C=272.80  VWAP=273.44  EMA=DN  RSI=47  Vol=0.8x  HTF=273.37  → -  inactive_phase
+13:03:05    BAJAJFINSV   C=2057.40  VWAP=2059.17  EMA=UP  RSI=51  Vol=0.2x  HTF=2056.80  → -  inactive_phase
+13:03:06    HINDALCO     C=910.25  VWAP=927.68  EMA=--  RSI=23  Vol=1.3x  HTF=926.49  → -  inactive_phase
+13:03:06    SBILIFE      C=2106.20  VWAP=2112.69  EMA=--  RSI=34  Vol=2.8x  HTF=2108.15  → -  inactive_phase
+13:06:02  SCAN #44  13:06:02  phase=MIDDAY  active=False
+13:06:02    HDFCLIFE     C=743.65  VWAP=742.39  EMA=UP  RSI=43  Vol=0.8x  HTF=-  → -  inactive_phase
+13:06:02    TATASTEEL    C=206.85  VWAP=207.78  EMA=DN  RSI=45  Vol=0.3x  HTF=207.71  → -  inactive_phase
+13:06:03    TITAN        C=4267.90  VWAP=4264.24  EMA=--  RSI=40  Vol=1.0x  HTF=-  → -  inactive_phase
+13:06:04    M&M          C=3441.10  VWAP=3444.48  EMA=--  RSI=40  Vol=0.7x  HTF=3442.11  → -  inactive_phase
+13:06:04    ADANIPORTS   C=1547.50  VWAP=1550.31  EMA=--  RSI=43  Vol=1.3x  HTF=-  → -  inactive_phase
+13:06:05    ONGC         C=272.70  VWAP=273.43  EMA=--  RSI=45  Vol=0.9x  HTF=273.37  → -  inactive_phase
+13:06:05    BAJAJFINSV   C=2057.70  VWAP=2059.17  EMA=UP  RSI=54  Vol=0.6x  HTF=2056.80  → -  inactive_phase
+13:06:06    HINDALCO     C=910.95  VWAP=927.54  EMA=--  RSI=32  Vol=0.8x  HTF=926.49  → -  inactive_phase
+13:06:06    SBILIFE      C=2106.00  VWAP=2112.56  EMA=--  RSI=34  Vol=1.8x  HTF=2108.15  → -  inactive_phase
+13:09:02  SCAN #45  13:09:02  phase=MIDDAY  active=False
+13:09:02    HDFCLIFE     C=744.05  VWAP=742.40  EMA=UP  RSI=48  Vol=0.5x  HTF=-  → -  inactive_phase
+13:09:02    TATASTEEL    C=206.75  VWAP=207.78  EMA=--  RSI=41  Vol=0.6x  HTF=207.71  → -  inactive_phase
+13:09:03    TITAN        C=4265.50  VWAP=4264.25  EMA=--  RSI=35  Vol=0.6x  HTF=-  → -  inactive_phase
+13:09:03    M&M          C=3439.20  VWAP=3444.44  EMA=--  RSI=36  Vol=1.0x  HTF=3442.11  → -  inactive_phase
+13:09:04    ADANIPORTS   C=1548.20  VWAP=1550.30  EMA=--  RSI=48  Vol=1.0x  HTF=-  → -  inactive_phase
+13:09:05    ONGC         C=272.70  VWAP=273.43  EMA=--  RSI=45  Vol=0.6x  HTF=273.37  → -  inactive_phase
+13:09:05    BAJAJFINSV   C=2055.00  VWAP=2059.12  EMA=DN  RSI=36  Vol=1.8x  HTF=2056.80  → -  inactive_phase
+13:09:06    HINDALCO     C=909.90  VWAP=927.26  EMA=--  RSI=27  Vol=1.5x  HTF=926.49  → -  inactive_phase
+13:09:06    SBILIFE      C=2109.50  VWAP=2112.54  EMA=--  RSI=52  Vol=0.4x  HTF=2108.15  → -  inactive_phase
+13:12:02  SCAN #46  13:12:02  phase=MIDDAY  active=False
+13:12:02    HDFCLIFE     C=743.95  VWAP=742.41  EMA=UP  RSI=47  Vol=0.5x  HTF=-  → -  inactive_phase
+13:12:02    TATASTEEL    C=206.85  VWAP=207.77  EMA=--  RSI=46  Vol=0.5x  HTF=207.71  → -  inactive_phase
+13:12:03    TITAN        C=4265.00  VWAP=4264.25  EMA=--  RSI=34  Vol=1.0x  HTF=-  → -  inactive_phase
+13:12:03    M&M          C=3439.60  VWAP=3444.41  EMA=--  RSI=37  Vol=0.7x  HTF=3442.11  → -  inactive_phase
+13:12:04    ADANIPORTS   C=1547.30  VWAP=1550.29  EMA=--  RSI=42  Vol=0.5x  HTF=-  → -  inactive_phase
+13:12:04    ONGC         C=272.80  VWAP=273.43  EMA=--  RSI=48  Vol=0.8x  HTF=273.37  → -  inactive_phase
+13:12:05    BAJAJFINSV   C=2055.00  VWAP=2059.12  EMA=--  RSI=36  Vol=0.2x  HTF=2056.80  → -  inactive_phase
+13:12:05    HINDALCO     C=909.80  VWAP=927.13  EMA=--  RSI=26  Vol=0.7x  HTF=926.49  → -  inactive_phase
+13:12:06    SBILIFE      C=2109.10  VWAP=2112.53  EMA=--  RSI=50  Vol=0.3x  HTF=2108.15  → -  inactive_phase
+13:15:02  SCAN #47  13:15:02  phase=MIDDAY  active=False
+13:15:02    HDFCLIFE     C=743.90  VWAP=742.43  EMA=UP  RSI=46  Vol=1.1x  HTF=-  → LONG  inactive_phase
+13:15:03    TATASTEEL    C=206.70  VWAP=207.77  EMA=--  RSI=40  Vol=0.5x  HTF=207.71  → -  inactive_phase
+13:15:03    TITAN        C=4266.50  VWAP=4264.27  EMA=--  RSI=39  Vol=1.0x  HTF=-  → -  inactive_phase
+13:15:04    M&M          C=3437.00  VWAP=3444.36  EMA=--  RSI=32  Vol=0.8x  HTF=3442.11  → -  inactive_phase
+13:15:04    ADANIPORTS   C=1546.90  VWAP=1550.26  EMA=--  RSI=40  Vol=1.8x  HTF=-  → -  inactive_phase
+13:15:04    ONGC         C=272.65  VWAP=273.42  EMA=--  RSI=44  Vol=0.7x  HTF=273.37  → -  inactive_phase
+13:15:05    BAJAJFINSV   C=2053.60  VWAP=2059.11  EMA=--  RSI=30  Vol=0.4x  HTF=2056.80  → -  inactive_phase
+13:15:05    HINDALCO     C=908.50  VWAP=926.91  EMA=--  RSI=21  Vol=1.1x  HTF=926.49  → -  inactive_phase
+13:15:06    SBILIFE      C=2111.00  VWAP=2112.53  EMA=--  RSI=58  Vol=0.2x  HTF=2108.15  → -  inactive_phase
+13:18:02  SCAN #48  13:18:02  phase=MIDDAY  active=False
+13:18:02    HDFCLIFE     C=742.65  VWAP=742.44  EMA=DN  RSI=34  Vol=2.5x  HTF=-  → -  inactive_phase
+13:18:03    TATASTEEL    C=206.90  VWAP=207.75  EMA=--  RSI=50  Vol=1.3x  HTF=207.64  → -  inactive_phase
+13:18:03    TITAN        C=4267.00  VWAP=4264.28  EMA=--  RSI=41  Vol=1.0x  HTF=-  → -  inactive_phase
+13:18:04    M&M          C=3437.20  VWAP=3444.24  EMA=--  RSI=33  Vol=1.5x  HTF=3441.67  → -  inactive_phase
+13:18:04    ADANIPORTS   C=1547.70  VWAP=1550.25  EMA=--  RSI=47  Vol=1.1x  HTF=-  → -  inactive_phase
+13:18:05    ONGC         C=272.65  VWAP=273.42  EMA=--  RSI=44  Vol=0.7x  HTF=273.30  → -  inactive_phase
+13:18:05    BAJAJFINSV   C=2053.80  VWAP=2059.09  EMA=--  RSI=32  Vol=0.4x  HTF=2056.52  → -  inactive_phase
+13:18:06    HINDALCO     C=908.20  VWAP=926.59  EMA=--  RSI=20  Vol=1.8x  HTF=924.83  → -  inactive_phase
+13:18:06    SBILIFE      C=2110.60  VWAP=2112.53  EMA=--  RSI=56  Vol=0.1x  HTF=2108.37  → -  inactive_phase
+13:21:02  SCAN #49  13:21:02  phase=MIDDAY  active=False
+13:21:02    HDFCLIFE     C=741.80  VWAP=742.42  EMA=--  RSI=28  Vol=1.8x  HTF=-  → -  inactive_phase
+13:21:02    TATASTEEL    C=206.83  VWAP=207.75  EMA=--  RSI=47  Vol=0.6x  HTF=207.64  → -  inactive_phase
+13:21:03    TITAN        C=4264.80  VWAP=4264.28  EMA=--  RSI=36  Vol=0.7x  HTF=-  → -  inactive_phase
+13:21:03    M&M          C=3437.80  VWAP=3444.20  EMA=--  RSI=36  Vol=0.9x  HTF=3441.67  → -  inactive_phase
+13:21:04    ADANIPORTS   C=1550.50  VWAP=1550.24  EMA=--  RSI=63  Vol=2.2x  HTF=-  → -  inactive_phase
+13:21:04    ONGC         C=272.60  VWAP=273.41  EMA=--  RSI=42  Vol=0.9x  HTF=273.30  → -  inactive_phase
+13:21:05    BAJAJFINSV   C=2054.20  VWAP=2059.07  EMA=--  RSI=36  Vol=0.8x  HTF=2056.52  → -  inactive_phase
+13:21:05    HINDALCO     C=907.70  VWAP=926.40  EMA=--  RSI=19  Vol=1.0x  HTF=924.83  → -  inactive_phase
+13:21:06    SBILIFE      C=2113.90  VWAP=2112.53  EMA=UP  RSI=66  Vol=0.4x  HTF=2108.37  → -  inactive_phase
+13:24:02  SCAN #50  13:24:02  phase=MIDDAY  active=False
+13:24:02    HDFCLIFE     C=741.90  VWAP=742.42  EMA=--  RSI=29  Vol=0.6x  HTF=-  → -  inactive_phase
+13:24:02    TATASTEEL    C=206.97  VWAP=207.75  EMA=--  RSI=54  Vol=0.6x  HTF=207.64  → -  inactive_phase
+13:24:03    TITAN        C=4260.00  VWAP=4264.26  EMA=--  RSI=27  Vol=1.0x  HTF=-  → -  inactive_phase
+13:24:03    M&M          C=3438.20  VWAP=3444.15  EMA=--  RSI=37  Vol=0.8x  HTF=3441.67  → -  inactive_phase
+13:24:04    ADANIPORTS   C=1548.50  VWAP=1550.23  EMA=--  RSI=51  Vol=1.3x  HTF=-  → -  inactive_phase
+13:24:04    ONGC         C=272.60  VWAP=273.41  EMA=--  RSI=42  Vol=0.7x  HTF=273.30  → -  inactive_phase
+13:24:05    BAJAJFINSV   C=2052.00  VWAP=2058.96  EMA=--  RSI=26  Vol=2.5x  HTF=2056.52  → -  inactive_phase
+13:24:05    HINDALCO     C=909.30  VWAP=926.13  EMA=--  RSI=37  Vol=1.6x  HTF=924.83  → -  inactive_phase
+13:24:06    SBILIFE      C=2112.20  VWAP=2112.53  EMA=UP  RSI=58  Vol=0.3x  HTF=2108.37  → -  inactive_phase
+13:27:02  SCAN #51  13:27:02  phase=MIDDAY  active=False
+13:27:02    HDFCLIFE     C=741.45  VWAP=742.41  EMA=--  RSI=26  Vol=0.8x  HTF=-  → -  inactive_phase
+13:27:02    TATASTEEL    C=207.40  VWAP=207.74  EMA=UP  RSI=68  Vol=1.1x  HTF=207.64  → -  inactive_phase
+13:27:03    TITAN        C=4259.90  VWAP=4264.21  EMA=--  RSI=27  Vol=1.1x  HTF=-  → -  inactive_phase
+13:27:03    M&M          C=3440.80  VWAP=3444.13  EMA=--  RSI=48  Vol=0.7x  HTF=3441.67  → -  inactive_phase
+13:27:04    ADANIPORTS   C=1545.70  VWAP=1550.20  EMA=--  RSI=39  Vol=1.5x  HTF=-  → -  inactive_phase
+13:27:04    ONGC         C=272.70  VWAP=273.41  EMA=--  RSI=47  Vol=1.1x  HTF=273.30  → -  inactive_phase
+13:27:05    BAJAJFINSV   C=2050.00  VWAP=2057.63  EMA=--  RSI=20  Vol=11.6x  HTF=2056.52  → -  inactive_phase
+13:27:05    HINDALCO     C=910.05  VWAP=925.93  EMA=--  RSI=44  Vol=1.2x  HTF=924.83  → -  inactive_phase
+13:27:06    SBILIFE      C=2113.10  VWAP=2112.53  EMA=UP  RSI=61  Vol=0.5x  HTF=2108.37  → -  inactive_phase
+13:30:02  SCAN #52  13:30:02  phase=MIDDAY  active=False
+13:30:02    HDFCLIFE     C=742.30  VWAP=742.40  EMA=--  RSI=40  Vol=0.8x  HTF=-  → -  inactive_phase
+13:30:02    TATASTEEL    C=207.81  VWAP=207.74  EMA=UP  RSI=76  Vol=0.6x  HTF=207.64  → -  inactive_phase
+13:30:03    TITAN        C=4263.00  VWAP=4264.20  EMA=--  RSI=39  Vol=1.1x  HTF=-  → -  inactive_phase
+13:30:03    M&M          C=3441.40  VWAP=3444.11  EMA=--  RSI=50  Vol=0.6x  HTF=3441.67  → -  inactive_phase
+13:30:04    ADANIPORTS   C=1547.00  VWAP=1550.19  EMA=--  RSI=45  Vol=1.0x  HTF=-  → -  inactive_phase
+13:30:04    ONGC         C=272.95  VWAP=273.40  EMA=--  RSI=58  Vol=0.8x  HTF=273.30  → -  inactive_phase
+13:30:05    BAJAJFINSV   C=2050.00  VWAP=2057.36  EMA=--  RSI=20  Vol=2.3x  HTF=2056.52  → -  inactive_phase
+13:30:05    HINDALCO     C=909.60  VWAP=925.65  EMA=--  RSI=41  Vol=1.7x  HTF=924.83  → -  inactive_phase
+13:30:06    SBILIFE      C=2113.50  VWAP=2112.53  EMA=UP  RSI=62  Vol=0.7x  HTF=2108.37  → -  inactive_phase
+13:33:02  SCAN #53  13:33:02  phase=MIDDAY  active=False
+13:33:02    HDFCLIFE     C=741.85  VWAP=742.38  EMA=--  RSI=36  Vol=2.5x  HTF=-  → -  inactive_phase
+13:33:02    TATASTEEL    C=207.75  VWAP=207.74  EMA=UP  RSI=73  Vol=1.0x  HTF=207.65  → -  inactive_phase
+13:33:03    TITAN        C=4261.70  VWAP=4264.19  EMA=--  RSI=36  Vol=0.8x  HTF=-  → -  inactive_phase
+13:33:04    M&M          C=3439.00  VWAP=3444.08  EMA=--  RSI=42  Vol=1.0x  HTF=3441.42  → -  inactive_phase
+13:33:04    ADANIPORTS   C=1546.50  VWAP=1550.18  EMA=--  RSI=43  Vol=0.5x  HTF=-  → -  inactive_phase
+13:33:04    ONGC         C=273.20  VWAP=273.40  EMA=UP  RSI=65  Vol=1.6x  HTF=273.29  → -  inactive_phase
+13:33:05    BAJAJFINSV   C=2051.00  VWAP=2057.31  EMA=--  RSI=30  Vol=0.6x  HTF=2056.02  → -  inactive_phase
+13:33:05    HINDALCO     C=910.70  VWAP=925.35  EMA=--  RSI=50  Vol=1.9x  HTF=923.54  → -  inactive_phase
+13:33:06    SBILIFE      C=2104.80  VWAP=2112.47  EMA=DN  RSI=34  Vol=1.6x  HTF=2108.05  → -  inactive_phase
+13:36:02  SCAN #54  13:36:02  phase=MIDDAY  active=False
+13:36:02    HDFCLIFE     C=741.55  VWAP=742.38  EMA=--  RSI=33  Vol=0.2x  HTF=-  → -  inactive_phase
+13:36:03    TATASTEEL    C=207.79  VWAP=207.74  EMA=UP  RSI=74  Vol=0.5x  HTF=207.65  → -  inactive_phase
+13:36:03    TITAN        C=4259.90  VWAP=4264.15  EMA=--  RSI=33  Vol=1.0x  HTF=-  → -  inactive_phase
+13:36:03    M&M          C=3438.90  VWAP=3444.06  EMA=--  RSI=42  Vol=0.5x  HTF=3441.42  → -  inactive_phase
+13:36:04    ADANIPORTS   C=1543.90  VWAP=1550.10  EMA=--  RSI=34  Vol=2.5x  HTF=-  → -  inactive_phase
+13:36:04    ONGC         C=272.95  VWAP=273.40  EMA=UP  RSI=54  Vol=1.2x  HTF=273.29  → -  inactive_phase
+13:36:05    BAJAJFINSV   C=2050.00  VWAP=2057.26  EMA=--  RSI=26  Vol=0.4x  HTF=2056.02  → -  inactive_phase
+13:36:05    HINDALCO     C=910.25  VWAP=925.27  EMA=--  RSI=47  Vol=0.6x  HTF=923.54  → -  inactive_phase
+13:36:06    SBILIFE      C=2101.00  VWAP=2112.36  EMA=--  RSI=28  Vol=1.4x  HTF=2108.05  → -  inactive_phase
+13:39:02  SCAN #55  13:39:02  phase=MIDDAY  active=False
+13:39:02    HDFCLIFE     C=742.75  VWAP=742.38  EMA=--  RSI=49  Vol=0.5x  HTF=-  → -  inactive_phase
+13:39:03    TATASTEEL    C=207.90  VWAP=207.74  EMA=UP  RSI=76  Vol=0.9x  HTF=207.65  → -  inactive_phase
+13:39:03    TITAN        C=4265.00  VWAP=4264.14  EMA=--  RSI=49  Vol=0.8x  HTF=-  → -  inactive_phase
+13:39:04    M&M          C=3438.50  VWAP=3444.02  EMA=--  RSI=40  Vol=1.1x  HTF=3441.42  → -  inactive_phase
+13:39:04    ADANIPORTS   C=1544.90  VWAP=1550.09  EMA=--  RSI=40  Vol=0.4x  HTF=-  → -  inactive_phase
+13:39:05    ONGC         C=273.15  VWAP=273.39  EMA=UP  RSI=60  Vol=1.0x  HTF=273.29  → -  inactive_phase
+13:39:05    BAJAJFINSV   C=2049.30  VWAP=2057.25  EMA=--  RSI=24  Vol=0.1x  HTF=2056.02  → -  inactive_phase
+13:39:06    HINDALCO     C=911.45  VWAP=925.16  EMA=--  RSI=56  Vol=0.7x  HTF=923.54  → -  inactive_phase
+13:39:06    SBILIFE      C=2102.50  VWAP=2112.27  EMA=--  RSI=33  Vol=1.1x  HTF=2108.05  → -  inactive_phase
+13:42:02  SCAN #56  13:42:02  phase=MIDDAY  active=False
+13:42:02    HDFCLIFE     C=742.45  VWAP=742.38  EMA=--  RSI=46  Vol=0.5x  HTF=-  → -  inactive_phase
+13:42:02    TATASTEEL    C=207.88  VWAP=207.74  EMA=UP  RSI=74  Vol=0.6x  HTF=207.65  → -  inactive_phase
+13:42:03    TITAN        C=4264.80  VWAP=4264.15  EMA=--  RSI=48  Vol=0.9x  HTF=-  → -  inactive_phase
+13:42:03    M&M          C=3439.50  VWAP=3443.98  EMA=--  RSI=45  Vol=1.1x  HTF=3441.42  → -  inactive_phase
+13:42:04    ADANIPORTS   C=1543.40  VWAP=1550.05  EMA=--  RSI=35  Vol=1.1x  HTF=-  → -  inactive_phase
+13:42:04    ONGC         C=273.00  VWAP=273.39  EMA=UP  RSI=54  Vol=0.8x  HTF=273.29  → -  inactive_phase
+13:42:05    BAJAJFINSV   C=2049.50  VWAP=2057.18  EMA=--  RSI=26  Vol=0.5x  HTF=2056.02  → -  inactive_phase
+13:42:05    HINDALCO     C=913.50  VWAP=924.95  EMA=--  RSI=66  Vol=1.6x  HTF=923.54  → -  inactive_phase
+13:42:06    SBILIFE      C=2102.10  VWAP=2112.25  EMA=--  RSI=33  Vol=0.3x  HTF=2108.05  → -  inactive_phase
+13:45:02  SCAN #57  13:45:02  phase=MIDDAY  active=False
+13:45:02    HDFCLIFE     C=741.90  VWAP=742.38  EMA=--  RSI=41  Vol=1.3x  HTF=-  → -  inactive_phase
+13:45:02    TATASTEEL    C=207.96  VWAP=207.74  EMA=UP  RSI=76  Vol=0.8x  HTF=207.65  → -  inactive_phase
+13:45:03    TITAN        C=4267.30  VWAP=4264.17  EMA=--  RSI=55  Vol=0.9x  HTF=-  → -  inactive_phase
+13:45:03    M&M          C=3441.20  VWAP=3443.96  EMA=--  RSI=53  Vol=1.0x  HTF=3441.42  → -  inactive_phase
+13:45:04    ADANIPORTS   C=1545.80  VWAP=1550.03  EMA=--  RSI=47  Vol=0.8x  HTF=-  → -  inactive_phase
+13:45:04    ONGC         C=273.65  VWAP=273.40  EMA=UP  RSI=69  Vol=2.6x  HTF=273.29  → LONG  inactive_phase
+13:45:05    BAJAJFINSV   C=2050.00  VWAP=2057.13  EMA=--  RSI=31  Vol=0.5x  HTF=2056.02  → -  inactive_phase
+13:45:05    HINDALCO     C=913.70  VWAP=924.83  EMA=--  RSI=67  Vol=0.9x  HTF=923.54  → -  inactive_phase
+13:45:06    SBILIFE      C=2105.90  VWAP=2112.23  EMA=--  RSI=45  Vol=0.4x  HTF=2108.05  → -  inactive_phase
+13:48:02  SCAN #58  13:48:02  phase=MIDDAY  active=False
+13:48:02    HDFCLIFE     C=741.80  VWAP=742.38  EMA=--  RSI=40  Vol=0.6x  HTF=-  → -  inactive_phase
+13:48:02    TATASTEEL    C=208.17  VWAP=207.75  EMA=UP  RSI=80  Vol=1.6x  HTF=207.69  → -  inactive_phase
+13:48:03    TITAN        C=4269.10  VWAP=4264.20  EMA=--  RSI=59  Vol=0.8x  HTF=-  → -  inactive_phase
+13:48:03    M&M          C=3440.20  VWAP=3443.95  EMA=--  RSI=48  Vol=0.8x  HTF=3441.31  → -  inactive_phase
+13:48:04    ADANIPORTS   C=1546.70  VWAP=1550.02  EMA=--  RSI=50  Vol=0.6x  HTF=-  → -  inactive_phase
+13:48:04    ONGC         C=273.70  VWAP=273.40  EMA=UP  RSI=70  Vol=1.6x  HTF=273.33  → -  inactive_phase
+13:48:05    BAJAJFINSV   C=2050.80  VWAP=2057.09  EMA=--  RSI=39  Vol=0.4x  HTF=2055.55  → -  inactive_phase
+13:48:05    HINDALCO     C=913.15  VWAP=924.62  EMA=UP  RSI=62  Vol=1.6x  HTF=922.60  → -  inactive_phase
+13:48:06    SBILIFE      C=2108.40  VWAP=2112.22  EMA=--  RSI=52  Vol=0.3x  HTF=2108.08  → -  inactive_phase
+13:51:02  SCAN #59  13:51:02  phase=MIDDAY  active=False
+13:51:02    HDFCLIFE     C=742.35  VWAP=742.37  EMA=--  RSI=47  Vol=1.3x  HTF=-  → -  inactive_phase
+13:51:02    TATASTEEL    C=208.10  VWAP=207.75  EMA=UP  RSI=75  Vol=0.7x  HTF=207.69  → -  inactive_phase
+13:51:03    TITAN        C=4270.70  VWAP=4264.24  EMA=--  RSI=63  Vol=0.8x  HTF=-  → -  inactive_phase
+13:51:03    M&M          C=3441.20  VWAP=3443.93  EMA=--  RSI=53  Vol=0.7x  HTF=3441.31  → -  inactive_phase
+13:51:04    ADANIPORTS   C=1547.90  VWAP=1550.01  EMA=--  RSI=55  Vol=0.9x  HTF=-  → -  inactive_phase
+13:51:04    ONGC         C=273.55  VWAP=273.40  EMA=UP  RSI=64  Vol=1.2x  HTF=273.33  → LONG  inactive_phase
+13:51:05    BAJAJFINSV   C=2050.40  VWAP=2057.07  EMA=--  RSI=37  Vol=0.2x  HTF=2055.55  → -  inactive_phase
+13:51:05    HINDALCO     C=914.10  VWAP=924.54  EMA=UP  RSI=67  Vol=0.7x  HTF=922.60  → -  inactive_phase
+13:51:06    SBILIFE      C=2114.90  VWAP=2112.22  EMA=--  RSI=65  Vol=0.8x  HTF=2108.08  → -  inactive_phase
+13:54:02  SCAN #60  13:54:02  phase=MIDDAY  active=False
+13:54:02    HDFCLIFE     C=742.60  VWAP=742.37  EMA=--  RSI=50  Vol=0.6x  HTF=-  → -  inactive_phase
+13:54:02    TATASTEEL    C=208.00  VWAP=207.75  EMA=UP  RSI=69  Vol=0.6x  HTF=207.69  → -  inactive_phase
+13:54:03    TITAN        C=4268.80  VWAP=4264.28  EMA=--  RSI=56  Vol=0.7x  HTF=-  → -  inactive_phase
+13:54:03    M&M          C=3441.60  VWAP=3443.92  EMA=--  RSI=55  Vol=0.8x  HTF=3441.31  → -  inactive_phase
+13:54:04    ADANIPORTS   C=1548.00  VWAP=1549.99  EMA=--  RSI=56  Vol=1.4x  HTF=-  → -  inactive_phase
+13:54:04    ONGC         C=273.75  VWAP=273.40  EMA=UP  RSI=68  Vol=1.4x  HTF=273.33  → LONG  inactive_phase
+13:54:05    BAJAJFINSV   C=2050.50  VWAP=2057.07  EMA=--  RSI=38  Vol=0.0x  HTF=2055.55  → -  inactive_phase
+13:54:05    HINDALCO     C=914.30  VWAP=924.46  EMA=UP  RSI=68  Vol=0.8x  HTF=922.60  → -  inactive_phase
+13:54:06    SBILIFE      C=2115.50  VWAP=2112.24  EMA=UP  RSI=66  Vol=0.7x  HTF=2108.08  → -  inactive_phase
+13:57:02  SCAN #61  13:57:02  phase=MIDDAY  active=False
+13:57:02    HDFCLIFE     C=742.50  VWAP=742.37  EMA=--  RSI=49  Vol=0.3x  HTF=-  → -  inactive_phase
+13:57:02    TATASTEEL    C=207.84  VWAP=207.75  EMA=UP  RSI=60  Vol=1.0x  HTF=207.69  → LONG  inactive_phase
+13:57:03    TITAN        C=4269.10  VWAP=4264.33  EMA=UP  RSI=57  Vol=1.3x  HTF=-  → LONG  inactive_phase
+13:57:03    M&M          C=3443.20  VWAP=3443.91  EMA=--  RSI=61  Vol=1.1x  HTF=3441.31  → -  inactive_phase
+13:57:04    ADANIPORTS   C=1546.40  VWAP=1549.98  EMA=--  RSI=48  Vol=0.5x  HTF=-  → -  inactive_phase
+13:57:04    ONGC         C=273.65  VWAP=273.41  EMA=UP  RSI=64  Vol=1.4x  HTF=273.33  → LONG  inactive_phase
+13:57:05    BAJAJFINSV   C=2049.90  VWAP=2057.03  EMA=--  RSI=34  Vol=0.4x  HTF=2055.55  → -  inactive_phase
+13:57:05    HINDALCO     C=915.00  VWAP=924.37  EMA=UP  RSI=71  Vol=0.8x  HTF=922.60  → -  inactive_phase
+13:57:06    SBILIFE      C=2113.20  VWAP=2112.25  EMA=UP  RSI=59  Vol=1.4x  HTF=2108.08  → LONG  inactive_phase
+14:00:02  PHASE  MIDDAY → ACTIVE_PM
+14:00:02  SCAN #62  14:00:02  phase=ACTIVE_PM  active=True
+14:00:03    HDFCLIFE     C=742.55  VWAP=742.37  EMA=--  RSI=50  Vol=0.4x  HTF=-  → -  
+14:00:03    TATASTEEL    C=207.77  VWAP=207.75  EMA=UP  RSI=56  Vol=0.7x  HTF=207.69  → -  
+14:00:04    TITAN        C=4266.80  VWAP=4264.35  EMA=UP  RSI=49  Vol=0.5x  HTF=-  → -  
+14:00:04    M&M          C=3441.40  VWAP=3443.90  EMA=--  RSI=52  Vol=1.0x  HTF=3441.31  → -  
+14:00:05    ADANIPORTS   C=1545.40  VWAP=1549.97  EMA=--  RSI=44  Vol=0.7x  HTF=-  → -  
+14:00:06    ONGC         C=273.80  VWAP=273.41  EMA=UP  RSI=67  Vol=1.3x  HTF=273.33  → ★ LONG  SL=273.39  TP=274.42  Qty=913
+14:00:07    BAJAJFINSV   C=2048.60  VWAP=2057.02  EMA=--  RSI=27  Vol=0.1x  HTF=2055.55  → -  
+14:00:07    HINDALCO     C=914.00  VWAP=924.29  EMA=UP  RSI=61  Vol=0.8x  HTF=922.60  → -  
+14:00:08    SBILIFE      C=2112.70  VWAP=2112.25  EMA=UP  RSI=57  Vol=0.6x  HTF=2108.08  → -  
+14:03:02  SCAN #63  14:03:02  phase=ACTIVE_PM  active=True
+14:03:02    HDFCLIFE     C=742.05  VWAP=742.37  EMA=--  RSI=43  Vol=0.4x  HTF=-  → -  
+14:03:02    TATASTEEL    C=207.43  VWAP=207.75  EMA=UP  RSI=42  Vol=1.1x  HTF=207.67  → -  
+14:03:03    TITAN        C=4265.10  VWAP=4264.36  EMA=DN  RSI=44  Vol=1.1x  HTF=-  → -  
+14:03:04    M&M          C=3440.80  VWAP=3443.86  EMA=--  RSI=49  Vol=1.8x  HTF=3441.27  → -  
+14:03:04    ADANIPORTS   C=1544.50  VWAP=1549.95  EMA=--  RSI=40  Vol=0.7x  HTF=-  → -  
+14:03:04    ONGC         C=273.60  VWAP=273.41  EMA=UP  RSI=59  Vol=0.9x  HTF=273.35  → -  in_position
+14:03:05    BAJAJFINSV   C=2047.60  VWAP=2056.97  EMA=--  RSI=23  Vol=0.4x  HTF=2054.82  → -  
+14:03:05    HINDALCO     C=911.40  VWAP=924.14  EMA=UP  RSI=43  Vol=1.1x  HTF=921.58  → -  
+14:03:06    SBILIFE      C=2111.90  VWAP=2112.25  EMA=UP  RSI=55  Vol=0.1x  HTF=2108.43  → -  
+14:06:02  SCAN #64  14:06:02  phase=ACTIVE_PM  active=True
+14:06:02    HDFCLIFE     C=741.90  VWAP=742.37  EMA=--  RSI=41  Vol=0.7x  HTF=-  → -  
+14:06:02    TATASTEEL    C=207.38  VWAP=207.75  EMA=UP  RSI=40  Vol=1.2x  HTF=207.67  → -  
+14:06:03    TITAN        C=4258.70  VWAP=4264.34  EMA=--  RSI=31  Vol=0.9x  HTF=-  → -  
+14:06:03    M&M          C=3441.60  VWAP=3443.82  EMA=--  RSI=53  Vol=1.3x  HTF=3441.27  → -  
+14:06:04    ADANIPORTS   C=1542.30  VWAP=1549.88  EMA=--  RSI=33  Vol=1.8x  HTF=-  → -  
+14:06:04  BRACKET  ONGC         SL hit — position closed
+14:06:04    ONGC         C=273.20  VWAP=273.41  EMA=UP  RSI=47  Vol=1.5x  HTF=273.35  → -  cooldown_until_14:15
+14:06:05    BAJAJFINSV   C=2048.00  VWAP=2056.90  EMA=--  RSI=28  Vol=0.6x  HTF=2054.82  → -  
+14:06:05    HINDALCO     C=911.40  VWAP=923.95  EMA=UP  RSI=43  Vol=1.3x  HTF=921.58  → -  
+14:06:06    SBILIFE      C=2110.90  VWAP=2112.25  EMA=UP  RSI=52  Vol=0.7x  HTF=2108.43  → -  
+14:09:02  SCAN #65  14:09:02  phase=ACTIVE_PM  active=True
+14:09:02    HDFCLIFE     C=742.70  VWAP=742.37  EMA=--  RSI=53  Vol=0.8x  HTF=-  → -  
+14:09:02    TATASTEEL    C=207.57  VWAP=207.74  EMA=UP  RSI=49  Vol=0.5x  HTF=207.67  → -  
+14:09:03    TITAN        C=4260.00  VWAP=4264.32  EMA=--  RSI=36  Vol=0.8x  HTF=-  → -  
+14:09:03    M&M          C=3443.80  VWAP=3443.82  EMA=UP  RSI=62  Vol=1.2x  HTF=3441.27  → -  
+14:09:04    ADANIPORTS   C=1544.70  VWAP=1549.86  EMA=--  RSI=45  Vol=0.7x  HTF=-  → -  
+14:09:04    ONGC         C=273.50  VWAP=273.41  EMA=UP  RSI=55  Vol=1.1x  HTF=273.35  → LONG  cooldown_until_14:15
+14:09:05    BAJAJFINSV   C=2049.30  VWAP=2056.86  EMA=--  RSI=41  Vol=0.4x  HTF=2054.82  → -  
+14:09:06    HINDALCO     C=909.10  VWAP=923.61  EMA=DN  RSI=33  Vol=2.2x  HTF=921.58  → ★ SHORT  SL=910.95  TP=906.33  Qty=270
+14:09:07    SBILIFE      C=2112.30  VWAP=2112.25  EMA=UP  RSI=56  Vol=0.5x  HTF=2108.43  → -  
+14:12:02  SCAN #66  14:12:02  phase=ACTIVE_PM  active=True
+14:12:02    HDFCLIFE     C=742.45  VWAP=742.37  EMA=--  RSI=50  Vol=0.5x  HTF=-  → -  
+14:12:02    TATASTEEL    C=207.50  VWAP=207.74  EMA=UP  RSI=46  Vol=0.5x  HTF=207.67  → -  
+14:12:03    TITAN        C=4260.00  VWAP=4264.25  EMA=--  RSI=36  Vol=2.0x  HTF=-  → -  
+14:12:03    M&M          C=3444.00  VWAP=3443.82  EMA=UP  RSI=62  Vol=0.8x  HTF=3441.27  → -  
+14:12:04    ADANIPORTS   C=1544.50  VWAP=1549.85  EMA=--  RSI=44  Vol=0.4x  HTF=-  → -  
+14:12:04    ONGC         C=273.25  VWAP=273.41  EMA=UP  RSI=48  Vol=0.8x  HTF=273.35  → -  cooldown_until_14:15
+14:12:05    BAJAJFINSV   C=2048.60  VWAP=2056.81  EMA=--  RSI=37  Vol=0.4x  HTF=2054.82  → -  
+14:12:05  BRACKET  HINDALCO     SL hit — position closed
+14:12:05    HINDALCO     C=910.70  VWAP=923.51  EMA=--  RSI=44  Vol=0.6x  HTF=921.58  → -  cooldown_until_14:24
+14:12:06    SBILIFE      C=2110.90  VWAP=2112.25  EMA=UP  RSI=51  Vol=0.5x  HTF=2108.43  → -  
+14:15:02  SCAN #67  14:15:02  phase=ACTIVE_PM  active=True
+14:15:02    HDFCLIFE     C=742.60  VWAP=742.37  EMA=--  RSI=52  Vol=0.9x  HTF=-  → -  
+14:15:02    TATASTEEL    C=207.63  VWAP=207.74  EMA=UP  RSI=52  Vol=0.4x  HTF=207.67  → -  
+14:15:03    TITAN        C=4260.30  VWAP=4264.15  EMA=--  RSI=37  Vol=3.7x  HTF=-  → -  
+14:15:03    M&M          C=3446.30  VWAP=3443.84  EMA=UP  RSI=70  Vol=1.8x  HTF=3441.27  → -  
+14:15:04    ADANIPORTS   C=1544.10  VWAP=1549.82  EMA=--  RSI=43  Vol=0.8x  HTF=-  → -  
+14:15:04    ONGC         C=273.80  VWAP=273.41  EMA=UP  RSI=60  Vol=0.9x  HTF=273.35  → -  
+14:15:05    BAJAJFINSV   C=2049.00  VWAP=2056.76  EMA=--  RSI=41  Vol=0.5x  HTF=2054.82  → -  
+14:15:05    HINDALCO     C=910.65  VWAP=923.36  EMA=--  RSI=43  Vol=1.1x  HTF=921.58  → -  cooldown_until_14:24
+14:15:07    SBILIFE      C=2114.80  VWAP=2112.26  EMA=UP  RSI=61  Vol=3.4x  HTF=2108.43  → ★ LONG  SL=2111.27  TP=2120.09  Qty=118
+14:18:02  SCAN #68  14:18:02  phase=ACTIVE_PM  active=True
+14:18:02    HDFCLIFE     C=742.75  VWAP=742.37  EMA=--  RSI=54  Vol=0.6x  HTF=-  → -  
+14:18:02    TATASTEEL    C=207.38  VWAP=207.74  EMA=UP  RSI=42  Vol=0.8x  HTF=207.64  → -  
+14:18:03    TITAN        C=4259.80  VWAP=4264.12  EMA=--  RSI=35  Vol=0.9x  HTF=-  → -  
+14:18:03    M&M          C=3445.70  VWAP=3443.86  EMA=UP  RSI=66  Vol=1.2x  HTF=3441.67  → -  
+14:18:04    ADANIPORTS   C=1542.60  VWAP=1549.77  EMA=--  RSI=37  Vol=1.4x  HTF=-  → -  
+14:18:05    ONGC         C=273.85  VWAP=273.42  EMA=UP  RSI=61  Vol=2.4x  HTF=273.40  → ★ LONG  SL=273.40  TP=274.52  Qty=912
+14:18:06    BAJAJFINSV   C=2049.60  VWAP=2056.68  EMA=--  RSI=46  Vol=0.7x  HTF=2054.35  → -  
+14:18:06    HINDALCO     C=909.50  VWAP=923.20  EMA=--  RSI=38  Vol=1.0x  HTF=920.48  → -  cooldown_until_14:24
+14:18:07    SBILIFE      C=2113.60  VWAP=2112.28  EMA=UP  RSI=57  Vol=1.3x  HTF=2108.90  → LONG  in_position
+14:21:02  SCAN #69  14:21:02  phase=ACTIVE_PM  active=True
+14:21:02    HDFCLIFE     C=742.70  VWAP=742.37  EMA=--  RSI=53  Vol=0.7x  HTF=-  → -  
+14:21:02    TATASTEEL    C=207.51  VWAP=207.74  EMA=UP  RSI=48  Vol=0.6x  HTF=207.64  → -  
+14:21:03    TITAN        C=4261.30  VWAP=4264.10  EMA=--  RSI=42  Vol=0.7x  HTF=-  → -  
+14:21:03    M&M          C=3447.40  VWAP=3443.88  EMA=UP  RSI=71  Vol=1.1x  HTF=3441.67  → -  
+14:21:04    ADANIPORTS   C=1543.00  VWAP=1549.75  EMA=--  RSI=39  Vol=0.7x  HTF=-  → -  
+14:21:04    ONGC         C=273.75  VWAP=273.43  EMA=UP  RSI=58  Vol=1.9x  HTF=273.40  → LONG  in_position
+14:21:05    BAJAJFINSV   C=2049.80  VWAP=2056.66  EMA=--  RSI=48  Vol=0.2x  HTF=2054.35  → -  
+14:21:05    HINDALCO     C=909.55  VWAP=923.10  EMA=--  RSI=38  Vol=0.7x  HTF=920.48  → -  cooldown_until_14:24
+14:21:06    SBILIFE      C=2114.00  VWAP=2112.28  EMA=UP  RSI=58  Vol=0.4x  HTF=2108.90  → -  in_position
+14:24:02  SCAN #70  14:24:02  phase=ACTIVE_PM  active=True
+14:24:02    HDFCLIFE     C=743.00  VWAP=742.37  EMA=--  RSI=58  Vol=0.5x  HTF=-  → -  
+14:24:02    TATASTEEL    C=207.60  VWAP=207.74  EMA=UP  RSI=52  Vol=0.3x  HTF=207.64  → -  
+14:24:03    TITAN        C=4262.50  VWAP=4264.09  EMA=--  RSI=47  Vol=1.0x  HTF=-  → -  
+14:24:03    M&M          C=3447.20  VWAP=3443.90  EMA=UP  RSI=70  Vol=0.7x  HTF=3441.67  → -  
+14:24:04    ADANIPORTS   C=1542.80  VWAP=1549.72  EMA=--  RSI=39  Vol=1.0x  HTF=-  → -  
+14:24:04    ONGC         C=274.00  VWAP=273.43  EMA=UP  RSI=63  Vol=0.7x  HTF=273.40  → -  in_position
+14:24:05    BAJAJFINSV   C=2049.90  VWAP=2056.64  EMA=--  RSI=49  Vol=0.2x  HTF=2054.35  → -  
+14:24:05    HINDALCO     C=909.35  VWAP=923.04  EMA=--  RSI=37  Vol=0.4x  HTF=920.48  → -  cooldown_until_14:24
+14:24:06    SBILIFE      C=2114.00  VWAP=2112.31  EMA=UP  RSI=58  Vol=3.6x  HTF=2108.90  → LONG  in_position
+14:27:02  SCAN #71  14:27:02  phase=ACTIVE_PM  active=True
+14:27:03    HDFCLIFE     C=743.15  VWAP=742.38  EMA=UP  RSI=61  Vol=1.5x  HTF=-  → ★ LONG  SL=742.24  TP=744.51  Qty=336
+14:27:03    TATASTEEL    C=207.57  VWAP=207.74  EMA=UP  RSI=50  Vol=0.6x  HTF=207.64  → -  
+14:27:04    TITAN        C=4263.00  VWAP=4264.08  EMA=--  RSI=49  Vol=0.7x  HTF=-  → -  
+14:27:04    M&M          C=3447.60  VWAP=3443.92  EMA=UP  RSI=71  Vol=1.0x  HTF=3441.67  → -  
+14:27:05    ADANIPORTS   C=1542.30  VWAP=1549.70  EMA=--  RSI=36  Vol=0.6x  HTF=-  → -  
+14:27:05    ONGC         C=273.80  VWAP=273.43  EMA=UP  RSI=57  Vol=0.7x  HTF=273.40  → -  in_position
+14:27:06    BAJAJFINSV   C=2049.00  VWAP=2056.63  EMA=--  RSI=41  Vol=0.2x  HTF=2054.35  → -  
+14:27:06    HINDALCO     C=909.55  VWAP=922.90  EMA=--  RSI=39  Vol=1.0x  HTF=920.48  → -  
+14:27:07    SBILIFE      C=2112.70  VWAP=2112.31  EMA=UP  RSI=53  Vol=0.3x  HTF=2108.90  → -  in_position
+14:30:02  SCAN #72  14:30:02  phase=ACTIVE_PM  active=True
+14:30:02    HDFCLIFE     C=743.95  VWAP=742.39  EMA=UP  RSI=71  Vol=0.9x  HTF=-  → -  in_position
+14:30:03    TATASTEEL    C=207.74  VWAP=207.74  EMA=UP  RSI=57  Vol=0.6x  HTF=207.64  → -  
+14:30:03    TITAN        C=4263.70  VWAP=4264.08  EMA=--  RSI=52  Vol=0.5x  HTF=-  → -  
+14:30:04    M&M          C=3450.00  VWAP=3444.00  EMA=UP  RSI=77  Vol=1.9x  HTF=3441.67  → -  
+14:30:04    ADANIPORTS   C=1545.00  VWAP=1549.67  EMA=--  RSI=53  Vol=0.9x  HTF=-  → -  
+14:30:05    ONGC         C=274.45  VWAP=273.45  EMA=UP  RSI=69  Vol=1.7x  HTF=273.40  → LONG  in_position
+14:30:05    BAJAJFINSV   C=2051.40  VWAP=2056.57  EMA=--  RSI=60  Vol=2.0x  HTF=2054.35  → -  
+14:30:06    HINDALCO     C=910.25  VWAP=922.78  EMA=--  RSI=45  Vol=0.9x  HTF=920.48  → -  
+14:30:06    SBILIFE      C=2116.00  VWAP=2112.32  EMA=UP  RSI=63  Vol=0.4x  HTF=2108.90  → -  in_position
+14:33:02  SCAN #73  14:33:02  phase=ACTIVE_PM  active=True
+14:33:02    HDFCLIFE     C=743.30  VWAP=742.40  EMA=UP  RSI=57  Vol=1.2x  HTF=-  → LONG  in_position
+14:33:03    TATASTEEL    C=207.92  VWAP=207.74  EMA=UP  RSI=64  Vol=0.9x  HTF=207.67  → -  
+14:33:03    TITAN        C=4265.90  VWAP=4264.11  EMA=--  RSI=60  Vol=1.5x  HTF=-  → -  
+14:33:04    M&M          C=3451.90  VWAP=3444.06  EMA=UP  RSI=81  Vol=1.2x  HTF=3442.60  → -  
+14:33:04    ADANIPORTS   C=1549.20  VWAP=1549.66  EMA=--  RSI=67  Vol=1.8x  HTF=-  → -  
+14:33:05  BRACKET  ONGC         TP hit — position closed
+14:33:05    ONGC         C=274.15  VWAP=273.46  EMA=UP  RSI=60  Vol=1.3x  HTF=273.47  → LONG  cooldown_until_14:33
+14:33:05    BAJAJFINSV   C=2051.50  VWAP=2056.46  EMA=--  RSI=61  Vol=4.1x  HTF=2054.09  → -  
+14:33:06    HINDALCO     C=911.25  VWAP=922.64  EMA=--  RSI=53  Vol=1.3x  HTF=919.64  → -  
+14:33:06    SBILIFE      C=2115.20  VWAP=2112.33  EMA=UP  RSI=59  Vol=0.9x  HTF=2109.47  → -  in_position
+14:36:02  SCAN #74  14:36:02  phase=ACTIVE_PM  active=True
+14:36:02    HDFCLIFE     C=743.35  VWAP=742.40  EMA=UP  RSI=58  Vol=1.1x  HTF=-  → LONG  in_position
+14:36:03    TATASTEEL    C=207.86  VWAP=207.74  EMA=UP  RSI=60  Vol=1.4x  HTF=207.67  → ★ LONG  SL=207.56  TP=208.30  Qty=1202
+14:36:04    TITAN        C=4267.90  VWAP=4264.13  EMA=--  RSI=66  Vol=0.9x  HTF=-  → -  
+14:36:04    M&M          C=3453.20  VWAP=3444.14  EMA=UP  RSI=83  Vol=1.4x  HTF=3442.60  → -  
+14:36:05    ADANIPORTS   C=1552.80  VWAP=1549.68  EMA=UP  RSI=75  Vol=3.0x  HTF=-  → -  
+14:36:05    ONGC         C=274.25  VWAP=273.46  EMA=UP  RSI=62  Vol=0.8x  HTF=273.47  → -  
+14:36:06    BAJAJFINSV   C=2053.20  VWAP=2056.42  EMA=UP  RSI=69  Vol=2.0x  HTF=2054.09  → -  
+14:36:06    HINDALCO     C=911.30  VWAP=922.54  EMA=--  RSI=54  Vol=0.8x  HTF=919.64  → -  
+14:36:07    SBILIFE      C=2115.20  VWAP=2112.43  EMA=UP  RSI=59  Vol=5.1x  HTF=2109.47  → LONG  in_position
+14:39:02  SCAN #75  14:39:02  phase=ACTIVE_PM  active=True
+14:39:02  BRACKET  HDFCLIFE     SL hit — position closed
+14:39:02    HDFCLIFE     C=742.20  VWAP=742.40  EMA=UP  RSI=41  Vol=1.1x  HTF=-  → -  cooldown_until_14:42
+14:39:02    TATASTEEL    C=207.70  VWAP=207.74  EMA=UP  RSI=52  Vol=0.8x  HTF=207.67  → -  in_position
+14:39:03    TITAN        C=4264.80  VWAP=4264.14  EMA=--  RSI=52  Vol=0.7x  HTF=-  → -  
+14:39:03    M&M          C=3452.80  VWAP=3444.20  EMA=UP  RSI=80  Vol=1.0x  HTF=3442.60  → -  
+14:39:04    ADANIPORTS   C=1553.70  VWAP=1549.71  EMA=UP  RSI=76  Vol=1.8x  HTF=-  → -  
+14:39:05    ONGC         C=274.15  VWAP=273.47  EMA=UP  RSI=59  Vol=1.1x  HTF=273.47  → ★ LONG  SL=273.68  TP=274.86  Qty=911
+14:39:06    BAJAJFINSV   C=2052.90  VWAP=2056.40  EMA=UP  RSI=66  Vol=1.2x  HTF=2054.09  → -  
+14:39:06    HINDALCO     C=911.00  VWAP=922.46  EMA=--  RSI=51  Vol=0.8x  HTF=919.64  → -  
+14:39:07  STAGNATION EXIT  SBILIFE      LONG  entry=2114.80  now=2112.50  unrealized=-2.30  bars=8
+14:39:08    SBILIFE      C=2112.50  VWAP=2112.45  EMA=UP  RSI=48  Vol=2.3x  HTF=2109.47  → ★ LONG  SL=2108.88  TP=2117.93  Qty=118
+14:42:02  SCAN #76  14:42:02  phase=ACTIVE_PM  active=True
+14:42:02    HDFCLIFE     C=742.05  VWAP=742.40  EMA=DN  RSI=39  Vol=0.8x  HTF=-  → -  
+14:42:02  BRACKET  TATASTEEL    SL hit — position closed
+14:42:02    TATASTEEL    C=207.49  VWAP=207.74  EMA=UP  RSI=44  Vol=1.2x  HTF=207.67  → -  cooldown_until_14:51
+14:42:03    TITAN        C=4264.20  VWAP=4264.13  EMA=--  RSI=50  Vol=0.9x  HTF=-  → -  
+14:42:03    M&M          C=3453.40  VWAP=3444.24  EMA=UP  RSI=81  Vol=0.7x  HTF=3442.60  → -  
+14:42:04    ADANIPORTS   C=1553.50  VWAP=1549.75  EMA=UP  RSI=75  Vol=2.1x  HTF=-  → -  
+14:42:04    ONGC         C=273.90  VWAP=273.47  EMA=UP  RSI=52  Vol=0.6x  HTF=273.47  → -  in_position
+14:42:05    BAJAJFINSV   C=2054.70  VWAP=2056.39  EMA=UP  RSI=74  Vol=0.8x  HTF=2054.09  → -  
+14:42:05    HINDALCO     C=911.00  VWAP=922.27  EMA=--  RSI=51  Vol=1.6x  HTF=919.64  → -  
+14:42:06    SBILIFE      C=2111.00  VWAP=2112.44  EMA=UP  RSI=43  Vol=0.6x  HTF=2109.47  → -  in_position
+14:45:02  SCAN #77  14:45:02  phase=ACTIVE_PM  active=True
+14:45:02    HDFCLIFE     C=741.55  VWAP=742.40  EMA=--  RSI=34  Vol=0.8x  HTF=-  → -  
+14:45:02    TATASTEEL    C=207.53  VWAP=207.74  EMA=UP  RSI=45  Vol=0.9x  HTF=207.67  → -  cooldown_until_14:51
+14:45:03    TITAN        C=4260.40  VWAP=4264.12  EMA=--  RSI=39  Vol=0.7x  HTF=-  → -  
+14:45:03    M&M          C=3450.50  VWAP=3444.30  EMA=UP  RSI=61  Vol=1.0x  HTF=3442.60  → -  
+14:45:05    ADANIPORTS   C=1551.80  VWAP=1549.80  EMA=UP  RSI=66  Vol=2.5x  HTF=-  → ★ LONG  SL=1549.03  TP=1555.95  Qty=161
+14:45:05  BRACKET  ONGC         SL hit — position closed
+14:45:05    ONGC         C=273.70  VWAP=273.48  EMA=UP  RSI=47  Vol=2.5x  HTF=273.47  → LONG  cooldown_until_14:54
+14:45:06    BAJAJFINSV   C=2053.80  VWAP=2056.38  EMA=UP  RSI=66  Vol=0.8x  HTF=2054.09  → -  
+14:45:06    HINDALCO     C=912.50  VWAP=922.16  EMA=--  RSI=63  Vol=1.2x  HTF=919.64  → -  
+14:45:07  BRACKET  SBILIFE      SL hit — position closed
+14:45:07    SBILIFE      C=2108.60  VWAP=2112.43  EMA=UP  RSI=36  Vol=0.7x  HTF=2109.47  → -  cooldown_until_14:54
+14:48:02  SCAN #78  14:48:02  phase=ACTIVE_PM  active=True
+14:48:02    HDFCLIFE     C=742.45  VWAP=742.40  EMA=--  RSI=48  Vol=1.9x  HTF=-  → -  
+14:48:02    TATASTEEL    C=207.83  VWAP=207.74  EMA=UP  RSI=58  Vol=0.8x  HTF=207.68  → -  cooldown_until_14:51
+14:48:03    TITAN        C=4266.20  VWAP=4264.13  EMA=--  RSI=56  Vol=0.8x  HTF=-  → -  
+14:48:03    M&M          C=3452.40  VWAP=3444.35  EMA=UP  RSI=67  Vol=1.0x  HTF=3443.49  → -  
+14:48:04  BRACKET  ADANIPORTS   TP hit — position closed
+14:48:04    ADANIPORTS   C=1554.50  VWAP=1549.83  EMA=UP  RSI=72  Vol=1.2x  HTF=-  → -  cooldown_until_15:00
+14:48:04    ONGC         C=274.05  VWAP=273.48  EMA=UP  RSI=55  Vol=2.2x  HTF=273.52  → LONG  cooldown_until_14:54
+14:48:05    BAJAJFINSV   C=2054.80  VWAP=2056.37  EMA=UP  RSI=70  Vol=0.3x  HTF=2054.15  → -  
+14:48:05    HINDALCO     C=914.85  VWAP=922.05  EMA=UP  RSI=74  Vol=1.4x  HTF=919.21  → -  
+14:48:06    SBILIFE      C=2111.40  VWAP=2112.42  EMA=UP  RSI=47  Vol=0.8x  HTF=2109.65  → -  cooldown_until_14:54
+14:51:02  SCAN #79  14:51:02  phase=ACTIVE_PM  active=True
+14:51:02    HDFCLIFE     C=741.70  VWAP=742.39  EMA=--  RSI=40  Vol=1.2x  HTF=-  → -  
+14:51:02    TATASTEEL    C=207.75  VWAP=207.74  EMA=UP  RSI=54  Vol=1.0x  HTF=207.68  → -  
+14:51:03    TITAN        C=4267.10  VWAP=4264.15  EMA=UP  RSI=58  Vol=0.9x  HTF=-  → -  
+14:51:03    M&M          C=3453.00  VWAP=3444.49  EMA=UP  RSI=69  Vol=1.9x  HTF=3443.49  → -  
+14:51:04    ADANIPORTS   C=1552.80  VWAP=1549.84  EMA=UP  RSI=64  Vol=0.7x  HTF=-  → -  cooldown_until_15:00
+14:51:04    ONGC         C=274.80  VWAP=273.50  EMA=UP  RSI=68  Vol=1.9x  HTF=273.52  → LONG  cooldown_until_14:54
+14:51:05    BAJAJFINSV   C=2053.50  VWAP=2056.36  EMA=UP  RSI=59  Vol=0.6x  HTF=2054.15  → -  
+14:51:05    HINDALCO     C=914.45  VWAP=921.95  EMA=UP  RSI=70  Vol=1.4x  HTF=919.21  → -  
+14:51:06    SBILIFE      C=2109.40  VWAP=2112.41  EMA=DN  RSI=42  Vol=0.5x  HTF=2109.65  → -  cooldown_until_14:54
+14:54:02  SCAN #80  14:54:02  phase=ACTIVE_PM  active=True
+14:54:02    HDFCLIFE     C=742.90  VWAP=742.39  EMA=--  RSI=54  Vol=2.8x  HTF=-  → -  
+14:54:02    TATASTEEL    C=207.75  VWAP=207.74  EMA=UP  RSI=54  Vol=0.7x  HTF=207.68  → -  
+14:54:03    TITAN        C=4265.40  VWAP=4264.16  EMA=UP  RSI=53  Vol=0.4x  HTF=-  → -  
+14:54:03    M&M          C=3451.90  VWAP=3444.53  EMA=UP  RSI=62  Vol=0.7x  HTF=3443.49  → -  
+14:54:04    ADANIPORTS   C=1553.20  VWAP=1549.87  EMA=UP  RSI=65  Vol=1.5x  HTF=-  → LONG  cooldown_until_15:00
+14:54:04    ONGC         C=274.40  VWAP=273.51  EMA=UP  RSI=58  Vol=0.9x  HTF=273.52  → -  
+14:54:05    BAJAJFINSV   C=2054.30  VWAP=2056.36  EMA=UP  RSI=63  Vol=0.2x  HTF=2054.15  → -  
+14:54:05    HINDALCO     C=913.75  VWAP=921.84  EMA=UP  RSI=63  Vol=1.3x  HTF=919.21  → -  
+14:54:06    SBILIFE      C=2109.30  VWAP=2112.40  EMA=--  RSI=41  Vol=0.5x  HTF=2109.65  → -  
+14:57:02  SCAN #81  14:57:02  phase=ACTIVE_PM  active=True
+14:57:02    HDFCLIFE     C=743.40  VWAP=742.40  EMA=--  RSI=58  Vol=1.7x  HTF=-  → -  
+14:57:02    TATASTEEL    C=207.73  VWAP=207.74  EMA=UP  RSI=53  Vol=0.7x  HTF=207.68  → -  
+14:57:03    TITAN        C=4265.90  VWAP=4264.17  EMA=UP  RSI=54  Vol=0.8x  HTF=-  → -  
+14:57:03    M&M          C=3452.70  VWAP=3444.59  EMA=UP  RSI=65  Vol=0.9x  HTF=3443.49  → -  
+14:57:04    ADANIPORTS   C=1552.60  VWAP=1549.88  EMA=UP  RSI=62  Vol=0.7x  HTF=-  → -  cooldown_until_15:00
+14:57:05    ONGC         C=274.95  VWAP=273.54  EMA=UP  RSI=66  Vol=1.6x  HTF=273.52  → ★ LONG  SL=274.36  TP=275.84  Qty=841
+14:57:06    BAJAJFINSV   C=2052.60  VWAP=2056.34  EMA=UP  RSI=52  Vol=1.4x  HTF=2054.15  → -  
+14:57:06    HINDALCO     C=913.15  VWAP=921.78  EMA=UP  RSI=58  Vol=0.6x  HTF=919.21  → -  
+14:57:06    SBILIFE      C=2110.60  VWAP=2112.39  EMA=--  RSI=47  Vol=0.5x  HTF=2109.65  → -  
+15:00:02  PHASE  ACTIVE_PM → SHUTDOWN
+15:00:02  ======================================================================
+15:00:02  SHUTDOWN  15 signal(s), 1 stagnation exit(s), 81 scan cycles
+15:00:02    SUMMARY  11:03   LONG  TITAN        @ 4267.50  SL=4261.59  TP=4276.36
+15:00:02    SUMMARY  11:18   LONG  TITAN        @ 4271.20  SL=4265.65  TP=4279.53
+15:00:02    SUMMARY  11:18   LONG  ADANIPORTS   @ 1554.20  SL=1550.16  TP=1560.26
+15:00:02    SUMMARY  11:24   LONG  HDFCLIFE     @ 742.75  SL=741.56  TP=744.54
+15:00:02    SUMMARY  11:39   LONG  TITAN        @ 4270.60  SL=4265.11  TP=4278.84
+15:00:02    SUMMARY  14:00   LONG  ONGC         @ 273.80  SL=273.39  TP=274.42
+15:00:02    SUMMARY  14:09  SHORT  HINDALCO     @ 909.10  SL=910.95  TP=906.33
+15:00:02    SUMMARY  14:15   LONG  SBILIFE      @ 2114.80  SL=2111.27  TP=2120.09
+15:00:02    SUMMARY  14:18   LONG  ONGC         @ 273.85  SL=273.40  TP=274.52
+15:00:02    SUMMARY  14:27   LONG  HDFCLIFE     @ 743.15  SL=742.24  TP=744.51
+15:00:02    SUMMARY  14:36   LONG  TATASTEEL    @ 207.86  SL=207.56  TP=208.30
+15:00:02    SUMMARY  14:39   LONG  ONGC         @ 274.15  SL=273.68  TP=274.86
+15:00:02    SUMMARY  14:39   LONG  SBILIFE      @ 2112.50  SL=2108.88  TP=2117.93
+15:00:02    SUMMARY  14:45   LONG  ADANIPORTS   @ 1551.80  SL=1549.03  TP=1555.95
+15:00:02    SUMMARY  14:57   LONG  ONGC         @ 274.95  SL=274.36  TP=275.84
+15:00:02    STAG_EXIT  14:39  SBILIFE      entry=2114.80  exit=2112.50  pnl=-2.30
+15:00:02  ======================================================================

@@ -1,0 +1,50 @@
+17:54:04  ======================================================================
+17:54:04  SESSION START  Capital=50000  RR=1:1.5  Risk=1%
+17:54:04  Stocks: HDFCLIFE, TATASTEEL, TITAN, M&M, ADANIPORTS, ONGC, BAJAJFINSV, HINDALCO, SBILIFE
+17:54:04  HTF stocks: BAJAJFINSV, HINDALCO, M&M, ONGC, SBILIFE, TATASTEEL
+17:54:04  Telegram: enabled
+17:54:04  PHASE 1  Warm-Up — connecting to Angel One
+17:54:05  API connected
+17:54:05  Fetching regime EMAs (60-day daily candles)
+17:54:06  REGIME  HDFCLIFE     EMA=719.38  Close=728.65  Bullish
+17:54:06  REGIME  TATASTEEL    EMA=199.79  Close=208.36  Bullish
+17:54:06  REGIME  TITAN        EMA=4166.49  Close=4236.40  Bullish
+17:54:07  REGIME  M&M          EMA=3534.08  Close=3412.80  Bearish
+17:54:07  REGIME  ADANIPORTS   EMA=1506.71  Close=1511.50  Bullish
+17:54:08  REGIME  ONGC         EMA=265.45  Close=278.65  Bullish
+17:54:08  REGIME  BAJAJFINSV   EMA=2019.46  Close=2058.50  Bullish
+17:54:09  REGIME  HINDALCO     EMA=931.77  Close=935.70  Bullish
+17:54:09  REGIME  SBILIFE      EMA=2036.39  Close=2080.00  Bullish
+17:54:09  Loading 2-day 3-min warmup data
+17:54:09  WARMUP  HDFCLIFE     7875 bars  cache=2026-02-20
+17:54:09  WARMUP  TATASTEEL    7875 bars  cache=2026-02-20
+17:54:09  WARMUP  TITAN        7875 bars  cache=2026-02-20
+17:54:09  WARMUP  M&M          7875 bars  cache=2026-02-20
+17:54:09  WARMUP  ADANIPORTS   7875 bars  cache=2026-02-20
+17:54:09  WARMUP  ONGC         7875 bars  cache=2026-02-20
+17:54:09  WARMUP  BAJAJFINSV   7875 bars  cache=2026-02-20
+17:54:09  WARMUP  HINDALCO     7875 bars  cache=2026-02-20
+17:54:09  WARMUP  SBILIFE      7875 bars  cache=2026-02-20
+17:54:09  Warm-up complete: 9 stocks loaded, 6 HTF, 9 regime
+17:54:10  PHASE  START → SHUTDOWN
+17:54:10  ======================================================================
+17:54:10  SHUTDOWN  0 signal(s) today, 0 scan cycles
+17:54:10  ======================================================================
+19:29:27  WARMUP  HDFCLIFE     7875 bars  cache=2026-02-20
+19:29:27  WARMUP  TATASTEEL    7875 bars  cache=2026-02-20
+19:29:27  WARMUP  TITAN        7875 bars  cache=2026-02-20
+19:29:27  WARMUP  M&M          7875 bars  cache=2026-02-20
+19:29:27  WARMUP  ADANIPORTS   7875 bars  cache=2026-02-20
+19:29:27  WARMUP  ONGC         7875 bars  cache=2026-02-20
+19:29:27  WARMUP  BAJAJFINSV   7875 bars  cache=2026-02-20
+19:29:27  WARMUP  HINDALCO     7875 bars  cache=2026-02-20
+19:29:27  WARMUP  SBILIFE      7875 bars  cache=2026-02-20
+19:29:27  REGIME  HDFCLIFE     EMA=719.38  Close=728.65  Bullish
+19:29:28  REGIME  TATASTEEL    EMA=199.79  Close=208.36  Bullish
+19:29:28  REGIME  TITAN        EMA=4166.49  Close=4236.40  Bullish
+19:29:29  REGIME  M&M          EMA=3534.08  Close=3412.80  Bearish
+19:29:29  REGIME  ADANIPORTS   EMA=1506.71  Close=1511.50  Bullish
+19:29:29  REGIME  ONGC         EMA=265.45  Close=278.65  Bullish
+19:29:30  REGIME  BAJAJFINSV   EMA=2019.46  Close=2058.50  Bullish
+19:29:30  REGIME  HINDALCO     EMA=931.77  Close=935.70  Bullish
+19:29:31  REGIME  SBILIFE      EMA=2036.39  Close=2080.00  Bullish

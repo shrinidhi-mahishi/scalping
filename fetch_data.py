@@ -101,6 +101,7 @@ class AngelOneClient:
         to_date: str,
         interval: str = "THREE_MINUTE",
         exchange: str = "NSE",
+        retries: int = 3,
     ) -> pd.DataFrame:
         token = self.SYMBOL_TOKENS.get(symbol.upper())
         if not token:
@@ -108,18 +109,27 @@ class AngelOneClient:
                 f"Unknown symbol '{symbol}'. Known: {list(self.SYMBOL_TOKENS)}"
             )
 
-        resp = self._conn.getCandleData(
-            {
-                "exchange": exchange,
-                "symboltoken": token,
-                "interval": interval,
-                "fromdate": from_date,
-                "todate": to_date,
-            }
-        )
+        for attempt in range(retries):
+            resp = self._conn.getCandleData(
+                {
+                    "exchange": exchange,
+                    "symboltoken": token,
+                    "interval": interval,
+                    "fromdate": from_date,
+                    "todate": to_date,
+                }
+            )
 
-        if not resp.get("status") or not resp.get("data"):
-            raise RuntimeError(f"Candle fetch failed: {resp.get('message', 'empty')}")
+            if resp.get("status") and resp.get("data"):
+                break
+            
+            msg = str(resp.get("message", "empty"))
+            if "TooManyRequests" in msg or "access rate" in msg.lower():
+                if attempt < retries - 1:
+                    _time.sleep(2.0 * (attempt + 1))  # exponential backoff: 2s, 4s...
+                    continue
+            
+            raise RuntimeError(f"Candle fetch failed: {msg}")
 
         df = pd.DataFrame(
             resp["data"],
@@ -149,11 +159,14 @@ class AngelOneClient:
         while remaining > 0:
             span = min(5, remaining)
             start = end - timedelta(days=span)
+            end_1530 = end.replace(hour=15, minute=30, second=0, microsecond=0)
+            safe_now = datetime.now() - timedelta(minutes=5)
+            to_dt = min(end_1530, safe_now)
             try:
                 df = self.fetch_candles(
                     symbol,
                     start.strftime("%Y-%m-%d 09:15"),
-                    end.strftime("%Y-%m-%d 15:30"),
+                    to_dt.strftime("%Y-%m-%d %H:%M"),
                     interval,
                 )
                 chunks.append(df)

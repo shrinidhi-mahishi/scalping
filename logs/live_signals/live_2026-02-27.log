@@ -1,0 +1,959 @@
+09:59:05  ======================================================================
+09:59:05  SESSION START  Capital=50000  RR=1:1.5  Risk=1%
+09:59:05  Stocks: BAJAJ-AUTO, EICHERMOT, AXISBANK, APOLLOHOSP, HDFCLIFE, SBIN, TECHM, MARUTI
+09:59:05  Strategy: PDL (SL=1.2x ATR) + MOM (SL=1.0x ATR)
+09:59:05  Telegram: enabled
+09:59:05  PHASE 1  Warm-Up — connecting to Angel One
+09:59:06  API connected
+09:59:06  Loading 5-day 3-min warmup data
+09:59:06  WARMUP  BAJAJ-AUTO   514 bars  API 2026-02-23→2026-02-27 09:54:00
+09:59:08  WARMUP  EICHERMOT    514 bars  API 2026-02-23→2026-02-27 09:54:00
+09:59:10  WARMUP  AXISBANK     514 bars  API 2026-02-23→2026-02-27 09:54:00
+09:59:11  WARMUP  APOLLOHOSP   514 bars  API 2026-02-23→2026-02-27 09:54:00
+09:59:13  WARMUP  HDFCLIFE     514 bars  API 2026-02-23→2026-02-27 09:54:00
+09:59:15  WARMUP  SBIN         514 bars  API 2026-02-23→2026-02-27 09:54:00
+09:59:16  WARMUP  TECHM        514 bars  API 2026-02-23→2026-02-27 09:54:00
+09:59:18  WARMUP  MARUTI       514 bars  API 2026-02-23→2026-02-27 09:54:00
+09:59:19  PDL  BAJAJ-AUTO   H=10187.00  L=10029.50
+09:59:19  PDL  EICHERMOT    H=8225.00  L=8024.50
+09:59:19  PDL  AXISBANK     H=1405.70  L=1386.00
+09:59:19  PDL  APOLLOHOSP   H=7831.00  L=7729.00
+09:59:19  PDL  HDFCLIFE     H=744.90  L=731.65
+09:59:19  PDL  SBIN         H=1215.40  L=1188.90
+09:59:19  PDL  TECHM        H=1396.60  L=1360.40
+09:59:19  PDL  MARUTI       H=15224.00  L=15046.00
+09:59:19  Warm-up complete: 8 stocks loaded, PDL levels for 8
+09:59:20  PHASE  START → SILENT
+09:59:20  SCAN #1  09:59:20  phase=SILENT  active=False
+09:59:21    BAJAJ-AUTO   C=10035.00  VWAP=10054.04  RSI=32  Vol=0.4x  → -[-]  inactive_phase
+09:59:22    EICHERMOT    C=8092.00  VWAP=8159.42  RSI=34  Vol=0.4x  → -[-]  inactive_phase
+09:59:23    AXISBANK     C=1388.60  VWAP=1388.58  RSI=44  Vol=0.2x  → -[-]  inactive_phase
+09:59:24    APOLLOHOSP   C=7795.00  VWAP=7777.95  RSI=56  Vol=0.3x  → -[-]  inactive_phase
+09:59:26    HDFCLIFE     C=724.95  VWAP=729.94  RSI=20  Vol=0.2x  → -[-]  inactive_phase
+09:59:27    SBIN         C=1202.90  VWAP=1206.99  RSI=24  Vol=0.2x  → -[-]  inactive_phase
+09:59:28    TECHM        C=1373.70  VWAP=1384.63  RSI=50  Vol=0.4x  → -[-]  inactive_phase
+09:59:29    MARUTI       C=15009.00  VWAP=15006.45  RSI=38  Vol=0.3x  → -[-]  inactive_phase
+10:00:02  PHASE  SILENT → ACTIVE_AM
+10:00:02  SCAN #2  10:00:02  phase=ACTIVE_AM  active=True
+10:00:03    BAJAJ-AUTO   C=10038.00  VWAP=10053.53  RSI=36  Vol=0.3x  → -[-]  
+10:00:05    EICHERMOT    C=8095.00  VWAP=8158.43  RSI=36  Vol=0.2x  → -[-]  
+10:00:06    AXISBANK     C=1387.20  VWAP=1388.57  RSI=38  Vol=0.2x  → -[-]  
+10:00:07    APOLLOHOSP   C=7798.00  VWAP=7778.41  RSI=59  Vol=0.3x  → -[-]  
+10:00:08    HDFCLIFE     C=724.65  VWAP=729.77  RSI=19  Vol=0.3x  → -[-]  
+10:00:09    SBIN         C=1203.10  VWAP=1206.84  RSI=26  Vol=0.2x  → -[-]  
+10:00:10    TECHM        C=1373.70  VWAP=1384.31  RSI=50  Vol=0.5x  → -[-]  
+10:00:11    MARUTI       C=15013.00  VWAP=15006.59  RSI=40  Vol=0.4x  → -[-]  
+10:03:02  SCAN #3  10:03:02  phase=ACTIVE_AM  active=True
+10:03:03    BAJAJ-AUTO   C=10038.00  VWAP=10053.19  RSI=36  Vol=0.2x  → -[-]  
+10:03:04    EICHERMOT    C=8093.00  VWAP=8157.54  RSI=35  Vol=0.2x  → -[-]  
+10:03:05    AXISBANK     C=1385.90  VWAP=1388.48  RSI=33  Vol=0.5x  → -[-]  
+10:03:06    APOLLOHOSP   C=7809.50  VWAP=7778.94  RSI=67  Vol=0.3x  → -[-]  
+10:03:07    HDFCLIFE     C=724.45  VWAP=729.59  RSI=18  Vol=0.3x  → -[-]  
+10:03:08    SBIN         C=1204.20  VWAP=1206.74  RSI=38  Vol=0.2x  → -[-]  
+10:03:10    TECHM        C=1370.60  VWAP=1383.97  RSI=41  Vol=0.5x  → -[-]  
+10:03:11    MARUTI       C=15011.00  VWAP=15006.63  RSI=40  Vol=0.3x  → -[-]  
+10:12:31  SCAN #4  10:12:31  phase=ACTIVE_AM  active=True
+10:12:32    BAJAJ-AUTO   C=10033.50  VWAP=10052.03  RSI=34  Vol=0.4x  → -[-]  
+10:12:33    EICHERMOT    C=8065.00  VWAP=8150.05  RSI=25  Vol=0.9x  → -[-]  
+10:12:34    AXISBANK     C=1387.60  VWAP=1388.43  RSI=45  Vol=0.2x  → -[-]  
+10:12:35    APOLLOHOSP   C=7809.50  VWAP=7780.78  RSI=62  Vol=0.2x  → -[-]  
+10:12:36    HDFCLIFE     C=725.40  VWAP=728.95  RSI=34  Vol=1.4x  → -[-]  
+10:12:37    SBIN         C=1201.90  VWAP=1206.20  RSI=27  Vol=0.5x  → -[-]  
+10:12:39    TECHM        C=1370.40  VWAP=1382.54  RSI=43  Vol=0.6x  → -[-]  
+10:12:40    MARUTI       C=14986.00  VWAP=15005.56  RSI=31  Vol=0.4x  → -[-]  
+10:15:02  SCAN #5  10:15:02  phase=ACTIVE_AM  active=True
+10:15:03    BAJAJ-AUTO   C=10033.50  VWAP=10051.74  RSI=34  Vol=0.3x  → -[-]  
+10:15:04    EICHERMOT    C=8087.00  VWAP=8147.64  RSI=41  Vol=0.7x  → -[-]  
+10:15:05    AXISBANK     C=1387.60  VWAP=1388.42  RSI=45  Vol=0.2x  → -[-]  
+10:15:06    APOLLOHOSP   C=7807.00  VWAP=7781.33  RSI=59  Vol=0.4x  → -[-]  
+10:15:07    HDFCLIFE     C=725.85  VWAP=728.89  RSI=40  Vol=0.4x  → -[-]  
+10:15:08    SBIN         C=1201.80  VWAP=1206.09  RSI=27  Vol=0.5x  → -[-]  
+10:15:10    TECHM        C=1369.20  VWAP=1382.43  RSI=40  Vol=0.2x  → -[-]  
+10:15:11    MARUTI       C=14984.00  VWAP=15005.21  RSI=30  Vol=0.3x  → -[-]  
+10:18:02  SCAN #6  10:18:02  phase=ACTIVE_AM  active=True
+10:18:03    BAJAJ-AUTO   C=10036.00  VWAP=10051.24  RSI=38  Vol=0.7x  → -[-]  
+10:18:04    EICHERMOT    C=8081.00  VWAP=8146.51  RSI=39  Vol=0.5x  → -[-]  
+10:18:05    AXISBANK     C=1386.90  VWAP=1388.39  RSI=41  Vol=0.6x  → -[-]  
+10:18:06    APOLLOHOSP   C=7804.00  VWAP=7781.77  RSI=56  Vol=0.6x  → -[-]  
+10:18:08    HDFCLIFE     C=725.00  VWAP=728.81  RSI=34  Vol=0.5x  → -[-]  
+10:18:09    SBIN         C=1201.30  VWAP=1205.80  RSI=25  Vol=1.4x  → -[-]  
+10:18:10    TECHM        C=1368.00  VWAP=1382.27  RSI=36  Vol=0.4x  → -[-]  
+10:18:11    MARUTI       C=14957.00  VWAP=15002.62  RSI=23  Vol=1.6x  → -[-]  
+10:21:02  SCAN #7  10:21:02  phase=ACTIVE_AM  active=True
+10:21:03    BAJAJ-AUTO   C=10031.50  VWAP=10050.78  RSI=34  Vol=0.6x  → -[-]  
+10:21:04    EICHERMOT    C=8072.50  VWAP=8145.15  RSI=35  Vol=0.6x  → -[-]  
+10:21:05    AXISBANK     C=1387.40  VWAP=1388.35  RSI=45  Vol=1.4x  → -[-]  
+10:21:06    APOLLOHOSP   C=7803.00  VWAP=7782.00  RSI=55  Vol=0.3x  → -[-]  
+10:21:07    HDFCLIFE     C=724.40  VWAP=728.45  RSI=30  Vol=2.1x  → -[-]  
+10:21:08    SBIN         C=1202.20  VWAP=1205.69  RSI=35  Vol=0.7x  → -[-]  
+10:21:09    TECHM        C=1367.80  VWAP=1382.14  RSI=35  Vol=0.3x  → -[-]  
+10:21:11    MARUTI       C=14924.00  VWAP=14997.90  RSI=17  Vol=1.9x  → -[-]  
+10:24:02  SCAN #8  10:24:02  phase=ACTIVE_AM  active=True
+10:24:04    BAJAJ-AUTO   C=10018.00  VWAP=10044.23  RSI=25  Vol=5.2x  → ★ SHORT[PDL]  SL=10035.37  TP=9991.95  Qty=24
+10:24:05    EICHERMOT    C=8069.00  VWAP=8143.04  RSI=34  Vol=0.9x  → -[-]  
+10:24:06    AXISBANK     C=1389.50  VWAP=1388.36  RSI=58  Vol=0.7x  → -[-]  
+10:24:07    APOLLOHOSP   C=7805.00  VWAP=7782.50  RSI=57  Vol=0.8x  → -[-]  
+10:24:08    HDFCLIFE     C=724.00  VWAP=728.27  RSI=28  Vol=1.0x  → -[-]  
+10:24:09    SBIN         C=1203.00  VWAP=1205.47  RSI=43  Vol=2.1x  → -[-]  
+10:24:10    TECHM        C=1370.00  VWAP=1381.97  RSI=46  Vol=0.5x  → -[-]  
+10:24:12    MARUTI       C=14936.00  VWAP=14994.79  RSI=25  Vol=1.3x  → -[-]  
+10:27:02  SCAN #9  10:27:02  phase=ACTIVE_AM  active=True
+10:27:03    BAJAJ-AUTO   C=10005.00  VWAP=10040.96  RSI=19  Vol=2.8x  → -[-]  in_position
+10:27:04    EICHERMOT    C=8063.00  VWAP=8141.58  RSI=32  Vol=0.7x  → -[-]  
+10:27:05    AXISBANK     C=1389.20  VWAP=1388.37  RSI=56  Vol=0.6x  → -[-]  
+10:27:06    APOLLOHOSP   C=7807.50  VWAP=7782.78  RSI=59  Vol=0.4x  → -[-]  
+10:27:07    HDFCLIFE     C=724.60  VWAP=728.12  RSI=36  Vol=1.1x  → -[-]  
+10:27:08    SBIN         C=1202.20  VWAP=1205.40  RSI=38  Vol=0.6x  → -[-]  
+10:27:09    TECHM        C=1371.40  VWAP=1381.79  RSI=52  Vol=0.7x  → -[-]  
+10:27:11    MARUTI       C=14917.00  VWAP=14992.99  RSI=21  Vol=0.8x  → -[-]  
+10:30:02  SCAN #10  10:30:02  phase=ACTIVE_AM  active=True
+10:30:03    BAJAJ-AUTO   C=10008.50  VWAP=10039.70  RSI=24  Vol=1.0x  → -[-]  in_position
+10:30:04    EICHERMOT    C=8070.00  VWAP=8140.51  RSI=37  Vol=0.6x  → -[-]  
+10:30:05    AXISBANK     C=1388.70  VWAP=1388.38  RSI=52  Vol=0.7x  → -[-]  
+10:30:06    APOLLOHOSP   C=7816.00  VWAP=7783.72  RSI=67  Vol=1.1x  → -[-]  
+10:30:07    HDFCLIFE     C=724.85  VWAP=728.09  RSI=39  Vol=0.3x  → -[-]  
+10:30:08    SBIN         C=1203.20  VWAP=1205.34  RSI=47  Vol=0.7x  → -[-]  
+10:30:09    TECHM        C=1370.80  VWAP=1381.72  RSI=49  Vol=0.3x  → -[-]  
+10:30:11    MARUTI       C=14912.00  VWAP=14991.02  RSI=20  Vol=0.9x  → -[-]  
+10:33:02  SCAN #11  10:33:02  phase=ACTIVE_AM  active=True
+10:33:03    BAJAJ-AUTO   C=10004.50  VWAP=10039.00  RSI=22  Vol=0.6x  → -[-]  in_position
+10:33:04    EICHERMOT    C=8076.00  VWAP=8139.85  RSI=42  Vol=0.4x  → -[-]  
+10:33:05    AXISBANK     C=1389.50  VWAP=1388.39  RSI=57  Vol=0.6x  → -[-]  
+10:33:06    APOLLOHOSP   C=7824.00  VWAP=7788.37  RSI=72  Vol=3.9x  → -[-]  
+10:33:07    HDFCLIFE     C=725.00  VWAP=728.06  RSI=41  Vol=0.3x  → -[-]  
+10:33:08    SBIN         C=1204.40  VWAP=1205.28  RSI=56  Vol=1.5x  → -[-]  
+10:33:09    TECHM        C=1371.00  VWAP=1381.56  RSI=50  Vol=0.7x  → -[-]  
+10:33:11    MARUTI       C=14912.00  VWAP=14984.45  RSI=20  Vol=2.8x  → -[-]  
+10:36:02  SCAN #12  10:36:02  phase=ACTIVE_AM  active=True
+10:36:03    BAJAJ-AUTO   C=10019.50  VWAP=10038.45  RSI=41  Vol=0.7x  → -[-]  in_position
+10:36:04    EICHERMOT    C=8078.00  VWAP=8139.40  RSI=44  Vol=0.4x  → -[-]  
+10:36:05    AXISBANK     C=1388.40  VWAP=1388.39  RSI=49  Vol=0.5x  → -[-]  
+10:36:06    APOLLOHOSP   C=7815.50  VWAP=7789.61  RSI=60  Vol=1.5x  → -[-]  
+10:36:07    HDFCLIFE     C=725.30  VWAP=728.03  RSI=45  Vol=0.4x  → -[-]  
+10:36:08    SBIN         C=1203.50  VWAP=1205.25  RSI=49  Vol=0.6x  → -[-]  
+10:36:10    TECHM        C=1371.80  VWAP=1381.45  RSI=54  Vol=0.6x  → -[-]  
+10:36:11    MARUTI       C=14923.00  VWAP=14982.41  RSI=29  Vol=1.1x  → -[-]  
+10:39:02  SCAN #13  10:39:02  phase=ACTIVE_AM  active=True
+10:39:03  BRACKET  BAJAJ-AUTO   SL hit — position closed
+10:39:03    BAJAJ-AUTO   C=10029.00  VWAP=10038.14  RSI=50  Vol=0.9x  → -[-]  cooldown_until_10:39
+10:39:04    EICHERMOT    C=8083.50  VWAP=8138.01  RSI=48  Vol=1.4x  → -[-]  
+10:39:05    AXISBANK     C=1388.50  VWAP=1388.39  RSI=50  Vol=0.5x  → -[-]  
+10:39:06    APOLLOHOSP   C=7811.00  VWAP=7790.96  RSI=55  Vol=2.5x  → -[-]  
+10:39:07    HDFCLIFE     C=725.95  VWAP=728.00  RSI=53  Vol=0.5x  → -[-]  
+10:39:08    SBIN         C=1203.60  VWAP=1205.22  RSI=50  Vol=0.5x  → -[-]  
+10:39:10    TECHM        C=1371.50  VWAP=1381.38  RSI=52  Vol=0.4x  → -[-]  
+10:39:11    MARUTI       C=14930.00  VWAP=14981.15  RSI=33  Vol=0.9x  → -[-]  
+10:42:02  SCAN #14  10:42:02  phase=ACTIVE_AM  active=True
+10:42:03    BAJAJ-AUTO   C=10015.00  VWAP=10037.34  RSI=40  Vol=1.5x  → -[-]  
+10:42:04    EICHERMOT    C=8083.00  VWAP=8137.61  RSI=48  Vol=0.4x  → -[-]  
+10:42:05    AXISBANK     C=1388.40  VWAP=1388.39  RSI=49  Vol=0.6x  → -[-]  
+10:42:06    APOLLOHOSP   C=7804.50  VWAP=7800.55  RSI=48  Vol=15.3x  → -[-]  
+10:42:07    HDFCLIFE     C=724.85  VWAP=727.98  RSI=42  Vol=0.3x  → -[-]  
+10:42:08    SBIN         C=1201.30  VWAP=1205.12  RSI=36  Vol=1.0x  → -[-]  
+10:42:09    TECHM        C=1372.00  VWAP=1381.25  RSI=55  Vol=0.9x  → -[-]  
+10:42:11    MARUTI       C=14926.00  VWAP=14980.17  RSI=32  Vol=0.7x  → -[-]  
+10:45:02  SCAN #15  10:45:02  phase=ACTIVE_AM  active=True
+10:45:03    BAJAJ-AUTO   C=9990.50  VWAP=10036.22  RSI=29  Vol=0.9x  → -[-]  
+10:45:04    EICHERMOT    C=8067.00  VWAP=8133.67  RSI=37  Vol=2.9x  → ★ SHORT[MOM]  SL=8084.60  TP=8040.60  Qty=28
+10:45:06    AXISBANK     C=1389.10  VWAP=1388.40  RSI=55  Vol=0.7x  → -[-]  
+10:45:07    APOLLOHOSP   C=7806.00  VWAP=7800.58  RSI=50  Vol=0.2x  → -[-]  
+10:45:08    HDFCLIFE     C=725.05  VWAP=727.93  RSI=44  Vol=0.7x  → -[-]  
+10:45:09    SBIN         C=1200.30  VWAP=1204.89  RSI=32  Vol=1.7x  → -[-]  
+10:45:10    TECHM        C=1370.60  VWAP=1381.14  RSI=47  Vol=0.7x  → -[-]  
+10:45:11    MARUTI       C=14918.00  VWAP=14979.43  RSI=29  Vol=0.5x  → -[-]  
+10:48:02  SCAN #16  10:48:02  phase=ACTIVE_AM  active=True
+10:48:03    BAJAJ-AUTO   C=9979.00  VWAP=10030.82  RSI=25  Vol=3.2x  → -[-]  
+10:48:04    EICHERMOT    C=8067.50  VWAP=8132.92  RSI=38  Vol=0.6x  → -[-]  in_position
+10:48:05    AXISBANK     C=1389.90  VWAP=1388.41  RSI=60  Vol=0.6x  → -[-]  
+10:48:06    APOLLOHOSP   C=7801.50  VWAP=7800.71  RSI=45  Vol=1.2x  → -[-]  
+10:48:07    HDFCLIFE     C=725.00  VWAP=727.90  RSI=44  Vol=0.4x  → -[-]  
+10:48:08    SBIN         C=1200.90  VWAP=1204.78  RSI=37  Vol=1.0x  → -[-]  
+10:48:09    TECHM        C=1371.70  VWAP=1381.05  RSI=53  Vol=0.6x  → -[-]  
+10:48:10    MARUTI       C=14916.00  VWAP=14977.84  RSI=29  Vol=1.0x  → -[-]  
+10:51:02  SCAN #17  10:51:02  phase=ACTIVE_AM  active=True
+10:51:03    BAJAJ-AUTO   C=9974.00  VWAP=10029.83  RSI=24  Vol=0.6x  → -[-]  
+10:51:04    EICHERMOT    C=8074.50  VWAP=8132.07  RSI=44  Vol=0.8x  → -[-]  in_position
+10:51:05    AXISBANK     C=1389.60  VWAP=1388.44  RSI=57  Vol=1.6x  → -[-]  
+10:51:06    APOLLOHOSP   C=7805.00  VWAP=7800.74  RSI=49  Vol=0.2x  → -[-]  
+10:51:07    HDFCLIFE     C=725.35  VWAP=727.89  RSI=48  Vol=0.3x  → -[-]  
+10:51:08    SBIN         C=1200.80  VWAP=1204.70  RSI=36  Vol=0.7x  → -[-]  
+10:51:09    TECHM        C=1370.50  VWAP=1380.91  RSI=47  Vol=1.0x  → -[-]  
+10:51:10    MARUTI       C=14941.00  VWAP=14976.81  RSI=46  Vol=1.0x  → -[-]  
+10:54:02  SCAN #18  10:54:02  phase=ACTIVE_AM  active=True
+10:54:03    BAJAJ-AUTO   C=9963.50  VWAP=10028.12  RSI=21  Vol=0.9x  → -[-]  
+10:54:04    EICHERMOT    C=8073.50  VWAP=8131.31  RSI=44  Vol=0.7x  → -[-]  in_position
+10:54:05    AXISBANK     C=1388.00  VWAP=1388.44  RSI=44  Vol=0.9x  → -[-]  
+10:54:06    APOLLOHOSP   C=7795.00  VWAP=7800.73  RSI=39  Vol=0.2x  → -[-]  
+10:54:07    HDFCLIFE     C=725.45  VWAP=727.87  RSI=50  Vol=0.3x  → -[-]  
+10:54:08    SBIN         C=1200.70  VWAP=1204.55  RSI=36  Vol=1.4x  → -[-]  
+10:54:09    TECHM        C=1368.00  VWAP=1380.77  RSI=36  Vol=0.8x  → -[-]  
+10:54:11    MARUTI       C=14925.00  VWAP=14976.24  RSI=39  Vol=0.5x  → -[-]  
+10:57:02  SCAN #19  10:57:02  phase=ACTIVE_AM  active=True
+10:57:03    BAJAJ-AUTO   C=9971.50  VWAP=10027.63  RSI=28  Vol=0.3x  → -[-]  
+10:57:04    EICHERMOT    C=8070.50  VWAP=8130.96  RSI=41  Vol=0.4x  → -[-]  in_position
+10:57:05    AXISBANK     C=1387.00  VWAP=1388.43  RSI=38  Vol=0.9x  → -[-]  
+10:57:06    APOLLOHOSP   C=7801.00  VWAP=7800.75  RSI=47  Vol=0.4x  → -[-]  
+10:57:07    HDFCLIFE     C=724.90  VWAP=727.73  RSI=43  Vol=2.3x  → -[-]  
+10:57:08    SBIN         C=1199.80  VWAP=1204.40  RSI=31  Vol=1.2x  → -[-]  
+10:57:09    TECHM        C=1368.70  VWAP=1380.69  RSI=40  Vol=0.5x  → -[-]  
+10:57:10    MARUTI       C=14946.00  VWAP=14974.33  RSI=51  Vol=1.9x  → -[-]  
+11:00:02  SCAN #20  11:00:02  phase=ACTIVE_AM  active=True
+11:00:03    BAJAJ-AUTO   C=9967.50  VWAP=10024.67  RSI=27  Vol=1.6x  → -[-]  
+11:00:04    EICHERMOT    C=8074.00  VWAP=8130.41  RSI=45  Vol=0.6x  → -[-]  in_position
+11:00:05    AXISBANK     C=1387.90  VWAP=1388.42  RSI=46  Vol=0.7x  → -[-]  
+11:00:06    APOLLOHOSP   C=7800.50  VWAP=7800.75  RSI=46  Vol=0.0x  → -[-]  
+11:00:07    HDFCLIFE     C=723.75  VWAP=727.69  RSI=32  Vol=0.6x  → -[-]  
+11:00:08    SBIN         C=1199.90  VWAP=1204.34  RSI=32  Vol=0.5x  → -[-]  
+11:00:09    TECHM        C=1368.70  VWAP=1380.62  RSI=40  Vol=0.5x  → -[-]  
+11:00:11    MARUTI       C=14958.00  VWAP=14973.12  RSI=56  Vol=2.0x  → -[-]  
+11:03:02  SCAN #21  11:03:02  phase=ACTIVE_AM  active=True
+11:03:03    BAJAJ-AUTO   C=9969.00  VWAP=10024.39  RSI=28  Vol=0.2x  → -[-]  
+11:03:04    EICHERMOT    C=8072.50  VWAP=8128.68  RSI=44  Vol=1.7x  → -[-]  in_position
+11:03:05    AXISBANK     C=1387.90  VWAP=1388.41  RSI=46  Vol=1.9x  → -[-]  
+11:03:06    APOLLOHOSP   C=7805.00  VWAP=7800.76  RSI=51  Vol=0.1x  → -[-]  
+11:03:07    HDFCLIFE     C=724.20  VWAP=727.63  RSI=39  Vol=0.7x  → -[-]  
+11:03:08    SBIN         C=1201.30  VWAP=1204.25  RSI=46  Vol=1.0x  → -[-]  
+11:03:09    TECHM        C=1369.00  VWAP=1380.55  RSI=42  Vol=0.5x  → -[-]  
+11:03:11    MARUTI       C=14952.00  VWAP=14972.68  RSI=53  Vol=0.9x  → -[-]  
+11:06:02  SCAN #22  11:06:02  phase=ACTIVE_AM  active=True
+11:06:03    BAJAJ-AUTO   C=9988.00  VWAP=10023.85  RSI=45  Vol=0.4x  → -[-]  
+11:06:04  BRACKET  EICHERMOT    SL hit — position closed
+11:06:04    EICHERMOT    C=8089.50  VWAP=8128.18  RSI=60  Vol=0.7x  → -[-]  
+11:06:05    AXISBANK     C=1387.90  VWAP=1388.40  RSI=46  Vol=1.0x  → -[-]  
+11:06:06    APOLLOHOSP   C=7807.00  VWAP=7800.77  RSI=54  Vol=0.1x  → -[-]  
+11:06:08    HDFCLIFE     C=722.20  VWAP=727.26  RSI=26  Vol=3.5x  → ★ SHORT[MOM]  SL=723.32  TP=720.52  Qty=346
+11:06:09    SBIN         C=1201.00  VWAP=1204.14  RSI=44  Vol=1.5x  → -[-]  
+11:06:10    TECHM        C=1370.00  VWAP=1380.49  RSI=49  Vol=0.4x  → -[-]  
+11:06:11    MARUTI       C=14958.00  VWAP=14972.08  RSI=55  Vol=1.5x  → -[-]  
+11:09:02  SCAN #23  11:09:02  phase=ACTIVE_AM  active=True
+11:09:03    BAJAJ-AUTO   C=9997.00  VWAP=10023.54  RSI=51  Vol=0.4x  → -[-]  
+11:09:04    EICHERMOT    C=8088.00  VWAP=8127.71  RSI=58  Vol=0.7x  → -[-]  
+11:09:05    AXISBANK     C=1388.00  VWAP=1388.39  RSI=47  Vol=1.1x  → -[-]  
+11:09:06    APOLLOHOSP   C=7808.00  VWAP=7800.80  RSI=55  Vol=0.1x  → -[-]  
+11:09:08    HDFCLIFE     C=721.45  VWAP=726.98  RSI=23  Vol=2.3x  → -[-]  in_position
+11:09:09    SBIN         C=1202.50  VWAP=1204.09  RSI=56  Vol=0.8x  → -[-]  
+11:09:10    TECHM        C=1371.50  VWAP=1380.44  RSI=57  Vol=0.6x  → -[-]  
+11:09:12    MARUTI       C=14971.00  VWAP=14971.95  RSI=61  Vol=1.1x  → -[-]  
+11:12:02  SCAN #24  11:12:02  phase=ACTIVE_AM  active=True
+11:12:03    BAJAJ-AUTO   C=9977.00  VWAP=10022.84  RSI=40  Vol=0.7x  → -[-]  
+11:12:04    EICHERMOT    C=8079.00  VWAP=8127.29  RSI=49  Vol=0.6x  → -[-]  
+11:12:05    AXISBANK     C=1389.70  VWAP=1388.39  RSI=61  Vol=0.7x  → -[-]  
+11:12:06    APOLLOHOSP   C=7807.50  VWAP=7800.83  RSI=54  Vol=0.1x  → -[-]  
+11:12:07    HDFCLIFE     C=720.60  VWAP=726.82  RSI=20  Vol=1.2x  → -[-]  in_position
+11:12:08    SBIN         C=1202.20  VWAP=1204.02  RSI=53  Vol=1.5x  → -[-]  
+11:12:10    TECHM        C=1371.70  VWAP=1380.31  RSI=58  Vol=1.6x  → -[-]  
+11:12:11    MARUTI       C=14961.00  VWAP=14971.85  RSI=55  Vol=0.6x  → -[-]  
+11:15:02  SCAN #25  11:15:02  phase=ACTIVE_AM  active=True
+11:15:03    BAJAJ-AUTO   C=9985.50  VWAP=10022.33  RSI=46  Vol=0.5x  → -[-]  
+11:15:04    EICHERMOT    C=8083.50  VWAP=8127.00  RSI=53  Vol=0.4x  → -[-]  
+11:15:05    AXISBANK     C=1390.00  VWAP=1388.41  RSI=63  Vol=0.8x  → -[-]  
+11:15:06    APOLLOHOSP   C=7807.50  VWAP=7800.84  RSI=54  Vol=0.0x  → -[-]  
+11:15:07  BRACKET  HDFCLIFE     TP hit — position closed
+11:15:07    HDFCLIFE     C=721.50  VWAP=726.69  RSI=31  Vol=1.1x  → -[-]  cooldown_until_11:21
+11:15:08    SBIN         C=1203.40  VWAP=1204.00  RSI=61  Vol=0.6x  → -[-]  
+11:15:09    TECHM        C=1369.40  VWAP=1380.25  RSI=45  Vol=0.7x  → -[-]  
+11:15:11    MARUTI       C=14970.00  VWAP=14971.75  RSI=59  Vol=0.6x  → -[-]  
+11:18:02  SCAN #26  11:18:02  phase=ACTIVE_AM  active=True
+11:18:03    BAJAJ-AUTO   C=9995.00  VWAP=10022.11  RSI=51  Vol=0.2x  → -[-]  
+11:18:04    EICHERMOT    C=8079.50  VWAP=8126.68  RSI=49  Vol=0.5x  → -[-]  
+11:18:05    AXISBANK     C=1389.80  VWAP=1388.42  RSI=61  Vol=0.7x  → -[-]  
+11:18:06    APOLLOHOSP   C=7810.00  VWAP=7800.85  RSI=58  Vol=0.0x  → -[-]  
+11:18:07    HDFCLIFE     C=721.55  VWAP=726.60  RSI=31  Vol=0.9x  → -[-]  cooldown_until_11:21
+11:18:08    SBIN         C=1202.90  VWAP=1203.98  RSI=57  Vol=1.2x  → -[-]  
+11:18:10    TECHM        C=1370.60  VWAP=1380.22  RSI=51  Vol=0.4x  → -[-]  
+11:18:11    MARUTI       C=14960.00  VWAP=14971.03  RSI=53  Vol=3.8x  → -[-]  
+11:21:02  SCAN #27  11:21:02  phase=ACTIVE_AM  active=True
+11:21:03    BAJAJ-AUTO   C=9981.00  VWAP=10019.55  RSI=44  Vol=2.4x  → -[-]  
+11:21:04    EICHERMOT    C=8079.50  VWAP=8126.43  RSI=49  Vol=0.4x  → -[-]  
+11:21:05    AXISBANK     C=1390.00  VWAP=1388.43  RSI=62  Vol=0.7x  → -[-]  
+11:21:06    APOLLOHOSP   C=7801.00  VWAP=7800.86  RSI=43  Vol=0.1x  → -[-]  
+11:21:07    HDFCLIFE     C=721.60  VWAP=726.56  RSI=32  Vol=0.4x  → -[-]  
+11:21:09    SBIN         C=1203.90  VWAP=1203.95  RSI=63  Vol=1.1x  → -[-]  
+11:21:10    TECHM        C=1371.10  VWAP=1380.16  RSI=54  Vol=0.7x  → -[-]  
+11:21:11    MARUTI       C=14955.00  VWAP=14969.76  RSI=50  Vol=4.6x  → -[-]  
+11:24:02  SCAN #28  11:24:02  phase=ACTIVE_AM  active=True
+11:24:03    BAJAJ-AUTO   C=9979.00  VWAP=10018.84  RSI=43  Vol=0.8x  → -[-]  
+11:24:04    EICHERMOT    C=8078.00  VWAP=8126.19  RSI=48  Vol=0.4x  → -[-]  
+11:24:05    AXISBANK     C=1388.80  VWAP=1388.43  RSI=49  Vol=0.7x  → -[-]  
+11:24:06    APOLLOHOSP   C=7801.00  VWAP=7800.88  RSI=43  Vol=0.2x  → -[-]  
+11:24:07    HDFCLIFE     C=720.55  VWAP=726.52  RSI=26  Vol=0.3x  → -[-]  
+11:24:09    SBIN         C=1202.00  VWAP=1203.91  RSI=48  Vol=1.4x  → -[-]  
+11:24:10    TECHM        C=1370.50  VWAP=1380.09  RSI=50  Vol=0.9x  → -[-]  
+11:24:11    MARUTI       C=14956.00  VWAP=14969.34  RSI=51  Vol=1.5x  → -[-]  
+11:27:02  SCAN #29  11:27:02  phase=ACTIVE_AM  active=True
+11:27:03    BAJAJ-AUTO   C=9987.50  VWAP=10018.72  RSI=48  Vol=0.2x  → -[-]  
+11:27:04    EICHERMOT    C=8080.00  VWAP=8125.56  RSI=50  Vol=1.2x  → -[-]  
+11:27:05    AXISBANK     C=1388.40  VWAP=1388.43  RSI=46  Vol=0.8x  → -[-]  
+11:27:06    APOLLOHOSP   C=7802.50  VWAP=7800.88  RSI=46  Vol=0.1x  → -[-]  
+11:27:07    HDFCLIFE     C=721.40  VWAP=726.51  RSI=37  Vol=0.2x  → -[-]  
+11:27:09    SBIN         C=1202.40  VWAP=1203.87  RSI=51  Vol=0.9x  → -[-]  
+11:27:10    TECHM        C=1370.00  VWAP=1380.05  RSI=47  Vol=0.5x  → -[-]  
+11:27:11    MARUTI       C=14945.00  VWAP=14969.24  RSI=44  Vol=0.2x  → -[-]  
+11:30:02  SCAN #30  11:30:02  phase=ACTIVE_AM  active=True
+11:30:03    BAJAJ-AUTO   C=9985.50  VWAP=10018.53  RSI=47  Vol=0.3x  → -[-]  
+11:30:04    EICHERMOT    C=8084.00  VWAP=8125.42  RSI=55  Vol=0.3x  → -[-]  
+11:30:05    AXISBANK     C=1389.80  VWAP=1388.44  RSI=58  Vol=0.7x  → -[-]  
+11:30:06    APOLLOHOSP   C=7799.00  VWAP=7800.88  RSI=41  Vol=0.1x  → -[-]  
+11:30:07    HDFCLIFE     C=721.20  VWAP=726.48  RSI=35  Vol=0.3x  → -[-]  
+11:30:08    SBIN         C=1201.00  VWAP=1203.85  RSI=42  Vol=0.5x  → -[-]  
+11:30:09    TECHM        C=1371.60  VWAP=1380.01  RSI=57  Vol=0.6x  → -[-]  
+11:30:11    MARUTI       C=14933.00  VWAP=14968.94  RSI=38  Vol=0.4x  → -[-]  
+11:33:02  SCAN #31  11:33:02  phase=ACTIVE_AM  active=True
+11:33:03    BAJAJ-AUTO   C=9999.50  VWAP=10018.36  RSI=56  Vol=0.4x  → -[-]  
+11:33:04    EICHERMOT    C=8081.50  VWAP=8125.20  RSI=52  Vol=0.5x  → -[-]  
+11:33:05    AXISBANK     C=1389.90  VWAP=1388.45  RSI=58  Vol=1.2x  → -[-]  
+11:33:06    APOLLOHOSP   C=7800.50  VWAP=7800.88  RSI=44  Vol=0.1x  → -[-]  
+11:33:07    HDFCLIFE     C=721.00  VWAP=726.45  RSI=34  Vol=0.3x  → -[-]  
+11:33:08    SBIN         C=1200.00  VWAP=1203.80  RSI=37  Vol=0.7x  → -[-]  
+11:33:09    TECHM        C=1370.80  VWAP=1379.88  RSI=51  Vol=1.8x  → -[-]  
+11:33:10    MARUTI       C=14935.00  VWAP=14968.37  RSI=40  Vol=0.9x  → -[-]  
+11:36:02  SCAN #32  11:36:02  phase=ACTIVE_AM  active=True
+11:36:03    BAJAJ-AUTO   C=10008.00  VWAP=10017.90  RSI=61  Vol=1.6x  → -[-]  
+11:36:04    EICHERMOT    C=8077.50  VWAP=8124.72  RSI=46  Vol=0.9x  → -[-]  
+11:36:05    AXISBANK     C=1388.30  VWAP=1388.46  RSI=44  Vol=0.9x  → -[-]  
+11:36:06    APOLLOHOSP   C=7800.50  VWAP=7800.87  RSI=44  Vol=0.2x  → -[-]  
+11:36:08    HDFCLIFE     C=719.00  VWAP=726.17  RSI=24  Vol=2.5x  → ★ SHORT[MOM]  SL=720.11  TP=717.33  Qty=347
+11:36:09    SBIN         C=1200.00  VWAP=1203.69  RSI=37  Vol=1.3x  → -[-]  
+11:36:10    TECHM        C=1370.60  VWAP=1379.75  RSI=50  Vol=1.6x  → -[-]  
+11:36:12    MARUTI       C=14936.00  VWAP=14968.13  RSI=41  Vol=0.3x  → -[-]  
+11:39:02  SCAN #33  11:39:02  phase=ACTIVE_AM  active=True
+11:39:03    BAJAJ-AUTO   C=10009.00  VWAP=10017.77  RSI=61  Vol=0.5x  → -[-]  
+11:39:04    EICHERMOT    C=8072.00  VWAP=8123.49  RSI=40  Vol=1.9x  → -[-]  
+11:39:05    AXISBANK     C=1389.00  VWAP=1388.46  RSI=50  Vol=0.8x  → -[-]  
+11:39:06    APOLLOHOSP   C=7800.50  VWAP=7800.86  RSI=44  Vol=0.2x  → -[-]  
+11:39:07    HDFCLIFE     C=717.95  VWAP=726.08  RSI=20  Vol=0.7x  → -[-]  in_position
+11:39:09    SBIN         C=1199.40  VWAP=1203.63  RSI=34  Vol=0.7x  → -[-]  
+11:39:10    TECHM        C=1370.70  VWAP=1379.70  RSI=51  Vol=0.8x  → -[-]  
+11:39:11    MARUTI       C=14924.00  VWAP=14967.73  RSI=34  Vol=0.4x  → -[-]  
+11:42:02  SCAN #34  11:42:02  phase=ACTIVE_AM  active=True
+11:42:03    BAJAJ-AUTO   C=10003.00  VWAP=10017.66  RSI=56  Vol=0.3x  → -[-]  
+11:42:04    EICHERMOT    C=8089.50  VWAP=8121.73  RSI=60  Vol=3.1x  → -[-]  
+11:42:05    AXISBANK     C=1390.00  VWAP=1388.47  RSI=57  Vol=1.0x  → -[-]  
+11:42:06    APOLLOHOSP   C=7800.00  VWAP=7800.87  RSI=43  Vol=1.6x  → -[-]  
+11:42:07    HDFCLIFE     C=719.05  VWAP=726.00  RSI=32  Vol=0.7x  → -[-]  in_position
+11:42:08    SBIN         C=1199.90  VWAP=1203.52  RSI=39  Vol=1.5x  → -[-]  
+11:42:10    TECHM        C=1371.30  VWAP=1379.67  RSI=55  Vol=0.5x  → -[-]  
+11:42:11    MARUTI       C=14931.00  VWAP=14967.39  RSI=40  Vol=0.4x  → -[-]  
+11:45:02  SCAN #35  11:45:02  phase=ACTIVE_AM  active=True
+11:45:03    BAJAJ-AUTO   C=10010.00  VWAP=10017.56  RSI=60  Vol=0.6x  → -[-]  
+11:45:04    EICHERMOT    C=8095.50  VWAP=8120.38  RSI=64  Vol=3.8x  → -[-]  
+11:45:05    AXISBANK     C=1389.70  VWAP=1388.48  RSI=55  Vol=1.0x  → -[-]  
+11:45:07    APOLLOHOSP   C=7808.50  VWAP=7800.98  RSI=61  Vol=2.5x  → ★ LONG[MOM]  SL=7800.36  TP=7820.71  Qty=32
+11:45:08  BRACKET  HDFCLIFE     TP hit — position closed
+11:45:08    HDFCLIFE     C=717.95  VWAP=725.50  RSI=27  Vol=3.5x  → -[-]  cooldown_until_11:51
+11:45:09    SBIN         C=1199.90  VWAP=1203.48  RSI=39  Vol=0.7x  → -[-]  
+11:45:10    TECHM        C=1371.70  VWAP=1379.62  RSI=58  Vol=0.8x  → -[-]  
+11:45:12    MARUTI       C=14944.00  VWAP=14967.15  RSI=50  Vol=0.4x  → -[-]  
+11:48:02  SCAN #36  11:48:02  phase=ACTIVE_AM  active=True
+11:48:03    BAJAJ-AUTO   C=10014.50  VWAP=10017.53  RSI=63  Vol=0.9x  → -[-]  
+11:48:04    EICHERMOT    C=8105.00  VWAP=8120.21  RSI=70  Vol=0.8x  → -[-]  
+11:48:05    AXISBANK     C=1391.70  VWAP=1388.51  RSI=67  Vol=1.2x  → -[-]  
+11:48:06    APOLLOHOSP   C=7813.00  VWAP=7801.05  RSI=68  Vol=1.0x  → -[-]  in_position
+11:48:07    HDFCLIFE     C=718.10  VWAP=725.36  RSI=29  Vol=1.0x  → -[-]  cooldown_until_11:51
+11:48:08    SBIN         C=1200.50  VWAP=1203.41  RSI=45  Vol=1.2x  → -[-]  
+11:48:09    TECHM        C=1371.30  VWAP=1379.59  RSI=54  Vol=0.7x  → -[-]  
+11:48:11    MARUTI       C=14952.00  VWAP=14967.05  RSI=55  Vol=0.3x  → -[-]  
+11:51:02  SCAN #37  11:51:02  phase=ACTIVE_AM  active=True
+11:51:03    BAJAJ-AUTO   C=10019.00  VWAP=10017.55  RSI=66  Vol=0.8x  → -[-]  
+11:51:04    EICHERMOT    C=8100.00  VWAP=8120.06  RSI=64  Vol=0.7x  → -[-]  
+11:51:05    AXISBANK     C=1391.50  VWAP=1388.54  RSI=65  Vol=1.0x  → -[-]  
+11:51:06    APOLLOHOSP   C=7820.00  VWAP=7803.10  RSI=75  Vol=11.7x  → LONG[MOM]  in_position
+11:51:07    HDFCLIFE     C=717.00  VWAP=725.23  RSI=25  Vol=0.8x  → -[-]  cooldown_until_11:51
+11:51:08    SBIN         C=1200.50  VWAP=1203.34  RSI=45  Vol=1.2x  → -[-]  
+11:51:09    TECHM        C=1368.70  VWAP=1379.47  RSI=37  Vol=1.7x  → -[-]  
+11:51:11    MARUTI       C=14958.00  VWAP=14966.92  RSI=59  Vol=0.6x  → -[-]  
+11:54:02  SCAN #38  11:54:02  phase=ACTIVE_AM  active=True
+11:54:03    BAJAJ-AUTO   C=10021.00  VWAP=10017.56  RSI=67  Vol=0.3x  → -[-]  
+11:54:04    EICHERMOT    C=8104.00  VWAP=8120.00  RSI=67  Vol=0.3x  → -[-]  
+11:54:05    AXISBANK     C=1391.20  VWAP=1388.57  RSI=62  Vol=0.9x  → -[-]  
+11:54:06  BRACKET  APOLLOHOSP   TP hit — position closed
+11:54:06    APOLLOHOSP   C=7820.00  VWAP=7803.28  RSI=75  Vol=1.0x  → -[-]  cooldown_until_12:00
+11:54:07    HDFCLIFE     C=717.20  VWAP=725.14  RSI=27  Vol=0.6x  → -[-]  max_signals_AM(2)
+11:54:08    SBIN         C=1201.50  VWAP=1203.28  RSI=54  Vol=1.5x  → -[-]  
+11:54:10    TECHM        C=1367.60  VWAP=1379.38  RSI=32  Vol=1.3x  → -[-]  
+11:54:11    MARUTI       C=14949.00  VWAP=14966.82  RSI=52  Vol=0.3x  → -[-]  
+11:57:02  SCAN #39  11:57:02  phase=ACTIVE_AM  active=True
+11:57:03    BAJAJ-AUTO   C=10018.50  VWAP=10017.58  RSI=64  Vol=0.8x  → -[-]  
+11:57:04    EICHERMOT    C=8100.00  VWAP=8119.83  RSI=61  Vol=0.9x  → -[-]  
+11:57:05    AXISBANK     C=1390.20  VWAP=1388.59  RSI=53  Vol=0.9x  → -[-]  
+11:57:06    APOLLOHOSP   C=7820.00  VWAP=7803.32  RSI=75  Vol=0.2x  → -[-]  cooldown_until_12:00
+11:57:07    HDFCLIFE     C=716.25  VWAP=724.98  RSI=23  Vol=1.0x  → -[-]  max_signals_AM(2)
+11:57:08    SBIN         C=1201.60  VWAP=1203.26  RSI=55  Vol=0.9x  → -[-]  
+11:57:09    TECHM        C=1366.20  VWAP=1379.05  RSI=27  Vol=3.3x  → -[-]  
+11:57:11    MARUTI       C=14943.00  VWAP=14966.41  RSI=48  Vol=0.9x  → -[-]  
+12:00:02  PHASE  ACTIVE_AM → MIDDAY
+12:00:02  SCAN #40  12:00:02  phase=MIDDAY  active=False
+12:00:04    BAJAJ-AUTO   C=10022.50  VWAP=10017.66  RSI=66  Vol=1.1x  → -[-]  inactive_phase
+12:00:05    EICHERMOT    C=8101.00  VWAP=8119.64  RSI=62  Vol=0.9x  → -[-]  inactive_phase
+12:00:06    AXISBANK     C=1391.00  VWAP=1388.60  RSI=58  Vol=0.9x  → -[-]  inactive_phase
+12:00:07    APOLLOHOSP   C=7827.00  VWAP=7803.54  RSI=81  Vol=1.0x  → -[-]  inactive_phase
+12:00:09    HDFCLIFE     C=716.30  VWAP=724.83  RSI=24  Vol=0.9x  → -[-]  inactive_phase
+12:00:10    SBIN         C=1201.50  VWAP=1203.23  RSI=54  Vol=0.7x  → -[-]  inactive_phase
+12:00:11    TECHM        C=1366.50  VWAP=1378.92  RSI=30  Vol=1.3x  → -[-]  inactive_phase
+12:00:12    MARUTI       C=14935.00  VWAP=14966.12  RSI=42  Vol=0.5x  → -[-]  inactive_phase
+12:03:02  SCAN #41  12:03:02  phase=MIDDAY  active=False
+12:03:03    BAJAJ-AUTO   C=10023.50  VWAP=10017.69  RSI=67  Vol=0.7x  → -[-]  inactive_phase
+12:03:04    EICHERMOT    C=8101.00  VWAP=8119.55  RSI=62  Vol=0.4x  → -[-]  inactive_phase
+12:03:05    AXISBANK     C=1390.60  VWAP=1388.62  RSI=55  Vol=1.1x  → -[-]  inactive_phase
+12:03:06    APOLLOHOSP   C=7825.00  VWAP=7803.57  RSI=75  Vol=0.1x  → -[-]  inactive_phase
+12:03:07    HDFCLIFE     C=716.45  VWAP=724.72  RSI=26  Vol=0.7x  → -[-]  inactive_phase
+12:03:08    SBIN         C=1204.30  VWAP=1203.23  RSI=72  Vol=0.9x  → -[-]  inactive_phase
+12:03:09    TECHM        C=1365.40  VWAP=1378.86  RSI=26  Vol=0.6x  → -[-]  inactive_phase
+12:03:11    MARUTI       C=14941.00  VWAP=14965.97  RSI=47  Vol=0.3x  → -[-]  inactive_phase
+12:03:28  STOPPED MANUALLY  5 signal(s), 41 scans
+12:03:28    SUMMARY  10:24  SHORT  BAJAJ-AUTO   @ 10018.00  [PDL]
+12:03:28    SUMMARY  10:45  SHORT  EICHERMOT    @ 8067.00  [MOM]
+12:03:28    SUMMARY  11:06  SHORT  HDFCLIFE     @ 722.20  [MOM]
+12:03:28    SUMMARY  11:36  SHORT  HDFCLIFE     @ 719.00  [MOM]
+12:03:28    SUMMARY  11:45   LONG  APOLLOHOSP   @ 7808.50  [MOM]
+12:03:33  ======================================================================
+12:03:33  SESSION START  Capital=50000  RR=1:1.8  Risk=1%
+12:03:33  Stocks: BAJAJ-AUTO, EICHERMOT, AXISBANK, APOLLOHOSP, HDFCLIFE, SBIN, TECHM, MARUTI
+12:03:33  Strategy: PDL (SL=1.5x ATR) + MOM (SL=1.2x ATR)  MaxSL/day=2
+12:03:33  Telegram: enabled
+12:03:33  PHASE 1  Warm-Up — connecting to Angel One
+12:03:34  API connected
+12:03:34  Loading 5-day 3-min warmup data
+12:03:34  WARMUP  BAJAJ-AUTO   8415 bars  cache=2026-02-27
+12:03:34  WARMUP  EICHERMOT    8415 bars  cache=2026-02-27
+12:03:34  WARMUP  AXISBANK     8415 bars  cache=2026-02-27
+12:03:34  WARMUP  APOLLOHOSP   8415 bars  cache=2026-02-27
+12:03:34  WARMUP  HDFCLIFE     8416 bars  cache=2026-02-27
+12:03:34  WARMUP  SBIN         8415 bars  cache=2026-02-27
+12:03:34  WARMUP  TECHM        8416 bars  cache=2026-02-27
+12:03:34  WARMUP  MARUTI       8416 bars  cache=2026-02-27
+12:03:34  PDL  BAJAJ-AUTO   H=10187.00  L=10029.50
+12:03:34  PDL  EICHERMOT    H=8225.00  L=8024.50
+12:03:34  PDL  AXISBANK     H=1405.70  L=1386.00
+12:03:34  PDL  APOLLOHOSP   H=7831.00  L=7729.00
+12:03:34  PDL  HDFCLIFE     H=744.90  L=731.65
+12:03:34  PDL  SBIN         H=1215.40  L=1188.90
+12:03:34  PDL  TECHM        H=1396.60  L=1360.40
+12:03:34  PDL  MARUTI       H=15224.00  L=15046.00
+12:03:34  Warm-up complete: 8 stocks loaded, PDL levels for 8
+12:03:35  PHASE  START → MIDDAY
+12:03:35  SCAN #1  12:03:35  phase=MIDDAY  active=False
+12:03:36    BAJAJ-AUTO   C=10023.50  VWAP=10022.28  RSI=63  Vol=0.5x  → -[-]  inactive_phase
+12:03:37    EICHERMOT    C=8101.00  VWAP=8126.24  RSI=66  Vol=0.5x  → -[-]  inactive_phase
+12:03:38    AXISBANK     C=1390.60  VWAP=1388.47  RSI=64  Vol=1.0x  → -[-]  inactive_phase
+12:03:39    APOLLOHOSP   C=7825.00  VWAP=7801.24  RSI=70  Vol=0.1x  → -[-]  inactive_phase
+12:03:40    HDFCLIFE     C=716.45  VWAP=726.00  RSI=17  Vol=0.9x  → -[-]  inactive_phase
+12:03:41    SBIN         C=1204.30  VWAP=1203.89  RSI=63  Vol=1.0x  → -[-]  inactive_phase
+12:03:43    TECHM        C=1365.40  VWAP=1379.62  RSI=32  Vol=0.5x  → -[-]  inactive_phase
+12:03:44    MARUTI       C=14941.00  VWAP=14969.75  RSI=45  Vol=0.3x  → -[-]  inactive_phase
+12:05:46  STOPPED MANUALLY  0 signal(s), 1 scans
+12:06:37  WARMUP  BAJAJ-AUTO   8415 bars  cache=2026-02-27
+12:06:37  WARMUP  EICHERMOT    8415 bars  cache=2026-02-27
+12:06:37  WARMUP  AXISBANK     8415 bars  cache=2026-02-27
+12:06:37  WARMUP  APOLLOHOSP   8415 bars  cache=2026-02-27
+12:06:37  WARMUP  HDFCLIFE     8416 bars  cache=2026-02-27
+12:06:37  WARMUP  SBIN         8415 bars  cache=2026-02-27
+12:06:37  WARMUP  TECHM        8416 bars  cache=2026-02-27
+12:06:37  WARMUP  MARUTI       8416 bars  cache=2026-02-27
+12:06:37  PDL  BAJAJ-AUTO   H=10187.00  L=10029.50
+12:06:37  PDL  EICHERMOT    H=8225.00  L=8024.50
+12:06:37  PDL  AXISBANK     H=1405.70  L=1386.00
+12:06:37  PDL  APOLLOHOSP   H=7831.00  L=7729.00
+12:06:37  PDL  HDFCLIFE     H=744.90  L=731.65
+12:06:37  PDL  SBIN         H=1215.40  L=1188.90
+12:06:37  PDL  TECHM        H=1396.60  L=1360.40
+12:06:37  PDL  MARUTI       H=15224.00  L=15046.00
+12:07:37  ======================================================================
+12:07:37  SESSION START  Capital=50000  RR=1:1.8  Risk=1%
+12:07:37  Stocks: BAJAJ-AUTO, EICHERMOT, AXISBANK, APOLLOHOSP, HDFCLIFE, SBIN, TECHM, MARUTI
+12:07:37  Strategy: PDL (SL=1.5x ATR) + MOM (SL=1.2x ATR)  MaxSL/day=2
+12:07:37  Telegram: enabled
+12:07:37  PHASE 1  Warm-Up — connecting to Angel One
+12:07:38  API connected
+12:07:38  Loading 5-day 3-min warmup data
+12:07:38  WARMUP  BAJAJ-AUTO   8415 bars  cache=2026-02-27
+12:07:38  WARMUP  EICHERMOT    8415 bars  cache=2026-02-27
+12:07:38  WARMUP  AXISBANK     8415 bars  cache=2026-02-27
+12:07:38  WARMUP  APOLLOHOSP   8415 bars  cache=2026-02-27
+12:07:38  WARMUP  HDFCLIFE     8416 bars  cache=2026-02-27
+12:07:38  WARMUP  SBIN         8415 bars  cache=2026-02-27
+12:07:38  WARMUP  TECHM        8416 bars  cache=2026-02-27
+12:07:38  WARMUP  MARUTI       8416 bars  cache=2026-02-27
+12:07:38  PDL  BAJAJ-AUTO   H=10187.00  L=10029.50
+12:07:38  PDL  EICHERMOT    H=8225.00  L=8024.50
+12:07:38  PDL  AXISBANK     H=1405.70  L=1386.00
+12:07:38  PDL  APOLLOHOSP   H=7831.00  L=7729.00
+12:07:38  PDL  HDFCLIFE     H=744.90  L=731.65
+12:07:38  PDL  SBIN         H=1215.40  L=1188.90
+12:07:38  PDL  TECHM        H=1396.60  L=1360.40
+12:07:38  PDL  MARUTI       H=15224.00  L=15046.00
+12:07:38  Warm-up complete: 8 stocks loaded, PDL levels for 8
+12:07:40  PHASE  START → MIDDAY
+12:07:40  SCAN #1  12:07:40  phase=MIDDAY  active=False
+12:07:41    BAJAJ-AUTO   C=10002.50  VWAP=10021.98  RSI=51  Vol=1.2x  → -[-]  inactive_phase
+12:07:42    EICHERMOT    C=8100.00  VWAP=8126.42  RSI=64  Vol=0.4x  → -[-]  inactive_phase
+12:07:43    AXISBANK     C=1387.80  VWAP=1388.46  RSI=42  Vol=1.1x  → -[-]  inactive_phase
+12:07:44    APOLLOHOSP   C=7819.00  VWAP=7801.25  RSI=61  Vol=0.1x  → -[-]  inactive_phase
+12:07:45    HDFCLIFE     C=715.85  VWAP=726.01  RSI=16  Vol=1.1x  → -[-]  inactive_phase
+12:07:46    SBIN         C=1203.30  VWAP=1203.94  RSI=55  Vol=0.7x  → -[-]  inactive_phase
+12:07:47    TECHM        C=1365.50  VWAP=1379.88  RSI=33  Vol=0.9x  → -[-]  inactive_phase
+12:07:49    MARUTI       C=14951.00  VWAP=14969.99  RSI=50  Vol=0.6x  → -[-]  inactive_phase
+12:09:01  SCAN #2  12:09:01  phase=MIDDAY  active=False
+12:09:02    BAJAJ-AUTO   C=9994.50  VWAP=10021.61  RSI=48  Vol=0.8x  → -[-]  inactive_phase
+12:09:03    EICHERMOT    C=8095.00  VWAP=8126.01  RSI=58  Vol=1.1x  → -[-]  inactive_phase
+12:09:04    AXISBANK     C=1386.10  VWAP=1388.42  RSI=34  Vol=1.8x  → -[-]  inactive_phase
+12:09:05    APOLLOHOSP   C=7812.00  VWAP=7801.30  RSI=51  Vol=0.1x  → -[-]  inactive_phase
+12:09:06    HDFCLIFE     C=716.15  VWAP=725.11  RSI=19  Vol=4.7x  → -[-]  inactive_phase
+12:09:07    SBIN         C=1201.50  VWAP=1203.91  RSI=46  Vol=0.6x  → -[-]  inactive_phase
+12:09:09    TECHM        C=1365.40  VWAP=1379.78  RSI=32  Vol=0.8x  → -[-]  inactive_phase
+12:09:10    MARUTI       C=14945.00  VWAP=14969.74  RSI=47  Vol=0.5x  → -[-]  inactive_phase
+12:12:01  SCAN #3  12:12:01  phase=MIDDAY  active=False
+12:12:02    BAJAJ-AUTO   C=10001.00  VWAP=10021.27  RSI=51  Vol=0.7x  → -[-]  inactive_phase
+12:12:03    EICHERMOT    C=8088.50  VWAP=8125.82  RSI=51  Vol=0.5x  → -[-]  inactive_phase
+12:12:04    AXISBANK     C=1387.20  VWAP=1388.34  RSI=42  Vol=4.0x  → -[-]  inactive_phase
+12:12:05    APOLLOHOSP   C=7806.00  VWAP=7801.57  RSI=45  Vol=1.5x  → -[-]  inactive_phase
+12:12:06    HDFCLIFE     C=716.05  VWAP=725.02  RSI=19  Vol=0.5x  → -[-]  inactive_phase
+12:12:07    SBIN         C=1200.80  VWAP=1203.80  RSI=43  Vol=1.7x  → -[-]  inactive_phase
+12:12:09    TECHM        C=1366.10  VWAP=1379.67  RSI=37  Vol=1.0x  → -[-]  inactive_phase
+12:12:10    MARUTI       C=14944.00  VWAP=14969.62  RSI=46  Vol=0.2x  → -[-]  inactive_phase
+12:15:01  SCAN #4  12:15:01  phase=MIDDAY  active=False
+12:15:02    BAJAJ-AUTO   C=9994.50  VWAP=10021.01  RSI=48  Vol=0.5x  → -[-]  inactive_phase
+12:15:03    EICHERMOT    C=8075.00  VWAP=8125.28  RSI=40  Vol=1.0x  → -[-]  inactive_phase
+12:15:04    AXISBANK     C=1385.90  VWAP=1388.26  RSI=36  Vol=3.0x  → SHORT[PDL]  inactive_phase
+12:15:05    APOLLOHOSP   C=7803.00  VWAP=7801.58  RSI=42  Vol=0.1x  → -[-]  inactive_phase
+12:15:06    HDFCLIFE     C=717.15  VWAP=724.81  RSI=30  Vol=1.3x  → -[-]  inactive_phase
+12:15:08    SBIN         C=1200.30  VWAP=1203.71  RSI=41  Vol=1.4x  → -[-]  inactive_phase
+12:15:09    TECHM        C=1365.50  VWAP=1379.57  RSI=35  Vol=1.0x  → -[-]  inactive_phase
+12:15:10    MARUTI       C=14929.00  VWAP=14969.43  RSI=39  Vol=0.3x  → -[-]  inactive_phase
+12:45:28  SCAN #5  12:45:28  phase=MIDDAY  active=False
+12:45:29    BAJAJ-AUTO   C=9999.00  VWAP=10020.40  RSI=51  Vol=0.6x  → -[-]  inactive_phase
+12:45:31    EICHERMOT    C=8071.00  VWAP=8124.54  RSI=37  Vol=0.3x  → -[-]  inactive_phase
+12:45:32    AXISBANK     C=1388.70  VWAP=1388.30  RSI=52  Vol=1.0x  → -[-]  inactive_phase
+12:45:33    APOLLOHOSP   C=7844.00  VWAP=7803.22  RSI=72  Vol=1.3x  → -[-]  inactive_phase
+12:45:39  API  HDFCLIFE     fetch error: Candle fetch failed: TooManyRequests
+12:47:43    SBIN         C=1202.20  VWAP=1203.62  RSI=52  Vol=1.1x  → -[-]  inactive_phase
+12:47:44    TECHM        C=1364.60  VWAP=1379.29  RSI=33  Vol=1.2x  → -[-]  inactive_phase
+12:47:45    MARUTI       C=14982.00  VWAP=14969.55  RSI=63  Vol=0.4x  → -[-]  inactive_phase
+12:48:01  SCAN #6  12:48:01  phase=MIDDAY  active=False
+12:48:02    BAJAJ-AUTO   C=10005.00  VWAP=10018.49  RSI=54  Vol=5.6x  → -[-]  inactive_phase
+12:48:03    EICHERMOT    C=8068.00  VWAP=8124.19  RSI=34  Vol=0.7x  → -[-]  inactive_phase
+12:48:05    AXISBANK     C=1388.90  VWAP=1388.31  RSI=53  Vol=1.0x  → -[-]  inactive_phase
+12:48:06    APOLLOHOSP   C=7852.00  VWAP=7804.77  RSI=75  Vol=3.0x  → -[-]  inactive_phase
+12:48:08    HDFCLIFE     C=715.65  VWAP=724.26  RSI=27  Vol=1.8x  → -[-]  inactive_phase
+12:48:09    SBIN         C=1203.30  VWAP=1203.61  RSI=58  Vol=1.9x  → -[-]  inactive_phase
+12:48:10    TECHM        C=1365.40  VWAP=1379.17  RSI=39  Vol=1.2x  → -[-]  inactive_phase
+12:48:11    MARUTI       C=14979.00  VWAP=14969.66  RSI=61  Vol=0.5x  → -[-]  inactive_phase
+12:51:53  ======================================================================
+12:51:53  SESSION START  Capital=50000  RR=1:1.8  Risk=1%
+12:51:53  Stocks: BAJAJ-AUTO, EICHERMOT, AXISBANK, APOLLOHOSP, HDFCLIFE, SBIN, TECHM, MARUTI
+12:51:53  Strategy: PDL (SL=1.5x ATR) + MOM (SL=1.2x ATR)  MaxSL/day=2
+12:51:53  Telegram: enabled
+12:51:53  PHASE 1  Warm-Up — connecting to Angel One
+12:51:54  API connected
+12:51:54  Loading 5-day 3-min warmup data
+12:51:54  WARMUP  BAJAJ-AUTO   8415 bars  cache=2026-02-27
+12:51:54  WARMUP  EICHERMOT    8415 bars  cache=2026-02-27
+12:51:54  WARMUP  AXISBANK     8415 bars  cache=2026-02-27
+12:51:54  WARMUP  APOLLOHOSP   8415 bars  cache=2026-02-27
+12:51:54  WARMUP  HDFCLIFE     8416 bars  cache=2026-02-27
+12:51:54  WARMUP  SBIN         8415 bars  cache=2026-02-27
+12:51:54  WARMUP  TECHM        8416 bars  cache=2026-02-27
+12:51:54  WARMUP  MARUTI       8416 bars  cache=2026-02-27
+12:51:54  PDL  BAJAJ-AUTO   H=10187.00  L=10029.50
+12:51:54  PDL  EICHERMOT    H=8225.00  L=8024.50
+12:51:54  PDL  AXISBANK     H=1405.70  L=1386.00
+12:51:54  PDL  APOLLOHOSP   H=7831.00  L=7729.00
+12:51:54  PDL  HDFCLIFE     H=744.90  L=731.65
+12:51:54  PDL  SBIN         H=1215.40  L=1188.90
+12:51:54  PDL  TECHM        H=1396.60  L=1360.40
+12:51:54  PDL  MARUTI       H=15224.00  L=15046.00
+12:51:54  Warm-up complete: 8 stocks loaded, PDL levels for 8
+12:51:54  PHASE  START → MIDDAY
+12:51:54  SCAN #1  12:51:54  phase=MIDDAY  active=False
+12:52:02    BAJAJ-AUTO   C=10026.50  VWAP=10019.70  RSI=66  Vol=0.5x  → -[-]  inactive_phase
+12:52:04    EICHERMOT    C=8071.50  VWAP=8126.10  RSI=44  Vol=0.4x  → -[-]  inactive_phase
+12:52:05    AXISBANK     C=1388.90  VWAP=1388.43  RSI=52  Vol=1.5x  → -[-]  inactive_phase
+12:52:07    APOLLOHOSP   C=7853.50  VWAP=7803.98  RSI=83  Vol=0.4x  → -[-]  inactive_phase
+12:52:08    HDFCLIFE     C=716.40  VWAP=725.77  RSI=21  Vol=0.7x  → -[-]  inactive_phase
+12:52:09    SBIN         C=1205.60  VWAP=1203.95  RSI=69  Vol=1.4x  → -[-]  inactive_phase
+12:52:10    TECHM        C=1364.90  VWAP=1379.76  RSI=33  Vol=1.5x  → -[-]  inactive_phase
+12:52:11    MARUTI       C=14976.00  VWAP=14971.23  RSI=59  Vol=0.2x  → -[-]  inactive_phase
+12:54:01  SCAN #2  12:54:01  phase=MIDDAY  active=False
+12:54:02    BAJAJ-AUTO   C=10024.50  VWAP=10019.76  RSI=64  Vol=0.5x  → -[-]  inactive_phase
+12:54:03    EICHERMOT    C=8074.50  VWAP=8125.82  RSI=47  Vol=0.5x  → -[-]  inactive_phase
+12:54:04    AXISBANK     C=1389.10  VWAP=1388.45  RSI=54  Vol=1.4x  → -[-]  inactive_phase
+12:54:05    APOLLOHOSP   C=7858.00  VWAP=7804.59  RSI=85  Vol=0.3x  → -[-]  inactive_phase
+12:54:06    HDFCLIFE     C=716.40  VWAP=725.61  RSI=21  Vol=0.9x  → -[-]  inactive_phase
+12:54:07    SBIN         C=1205.40  VWAP=1203.98  RSI=67  Vol=0.7x  → -[-]  inactive_phase
+12:54:09    TECHM        C=1364.70  VWAP=1379.65  RSI=33  Vol=0.8x  → -[-]  inactive_phase
+12:54:10    MARUTI       C=14978.00  VWAP=14971.27  RSI=60  Vol=0.3x  → -[-]  inactive_phase
+12:57:01  SCAN #3  12:57:01  phase=MIDDAY  active=False
+12:57:02    BAJAJ-AUTO   C=10025.00  VWAP=10019.79  RSI=64  Vol=0.3x  → -[-]  inactive_phase
+12:57:03    EICHERMOT    C=8071.00  VWAP=8125.60  RSI=44  Vol=0.4x  → -[-]  inactive_phase
+12:57:04    AXISBANK     C=1389.00  VWAP=1388.46  RSI=53  Vol=1.8x  → -[-]  inactive_phase
+12:57:05    APOLLOHOSP   C=7855.50  VWAP=7805.46  RSI=81  Vol=0.4x  → -[-]  inactive_phase
+12:57:06    HDFCLIFE     C=715.80  VWAP=725.50  RSI=20  Vol=0.7x  → -[-]  inactive_phase
+12:57:07    SBIN         C=1205.30  VWAP=1203.99  RSI=66  Vol=0.4x  → -[-]  inactive_phase
+12:57:08    TECHM        C=1362.80  VWAP=1379.34  RSI=28  Vol=2.2x  → SHORT[MOM]  inactive_phase
+12:57:10    MARUTI       C=14974.00  VWAP=14971.29  RSI=57  Vol=0.3x  → -[-]  inactive_phase
+13:00:01  SCAN #4  13:00:01  phase=MIDDAY  active=False
+13:00:02    BAJAJ-AUTO   C=10023.00  VWAP=10019.81  RSI=63  Vol=0.5x  → -[-]  inactive_phase
+13:00:03    EICHERMOT    C=8069.50  VWAP=8125.35  RSI=43  Vol=0.4x  → -[-]  inactive_phase
+13:00:04    AXISBANK     C=1388.90  VWAP=1388.47  RSI=52  Vol=1.5x  → -[-]  inactive_phase
+13:00:05    APOLLOHOSP   C=7858.50  VWAP=7806.16  RSI=82  Vol=0.4x  → -[-]  inactive_phase
+13:00:06    HDFCLIFE     C=715.50  VWAP=725.34  RSI=19  Vol=0.9x  → -[-]  inactive_phase
+13:00:07    SBIN         C=1205.80  VWAP=1204.00  RSI=68  Vol=0.4x  → -[-]  inactive_phase
+13:00:08    TECHM        C=1363.50  VWAP=1379.16  RSI=32  Vol=1.3x  → -[-]  inactive_phase
+13:00:10    MARUTI       C=14981.00  VWAP=14971.32  RSI=61  Vol=0.3x  → -[-]  inactive_phase
+13:03:01  SCAN #5  13:03:01  phase=MIDDAY  active=False
+13:03:02    BAJAJ-AUTO   C=10033.50  VWAP=10019.97  RSI=68  Vol=0.7x  → -[-]  inactive_phase
+13:03:03    EICHERMOT    C=8074.50  VWAP=8125.13  RSI=49  Vol=0.4x  → -[-]  inactive_phase
+13:03:04    AXISBANK     C=1388.30  VWAP=1388.46  RSI=44  Vol=1.5x  → -[-]  inactive_phase
+13:03:05    APOLLOHOSP   C=7860.50  VWAP=7806.85  RSI=83  Vol=0.4x  → -[-]  inactive_phase
+13:03:06    HDFCLIFE     C=715.45  VWAP=725.21  RSI=19  Vol=0.7x  → -[-]  inactive_phase
+13:03:07    SBIN         C=1206.70  VWAP=1204.04  RSI=72  Vol=0.7x  → -[-]  inactive_phase
+13:03:08    TECHM        C=1365.20  VWAP=1378.94  RSI=42  Vol=1.7x  → -[-]  inactive_phase
+13:03:10    MARUTI       C=14979.00  VWAP=14971.35  RSI=59  Vol=0.2x  → -[-]  inactive_phase
+13:06:01  SCAN #6  13:06:01  phase=MIDDAY  active=False
+13:06:02    BAJAJ-AUTO   C=10031.50  VWAP=10020.15  RSI=66  Vol=0.7x  → -[-]  inactive_phase
+13:06:03    EICHERMOT    C=8074.00  VWAP=8125.00  RSI=48  Vol=0.2x  → -[-]  inactive_phase
+13:06:04    AXISBANK     C=1388.50  VWAP=1388.46  RSI=47  Vol=1.2x  → -[-]  inactive_phase
+13:06:05    APOLLOHOSP   C=7855.50  VWAP=7807.75  RSI=74  Vol=0.5x  → -[-]  inactive_phase
+13:06:06    HDFCLIFE     C=716.15  VWAP=725.07  RSI=27  Vol=0.8x  → -[-]  inactive_phase
+13:06:07    SBIN         C=1206.90  VWAP=1204.07  RSI=73  Vol=0.5x  → -[-]  inactive_phase
+13:06:08    TECHM        C=1367.60  VWAP=1378.78  RSI=52  Vol=1.5x  → -[-]  inactive_phase
+13:06:10    MARUTI       C=14973.00  VWAP=14971.36  RSI=54  Vol=0.3x  → -[-]  inactive_phase
+13:09:01  SCAN #7  13:09:01  phase=MIDDAY  active=False
+13:09:02    BAJAJ-AUTO   C=10039.00  VWAP=10020.25  RSI=70  Vol=0.3x  → -[-]  inactive_phase
+13:09:03    EICHERMOT    C=8077.00  VWAP=8124.77  RSI=52  Vol=0.5x  → -[-]  inactive_phase
+13:09:04    AXISBANK     C=1388.90  VWAP=1388.47  RSI=52  Vol=1.0x  → -[-]  inactive_phase
+13:09:05    APOLLOHOSP   C=7862.00  VWAP=7808.22  RSI=77  Vol=0.8x  → -[-]  inactive_phase
+13:09:06    HDFCLIFE     C=716.25  VWAP=724.92  RSI=28  Vol=0.9x  → -[-]  inactive_phase
+13:09:07    SBIN         C=1207.30  VWAP=1204.10  RSI=75  Vol=0.6x  → -[-]  inactive_phase
+13:09:09    TECHM        C=1367.10  VWAP=1378.67  RSI=50  Vol=1.1x  → -[-]  inactive_phase
+13:09:10    MARUTI       C=14993.00  VWAP=14971.70  RSI=65  Vol=1.1x  → -[-]  inactive_phase
+13:12:01  SCAN #8  13:12:01  phase=MIDDAY  active=False
+13:12:02    BAJAJ-AUTO   C=10039.00  VWAP=10020.51  RSI=70  Vol=0.8x  → -[-]  inactive_phase
+13:12:03    EICHERMOT    C=8076.50  VWAP=8124.53  RSI=51  Vol=0.6x  → -[-]  inactive_phase
+13:12:04    AXISBANK     C=1384.80  VWAP=1388.37  RSI=24  Vol=2.7x  → SHORT[PDL]  inactive_phase
+13:12:05    APOLLOHOSP   C=7864.50  VWAP=7808.75  RSI=79  Vol=0.9x  → -[-]  inactive_phase
+13:12:06    HDFCLIFE     C=716.35  VWAP=724.81  RSI=30  Vol=0.7x  → -[-]  inactive_phase
+13:12:08    SBIN         C=1206.30  VWAP=1204.14  RSI=64  Vol=0.8x  → -[-]  inactive_phase
+13:12:10    TECHM        C=1365.90  VWAP=1378.59  RSI=45  Vol=0.7x  → -[-]  inactive_phase
+13:12:11    MARUTI       C=14997.00  VWAP=14971.83  RSI=67  Vol=0.3x  → -[-]  inactive_phase
+13:15:01  SCAN #9  13:15:01  phase=MIDDAY  active=False
+13:15:02    BAJAJ-AUTO   C=10042.00  VWAP=10020.77  RSI=71  Vol=0.8x  → -[-]  inactive_phase
+13:15:03    EICHERMOT    C=8081.50  VWAP=8124.35  RSI=58  Vol=0.6x  → -[-]  inactive_phase
+13:15:04    AXISBANK     C=1384.80  VWAP=1388.28  RSI=24  Vol=1.7x  → -[-]  inactive_phase
+13:15:05    APOLLOHOSP   C=7864.00  VWAP=7809.30  RSI=78  Vol=1.1x  → -[-]  inactive_phase
+13:15:06    HDFCLIFE     C=716.20  VWAP=724.72  RSI=29  Vol=0.5x  → -[-]  inactive_phase
+13:15:07    SBIN         C=1206.10  VWAP=1204.16  RSI=62  Vol=0.5x  → -[-]  inactive_phase
+13:15:08    TECHM        C=1364.40  VWAP=1378.51  RSI=40  Vol=0.7x  → -[-]  inactive_phase
+13:15:10    MARUTI       C=14995.00  VWAP=14971.96  RSI=65  Vol=0.4x  → -[-]  inactive_phase
+13:18:01  SCAN #10  13:18:01  phase=MIDDAY  active=False
+13:18:02    BAJAJ-AUTO   C=10042.50  VWAP=10021.06  RSI=71  Vol=0.8x  → -[-]  inactive_phase
+13:18:03    EICHERMOT    C=8077.50  VWAP=8124.18  RSI=52  Vol=0.5x  → -[-]  inactive_phase
+13:18:04    AXISBANK     C=1382.70  VWAP=1388.18  RSI=18  Vol=1.4x  → -[-]  inactive_phase
+13:18:05    APOLLOHOSP   C=7866.50  VWAP=7810.17  RSI=79  Vol=1.5x  → -[-]  inactive_phase
+13:18:06    HDFCLIFE     C=716.05  VWAP=724.61  RSI=28  Vol=0.6x  → -[-]  inactive_phase
+13:18:07    SBIN         C=1204.00  VWAP=1204.17  RSI=44  Vol=0.8x  → -[-]  inactive_phase
+13:18:08    TECHM        C=1364.30  VWAP=1378.43  RSI=39  Vol=0.7x  → -[-]  inactive_phase
+13:18:10    MARUTI       C=14991.00  VWAP=14972.04  RSI=61  Vol=0.3x  → -[-]  inactive_phase
+13:21:01  SCAN #11  13:21:01  phase=MIDDAY  active=False
+13:21:02    BAJAJ-AUTO   C=10047.00  VWAP=10021.28  RSI=74  Vol=0.5x  → -[-]  inactive_phase
+13:21:03    EICHERMOT    C=8075.50  VWAP=8123.94  RSI=49  Vol=0.7x  → -[-]  inactive_phase
+13:21:04    AXISBANK     C=1382.40  VWAP=1388.06  RSI=17  Vol=1.3x  → -[-]  inactive_phase
+13:21:05    APOLLOHOSP   C=7856.50  VWAP=7810.99  RSI=61  Vol=1.6x  → -[-]  inactive_phase
+13:21:06    HDFCLIFE     C=715.80  VWAP=724.48  RSI=26  Vol=0.8x  → -[-]  inactive_phase
+13:21:07    SBIN         C=1204.10  VWAP=1204.17  RSI=45  Vol=0.6x  → -[-]  inactive_phase
+13:21:09    TECHM        C=1363.60  VWAP=1378.38  RSI=37  Vol=0.4x  → -[-]  inactive_phase
+13:21:10    MARUTI       C=14993.00  VWAP=14972.18  RSI=62  Vol=0.5x  → -[-]  inactive_phase
+13:24:01  SCAN #12  13:24:01  phase=MIDDAY  active=False
+13:24:02    BAJAJ-AUTO   C=10047.00  VWAP=10021.47  RSI=74  Vol=0.5x  → -[-]  inactive_phase
+13:24:03    EICHERMOT    C=8074.00  VWAP=8123.74  RSI=46  Vol=0.6x  → -[-]  inactive_phase
+13:24:04    AXISBANK     C=1382.40  VWAP=1387.94  RSI=17  Vol=1.4x  → -[-]  inactive_phase
+13:24:05    APOLLOHOSP   C=7852.00  VWAP=7811.57  RSI=55  Vol=1.4x  → -[-]  inactive_phase
+13:24:06    HDFCLIFE     C=715.25  VWAP=724.31  RSI=23  Vol=1.0x  → -[-]  inactive_phase
+13:24:07    SBIN         C=1204.60  VWAP=1204.17  RSI=49  Vol=0.6x  → -[-]  inactive_phase
+13:24:09    TECHM        C=1362.80  VWAP=1378.30  RSI=34  Vol=0.6x  → -[-]  inactive_phase
+13:24:10    MARUTI       C=14990.00  VWAP=14972.27  RSI=59  Vol=0.4x  → -[-]  inactive_phase
+13:27:01  SCAN #13  13:27:01  phase=MIDDAY  active=False
+13:27:02    BAJAJ-AUTO   C=10031.00  VWAP=10021.80  RSI=53  Vol=1.4x  → -[-]  inactive_phase
+13:27:03    EICHERMOT    C=8074.00  VWAP=8123.46  RSI=46  Vol=0.9x  → -[-]  inactive_phase
+13:27:04    AXISBANK     C=1385.20  VWAP=1387.59  RSI=44  Vol=5.1x  → -[-]  inactive_phase
+13:27:05    APOLLOHOSP   C=7854.00  VWAP=7812.17  RSI=57  Vol=1.3x  → -[-]  inactive_phase
+13:27:06    HDFCLIFE     C=715.40  VWAP=724.21  RSI=26  Vol=0.6x  → -[-]  inactive_phase
+13:27:07    SBIN         C=1206.00  VWAP=1204.19  RSI=59  Vol=0.6x  → -[-]  inactive_phase
+13:27:08    TECHM        C=1364.00  VWAP=1378.22  RSI=41  Vol=0.7x  → -[-]  inactive_phase
+13:27:10    MARUTI       C=14992.00  VWAP=14972.44  RSI=61  Vol=0.7x  → -[-]  inactive_phase
+13:30:01  SCAN #14  13:30:01  phase=MIDDAY  active=False
+13:30:02    BAJAJ-AUTO   C=10014.50  VWAP=10021.75  RSI=40  Vol=2.0x  → SHORT[PDL]  inactive_phase
+13:30:03    EICHERMOT    C=8077.00  VWAP=8123.27  RSI=52  Vol=0.7x  → -[-]  inactive_phase
+13:30:04    AXISBANK     C=1384.90  VWAP=1387.55  RSI=42  Vol=0.7x  → -[-]  inactive_phase
+13:30:05    APOLLOHOSP   C=7853.50  VWAP=7812.51  RSI=56  Vol=0.8x  → -[-]  inactive_phase
+13:30:06    HDFCLIFE     C=716.10  VWAP=724.07  RSI=38  Vol=1.0x  → -[-]  inactive_phase
+13:30:07    SBIN         C=1206.00  VWAP=1204.20  RSI=59  Vol=0.5x  → -[-]  inactive_phase
+13:30:09    TECHM        C=1364.90  VWAP=1378.15  RSI=47  Vol=0.7x  → -[-]  inactive_phase
+13:30:10    MARUTI       C=14988.00  VWAP=14972.52  RSI=56  Vol=0.5x  → -[-]  inactive_phase
+13:33:01  SCAN #15  13:33:01  phase=MIDDAY  active=False
+13:33:02    BAJAJ-AUTO   C=10014.00  VWAP=10021.52  RSI=40  Vol=1.8x  → -[-]  inactive_phase
+13:33:03    EICHERMOT    C=8084.00  VWAP=8122.96  RSI=63  Vol=1.5x  → -[-]  inactive_phase
+13:33:04    AXISBANK     C=1384.60  VWAP=1387.51  RSI=40  Vol=0.8x  → -[-]  inactive_phase
+13:33:05    APOLLOHOSP   C=7853.50  VWAP=7812.83  RSI=56  Vol=0.7x  → -[-]  inactive_phase
+13:33:06    HDFCLIFE     C=715.85  VWAP=723.96  RSI=35  Vol=0.9x  → -[-]  inactive_phase
+13:33:08    SBIN         C=1205.40  VWAP=1204.21  RSI=54  Vol=0.7x  → -[-]  inactive_phase
+13:33:09    TECHM        C=1365.00  VWAP=1378.08  RSI=47  Vol=0.6x  → -[-]  inactive_phase
+13:33:10    MARUTI       C=14995.00  VWAP=14972.66  RSI=62  Vol=0.7x  → -[-]  inactive_phase
+13:36:01  SCAN #16  13:36:01  phase=MIDDAY  active=False
+13:36:02    BAJAJ-AUTO   C=10019.00  VWAP=10021.37  RSI=45  Vol=1.8x  → -[-]  inactive_phase
+13:36:03    EICHERMOT    C=8081.00  VWAP=8122.79  RSI=57  Vol=0.9x  → -[-]  inactive_phase
+13:36:04    AXISBANK     C=1383.70  VWAP=1387.45  RSI=36  Vol=0.9x  → -[-]  inactive_phase
+13:36:05    APOLLOHOSP   C=7847.50  VWAP=7813.48  RSI=47  Vol=1.5x  → -[-]  inactive_phase
+13:36:06    HDFCLIFE     C=715.55  VWAP=723.84  RSI=33  Vol=1.0x  → -[-]  inactive_phase
+13:36:07    SBIN         C=1202.70  VWAP=1204.20  RSI=36  Vol=0.9x  → -[-]  inactive_phase
+13:36:09    TECHM        C=1365.50  VWAP=1377.99  RSI=51  Vol=1.0x  → -[-]  inactive_phase
+13:36:10    MARUTI       C=14990.00  VWAP=14972.79  RSI=56  Vol=0.7x  → -[-]  inactive_phase
+13:39:01  SCAN #17  13:39:01  phase=MIDDAY  active=False
+13:39:02    BAJAJ-AUTO   C=9992.00  VWAP=10020.69  RSI=29  Vol=1.9x  → -[-]  inactive_phase
+13:39:03    EICHERMOT    C=8078.50  VWAP=8122.63  RSI=52  Vol=0.8x  → -[-]  inactive_phase
+13:39:04    AXISBANK     C=1383.20  VWAP=1387.40  RSI=33  Vol=0.6x  → -[-]  inactive_phase
+13:39:05    APOLLOHOSP   C=7849.50  VWAP=7813.74  RSI=50  Vol=0.6x  → -[-]  inactive_phase
+13:39:06    HDFCLIFE     C=715.80  VWAP=723.73  RSI=37  Vol=1.0x  → -[-]  inactive_phase
+13:39:07    SBIN         C=1202.80  VWAP=1204.18  RSI=37  Vol=1.4x  → -[-]  inactive_phase
+13:39:09    TECHM        C=1365.90  VWAP=1377.93  RSI=53  Vol=0.6x  → -[-]  inactive_phase
+13:39:10    MARUTI       C=14996.00  VWAP=14972.96  RSI=61  Vol=0.8x  → -[-]  inactive_phase
+13:42:01  SCAN #18  13:42:01  phase=MIDDAY  active=False
+13:42:02    BAJAJ-AUTO   C=10011.50  VWAP=10020.13  RSI=45  Vol=1.9x  → -[-]  inactive_phase
+13:42:03    EICHERMOT    C=8083.00  VWAP=8122.52  RSI=59  Vol=0.6x  → -[-]  inactive_phase
+13:42:04    AXISBANK     C=1386.30  VWAP=1387.30  RSI=55  Vol=2.2x  → -[-]  inactive_phase
+13:42:05    APOLLOHOSP   C=7849.00  VWAP=7814.02  RSI=49  Vol=0.7x  → -[-]  inactive_phase
+13:42:06    HDFCLIFE     C=715.65  VWAP=723.60  RSI=36  Vol=1.1x  → -[-]  inactive_phase
+13:42:07    SBIN         C=1204.00  VWAP=1204.17  RSI=47  Vol=1.0x  → -[-]  inactive_phase
+13:42:09    TECHM        C=1365.10  VWAP=1377.89  RSI=48  Vol=0.5x  → -[-]  inactive_phase
+13:42:10    MARUTI       C=14996.00  VWAP=14973.09  RSI=61  Vol=0.8x  → -[-]  inactive_phase
+13:45:01  SCAN #19  13:45:01  phase=MIDDAY  active=False
+13:45:02    BAJAJ-AUTO   C=10000.00  VWAP=10019.78  RSI=39  Vol=1.1x  → -[-]  inactive_phase
+13:45:03    EICHERMOT    C=8080.50  VWAP=8122.36  RSI=54  Vol=0.9x  → -[-]  inactive_phase
+13:45:04    AXISBANK     C=1386.30  VWAP=1387.29  RSI=55  Vol=1.0x  → -[-]  inactive_phase
+13:45:05    APOLLOHOSP   C=7849.50  VWAP=7814.24  RSI=50  Vol=0.5x  → -[-]  inactive_phase
+13:45:06    HDFCLIFE     C=715.85  VWAP=723.50  RSI=39  Vol=1.0x  → -[-]  inactive_phase
+13:45:07    SBIN         C=1203.60  VWAP=1204.16  RSI=44  Vol=0.8x  → -[-]  inactive_phase
+13:45:09    TECHM        C=1364.50  VWAP=1377.82  RSI=44  Vol=0.7x  → -[-]  inactive_phase
+13:45:10    MARUTI       C=14970.00  VWAP=14973.17  RSI=37  Vol=2.6x  → SHORT[MOM]  inactive_phase
+13:48:01  SCAN #20  13:48:01  phase=MIDDAY  active=False
+13:48:02    BAJAJ-AUTO   C=10030.00  VWAP=10019.77  RSI=56  Vol=1.7x  → -[-]  inactive_phase
+13:48:03    EICHERMOT    C=8104.50  VWAP=8121.93  RSI=76  Vol=3.5x  → -[-]  inactive_phase
+13:48:04    AXISBANK     C=1387.50  VWAP=1387.29  RSI=61  Vol=0.9x  → -[-]  inactive_phase
+13:48:05    APOLLOHOSP   C=7850.00  VWAP=7814.40  RSI=51  Vol=0.5x  → -[-]  inactive_phase
+13:48:06    HDFCLIFE     C=715.95  VWAP=723.41  RSI=41  Vol=1.0x  → -[-]  inactive_phase
+13:48:07    SBIN         C=1203.90  VWAP=1204.16  RSI=47  Vol=0.7x  → -[-]  inactive_phase
+13:48:09    TECHM        C=1364.50  VWAP=1377.75  RSI=44  Vol=0.7x  → -[-]  inactive_phase
+13:48:10    MARUTI       C=14980.00  VWAP=14973.20  RSI=46  Vol=2.1x  → LONG[MOM]  inactive_phase
+13:51:01  SCAN #21  13:51:01  phase=MIDDAY  active=False
+13:51:02    BAJAJ-AUTO   C=10021.00  VWAP=10019.89  RSI=51  Vol=1.7x  → -[-]  inactive_phase
+13:51:03    EICHERMOT    C=8095.00  VWAP=8121.60  RSI=63  Vol=2.6x  → SHORT[MOM]  inactive_phase
+13:51:04    AXISBANK     C=1387.60  VWAP=1387.29  RSI=62  Vol=1.1x  → -[-]  inactive_phase
+13:51:05    APOLLOHOSP   C=7854.50  VWAP=7814.60  RSI=59  Vol=0.5x  → -[-]  inactive_phase
+13:51:07    HDFCLIFE     C=715.60  VWAP=723.24  RSI=37  Vol=1.7x  → -[-]  inactive_phase
+13:51:08    SBIN         C=1203.40  VWAP=1204.15  RSI=43  Vol=0.8x  → -[-]  inactive_phase
+13:51:09    TECHM        C=1365.60  VWAP=1377.66  RSI=53  Vol=1.0x  → -[-]  inactive_phase
+13:51:10    MARUTI       C=14977.00  VWAP=14973.26  RSI=44  Vol=2.3x  → -[-]  inactive_phase
+13:54:01  SCAN #22  13:54:01  phase=MIDDAY  active=False
+13:54:02    BAJAJ-AUTO   C=10019.00  VWAP=10019.87  RSI=50  Vol=1.0x  → -[-]  inactive_phase
+13:54:03    EICHERMOT    C=8095.00  VWAP=8121.43  RSI=63  Vol=1.3x  → -[-]  inactive_phase
+13:54:04    AXISBANK     C=1387.60  VWAP=1387.29  RSI=62  Vol=1.0x  → -[-]  inactive_phase
+13:54:05    APOLLOHOSP   C=7847.50  VWAP=7815.15  RSI=46  Vol=1.5x  → -[-]  inactive_phase
+13:54:06    HDFCLIFE     C=715.40  VWAP=723.13  RSI=34  Vol=1.2x  → -[-]  inactive_phase
+13:54:07    SBIN         C=1203.50  VWAP=1204.15  RSI=44  Vol=0.8x  → -[-]  inactive_phase
+13:54:09    TECHM        C=1364.40  VWAP=1377.59  RSI=44  Vol=0.8x  → -[-]  inactive_phase
+13:54:10    MARUTI       C=14978.00  VWAP=14973.43  RSI=45  Vol=3.5x  → -[-]  inactive_phase
+13:57:01  SCAN #23  13:57:01  phase=MIDDAY  active=False
+13:57:02    BAJAJ-AUTO   C=10024.00  VWAP=10019.94  RSI=53  Vol=1.0x  → -[-]  inactive_phase
+13:57:03    EICHERMOT    C=8100.00  VWAP=8121.35  RSI=66  Vol=0.6x  → -[-]  inactive_phase
+13:57:04    AXISBANK     C=1388.50  VWAP=1387.32  RSI=67  Vol=1.4x  → -[-]  inactive_phase
+13:57:05    APOLLOHOSP   C=7850.00  VWAP=7815.27  RSI=50  Vol=0.4x  → -[-]  inactive_phase
+13:57:06    HDFCLIFE     C=715.25  VWAP=722.99  RSI=32  Vol=1.3x  → -[-]  inactive_phase
+13:57:07    SBIN         C=1204.70  VWAP=1204.15  RSI=54  Vol=0.7x  → -[-]  inactive_phase
+13:57:09    TECHM        C=1366.90  VWAP=1377.46  RSI=59  Vol=1.8x  → -[-]  inactive_phase
+13:57:10    MARUTI       C=14987.00  VWAP=14974.02  RSI=53  Vol=4.0x  → -[-]  inactive_phase
+14:00:01  PHASE  MIDDAY → ACTIVE_PM
+14:00:01  SCAN #24  14:00:01  phase=ACTIVE_PM  active=True
+14:00:02    BAJAJ-AUTO   C=10022.50  VWAP=10020.00  RSI=52  Vol=0.9x  → -[-]  
+14:00:04    EICHERMOT    C=8101.50  VWAP=8121.24  RSI=67  Vol=1.1x  → -[-]  
+14:00:05    AXISBANK     C=1389.20  VWAP=1387.35  RSI=70  Vol=0.7x  → -[-]  
+14:00:06    APOLLOHOSP   C=7852.50  VWAP=7815.48  RSI=55  Vol=0.6x  → -[-]  
+14:00:07    HDFCLIFE     C=715.55  VWAP=722.79  RSI=40  Vol=2.1x  → -[-]  
+14:00:08    SBIN         C=1205.40  VWAP=1204.16  RSI=59  Vol=0.9x  → -[-]  
+14:00:09    TECHM        C=1366.50  VWAP=1377.40  RSI=57  Vol=0.8x  → -[-]  
+14:00:10    MARUTI       C=14991.00  VWAP=14974.08  RSI=56  Vol=0.4x  → -[-]  
+14:03:01  SCAN #25  14:03:01  phase=ACTIVE_PM  active=True
+14:03:02    BAJAJ-AUTO   C=10020.00  VWAP=10020.06  RSI=50  Vol=0.9x  → -[-]  
+14:03:03    EICHERMOT    C=8091.50  VWAP=8121.00  RSI=54  Vol=1.7x  → -[-]  
+14:03:04    AXISBANK     C=1387.70  VWAP=1387.37  RSI=56  Vol=0.8x  → -[-]  
+14:03:05    APOLLOHOSP   C=7853.00  VWAP=7815.63  RSI=55  Vol=0.4x  → -[-]  
+14:03:06    HDFCLIFE     C=715.30  VWAP=722.67  RSI=36  Vol=1.2x  → -[-]  
+14:03:07    SBIN         C=1203.60  VWAP=1204.16  RSI=45  Vol=1.2x  → -[-]  
+14:03:09    TECHM        C=1365.10  VWAP=1377.30  RSI=48  Vol=1.4x  → -[-]  
+14:03:10    MARUTI       C=14991.00  VWAP=14974.16  RSI=56  Vol=0.5x  → -[-]  
+14:06:01  SCAN #26  14:06:01  phase=ACTIVE_PM  active=True
+14:06:02    BAJAJ-AUTO   C=10020.50  VWAP=10020.11  RSI=50  Vol=1.1x  → -[-]  
+14:06:03    EICHERMOT    C=8088.00  VWAP=8120.75  RSI=50  Vol=1.4x  → -[-]  
+14:06:04    AXISBANK     C=1387.70  VWAP=1387.37  RSI=56  Vol=1.2x  → -[-]  
+14:06:05    APOLLOHOSP   C=7854.00  VWAP=7815.79  RSI=57  Vol=0.5x  → -[-]  
+14:06:06    HDFCLIFE     C=715.30  VWAP=722.57  RSI=36  Vol=1.0x  → -[-]  
+14:06:07    SBIN         C=1204.30  VWAP=1204.16  RSI=50  Vol=0.7x  → -[-]  
+14:06:08    TECHM        C=1363.90  VWAP=1377.23  RSI=42  Vol=0.9x  → -[-]  
+14:06:10    MARUTI       C=14992.00  VWAP=14974.26  RSI=57  Vol=0.6x  → -[-]  
+14:09:01  SCAN #27  14:09:01  phase=ACTIVE_PM  active=True
+14:09:02    BAJAJ-AUTO   C=10029.00  VWAP=10020.15  RSI=56  Vol=1.0x  → -[-]  
+14:09:03    EICHERMOT    C=8093.00  VWAP=8120.53  RSI=55  Vol=1.2x  → -[-]  
+14:09:04    AXISBANK     C=1390.00  VWAP=1387.40  RSI=68  Vol=0.8x  → -[-]  
+14:09:05    APOLLOHOSP   C=7852.00  VWAP=7816.00  RSI=52  Vol=0.7x  → -[-]  
+14:09:06    HDFCLIFE     C=715.95  VWAP=722.42  RSI=51  Vol=1.6x  → -[-]  
+14:09:07    SBIN         C=1204.90  VWAP=1204.16  RSI=54  Vol=0.7x  → -[-]  
+14:09:08    TECHM        C=1363.10  VWAP=1377.06  RSI=38  Vol=2.1x  → -[-]  
+14:09:10    MARUTI       C=14990.00  VWAP=14974.34  RSI=55  Vol=0.5x  → -[-]  
+14:12:01  SCAN #28  14:12:01  phase=ACTIVE_PM  active=True
+14:12:02    BAJAJ-AUTO   C=10028.00  VWAP=10020.36  RSI=56  Vol=1.1x  → -[-]  
+14:12:03    EICHERMOT    C=8095.50  VWAP=8120.32  RSI=58  Vol=1.5x  → -[-]  
+14:12:04    AXISBANK     C=1389.60  VWAP=1387.44  RSI=65  Vol=0.8x  → -[-]  
+14:12:05    APOLLOHOSP   C=7854.00  VWAP=7816.16  RSI=57  Vol=0.5x  → -[-]  
+14:12:06    HDFCLIFE     C=716.35  VWAP=722.25  RSI=58  Vol=2.0x  → -[-]  
+14:12:07    SBIN         C=1204.30  VWAP=1204.16  RSI=50  Vol=0.7x  → -[-]  
+14:12:08    TECHM        C=1363.20  VWAP=1377.00  RSI=39  Vol=0.8x  → -[-]  
+14:12:10    MARUTI       C=14990.00  VWAP=14974.45  RSI=55  Vol=0.6x  → -[-]  
+14:15:01  SCAN #29  14:15:01  phase=ACTIVE_PM  active=True
+14:15:02    BAJAJ-AUTO   C=10035.50  VWAP=10020.68  RSI=61  Vol=1.2x  → -[-]  
+14:15:03    EICHERMOT    C=8091.00  VWAP=8120.15  RSI=52  Vol=1.0x  → -[-]  
+14:15:04    AXISBANK     C=1390.00  VWAP=1387.48  RSI=67  Vol=0.8x  → -[-]  
+14:15:05    APOLLOHOSP   C=7852.50  VWAP=7816.30  RSI=53  Vol=0.5x  → -[-]  
+14:15:06    HDFCLIFE     C=716.05  VWAP=721.89  RSI=52  Vol=3.7x  → -[-]  
+14:15:07    SBIN         C=1204.00  VWAP=1204.16  RSI=47  Vol=0.8x  → -[-]  
+14:15:08    TECHM        C=1362.00  VWAP=1376.85  RSI=33  Vol=1.7x  → -[-]  
+14:15:09    MARUTI       C=14991.00  VWAP=14974.55  RSI=56  Vol=0.6x  → -[-]  
+14:18:01  SCAN #30  14:18:01  phase=ACTIVE_PM  active=True
+14:18:02    BAJAJ-AUTO   C=10043.50  VWAP=10020.96  RSI=66  Vol=0.8x  → -[-]  
+14:18:03    EICHERMOT    C=8091.00  VWAP=8120.02  RSI=52  Vol=0.7x  → -[-]  
+14:18:04    AXISBANK     C=1390.80  VWAP=1387.52  RSI=70  Vol=0.8x  → -[-]  
+14:18:05    APOLLOHOSP   C=7854.00  VWAP=7816.49  RSI=56  Vol=0.7x  → -[-]  
+14:18:06    HDFCLIFE     C=716.00  VWAP=721.54  RSI=51  Vol=3.4x  → -[-]  
+14:18:07    SBIN         C=1205.20  VWAP=1204.17  RSI=57  Vol=1.0x  → -[-]  
+14:18:08    TECHM        C=1362.90  VWAP=1376.66  RSI=40  Vol=2.1x  → -[-]  
+14:18:09    MARUTI       C=14990.00  VWAP=14974.63  RSI=54  Vol=0.5x  → -[-]  
+14:21:01  SCAN #31  14:21:01  phase=ACTIVE_PM  active=True
+14:21:02    BAJAJ-AUTO   C=10047.50  VWAP=10021.92  RSI=68  Vol=1.8x  → -[-]  
+14:21:03    EICHERMOT    C=8092.00  VWAP=8119.87  RSI=53  Vol=0.9x  → -[-]  
+14:21:04    AXISBANK     C=1390.80  VWAP=1387.56  RSI=70  Vol=0.9x  → -[-]  
+14:21:05    APOLLOHOSP   C=7853.50  VWAP=7816.87  RSI=55  Vol=1.5x  → -[-]  
+14:21:06    HDFCLIFE     C=716.10  VWAP=721.29  RSI=53  Vol=2.4x  → -[-]  
+14:21:07    SBIN         C=1205.40  VWAP=1204.17  RSI=58  Vol=0.8x  → -[-]  
+14:21:08    TECHM        C=1362.90  VWAP=1376.59  RSI=40  Vol=0.7x  → -[-]  
+14:21:10    MARUTI       C=14990.00  VWAP=14974.71  RSI=54  Vol=0.5x  → -[-]  
+14:24:01  SCAN #32  14:24:01  phase=ACTIVE_PM  active=True
+14:24:02    BAJAJ-AUTO   C=10028.00  VWAP=10022.31  RSI=50  Vol=1.5x  → -[-]  
+14:24:03    EICHERMOT    C=8093.00  VWAP=8119.70  RSI=55  Vol=1.0x  → -[-]  
+14:24:04    AXISBANK     C=1390.60  VWAP=1387.60  RSI=68  Vol=0.8x  → -[-]  
+14:24:05    APOLLOHOSP   C=7850.50  VWAP=7817.15  RSI=46  Vol=1.1x  → -[-]  
+14:24:06    HDFCLIFE     C=716.25  VWAP=721.20  RSI=56  Vol=1.0x  → -[-]  
+14:24:07    SBIN         C=1205.10  VWAP=1204.18  RSI=55  Vol=0.8x  → -[-]  
+14:24:09    TECHM        C=1363.00  VWAP=1376.50  RSI=41  Vol=1.0x  → -[-]  
+14:24:10    MARUTI       C=14980.00  VWAP=14974.92  RSI=39  Vol=2.1x  → -[-]  
+14:27:01  SCAN #33  14:27:01  phase=ACTIVE_PM  active=True
+14:27:02    BAJAJ-AUTO   C=10018.00  VWAP=10022.31  RSI=43  Vol=0.9x  → -[-]  
+14:27:03    EICHERMOT    C=8088.00  VWAP=8119.48  RSI=47  Vol=1.2x  → -[-]  
+14:27:04    AXISBANK     C=1389.80  VWAP=1387.64  RSI=59  Vol=0.9x  → -[-]  
+14:27:05    APOLLOHOSP   C=7848.00  VWAP=7817.55  RSI=41  Vol=1.9x  → -[-]  
+14:27:06    HDFCLIFE     C=716.30  VWAP=721.08  RSI=57  Vol=1.3x  → -[-]  
+14:27:07    SBIN         C=1204.70  VWAP=1204.18  RSI=51  Vol=0.8x  → -[-]  
+14:27:08    TECHM        C=1362.10  VWAP=1376.37  RSI=36  Vol=1.5x  → -[-]  
+14:27:10    MARUTI       C=14978.00  VWAP=14974.96  RSI=37  Vol=1.3x  → -[-]  
+14:30:01  SCAN #34  14:30:01  phase=ACTIVE_PM  active=True
+14:30:02    BAJAJ-AUTO   C=10015.50  VWAP=10022.24  RSI=42  Vol=0.5x  → -[-]  
+14:30:03    EICHERMOT    C=8085.50  VWAP=8119.23  RSI=43  Vol=1.1x  → -[-]  
+14:30:04    AXISBANK     C=1389.20  VWAP=1387.66  RSI=53  Vol=0.9x  → -[-]  
+14:30:05    APOLLOHOSP   C=7842.50  VWAP=7817.79  RSI=31  Vol=1.3x  → -[-]  
+14:30:06    HDFCLIFE     C=716.90  VWAP=720.95  RSI=68  Vol=1.6x  → -[-]  
+14:30:08    SBIN         C=1204.30  VWAP=1204.18  RSI=47  Vol=0.9x  → -[-]  
+14:30:09    TECHM        C=1361.70  VWAP=1376.21  RSI=34  Vol=1.6x  → -[-]  
+14:30:10    MARUTI       C=14977.00  VWAP=14974.97  RSI=36  Vol=0.5x  → -[-]  
+14:33:01  SCAN #35  14:33:01  phase=ACTIVE_PM  active=True
+14:33:02    BAJAJ-AUTO   C=10026.50  VWAP=10022.48  RSI=51  Vol=2.9x  → -[-]  
+14:33:03    EICHERMOT    C=8077.00  VWAP=8118.88  RSI=33  Vol=1.4x  → -[-]  
+14:33:04    AXISBANK     C=1389.00  VWAP=1387.69  RSI=51  Vol=1.0x  → -[-]  
+14:33:05    APOLLOHOSP   C=7850.50  VWAP=7817.94  RSI=50  Vol=0.7x  → -[-]  
+14:33:06    HDFCLIFE     C=717.00  VWAP=720.88  RSI=69  Vol=1.0x  → -[-]  
+14:33:07    SBIN         C=1204.10  VWAP=1204.18  RSI=46  Vol=1.2x  → -[-]  
+14:33:08    TECHM        C=1362.40  VWAP=1376.08  RSI=41  Vol=1.3x  → -[-]  
+14:33:09    MARUTI       C=14970.00  VWAP=14974.97  RSI=28  Vol=1.8x  → -[-]  
+14:36:01  SCAN #36  14:36:01  phase=ACTIVE_PM  active=True
+14:36:02    BAJAJ-AUTO   C=10038.00  VWAP=10022.75  RSI=58  Vol=1.4x  → -[-]  
+14:36:03    EICHERMOT    C=8086.00  VWAP=8118.69  RSI=47  Vol=0.8x  → -[-]  
+14:36:04    AXISBANK     C=1389.10  VWAP=1387.71  RSI=52  Vol=1.1x  → -[-]  
+14:36:05    APOLLOHOSP   C=7853.00  VWAP=7818.18  RSI=55  Vol=1.1x  → -[-]  
+14:36:06    HDFCLIFE     C=716.95  VWAP=720.75  RSI=67  Vol=1.6x  → -[-]  
+14:36:08    SBIN         C=1206.40  VWAP=1204.21  RSI=64  Vol=2.5x  → ★ LONG[MOM]  SL=1204.78  TP=1209.24  Qty=207
+14:36:09    TECHM        C=1362.70  VWAP=1376.01  RSI=44  Vol=0.7x  → -[-]  
+14:36:10    MARUTI       C=14975.00  VWAP=14974.95  RSI=38  Vol=1.0x  → -[-]  
+14:39:01  SCAN #37  14:39:01  phase=ACTIVE_PM  active=True
+14:39:02    BAJAJ-AUTO   C=10031.00  VWAP=10023.00  RSI=53  Vol=1.8x  → -[-]  
+14:39:03    EICHERMOT    C=8085.00  VWAP=8118.50  RSI=46  Vol=0.8x  → -[-]  
+14:39:04    AXISBANK     C=1388.80  VWAP=1387.72  RSI=49  Vol=0.9x  → -[-]  
+14:39:05    APOLLOHOSP   C=7854.00  VWAP=7818.45  RSI=56  Vol=1.2x  → -[-]  
+14:39:06    HDFCLIFE     C=717.10  VWAP=720.64  RSI=70  Vol=1.5x  → -[-]  
+14:39:07    SBIN         C=1207.30  VWAP=1204.27  RSI=69  Vol=2.6x  → -[-]  in_position
+14:39:08    TECHM        C=1364.10  VWAP=1375.96  RSI=55  Vol=0.6x  → -[-]  
+14:39:09    MARUTI       C=14976.00  VWAP=14974.98  RSI=40  Vol=0.7x  → -[-]  
+14:42:01  SCAN #38  14:42:01  phase=ACTIVE_PM  active=True
+14:42:02    BAJAJ-AUTO   C=10026.50  VWAP=10023.09  RSI=49  Vol=0.9x  → -[-]  
+14:42:03    EICHERMOT    C=8085.50  VWAP=8118.14  RSI=47  Vol=1.5x  → -[-]  
+14:42:04    AXISBANK     C=1388.40  VWAP=1387.74  RSI=45  Vol=1.0x  → -[-]  
+14:42:05    APOLLOHOSP   C=7852.00  VWAP=7818.70  RSI=52  Vol=1.1x  → -[-]  
+14:42:06    HDFCLIFE     C=717.40  VWAP=720.53  RSI=74  Vol=1.5x  → -[-]  
+14:42:07    SBIN         C=1207.90  VWAP=1204.31  RSI=71  Vol=1.3x  → -[-]  in_position
+14:42:08    TECHM        C=1363.60  VWAP=1375.92  RSI=51  Vol=0.5x  → -[-]  
+14:42:09    MARUTI       C=14975.00  VWAP=14974.98  RSI=39  Vol=0.6x  → -[-]  
+14:45:01  SCAN #39  14:45:01  phase=ACTIVE_PM  active=True
+14:45:02    BAJAJ-AUTO   C=10035.50  VWAP=10023.28  RSI=56  Vol=1.1x  → -[-]  
+14:45:03    EICHERMOT    C=8097.50  VWAP=8117.86  RSI=62  Vol=1.6x  → -[-]  
+14:45:04    AXISBANK     C=1388.80  VWAP=1387.75  RSI=50  Vol=1.0x  → -[-]  
+14:45:05    APOLLOHOSP   C=7850.00  VWAP=7818.97  RSI=48  Vol=1.4x  → -[-]  
+14:45:06    HDFCLIFE     C=717.55  VWAP=720.48  RSI=76  Vol=0.7x  → -[-]  
+14:45:07    SBIN         C=1207.50  VWAP=1204.35  RSI=67  Vol=1.3x  → -[-]  in_position
+14:45:09    TECHM        C=1364.30  VWAP=1375.84  RSI=56  Vol=1.0x  → -[-]  
+14:45:10    MARUTI       C=14978.00  VWAP=14975.00  RSI=45  Vol=0.6x  → -[-]  
+14:48:01  SCAN #40  14:48:01  phase=ACTIVE_PM  active=True
+14:48:02    BAJAJ-AUTO   C=10029.00  VWAP=10023.44  RSI=50  Vol=1.2x  → -[-]  
+14:48:03    EICHERMOT    C=8095.50  VWAP=8117.58  RSI=59  Vol=1.6x  → -[-]  
+14:48:04    AXISBANK     C=1388.60  VWAP=1387.77  RSI=47  Vol=0.9x  → -[-]  
+14:48:05    APOLLOHOSP   C=7843.00  VWAP=7819.23  RSI=36  Vol=1.5x  → -[-]  
+14:48:06    HDFCLIFE     C=717.80  VWAP=720.41  RSI=79  Vol=1.0x  → -[-]  
+14:48:07    SBIN         C=1207.50  VWAP=1204.38  RSI=67  Vol=1.1x  → -[-]  in_position
+14:48:09    TECHM        C=1363.90  VWAP=1375.77  RSI=53  Vol=0.9x  → -[-]  
+14:48:10    MARUTI       C=14974.00  VWAP=14974.99  RSI=39  Vol=1.3x  → -[-]  
+14:51:01  SCAN #41  14:51:01  phase=ACTIVE_PM  active=True
+14:51:02    BAJAJ-AUTO   C=10027.00  VWAP=10023.46  RSI=49  Vol=0.8x  → -[-]  
+14:51:03    EICHERMOT    C=8090.00  VWAP=8117.08  RSI=51  Vol=2.5x  → -[-]  
+14:51:04    AXISBANK     C=1389.40  VWAP=1387.79  RSI=57  Vol=1.0x  → -[-]  
+14:51:05    APOLLOHOSP   C=7843.00  VWAP=7819.40  RSI=36  Vol=1.0x  → -[-]  
+14:51:06    HDFCLIFE     C=718.65  VWAP=720.36  RSI=86  Vol=1.1x  → -[-]  
+14:51:07    SBIN         C=1207.50  VWAP=1204.41  RSI=67  Vol=1.2x  → -[-]  in_position
+14:51:09    TECHM        C=1365.50  VWAP=1375.59  RSI=63  Vol=2.2x  → -[-]  
+14:51:10    MARUTI       C=14977.00  VWAP=14974.99  RSI=45  Vol=0.9x  → -[-]  
+14:54:01  SCAN #42  14:54:01  phase=ACTIVE_PM  active=True
+14:54:02    BAJAJ-AUTO   C=10017.50  VWAP=10023.41  RSI=42  Vol=0.8x  → -[-]  
+14:54:03    EICHERMOT    C=8088.50  VWAP=8116.85  RSI=49  Vol=1.1x  → -[-]  
+14:54:04    AXISBANK     C=1389.50  VWAP=1387.81  RSI=58  Vol=1.1x  → -[-]  
+14:54:05    APOLLOHOSP   C=7837.00  VWAP=7819.85  RSI=28  Vol=3.5x  → -[-]  
+14:54:06    HDFCLIFE     C=718.50  VWAP=720.30  RSI=81  Vol=1.4x  → -[-]  
+14:54:07    SBIN         C=1206.90  VWAP=1204.44  RSI=59  Vol=1.3x  → -[-]  in_position
+14:54:09    TECHM        C=1365.90  VWAP=1375.48  RSI=66  Vol=1.3x  → -[-]  
+14:54:10    MARUTI       C=14976.00  VWAP=14975.00  RSI=44  Vol=0.7x  → -[-]  
+14:57:01  SCAN #43  14:57:01  phase=ACTIVE_PM  active=True
+14:57:02    BAJAJ-AUTO   C=10024.50  VWAP=10023.41  RSI=48  Vol=0.7x  → -[-]  
+14:57:03    EICHERMOT    C=8090.50  VWAP=8116.52  RSI=52  Vol=1.5x  → -[-]  
+14:57:04    AXISBANK     C=1388.50  VWAP=1387.82  RSI=45  Vol=1.2x  → -[-]  
+14:57:05    APOLLOHOSP   C=7833.00  VWAP=7819.94  RSI=25  Vol=0.9x  → -[-]  
+14:57:06    HDFCLIFE     C=718.75  VWAP=720.27  RSI=83  Vol=0.9x  → -[-]  
+14:57:07    SBIN         C=1207.00  VWAP=1204.46  RSI=60  Vol=0.9x  → -[-]  in_position
+14:57:09    TECHM        C=1367.40  VWAP=1375.18  RSI=72  Vol=3.9x  → -[-]  
+14:57:10    MARUTI       C=14974.00  VWAP=14974.99  RSI=40  Vol=0.9x  → -[-]  
+15:00:01  PHASE  ACTIVE_PM → SHUTDOWN
+15:00:01  ======================================================================
+15:00:01  SHUTDOWN  1 signal(s), 0 stagnation exit(s), 43 scan cycles
+15:00:01    SUMMARY  14:36   LONG  SBIN         @ 1206.40  SL=1204.78  TP=1209.24
+15:00:01  ======================================================================

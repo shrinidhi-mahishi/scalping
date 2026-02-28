@@ -1,183 +1,248 @@
 # Signal Generation Conditions
 
-Complete reference for all conditions evaluated to generate BUY/SHORT signals across the screening and live signal scripts.
+Complete reference for all conditions evaluated to generate LONG/SHORT signals in `live_signals.py`.
 
 ---
 
-## 1. Stock Screening (`screen_nifty50.py`)
+## 1. Strategy Overview
 
-Screens all 48 Nifty 50 stocks to find the best candidates for live trading.
+**Hybrid Intraday Scalping Strategy** on NSE 3-minute candles.
 
-### Process
+Two entry types:
+- **Entry A — PDL (Prev-Day Level Breakout)**: Price crosses yesterday's high/low with VWAP + RSI + Volume confirmation
+- **Entry B — MOM (Momentum Breakout)**: Strong-body candle with sustained volume spike
 
-1. Fetch 90 days (configurable) of 3-minute OHLCV data for each stock
-2. Run the full backtest strategy (`strategy.py`) in two modes per stock:
-   - **Base** — no higher-timeframe filter
-   - **HTF** — with 15-min 21-EMA trend confirmation enabled
-3. Compare Base vs HTF results and pick the more profitable config
-4. Rank all stocks by Net P&L
+Four hybrid enhancements over the baseline:
 
-### Selection Criteria
-
-| Metric | TRADEABLE | MARGINAL | AVOID |
-|--------|-----------|----------|-------|
-| Profit Factor | >= 1.0 | >= 0.7 | < 0.7 |
-| Win Rate | >= 45% | any | any |
-
-Only stocks marked **TRADEABLE** make the shortlist.
-
-### Screener Output Per Stock
-
-- Trades, Won, Lost, Win Rate %
-- Net P&L (₹)
-- Avg Win / Avg Loss
-- Profit Factor
-- Max Drawdown (% and ₹)
-- Sharpe Ratio
-- Long vs Short breakdown (count, wins, P&L)
-- Best Side (LONG or SHORT)
-- Recommended config (BASE or HTF)
+| # | Feature | What It Does |
+|---|---------|--------------|
+| 1 | **2-Bar Volume Confirmation** | Requires volume spike sustained over 2 consecutive bars (filters single-bar fake-outs) |
+| 2 | **Dynamic Body Ratio** | 0.72 if ATR > 1.1× average, else 0.70 (demands stronger conviction in volatile conditions) |
+| 3 | **ATR-Based SL Adjustment** | Widens SL 1.2× in high volatility, tightens 0.9× in low volatility |
+| 4 | **Morning-Only Trading** | 10:00–12:00 only (avoids afternoon algorithmic chop) |
 
 ---
 
-## 2. Live Signal Generation (`live_signals.py`)
+## 2. Stock Universe
 
-Polls Angel One every 3 minutes and evaluates all conditions in real-time on the shortlisted stocks.
+Top 10 stocks selected by 90-day backtest P&L ranking across all Nifty 50:
 
-### 2.1 Indicators
+| Stock | Sector |
+|-------|--------|
+| BAJAJ-AUTO | Auto |
+| POWERGRID | Power |
+| TATACONSUM | Consumer |
+| INDIGO | Aviation |
+| BAJFINANCE | Finance |
+| HCLTECH | IT |
+| JIOFIN | Finance |
+| EICHERMOT | Auto |
+| NESTLEIND | Consumer |
+| BHARTIARTL | Telecom |
 
-All indicators are computed on 3-minute OHLCV candles using pure pandas/numpy.
+Re-evaluate periodically using `backtest_nifty50_90d.py`.
+
+---
+
+## 3. Indicators
+
+All indicators computed on 3-minute OHLCV candles using pandas/numpy.
 
 | Indicator | Formula | Purpose |
 |-----------|---------|---------|
 | **Session VWAP** | `Σ(TP × Vol) / Σ(Vol)`, resets daily. TP = (H+L+C)/3 | Intraday fair value anchor |
-| **Fast EMA(9)** | `close.ewm(span=9, adjust=False)` | Short-term trend |
-| **Slow EMA(21)** | `close.ewm(span=21, adjust=False)` | Medium-term trend |
-| **EMA Crossover** | Fast EMA crosses above/below Slow EMA | Entry trigger |
 | **RSI(9)** | Wilder's smoothing: `ewm(alpha=1/9, adjust=False)` | Momentum filter |
 | **Volume SMA(20)** | `volume.rolling(20).mean()` | Volume baseline |
-| **ATR(14)** | TR = `max(High, PrevClose) - min(Low, PrevClose)`, Wilder's smoothing: `ewm(alpha=1/14, adjust=False)` | Volatility for SL/TP |
+| **ATR(14)** | TR = `max(H, PrevClose) - min(L, PrevClose)`, Wilder's: `ewm(alpha=1/14)` | Volatility for SL/TP sizing |
+| **Body Ratio** | `abs(close - open) / (high - low)` | Candle conviction strength |
+| **Volume Ratio** | `volume / vol_sma` | Relative volume spike detection |
+| **ATR 20-avg** | `atr.rolling(20).mean()` | Volatility regime classification |
 
-### 2.2 Higher-Timeframe Filters
+---
 
-| Filter | Period | Data Source | Purpose |
-|--------|--------|-------------|---------|
-| **15-min 21-EMA (HTF)** | 21 periods on 15-min bars | 3-min candles resampled with `closed='right', label='right'` to avoid lookahead bias, then `reindex().ffill()` | Trend confirmation (per-stock, optional) |
-| **Daily 21-EMA (Regime)** | 21 periods on daily bars | Daily candles fetched separately from API (60-day lookback) | Directional gate for all stocks |
-
-### 2.3 Entry Conditions
+## 4. Entry Conditions
 
 **All conditions in a column must be TRUE simultaneously for a signal to fire.**
 
-| # | Condition | LONG (BUY) | SHORT (SELL) |
-|---|-----------|------------|--------------|
-| 1 | **Regime Filter** | Close > Daily 21-EMA | Close < Daily 21-EMA |
-| 2 | **HTF Filter** (if enabled for stock) | Close > 15-min 21-EMA | Close < 15-min 21-EMA |
-| 3 | **VWAP** | Close > Session VWAP | Close < Session VWAP |
-| 4 | **EMA Crossover** | EMA(9) crosses above EMA(21) | EMA(9) crosses below EMA(21) |
-| 5 | **Volume** | Volume > 20-period SMA | Volume > 20-period SMA |
-| 6 | **RSI Range** | 40 ≤ RSI(9) ≤ 70 | 30 ≤ RSI(9) ≤ 60 |
-| 7 | **ATR Valid** | ATR > 0 and not NaN | ATR > 0 and not NaN |
-| 8 | **Entry Window** | Within allowed time window | Within allowed time window |
-| 9 | **Cooldown** | No signal for this stock in last 15 min | No signal for this stock in last 15 min |
+### Entry A — PDL (Prev-Day Level Breakout)
 
-### 2.4 Time Windows
+| # | Condition | LONG | SHORT |
+|---|-----------|------|-------|
+| 1 | **Prev-Day Crossover** | prev_close ≤ prev_day_high AND close > prev_day_high | prev_close ≥ prev_day_low AND close < prev_day_low |
+| 2 | **VWAP** | close > VWAP | close < VWAP |
+| 3 | **RSI** | RSI > 50 | RSI < 50 |
+| 4 | **Volume** | volume > vol_sma(20) | volume > vol_sma(20) |
+| 5 | **Direction Limit** | Max 1 LONG PDL per stock per day | Max 1 SHORT PDL per stock per day |
+| 6 | **Entry Window** | 10:00–12:00 IST | 10:00–12:00 IST |
+| 7 | **Cooldown** | 15 min since last signal for this stock | 15 min since last signal for this stock |
+| 8 | **Daily SL Guard** | < 1 SL hit today for this stock | < 1 SL hit today for this stock |
+
+### Entry B — MOM (Momentum Breakout) — Hybrid
+
+| # | Condition | LONG | SHORT |
+|---|-----------|------|-------|
+| 1 | **2-Bar Volume** | Both current and previous bar vol_ratio ≥ 1.6× (2.0 × 0.8) | Same |
+| 2 | **Body Ratio** | body_ratio ≥ 0.72 (if ATR > 1.1× avg) or ≥ 0.70 (normal) | Same |
+| 3 | **Direction** | close > open (bullish candle) | close < open (bearish candle) |
+| 4 | **VWAP** | close > VWAP | close < VWAP |
+| 5 | **RSI Range** | 30 ≤ RSI ≤ 85 | 15 ≤ RSI ≤ 70 |
+| 6 | **Entry Window** | 10:00–12:00 IST | 10:00–12:00 IST |
+| 7 | **Cooldown** | 15 min since last signal | 15 min since last signal |
+| 8 | **Daily SL Guard** | < 1 SL hit today for this stock | < 1 SL hit today for this stock |
+
+Fallback: If no previous bar data is available, a single-bar check with vol_ratio ≥ 2.0× is used instead of the 2-bar confirmation.
+
+---
+
+## 5. Time Windows
 
 | Window | Time (IST) | Signals |
 |--------|------------|---------|
 | Pre-market | Before 09:15 | Blocked |
-| Silent tracking | 09:15 – 09:59 | Blocked (indicators updating) |
-| **Morning window** | **10:00 – 12:00** | **Enabled** |
-| Midday sleep | 12:00 – 13:59 | Blocked (indicators updating) |
-| **Afternoon window** | **14:00 – 15:00** | **Enabled** |
-| Post-market | After 15:00 | Shutdown |
+| Silent tracking | 09:15–09:59 | Blocked (indicators warming up) |
+| **Morning window** | **10:00–12:00** | **Enabled** |
+| Post-12:00 | 12:00–15:30 | Blocked (afternoon chop avoided) |
+| Post-market | After 15:30 | Shutdown |
 
-### 2.5 Risk Management
+---
+
+## 6. Risk Management
 
 | Parameter | Value | Formula |
 |-----------|-------|---------|
-| **Risk per trade** | 1% of capital | — |
-| **Stop Loss** | 1 × ATR below/above entry | LONG: `Entry - ATR`, SHORT: `Entry + ATR` |
-| **Take Profit** | 1.5 × ATR from entry | LONG: `Entry + 1.5×ATR`, SHORT: `Entry - 1.5×ATR` |
-| **Risk-Reward Ratio** | 1 : 1.5 | — |
-| **Position Size** | `min(Capital × 1% / ATR, Capital × 5 / Price)` | Capped by 5x MIS leverage |
-| **Leverage Cap** | 5x (MIS intraday margin) | — |
-| **Cooldown** | 15 minutes per stock after each signal | Prevents rapid-fire alerts |
+| **Risk per trade** | 1% of capital | `RISK_PCT = 0.01` |
+| **PDL Stop Loss** | 1.5 × ATR (dynamic) | `entry ∓ ATR × 1.5 × sl_adj` |
+| **MOM Stop Loss** | 1.2 × ATR (dynamic) | `entry ∓ ATR × 1.2 × sl_adj` |
+| **Take Profit** | SL distance × 1.75 | RR = 1:1.75 |
+| **Position Size** | `min(Capital × 1% / SL_dist, Capital × 5 / Price)` | Risk-based, capped by leverage |
+| **Leverage Cap** | 5× (MIS intraday margin) | `LEV_CAP = 5.0` |
+| **Cooldown** | 15 minutes per stock | Prevents rapid-fire signals |
+| **Max SL per day** | 1 per stock | Blocks further entries after 1 SL hit |
 
-### 2.6 Stagnation Exit
+### ATR-Based SL Adjustment (Hybrid)
 
-Tracks open positions after each entry signal and alerts to close if momentum fails.
+The SL multiplier is dynamically scaled based on the volatility regime:
+
+| Volatility Regime | Condition | SL Adjustment |
+|--------------------|-----------|---------------|
+| **High Volatility** | ATR / ATR_20avg > 1.3 | SL × 1.2 (wider, gives breathing room) |
+| **Normal** | 0.7 ≤ ratio ≤ 1.3 | SL × 1.0 (no change) |
+| **Low Volatility** | ATR / ATR_20avg < 0.7 | SL × 0.9 (tighter, less risk) |
+
+---
+
+## 7. Stagnation Exit
+
+Tracks open positions and alerts to close if momentum stalls.
 
 | Parameter | Value | Rationale |
 |-----------|-------|-----------|
 | **Trigger** | 8 bars (24 minutes) since entry | Enough time for 3-min momentum to establish |
-| **Profit Gate** | Unrealized profit < 0.2 × ATR | If you haven't cleared 0.2× ATR, the move was a fakeout |
-| **Exemption** | HDFCLIFE | Slower-trending stock — stagnation exit harms its natural rhythm |
-| **Action** | Console + Telegram EXIT alert | User manually cancels bracket order and closes at market |
+| **Profit Gate** | Unrealized profit < 0.2 × ATR | If move hasn't cleared 0.2× ATR, it's a fakeout |
+| **Action** | Console + Telegram EXIT alert | User cancels bracket order and closes at market |
 
-How it works:
-- After a LONG/SHORT signal fires, the script tracks entry price, ATR, and direction
-- Every 3-min scan checks: has the bracket order filled (SL/TP hit)? If yes, position silently removed
-- If position is still open after 8+ bars and profit < 0.2×ATR → stagnation exit alert fires
-- Does **not** apply to HDFCLIFE (backtested as harmful for this stock)
+---
 
-Backtest result: +22.8% improvement over baseline across the shortlist.
-
-### 2.7 Signal Flow Diagram
+## 8. Signal Flow Diagram
 
 ```
-Every 3 minutes (at HH:MM:02)
+Every 3 minutes (at HH:MM:01)
 │
-├── Fetch latest 3-min candle for all stocks
-├── Recompute indicators (VWAP, EMA, RSI, Vol SMA, ATR)
-├── Recompute 15-min HTF EMA (for HTF stocks)
+├── Fetch latest 3-min candle for all 10 stocks
+├── Recompute indicators (VWAP, RSI, Vol SMA, ATR, Body Ratio, Vol Ratio)
 │
 └── For each stock:
     │
     ├── Has open position?
     │   ├── Did bar hit SL or TP? ──────────── Yes ─→ Position closed (bracket filled)
+    │   │                                              If SL → increment daily SL counter
     │   └── Stagnation check (8+ bars, < 0.2× ATR) ─→ ⚠ EXIT alert
     │
-    ├── Is current time in entry window? ─── No ──→ Skip
-    ├── Is stock on cooldown? ─────────────── Yes ─→ Skip
-    ├── Already in position? ─────────────── Yes ─→ Skip
+    ├── Is current time in 10:00–12:00? ──── No ──→ Skip
+    ├── Is stock on cooldown? ──────────────  Yes ─→ Skip
+    ├── Already in position? ──────────────  Yes ─→ Skip
+    ├── Daily SL limit hit (≥1)? ──────────  Yes ─→ Skip
     │
-    ├── Regime check: Close vs Daily 21-EMA
-    │   ├── Close > Daily EMA → Only LONG allowed
-    │   └── Close < Daily EMA → Only SHORT allowed
+    ├── Entry A: PDL Breakout?
+    │   ├── Close crossed prev-day high/low (vs prev bar's close)
+    │   ├── VWAP confirmation (above for LONG, below for SHORT)
+    │   ├── RSI > 50 (LONG) or RSI < 50 (SHORT)
+    │   ├── Volume > 20-period SMA
+    │   ├── Direction not already used today (max 1 LONG + 1 SHORT per PDL)
+    │   └── All true? → Signal fires (SL = 1.5× ATR, dynamic)
     │
-    ├── HTF check (if enabled): Close vs 15-min 21-EMA
-    │   ├── Close > HTF EMA → LONG confirmed
-    │   └── Close < HTF EMA → SHORT confirmed
-    │
-    ├── LONG candidate?
-    │   ├── Close > VWAP
-    │   ├── EMA(9) just crossed above EMA(21)
-    │   ├── Volume > Volume SMA(20)
-    │   ├── 40 ≤ RSI(9) ≤ 70
-    │   └── All true? → ▲ LONG SIGNAL (track position)
-    │
-    └── SHORT candidate?
-        ├── Close < VWAP
-        ├── EMA(9) just crossed below EMA(21)
-        ├── Volume > Volume SMA(20)
-        ├── 30 ≤ RSI(9) ≤ 60
-        └── All true? → ▼ SHORT SIGNAL (track position)
+    └── Entry B: MOM Breakout? (only if PDL didn't fire)
+        ├── 2-bar volume: prev bar ≥ 1.6× AND current bar ≥ 1.6×
+        ├── Body ratio ≥ 0.72 (high vol) or ≥ 0.70 (normal)
+        ├── Bullish/bearish candle direction
+        ├── VWAP confirmation
+        ├── RSI in range: 30–85 (LONG) or 15–70 (SHORT)
+        └── All true? → Signal fires (SL = 1.2× ATR, dynamic)
 ```
 
-### 2.8 Backtest vs Live Parity
+---
 
-The live signal script replicates the exact same indicator math and entry logic as `strategy.py` (used by the screener). Key implementation details ensuring parity:
+## 9. Daily Lifecycle
 
-| Aspect | Backtest (`strategy.py`) | Live (`live_signals.py`) |
-|--------|--------------------------|--------------------------|
-| VWAP | `SessionVWAP` indicator, resets per session | `groupby(date).cumsum()` on TP×Vol / Vol |
-| EMA(9/21) | `bt.indicators.EMA(span=...)` | `ewm(span=..., adjust=False)` |
-| RSI(9) | `bt.indicators.RSI(period=9)` | Wilder's: `ewm(alpha=1/9, adjust=False)` |
-| ATR(14) | `bt.indicators.ATR(period=14)` | `max(H,PC)-min(L,PC)`, Wilder's: `ewm(alpha=1/14)` |
-| EMA Cross | `bt.indicators.CrossOver` | `above & ~prev_above` / `~above & prev_above` |
-| HTF EMA | `bt.indicators.EMA` on resampled 15-min data | `resample('15min', closed='right', label='right')` + `ffill` |
-| Regime | Running daily EMA from end-of-day closes | Daily candles from API → `ewm(span=21)` |
-| Position Sizing | `min(Capital×1%/ATR, Capital×5/Price)` | Same formula |
-| Commission | `min(Value×0.03%, ₹20)` per leg | Not applied (signal-only, no execution) |
-| Slippage | 0.01% on market/stop orders | Not applied (signal-only) |
+| Phase | Time | Action |
+|-------|------|--------|
+| **Phase 1 — Warm-Up** | 09:14 | Connect to Angel One, fetch 5 days of 3-min data, compute prev-day levels |
+| **Phase 2 — Silent** | 09:15–09:59 | Track indicators every 3 min, NO signals (let indicators stabilize) |
+| **Phase 3 — Active AM** | 10:00–12:00 | Signals enabled, dashboard displayed, Telegram alerts sent |
+| **Phase 4 — Shutdown** | 12:00+ | Stop signals, continue tracking positions until SL/TP/stagnation |
+
+---
+
+## 10. Strategy Constants
+
+```
+RR             = 1.75       # Reward-to-risk ratio
+RISK_PCT       = 0.01       # 1% risk per trade
+LEV_CAP        = 5.0        # 5× MIS leverage cap
+
+PDL_SL_MULT    = 1.5        # PDL entry: SL = 1.5× ATR
+MOM_SL_MULT    = 1.2        # MOM entry: SL = 1.2× ATR
+MOM_VOL_MULT   = 2.0        # MOM volume threshold (2× avg)
+MOM_BODY_RATIO = 0.70       # Base body ratio (0.72 in high vol)
+
+MAX_SL_PER_DAY = 1          # Max SL hits per stock before blocking
+STAG_MAX_BARS  = 8          # Stagnation exit after 8 bars (24 min)
+STAG_MIN_PROFIT_ATR = 0.2   # Min profit to avoid stagnation exit
+
+MOM_LONG_RSI   = (30, 85)   # RSI range for MOM LONG
+MOM_SHORT_RSI  = (15, 70)   # RSI range for MOM SHORT
+PDL_LONG_RSI_MIN  = 50      # Min RSI for PDL LONG
+PDL_SHORT_RSI_MAX = 50      # Max RSI for PDL SHORT
+
+ENTRY_AM       = (10:00, 12:00)  # Morning trading window
+ENTRY_PM       = None            # Afternoon disabled (hybrid)
+COOLDOWN       = 15 minutes      # Per-stock cooldown
+```
+
+---
+
+## 11. File Structure
+
+```
+trading/
+├── live_signals.py          # Live signal generator (core)
+├── fetch_data.py            # Angel One API data fetcher + CSV cache
+├── backtest_nifty50_90d.py  # 90-day backtest on all Nifty 50, picks top 10
+├── backtest_top10_90d.py    # 90-day backtest on current top 10 stocks
+├── backtest_top10_5d.py     # Last 5 trading days backtest with trade log
+├── data/                    # Cached 3-min OHLCV CSVs
+└── logs/
+    ├── live_signals/        # Daily live logs (live_YYYY-MM-DD.log)
+    └── signals/             # Daily signal CSVs (signals_YYYY-MM-DD.csv)
+```
+
+---
+
+## 12. Logging
+
+| Output | Location | Content |
+|--------|----------|---------|
+| **Live logs** | `logs/live_signals/live_YYYY-MM-DD.log` | Timestamped events: warmup, signals, exits, errors |
+| **Signal CSV** | `logs/signals/signals_YYYY-MM-DD.csv` | One row per signal: symbol, direction, trigger, price, SL, TP, ATR, qty, RSI, VWAP, vol_ratio |
+| **Console** | stdout | Color-coded dashboard + signal alerts |
+| **Telegram** | Bot API | Signal and exit alerts (if configured via .env) |

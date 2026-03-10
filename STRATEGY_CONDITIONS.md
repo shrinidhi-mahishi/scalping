@@ -12,7 +12,7 @@ Two entry types:
 - **Entry A — PDL (Prev-Day Level Breakout)**: Price crosses yesterday's high/low with VWAP + RSI + Volume confirmation
 - **Entry B — MOM (Momentum Breakout)**: Strong-body candle with sustained volume spike
 
-Four hybrid enhancements over the baseline:
+Five hybrid enhancements over the baseline:
 
 | # | Feature | What It Does |
 |---|---------|--------------|
@@ -20,6 +20,7 @@ Four hybrid enhancements over the baseline:
 | 2 | **Dynamic Body Ratio** | 0.72 if ATR > 1.1× average, else 0.70 (demands stronger conviction in volatile conditions) |
 | 3 | **ATR-Based SL Adjustment** | Widens SL 1.2× in high volatility, tightens 0.9× in low volatility |
 | 4 | **Morning-Only Trading** | 10:00–12:00 only (avoids afternoon algorithmic chop) |
+| 5 | **Event Calendar Filter** | Skips stocks with corporate events (earnings, ex-dates, splits, AGM) — fetched from NSE pre-market |
 
 ---
 
@@ -110,7 +111,7 @@ Fallback: If no previous bar data is available, a single-bar check with vol_rati
 
 | Parameter | Value | Formula |
 |-----------|-------|---------|
-| **Risk per trade** | 1% of capital | `RISK_PCT = 0.01` |
+| **Risk per trade** | 1.25% of capital | `RISK_PCT = 0.0125` |
 | **PDL Stop Loss** | 1.5 × ATR (dynamic) | `entry ∓ ATR × 1.5 × sl_adj` |
 | **MOM Stop Loss** | 1.2 × ATR (dynamic) | `entry ∓ ATR × 1.2 × sl_adj` |
 | **Take Profit** | SL distance × 1.75 | RR = 1:1.75 |
@@ -197,7 +198,7 @@ Every 3 minutes (at HH:MM:01)
 
 ```
 RR             = 1.75       # Reward-to-risk ratio
-RISK_PCT       = 0.01       # 1% risk per trade
+RISK_PCT       = 0.0125     # 1.25% risk per trade
 LEV_CAP        = 5.0        # 5× MIS leverage cap
 
 PDL_SL_MULT    = 1.5        # PDL entry: SL = 1.5× ATR
@@ -227,10 +228,14 @@ COOLDOWN       = 15 minutes      # Per-stock cooldown
 trading/
 ├── live_signals.py          # Live signal generator (core)
 ├── fetch_data.py            # Angel One API data fetcher + CSV cache
+├── websocket_feed.py        # WebSocket tick-to-candle aggregator
+├── event_calendar.py        # NSE event calendar filter (earnings, ex-dates, splits)
 ├── backtest_nifty50_90d.py  # 90-day backtest on all Nifty 50, picks top 10
 ├── backtest_top10_90d.py    # 90-day backtest on current top 10 stocks
 ├── backtest_top10_5d.py     # Last 5 trading days backtest with trade log
-├── data/                    # Cached 3-min OHLCV CSVs
+├── data/
+│   ├── *_3min.csv           # Cached 3-min OHLCV CSVs
+│   └── event_cache.json     # Cached NSE event data (refreshed every 12h)
 └── logs/
     ├── live_signals/        # Daily live logs (live_YYYY-MM-DD.log)
     └── signals/             # Daily signal CSVs (signals_YYYY-MM-DD.csv)

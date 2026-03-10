@@ -23,12 +23,7 @@ sys.path.insert(0, str(Path(".").resolve()))
 from fetch_data import AngelOneClient, load_csv, save_csv
 from live_signals import (
     RR, RISK_PCT, LEV_CAP,
-    PDL_SL_MULT, MOM_SL_MULT,
-    MOM_VOL_MULT, MOM_BODY_RATIO,
-    MOM_LONG_RSI, MOM_SHORT_RSI,
-    PDL_LONG_RSI_MIN, PDL_SHORT_RSI_MAX,
-    MAX_SL_PER_DAY,
-    STAG_MAX_BARS, STAG_MIN_PROFIT_ATR,
+    PDL_PREARM_BUFFER_ATR, PDL_SL_MULT, MAX_SL_PER_DAY,
     ENTRY_AM, ENTRY_PM, COOLDOWN,
     compute_indicators,
 )
@@ -69,9 +64,38 @@ def csv_path(sym):
     return Path("data") / f"{fname}_3min.csv"
 
 
+def csv_path_1min(sym):
+    fname = sym.translate(_F)
+    return Path("data") / f"{fname}_1min.csv"
+
+
+def resample_3min(df):
+    return df.resample("3min").agg(
+        {
+            "open": "first",
+            "high": "max",
+            "low": "min",
+            "close": "last",
+            "volume": "sum",
+        }
+    ).dropna(subset=["open"])
+
+
+def load_symbol_df(sym):
+    p1 = csv_path_1min(sym)
+    if p1.exists():
+        return resample_3min(load_csv(str(p1)))
+    p3 = csv_path(sym)
+    if p3.exists():
+        return load_csv(str(p3))
+    return None
+
+
 def fetch_all_missing():
     needs = []
     for sym, _ in NIFTY50:
+        if csv_path_1min(sym).exists():
+            continue
         p = csv_path(sym)
         if not p.exists():
             needs.append((sym, (TODAY - timedelta(days=7)).strftime("%Y-%m-%d"), TODAY.strftime("%Y-%m-%d")))
@@ -112,11 +136,10 @@ def fetch_all_missing():
 
 
 def precompute(sym):
-    p = csv_path(sym)
-    if not p.exists():
+    df = load_symbol_df(sym)
+    if df is None:
         return None
     try:
-        df = load_csv(str(p))
         ind = compute_indicators(df)
         ind = ind[ind.index >= START]
         if len(ind) < 50:
@@ -145,117 +168,98 @@ def in_entry_window(t):
 
 def simulate(day_data, sym):
     trades = []
-    for today, pdl_h, pdl_l, today_rows, _ in day_data:
-        pdl_dirs, cd_until, pos, bh, pc, dsl = set(), None, None, 0, None, 0
+    for today, pdl_h, pdl_l, today_rows, prev_rows in day_data:
+        pdl_dirs, cd_until, pos, activate_idx, dsl = set(), None, None, None, 0
+
         for i in range(len(today_rows)):
             row = today_rows.iloc[i]
             ts = today_rows.index[i]
             t = ts.time()
-            c = row["close"]
+            c = float(row["close"])
 
             if pos is not None:
-                bh += 1
-                hit, pv = None, 0
-                if pos["d"] == "LONG":
-                    if row["low"] <= pos["sl"]:
-                        hit, pv = "SL", (pos["sl"] - pos["e"]) * pos["q"]
-                    elif row["high"] >= pos["tp"]:
-                        hit, pv = "TP", (pos["tp"] - pos["e"]) * pos["q"]
-                else:
-                    if row["high"] >= pos["sl"]:
-                        hit, pv = "SL", (pos["e"] - pos["sl"]) * pos["q"]
-                    elif row["low"] <= pos["tp"]:
-                        hit, pv = "TP", (pos["e"] - pos["tp"]) * pos["q"]
-                if hit:
-                    trades.append({**pos, "pnl": pv, "res": hit})
-                    if hit == "SL":
-                        dsl += 1
-                    pos, bh, pc = None, 0, c
-                    continue
-                if bh >= STAG_MAX_BARS:
-                    u = (c - pos["e"]) if pos["d"] == "LONG" else (pos["e"] - c)
-                    if u < STAG_MIN_PROFIT_ATR * pos["atr"]:
-                        trades.append({**pos, "pnl": u * pos["q"], "res": "STAG"})
-                        pos, bh = None, 0
-                pc = c
+                if activate_idx is not None and i >= activate_idx:
+                    hit, pv = None, 0
+                    if pos["d"] == "LONG":
+                        if row["low"] <= pos["sl"]:
+                            hit, pv = "SL", (pos["sl"] - pos["e"]) * pos["q"]
+                        elif row["high"] >= pos["tp"]:
+                            hit, pv = "TP", (pos["tp"] - pos["e"]) * pos["q"]
+                    else:
+                        if row["high"] >= pos["sl"]:
+                            hit, pv = "SL", (pos["e"] - pos["sl"]) * pos["q"]
+                        elif row["low"] <= pos["tp"]:
+                            hit, pv = "TP", (pos["e"] - pos["tp"]) * pos["q"]
+                    if hit:
+                        trades.append({**pos, "pnl": pv, "res": hit})
+                        if hit == "SL":
+                            dsl += 1
+                        pos, activate_idx = None, None
                 continue
 
             if not in_entry_window(t) or (cd_until and ts < cd_until) or dsl >= MAX_SL_PER_DAY:
-                pc = c
                 continue
 
-            rsi, atr, vwap, vsma = row["rsi"], row["atr"], row["vwap"], row["vol_sma"]
-            if pd.isna(rsi) or pd.isna(atr) or atr <= 0 or pd.isna(vwap) or pd.isna(vsma):
-                pc = c
+            atr = row["atr"]
+            prev_close = float(today_rows.iloc[i - 1]["close"]) if i > 0 else None
+            if prev_close is None or pd.isna(atr) or atr <= 0:
                 continue
 
-            vol_ok = row["volume"] > vsma if vsma > 0 else False
-            sig, trig = None, None
-
-            if pc is not None and vol_ok:
-                if ("LONG" not in pdl_dirs and pc <= pdl_h and c > pdl_h
-                        and c > vwap and rsi > PDL_LONG_RSI_MIN):
-                    sig, trig = "LONG", "PDL"
-                elif ("SHORT" not in pdl_dirs and pc >= pdl_l and c < pdl_l
-                      and c < vwap and rsi < PDL_SHORT_RSI_MAX):
-                    sig, trig = "SHORT", "PDL"
-
-            if sig is None:
-                br = row.get("body_ratio", 0)
-                vr = row.get("vol_ratio", 0)
-                if not pd.isna(br) and not pd.isna(vr):
-                    if vr >= MOM_VOL_MULT and br >= MOM_BODY_RATIO:
-                        if c > row["open"] and c > vwap and MOM_LONG_RSI[0] <= rsi <= MOM_LONG_RSI[1]:
-                            sig, trig = "LONG", "MOM"
-                        elif c < row["open"] and c < vwap and MOM_SHORT_RSI[0] <= rsi <= MOM_SHORT_RSI[1]:
-                            sig, trig = "SHORT", "MOM"
+            buffer = float(atr) * PDL_PREARM_BUFFER_ATR
+            sig, entry = None, None
+            if ("LONG" not in pdl_dirs
+                    and prev_close <= pdl_h
+                    and row["high"] >= pdl_h + buffer
+                    and c >= pdl_h):
+                sig, entry = "LONG", pdl_h + buffer
+            elif ("SHORT" not in pdl_dirs
+                  and prev_close >= pdl_l
+                  and row["low"] <= pdl_l - buffer
+                  and c <= pdl_l):
+                sig, entry = "SHORT", pdl_l - buffer
 
             if sig:
-                sm = PDL_SL_MULT if trig == "PDL" else MOM_SL_MULT
-                sd = atr * sm
+                sd = float(atr) * PDL_SL_MULT
                 rq = int(CASH * RISK_PCT / sd)
-                mq = int(CASH * LEV_CAP / c)
+                mq = int(CASH * LEV_CAP / entry)
                 q = max(min(rq, mq), 1)
-                slp = c - sd if sig == "LONG" else c + sd
-                tpp = c + sd * RR if sig == "LONG" else c - sd * RR
+                slp = entry - sd if sig == "LONG" else entry + sd
+                tpp = entry + sd * RR if sig == "LONG" else entry - sd * RR
                 pos = {
-                    "sym": sym, "d": sig, "trig": trig, "e": c, "sl": slp,
-                    "tp": tpp, "atr": atr, "q": q, "h": t.hour, "date": today,
+                    "sym": sym, "d": sig, "trig": "PDL", "e": entry, "sl": slp,
+                    "tp": tpp, "atr": float(atr), "q": q, "h": t.hour, "date": today,
                 }
-                bh = 0
                 cd_until = ts + COOLDOWN
-                if trig == "PDL":
-                    pdl_dirs.add(sig)
-            pc = c
+                activate_idx = i + 1
+                pdl_dirs.add(sig)
     return trades
 
 
 def analyze(trades):
     if not trades:
         return {"n": 0, "wins": 0, "wr": 0.0, "pnl": 0.0, "tp": 0, "sl": 0,
-                "stag": 0, "dd": 0.0, "avg": 0.0, "pf": 0.0}
+                "dd": 0.0, "avg": 0.0, "pf": 0.0}
     tdf = pd.DataFrame(trades)
     n = len(tdf)
     pnl = tdf["pnl"].sum()
     wins = int((tdf["pnl"] > 0).sum())
     tp = int((tdf["res"] == "TP").sum())
     sl = int((tdf["res"] == "SL").sum())
-    stag = int((tdf["res"] == "STAG").sum())
     cumul = tdf["pnl"].cumsum()
     dd = float((cumul - cumul.cummax()).min())
     gw = tdf.loc[tdf["pnl"] > 0, "pnl"].sum()
     gl = abs(tdf.loc[tdf["pnl"] <= 0, "pnl"].sum())
     pf = gw / gl if gl > 0 else (9.99 if gw > 0 else 0.0)
     return {"n": n, "wins": wins, "wr": wins / n * 100, "pnl": pnl,
-            "tp": tp, "sl": sl, "stag": stag, "dd": dd,
+            "tp": tp, "sl": sl, "dd": dd,
             "avg": pnl / n, "pf": min(pf, 9.99)}
 
 
 def run():
     print("=" * 120)
     print(f"  NIFTY 50 BACKTEST — 90 DAYS ({START.date()} to {TODAY.date()})")
-    print(f"  Strategy: Morning-Only (10-12), MAX_SL={MAX_SL_PER_DAY}/stock/day")
-    print(f"  RR={RR}, PDL_SL={PDL_SL_MULT}, MOM_SL={MOM_SL_MULT}, Capital=₹{CASH:,.0f}")
+    print(f"  Strategy: Prearmed PDL ({ENTRY_AM[0]:%H:%M}-{ENTRY_AM[1]:%H:%M}), MAX_SL={MAX_SL_PER_DAY}/stock/day")
+    print(f"  Trigger: PDL ± {PDL_PREARM_BUFFER_ATR:.1f}×ATR | RR={RR}, SL={PDL_SL_MULT}×ATR, CD={int(COOLDOWN.total_seconds()//60)}min, Capital=₹{CASH:,.0f}")
     print("=" * 120)
 
     # 1. Fetch missing data
@@ -296,7 +300,7 @@ def run():
     print("  AGGREGATE — ALL STOCKS")
     print("=" * 120)
     print(f"  Trades: {agg['n']}  |  Win Rate: {agg['wr']:.1f}%  |  P&L: ₹{agg['pnl']:,.0f}")
-    print(f"  TP: {agg['tp']}  |  SL: {agg['sl']}  |  Stag: {agg['stag']}")
+    print(f"  TP: {agg['tp']}  |  SL: {agg['sl']}")
     print(f"  Max DD: ₹{agg['dd']:,.0f}  |  PF: {agg['pf']:.2f}  |  Avg/Trade: ₹{agg['avg']:,.0f}")
 
     # 5. All stocks ranked
@@ -308,15 +312,15 @@ def run():
     print("=" * 120)
     print(
         f"  {'#':>3} {'Stock':<14} {'Sector':<12} │ {'Trades':>6} {'Win%':>6} "
-        f"{'P&L':>10} │ {'TP':>4} {'SL':>4} {'Stag':>4} │ {'MaxDD':>9} {'PF':>5} {'Avg':>7}"
+        f"{'P&L':>10} │ {'TP':>4} {'SL':>4} │ {'MaxDD':>9} {'PF':>5} {'Avg':>7}"
     )
-    print("  " + "─" * 110)
+    print("  " + "─" * 100)
 
     for i, s in enumerate(stock_results, 1):
         marker = " ★" if i <= 10 else ""
         print(
             f"  {i:>3} {s['sym']:<14} {s['sector']:<12} │ {s['n']:>6} {s['wr']:>5.1f}% "
-            f"₹{s['pnl']:>8,.0f} │ {s['tp']:>4} {s['sl']:>4} {s['stag']:>4} "
+            f"₹{s['pnl']:>8,.0f} │ {s['tp']:>4} {s['sl']:>4} "
             f"│ ₹{s['dd']:>7,.0f} {s['pf']:>5.2f} ₹{s['avg']:>5,.0f}{marker}"
         )
 
@@ -330,7 +334,7 @@ def run():
     print("  TOP 10 STOCKS — COMBINED PERFORMANCE")
     print("=" * 120)
     print(f"  Trades: {top10_agg['n']}  |  Win Rate: {top10_agg['wr']:.1f}%  |  P&L: ₹{top10_agg['pnl']:,.0f}")
-    print(f"  TP: {top10_agg['tp']}  |  SL: {top10_agg['sl']}  |  Stag: {top10_agg['stag']}")
+    print(f"  TP: {top10_agg['tp']}  |  SL: {top10_agg['sl']}")
     print(f"  Max DD: ₹{top10_agg['dd']:,.0f}  |  PF: {top10_agg['pf']:.2f}  |  Avg/Trade: ₹{top10_agg['avg']:,.0f}")
 
     # Sector distribution

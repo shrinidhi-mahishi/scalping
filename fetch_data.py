@@ -80,8 +80,24 @@ class AngelOneClient:
         self.password = os.getenv("ANGEL_PASSWORD")
         self.totp_secret = os.getenv("ANGEL_TOTP_SECRET")
         self._conn = None
+        self.feed_token: str | None = None
+        self.jwt_token: str | None = None
 
     def connect(self):
+        import logging as _logging
+        try:
+            import logzero
+            logzero.loglevel(_logging.CRITICAL)
+            logzero.logfile(None)
+        except ImportError:
+            pass
+        for name in ("smartConnect", "SmartApi", "logzero",
+                      "SmartWebSocketV2", "websocket", "urllib3"):
+            _lg = _logging.getLogger(name)
+            _lg.setLevel(_logging.CRITICAL)
+            _lg.handlers = []
+            _lg.addHandler(_logging.NullHandler())
+
         from SmartApi import SmartConnect
         import pyotp
 
@@ -91,6 +107,11 @@ class AngelOneClient:
 
         if not resp.get("status"):
             raise ConnectionError(f"Angel One login failed: {resp.get('message')}")
+
+        data = resp.get("data", {})
+        self.jwt_token = data.get("jwtToken")
+        self.feed_token = data.get("feedToken")
+
         print(f"[Angel One] Logged in as {self.client_id}")
         return self
 
@@ -101,8 +122,9 @@ class AngelOneClient:
         to_date: str,
         interval: str = "THREE_MINUTE",
         exchange: str = "NSE",
-        retries: int = 3,
+        retries: int = 5,
     ) -> pd.DataFrame:
+        """Fetch OHLCV candles. Use retries=1 for live polling, retries=5 for batch."""
         token = self.SYMBOL_TOKENS.get(symbol.upper())
         if not token:
             raise ValueError(
@@ -122,13 +144,19 @@ class AngelOneClient:
 
             if resp.get("status") and resp.get("data"):
                 break
-            
+
             msg = str(resp.get("message", "empty"))
+
+            if resp.get("status") and not resp.get("data"):
+                return pd.DataFrame(
+                    columns=["open", "high", "low", "close", "volume"]
+                ).rename_axis("datetime")
+
             if "TooManyRequests" in msg or "access rate" in msg.lower():
                 if attempt < retries - 1:
-                    _time.sleep(2.0 * (attempt + 1))  # exponential backoff: 2s, 4s...
+                    _time.sleep(3.0 * (attempt + 1))
                     continue
-            
+
             raise RuntimeError(f"Candle fetch failed: {msg}")
 
         df = pd.DataFrame(
@@ -174,7 +202,7 @@ class AngelOneClient:
                 print(f"[warn] {start.date()} → {end.date()}: {e}")
             end = start
             remaining -= span
-            _time.sleep(0.5)
+            _time.sleep(1.5)
 
         if not chunks:
             raise RuntimeError("No data fetched from Angel One")

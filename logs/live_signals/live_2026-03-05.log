@@ -1,0 +1,1463 @@
+09:05:23  ======================================================================
+09:05:23  SESSION START  Capital=50000  RR=1:1.8  Risk=1.5%  ws=True
+09:05:23  Stocks: HDFCLIFE, APOLLOHOSP, TITAN, ITC, TCS, SBIN, BAJAJFINSV, TRENT, ADANIPORTS, ONGC
+09:05:23  Strategy: PDL (SL=1.5x ATR) + MOM (SL=1.4x ATR)  MaxSL/day=2
+09:05:23  Telegram: enabled
+09:05:23  PHASE 1  Warm-Up — connecting to Angel One
+09:05:24  API connected
+09:05:24  Loading 5-day 3-min warmup data
+09:05:25  WARMUP  HDFCLIFE     250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:28  WARMUP  APOLLOHOSP   250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:32  WARMUP  TITAN        250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:35  WARMUP  ITC          250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:38  WARMUP  TCS          250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:41  WARMUP  SBIN         250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:44  WARMUP  BAJAJFINSV   250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:47  WARMUP  TRENT        250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:51  WARMUP  ADANIPORTS   250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:54  WARMUP  ONGC         250 bars  API 2026-03-02→2026-03-04 15:27:00  cached
+09:05:55  Checking event calendar for corporate events
+09:05:58  Event calendar: all stocks cleared
+09:05:58  PDL  HDFCLIFE     H=720.00  L=703.00
+09:05:58  PDL  APOLLOHOSP   H=7819.00  L=7605.00
+09:05:58  PDL  TITAN        H=4330.00  L=4193.00
+09:05:58  PDL  ITC          H=315.75  L=307.00
+09:05:58  PDL  TCS          H=2623.80  L=2580.30
+09:05:58  PDL  SBIN         H=1197.30  L=1179.40
+09:05:58  PDL  BAJAJFINSV   H=1990.00  L=1927.00
+09:05:58  PDL  TRENT        H=3887.60  L=3755.00
+09:05:58  PDL  ADANIPORTS   H=1497.30  L=1430.00
+09:05:58  PDL  ONGC         H=293.00  L=277.65
+09:05:58  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+09:05:58  Starting WebSocket feed
+09:05:58  WS connected — subscribing 10 tokens (mode=2 Quote)
+09:05:58  WS feed started — 10 tokens subscribed
+09:05:59  PHASE  START → PRE_MARKET
+09:15:00  PHASE  PRE_MARKET → SILENT
+09:15:01  SCAN #1  09:15:00  phase=SILENT  active=False  missed=0
+09:15:01  FETCH  REST gap-fill (first scan)
+09:15:04  FETCH  WS  0 new bars in 3.379s
+09:15:04    HDFCLIFE     C=683.00  VWAP=692.39  RSI=19  Vol=1.6x  → -[-]  inactive_phase
+09:15:04    APOLLOHOSP   C=7715.00  VWAP=7614.10  RSI=75  Vol=1.3x  → -[-]  inactive_phase
+09:15:04    TITAN        C=4195.10  VWAP=4171.13  RSI=32  Vol=1.2x  → -[-]  inactive_phase
+09:15:04    ITC          C=311.95  VWAP=312.48  RSI=39  Vol=1.8x  → -[-]  inactive_phase
+09:15:04    TCS          C=2583.00  VWAP=2596.84  RSI=36  Vol=0.9x  → -[-]  inactive_phase
+09:15:04    SBIN         C=1173.30  VWAP=1166.73  RSI=44  Vol=1.3x  → -[-]  inactive_phase
+09:15:04    BAJAJFINSV   C=1878.00  VWAP=1887.59  RSI=18  Vol=0.6x  → -[-]  inactive_phase
+09:15:04    TRENT        C=3760.20  VWAP=3756.06  RSI=59  Vol=2.2x  → -[-]  inactive_phase
+09:15:04    ADANIPORTS   C=1436.60  VWAP=1429.88  RSI=50  Vol=0.9x  → -[-]  inactive_phase
+09:15:04    ONGC         C=275.65  VWAP=280.98  RSI=18  Vol=0.9x  → -[-]  inactive_phase
+09:15:04  SCAN #1 complete in 3.4s
+09:18:01  SCAN #2  09:18:01  phase=SILENT  active=False  missed=0
+09:18:01  FETCH  WS  8 new bars in 0.018s
+09:18:01    HDFCLIFE     C=683.00  VWAP=692.39  RSI=19  Vol=1.6x  → -[-]  inactive_phase
+09:18:01    APOLLOHOSP   C=7716.50  VWAP=7704.50  RSI=75  Vol=1.2x  → -[-]  inactive_phase
+09:18:01    TITAN        C=4218.20  VWAP=4219.53  RSI=60  Vol=1.4x  → -[-]  inactive_phase
+09:18:01    ITC          C=311.95  VWAP=312.48  RSI=39  Vol=1.8x  → -[-]  inactive_phase
+09:18:01    TCS          C=2601.10  VWAP=2599.47  RSI=71  Vol=1.5x  → -[-]  inactive_phase
+09:18:01    SBIN         C=1180.90  VWAP=1179.43  RSI=71  Vol=2.6x  → -[-]  inactive_phase
+09:18:01    BAJAJFINSV   C=1896.90  VWAP=1894.83  RSI=64  Vol=0.7x  → -[-]  inactive_phase
+09:18:01    TRENT        C=3770.40  VWAP=3770.03  RSI=71  Vol=0.9x  → -[-]  inactive_phase
+09:18:01    ADANIPORTS   C=1462.60  VWAP=1453.73  RSI=86  Vol=1.9x  → -[-]  inactive_phase
+09:18:01    ONGC         C=278.50  VWAP=278.30  RSI=63  Vol=1.8x  → -[-]  inactive_phase
+09:18:01  SCAN #2 complete in 0.0s
+09:21:01  SCAN #3  09:21:01  phase=SILENT  active=False  missed=0
+09:21:01  FETCH  WS  12 new bars in 0.023s
+09:21:01    HDFCLIFE     C=681.15  VWAP=683.61  RSI=23  Vol=1.6x  → -[-]  inactive_phase
+09:21:01    APOLLOHOSP   C=7702.50  VWAP=7704.88  RSI=66  Vol=0.2x  → -[-]  inactive_phase
+09:21:01    TITAN        C=4215.10  VWAP=4218.51  RSI=56  Vol=0.7x  → -[-]  inactive_phase
+09:21:01    ITC          C=310.60  VWAP=312.09  RSI=33  Vol=1.6x  → -[-]  inactive_phase
+09:21:01    TCS          C=2582.90  VWAP=2594.05  RSI=44  Vol=1.5x  → -[-]  inactive_phase
+09:21:01    SBIN         C=1176.80  VWAP=1178.95  RSI=55  Vol=1.5x  → -[-]  inactive_phase
+09:21:01    BAJAJFINSV   C=1893.50  VWAP=1894.42  RSI=58  Vol=0.6x  → -[-]  inactive_phase
+09:21:01    TRENT        C=3752.40  VWAP=3764.31  RSI=45  Vol=0.9x  → -[-]  inactive_phase
+09:21:01    ADANIPORTS   C=1462.60  VWAP=1456.98  RSI=86  Vol=1.0x  → -[-]  inactive_phase
+09:21:01    ONGC         C=279.35  VWAP=278.57  RSI=69  Vol=1.2x  → -[-]  inactive_phase
+09:21:01  SCAN #3 complete in 0.0s
+09:24:01  SCAN #4  09:24:01  phase=SILENT  active=False  missed=0
+09:24:01  FETCH  WS  9 new bars in 0.021s
+09:24:01    HDFCLIFE     C=680.75  VWAP=683.04  RSI=22  Vol=0.8x  → -[-]  inactive_phase
+09:24:01    APOLLOHOSP   C=7702.50  VWAP=7704.88  RSI=66  Vol=0.2x  → -[-]  inactive_phase
+09:24:01    TITAN        C=4212.00  VWAP=4217.72  RSI=53  Vol=0.4x  → -[-]  inactive_phase
+09:24:01    ITC          C=310.50  VWAP=311.75  RSI=32  Vol=0.9x  → -[-]  inactive_phase
+09:24:01    TCS          C=2578.80  VWAP=2591.15  RSI=40  Vol=0.8x  → -[-]  inactive_phase
+09:24:01    SBIN         C=1180.10  VWAP=1178.94  RSI=63  Vol=1.0x  → -[-]  inactive_phase
+09:24:01    BAJAJFINSV   C=1894.00  VWAP=1894.57  RSI=58  Vol=0.3x  → -[-]  inactive_phase
+09:24:01    TRENT        C=3751.80  VWAP=3760.43  RSI=45  Vol=0.7x  → -[-]  inactive_phase
+09:24:01    ADANIPORTS   C=1465.40  VWAP=1458.39  RSI=87  Vol=0.7x  → -[-]  inactive_phase
+09:24:01    ONGC         C=281.55  VWAP=279.36  RSI=79  Vol=1.5x  → -[-]  inactive_phase
+09:24:01  SCAN #4 complete in 0.0s
+09:27:01  SCAN #5  09:27:01  phase=SILENT  active=False  missed=0
+09:27:01  FETCH  WS  2 new bars in 0.010s
+09:27:01    HDFCLIFE     C=680.75  VWAP=683.04  RSI=22  Vol=0.8x  → -[-]  inactive_phase
+09:27:01    APOLLOHOSP   C=7722.50  VWAP=7705.96  RSI=72  Vol=0.1x  → -[-]  inactive_phase
+09:27:01    TITAN        C=4212.00  VWAP=4217.72  RSI=53  Vol=0.4x  → -[-]  inactive_phase
+09:27:01    ITC          C=310.50  VWAP=311.75  RSI=32  Vol=0.9x  → -[-]  inactive_phase
+09:27:01    TCS          C=2578.80  VWAP=2591.15  RSI=40  Vol=0.8x  → -[-]  inactive_phase
+09:27:01    SBIN         C=1180.10  VWAP=1178.94  RSI=63  Vol=1.0x  → -[-]  inactive_phase
+09:27:01    BAJAJFINSV   C=1894.00  VWAP=1894.57  RSI=58  Vol=0.3x  → -[-]  inactive_phase
+09:27:01    TRENT        C=3751.80  VWAP=3760.43  RSI=45  Vol=0.7x  → -[-]  inactive_phase
+09:27:01    ADANIPORTS   C=1465.40  VWAP=1458.39  RSI=87  Vol=0.7x  → -[-]  inactive_phase
+09:27:01    ONGC         C=281.60  VWAP=280.08  RSI=79  Vol=1.7x  → -[-]  inactive_phase
+09:27:01  SCAN #5 complete in 0.0s
+09:30:01  SCAN #6  09:30:01  phase=SILENT  active=False  missed=0
+09:30:01  FETCH  WS  15 new bars in 0.017s
+09:30:01    HDFCLIFE     C=681.85  VWAP=682.91  RSI=33  Vol=0.3x  → -[-]  inactive_phase
+09:30:01    APOLLOHOSP   C=7703.00  VWAP=7706.04  RSI=61  Vol=0.1x  → -[-]  inactive_phase
+09:30:01    TITAN        C=4203.10  VWAP=4215.32  RSI=44  Vol=0.7x  → -[-]  inactive_phase
+09:30:01    ITC          C=310.25  VWAP=311.32  RSI=31  Vol=0.8x  → -[-]  inactive_phase
+09:30:01    TCS          C=2572.60  VWAP=2586.74  RSI=35  Vol=0.5x  → -[-]  inactive_phase
+09:30:01    SBIN         C=1175.90  VWAP=1178.68  RSI=50  Vol=0.8x  → -[-]  inactive_phase
+09:30:01    BAJAJFINSV   C=1886.60  VWAP=1893.04  RSI=45  Vol=0.4x  → -[-]  inactive_phase
+09:30:01    TRENT        C=3743.00  VWAP=3757.92  RSI=37  Vol=0.5x  → -[-]  inactive_phase
+09:30:01    ADANIPORTS   C=1460.30  VWAP=1459.40  RSI=73  Vol=0.6x  → -[-]  inactive_phase
+09:30:01    ONGC         C=281.10  VWAP=280.20  RSI=72  Vol=0.7x  → -[-]  inactive_phase
+09:30:01  SCAN #6 complete in 0.0s
+09:33:01  SCAN #7  09:33:01  phase=SILENT  active=False  missed=0
+09:33:01  FETCH  WS  10 new bars in 0.018s
+09:33:01    HDFCLIFE     C=683.75  VWAP=682.91  RSI=49  Vol=0.4x  → -[-]  inactive_phase
+09:33:01    APOLLOHOSP   C=7706.00  VWAP=7705.99  RSI=62  Vol=0.1x  → -[-]  inactive_phase
+09:33:01    TITAN        C=4197.50  VWAP=4212.62  RSI=39  Vol=0.5x  → -[-]  inactive_phase
+09:33:01    ITC          C=310.55  VWAP=311.23  RSI=36  Vol=0.5x  → -[-]  inactive_phase
+09:33:01    TCS          C=2572.60  VWAP=2586.74  RSI=35  Vol=0.5x  → -[-]  inactive_phase
+09:33:01    SBIN         C=1176.60  VWAP=1178.55  RSI=52  Vol=0.3x  → -[-]  inactive_phase
+09:33:01    BAJAJFINSV   C=1886.60  VWAP=1893.04  RSI=45  Vol=0.4x  → -[-]  inactive_phase
+09:33:01    TRENT        C=3746.00  VWAP=3754.21  RSI=42  Vol=0.8x  → -[-]  inactive_phase
+09:33:01    ADANIPORTS   C=1458.80  VWAP=1459.39  RSI=69  Vol=0.5x  → -[-]  inactive_phase
+09:33:01    ONGC         C=281.10  VWAP=280.20  RSI=72  Vol=0.7x  → -[-]  inactive_phase
+09:33:01  SCAN #7 complete in 0.0s
+09:36:01  SCAN #8  09:36:01  phase=SILENT  active=False  missed=0
+09:36:01  FETCH  WS  12 new bars in 0.018s
+09:36:01    HDFCLIFE     C=681.70  VWAP=682.85  RSI=38  Vol=0.6x  → -[-]  inactive_phase
+09:36:01    APOLLOHOSP   C=7746.50  VWAP=7715.95  RSI=73  Vol=0.5x  → -[-]  inactive_phase
+09:36:01    TITAN        C=4197.50  VWAP=4212.62  RSI=39  Vol=0.5x  → -[-]  inactive_phase
+09:36:01    ITC          C=310.55  VWAP=311.23  RSI=36  Vol=0.5x  → -[-]  inactive_phase
+09:36:01    TCS          C=2572.90  VWAP=2582.41  RSI=35  Vol=1.2x  → -[-]  inactive_phase
+09:36:01    SBIN         C=1176.10  VWAP=1178.39  RSI=50  Vol=0.5x  → -[-]  inactive_phase
+09:36:01    BAJAJFINSV   C=1885.60  VWAP=1890.65  RSI=43  Vol=1.1x  → -[-]  inactive_phase
+09:36:01    TRENT        C=3750.00  VWAP=3753.87  RSI=47  Vol=0.3x  → -[-]  inactive_phase
+09:36:01    ADANIPORTS   C=1459.70  VWAP=1459.41  RSI=70  Vol=0.4x  → -[-]  inactive_phase
+09:36:01    ONGC         C=282.85  VWAP=280.63  RSI=79  Vol=0.8x  → -[-]  inactive_phase
+09:36:01  SCAN #8 complete in 0.0s
+09:39:01  SCAN #9  09:39:01  phase=SILENT  active=False  missed=0
+09:39:01  FETCH  WS  7 new bars in 0.017s
+09:39:01    HDFCLIFE     C=681.70  VWAP=682.85  RSI=38  Vol=0.6x  → -[-]  inactive_phase
+09:39:01    APOLLOHOSP   C=7746.50  VWAP=7715.95  RSI=73  Vol=0.5x  → -[-]  inactive_phase
+09:39:01    TITAN        C=4179.80  VWAP=4205.55  RSI=29  Vol=0.5x  → -[-]  inactive_phase
+09:39:01    ITC          C=310.55  VWAP=311.19  RSI=36  Vol=0.4x  → -[-]  inactive_phase
+09:39:01    TCS          C=2562.00  VWAP=2580.46  RSI=26  Vol=0.8x  → -[-]  inactive_phase
+09:39:01    SBIN         C=1175.60  VWAP=1178.24  RSI=48  Vol=0.5x  → -[-]  inactive_phase
+09:39:01    BAJAJFINSV   C=1885.60  VWAP=1890.65  RSI=43  Vol=1.1x  → -[-]  inactive_phase
+09:39:01    TRENT        C=3731.70  VWAP=3751.05  RSI=32  Vol=0.9x  → -[-]  inactive_phase
+09:39:01    ADANIPORTS   C=1459.70  VWAP=1459.41  RSI=70  Vol=0.4x  → -[-]  inactive_phase
+09:39:01    ONGC         C=284.45  VWAP=281.11  RSI=84  Vol=1.3x  → -[-]  inactive_phase
+09:39:01  SCAN #9 complete in 0.0s
+09:42:01  SCAN #10  09:42:01  phase=SILENT  active=False  missed=0
+09:42:01  FETCH  WS  9 new bars in 0.020s
+09:42:01    HDFCLIFE     C=681.20  VWAP=682.73  RSI=36  Vol=0.4x  → -[-]  inactive_phase
+09:42:01    APOLLOHOSP   C=7745.00  VWAP=7718.65  RSI=72  Vol=0.3x  → -[-]  inactive_phase
+09:42:01    TITAN        C=4179.80  VWAP=4205.55  RSI=29  Vol=0.5x  → -[-]  inactive_phase
+09:42:01    ITC          C=310.20  VWAP=311.03  RSI=34  Vol=0.5x  → -[-]  inactive_phase
+09:42:01    TCS          C=2564.90  VWAP=2578.61  RSI=31  Vol=0.9x  → -[-]  inactive_phase
+09:42:01    SBIN         C=1176.00  VWAP=1178.10  RSI=50  Vol=0.4x  → -[-]  inactive_phase
+09:42:01    BAJAJFINSV   C=1887.50  VWAP=1890.48  RSI=48  Vol=0.2x  → -[-]  inactive_phase
+09:42:01    TRENT        C=3731.70  VWAP=3751.05  RSI=32  Vol=0.9x  → -[-]  inactive_phase
+09:42:01    ADANIPORTS   C=1457.60  VWAP=1459.36  RSI=64  Vol=0.3x  → -[-]  inactive_phase
+09:42:01    ONGC         C=284.75  VWAP=281.58  RSI=85  Vol=1.4x  → -[-]  inactive_phase
+09:42:01  SCAN #10 complete in 0.0s
+09:45:01  SCAN #11  09:45:01  phase=SILENT  active=False  missed=0
+09:45:01  FETCH  WS  11 new bars in 0.011s
+09:45:01    HDFCLIFE     C=679.20  VWAP=682.10  RSI=28  Vol=0.6x  → -[-]  inactive_phase
+09:45:01    APOLLOHOSP   C=7735.50  VWAP=7721.80  RSI=66  Vol=0.2x  → -[-]  inactive_phase
+09:45:01    TITAN        C=4192.50  VWAP=4203.53  RSI=44  Vol=0.4x  → -[-]  inactive_phase
+09:45:01    ITC          C=310.20  VWAP=311.03  RSI=34  Vol=0.5x  → -[-]  inactive_phase
+09:45:01    TCS          C=2564.90  VWAP=2578.61  RSI=31  Vol=0.9x  → -[-]  inactive_phase
+09:45:01    SBIN         C=1176.00  VWAP=1178.10  RSI=50  Vol=0.4x  → -[-]  inactive_phase
+09:45:01    BAJAJFINSV   C=1888.90  VWAP=1890.42  RSI=51  Vol=0.1x  → -[-]  inactive_phase
+09:45:01    TRENT        C=3741.00  VWAP=3749.77  RSI=43  Vol=0.2x  → -[-]  inactive_phase
+09:45:01    ADANIPORTS   C=1460.60  VWAP=1459.35  RSI=68  Vol=0.4x  → -[-]  inactive_phase
+09:45:01    ONGC         C=284.35  VWAP=281.92  RSI=79  Vol=1.2x  → -[-]  inactive_phase
+09:45:01  SCAN #11 complete in 0.0s
+09:48:01  SCAN #12  09:48:01  phase=SILENT  active=False  missed=0
+09:48:01  FETCH  WS  10 new bars in 0.019s
+09:48:01    HDFCLIFE     C=678.80  VWAP=681.98  RSI=26  Vol=0.3x  → -[-]  inactive_phase
+09:48:01    APOLLOHOSP   C=7735.50  VWAP=7721.80  RSI=66  Vol=0.2x  → -[-]  inactive_phase
+09:48:01    TITAN        C=4192.50  VWAP=4203.53  RSI=44  Vol=0.4x  → -[-]  inactive_phase
+09:48:01    ITC          C=310.30  VWAP=311.00  RSI=36  Vol=0.3x  → -[-]  inactive_phase
+09:48:01    TCS          C=2567.60  VWAP=2577.66  RSI=36  Vol=0.5x  → -[-]  inactive_phase
+09:48:01    SBIN         C=1176.00  VWAP=1177.50  RSI=50  Vol=0.3x  → -[-]  inactive_phase
+09:48:01    BAJAJFINSV   C=1888.10  VWAP=1890.27  RSI=49  Vol=0.2x  → -[-]  inactive_phase
+09:48:01    TRENT        C=3741.00  VWAP=3749.77  RSI=43  Vol=0.2x  → -[-]  inactive_phase
+09:48:01    ADANIPORTS   C=1460.50  VWAP=1459.45  RSI=68  Vol=0.4x  → -[-]  inactive_phase
+09:48:01    ONGC         C=285.20  VWAP=282.21  RSI=82  Vol=1.1x  → -[-]  inactive_phase
+09:48:01  SCAN #12 complete in 0.0s
+09:51:01  SCAN #13  09:51:01  phase=SILENT  active=False  missed=0
+09:51:01  FETCH  WS  12 new bars in 0.020s
+09:51:01    HDFCLIFE     C=680.60  VWAP=681.83  RSI=42  Vol=0.6x  → -[-]  inactive_phase
+09:51:01    APOLLOHOSP   C=7734.00  VWAP=7722.31  RSI=65  Vol=0.2x  → -[-]  inactive_phase
+09:51:01    TITAN        C=4194.50  VWAP=4202.88  RSI=46  Vol=0.5x  → -[-]  inactive_phase
+09:51:01    ITC          C=310.60  VWAP=310.94  RSI=44  Vol=0.4x  → -[-]  inactive_phase
+09:51:01    TCS          C=2566.90  VWAP=2577.23  RSI=35  Vol=0.5x  → -[-]  inactive_phase
+09:51:01    SBIN         C=1174.70  VWAP=1177.41  RSI=45  Vol=0.4x  → -[-]  inactive_phase
+09:51:01    BAJAJFINSV   C=1890.80  VWAP=1890.25  RSI=56  Vol=0.2x  → -[-]  inactive_phase
+09:51:01    TRENT        C=3747.00  VWAP=3749.41  RSI=50  Vol=0.3x  → -[-]  inactive_phase
+09:51:01    ADANIPORTS   C=1459.90  VWAP=1459.46  RSI=66  Vol=0.3x  → -[-]  inactive_phase
+09:51:01    ONGC         C=284.95  VWAP=282.38  RSI=79  Vol=0.7x  → -[-]  inactive_phase
+09:51:01  SCAN #13 complete in 0.0s
+09:54:01  SCAN #14  09:54:01  phase=SILENT  active=False  missed=0
+09:54:01  FETCH  WS  9 new bars in 0.017s
+09:54:01    HDFCLIFE     C=680.20  VWAP=681.71  RSI=40  Vol=1.0x  → -[-]  inactive_phase
+09:54:01    APOLLOHOSP   C=7748.00  VWAP=7722.73  RSI=70  Vol=0.1x  → -[-]  inactive_phase
+09:54:01    TITAN        C=4202.00  VWAP=4201.92  RSI=54  Vol=0.7x  → -[-]  inactive_phase
+09:54:01    ITC          C=310.60  VWAP=310.94  RSI=44  Vol=0.4x  → -[-]  inactive_phase
+09:54:01    TCS          C=2568.80  VWAP=2576.90  RSI=40  Vol=0.4x  → -[-]  inactive_phase
+09:54:01    SBIN         C=1177.00  VWAP=1177.33  RSI=54  Vol=0.7x  → -[-]  inactive_phase
+09:54:01    BAJAJFINSV   C=1890.80  VWAP=1890.25  RSI=56  Vol=0.2x  → -[-]  inactive_phase
+09:54:01    TRENT        C=3754.30  VWAP=3749.56  RSI=57  Vol=0.4x  → -[-]  inactive_phase
+09:54:01    ADANIPORTS   C=1460.90  VWAP=1459.48  RSI=68  Vol=0.2x  → -[-]  inactive_phase
+09:54:01    ONGC         C=285.45  VWAP=282.50  RSI=80  Vol=0.5x  → -[-]  inactive_phase
+09:54:01  SCAN #14 complete in 0.0s
+09:57:01  SCAN #15  09:57:01  phase=SILENT  active=False  missed=0
+09:57:01  FETCH  WS  12 new bars in 0.020s
+09:57:01    HDFCLIFE     C=680.20  VWAP=681.71  RSI=40  Vol=1.0x  → -[-]  inactive_phase
+09:57:01    APOLLOHOSP   C=7757.00  VWAP=7724.94  RSI=73  Vol=0.3x  → -[-]  inactive_phase
+09:57:01    TITAN        C=4203.50  VWAP=4201.92  RSI=56  Vol=0.2x  → -[-]  inactive_phase
+09:57:01    ITC          C=310.95  VWAP=310.94  RSI=50  Vol=0.2x  → -[-]  inactive_phase
+09:57:01    TCS          C=2569.00  VWAP=2576.64  RSI=40  Vol=0.4x  → -[-]  inactive_phase
+09:57:01    SBIN         C=1176.40  VWAP=1177.31  RSI=52  Vol=0.5x  → -[-]  inactive_phase
+09:57:01    BAJAJFINSV   C=1892.90  VWAP=1890.32  RSI=60  Vol=0.2x  → -[-]  inactive_phase
+09:57:01    TRENT        C=3754.10  VWAP=3749.76  RSI=57  Vol=0.4x  → -[-]  inactive_phase
+09:57:01    ADANIPORTS   C=1460.50  VWAP=1459.51  RSI=66  Vol=0.1x  → -[-]  inactive_phase
+09:57:01    ONGC         C=285.65  VWAP=282.59  RSI=81  Vol=0.4x  → -[-]  inactive_phase
+09:57:01  SCAN #15 complete in 0.0s
+10:00:01  PHASE  SILENT → ACTIVE_AM
+10:00:01  SCAN #16  10:00:01  phase=ACTIVE_AM  active=True  missed=0
+10:00:01  FETCH  WS  5 new bars in 0.010s
+10:00:01    HDFCLIFE     C=677.50  VWAP=681.23  RSI=28  Vol=1.0x  → -[-]  
+10:00:01    APOLLOHOSP   C=7757.00  VWAP=7724.94  RSI=73  Vol=0.3x  → -[-]  
+10:00:01    TITAN        C=4203.50  VWAP=4201.92  RSI=56  Vol=0.2x  → -[-]  
+10:00:01    ITC          C=310.75  VWAP=310.94  RSI=47  Vol=0.2x  → -[-]  
+10:00:01    TCS          C=2569.00  VWAP=2576.64  RSI=40  Vol=0.4x  → -[-]  
+10:00:01    SBIN         C=1174.70  VWAP=1177.16  RSI=45  Vol=1.0x  → -[-]  
+10:00:01    BAJAJFINSV   C=1892.90  VWAP=1890.32  RSI=60  Vol=0.2x  → -[-]  
+10:00:01    TRENT        C=3754.10  VWAP=3749.76  RSI=57  Vol=0.4x  → -[-]  
+10:00:01    ADANIPORTS   C=1460.50  VWAP=1459.51  RSI=66  Vol=0.1x  → -[-]  
+10:00:01    ONGC         C=286.00  VWAP=282.77  RSI=82  Vol=0.8x  → -[-]  
+10:00:01  SCAN #16 complete in 0.0s
+10:03:01  SCAN #17  10:03:01  phase=ACTIVE_AM  active=True  missed=0
+10:03:01  FETCH  WS  10 new bars in 0.020s
+10:03:01    HDFCLIFE     C=677.50  VWAP=681.23  RSI=28  Vol=1.0x  → -[-]  
+10:03:01    APOLLOHOSP   C=7764.00  VWAP=7725.71  RSI=75  Vol=0.2x  → -[-]  
+10:03:01    TITAN        C=4202.50  VWAP=4201.91  RSI=54  Vol=0.3x  → -[-]  
+10:03:01    ITC          C=310.15  VWAP=310.91  RSI=38  Vol=0.5x  → -[-]  
+10:03:01    TCS          C=2568.00  VWAP=2576.18  RSI=38  Vol=0.8x  → -[-]  
+10:03:01    SBIN         C=1175.60  VWAP=1177.12  RSI=49  Vol=0.4x  → -[-]  
+10:03:01    BAJAJFINSV   C=1890.80  VWAP=1890.34  RSI=53  Vol=0.2x  → -[-]  
+10:03:01    TRENT        C=3758.50  VWAP=3749.92  RSI=61  Vol=0.2x  → -[-]  
+10:03:01    ADANIPORTS   C=1460.60  VWAP=1459.52  RSI=63  Vol=0.7x  → -[-]  
+10:03:01    ONGC         C=286.65  VWAP=282.90  RSI=85  Vol=0.6x  → -[-]  
+10:03:01  SCAN #17 complete in 0.0s
+10:06:01  SCAN #18  10:06:01  phase=ACTIVE_AM  active=True  missed=0
+10:06:01  FETCH  WS  10 new bars in 0.020s
+10:06:01    HDFCLIFE     C=677.20  VWAP=681.08  RSI=27  Vol=0.5x  → -[-]  
+10:06:01    APOLLOHOSP   C=7752.00  VWAP=7727.57  RSI=65  Vol=0.5x  → -[-]  
+10:06:01    TITAN        C=4201.80  VWAP=4201.92  RSI=53  Vol=0.3x  → -[-]  
+10:06:01    ITC          C=310.05  VWAP=310.88  RSI=36  Vol=0.5x  → -[-]  
+10:06:01    TCS          C=2566.00  VWAP=2575.94  RSI=35  Vol=0.4x  → -[-]  
+10:06:01    SBIN         C=1175.60  VWAP=1177.12  RSI=49  Vol=0.4x  → -[-]  
+10:06:01    BAJAJFINSV   C=1892.00  VWAP=1890.37  RSI=57  Vol=0.2x  → -[-]  
+10:06:01    TRENT        C=3754.90  VWAP=3750.11  RSI=56  Vol=0.3x  → -[-]  
+10:06:01    ADANIPORTS   C=1461.90  VWAP=1459.54  RSI=66  Vol=0.3x  → -[-]  
+10:06:01    ONGC         C=286.70  VWAP=283.12  RSI=85  Vol=0.9x  → -[-]  
+10:06:01  SCAN #18 complete in 0.0s
+10:09:01  SCAN #19  10:09:01  phase=ACTIVE_AM  active=True  missed=0
+10:09:01  FETCH  WS  7 new bars in 0.018s
+10:09:01    HDFCLIFE     C=676.70  VWAP=680.82  RSI=26  Vol=0.9x  → -[-]  
+10:09:01    APOLLOHOSP   C=7744.50  VWAP=7728.61  RSI=59  Vol=0.6x  → -[-]  
+10:09:01    TITAN        C=4203.40  VWAP=4201.93  RSI=56  Vol=0.2x  → -[-]  
+10:09:01    ITC          C=310.20  VWAP=310.87  RSI=40  Vol=0.2x  → -[-]  
+10:09:01    TCS          C=2563.20  VWAP=2575.65  RSI=31  Vol=0.4x  → -[-]  
+10:09:01    SBIN         C=1176.10  VWAP=1177.11  RSI=51  Vol=0.2x  → -[-]  
+10:09:01    BAJAJFINSV   C=1892.00  VWAP=1890.37  RSI=57  Vol=0.2x  → -[-]  
+10:09:01    TRENT        C=3755.00  VWAP=3750.26  RSI=56  Vol=0.5x  → -[-]  
+10:09:01    ADANIPORTS   C=1461.90  VWAP=1459.54  RSI=66  Vol=0.3x  → -[-]  
+10:09:01    ONGC         C=286.70  VWAP=283.12  RSI=85  Vol=0.9x  → -[-]  
+10:09:01  SCAN #19 complete in 0.0s
+10:12:01  SCAN #20  10:12:01  phase=ACTIVE_AM  active=True  missed=0
+10:12:01  FETCH  WS  14 new bars in 0.022s
+10:12:01    HDFCLIFE     C=676.75  VWAP=680.50  RSI=28  Vol=0.7x  → -[-]  
+10:12:01    APOLLOHOSP   C=7742.50  VWAP=7728.98  RSI=57  Vol=0.3x  → -[-]  
+10:12:01    TITAN        C=4199.50  VWAP=4201.91  RSI=49  Vol=0.4x  → -[-]  
+10:12:01    ITC          C=309.30  VWAP=310.76  RSI=29  Vol=0.8x  → -[-]  
+10:12:01    TCS          C=2561.90  VWAP=2575.37  RSI=29  Vol=0.4x  → -[-]  
+10:12:01    SBIN         C=1176.00  VWAP=1177.10  RSI=51  Vol=0.2x  → -[-]  
+10:12:01    BAJAJFINSV   C=1890.80  VWAP=1890.40  RSI=52  Vol=0.6x  → -[-]  
+10:12:01    TRENT        C=3745.30  VWAP=3750.07  RSI=43  Vol=1.3x  → -[-]  
+10:12:01    ADANIPORTS   C=1461.50  VWAP=1459.65  RSI=64  Vol=0.6x  → -[-]  
+10:12:01    ONGC         C=285.20  VWAP=283.33  RSI=61  Vol=1.0x  → -[-]  
+10:12:01  SCAN #20 complete in 0.0s
+10:15:01  SCAN #21  10:15:01  phase=ACTIVE_AM  active=True  missed=0
+10:15:01  FETCH  WS  16 new bars in 0.017s
+10:15:01    HDFCLIFE     C=676.00  VWAP=680.34  RSI=25  Vol=0.8x  → -[-]  
+10:15:01    APOLLOHOSP   C=7720.00  VWAP=7728.91  RSI=42  Vol=0.9x  → -[-]  
+10:15:01    TITAN        C=4194.20  VWAP=4201.62  RSI=41  Vol=0.7x  → -[-]  
+10:15:01    ITC          C=309.20  VWAP=310.70  RSI=28  Vol=0.8x  → -[-]  
+10:15:01    TCS          C=2559.40  VWAP=2573.97  RSI=26  Vol=1.3x  → -[-]  
+10:15:01    SBIN         C=1174.80  VWAP=1177.02  RSI=45  Vol=0.3x  → -[-]  
+10:15:01    BAJAJFINSV   C=1888.60  VWAP=1890.35  RSI=45  Vol=0.5x  → -[-]  
+10:15:01    TRENT        C=3742.00  VWAP=3749.78  RSI=40  Vol=0.8x  → -[-]  
+10:15:01    ADANIPORTS   C=1460.30  VWAP=1459.68  RSI=58  Vol=0.5x  → -[-]  
+10:15:01    ONGC         C=284.80  VWAP=283.38  RSI=56  Vol=0.6x  → -[-]  
+10:15:01  SCAN #21 complete in 0.0s
+10:18:01  SCAN #22  10:18:01  phase=ACTIVE_AM  active=True  missed=0
+10:18:01  FETCH  WS  2 new bars in 0.009s
+10:18:01    HDFCLIFE     C=676.00  VWAP=680.34  RSI=25  Vol=0.8x  → -[-]  
+10:18:01    APOLLOHOSP   C=7720.00  VWAP=7728.91  RSI=42  Vol=0.9x  → -[-]  
+10:18:01    TITAN        C=4194.20  VWAP=4201.62  RSI=41  Vol=0.7x  → -[-]  
+10:18:01    ITC          C=309.20  VWAP=310.70  RSI=28  Vol=0.8x  → -[-]  
+10:18:01    TCS          C=2559.40  VWAP=2573.97  RSI=26  Vol=1.3x  → -[-]  
+10:18:01    SBIN         C=1174.80  VWAP=1177.02  RSI=45  Vol=0.3x  → -[-]  
+10:18:01    BAJAJFINSV   C=1888.60  VWAP=1890.35  RSI=45  Vol=0.5x  → -[-]  
+10:18:01    TRENT        C=3735.30  VWAP=3748.94  RSI=33  Vol=1.6x  → -[-]  
+10:18:01    ADANIPORTS   C=1460.30  VWAP=1459.68  RSI=58  Vol=0.5x  → -[-]  
+10:18:01    ONGC         C=285.25  VWAP=283.42  RSI=60  Vol=0.5x  → -[-]  
+10:18:01  SCAN #22 complete in 0.0s
+10:21:01  SCAN #23  10:21:01  phase=ACTIVE_AM  active=True  missed=0
+10:21:01  FETCH  WS  18 new bars in 0.022s
+10:21:01    HDFCLIFE     C=676.75  VWAP=680.01  RSI=34  Vol=1.3x  → -[-]  
+10:21:01    APOLLOHOSP   C=7704.00  VWAP=7728.28  RSI=34  Vol=0.6x  → -[-]  
+10:21:01    TITAN        C=4191.70  VWAP=4201.26  RSI=39  Vol=0.7x  → -[-]  
+10:21:01    ITC          C=308.85  VWAP=310.58  RSI=24  Vol=1.0x  → -[-]  
+10:21:01    TCS          C=2557.50  VWAP=2573.25  RSI=23  Vol=0.7x  → -[-]  
+10:21:01    SBIN         C=1173.60  VWAP=1176.93  RSI=39  Vol=0.8x  → -[-]  
+10:21:01    BAJAJFINSV   C=1888.30  VWAP=1890.20  RSI=46  Vol=0.5x  → -[-]  
+10:21:01    TRENT        C=3738.20  VWAP=3748.57  RSI=38  Vol=0.8x  → -[-]  
+10:21:01    ADANIPORTS   C=1460.50  VWAP=1459.70  RSI=58  Vol=0.4x  → -[-]  
+10:21:01    ONGC         C=284.80  VWAP=283.46  RSI=55  Vol=0.6x  → -[-]  
+10:21:01  SCAN #23 complete in 0.0s
+10:24:01  SCAN #24  10:24:01  phase=ACTIVE_AM  active=True  missed=0
+10:24:01  FETCH  WS  5 new bars in 0.016s
+10:24:01    HDFCLIFE     C=677.40  VWAP=679.92  RSI=41  Vol=1.0x  → -[-]  
+10:24:01    APOLLOHOSP   C=7704.00  VWAP=7728.28  RSI=34  Vol=0.6x  → -[-]  
+10:24:01    TITAN        C=4191.70  VWAP=4201.26  RSI=39  Vol=0.7x  → -[-]  
+10:24:01    ITC          C=308.85  VWAP=310.58  RSI=24  Vol=1.0x  → -[-]  
+10:24:01    TCS          C=2557.50  VWAP=2573.25  RSI=23  Vol=0.7x  → -[-]  
+10:24:01    SBIN         C=1172.80  VWAP=1176.77  RSI=36  Vol=1.1x  → -[-]  
+10:24:01    BAJAJFINSV   C=1888.30  VWAP=1890.20  RSI=46  Vol=0.5x  → -[-]  
+10:24:01    TRENT        C=3735.30  VWAP=3747.33  RSI=35  Vol=2.4x  → -[-]  
+10:24:01    ADANIPORTS   C=1458.60  VWAP=1459.70  RSI=49  Vol=0.4x  → -[-]  
+10:24:01    ONGC         C=284.50  VWAP=283.49  RSI=51  Vol=0.7x  → -[-]  
+10:24:01  SCAN #24 complete in 0.0s
+10:27:01  SCAN #25  10:27:01  phase=ACTIVE_AM  active=True  missed=0
+10:27:01  FETCH  WS  10 new bars in 0.021s
+10:27:01    HDFCLIFE     C=676.65  VWAP=679.86  RSI=36  Vol=0.6x  → -[-]  
+10:27:01    APOLLOHOSP   C=7700.50  VWAP=7727.87  RSI=32  Vol=0.5x  → -[-]  
+10:27:01    TITAN        C=4197.60  VWAP=4201.05  RSI=49  Vol=1.4x  → -[-]  
+10:27:01    ITC          C=308.70  VWAP=310.53  RSI=22  Vol=0.9x  → -[-]  
+10:27:01    TCS          C=2555.20  VWAP=2572.39  RSI=20  Vol=0.9x  → -[-]  
+10:27:01    SBIN         C=1172.10  VWAP=1176.63  RSI=33  Vol=1.0x  → -[-]  
+10:27:01    BAJAJFINSV   C=1887.50  VWAP=1890.15  RSI=43  Vol=0.6x  → -[-]  
+10:27:01    TRENT        C=3735.30  VWAP=3747.33  RSI=35  Vol=2.4x  → -[-]  
+10:27:01    ADANIPORTS   C=1455.10  VWAP=1459.56  RSI=37  Vol=1.4x  → -[-]  
+10:27:01    ONGC         C=284.05  VWAP=283.52  RSI=46  Vol=0.9x  → -[-]  
+10:27:01  SCAN #25 complete in 0.0s
+10:30:01  SCAN #26  10:30:01  phase=ACTIVE_AM  active=True  missed=0
+10:30:01  FETCH  WS  8 new bars in 0.017s
+10:30:01    HDFCLIFE     C=676.45  VWAP=679.66  RSI=35  Vol=1.5x  → -[-]  
+10:30:01    APOLLOHOSP   C=7686.00  VWAP=7726.76  RSI=27  Vol=0.9x  → -[-]  
+10:30:01    TITAN        C=4200.00  VWAP=4200.99  RSI=53  Vol=0.8x  → -[-]  
+10:30:01    ITC          C=308.60  VWAP=310.48  RSI=21  Vol=0.8x  → -[-]  
+10:30:01    TCS          C=2555.20  VWAP=2572.39  RSI=20  Vol=0.9x  → -[-]  
+10:30:01    SBIN         C=1172.10  VWAP=1176.63  RSI=33  Vol=1.0x  → -[-]  
+10:30:01    BAJAJFINSV   C=1887.60  VWAP=1890.09  RSI=44  Vol=0.8x  → -[-]  
+10:30:01    TRENT        C=3732.00  VWAP=3746.94  RSI=32  Vol=0.8x  → -[-]  
+10:30:01    ADANIPORTS   C=1455.10  VWAP=1459.56  RSI=37  Vol=1.4x  → -[-]  
+10:30:01    ONGC         C=285.40  VWAP=283.56  RSI=60  Vol=0.7x  → -[-]  
+10:30:01  SCAN #26 complete in 0.0s
+10:33:01  SCAN #27  10:33:01  phase=ACTIVE_AM  active=True  missed=0
+10:33:01  FETCH  WS  13 new bars in 0.017s
+10:33:01    HDFCLIFE     C=676.45  VWAP=679.66  RSI=35  Vol=1.5x  → -[-]  
+10:33:01    APOLLOHOSP   C=7688.00  VWAP=7726.04  RSI=29  Vol=0.5x  → -[-]  
+10:33:01    TITAN        C=4200.40  VWAP=4200.98  RSI=54  Vol=0.6x  → -[-]  
+10:33:01    ITC          C=308.40  VWAP=310.43  RSI=19  Vol=0.8x  → -[-]  
+10:33:01    TCS          C=2555.50  VWAP=2571.58  RSI=23  Vol=0.6x  → -[-]  
+10:33:01    SBIN         C=1170.10  VWAP=1176.39  RSI=28  Vol=0.8x  → -[-]  
+10:33:01    BAJAJFINSV   C=1887.50  VWAP=1890.04  RSI=43  Vol=0.9x  → -[-]  
+10:33:01    TRENT        C=3734.30  VWAP=3746.22  RSI=37  Vol=1.2x  → -[-]  
+10:33:01    ADANIPORTS   C=1455.30  VWAP=1459.34  RSI=40  Vol=1.9x  → -[-]  
+10:33:01    ONGC         C=285.35  VWAP=283.73  RSI=59  Vol=2.8x  → -[-]  
+10:33:01  SCAN #27 complete in 0.0s
+10:36:01  SCAN #28  10:36:01  phase=ACTIVE_AM  active=True  missed=0
+10:36:01  FETCH  WS  14 new bars in 0.023s
+10:36:01    HDFCLIFE     C=676.40  VWAP=679.49  RSI=41  Vol=0.5x  → -[-]  
+10:36:01    APOLLOHOSP   C=7680.00  VWAP=7724.35  RSI=27  Vol=0.9x  → -[-]  
+10:36:01    TITAN        C=4214.90  VWAP=4201.26  RSI=71  Vol=1.2x  → -[-]  
+10:36:01    ITC          C=308.95  VWAP=310.34  RSI=40  Vol=0.9x  → -[-]  
+10:36:01    TCS          C=2557.30  VWAP=2571.30  RSI=33  Vol=0.6x  → -[-]  
+10:36:01    SBIN         C=1168.20  VWAP=1175.90  RSI=23  Vol=2.1x  → -[-]  
+10:36:01    BAJAJFINSV   C=1889.70  VWAP=1889.95  RSI=55  Vol=1.2x  → -[-]  
+10:36:01    TRENT        C=3739.90  VWAP=3746.13  RSI=47  Vol=0.3x  → -[-]  
+10:36:01    ADANIPORTS   C=1458.30  VWAP=1459.29  RSI=51  Vol=0.8x  → -[-]  
+10:36:01    ONGC         C=285.50  VWAP=283.76  RSI=60  Vol=0.6x  → -[-]  
+10:36:01  SCAN #28 complete in 0.0s
+10:39:01  SCAN #29  10:39:01  phase=ACTIVE_AM  active=True  missed=0
+10:39:01  FETCH  WS  7 new bars in 0.019s
+10:39:01    HDFCLIFE     C=676.40  VWAP=679.49  RSI=41  Vol=0.5x  → -[-]  
+10:39:01    APOLLOHOSP   C=7683.50  VWAP=7722.41  RSI=31  Vol=1.9x  → -[-]  
+10:39:01    TITAN        C=4220.20  VWAP=4202.02  RSI=75  Vol=1.6x  → -[-]  
+10:39:01    ITC          C=309.35  VWAP=310.32  RSI=49  Vol=0.8x  → -[-]  
+10:39:01    TCS          C=2556.60  VWAP=2571.07  RSI=31  Vol=0.6x  → -[-]  
+10:39:01    SBIN         C=1168.20  VWAP=1175.90  RSI=23  Vol=2.1x  → -[-]  
+10:39:01    BAJAJFINSV   C=1888.60  VWAP=1889.94  RSI=49  Vol=0.7x  → -[-]  
+10:39:01    TRENT        C=3739.90  VWAP=3746.13  RSI=47  Vol=0.3x  → -[-]  
+10:39:01    ADANIPORTS   C=1457.50  VWAP=1459.28  RSI=48  Vol=0.5x  → -[-]  
+10:39:01    ONGC         C=286.35  VWAP=283.85  RSI=67  Vol=1.1x  → -[-]  
+10:39:01  SCAN #29 complete in 0.0s
+10:42:01  SCAN #30  10:42:01  phase=ACTIVE_AM  active=True  missed=0
+10:42:01  FETCH  WS  5 new bars in 0.014s
+10:42:01    HDFCLIFE     C=677.35  VWAP=679.47  RSI=49  Vol=0.3x  → -[-]  
+10:42:01    APOLLOHOSP   C=7683.50  VWAP=7722.41  RSI=31  Vol=1.9x  → -[-]  
+10:42:01    TITAN        C=4226.00  VWAP=4203.22  RSI=79  Vol=1.9x  → ★ LONG[MOM]  SL=4214.51  TP=4246.11  Qty=59
+10:42:01    ITC          C=309.35  VWAP=310.32  RSI=49  Vol=0.8x  → -[-]  
+10:42:01    TCS          C=2556.60  VWAP=2571.07  RSI=31  Vol=0.6x  → -[-]  
+10:42:01    SBIN         C=1168.90  VWAP=1175.74  RSI=28  Vol=0.7x  → -[-]  
+10:42:01    BAJAJFINSV   C=1888.60  VWAP=1889.94  RSI=49  Vol=0.7x  → -[-]  
+10:42:01    TRENT        C=3739.00  VWAP=3746.08  RSI=46  Vol=0.2x  → -[-]  
+10:42:01    ADANIPORTS   C=1457.50  VWAP=1459.28  RSI=48  Vol=0.5x  → -[-]  
+10:42:01    ONGC         C=286.65  VWAP=283.90  RSI=70  Vol=0.6x  → -[-]  
+10:42:01  SCAN #30 complete in 0.8s
+10:45:01  SCAN #31  10:45:01  phase=ACTIVE_AM  active=True  missed=0
+10:45:01  FETCH  WS  12 new bars in 0.013s
+10:45:01    HDFCLIFE     C=677.50  VWAP=679.44  RSI=50  Vol=0.4x  → -[-]  
+10:45:01    APOLLOHOSP   C=7695.00  VWAP=7721.23  RSI=42  Vol=1.7x  → -[-]  
+10:45:01    TITAN        C=4228.00  VWAP=4203.61  RSI=80  Vol=0.6x  → -[-]  in_position
+10:45:01    ITC          C=309.80  VWAP=310.29  RSI=58  Vol=1.0x  → -[-]  
+10:45:01    TCS          C=2557.10  VWAP=2570.89  RSI=34  Vol=0.5x  → -[-]  
+10:45:01    SBIN         C=1167.90  VWAP=1175.60  RSI=25  Vol=0.7x  → -[-]  
+10:45:01    BAJAJFINSV   C=1891.50  VWAP=1889.95  RSI=61  Vol=0.7x  → -[-]  
+10:45:01    TRENT        C=3738.40  VWAP=3746.00  RSI=45  Vol=0.4x  → -[-]  
+10:45:01    ADANIPORTS   C=1465.50  VWAP=1459.51  RSI=69  Vol=2.4x  → -[-]  
+10:45:01    ONGC         C=286.45  VWAP=283.96  RSI=66  Vol=0.9x  → -[-]  
+10:45:01  SCAN #31 complete in 0.0s
+10:48:01  SCAN #32  10:48:01  phase=ACTIVE_AM  active=True  missed=0
+10:48:01  FETCH  WS  11 new bars in 0.021s
+10:48:01    HDFCLIFE     C=678.30  VWAP=679.43  RSI=56  Vol=0.2x  → -[-]  
+10:48:01    APOLLOHOSP   C=7688.00  VWAP=7721.01  RSI=38  Vol=0.3x  → -[-]  
+10:48:01    TITAN        C=4228.80  VWAP=4204.39  RSI=80  Vol=1.2x  → -[-]  in_position
+10:48:01    ITC          C=309.65  VWAP=310.29  RSI=54  Vol=0.4x  → -[-]  
+10:48:01    TCS          C=2556.50  VWAP=2570.77  RSI=32  Vol=0.4x  → -[-]  
+10:48:01    SBIN         C=1167.20  VWAP=1174.55  RSI=24  Vol=0.9x  → -[-]  
+10:48:01    BAJAJFINSV   C=1891.70  VWAP=1889.99  RSI=62  Vol=0.9x  → -[-]  
+10:48:01    TRENT        C=3738.00  VWAP=3745.91  RSI=44  Vol=0.4x  → -[-]  
+10:48:01    ADANIPORTS   C=1465.30  VWAP=1459.62  RSI=68  Vol=0.9x  → -[-]  
+10:48:01    ONGC         C=286.50  VWAP=283.97  RSI=67  Vol=0.2x  → -[-]  
+10:48:01  SCAN #32 complete in 0.0s
+10:51:01  SCAN #33  10:51:01  phase=ACTIVE_AM  active=True  missed=0
+10:51:01  FETCH  WS  14 new bars in 0.019s
+10:51:01    HDFCLIFE     C=680.15  VWAP=679.43  RSI=67  Vol=1.1x  → -[-]  
+10:51:01    APOLLOHOSP   C=7679.50  VWAP=7720.50  RSI=33  Vol=0.5x  → -[-]  
+10:51:01    TITAN        C=4220.80  VWAP=4204.67  RSI=64  Vol=0.6x  → -[-]  in_position
+10:51:01    ITC          C=309.90  VWAP=310.28  RSI=59  Vol=1.0x  → -[-]  
+10:51:01    TCS          C=2554.60  VWAP=2570.32  RSI=27  Vol=0.6x  → -[-]  
+10:51:01    SBIN         C=1167.10  VWAP=1174.41  RSI=24  Vol=0.7x  → -[-]  
+10:51:01    BAJAJFINSV   C=1891.30  VWAP=1890.00  RSI=59  Vol=0.7x  → -[-]  
+10:51:01    TRENT        C=3734.10  VWAP=3745.67  RSI=37  Vol=0.6x  → -[-]  
+10:51:01    ADANIPORTS   C=1463.70  VWAP=1459.65  RSI=62  Vol=0.4x  → -[-]  
+10:51:01    ONGC         C=286.35  VWAP=284.01  RSI=64  Vol=0.6x  → -[-]  
+10:51:01  SCAN #33 complete in 0.0s
+10:54:01  SCAN #34  10:54:01  phase=ACTIVE_AM  active=True  missed=0
+10:54:01  FETCH  WS  3 new bars in 0.011s
+10:54:01    HDFCLIFE     C=680.15  VWAP=679.43  RSI=67  Vol=1.1x  → -[-]  
+10:54:01    APOLLOHOSP   C=7679.50  VWAP=7720.50  RSI=33  Vol=0.5x  → -[-]  
+10:54:01    TITAN        C=4219.10  VWAP=4204.94  RSI=61  Vol=0.9x  → -[-]  in_position
+10:54:01    ITC          C=309.90  VWAP=310.28  RSI=59  Vol=1.0x  → -[-]  
+10:54:01    TCS          C=2554.60  VWAP=2570.32  RSI=27  Vol=0.6x  → -[-]  
+10:54:01    SBIN         C=1166.90  VWAP=1174.33  RSI=23  Vol=0.4x  → -[-]  
+10:54:01    BAJAJFINSV   C=1892.00  VWAP=1890.05  RSI=62  Vol=1.6x  → -[-]  
+10:54:01    TRENT        C=3734.10  VWAP=3745.67  RSI=37  Vol=0.6x  → -[-]  
+10:54:01    ADANIPORTS   C=1463.70  VWAP=1459.65  RSI=62  Vol=0.4x  → -[-]  
+10:54:01    ONGC         C=286.35  VWAP=284.01  RSI=64  Vol=0.6x  → -[-]  
+10:54:01  SCAN #34 complete in 0.0s
+10:57:01  SCAN #35  10:57:01  phase=ACTIVE_AM  active=True  missed=0
+10:57:01  FETCH  WS  13 new bars in 0.015s
+10:57:01    HDFCLIFE     C=679.10  VWAP=679.43  RSI=58  Vol=0.5x  → -[-]  
+10:57:01    APOLLOHOSP   C=7680.00  VWAP=7720.27  RSI=33  Vol=0.3x  → -[-]  
+10:57:01    TITAN        C=4224.70  VWAP=4205.16  RSI=67  Vol=0.6x  → -[-]  in_position
+10:57:01    ITC          C=310.35  VWAP=310.28  RSI=67  Vol=1.2x  → -[-]  
+10:57:01    TCS          C=2553.30  VWAP=2569.72  RSI=25  Vol=1.0x  → -[-]  
+10:57:01    SBIN         C=1168.00  VWAP=1174.22  RSI=34  Vol=0.7x  → -[-]  
+10:57:01    BAJAJFINSV   C=1892.90  VWAP=1890.09  RSI=65  Vol=0.8x  → -[-]  
+10:57:01    TRENT        C=3736.00  VWAP=3745.50  RSI=43  Vol=0.6x  → -[-]  
+10:57:01    ADANIPORTS   C=1464.30  VWAP=1459.71  RSI=63  Vol=0.6x  → -[-]  
+10:57:01    ONGC         C=286.45  VWAP=284.04  RSI=62  Vol=0.2x  → -[-]  
+10:57:01  SCAN #35 complete in 0.0s
+11:00:01  SCAN #36  11:00:01  phase=ACTIVE_AM  active=True  missed=0
+11:00:01  FETCH  WS  12 new bars in 0.023s
+11:00:01    HDFCLIFE     C=680.10  VWAP=679.44  RSI=64  Vol=0.4x  → -[-]  
+11:00:01    APOLLOHOSP   C=7680.00  VWAP=7719.83  RSI=33  Vol=0.5x  → -[-]  
+11:00:01    TITAN        C=4216.70  VWAP=4205.46  RSI=54  Vol=1.0x  → -[-]  in_position
+11:00:01    ITC          C=310.30  VWAP=310.28  RSI=65  Vol=0.5x  → -[-]  
+11:00:01    TCS          C=2552.00  VWAP=2569.46  RSI=22  Vol=0.8x  → -[-]  
+11:00:01    SBIN         C=1168.00  VWAP=1174.09  RSI=34  Vol=0.9x  → -[-]  
+11:00:01    BAJAJFINSV   C=1893.70  VWAP=1890.16  RSI=68  Vol=1.2x  → -[-]  
+11:00:01    TRENT        C=3738.90  VWAP=3745.37  RSI=50  Vol=0.2x  → -[-]  
+11:00:01    ADANIPORTS   C=1465.40  VWAP=1459.79  RSI=66  Vol=0.8x  → -[-]  
+11:00:01    ONGC         C=285.55  VWAP=284.05  RSI=49  Vol=0.3x  → -[-]  
+11:00:01  SCAN #36 complete in 0.0s
+11:03:01  SCAN #37  11:03:01  phase=ACTIVE_AM  active=True  missed=0
+11:03:01  FETCH  WS  9 new bars in 0.015s
+11:03:01    HDFCLIFE     C=678.05  VWAP=679.42  RSI=47  Vol=1.2x  → -[-]  
+11:03:01    APOLLOHOSP   C=7673.50  VWAP=7719.53  RSI=29  Vol=0.4x  → -[-]  
+11:03:01  BRACKET  TITAN        SL hit at 11:00 — position closed
+11:03:01  SL_COUNT  TITAN        1 / 2
+11:03:01    TITAN        C=4206.00  VWAP=4205.55  RSI=42  Vol=1.0x  → -[-]  cooldown_until_11:27
+11:03:01    ITC          C=309.60  VWAP=310.26  RSI=47  Vol=1.6x  → -[-]  
+11:03:01    TCS          C=2552.00  VWAP=2569.46  RSI=22  Vol=0.8x  → -[-]  
+11:03:01    SBIN         C=1168.00  VWAP=1174.09  RSI=34  Vol=0.9x  → -[-]  
+11:03:01    BAJAJFINSV   C=1893.80  VWAP=1890.30  RSI=67  Vol=1.1x  → -[-]  
+11:03:01    TRENT        C=3734.30  VWAP=3745.01  RSI=40  Vol=1.5x  → -[-]  
+11:03:01    ADANIPORTS   C=1466.00  VWAP=1460.00  RSI=67  Vol=0.8x  → -[-]  
+11:03:01    ONGC         C=285.55  VWAP=284.05  RSI=49  Vol=0.3x  → -[-]  
+11:03:01  SCAN #37 complete in 0.0s
+11:06:01  SCAN #38  11:06:01  phase=ACTIVE_AM  active=True  missed=0
+11:06:01  FETCH  WS  11 new bars in 0.020s
+11:06:01    HDFCLIFE     C=677.60  VWAP=679.40  RSI=45  Vol=0.7x  → -[-]  
+11:06:01    APOLLOHOSP   C=7674.00  VWAP=7719.01  RSI=30  Vol=0.7x  → -[-]  
+11:06:01    TITAN        C=4206.00  VWAP=4205.55  RSI=42  Vol=1.0x  → -[-]  cooldown_until_11:27
+11:06:01    ITC          C=309.70  VWAP=310.22  RSI=49  Vol=3.6x  → -[-]  
+11:06:01    TCS          C=2550.50  VWAP=2568.95  RSI=18  Vol=0.9x  → -[-]  
+11:06:01    SBIN         C=1167.00  VWAP=1173.25  RSI=29  Vol=1.7x  → -[-]  
+11:06:01    BAJAJFINSV   C=1892.30  VWAP=1890.37  RSI=56  Vol=1.9x  → -[-]  
+11:06:01    TRENT        C=3730.50  VWAP=3744.32  RSI=34  Vol=1.9x  → -[-]  
+11:06:01    ADANIPORTS   C=1466.00  VWAP=1460.00  RSI=67  Vol=0.8x  → -[-]  
+11:06:01    ONGC         C=284.75  VWAP=284.06  RSI=40  Vol=0.4x  → -[-]  
+11:06:01  SCAN #38 complete in 0.0s
+11:09:01  SCAN #39  11:09:01  phase=ACTIVE_AM  active=True  missed=0
+11:09:01  FETCH  WS  9 new bars in 0.013s
+11:09:01    HDFCLIFE     C=677.60  VWAP=679.40  RSI=45  Vol=0.7x  → -[-]  
+11:09:01    APOLLOHOSP   C=7672.50  VWAP=7716.71  RSI=29  Vol=2.9x  → -[-]  
+11:09:01    TITAN        C=4204.00  VWAP=4205.54  RSI=40  Vol=1.0x  → -[-]  cooldown_until_11:27
+11:09:01    ITC          C=309.70  VWAP=310.22  RSI=49  Vol=3.6x  → -[-]  
+11:09:01    TCS          C=2553.90  VWAP=2568.76  RSI=41  Vol=0.7x  → -[-]  
+11:09:01    SBIN         C=1168.00  VWAP=1172.99  RSI=39  Vol=1.8x  → -[-]  
+11:09:01    BAJAJFINSV   C=1894.20  VWAP=1890.46  RSI=65  Vol=1.5x  → -[-]  
+11:09:01    TRENT        C=3730.80  VWAP=3744.23  RSI=35  Vol=0.3x  → -[-]  
+11:09:01    ADANIPORTS   C=1462.20  VWAP=1460.11  RSI=49  Vol=1.3x  → -[-]  
+11:09:01    ONGC         C=284.75  VWAP=284.07  RSI=40  Vol=0.3x  → -[-]  
+11:09:01  SCAN #39 complete in 0.0s
+11:12:01  SCAN #40  11:12:01  phase=ACTIVE_AM  active=True  missed=0
+11:12:01  FETCH  WS  6 new bars in 0.017s
+11:12:01    HDFCLIFE     C=677.90  VWAP=679.39  RSI=47  Vol=0.4x  → -[-]  
+11:12:01    APOLLOHOSP   C=7664.00  VWAP=7716.11  RSI=23  Vol=0.3x  → -[-]  
+11:12:01    TITAN        C=4213.40  VWAP=4205.74  RSI=52  Vol=1.8x  → -[-]  cooldown_until_11:27
+11:12:01    ITC          C=310.05  VWAP=310.21  RSI=57  Vol=2.7x  → -[-]  
+11:12:01    TCS          C=2553.90  VWAP=2568.76  RSI=41  Vol=0.7x  → -[-]  
+11:12:01    SBIN         C=1168.00  VWAP=1172.99  RSI=39  Vol=1.8x  → -[-]  
+11:12:01    BAJAJFINSV   C=1894.20  VWAP=1890.46  RSI=65  Vol=1.5x  → -[-]  
+11:12:01    TRENT        C=3730.80  VWAP=3744.23  RSI=35  Vol=0.3x  → -[-]  
+11:12:01    ADANIPORTS   C=1462.20  VWAP=1460.11  RSI=49  Vol=1.3x  → -[-]  
+11:12:01    ONGC         C=284.75  VWAP=284.07  RSI=40  Vol=0.3x  → -[-]  
+11:12:01  SCAN #40 complete in 0.0s
+11:15:01  SCAN #41  11:15:01  phase=ACTIVE_AM  active=True  missed=0
+11:15:01  FETCH  WS  13 new bars in 0.019s
+11:15:01    HDFCLIFE     C=677.95  VWAP=679.37  RSI=47  Vol=0.7x  → -[-]  
+11:15:01    APOLLOHOSP   C=7664.00  VWAP=7715.72  RSI=23  Vol=0.5x  → -[-]  
+11:15:01    TITAN        C=4211.00  VWAP=4206.14  RSI=49  Vol=2.6x  → -[-]  cooldown_until_11:27
+11:15:01    ITC          C=310.05  VWAP=310.20  RSI=57  Vol=0.4x  → -[-]  
+11:15:01    TCS          C=2553.40  VWAP=2568.43  RSI=40  Vol=0.8x  → -[-]  
+11:15:01    SBIN         C=1167.00  VWAP=1170.26  RSI=34  Vol=13.3x  → -[-]  
+11:15:01    BAJAJFINSV   C=1894.30  VWAP=1890.54  RSI=65  Vol=1.1x  → -[-]  
+11:15:01    TRENT        C=3731.50  VWAP=3744.01  RSI=38  Vol=0.6x  → -[-]  
+11:15:01    ADANIPORTS   C=1463.00  VWAP=1460.14  RSI=52  Vol=0.5x  → -[-]  
+11:15:01    ONGC         C=284.70  VWAP=284.07  RSI=40  Vol=0.6x  → -[-]  
+11:15:01  SCAN #41 complete in 0.0s
+11:18:01  SCAN #42  11:18:01  phase=ACTIVE_AM  active=True  missed=0
+11:18:01  FETCH  WS  5 new bars in 0.015s
+11:18:01    HDFCLIFE     C=678.15  VWAP=679.36  RSI=49  Vol=0.4x  → -[-]  
+11:18:01    APOLLOHOSP   C=7664.00  VWAP=7715.72  RSI=23  Vol=0.5x  → -[-]  
+11:18:01    TITAN        C=4211.00  VWAP=4206.14  RSI=49  Vol=2.6x  → -[-]  cooldown_until_11:27
+11:18:01    ITC          C=310.15  VWAP=310.20  RSI=59  Vol=0.5x  → -[-]  
+11:18:01    TCS          C=2553.40  VWAP=2568.43  RSI=40  Vol=0.8x  → -[-]  
+11:18:01    SBIN         C=1167.00  VWAP=1170.26  RSI=34  Vol=13.3x  → -[-]  
+11:18:01    BAJAJFINSV   C=1894.50  VWAP=1890.64  RSI=66  Vol=1.4x  → -[-]  
+11:18:01    TRENT        C=3731.50  VWAP=3744.01  RSI=38  Vol=0.6x  → -[-]  
+11:18:01    ADANIPORTS   C=1462.50  VWAP=1460.16  RSI=50  Vol=0.5x  → -[-]  
+11:18:01    ONGC         C=284.60  VWAP=284.08  RSI=38  Vol=0.3x  → -[-]  
+11:18:01  SCAN #42 complete in 0.0s
+11:21:01  SCAN #43  11:21:01  phase=ACTIVE_AM  active=True  missed=0
+11:21:01  FETCH  WS  19 new bars in 0.023s
+11:21:01    HDFCLIFE     C=678.60  VWAP=679.35  RSI=53  Vol=0.5x  → -[-]  
+11:21:01    APOLLOHOSP   C=7676.50  VWAP=7714.61  RSI=44  Vol=0.6x  → -[-]  
+11:21:01    TITAN        C=4212.60  VWAP=4206.28  RSI=52  Vol=0.6x  → -[-]  cooldown_until_11:27
+11:21:01    ITC          C=310.55  VWAP=310.22  RSI=66  Vol=0.5x  → -[-]  
+11:21:01    TCS          C=2552.20  VWAP=2568.18  RSI=37  Vol=0.5x  → -[-]  
+11:21:01    SBIN         C=1167.70  VWAP=1170.19  RSI=41  Vol=0.5x  → -[-]  
+11:21:01    BAJAJFINSV   C=1894.20  VWAP=1890.80  RSI=62  Vol=1.2x  → -[-]  
+11:21:01    TRENT        C=3733.50  VWAP=3743.90  RSI=44  Vol=0.2x  → -[-]  
+11:21:01    ADANIPORTS   C=1462.10  VWAP=1460.24  RSI=48  Vol=1.3x  → -[-]  
+11:21:01    ONGC         C=285.00  VWAP=284.08  RSI=46  Vol=0.3x  → -[-]  
+11:21:01  SCAN #43 complete in 0.0s
+11:24:01  SCAN #44  11:24:01  phase=ACTIVE_AM  active=True  missed=0
+11:24:01  FETCH  WS  5 new bars in 0.014s
+11:24:01    HDFCLIFE     C=678.50  VWAP=679.33  RSI=52  Vol=1.0x  → -[-]  
+11:24:01    APOLLOHOSP   C=7676.50  VWAP=7714.61  RSI=44  Vol=0.6x  → -[-]  
+11:24:01    TITAN        C=4209.00  VWAP=4206.33  RSI=46  Vol=0.6x  → -[-]  cooldown_until_11:27
+11:24:01    ITC          C=310.55  VWAP=310.22  RSI=66  Vol=0.5x  → -[-]  
+11:24:01    TCS          C=2552.20  VWAP=2568.18  RSI=37  Vol=0.5x  → -[-]  
+11:24:01    SBIN         C=1167.70  VWAP=1170.19  RSI=41  Vol=0.5x  → -[-]  
+11:24:01    BAJAJFINSV   C=1892.60  VWAP=1891.14  RSI=50  Vol=6.6x  → -[-]  
+11:24:01    TRENT        C=3733.50  VWAP=3743.90  RSI=44  Vol=0.2x  → -[-]  
+11:24:01    ADANIPORTS   C=1462.10  VWAP=1460.24  RSI=48  Vol=1.3x  → -[-]  
+11:24:01    ONGC         C=284.95  VWAP=284.09  RSI=46  Vol=0.3x  → -[-]  
+11:24:01  SCAN #44 complete in 0.0s
+11:27:01  SCAN #45  11:27:01  phase=ACTIVE_AM  active=True  missed=0
+11:27:01  FETCH  WS  7 new bars in 0.005s
+11:27:01    HDFCLIFE     C=678.50  VWAP=679.33  RSI=52  Vol=1.0x  → -[-]  
+11:27:01    APOLLOHOSP   C=7668.50  VWAP=7713.28  RSI=36  Vol=2.1x  → -[-]  
+11:27:01    TITAN        C=4209.00  VWAP=4206.33  RSI=46  Vol=0.6x  → -[-]  
+11:27:01    ITC          C=310.60  VWAP=310.22  RSI=66  Vol=0.7x  → -[-]  
+11:27:01    TCS          C=2550.30  VWAP=2567.40  RSI=31  Vol=2.1x  → -[-]  
+11:27:01    SBIN         C=1167.00  VWAP=1170.17  RSI=36  Vol=0.1x  → -[-]  
+11:27:01    BAJAJFINSV   C=1892.60  VWAP=1891.14  RSI=50  Vol=6.6x  → -[-]  
+11:27:01    TRENT        C=3732.00  VWAP=3743.82  RSI=41  Vol=0.6x  → -[-]  
+11:27:01    ADANIPORTS   C=1462.00  VWAP=1460.28  RSI=48  Vol=1.5x  → -[-]  
+11:27:01    ONGC         C=284.95  VWAP=284.09  RSI=46  Vol=0.3x  → -[-]  
+11:27:01  SCAN #45 complete in 0.0s
+11:30:01  SCAN #46  11:30:01  phase=ACTIVE_AM  active=True  missed=0
+11:30:01  FETCH  WS  11 new bars in 0.012s
+11:30:01    HDFCLIFE     C=678.20  VWAP=679.32  RSI=49  Vol=1.2x  → -[-]  
+11:30:01    APOLLOHOSP   C=7661.00  VWAP=7712.88  RSI=30  Vol=0.5x  → -[-]  
+11:30:01    TITAN        C=4205.80  VWAP=4206.34  RSI=42  Vol=0.4x  → -[-]  
+11:30:01    ITC          C=310.50  VWAP=310.23  RSI=63  Vol=0.6x  → -[-]  
+11:30:01    TCS          C=2550.30  VWAP=2567.40  RSI=31  Vol=2.1x  → -[-]  
+11:30:01    SBIN         C=1166.60  VWAP=1170.16  RSI=33  Vol=0.1x  → -[-]  
+11:30:01    BAJAJFINSV   C=1889.20  VWAP=1890.95  RSI=32  Vol=5.6x  → -[-]  
+11:30:01    TRENT        C=3731.60  VWAP=3743.71  RSI=40  Vol=0.7x  → -[-]  
+11:30:01    ADANIPORTS   C=1460.90  VWAP=1460.29  RSI=42  Vol=0.5x  → -[-]  
+11:30:01    ONGC         C=284.85  VWAP=284.10  RSI=44  Vol=0.6x  → -[-]  
+11:30:01  SCAN #46 complete in 0.0s
+11:33:01  SCAN #47  11:33:01  phase=ACTIVE_AM  active=True  missed=0
+11:33:01  FETCH  WS  14 new bars in 0.018s
+11:33:01    HDFCLIFE     C=678.20  VWAP=679.31  RSI=49  Vol=0.4x  → -[-]  
+11:33:01    APOLLOHOSP   C=7659.50  VWAP=7712.70  RSI=29  Vol=0.3x  → -[-]  
+11:33:01    TITAN        C=4209.50  VWAP=4206.34  RSI=49  Vol=0.8x  → -[-]  
+11:33:01    ITC          C=310.20  VWAP=310.23  RSI=53  Vol=0.5x  → -[-]  
+11:33:01    TCS          C=2549.20  VWAP=2566.71  RSI=33  Vol=0.7x  → -[-]  
+11:33:01    SBIN         C=1163.50  VWAP=1170.01  RSI=20  Vol=0.2x  → -[-]  
+11:33:01    BAJAJFINSV   C=1890.00  VWAP=1890.90  RSI=38  Vol=1.3x  → -[-]  
+11:33:01    TRENT        C=3739.00  VWAP=3743.47  RSI=61  Vol=0.8x  → -[-]  
+11:33:01    ADANIPORTS   C=1457.50  VWAP=1460.26  RSI=31  Vol=1.0x  → -[-]  
+11:33:01    ONGC         C=285.45  VWAP=284.11  RSI=55  Vol=0.4x  → -[-]  
+11:33:01  SCAN #47 complete in 0.0s
+11:36:01  SCAN #48  11:36:01  phase=ACTIVE_AM  active=True  missed=0
+11:36:01  FETCH  WS  13 new bars in 0.021s
+11:36:01    HDFCLIFE     C=680.10  VWAP=679.32  RSI=67  Vol=0.4x  → -[-]  
+11:36:01    APOLLOHOSP   C=7674.50  VWAP=7710.76  RSI=49  Vol=1.7x  → ★ SHORT[MOM]  SL=7691.84  TP=7644.15  Qty=32
+11:36:01    TITAN        C=4207.10  VWAP=4206.37  RSI=45  Vol=0.8x  → -[-]  
+11:36:01    ITC          C=310.80  VWAP=310.24  RSI=64  Vol=0.7x  → -[-]  
+11:36:01    TCS          C=2549.10  VWAP=2566.53  RSI=32  Vol=0.8x  → -[-]  
+11:36:01    SBIN         C=1163.90  VWAP=1169.96  RSI=25  Vol=0.2x  → -[-]  
+11:36:01    BAJAJFINSV   C=1889.70  VWAP=1890.88  RSI=36  Vol=0.7x  → -[-]  
+11:36:01    TRENT        C=3738.10  VWAP=3743.40  RSI=59  Vol=1.3x  → -[-]  
+11:36:01    ADANIPORTS   C=1456.80  VWAP=1460.20  RSI=30  Vol=0.9x  → -[-]  
+11:36:01    ONGC         C=285.45  VWAP=284.11  RSI=55  Vol=0.4x  → -[-]  
+11:36:01  SCAN #48 complete in 0.8s
+11:39:01  SCAN #49  11:39:01  phase=ACTIVE_AM  active=True  missed=0
+11:39:01  FETCH  WS  2 new bars in 0.010s
+11:39:01    HDFCLIFE     C=680.10  VWAP=679.32  RSI=67  Vol=0.4x  → -[-]  
+11:39:01    APOLLOHOSP   C=7674.50  VWAP=7710.76  RSI=49  Vol=1.7x  → SHORT[MOM]  in_position
+11:39:01    TITAN        C=4207.10  VWAP=4206.37  RSI=45  Vol=0.8x  → -[-]  
+11:39:01    ITC          C=310.80  VWAP=310.24  RSI=64  Vol=0.7x  → -[-]  
+11:39:01    TCS          C=2549.10  VWAP=2566.53  RSI=32  Vol=0.8x  → -[-]  
+11:39:01    SBIN         C=1163.00  VWAP=1169.60  RSI=21  Vol=1.5x  → -[-]  
+11:39:01    BAJAJFINSV   C=1889.70  VWAP=1890.88  RSI=36  Vol=0.7x  → -[-]  
+11:39:01    TRENT        C=3738.10  VWAP=3743.40  RSI=59  Vol=1.3x  → -[-]  
+11:39:01    ADANIPORTS   C=1456.80  VWAP=1460.20  RSI=30  Vol=0.9x  → -[-]  
+11:39:01    ONGC         C=285.95  VWAP=284.13  RSI=62  Vol=1.4x  → -[-]  
+11:39:01  SCAN #49 complete in 0.0s
+11:42:01  SCAN #50  11:42:01  phase=ACTIVE_AM  active=True  missed=0
+11:42:01  FETCH  WS  13 new bars in 0.008s
+11:42:01    HDFCLIFE     C=674.25  VWAP=679.01  RSI=27  Vol=5.6x  → -[-]  
+11:42:01    APOLLOHOSP   C=7667.50  VWAP=7710.57  RSI=43  Vol=0.3x  → -[-]  in_position
+11:42:01    TITAN        C=4204.30  VWAP=4206.37  RSI=41  Vol=0.2x  → -[-]  
+11:42:01    ITC          C=310.65  VWAP=310.24  RSI=59  Vol=0.3x  → -[-]  
+11:42:01    TCS          C=2548.10  VWAP=2566.28  RSI=29  Vol=1.1x  → -[-]  
+11:42:01    SBIN         C=1164.00  VWAP=1169.42  RSI=32  Vol=0.8x  → -[-]  
+11:42:01    BAJAJFINSV   C=1890.30  VWAP=1890.81  RSI=42  Vol=2.1x  → -[-]  
+11:42:01    TRENT        C=3736.80  VWAP=3743.27  RSI=54  Vol=1.9x  → -[-]  
+11:42:01    ADANIPORTS   C=1455.20  VWAP=1460.11  RSI=26  Vol=1.3x  → -[-]  
+11:42:01    ONGC         C=285.65  VWAP=284.13  RSI=56  Vol=0.7x  → -[-]  
+11:42:01  SCAN #50 complete in 0.0s
+11:45:01  SCAN #51  11:45:01  phase=ACTIVE_AM  active=True  missed=0
+11:45:01  FETCH  WS  9 new bars in 0.014s
+11:45:01    HDFCLIFE     C=674.25  VWAP=679.01  RSI=27  Vol=5.6x  → -[-]  
+11:45:01    APOLLOHOSP   C=7668.00  VWAP=7710.36  RSI=44  Vol=0.4x  → -[-]  in_position
+11:45:01    TITAN        C=4204.30  VWAP=4206.37  RSI=41  Vol=0.2x  → -[-]  
+11:45:01    ITC          C=310.65  VWAP=310.25  RSI=59  Vol=0.4x  → -[-]  
+11:45:01    TCS          C=2549.00  VWAP=2566.13  RSI=35  Vol=0.7x  → -[-]  
+11:45:01    SBIN         C=1162.00  VWAP=1169.17  RSI=25  Vol=1.1x  → -[-]  
+11:45:01    BAJAJFINSV   C=1890.90  VWAP=1890.82  RSI=46  Vol=0.5x  → -[-]  
+11:45:01    TRENT        C=3739.40  VWAP=3743.23  RSI=61  Vol=0.7x  → -[-]  
+11:45:01    ADANIPORTS   C=1454.80  VWAP=1460.06  RSI=25  Vol=0.7x  → -[-]  
+11:45:01    ONGC         C=285.20  VWAP=284.15  RSI=48  Vol=1.0x  → -[-]  
+11:45:01  SCAN #51 complete in 0.0s
+11:48:01  SCAN #52  11:48:01  phase=ACTIVE_AM  active=True  missed=0
+11:48:01  FETCH  WS  9 new bars in 0.018s
+11:48:01    HDFCLIFE     C=674.75  VWAP=678.92  RSI=31  Vol=1.6x  → -[-]  
+11:48:01    APOLLOHOSP   C=7666.00  VWAP=7709.92  RSI=42  Vol=0.8x  → -[-]  in_position
+11:48:01    TITAN        C=4206.80  VWAP=4206.36  RSI=46  Vol=0.4x  → -[-]  
+11:48:01    ITC          C=310.60  VWAP=310.25  RSI=57  Vol=0.3x  → -[-]  
+11:48:01    TCS          C=2548.80  VWAP=2566.02  RSI=35  Vol=0.5x  → -[-]  
+11:48:01    SBIN         C=1162.00  VWAP=1169.17  RSI=25  Vol=1.1x  → -[-]  
+11:48:01    BAJAJFINSV   C=1889.40  VWAP=1890.79  RSI=38  Vol=1.0x  → -[-]  
+11:48:01    TRENT        C=3732.90  VWAP=3742.99  RSI=43  Vol=1.7x  → -[-]  
+11:48:01    ADANIPORTS   C=1455.90  VWAP=1460.03  RSI=33  Vol=0.5x  → -[-]  
+11:48:01    ONGC         C=285.20  VWAP=284.15  RSI=48  Vol=1.0x  → -[-]  
+11:48:01  SCAN #52 complete in 0.0s
+11:51:01  SCAN #53  11:51:01  phase=ACTIVE_AM  active=True  missed=0
+11:51:01  FETCH  WS  13 new bars in 0.020s
+11:51:01    HDFCLIFE     C=674.45  VWAP=678.75  RSI=30  Vol=2.0x  → -[-]  
+11:51:01    APOLLOHOSP   C=7674.00  VWAP=7708.87  RSI=51  Vol=2.2x  → -[-]  in_position
+11:51:01    TITAN        C=4201.30  VWAP=4206.30  RSI=37  Vol=0.8x  → -[-]  
+11:51:01    ITC          C=310.50  VWAP=310.27  RSI=53  Vol=6.6x  → -[-]  
+11:51:01    TCS          C=2549.70  VWAP=2565.67  RSI=42  Vol=1.2x  → -[-]  
+11:51:01    SBIN         C=1161.40  VWAP=1169.11  RSI=23  Vol=0.2x  → -[-]  
+11:51:01    BAJAJFINSV   C=1889.40  VWAP=1890.79  RSI=38  Vol=1.0x  → -[-]  
+11:51:01    TRENT        C=3725.00  VWAP=3742.72  RSI=30  Vol=1.4x  → -[-]  
+11:51:01    ADANIPORTS   C=1455.70  VWAP=1460.01  RSI=32  Vol=0.4x  → -[-]  
+11:51:01    ONGC         C=285.00  VWAP=284.15  RSI=45  Vol=0.5x  → -[-]  
+11:51:01  SCAN #53 complete in 0.0s
+11:54:01  SCAN #54  11:54:01  phase=ACTIVE_AM  active=True  missed=0
+11:54:01  FETCH  WS  6 new bars in 0.006s
+11:54:01    HDFCLIFE     C=674.45  VWAP=678.75  RSI=30  Vol=2.0x  → -[-]  
+11:54:01    APOLLOHOSP   C=7668.00  VWAP=7708.12  RSI=45  Vol=1.5x  → -[-]  in_position
+11:54:01    TITAN        C=4207.40  VWAP=4206.28  RSI=51  Vol=1.2x  → -[-]  
+11:54:01    ITC          C=310.50  VWAP=310.27  RSI=53  Vol=6.6x  → -[-]  
+11:54:01    TCS          C=2549.70  VWAP=2565.67  RSI=42  Vol=1.2x  → -[-]  
+11:54:01    SBIN         C=1159.90  VWAP=1169.00  RSI=19  Vol=0.4x  → -[-]  
+11:54:01    BAJAJFINSV   C=1889.10  VWAP=1890.74  RSI=36  Vol=1.1x  → -[-]  
+11:54:01    TRENT        C=3725.00  VWAP=3742.72  RSI=30  Vol=1.4x  → -[-]  
+11:54:01    ADANIPORTS   C=1455.00  VWAP=1459.92  RSI=30  Vol=1.4x  → -[-]  
+11:54:01    ONGC         C=284.90  VWAP=284.15  RSI=43  Vol=0.5x  → -[-]  
+11:54:01  SCAN #54 complete in 0.0s
+11:54:26  STOPPED MANUALLY  2 signal(s), 54 scans
+11:54:26    SUMMARY  10:42   LONG  TITAN        @ 4226.00  [MOM]
+11:54:26    SUMMARY  11:36  SHORT  APOLLOHOSP   @ 7674.50  [MOM]
+11:54:26  WS feed stopped
+11:54:30  ======================================================================
+11:54:30  SESSION START  Capital=50000  RR=1:1.8  Risk=1.5%  ws=True
+11:54:30  Stocks: HINDUNILVR, TATASTEEL, GRASIM, HDFCBANK, INFY, HINDALCO, TATAMOTORS, ULTRACEMCO, SUNPHARMA, AXISBANK
+11:54:30  Strategy: PDL (SL=1.5x ATR) + MOM (SL=1.4x ATR)  MaxSL/day=2
+11:54:30  Telegram: enabled
+11:54:30  PHASE 1  Warm-Up — connecting to Angel One
+11:54:31  API connected
+11:54:31  Loading 5-day 3-min warmup data
+11:54:31  WARMUP  HINDUNILVR   8781 bars  cache=2026-03-05
+11:54:31  WARMUP  TATASTEEL    8737 bars  cache=2026-03-05
+11:54:31  WARMUP  GRASIM       8796 bars  cache=2026-03-05
+11:54:31  WARMUP  HDFCBANK     8796 bars  cache=2026-03-05
+11:54:31  WARMUP  INFY         8796 bars  cache=2026-03-05
+11:54:31  WARMUP  HINDALCO     8737 bars  cache=2026-03-05
+11:54:31  WARMUP  TATAMOTORS   8796 bars  cache=2026-03-05
+11:54:31  WARMUP  ULTRACEMCO   8796 bars  cache=2026-03-05
+11:54:31  WARMUP  SUNPHARMA    8796 bars  cache=2026-03-05
+11:54:31  WARMUP  AXISBANK     8711 bars  cache=2026-03-05
+11:54:31  Checking event calendar for corporate events
+11:54:31  Event calendar: all stocks cleared
+11:54:31  PDL  HINDUNILVR   H=2311.60  L=2252.10
+11:54:31  PDL  TATASTEEL    H=207.00  L=194.43
+11:54:31  PDL  GRASIM       H=2742.20  L=2645.00
+11:54:31  PDL  HDFCBANK     H=879.30  L=848.00
+11:54:31  PDL  INFY         H=1317.00  L=1292.00
+11:54:31  PDL  HINDALCO     H=945.50  L=912.00
+11:54:31  PDL  TATAMOTORS   H=363.90  L=350.10
+11:54:31  PDL  ULTRACEMCO   H=12500.00  L=11888.00
+11:54:31  PDL  SUNPHARMA    H=1757.20  L=1721.00
+11:54:31  PDL  AXISBANK     H=1357.60  L=1327.00
+11:54:31  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+11:54:31  Starting WebSocket feed
+11:54:31  WS connected — subscribing 10 tokens (mode=2 Quote)
+11:54:31  WS feed started — 10 tokens subscribed
+11:54:32  PHASE  START → ACTIVE_AM
+11:54:33  MISSED 53 candle(s) (idx -1→53)
+11:54:33  SCAN #1  11:54:32  phase=ACTIVE_AM  active=True  missed=53
+11:54:33  FETCH  REST gap-fill (first scan)
+11:54:36  FETCH  WS  0 new bars in 3.299s
+11:54:36    HINDUNILVR   C=2235.50  VWAP=2241.38  RSI=52  Vol=0.4x  → -[-]  
+11:54:36    TATASTEEL    C=199.76  VWAP=200.50  RSI=21  Vol=1.0x  → -[-]  
+11:54:36    GRASIM       C=2674.10  VWAP=2674.69  RSI=44  Vol=0.1x  → -[-]  
+11:54:36    HDFCBANK     C=868.80  VWAP=870.39  RSI=22  Vol=1.6x  → -[-]  
+11:54:36    INFY         C=1292.00  VWAP=1299.85  RSI=30  Vol=4.2x  → -[-]  
+11:54:36    HINDALCO     C=972.00  VWAP=968.87  RSI=34  Vol=1.0x  → -[-]  
+11:54:36    TATAMOTORS   C=348.45  VWAP=351.98  RSI=32  Vol=1.9x  → -[-]  
+11:54:36    ULTRACEMCO   C=12067.00  VWAP=12115.84  RSI=39  Vol=0.7x  → -[-]  
+11:54:36    SUNPHARMA    C=1776.60  VWAP=1777.70  RSI=57  Vol=1.2x  → -[-]  
+11:54:36    AXISBANK     C=1346.20  VWAP=1348.01  RSI=41  Vol=0.4x  → -[-]  
+11:54:36  SCAN #1 complete in 3.3s
+11:55:54  STOPPED MANUALLY  0 signal(s), 1 scans
+11:55:54  WS feed stopped
+11:55:58  ======================================================================
+11:55:58  SESSION START  Capital=50000  RR=1:1.8  Risk=1.5%  ws=True
+11:55:58  Stocks: HINDUNILVR, TATASTEEL, GRASIM, HDFCBANK, INFY, HINDALCO, TATAMOTORS, ULTRACEMCO, SUNPHARMA, AXISBANK
+11:55:58  Strategy: PDL (SL=1.5x ATR) + MOM (SL=1.4x ATR)  MaxSL/day=2
+11:55:58  Telegram: enabled
+11:55:58  PHASE 1  Warm-Up — connecting to Angel One
+11:55:58  API connected
+11:55:58  Loading 5-day 3-min warmup data
+11:55:58  WARMUP  HINDUNILVR   8781 bars  cache=2026-03-05
+11:55:58  WARMUP  TATASTEEL    8737 bars  cache=2026-03-05
+11:55:58  WARMUP  GRASIM       8796 bars  cache=2026-03-05
+11:55:58  WARMUP  HDFCBANK     8796 bars  cache=2026-03-05
+11:55:58  WARMUP  INFY         8796 bars  cache=2026-03-05
+11:55:58  WARMUP  HINDALCO     8737 bars  cache=2026-03-05
+11:55:58  WARMUP  TATAMOTORS   8796 bars  cache=2026-03-05
+11:55:58  WARMUP  ULTRACEMCO   8796 bars  cache=2026-03-05
+11:55:58  WARMUP  SUNPHARMA    8796 bars  cache=2026-03-05
+11:55:58  WARMUP  AXISBANK     8711 bars  cache=2026-03-05
+11:55:58  Checking event calendar for corporate events
+11:55:58  Event calendar: all stocks cleared
+11:55:58  PDL  HINDUNILVR   H=2311.60  L=2252.10
+11:55:58  PDL  TATASTEEL    H=207.00  L=194.43
+11:55:58  PDL  GRASIM       H=2742.20  L=2645.00
+11:55:58  PDL  HDFCBANK     H=879.30  L=848.00
+11:55:58  PDL  INFY         H=1317.00  L=1292.00
+11:55:58  PDL  HINDALCO     H=945.50  L=912.00
+11:55:58  PDL  TATAMOTORS   H=363.90  L=350.10
+11:55:58  PDL  ULTRACEMCO   H=12500.00  L=11888.00
+11:55:58  PDL  SUNPHARMA    H=1757.20  L=1721.00
+11:55:58  PDL  AXISBANK     H=1357.60  L=1327.00
+11:55:58  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+11:55:58  Starting WebSocket feed
+11:55:58  WS connected — subscribing 10 tokens (mode=2 Quote)
+11:55:59  WS feed started — 10 tokens subscribed
+11:55:59  PHASE  START → ACTIVE_AM
+11:56:00  MISSED 53 candle(s) (idx -1→53)
+11:56:00  SCAN #1  11:55:59  phase=ACTIVE_AM  active=True  missed=53
+11:56:00  FETCH  REST gap-fill (first scan)
+11:56:03  FETCH  WS  0 new bars in 3.318s
+11:56:03    HINDUNILVR   C=2235.50  VWAP=2241.38  RSI=52  Vol=0.4x  → -[-]  
+11:56:03    TATASTEEL    C=199.76  VWAP=200.50  RSI=21  Vol=1.0x  → -[-]  
+11:56:03    GRASIM       C=2674.10  VWAP=2674.69  RSI=44  Vol=0.1x  → -[-]  
+11:56:03    HDFCBANK     C=868.80  VWAP=870.39  RSI=22  Vol=1.6x  → -[-]  
+11:56:03    INFY         C=1292.00  VWAP=1299.85  RSI=30  Vol=4.2x  → -[-]  
+11:56:03    HINDALCO     C=972.00  VWAP=968.87  RSI=34  Vol=1.0x  → -[-]  
+11:56:03    TATAMOTORS   C=348.45  VWAP=351.98  RSI=32  Vol=1.9x  → -[-]  
+11:56:03    ULTRACEMCO   C=12067.00  VWAP=12115.84  RSI=39  Vol=0.7x  → -[-]  
+11:56:03    SUNPHARMA    C=1776.60  VWAP=1777.70  RSI=57  Vol=1.2x  → -[-]  
+11:56:03    AXISBANK     C=1346.20  VWAP=1348.01  RSI=41  Vol=0.4x  → -[-]  
+11:56:03  SCAN #1 complete in 3.4s
+11:57:01  SCAN #2  11:57:01  phase=ACTIVE_AM  active=True  missed=0
+11:57:01  FETCH  WS  7 new bars in 0.014s
+11:57:01    HINDUNILVR   C=2235.60  VWAP=2241.37  RSI=52  Vol=0.1x  → -[-]  
+11:57:01    TATASTEEL    C=199.87  VWAP=200.50  RSI=27  Vol=0.2x  → -[-]  
+11:57:01    GRASIM       C=2673.10  VWAP=2674.69  RSI=41  Vol=0.0x  → -[-]  
+11:57:01    HDFCBANK     C=869.95  VWAP=870.39  RSI=37  Vol=0.1x  → -[-]  
+11:57:01    INFY         C=1294.90  VWAP=1299.84  RSI=52  Vol=0.2x  → -[-]  
+11:57:01    HINDALCO     C=972.75  VWAP=968.88  RSI=39  Vol=0.2x  → -[-]  
+11:57:01    TATAMOTORS   C=348.45  VWAP=351.98  RSI=32  Vol=1.9x  → -[-]  
+11:57:01    ULTRACEMCO   C=12067.00  VWAP=12115.84  RSI=39  Vol=0.7x  → -[-]  
+11:57:01    SUNPHARMA    C=1776.60  VWAP=1777.70  RSI=57  Vol=1.2x  → -[-]  
+11:57:01    AXISBANK     C=1345.60  VWAP=1348.00  RSI=38  Vol=0.1x  → -[-]  
+11:57:01  SCAN #2 complete in 0.1s
+12:00:01  SCAN #3  12:00:01  phase=ACTIVE_AM  active=True  missed=0
+12:00:01  FETCH  WS  10 new bars in 0.015s
+12:00:01    HINDUNILVR   C=2235.00  VWAP=2241.11  RSI=49  Vol=3.3x  → -[-]  
+12:00:01    TATASTEEL    C=199.53  VWAP=200.49  RSI=21  Vol=0.9x  → -[-]  
+12:00:01    GRASIM       C=2676.50  VWAP=2674.66  RSI=51  Vol=2.3x  → -[-]  
+12:00:01    HDFCBANK     C=870.95  VWAP=870.39  RSI=47  Vol=0.8x  → -[-]  
+12:00:01    INFY         C=1294.90  VWAP=1299.84  RSI=52  Vol=0.2x  → -[-]  
+12:00:01    HINDALCO     C=970.85  VWAP=968.90  RSI=32  Vol=0.7x  → -[-]  
+12:00:01    TATAMOTORS   C=348.70  VWAP=351.98  RSI=39  Vol=0.2x  → -[-]  
+12:00:01    ULTRACEMCO   C=12067.00  VWAP=12115.75  RSI=39  Vol=0.1x  → -[-]  
+12:00:01    SUNPHARMA    C=1776.00  VWAP=1777.68  RSI=53  Vol=0.7x  → -[-]  
+12:00:01    AXISBANK     C=1345.00  VWAP=1347.99  RSI=35  Vol=0.4x  → -[-]  
+12:00:01  SCAN #3 complete in 0.1s
+12:03:01  SCAN #4  12:03:01  phase=ACTIVE_AM  active=True  missed=0
+12:03:01  FETCH  WS  11 new bars in 0.021s
+12:03:01    HINDUNILVR   C=2237.20  VWAP=2241.07  RSI=59  Vol=0.7x  → -[-]  
+12:03:01    TATASTEEL    C=199.39  VWAP=200.47  RSI=19  Vol=1.2x  → -[-]  
+12:03:01    GRASIM       C=2673.90  VWAP=2674.66  RSI=45  Vol=0.1x  → -[-]  
+12:03:01    HDFCBANK     C=871.35  VWAP=870.42  RSI=50  Vol=1.8x  → -[-]  
+12:03:01    INFY         C=1297.80  VWAP=1299.77  RSI=66  Vol=1.2x  → -[-]  
+12:03:01    HINDALCO     C=970.10  VWAP=968.92  RSI=29  Vol=0.6x  → -[-]  
+12:03:01    TATAMOTORS   C=348.50  VWAP=351.95  RSI=36  Vol=0.7x  → -[-]  
+12:03:01    ULTRACEMCO   C=12074.00  VWAP=12114.50  RSI=44  Vol=0.4x  → -[-]  
+12:03:01    SUNPHARMA    C=1776.00  VWAP=1777.67  RSI=53  Vol=0.5x  → -[-]  
+12:03:01    AXISBANK     C=1345.00  VWAP=1347.99  RSI=35  Vol=0.4x  → -[-]  
+12:03:01  SCAN #4 complete in 0.1s
+12:06:01  SCAN #5  12:06:01  phase=ACTIVE_AM  active=True  missed=0
+12:06:01  FETCH  WS  11 new bars in 0.024s
+12:06:01    HINDUNILVR   C=2234.30  VWAP=2240.84  RSI=46  Vol=3.3x  → -[-]  
+12:06:01    TATASTEEL    C=199.05  VWAP=200.46  RSI=16  Vol=1.1x  → -[-]  
+12:06:01    GRASIM       C=2672.70  VWAP=2674.65  RSI=42  Vol=0.1x  → -[-]  
+12:06:01    HDFCBANK     C=871.25  VWAP=870.46  RSI=49  Vol=2.6x  → -[-]  
+12:06:01    INFY         C=1298.30  VWAP=1299.69  RSI=68  Vol=3.3x  → -[-]  
+12:06:01    HINDALCO     C=967.20  VWAP=968.90  RSI=22  Vol=1.2x  → -[-]  
+12:06:01    TATAMOTORS   C=348.50  VWAP=351.93  RSI=36  Vol=0.6x  → -[-]  
+12:06:01    ULTRACEMCO   C=12066.00  VWAP=12113.15  RSI=40  Vol=1.2x  → -[-]  
+12:06:01    SUNPHARMA    C=1780.10  VWAP=1777.70  RSI=66  Vol=2.3x  → -[-]  
+12:06:01    AXISBANK     C=1345.60  VWAP=1347.91  RSI=40  Vol=1.7x  → -[-]  
+12:06:01  SCAN #5 complete in 0.1s
+12:09:01  SCAN #6  12:09:01  phase=ACTIVE_AM  active=True  missed=0
+12:09:01  FETCH  WS  9 new bars in 0.007s
+12:09:01    HINDUNILVR   C=2242.10  VWAP=2240.81  RSI=67  Vol=2.4x  → ★ LONG[MOM]  SL=2236.18  TP=2252.45  Qty=111
+12:09:01    TATASTEEL    C=199.22  VWAP=200.44  RSI=24  Vol=1.3x  → -[-]  
+12:09:01    GRASIM       C=2672.70  VWAP=2674.65  RSI=42  Vol=0.1x  → -[-]  
+12:09:01    HDFCBANK     C=870.55  VWAP=870.48  RSI=43  Vol=2.4x  → -[-]  
+12:09:01    INFY         C=1297.00  VWAP=1299.62  RSI=58  Vol=2.3x  → -[-]  
+12:09:01    HINDALCO     C=967.90  VWAP=968.89  RSI=27  Vol=0.5x  → -[-]  
+12:09:01    TATAMOTORS   C=348.75  VWAP=351.91  RSI=44  Vol=0.6x  → -[-]  
+12:09:01    ULTRACEMCO   C=12051.00  VWAP=12111.89  RSI=34  Vol=1.0x  → -[-]  
+12:09:01    SUNPHARMA    C=1779.40  VWAP=1777.72  RSI=63  Vol=1.3x  → -[-]  
+12:09:02    AXISBANK     C=1344.40  VWAP=1347.83  RSI=34  Vol=2.0x  → ★ SHORT[MOM]  SL=1347.12  TP=1339.63  Qty=185
+12:09:02  SCAN #6 complete in 1.5s
+12:12:01  SCAN #7  12:12:01  phase=ACTIVE_AM  active=True  missed=0
+12:12:01  FETCH  WS  7 new bars in 0.006s
+12:12:01    HINDUNILVR   C=2242.10  VWAP=2240.81  RSI=67  Vol=2.4x  → LONG[MOM]  in_position
+12:12:01    TATASTEEL    C=199.40  VWAP=200.42  RSI=32  Vol=1.0x  → -[-]  
+12:12:01    GRASIM       C=2668.90  VWAP=2674.62  RSI=34  Vol=0.2x  → -[-]  
+12:12:01    HDFCBANK     C=871.20  VWAP=870.49  RSI=50  Vol=1.1x  → -[-]  
+12:12:01    INFY         C=1297.00  VWAP=1299.62  RSI=58  Vol=2.3x  → -[-]  
+12:12:01    HINDALCO     C=969.05  VWAP=968.89  RSI=35  Vol=0.9x  → -[-]  
+12:12:01    TATAMOTORS   C=348.80  VWAP=351.89  RSI=45  Vol=0.9x  → -[-]  
+12:12:01    ULTRACEMCO   C=12051.00  VWAP=12111.89  RSI=34  Vol=1.0x  → -[-]  
+12:12:01    SUNPHARMA    C=1781.00  VWAP=1777.73  RSI=67  Vol=0.4x  → -[-]  
+12:12:01  BRACKET  AXISBANK     SL hit at 12:09 — position closed
+12:12:01  SL_COUNT  AXISBANK     1 / 2
+12:12:01    AXISBANK     C=1347.00  VWAP=1347.81  RSI=53  Vol=0.8x  → -[-]  cooldown_until_12:54
+12:12:01  SCAN #7 complete in 0.0s
+12:15:01  SCAN #8  12:15:01  phase=ACTIVE_AM  active=True  missed=0
+12:15:01  FETCH  WS  9 new bars in 0.011s
+12:15:01    HINDUNILVR   C=2244.20  VWAP=2240.88  RSI=71  Vol=2.0x  → -[-]  in_position
+12:15:01    TATASTEEL    C=199.47  VWAP=200.42  RSI=35  Vol=0.7x  → -[-]  
+12:15:01    GRASIM       C=2675.00  VWAP=2674.62  RSI=51  Vol=0.1x  → -[-]  
+12:15:01    HDFCBANK     C=871.00  VWAP=870.50  RSI=48  Vol=0.7x  → -[-]  
+12:15:01    INFY         C=1298.50  VWAP=1299.58  RSI=65  Vol=1.2x  → -[-]  
+12:15:01    HINDALCO     C=970.40  VWAP=968.90  RSI=43  Vol=0.3x  → -[-]  
+12:15:01    TATAMOTORS   C=349.20  VWAP=351.87  RSI=56  Vol=0.6x  → -[-]  
+12:15:01    ULTRACEMCO   C=12074.00  VWAP=12111.51  RSI=48  Vol=0.4x  → -[-]  
+12:15:01    SUNPHARMA    C=1784.50  VWAP=1777.78  RSI=74  Vol=0.7x  → -[-]  
+12:15:01    AXISBANK     C=1347.00  VWAP=1347.81  RSI=53  Vol=0.8x  → -[-]  cooldown_until_12:54
+12:15:01  SCAN #8 complete in 0.0s
+12:18:01  SCAN #9  12:18:01  phase=ACTIVE_AM  active=True  missed=0
+12:18:01  FETCH  WS  13 new bars in 0.021s
+12:18:01    HINDUNILVR   C=2250.00  VWAP=2241.14  RSI=78  Vol=1.4x  → -[-]  in_position
+12:18:01    TATASTEEL    C=199.39  VWAP=200.41  RSI=33  Vol=0.6x  → -[-]  
+12:18:01    GRASIM       C=2671.60  VWAP=2674.61  RSI=44  Vol=0.2x  → -[-]  
+12:18:01    HDFCBANK     C=870.00  VWAP=870.49  RSI=39  Vol=0.5x  → -[-]  
+12:18:01    INFY         C=1295.40  VWAP=1299.53  RSI=46  Vol=0.7x  → -[-]  
+12:18:01    HINDALCO     C=968.70  VWAP=968.90  RSI=36  Vol=0.5x  → -[-]  
+12:18:01    TATAMOTORS   C=349.20  VWAP=351.85  RSI=56  Vol=1.0x  → -[-]  
+12:18:01    ULTRACEMCO   C=12090.00  VWAP=12111.29  RSI=55  Vol=0.4x  → -[-]  
+12:18:01    SUNPHARMA    C=1784.50  VWAP=1777.78  RSI=74  Vol=0.7x  → -[-]  
+12:18:01    AXISBANK     C=1345.40  VWAP=1347.79  RSI=43  Vol=0.8x  → -[-]  cooldown_until_12:54
+12:18:01  SCAN #9 complete in 0.1s
+12:21:01  SCAN #10  12:21:01  phase=ACTIVE_AM  active=True  missed=0
+12:21:01  FETCH  WS  10 new bars in 0.017s
+12:21:01    HINDUNILVR   C=2250.00  VWAP=2241.14  RSI=78  Vol=1.4x  → -[-]  in_position
+12:21:01    TATASTEEL    C=199.62  VWAP=200.40  RSI=43  Vol=0.9x  → -[-]  
+12:21:01    GRASIM       C=2672.10  VWAP=2674.60  RSI=45  Vol=0.2x  → -[-]  
+12:21:01    HDFCBANK     C=871.05  VWAP=870.50  RSI=50  Vol=0.3x  → -[-]  
+12:21:01    INFY         C=1295.40  VWAP=1299.53  RSI=46  Vol=0.7x  → -[-]  
+12:21:01    HINDALCO     C=970.10  VWAP=968.90  RSI=44  Vol=0.4x  → -[-]  
+12:21:01    TATAMOTORS   C=349.90  VWAP=351.79  RSI=70  Vol=2.5x  → -[-]  
+12:21:01    ULTRACEMCO   C=12095.00  VWAP=12111.01  RSI=57  Vol=0.3x  → -[-]  
+12:21:01    SUNPHARMA    C=1784.00  VWAP=1777.84  RSI=72  Vol=0.8x  → -[-]  
+12:21:01    AXISBANK     C=1345.30  VWAP=1347.77  RSI=43  Vol=1.1x  → -[-]  cooldown_until_12:54
+12:21:01  SCAN #10 complete in 0.1s
+12:24:01  SCAN #11  12:24:01  phase=ACTIVE_AM  active=True  missed=0
+12:24:01  FETCH  WS  8 new bars in 0.020s
+12:24:01    HINDUNILVR   C=2248.40  VWAP=2241.29  RSI=72  Vol=0.7x  → -[-]  in_position
+12:24:01    TATASTEEL    C=199.66  VWAP=200.40  RSI=44  Vol=0.7x  → -[-]  
+12:24:01    GRASIM       C=2672.10  VWAP=2674.60  RSI=45  Vol=0.2x  → -[-]  
+12:24:01    HDFCBANK     C=871.30  VWAP=870.50  RSI=52  Vol=0.5x  → -[-]  
+12:24:01    INFY         C=1296.90  VWAP=1299.53  RSI=53  Vol=0.2x  → -[-]  
+12:24:01    HINDALCO     C=969.65  VWAP=968.91  RSI=42  Vol=0.4x  → -[-]  
+12:24:01    TATAMOTORS   C=350.35  VWAP=351.76  RSI=76  Vol=1.5x  → -[-]  
+12:24:01    ULTRACEMCO   C=12095.00  VWAP=12111.01  RSI=57  Vol=0.3x  → -[-]  
+12:24:01    SUNPHARMA    C=1784.30  VWAP=1777.88  RSI=72  Vol=0.5x  → -[-]  
+12:24:01    AXISBANK     C=1345.30  VWAP=1347.77  RSI=43  Vol=1.1x  → -[-]  cooldown_until_12:54
+12:24:01  SCAN #11 complete in 0.1s
+12:27:01  SCAN #12  12:27:01  phase=ACTIVE_AM  active=True  missed=0
+12:27:01  FETCH  WS  12 new bars in 0.023s
+12:27:01    HINDUNILVR   C=2245.00  VWAP=2241.32  RSI=59  Vol=0.5x  → -[-]  in_position
+12:27:01    TATASTEEL    C=199.67  VWAP=200.39  RSI=45  Vol=0.8x  → -[-]  
+12:27:01    GRASIM       C=2672.10  VWAP=2674.59  RSI=45  Vol=0.2x  → -[-]  
+12:27:01    HDFCBANK     C=871.50  VWAP=870.51  RSI=54  Vol=0.4x  → -[-]  
+12:27:01    INFY         C=1298.00  VWAP=1299.50  RSI=58  Vol=1.1x  → -[-]  
+12:27:01    HINDALCO     C=973.90  VWAP=968.97  RSI=60  Vol=1.5x  → -[-]  
+12:27:01    TATAMOTORS   C=350.05  VWAP=351.75  RSI=66  Vol=0.8x  → -[-]  
+12:27:01    ULTRACEMCO   C=12095.00  VWAP=12110.89  RSI=57  Vol=0.4x  → -[-]  
+12:27:01    SUNPHARMA    C=1784.90  VWAP=1777.93  RSI=74  Vol=0.7x  → -[-]  
+12:27:01    AXISBANK     C=1345.00  VWAP=1347.68  RSI=43  Vol=2.3x  → SHORT[MOM]  cooldown_until_12:54
+12:27:01  SCAN #12 complete in 0.1s
+12:30:01  SCAN #13  12:30:01  phase=ACTIVE_AM  active=True  missed=0
+12:30:01  FETCH  WS  8 new bars in 0.017s
+12:30:01    HINDUNILVR   C=2245.00  VWAP=2241.32  RSI=59  Vol=0.5x  → -[-]  in_position
+12:30:01    TATASTEEL    C=199.67  VWAP=200.39  RSI=45  Vol=0.8x  → -[-]  
+12:30:01    GRASIM       C=2672.10  VWAP=2674.59  RSI=45  Vol=0.2x  → -[-]  
+12:30:01    HDFCBANK     C=872.35  VWAP=870.52  RSI=61  Vol=0.5x  → -[-]  
+12:30:01    INFY         C=1300.40  VWAP=1299.49  RSI=66  Vol=0.8x  → -[-]  
+12:30:01    HINDALCO     C=975.40  VWAP=969.06  RSI=64  Vol=1.2x  → -[-]  
+12:30:01    TATAMOTORS   C=350.05  VWAP=351.75  RSI=66  Vol=0.8x  → -[-]  
+12:30:01    ULTRACEMCO   C=12091.00  VWAP=12110.71  RSI=54  Vol=0.3x  → -[-]  
+12:30:01    SUNPHARMA    C=1785.30  VWAP=1777.99  RSI=72  Vol=0.4x  → -[-]  
+12:30:01    AXISBANK     C=1345.00  VWAP=1347.68  RSI=43  Vol=2.3x  → SHORT[MOM]  cooldown_until_12:54
+12:30:01  SCAN #13 complete in 0.1s
+12:33:01  SCAN #14  12:33:01  phase=ACTIVE_AM  active=True  missed=0
+12:33:01  FETCH  WS  8 new bars in 0.016s
+12:33:01    HINDUNILVR   C=2246.10  VWAP=2241.34  RSI=61  Vol=0.3x  → -[-]  in_position
+12:33:01    TATASTEEL    C=200.15  VWAP=200.38  RSI=61  Vol=1.2x  → -[-]  
+12:33:01    GRASIM       C=2674.80  VWAP=2674.59  RSI=52  Vol=0.2x  → -[-]  
+12:33:01    HDFCBANK     C=872.20  VWAP=870.53  RSI=59  Vol=0.2x  → -[-]  
+12:33:01    INFY         C=1300.40  VWAP=1299.49  RSI=66  Vol=0.8x  → -[-]  
+12:33:01    HINDALCO     C=972.40  VWAP=969.11  RSI=52  Vol=1.1x  → -[-]  
+12:33:01    TATAMOTORS   C=350.70  VWAP=351.74  RSI=74  Vol=1.0x  → -[-]  
+12:33:01    ULTRACEMCO   C=12091.00  VWAP=12110.71  RSI=54  Vol=0.3x  → -[-]  
+12:33:01    SUNPHARMA    C=1785.30  VWAP=1777.99  RSI=72  Vol=0.4x  → -[-]  
+12:33:01    AXISBANK     C=1344.80  VWAP=1347.65  RSI=42  Vol=0.8x  → -[-]  cooldown_until_12:54
+12:33:01  SCAN #14 complete in 0.1s
+12:36:01  SCAN #15  12:36:01  phase=ACTIVE_AM  active=True  missed=0
+12:36:01  FETCH  WS  12 new bars in 0.021s
+12:36:01    HINDUNILVR   C=2245.70  VWAP=2241.36  RSI=60  Vol=0.2x  → -[-]  in_position
+12:36:01    TATASTEEL    C=199.75  VWAP=200.38  RSI=47  Vol=1.1x  → -[-]  
+12:36:01    GRASIM       C=2674.80  VWAP=2674.59  RSI=52  Vol=0.3x  → -[-]  
+12:36:01    HDFCBANK     C=872.20  VWAP=870.53  RSI=59  Vol=0.2x  → -[-]  
+12:36:01    INFY         C=1299.80  VWAP=1299.49  RSI=63  Vol=0.2x  → -[-]  
+12:36:01    HINDALCO     C=972.45  VWAP=969.14  RSI=52  Vol=0.8x  → -[-]  
+12:36:01    TATAMOTORS   C=349.95  VWAP=351.71  RSI=55  Vol=1.3x  → -[-]  
+12:36:01    ULTRACEMCO   C=12089.00  VWAP=12110.59  RSI=51  Vol=0.3x  → -[-]  
+12:36:01    SUNPHARMA    C=1790.00  VWAP=1778.71  RSI=81  Vol=5.1x  → -[-]  
+12:36:01    AXISBANK     C=1345.00  VWAP=1347.64  RSI=43  Vol=0.7x  → -[-]  cooldown_until_12:54
+12:36:01  SCAN #15 complete in 0.1s
+12:39:01  SCAN #16  12:39:01  phase=ACTIVE_AM  active=True  missed=0
+12:39:01  FETCH  WS  11 new bars in 0.019s
+12:39:01    HINDUNILVR   C=2246.60  VWAP=2241.39  RSI=62  Vol=0.3x  → -[-]  in_position
+12:39:01    TATASTEEL    C=199.99  VWAP=200.38  RSI=54  Vol=0.5x  → -[-]  
+12:39:01    GRASIM       C=2680.00  VWAP=2674.71  RSI=63  Vol=2.9x  → -[-]  
+12:39:01    HDFCBANK     C=872.60  VWAP=870.54  RSI=63  Vol=0.2x  → -[-]  
+12:39:01    INFY         C=1297.40  VWAP=1299.49  RSI=50  Vol=0.3x  → -[-]  
+12:39:01    HINDALCO     C=973.85  VWAP=969.17  RSI=57  Vol=0.7x  → -[-]  
+12:39:01    TATAMOTORS   C=350.15  VWAP=351.70  RSI=59  Vol=0.7x  → -[-]  
+12:39:01    ULTRACEMCO   C=12089.00  VWAP=12110.59  RSI=51  Vol=0.3x  → -[-]  
+12:39:01    SUNPHARMA    C=1789.30  VWAP=1778.87  RSI=77  Vol=1.3x  → -[-]  
+12:39:01    AXISBANK     C=1346.10  VWAP=1347.63  RSI=51  Vol=0.5x  → -[-]  cooldown_until_12:54
+12:39:01  SCAN #16 complete in 0.1s
+12:42:01  SCAN #17  12:42:01  phase=ACTIVE_AM  active=True  missed=0
+12:42:01  FETCH  WS  9 new bars in 0.022s
+12:42:01    HINDUNILVR   C=2243.70  VWAP=2241.41  RSI=51  Vol=0.6x  → -[-]  in_position
+12:42:01    TATASTEEL    C=199.85  VWAP=200.37  RSI=50  Vol=0.6x  → -[-]  
+12:42:01    GRASIM       C=2676.70  VWAP=2674.86  RSI=53  Vol=1.2x  → -[-]  
+12:42:01    HDFCBANK     C=872.60  VWAP=870.54  RSI=63  Vol=0.2x  → -[-]  
+12:42:01    INFY         C=1297.60  VWAP=1299.48  RSI=51  Vol=0.3x  → -[-]  
+12:42:01    HINDALCO     C=973.85  VWAP=969.17  RSI=57  Vol=0.7x  → -[-]  
+12:42:01    TATAMOTORS   C=350.40  VWAP=351.69  RSI=62  Vol=1.2x  → -[-]  
+12:42:01    ULTRACEMCO   C=12098.00  VWAP=12110.54  RSI=56  Vol=0.3x  → -[-]  
+12:42:01    SUNPHARMA    C=1789.60  VWAP=1779.13  RSI=77  Vol=2.0x  → -[-]  
+12:42:01    AXISBANK     C=1345.80  VWAP=1347.62  RSI=49  Vol=0.3x  → -[-]  cooldown_until_12:54
+12:42:01  SCAN #17 complete in 0.1s
+12:45:01  SCAN #18  12:45:01  phase=ACTIVE_AM  active=True  missed=0
+12:45:01  FETCH  WS  8 new bars in 0.008s
+12:45:01    HINDUNILVR   C=2243.70  VWAP=2241.41  RSI=51  Vol=0.6x  → -[-]  in_position
+12:45:01    TATASTEEL    C=199.70  VWAP=200.37  RSI=45  Vol=0.9x  → -[-]  
+12:45:01    GRASIM       C=2676.70  VWAP=2674.86  RSI=53  Vol=1.2x  → -[-]  
+12:45:01    HDFCBANK     C=872.45  VWAP=870.54  RSI=61  Vol=0.2x  → -[-]  
+12:45:01    INFY         C=1298.30  VWAP=1299.47  RSI=54  Vol=0.4x  → -[-]  
+12:45:01    HINDALCO     C=973.70  VWAP=969.25  RSI=56  Vol=1.4x  → -[-]  
+12:45:01    TATAMOTORS   C=350.40  VWAP=351.69  RSI=62  Vol=1.2x  → -[-]  
+12:45:01    ULTRACEMCO   C=12087.00  VWAP=12110.43  RSI=49  Vol=0.3x  → -[-]  
+12:45:01    SUNPHARMA    C=1789.60  VWAP=1779.13  RSI=77  Vol=2.0x  → -[-]  
+12:45:01    AXISBANK     C=1345.40  VWAP=1347.62  RSI=46  Vol=0.2x  → -[-]  cooldown_until_12:54
+12:45:01  SCAN #18 complete in 0.0s
+12:48:01  SCAN #19  12:48:01  phase=ACTIVE_AM  active=True  missed=0
+12:48:01  FETCH  WS  14 new bars in 0.022s
+12:48:01  STAGNATION EXIT  HINDUNILVR   LONG  entry=2242.10  now=2240.90  unrealized=-1.20  bars=13  elapsed=39m
+12:48:01    HINDUNILVR   C=2240.90  VWAP=2241.42  RSI=42  Vol=0.4x  → -[-]  cooldown_until_12:54
+12:48:01    TATASTEEL    C=199.54  VWAP=200.36  RSI=41  Vol=0.8x  → -[-]  
+12:48:01    GRASIM       C=2680.40  VWAP=2674.91  RSI=62  Vol=1.1x  → -[-]  
+12:48:01    HDFCBANK     C=872.85  VWAP=870.57  RSI=65  Vol=0.6x  → -[-]  
+12:48:01    INFY         C=1297.80  VWAP=1299.46  RSI=51  Vol=0.2x  → -[-]  
+12:48:01    HINDALCO     C=973.35  VWAP=969.27  RSI=54  Vol=0.7x  → -[-]  
+12:48:01    TATAMOTORS   C=350.05  VWAP=351.65  RSI=51  Vol=2.8x  → -[-]  
+12:48:01    ULTRACEMCO   C=12087.00  VWAP=12110.43  RSI=49  Vol=0.3x  → -[-]  
+12:48:01    SUNPHARMA    C=1789.90  VWAP=1779.31  RSI=75  Vol=1.1x  → -[-]  
+12:48:01    AXISBANK     C=1344.90  VWAP=1347.61  RSI=43  Vol=0.3x  → -[-]  cooldown_until_12:54
+12:48:01  SCAN #19 complete in 0.9s
+12:51:01  SCAN #20  12:51:01  phase=ACTIVE_AM  active=True  missed=0
+12:51:01  FETCH  WS  11 new bars in 0.016s
+12:51:01    HINDUNILVR   C=2241.80  VWAP=2241.42  RSI=46  Vol=0.4x  → -[-]  cooldown_until_12:54
+12:51:01    TATASTEEL    C=199.38  VWAP=200.36  RSI=37  Vol=0.7x  → -[-]  
+12:51:01    GRASIM       C=2681.00  VWAP=2674.95  RSI=63  Vol=0.9x  → -[-]  
+12:51:01    HDFCBANK     C=873.30  VWAP=870.58  RSI=69  Vol=0.3x  → -[-]  
+12:51:01    INFY         C=1299.60  VWAP=1299.44  RSI=61  Vol=2.1x  → -[-]  
+12:51:01    HINDALCO     C=973.10  VWAP=969.29  RSI=53  Vol=0.6x  → -[-]  
+12:51:01    TATAMOTORS   C=350.30  VWAP=351.64  RSI=54  Vol=0.6x  → -[-]  
+12:51:01    ULTRACEMCO   C=12085.00  VWAP=12110.32  RSI=48  Vol=0.5x  → -[-]  
+12:51:01    SUNPHARMA    C=1789.90  VWAP=1779.31  RSI=75  Vol=1.1x  → -[-]  
+12:51:01    AXISBANK     C=1343.70  VWAP=1347.55  RSI=40  Vol=1.2x  → -[-]  cooldown_until_12:54
+12:51:01  SCAN #20 complete in 0.1s
+12:54:01  SCAN #21  12:54:01  phase=ACTIVE_AM  active=True  missed=0
+12:54:01  FETCH  WS  10 new bars in 0.008s
+12:54:01    HINDUNILVR   C=2241.70  VWAP=2241.42  RSI=45  Vol=0.3x  → -[-]  
+12:54:01    TATASTEEL    C=199.77  VWAP=200.35  RSI=50  Vol=0.6x  → -[-]  
+12:54:01    GRASIM       C=2680.00  VWAP=2675.46  RSI=59  Vol=6.7x  → -[-]  
+12:54:01    HDFCBANK     C=874.60  VWAP=870.64  RSI=78  Vol=1.4x  → -[-]  
+12:54:01    INFY         C=1299.30  VWAP=1299.44  RSI=58  Vol=1.1x  → -[-]  
+12:54:01    HINDALCO     C=973.90  VWAP=969.31  RSI=57  Vol=0.7x  → -[-]  
+12:54:01    TATAMOTORS   C=350.45  VWAP=351.63  RSI=56  Vol=0.7x  → -[-]  
+12:54:01    ULTRACEMCO   C=12085.00  VWAP=12110.16  RSI=48  Vol=0.9x  → -[-]  
+12:54:01    SUNPHARMA    C=1788.60  VWAP=1779.44  RSI=66  Vol=1.1x  → -[-]  
+12:54:01    AXISBANK     C=1345.00  VWAP=1347.54  RSI=49  Vol=0.5x  → -[-]  
+12:54:01  SCAN #21 complete in 0.0s
+12:57:01  SCAN #22  12:57:01  phase=ACTIVE_AM  active=True  missed=0
+12:57:01  FETCH  WS  11 new bars in 0.015s
+12:57:01    HINDUNILVR   C=2241.90  VWAP=2241.42  RSI=46  Vol=0.5x  → -[-]  
+12:57:01    TATASTEEL    C=199.64  VWAP=200.35  RSI=47  Vol=0.8x  → -[-]  
+12:57:01    GRASIM       C=2682.20  VWAP=2675.60  RSI=64  Vol=1.8x  → -[-]  
+12:57:01    HDFCBANK     C=874.55  VWAP=870.65  RSI=77  Vol=0.3x  → -[-]  
+12:57:01    INFY         C=1299.30  VWAP=1299.44  RSI=58  Vol=0.7x  → -[-]  
+12:57:01    HINDALCO     C=974.80  VWAP=969.34  RSI=61  Vol=0.7x  → -[-]  
+12:57:01    TATAMOTORS   C=350.65  VWAP=351.63  RSI=59  Vol=0.5x  → -[-]  
+12:57:01    ULTRACEMCO   C=12100.00  VWAP=12110.08  RSI=58  Vol=1.2x  → -[-]  
+12:57:01    SUNPHARMA    C=1789.40  VWAP=1779.67  RSI=68  Vol=1.7x  → -[-]  
+12:57:01    AXISBANK     C=1345.50  VWAP=1347.53  RSI=52  Vol=0.4x  → -[-]  
+12:57:01  SCAN #22 complete in 0.1s
+13:00:01  PHASE  ACTIVE_AM → SHUTDOWN
+13:00:01  ======================================================================
+13:00:01  SHUTDOWN  2 signal(s), 1 stagnation exit(s), 22 scan cycles
+13:00:01    SUMMARY  12:09   LONG  HINDUNILVR   @ 2242.10  SL=2236.18  TP=2252.45
+13:00:01    SUMMARY  12:09  SHORT  AXISBANK     @ 1344.40  SL=1347.12  TP=1339.63
+13:00:01    STAG_EXIT  12:48  HINDUNILVR   entry=2242.10  exit=2240.90  pnl=-1.20
+13:00:01  ======================================================================
+13:00:01  WS feed stopped
+13:26:19  ======================================================================
+13:26:19  SESSION START  Capital=50000  RR=1:2.5  Risk=1.5%  ws=True
+13:26:19  Stocks: TATAMOTORS, TATASTEEL, HINDALCO, HINDUNILVR, INFY, HDFCBANK, ADANIENT, JSWSTEEL, AXISBANK, SHRIRAMFIN
+13:26:19  Strategy: PDL-Only (SL=1.2x ATR)  RR=1:2.5  MaxSL/day=2
+13:26:19  Telegram: enabled
+13:26:19  PHASE 1  Warm-Up — connecting to Angel One
+13:26:20  API connected
+13:26:20  Loading 5-day 3-min warmup data
+13:26:20  WARMUP  TATAMOTORS   8796 bars  cache=2026-03-05
+13:26:20  WARMUP  TATASTEEL    8737 bars  cache=2026-03-05
+13:26:20  WARMUP  HINDALCO     8737 bars  cache=2026-03-05
+13:26:20  WARMUP  HINDUNILVR   8781 bars  cache=2026-03-05
+13:26:20  WARMUP  INFY         8796 bars  cache=2026-03-05
+13:26:20  WARMUP  HDFCBANK     8796 bars  cache=2026-03-05
+13:26:20  WARMUP  ADANIENT     8796 bars  cache=2026-03-05
+13:26:20  WARMUP  JSWSTEEL     8796 bars  cache=2026-03-05
+13:26:20  WARMUP  AXISBANK     8711 bars  cache=2026-03-05
+13:26:20  WARMUP  SHRIRAMFIN   8796 bars  cache=2026-03-05
+13:26:20  Checking event calendar for corporate events
+13:26:20  Event calendar: all stocks cleared
+13:26:20  PDL  TATAMOTORS   H=363.90  L=350.10
+13:26:20  PDL  TATASTEEL    H=207.00  L=194.43
+13:26:20  PDL  HINDALCO     H=945.50  L=912.00
+13:26:20  PDL  HINDUNILVR   H=2311.60  L=2252.10
+13:26:20  PDL  INFY         H=1317.00  L=1292.00
+13:26:20  PDL  HDFCBANK     H=879.30  L=848.00
+13:26:20  PDL  ADANIENT     H=2104.60  L=2037.50
+13:26:20  PDL  JSWSTEEL     H=1253.90  L=1200.00
+13:26:20  PDL  AXISBANK     H=1357.60  L=1327.00
+13:26:20  PDL  SHRIRAMFIN   H=1042.50  L=987.40
+13:26:20  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+13:26:20  Starting WebSocket feed
+13:26:22  WS connected — subscribing 10 tokens (mode=2 Quote)
+13:26:23  WS feed started — 10 tokens subscribed
+13:26:23  PHASE  START → ACTIVE_AM
+13:26:24  MISSED 83 candle(s) (idx -1→83)
+13:26:24  SCAN #1  13:26:23  phase=ACTIVE_AM  active=True  missed=83
+13:26:24  FETCH  REST gap-fill (first scan)
+13:26:27  FETCH  WS  0 new bars in 3.318s
+13:26:27    TATAMOTORS   C=351.90  VWAP=351.56  RSI=74  Vol=1.1x  → -[-]  
+13:26:27    TATASTEEL    C=199.72  VWAP=200.31  RSI=53  Vol=0.7x  → -[-]  
+13:26:27    HINDALCO     C=980.10  VWAP=969.86  RSI=73  Vol=1.2x  → -[-]  
+13:26:27    HINDUNILVR   C=2240.10  VWAP=2241.32  RSI=49  Vol=2.0x  → -[-]  
+13:26:27    INFY         C=1301.00  VWAP=1299.39  RSI=62  Vol=0.8x  → -[-]  
+13:26:27    HDFCBANK     C=873.40  VWAP=870.79  RSI=50  Vol=1.2x  → -[-]  
+13:26:27    ADANIENT     C=2046.30  VWAP=2059.54  RSI=46  Vol=1.1x  → -[-]  
+13:26:27    JSWSTEEL     C=1235.60  VWAP=1231.05  RSI=73  Vol=0.6x  → -[-]  
+13:26:27    AXISBANK     C=1346.90  VWAP=1347.48  RSI=56  Vol=0.9x  → -[-]  
+13:26:27    SHRIRAMFIN   C=1033.60  VWAP=1030.56  RSI=51  Vol=0.8x  → -[-]  
+13:26:27  SCAN #1 complete in 3.4s
+13:27:01  SCAN #2  13:27:01  phase=ACTIVE_AM  active=True  missed=0
+13:27:01  FETCH  WS  6 new bars in 0.017s
+13:27:01    TATAMOTORS   C=351.25  VWAP=351.56  RSI=59  Vol=0.2x  → -[-]  
+13:27:01    TATASTEEL    C=199.45  VWAP=200.31  RSI=45  Vol=0.1x  → -[-]  
+13:27:01    HINDALCO     C=980.00  VWAP=969.88  RSI=72  Vol=0.2x  → -[-]  
+13:27:01    HINDUNILVR   C=2240.10  VWAP=2241.32  RSI=49  Vol=2.0x  → -[-]  
+13:27:01    INFY         C=1301.00  VWAP=1299.39  RSI=62  Vol=0.3x  → -[-]  
+13:27:01    HDFCBANK     C=873.00  VWAP=870.80  RSI=44  Vol=0.6x  → -[-]  
+13:27:01    ADANIENT     C=2044.60  VWAP=2059.52  RSI=40  Vol=0.2x  → -[-]  
+13:27:01    JSWSTEEL     C=1235.60  VWAP=1231.05  RSI=73  Vol=0.6x  → -[-]  
+13:27:01    AXISBANK     C=1346.90  VWAP=1347.48  RSI=56  Vol=0.9x  → -[-]  
+13:27:01    SHRIRAMFIN   C=1033.60  VWAP=1030.56  RSI=51  Vol=0.8x  → -[-]  
+13:27:01  SCAN #2 complete in 0.1s
+13:30:01  SCAN #3  13:30:01  phase=ACTIVE_AM  active=True  missed=0
+13:30:01  FETCH  WS  8 new bars in 0.020s
+13:30:01    TATAMOTORS   C=351.60  VWAP=351.56  RSI=64  Vol=0.6x  → -[-]  
+13:30:01    TATASTEEL    C=199.67  VWAP=200.30  RSI=52  Vol=0.8x  → -[-]  
+13:30:01    HINDALCO     C=980.00  VWAP=969.88  RSI=72  Vol=0.2x  → -[-]  
+13:30:01    HINDUNILVR   C=2235.00  VWAP=2241.30  RSI=35  Vol=0.7x  → -[-]  
+13:30:01    INFY         C=1301.00  VWAP=1299.39  RSI=62  Vol=0.3x  → -[-]  
+13:30:01    HDFCBANK     C=873.50  VWAP=870.82  RSI=52  Vol=2.1x  → -[-]  
+13:30:01    ADANIENT     C=2047.40  VWAP=2059.49  RSI=52  Vol=0.4x  → -[-]  
+13:30:01    JSWSTEEL     C=1234.70  VWAP=1231.05  RSI=66  Vol=0.2x  → -[-]  
+13:30:01    AXISBANK     C=1346.20  VWAP=1347.47  RSI=50  Vol=0.3x  → -[-]  
+13:30:01    SHRIRAMFIN   C=1032.20  VWAP=1030.56  RSI=42  Vol=0.3x  → -[-]  
+13:30:01  SCAN #3 complete in 0.1s
+13:33:01  SCAN #4  13:33:01  phase=ACTIVE_AM  active=True  missed=0
+13:33:01  FETCH  WS  14 new bars in 0.022s
+13:33:01    TATAMOTORS   C=352.10  VWAP=351.56  RSI=69  Vol=1.1x  → -[-]  
+13:33:01    TATASTEEL    C=200.24  VWAP=200.30  RSI=65  Vol=1.7x  → -[-]  
+13:33:01    HINDALCO     C=982.75  VWAP=970.04  RSI=79  Vol=1.7x  → -[-]  
+13:33:01    HINDUNILVR   C=2237.00  VWAP=2241.28  RSI=43  Vol=1.0x  → -[-]  
+13:33:01    INFY         C=1303.70  VWAP=1299.46  RSI=75  Vol=1.3x  → -[-]  
+13:33:01    HDFCBANK     C=873.20  VWAP=870.88  RSI=47  Vol=4.0x  → -[-]  
+13:33:01    ADANIENT     C=2047.40  VWAP=2059.49  RSI=52  Vol=0.4x  → -[-]  
+13:33:01    JSWSTEEL     C=1239.00  VWAP=1231.16  RSI=79  Vol=1.3x  → -[-]  
+13:33:01    AXISBANK     C=1345.60  VWAP=1347.47  RSI=46  Vol=1.7x  → -[-]  
+13:33:01    SHRIRAMFIN   C=1034.00  VWAP=1030.62  RSI=54  Vol=2.1x  → -[-]  
+13:33:01  SCAN #4 complete in 0.1s
+13:36:01  SCAN #5  13:36:01  phase=ACTIVE_AM  active=True  missed=0
+13:36:01  FETCH  WS  12 new bars in 0.023s
+13:36:01    TATAMOTORS   C=351.55  VWAP=351.56  RSI=58  Vol=0.8x  → -[-]  
+13:36:01    TATASTEEL    C=199.81  VWAP=200.30  RSI=53  Vol=1.0x  → -[-]  
+13:36:01    HINDALCO     C=980.40  VWAP=970.14  RSI=63  Vol=1.4x  → -[-]  
+13:36:01    HINDUNILVR   C=2241.10  VWAP=2241.29  RSI=53  Vol=0.7x  → -[-]  
+13:36:01    INFY         C=1299.20  VWAP=1299.47  RSI=45  Vol=0.8x  → -[-]  
+13:36:01    HDFCBANK     C=870.90  VWAP=870.90  RSI=27  Vol=3.1x  → -[-]  
+13:36:01    ADANIENT     C=2048.40  VWAP=2059.30  RSI=53  Vol=1.8x  → -[-]  
+13:36:01    JSWSTEEL     C=1234.90  VWAP=1231.21  RSI=56  Vol=1.0x  → -[-]  
+13:36:01    AXISBANK     C=1343.00  VWAP=1347.44  RSI=35  Vol=1.5x  → -[-]  
+13:36:01    SHRIRAMFIN   C=1030.90  VWAP=1030.64  RSI=37  Vol=2.9x  → -[-]  
+13:36:01  SCAN #5 complete in 0.1s
+13:39:01  SCAN #6  13:39:01  phase=ACTIVE_AM  active=True  missed=0
+13:39:01  FETCH  WS  8 new bars in 0.023s
+13:39:01    TATAMOTORS   C=351.55  VWAP=351.56  RSI=58  Vol=0.8x  → -[-]  
+13:39:01    TATASTEEL    C=199.61  VWAP=200.30  RSI=48  Vol=1.2x  → -[-]  
+13:39:01    HINDALCO     C=980.00  VWAP=970.22  RSI=61  Vol=1.3x  → -[-]  
+13:39:01    HINDUNILVR   C=2239.30  VWAP=2241.28  RSI=48  Vol=0.7x  → -[-]  
+13:39:01    INFY         C=1298.80  VWAP=1299.47  RSI=43  Vol=0.6x  → -[-]  
+13:39:01    HDFCBANK     C=871.35  VWAP=870.90  RSI=34  Vol=1.9x  → -[-]  
+13:39:01    ADANIENT     C=2047.00  VWAP=2059.27  RSI=48  Vol=0.4x  → -[-]  
+13:39:01    JSWSTEEL     C=1234.50  VWAP=1231.23  RSI=55  Vol=0.3x  → -[-]  
+13:39:01    AXISBANK     C=1342.20  VWAP=1347.40  RSI=33  Vol=1.6x  → -[-]  
+13:39:01    SHRIRAMFIN   C=1030.90  VWAP=1030.64  RSI=37  Vol=2.9x  → -[-]  
+13:39:01  SCAN #6 complete in 0.1s
+13:42:01  SCAN #7  13:42:01  phase=ACTIVE_AM  active=True  missed=0
+13:42:01  FETCH  WS  9 new bars in 0.022s
+13:42:01    TATAMOTORS   C=351.15  VWAP=351.56  RSI=52  Vol=1.0x  → -[-]  
+13:42:01    TATASTEEL    C=199.45  VWAP=200.29  RSI=44  Vol=1.1x  → -[-]  
+13:42:01    HINDALCO     C=978.20  VWAP=970.34  RSI=51  Vol=2.0x  → -[-]  
+13:42:01    HINDUNILVR   C=2243.40  VWAP=2241.28  RSI=57  Vol=2.0x  → -[-]  
+13:42:01    INFY         C=1300.00  VWAP=1299.47  RSI=50  Vol=2.2x  → -[-]  
+13:42:01    HDFCBANK     C=870.25  VWAP=870.90  RSI=27  Vol=2.4x  → -[-]  
+13:42:01    ADANIENT     C=2045.60  VWAP=2059.21  RSI=44  Vol=0.8x  → -[-]  
+13:42:01    JSWSTEEL     C=1234.50  VWAP=1231.23  RSI=55  Vol=0.3x  → -[-]  
+13:42:01    AXISBANK     C=1341.00  VWAP=1347.34  RSI=29  Vol=1.9x  → -[-]  
+13:42:01    SHRIRAMFIN   C=1031.40  VWAP=1030.65  RSI=41  Vol=2.8x  → -[-]  
+13:42:01  SCAN #7 complete in 0.1s
+13:45:01  SCAN #8  13:45:01  phase=ACTIVE_AM  active=True  missed=0
+13:45:01  FETCH  WS  8 new bars in 0.008s
+13:45:01    TATAMOTORS   C=351.20  VWAP=351.56  RSI=53  Vol=0.4x  → -[-]  
+13:45:01    TATASTEEL    C=199.55  VWAP=200.29  RSI=47  Vol=0.6x  → -[-]  
+13:45:01    HINDALCO     C=976.95  VWAP=970.42  RSI=45  Vol=1.8x  → -[-]  
+13:45:01    HINDUNILVR   C=2243.40  VWAP=2241.28  RSI=57  Vol=2.0x  → -[-]  
+13:45:01    INFY         C=1300.00  VWAP=1299.47  RSI=50  Vol=2.2x  → -[-]  
+13:45:01    HDFCBANK     C=871.05  VWAP=870.90  RSI=37  Vol=0.8x  → -[-]  
+13:45:01    ADANIENT     C=2047.50  VWAP=2059.20  RSI=51  Vol=0.2x  → -[-]  
+13:45:01    JSWSTEEL     C=1233.20  VWAP=1231.25  RSI=49  Vol=1.0x  → -[-]  
+13:45:01    AXISBANK     C=1341.00  VWAP=1347.34  RSI=29  Vol=1.9x  → -[-]  
+13:45:01    SHRIRAMFIN   C=1033.10  VWAP=1030.68  RSI=52  Vol=1.5x  → -[-]  
+13:45:01  SCAN #8 complete in 0.0s
+13:48:01  SCAN #9  13:48:01  phase=ACTIVE_AM  active=True  missed=0
+13:48:01  FETCH  WS  10 new bars in 0.021s
+13:48:01    TATAMOTORS   C=351.30  VWAP=351.56  RSI=54  Vol=0.4x  → -[-]  
+13:48:01    TATASTEEL    C=199.55  VWAP=200.28  RSI=47  Vol=2.2x  → -[-]  
+13:48:01    HINDALCO     C=975.25  VWAP=970.46  RSI=39  Vol=1.1x  → -[-]  
+13:48:01    HINDUNILVR   C=2246.80  VWAP=2241.35  RSI=61  Vol=0.8x  → -[-]  
+13:48:01    INFY         C=1300.10  VWAP=1299.48  RSI=50  Vol=0.5x  → -[-]  
+13:48:01    HDFCBANK     C=871.05  VWAP=870.90  RSI=37  Vol=0.8x  → -[-]  
+13:48:01    ADANIENT     C=2046.70  VWAP=2059.19  RSI=48  Vol=0.2x  → -[-]  
+13:48:01    JSWSTEEL     C=1234.70  VWAP=1231.26  RSI=55  Vol=0.2x  → -[-]  
+13:48:01    AXISBANK     C=1341.20  VWAP=1347.30  RSI=31  Vol=1.1x  → -[-]  
+13:48:01    SHRIRAMFIN   C=1032.70  VWAP=1030.69  RSI=50  Vol=0.7x  → -[-]  
+13:48:01  SCAN #9 complete in 0.1s
+13:51:01  SCAN #10  13:51:01  phase=ACTIVE_AM  active=True  missed=0
+13:51:01  FETCH  WS  13 new bars in 0.023s
+13:51:01    TATAMOTORS   C=350.65  VWAP=351.55  RSI=43  Vol=1.1x  → -[-]  
+13:51:01    TATASTEEL    C=199.18  VWAP=200.27  RSI=38  Vol=1.5x  → -[-]  
+13:51:01    HINDALCO     C=975.50  VWAP=970.51  RSI=40  Vol=1.5x  → -[-]  
+13:51:01    HINDUNILVR   C=2245.00  VWAP=2241.37  RSI=57  Vol=1.0x  → -[-]  
+13:51:01    INFY         C=1301.00  VWAP=1299.48  RSI=55  Vol=0.4x  → -[-]  
+13:51:01    HDFCBANK     C=871.15  VWAP=870.90  RSI=39  Vol=0.8x  → -[-]  
+13:51:01    ADANIENT     C=2045.70  VWAP=2059.10  RSI=45  Vol=1.3x  → -[-]  
+13:51:01    JSWSTEEL     C=1234.20  VWAP=1231.27  RSI=53  Vol=0.3x  → -[-]  
+13:51:01    AXISBANK     C=1340.70  VWAP=1347.26  RSI=29  Vol=0.8x  → -[-]  
+13:51:01    SHRIRAMFIN   C=1032.40  VWAP=1030.70  RSI=48  Vol=0.9x  → -[-]  
+13:51:01  SCAN #10 complete in 0.1s
+13:54:01  SCAN #11  13:54:01  phase=ACTIVE_AM  active=True  missed=0
+13:54:01  FETCH  WS  8 new bars in 0.018s
+13:54:01    TATAMOTORS   C=350.35  VWAP=351.54  RSI=38  Vol=1.4x  → -[-]  
+13:54:01    TATASTEEL    C=199.00  VWAP=200.26  RSI=35  Vol=1.7x  → -[-]  
+13:54:01    HINDALCO     C=974.50  VWAP=970.56  RSI=36  Vol=1.5x  → -[-]  
+13:54:01    HINDUNILVR   C=2245.00  VWAP=2241.37  RSI=57  Vol=1.0x  → -[-]  
+13:54:01    INFY         C=1299.60  VWAP=1299.49  RSI=47  Vol=0.8x  → -[-]  
+13:54:01    HDFCBANK     C=871.15  VWAP=870.90  RSI=39  Vol=0.8x  → -[-]  
+13:54:01    ADANIENT     C=2042.80  VWAP=2058.80  RSI=37  Vol=3.2x  → -[-]  
+13:54:01    JSWSTEEL     C=1233.20  VWAP=1231.27  RSI=48  Vol=0.2x  → -[-]  
+13:54:01    AXISBANK     C=1340.70  VWAP=1347.26  RSI=29  Vol=0.8x  → -[-]  
+13:54:01    SHRIRAMFIN   C=1031.30  VWAP=1030.73  RSI=42  Vol=3.5x  → -[-]  
+13:54:01  SCAN #11 complete in 0.1s
+13:57:01  SCAN #12  13:57:01  phase=ACTIVE_AM  active=True  missed=0
+13:57:01  FETCH  WS  10 new bars in 0.020s
+13:57:01    TATAMOTORS   C=350.35  VWAP=351.54  RSI=38  Vol=1.4x  → -[-]  
+13:57:01    TATASTEEL    C=198.79  VWAP=200.25  RSI=31  Vol=1.1x  → -[-]  
+13:57:01    HINDALCO     C=973.40  VWAP=970.60  RSI=32  Vol=1.5x  → -[-]  
+13:57:01    HINDUNILVR   C=2241.10  VWAP=2241.38  RSI=47  Vol=1.4x  → -[-]  
+13:57:01    INFY         C=1300.00  VWAP=1299.49  RSI=49  Vol=0.8x  → -[-]  
+13:57:01    HDFCBANK     C=870.90  VWAP=870.90  RSI=40  Vol=0.6x  → -[-]  
+13:57:01    ADANIENT     C=2042.30  VWAP=2058.65  RSI=36  Vol=1.5x  → -[-]  
+13:57:01    JSWSTEEL     C=1232.50  VWAP=1231.28  RSI=45  Vol=0.3x  → -[-]  
+13:57:01    AXISBANK     C=1339.20  VWAP=1347.21  RSI=25  Vol=1.1x  → -[-]  
+13:57:01    SHRIRAMFIN   C=1031.30  VWAP=1030.73  RSI=42  Vol=3.5x  → -[-]  
+13:57:01  SCAN #12 complete in 0.1s
+14:00:01  SCAN #13  14:00:01  phase=ACTIVE_AM  active=True  missed=0
+14:00:01  FETCH  WS  10 new bars in 0.022s
+14:00:01    TATAMOTORS   C=350.30  VWAP=351.53  RSI=38  Vol=1.6x  → -[-]  
+14:00:01    TATASTEEL    C=198.51  VWAP=200.23  RSI=27  Vol=1.7x  → -[-]  
+14:00:01    HINDALCO     C=974.00  VWAP=970.63  RSI=36  Vol=1.2x  → -[-]  
+14:00:01    HINDUNILVR   C=2236.80  VWAP=2241.35  RSI=39  Vol=1.8x  → -[-]  
+14:00:01    INFY         C=1300.00  VWAP=1299.49  RSI=49  Vol=0.8x  → -[-]  
+14:00:01    HDFCBANK     C=871.05  VWAP=870.90  RSI=41  Vol=1.1x  → -[-]  
+14:00:01    ADANIENT     C=2040.40  VWAP=2058.49  RSI=31  Vol=1.4x  → -[-]  
+14:00:01    JSWSTEEL     C=1233.10  VWAP=1231.28  RSI=48  Vol=0.4x  → -[-]  
+14:00:01    AXISBANK     C=1337.00  VWAP=1346.55  RSI=19  Vol=8.8x  → -[-]  
+14:00:01    SHRIRAMFIN   C=1028.10  VWAP=1030.71  RSI=28  Vol=1.4x  → -[-]  
+14:00:01  SCAN #13 complete in 0.1s
+14:03:01  SCAN #14  14:03:01  phase=ACTIVE_AM  active=True  missed=0
+14:03:01  FETCH  WS  10 new bars in 0.022s
+14:03:01    TATAMOTORS   C=350.10  VWAP=351.52  RSI=35  Vol=0.7x  → -[-]  
+14:03:01    TATASTEEL    C=198.68  VWAP=200.22  RSI=33  Vol=1.3x  → -[-]  
+14:03:01    HINDALCO     C=975.50  VWAP=970.65  RSI=46  Vol=0.7x  → -[-]  
+14:03:01    HINDUNILVR   C=2236.00  VWAP=2241.32  RSI=37  Vol=1.2x  → -[-]  
+14:03:01    INFY         C=1300.50  VWAP=1299.50  RSI=53  Vol=0.9x  → -[-]  
+14:03:01    HDFCBANK     C=871.65  VWAP=870.91  RSI=49  Vol=1.0x  → -[-]  
+14:03:01    ADANIENT     C=2040.40  VWAP=2058.49  RSI=31  Vol=1.4x  → -[-]  
+14:03:01    JSWSTEEL     C=1231.40  VWAP=1231.28  RSI=41  Vol=0.5x  → -[-]  
+14:03:01    AXISBANK     C=1337.30  VWAP=1346.50  RSI=22  Vol=0.7x  → -[-]  
+14:03:01    SHRIRAMFIN   C=1028.00  VWAP=1030.69  RSI=28  Vol=1.1x  → -[-]  
+14:03:01  SCAN #14 complete in 0.1s
+14:06:01  SCAN #15  14:06:01  phase=ACTIVE_AM  active=True  missed=0
+14:06:01  FETCH  WS  9 new bars in 0.013s
+14:06:01    TATAMOTORS   C=350.25  VWAP=351.50  RSI=39  Vol=2.9x  → -[-]  
+14:06:01    TATASTEEL    C=198.52  VWAP=200.21  RSI=30  Vol=0.8x  → -[-]  
+14:06:01    HINDALCO     C=974.80  VWAP=970.68  RSI=43  Vol=0.8x  → -[-]  
+14:06:01    HINDUNILVR   C=2236.00  VWAP=2241.32  RSI=37  Vol=1.2x  → -[-]  
+14:06:01    INFY         C=1300.30  VWAP=1299.50  RSI=51  Vol=0.7x  → -[-]  
+14:06:01    HDFCBANK     C=871.45  VWAP=870.91  RSI=46  Vol=0.8x  → -[-]  
+14:06:01    ADANIENT     C=2044.50  VWAP=2058.29  RSI=48  Vol=0.7x  → -[-]  
+14:06:01    JSWSTEEL     C=1231.80  VWAP=1231.28  RSI=43  Vol=0.6x  → -[-]  
+14:06:01    AXISBANK     C=1338.80  VWAP=1346.39  RSI=34  Vol=1.6x  → -[-]  
+14:06:01    SHRIRAMFIN   C=1028.00  VWAP=1030.69  RSI=28  Vol=1.1x  → -[-]  
+14:06:01  SCAN #15 complete in 0.0s
+14:09:01  SCAN #16  14:09:01  phase=ACTIVE_AM  active=True  missed=0
+14:09:01  FETCH  WS  7 new bars in 0.019s
+14:09:01    TATAMOTORS   C=350.00  VWAP=351.49  RSI=35  Vol=0.9x  → -[-]  
+14:09:01    TATASTEEL    C=198.52  VWAP=200.21  RSI=30  Vol=0.8x  → -[-]  
+14:09:01    HINDALCO     C=974.80  VWAP=970.68  RSI=43  Vol=0.8x  → -[-]  
+14:09:01    HINDUNILVR   C=2237.20  VWAP=2241.28  RSI=42  Vol=0.8x  → -[-]  
+14:09:01    INFY         C=1300.70  VWAP=1299.51  RSI=55  Vol=1.0x  → -[-]  
+14:09:01    HDFCBANK     C=871.45  VWAP=870.91  RSI=46  Vol=0.8x  → -[-]  
+14:09:01    ADANIENT     C=2044.50  VWAP=2058.29  RSI=48  Vol=0.7x  → -[-]  
+14:09:01    JSWSTEEL     C=1230.80  VWAP=1231.28  RSI=39  Vol=0.5x  → -[-]  
+14:09:01    AXISBANK     C=1339.40  VWAP=1346.36  RSI=38  Vol=0.5x  → -[-]  
+14:09:01    SHRIRAMFIN   C=1026.70  VWAP=1030.67  RSI=24  Vol=0.7x  → -[-]  
+14:09:01  SCAN #16 complete in 0.1s
+14:12:01  SCAN #17  14:12:01  phase=ACTIVE_AM  active=True  missed=0
+14:12:01  FETCH  WS  12 new bars in 0.020s
+14:12:01    TATAMOTORS   C=349.85  VWAP=351.48  RSI=33  Vol=1.0x  → -[-]  
+14:12:01    TATASTEEL    C=198.46  VWAP=200.19  RSI=31  Vol=0.6x  → -[-]  
+14:12:01    HINDALCO     C=975.00  VWAP=970.74  RSI=44  Vol=0.8x  → -[-]  
+14:12:01    HINDUNILVR   C=2237.20  VWAP=2241.28  RSI=42  Vol=0.8x  → -[-]  
+14:12:01    INFY         C=1300.70  VWAP=1299.51  RSI=55  Vol=1.0x  → -[-]  
+14:12:01    HDFCBANK     C=871.70  VWAP=870.92  RSI=50  Vol=0.7x  → -[-]  
+14:12:01    ADANIENT     C=2046.50  VWAP=2058.16  RSI=54  Vol=1.7x  → -[-]  
+14:12:01    JSWSTEEL     C=1231.80  VWAP=1231.29  RSI=45  Vol=0.4x  → -[-]  
+14:12:01    AXISBANK     C=1339.50  VWAP=1346.32  RSI=39  Vol=0.6x  → -[-]  
+14:12:01    SHRIRAMFIN   C=1026.70  VWAP=1030.60  RSI=26  Vol=0.9x  → -[-]  
+14:12:01  SCAN #17 complete in 0.1s
+14:13:47  WS connected — subscribing 10 tokens (mode=2 Quote)
+14:15:01  SCAN #18  14:15:01  phase=ACTIVE_AM  active=True  missed=0
+14:15:01  FETCH  WS  13 new bars in 0.021s
+14:15:01    TATAMOTORS   C=349.25  VWAP=351.45  RSI=25  Vol=1.5x  → -[-]  
+14:15:01    TATASTEEL    C=198.67  VWAP=200.19  RSI=39  Vol=0.7x  → -[-]  
+14:15:01    HINDALCO     C=975.50  VWAP=970.76  RSI=47  Vol=0.7x  → -[-]  
+14:15:01    HINDUNILVR   C=2235.60  VWAP=2241.25  RSI=38  Vol=1.0x  → -[-]  
+14:15:01    INFY         C=1297.70  VWAP=1299.50  RSI=34  Vol=1.0x  → -[-]  
+14:15:01    HDFCBANK     C=872.40  VWAP=870.93  RSI=58  Vol=0.8x  → -[-]  
+14:15:01    ADANIENT     C=2043.20  VWAP=2058.00  RSI=45  Vol=0.6x  → -[-]  
+14:15:01    JSWSTEEL     C=1230.60  VWAP=1231.28  RSI=40  Vol=0.5x  → -[-]  
+14:15:01    AXISBANK     C=1338.50  VWAP=1346.27  RSI=34  Vol=0.8x  → -[-]  
+14:15:01    SHRIRAMFIN   C=1026.30  VWAP=1030.57  RSI=24  Vol=0.7x  → -[-]  
+14:15:01  SCAN #18 complete in 0.1s
+14:18:01  SCAN #19  14:18:01  phase=ACTIVE_AM  active=True  missed=0
+14:18:01  FETCH  WS  5 new bars in 0.012s
+14:18:01    TATAMOTORS   C=349.25  VWAP=351.45  RSI=25  Vol=1.5x  → -[-]  
+14:18:01    TATASTEEL    C=198.67  VWAP=200.19  RSI=39  Vol=0.7x  → -[-]  
+14:18:01    HINDALCO     C=974.10  VWAP=970.78  RSI=41  Vol=0.7x  → -[-]  
+14:18:01    HINDUNILVR   C=2235.00  VWAP=2241.22  RSI=37  Vol=0.9x  → -[-]  
+14:18:01    INFY         C=1297.70  VWAP=1299.50  RSI=34  Vol=1.0x  → -[-]  
+14:18:01    HDFCBANK     C=871.30  VWAP=870.93  RSI=45  Vol=0.9x  → -[-]  
+14:18:01    ADANIENT     C=2043.20  VWAP=2058.00  RSI=45  Vol=0.6x  → -[-]  
+14:18:01    JSWSTEEL     C=1230.90  VWAP=1231.27  RSI=42  Vol=2.8x  → -[-]  
+14:18:01    AXISBANK     C=1337.70  VWAP=1346.24  RSI=31  Vol=0.4x  → -[-]  
+14:18:01    SHRIRAMFIN   C=1026.30  VWAP=1030.57  RSI=24  Vol=0.7x  → -[-]  
+14:18:01  SCAN #19 complete in 0.1s
+14:21:01  SCAN #20  14:21:01  phase=ACTIVE_AM  active=True  missed=0
+14:21:01  FETCH  WS  17 new bars in 0.021s
+14:21:01    TATAMOTORS   C=349.55  VWAP=351.43  RSI=34  Vol=1.0x  → -[-]  
+14:21:01    TATASTEEL    C=198.43  VWAP=200.16  RSI=34  Vol=1.3x  → -[-]  
+14:21:01    HINDALCO     C=972.10  VWAP=970.81  RSI=33  Vol=1.9x  → -[-]  
+14:21:01    HINDUNILVR   C=2235.60  VWAP=2241.03  RSI=40  Vol=4.6x  → -[-]  
+14:21:01    INFY         C=1298.60  VWAP=1299.48  RSI=42  Vol=1.8x  → -[-]  
+14:21:01    HDFCBANK     C=871.75  VWAP=870.95  RSI=50  Vol=2.5x  → -[-]  
+14:21:01    ADANIENT     C=2041.20  VWAP=2057.68  RSI=40  Vol=2.5x  → -[-]  
+14:21:01    JSWSTEEL     C=1230.20  VWAP=1231.24  RSI=38  Vol=3.2x  → -[-]  
+14:21:01    AXISBANK     C=1338.70  VWAP=1346.01  RSI=40  Vol=2.6x  → -[-]  
+14:21:01    SHRIRAMFIN   C=1023.90  VWAP=1030.45  RSI=17  Vol=1.6x  → -[-]  
+14:21:01  SCAN #20 complete in 0.1s
+14:24:01  SCAN #21  14:24:01  phase=ACTIVE_AM  active=True  missed=0
+14:24:01  FETCH  WS  8 new bars in 0.020s
+14:24:01    TATAMOTORS   C=349.70  VWAP=351.39  RSI=43  Vol=1.5x  → -[-]  
+14:24:01    TATASTEEL    C=198.78  VWAP=200.15  RSI=47  Vol=1.4x  → -[-]  
+14:24:01    HINDALCO     C=973.50  VWAP=970.84  RSI=42  Vol=1.4x  → -[-]  
+14:24:01    HINDUNILVR   C=2235.00  VWAP=2240.87  RSI=38  Vol=3.6x  → -[-]  
+14:24:01    INFY         C=1298.60  VWAP=1299.48  RSI=42  Vol=1.8x  → -[-]  
+14:24:01    HDFCBANK     C=872.85  VWAP=870.98  RSI=61  Vol=2.2x  → -[-]  
+14:24:01    ADANIENT     C=2041.20  VWAP=2057.68  RSI=40  Vol=2.5x  → -[-]  
+14:24:01    JSWSTEEL     C=1232.20  VWAP=1231.25  RSI=52  Vol=3.1x  → -[-]  
+14:24:01    AXISBANK     C=1337.90  VWAP=1345.69  RSI=36  Vol=3.7x  → -[-]  
+14:24:01    SHRIRAMFIN   C=1023.90  VWAP=1030.45  RSI=17  Vol=1.6x  → -[-]  
+14:24:01  SCAN #21 complete in 0.1s
+14:27:01  SCAN #22  14:27:01  phase=ACTIVE_AM  active=True  missed=0
+14:27:01  FETCH  WS  11 new bars in 0.024s
+14:27:01    TATAMOTORS   C=349.70  VWAP=351.39  RSI=43  Vol=1.5x  → -[-]  
+14:27:01    TATASTEEL    C=199.00  VWAP=200.14  RSI=53  Vol=0.9x  → -[-]  
+14:27:01    HINDALCO     C=973.55  VWAP=970.85  RSI=42  Vol=0.8x  → -[-]  
+14:27:01    HINDUNILVR   C=2236.70  VWAP=2240.84  RSI=46  Vol=0.9x  → -[-]  
+14:27:01    INFY         C=1301.50  VWAP=1299.49  RSI=62  Vol=0.9x  → -[-]  
+14:27:01    HDFCBANK     C=874.05  VWAP=871.00  RSI=69  Vol=0.7x  → -[-]  
+14:27:01    ADANIENT     C=2048.10  VWAP=2057.40  RSI=60  Vol=1.2x  → -[-]  
+14:27:01    JSWSTEEL     C=1234.50  VWAP=1231.26  RSI=63  Vol=0.6x  → -[-]  
+14:27:01    AXISBANK     C=1338.30  VWAP=1345.60  RSI=39  Vol=1.1x  → -[-]  
+14:27:01    SHRIRAMFIN   C=1025.30  VWAP=1030.37  RSI=31  Vol=1.5x  → -[-]  
+14:27:01  SCAN #22 complete in 0.1s
+14:30:01  PHASE  ACTIVE_AM → SHUTDOWN
+14:30:01  ======================================================================
+14:30:01  SHUTDOWN  0 signal(s), 22 scan cycles
+14:30:01  ======================================================================
+14:30:01  WS error: Connection closed
+14:30:01  WS feed stopped
+14:30:01  WS error: Connection closed

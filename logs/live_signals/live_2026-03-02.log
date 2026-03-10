@@ -1,0 +1,377 @@
+09:17:41  ======================================================================
+09:17:41  SESSION START  Capital=50000  RR=1:1.8  Risk=1%
+09:17:41  Stocks: BAJAJ-AUTO, POWERGRID, TATACONSUM, INDIGO, BAJFINANCE, HCLTECH, JIOFIN, EICHERMOT, NESTLEIND, BHARTIARTL
+09:17:41  Strategy: PDL (SL=1.5x ATR) + MOM (SL=1.2x ATR)  MaxSL/day=1
+09:17:41  Telegram: enabled
+09:17:41  PHASE 1  Warm-Up — connecting to Angel One
+09:17:42  API connected
+09:17:42  Loading 5-day 3-min warmup data
+09:17:49  WARMUP  BAJAJ-AUTO   8415 bars  stale_cache=2026-02-27 (API: No data fetched from Angel One)
+09:17:56  WARMUP  POWERGRID    16020 bars  stale_cache=2026-02-27 (API: No data fetched from Angel One)
+09:18:03  WARMUP  TATACONSUM   375 bars  API 2026-02-25→2026-02-27 15:27:00
+09:18:05  WARMUP  INDIGO       375 bars  API 2026-02-25→2026-02-27 15:27:00
+09:18:07  WARMUP  BAJFINANCE   375 bars  API 2026-02-25→2026-02-27 15:27:00
+09:18:09  WARMUP  HCLTECH      375 bars  API 2026-02-25→2026-02-27 15:27:00
+09:18:11  WARMUP  JIOFIN       375 bars  API 2026-02-25→2026-02-27 15:27:00
+09:18:12  WARMUP  EICHERMOT    375 bars  API 2026-02-25→2026-02-27 15:27:00
+09:18:15  WARMUP  NESTLEIND    375 bars  API 2026-02-25→2026-02-27 15:27:00
+09:18:17  WARMUP  BHARTIARTL   375 bars  API 2026-02-25→2026-02-27 15:27:00
+09:18:18  PDL  BAJAJ-AUTO   H=10187.00  L=10029.50
+09:18:18  PDL  POWERGRID    H=307.70  L=301.40
+09:18:18  PDL  TATACONSUM   H=1177.40  L=1153.50
+09:18:18  PDL  INDIGO       H=4976.30  L=4899.90
+09:18:18  PDL  BAJFINANCE   H=1031.20  L=1006.05
+09:18:18  PDL  HCLTECH      H=1405.00  L=1368.00
+09:18:18  PDL  JIOFIN       H=258.85  L=255.35
+09:18:18  PDL  EICHERMOT    H=8225.00  L=8024.50
+09:18:18  PDL  NESTLEIND    H=1329.20  L=1310.60
+09:18:18  PDL  BHARTIARTL   H=1935.00  L=1904.50
+09:18:18  Warm-up complete: 10 stocks loaded, PDL levels for 10
+09:18:19  PHASE  START → SILENT
+09:18:19  SCAN #1  09:18:19  phase=SILENT  active=False
+09:18:19  API  BAJAJ-AUTO   fetch error: Candle fetch failed: SUCCESS
+09:18:20  API  POWERGRID    fetch error: Candle fetch failed: SUCCESS
+09:18:21  API  TATACONSUM   fetch error: Candle fetch failed: SUCCESS
+09:18:23  API  INDIGO       fetch error: Candle fetch failed: SUCCESS
+09:18:24  API  BAJFINANCE   fetch error: Candle fetch failed: SUCCESS
+09:18:25  API  HCLTECH      fetch error: Candle fetch failed: SUCCESS
+09:18:26  API  JIOFIN       fetch error: Candle fetch failed: SUCCESS
+09:18:27  API  EICHERMOT    fetch error: Candle fetch failed: SUCCESS
+09:18:29  API  NESTLEIND    fetch error: Candle fetch failed: SUCCESS
+09:18:30  API  BHARTIARTL   fetch error: Candle fetch failed: SUCCESS
+09:21:01  SCAN #2  09:21:01  phase=SILENT  active=False
+09:21:02    BAJAJ-AUTO   C=9866.50  VWAP=9840.31  RSI=27  Vol=3.3x  → -[-]  inactive_phase
+09:21:03    POWERGRID    C=297.25  VWAP=294.96  RSI=35  Vol=0.2x  → -[-]  inactive_phase
+09:21:04    TATACONSUM   C=1139.40  VWAP=1133.64  RSI=41  Vol=0.2x  → -[-]  inactive_phase
+09:21:05    INDIGO       C=4612.80  VWAP=4577.79  RSI=15  Vol=1.1x  → -[-]  inactive_phase
+09:21:06    BAJFINANCE   C=984.60  VWAP=982.42  RSI=14  Vol=0.6x  → -[-]  inactive_phase
+09:21:07    HCLTECH      C=1369.90  VWAP=1364.54  RSI=25  Vol=0.1x  → -[-]  inactive_phase
+09:21:08    JIOFIN       C=250.55  VWAP=249.44  RSI=21  Vol=1.5x  → -[-]  inactive_phase
+09:21:10    EICHERMOT    C=7983.50  VWAP=7920.32  RSI=38  Vol=0.6x  → -[-]  inactive_phase
+09:21:11    NESTLEIND    C=1273.30  VWAP=1275.35  RSI=16  Vol=0.4x  → -[-]  inactive_phase
+09:21:12    BHARTIARTL   C=1860.60  VWAP=1855.41  RSI=31  Vol=0.5x  → -[-]  inactive_phase
+09:24:01  SCAN #3  09:24:01  phase=SILENT  active=False
+09:24:02    BAJAJ-AUTO   C=9824.50  VWAP=9840.93  RSI=23  Vol=2.9x  → -[-]  inactive_phase
+09:24:03    POWERGRID    C=296.20  VWAP=295.15  RSI=29  Vol=0.2x  → -[-]  inactive_phase
+09:24:04    TATACONSUM   C=1135.70  VWAP=1134.48  RSI=33  Vol=0.3x  → -[-]  inactive_phase
+09:24:05    INDIGO       C=4608.00  VWAP=4586.02  RSI=15  Vol=1.3x  → -[-]  inactive_phase
+09:24:06    BAJFINANCE   C=982.45  VWAP=982.49  RSI=12  Vol=0.3x  → -[-]  inactive_phase
+09:24:07    HCLTECH      C=1365.90  VWAP=1365.20  RSI=22  Vol=0.1x  → -[-]  inactive_phase
+09:24:09    JIOFIN       C=250.25  VWAP=249.66  RSI=20  Vol=1.3x  → -[-]  inactive_phase
+09:24:10    EICHERMOT    C=7947.00  VWAP=7928.01  RSI=31  Vol=0.5x  → -[-]  inactive_phase
+09:24:11    NESTLEIND    C=1270.70  VWAP=1274.32  RSI=15  Vol=0.5x  → -[-]  inactive_phase
+09:24:12    BHARTIARTL   C=1858.80  VWAP=1856.42  RSI=29  Vol=0.5x  → -[-]  inactive_phase
+09:40:41  SCAN #4  09:40:41  phase=SILENT  active=False
+09:40:47  API  BAJAJ-AUTO   fetch error: Candle fetch failed: TooManyRequests
+09:40:55  API  POWERGRID    fetch error: Candle fetch failed: TooManyRequests
+09:41:04    TATACONSUM   C=1134.40  VWAP=1134.44  RSI=34  Vol=0.3x  → -[-]  inactive_phase
+09:41:05    INDIGO       C=4633.60  VWAP=4596.22  RSI=26  Vol=0.7x  → -[-]  inactive_phase
+09:41:07    BAJFINANCE   C=979.65  VWAP=981.88  RSI=14  Vol=0.2x  → -[-]  inactive_phase
+09:41:09    HCLTECH      C=1377.90  VWAP=1369.74  RSI=45  Vol=0.1x  → -[-]  inactive_phase
+09:41:10    JIOFIN       C=251.05  VWAP=249.98  RSI=31  Vol=0.4x  → -[-]  inactive_phase
+09:41:11    EICHERMOT    C=7948.00  VWAP=7928.27  RSI=36  Vol=0.1x  → -[-]  inactive_phase
+09:41:12    NESTLEIND    C=1277.60  VWAP=1274.78  RSI=35  Vol=0.3x  → -[-]  inactive_phase
+09:41:13    BHARTIARTL   C=1872.50  VWAP=1862.31  RSI=49  Vol=0.8x  → -[-]  inactive_phase
+09:44:46  SCAN #5  09:44:46  phase=SILENT  active=False
+09:44:53  API  BAJAJ-AUTO   fetch error: Candle fetch failed: TooManyRequests
+09:45:01    POWERGRID    C=297.85  VWAP=295.44  RSI=45  Vol=0.1x  → -[-]  inactive_phase
+09:45:02    TATACONSUM   C=1133.90  VWAP=1134.44  RSI=33  Vol=0.1x  → -[-]  inactive_phase
+09:45:04    INDIGO       C=4638.70  VWAP=4600.12  RSI=28  Vol=0.6x  → -[-]  inactive_phase
+09:45:05    BAJFINANCE   C=981.50  VWAP=981.80  RSI=24  Vol=0.3x  → -[-]  inactive_phase
+09:45:06    HCLTECH      C=1377.80  VWAP=1370.39  RSI=45  Vol=0.1x  → -[-]  inactive_phase
+09:45:07    JIOFIN       C=251.05  VWAP=250.02  RSI=31  Vol=0.3x  → -[-]  inactive_phase
+09:45:08    EICHERMOT    C=7955.50  VWAP=7929.45  RSI=39  Vol=0.2x  → -[-]  inactive_phase
+09:45:09    NESTLEIND    C=1277.00  VWAP=1275.03  RSI=34  Vol=0.2x  → -[-]  inactive_phase
+09:45:10    BHARTIARTL   C=1882.60  VWAP=1863.43  RSI=59  Vol=0.3x  → -[-]  inactive_phase
+09:45:10  SCAN #6  09:45:10  phase=SILENT  active=False
+09:45:11    BAJAJ-AUTO   C=9833.00  VWAP=9837.56  RSI=30  Vol=0.5x  → -[-]  inactive_phase
+09:45:13    POWERGRID    C=298.00  VWAP=295.62  RSI=47  Vol=0.1x  → -[-]  inactive_phase
+09:45:14    TATACONSUM   C=1134.60  VWAP=1134.49  RSI=36  Vol=0.2x  → -[-]  inactive_phase
+09:45:15    INDIGO       C=4664.00  VWAP=4604.16  RSI=38  Vol=0.5x  → -[-]  inactive_phase
+09:45:16    BAJFINANCE   C=979.50  VWAP=981.56  RSI=21  Vol=0.7x  → -[-]  inactive_phase
+09:45:17    HCLTECH      C=1379.70  VWAP=1370.73  RSI=48  Vol=0.0x  → -[-]  inactive_phase
+09:45:18    JIOFIN       C=251.80  VWAP=250.06  RSI=40  Vol=0.2x  → -[-]  inactive_phase
+09:45:19    EICHERMOT    C=7948.00  VWAP=7930.17  RSI=37  Vol=0.1x  → -[-]  inactive_phase
+09:45:20    NESTLEIND    C=1278.40  VWAP=1275.25  RSI=39  Vol=0.2x  → -[-]  inactive_phase
+09:45:22    BHARTIARTL   C=1884.30  VWAP=1864.85  RSI=61  Vol=0.3x  → -[-]  inactive_phase
+09:48:01  SCAN #7  09:48:01  phase=SILENT  active=False
+09:48:02    BAJAJ-AUTO   C=9828.00  VWAP=9837.25  RSI=29  Vol=0.5x  → -[-]  inactive_phase
+09:48:04    POWERGRID    C=298.50  VWAP=295.72  RSI=51  Vol=0.1x  → -[-]  inactive_phase
+09:48:05    TATACONSUM   C=1135.10  VWAP=1134.50  RSI=38  Vol=0.0x  → -[-]  inactive_phase
+09:48:06    INDIGO       C=4660.60  VWAP=4608.78  RSI=37  Vol=0.7x  → -[-]  inactive_phase
+09:48:07    BAJFINANCE   C=979.00  VWAP=981.51  RSI=20  Vol=0.1x  → -[-]  inactive_phase
+09:48:09    HCLTECH      C=1384.20  VWAP=1371.20  RSI=56  Vol=0.0x  → -[-]  inactive_phase
+09:48:10    JIOFIN       C=251.85  VWAP=250.13  RSI=40  Vol=0.3x  → -[-]  inactive_phase
+09:48:11    EICHERMOT    C=7941.00  VWAP=7930.73  RSI=35  Vol=0.1x  → -[-]  inactive_phase
+09:48:12    NESTLEIND    C=1278.80  VWAP=1275.34  RSI=40  Vol=0.1x  → -[-]  inactive_phase
+09:48:13    BHARTIARTL   C=1882.50  VWAP=1865.66  RSI=58  Vol=0.2x  → -[-]  inactive_phase
+09:51:01  SCAN #8  09:51:01  phase=SILENT  active=False
+09:51:02    BAJAJ-AUTO   C=9816.00  VWAP=9836.78  RSI=28  Vol=0.5x  → -[-]  inactive_phase
+09:51:03    POWERGRID    C=298.25  VWAP=295.84  RSI=49  Vol=0.1x  → -[-]  inactive_phase
+09:51:04    TATACONSUM   C=1133.00  VWAP=1134.45  RSI=33  Vol=0.2x  → -[-]  inactive_phase
+09:51:05    INDIGO       C=4653.70  VWAP=4610.68  RSI=35  Vol=0.3x  → -[-]  inactive_phase
+09:51:06    BAJFINANCE   C=976.50  VWAP=981.40  RSI=17  Vol=0.1x  → -[-]  inactive_phase
+09:51:07    HCLTECH      C=1382.70  VWAP=1371.80  RSI=53  Vol=0.1x  → -[-]  inactive_phase
+09:51:09    JIOFIN       C=251.40  VWAP=250.21  RSI=37  Vol=0.5x  → -[-]  inactive_phase
+09:51:10    EICHERMOT    C=7934.50  VWAP=7930.89  RSI=33  Vol=0.1x  → -[-]  inactive_phase
+09:51:11    NESTLEIND    C=1278.50  VWAP=1275.45  RSI=39  Vol=0.1x  → -[-]  inactive_phase
+09:51:12    BHARTIARTL   C=1884.70  VWAP=1866.44  RSI=61  Vol=0.2x  → -[-]  inactive_phase
+09:54:01  SCAN #9  09:54:01  phase=SILENT  active=False
+09:54:02    BAJAJ-AUTO   C=9797.00  VWAP=9835.23  RSI=25  Vol=0.7x  → -[-]  inactive_phase
+09:54:03    POWERGRID    C=297.10  VWAP=295.98  RSI=39  Vol=0.2x  → -[-]  inactive_phase
+09:54:04    TATACONSUM   C=1131.30  VWAP=1134.37  RSI=29  Vol=0.1x  → -[-]  inactive_phase
+09:54:05    INDIGO       C=4623.90  VWAP=4612.99  RSI=29  Vol=1.0x  → -[-]  inactive_phase
+09:54:06    BAJFINANCE   C=974.30  VWAP=980.97  RSI=15  Vol=0.4x  → -[-]  inactive_phase
+09:54:07    HCLTECH      C=1380.40  VWAP=1372.19  RSI=49  Vol=0.1x  → -[-]  inactive_phase
+09:54:09    JIOFIN       C=251.00  VWAP=250.24  RSI=34  Vol=0.3x  → -[-]  inactive_phase
+09:54:10    EICHERMOT    C=7924.00  VWAP=7930.76  RSI=31  Vol=0.1x  → -[-]  inactive_phase
+09:54:11    NESTLEIND    C=1277.80  VWAP=1275.52  RSI=38  Vol=0.1x  → -[-]  inactive_phase
+09:54:12    BHARTIARTL   C=1883.60  VWAP=1867.90  RSI=59  Vol=0.5x  → -[-]  inactive_phase
+09:57:01  SCAN #10  09:57:01  phase=SILENT  active=False
+09:57:02    BAJAJ-AUTO   C=9808.00  VWAP=9833.84  RSI=29  Vol=0.6x  → -[-]  inactive_phase
+09:57:03    POWERGRID    C=297.00  VWAP=296.02  RSI=39  Vol=0.1x  → -[-]  inactive_phase
+09:57:04    TATACONSUM   C=1130.90  VWAP=1134.22  RSI=28  Vol=0.1x  → -[-]  inactive_phase
+09:57:05    INDIGO       C=4635.70  VWAP=4614.25  RSI=34  Vol=0.8x  → -[-]  inactive_phase
+09:57:06    BAJFINANCE   C=973.10  VWAP=980.77  RSI=14  Vol=0.2x  → -[-]  inactive_phase
+09:57:08    HCLTECH      C=1380.40  VWAP=1372.53  RSI=49  Vol=0.1x  → -[-]  inactive_phase
+09:57:09    JIOFIN       C=251.25  VWAP=250.26  RSI=37  Vol=0.3x  → -[-]  inactive_phase
+09:57:10    EICHERMOT    C=7927.50  VWAP=7930.59  RSI=33  Vol=0.1x  → -[-]  inactive_phase
+09:57:11    NESTLEIND    C=1277.80  VWAP=1275.60  RSI=38  Vol=0.2x  → -[-]  inactive_phase
+09:57:12    BHARTIARTL   C=1888.20  VWAP=1868.34  RSI=64  Vol=0.1x  → -[-]  inactive_phase
+10:00:01  PHASE  SILENT → ACTIVE_AM
+10:00:01  SCAN #11  10:00:01  phase=ACTIVE_AM  active=True
+10:00:02    BAJAJ-AUTO   C=9821.00  VWAP=9833.47  RSI=35  Vol=0.4x  → -[-]  
+10:00:04    POWERGRID    C=297.60  VWAP=296.08  RSI=45  Vol=0.1x  → -[-]  
+10:00:05    TATACONSUM   C=1131.30  VWAP=1134.19  RSI=30  Vol=0.0x  → -[-]  
+10:00:06    INDIGO       C=4651.90  VWAP=4615.32  RSI=41  Vol=0.4x  → -[-]  
+10:00:07    BAJFINANCE   C=975.90  VWAP=980.66  RSI=28  Vol=0.1x  → -[-]  
+10:00:08    HCLTECH      C=1384.70  VWAP=1372.68  RSI=57  Vol=0.0x  → -[-]  
+10:00:09    JIOFIN       C=252.00  VWAP=250.29  RSI=47  Vol=0.3x  → -[-]  
+10:00:11    EICHERMOT    C=7939.50  VWAP=7930.67  RSI=40  Vol=0.1x  → -[-]  
+10:00:12    NESTLEIND    C=1279.00  VWAP=1275.68  RSI=43  Vol=0.1x  → -[-]  
+10:00:13    BHARTIARTL   C=1889.90  VWAP=1868.93  RSI=66  Vol=0.2x  → -[-]  
+10:03:01  SCAN #12  10:03:01  phase=ACTIVE_AM  active=True
+10:03:02    BAJAJ-AUTO   C=9785.00  VWAP=9832.47  RSI=28  Vol=0.5x  → -[-]  
+10:03:03    POWERGRID    C=297.00  VWAP=296.15  RSI=40  Vol=0.2x  → -[-]  
+10:03:04    TATACONSUM   C=1130.40  VWAP=1133.95  RSI=28  Vol=0.3x  → -[-]  
+10:03:05    INDIGO       C=4643.50  VWAP=4616.32  RSI=39  Vol=0.4x  → -[-]  
+10:03:06    BAJFINANCE   C=973.65  VWAP=980.40  RSI=24  Vol=0.4x  → -[-]  
+10:03:07    HCLTECH      C=1381.50  VWAP=1373.03  RSI=50  Vol=0.1x  → -[-]  
+10:03:08    JIOFIN       C=251.40  VWAP=250.33  RSI=41  Vol=0.3x  → -[-]  
+10:03:10    EICHERMOT    C=7930.00  VWAP=7930.96  RSI=36  Vol=0.4x  → -[-]  
+10:03:11    NESTLEIND    C=1278.40  VWAP=1275.74  RSI=41  Vol=0.1x  → -[-]  
+10:03:12    BHARTIARTL   C=1891.60  VWAP=1869.48  RSI=67  Vol=0.2x  → -[-]  
+10:06:01  SCAN #13  10:06:01  phase=ACTIVE_AM  active=True
+10:06:02    BAJAJ-AUTO   C=9787.50  VWAP=9831.18  RSI=29  Vol=0.5x  → -[-]  
+10:06:03    POWERGRID    C=297.05  VWAP=296.17  RSI=41  Vol=0.1x  → -[-]  
+10:06:04    TATACONSUM   C=1130.60  VWAP=1133.80  RSI=29  Vol=0.2x  → -[-]  
+10:06:05    INDIGO       C=4632.20  VWAP=4616.93  RSI=36  Vol=0.4x  → -[-]  
+10:06:06    BAJFINANCE   C=974.00  VWAP=980.30  RSI=26  Vol=0.2x  → -[-]  
+10:06:08    HCLTECH      C=1381.20  VWAP=1373.18  RSI=49  Vol=0.0x  → -[-]  
+10:06:09    JIOFIN       C=250.95  VWAP=250.36  RSI=37  Vol=0.6x  → -[-]  
+10:06:10    EICHERMOT    C=7932.50  VWAP=7930.95  RSI=38  Vol=0.5x  → -[-]  
+10:06:11    NESTLEIND    C=1279.00  VWAP=1275.80  RSI=44  Vol=0.2x  → -[-]  
+10:06:12    BHARTIARTL   C=1894.00  VWAP=1870.35  RSI=70  Vol=0.3x  → -[-]  
+10:09:01  SCAN #14  10:09:01  phase=ACTIVE_AM  active=True
+10:09:02    BAJAJ-AUTO   C=9772.00  VWAP=9827.75  RSI=27  Vol=1.1x  → -[-]  
+10:09:03    POWERGRID    C=296.60  VWAP=296.19  RSI=37  Vol=0.2x  → -[-]  
+10:09:04    TATACONSUM   C=1129.00  VWAP=1133.63  RSI=25  Vol=0.3x  → -[-]  
+10:09:05    INDIGO       C=4629.00  VWAP=4617.71  RSI=35  Vol=1.1x  → -[-]  
+10:09:06    BAJFINANCE   C=973.15  VWAP=980.11  RSI=25  Vol=0.3x  → -[-]  
+10:09:07    HCLTECH      C=1380.80  VWAP=1373.27  RSI=49  Vol=0.0x  → -[-]  
+10:09:08    JIOFIN       C=250.50  VWAP=250.37  RSI=34  Vol=0.5x  → -[-]  
+10:09:10    EICHERMOT    C=7930.00  VWAP=7930.95  RSI=37  Vol=0.1x  → -[-]  
+10:09:11    NESTLEIND    C=1276.90  VWAP=1275.84  RSI=37  Vol=0.2x  → -[-]  
+10:09:12    BHARTIARTL   C=1887.20  VWAP=1870.91  RSI=56  Vol=0.3x  → -[-]  
+10:25:11  SCAN #15  10:25:11  phase=ACTIVE_AM  active=True
+10:25:12    BAJAJ-AUTO   C=9772.50  VWAP=9823.48  RSI=32  Vol=0.5x  → -[-]  
+10:25:13    POWERGRID    C=297.30  VWAP=296.28  RSI=47  Vol=0.3x  → -[-]  
+10:25:14    TATACONSUM   C=1124.50  VWAP=1133.10  RSI=20  Vol=0.4x  → -[-]  
+10:25:15    INDIGO       C=4634.10  VWAP=4618.96  RSI=38  Vol=0.8x  → -[-]  
+10:25:16    BAJFINANCE   C=975.30  VWAP=979.92  RSI=36  Vol=0.2x  → -[-]  
+10:25:18    HCLTECH      C=1381.20  VWAP=1373.71  RSI=49  Vol=0.3x  → -[-]  
+10:25:19    JIOFIN       C=250.20  VWAP=250.37  RSI=32  Vol=0.3x  → -[-]  
+10:25:20    EICHERMOT    C=7895.00  VWAP=7928.73  RSI=25  Vol=0.5x  → -[-]  
+10:25:21    NESTLEIND    C=1275.20  VWAP=1275.80  RSI=34  Vol=0.3x  → -[-]  
+10:25:23    BHARTIARTL   C=1888.50  VWAP=1871.76  RSI=58  Vol=0.3x  → -[-]  
+10:27:29  SCAN #16  10:27:29  phase=ACTIVE_AM  active=True
+10:27:30    BAJAJ-AUTO   C=9777.50  VWAP=9822.40  RSI=34  Vol=0.4x  → -[-]  
+10:27:31    POWERGRID    C=297.70  VWAP=296.30  RSI=52  Vol=0.2x  → -[-]  
+10:27:32    TATACONSUM   C=1125.40  VWAP=1133.00  RSI=26  Vol=0.3x  → -[-]  
+10:27:33    INDIGO       C=4632.00  VWAP=4619.49  RSI=37  Vol=1.0x  → -[-]  
+10:27:35    BAJFINANCE   C=976.75  VWAP=979.89  RSI=43  Vol=0.1x  → -[-]  
+10:27:36    HCLTECH      C=1379.10  VWAP=1373.98  RSI=43  Vol=0.9x  → -[-]  
+10:27:37    JIOFIN       C=250.45  VWAP=250.37  RSI=37  Vol=0.2x  → -[-]  
+10:27:38    EICHERMOT    C=7896.50  VWAP=7927.89  RSI=26  Vol=0.5x  → -[-]  
+10:27:39    NESTLEIND    C=1275.30  VWAP=1275.80  RSI=35  Vol=0.2x  → -[-]  
+10:27:40    BHARTIARTL   C=1890.00  VWAP=1871.97  RSI=60  Vol=0.2x  → -[-]  
+10:30:01  SCAN #17  10:30:01  phase=ACTIVE_AM  active=True
+10:30:02    BAJAJ-AUTO   C=9772.50  VWAP=9821.98  RSI=33  Vol=0.2x  → -[-]  
+10:30:03    POWERGRID    C=297.05  VWAP=296.32  RSI=44  Vol=0.3x  → -[-]  
+10:30:04    TATACONSUM   C=1124.00  VWAP=1132.92  RSI=23  Vol=0.3x  → -[-]  
+10:30:05    INDIGO       C=4630.40  VWAP=4619.75  RSI=36  Vol=0.5x  → -[-]  
+10:30:06    BAJFINANCE   C=975.95  VWAP=979.86  RSI=40  Vol=0.2x  → -[-]  
+10:30:07    HCLTECH      C=1378.10  VWAP=1374.02  RSI=41  Vol=0.2x  → -[-]  
+10:30:09    JIOFIN       C=250.25  VWAP=250.37  RSI=35  Vol=0.4x  → -[-]  
+10:30:10    EICHERMOT    C=7893.00  VWAP=7927.34  RSI=25  Vol=0.4x  → -[-]  
+10:30:11    NESTLEIND    C=1275.10  VWAP=1275.79  RSI=34  Vol=0.2x  → -[-]  
+10:30:12    BHARTIARTL   C=1889.60  VWAP=1872.26  RSI=59  Vol=0.4x  → -[-]  
+10:33:01  SCAN #18  10:33:01  phase=ACTIVE_AM  active=True
+10:33:02    BAJAJ-AUTO   C=9762.50  VWAP=9820.78  RSI=30  Vol=0.5x  → -[-]  
+10:33:03    POWERGRID    C=297.50  VWAP=296.34  RSI=50  Vol=0.2x  → -[-]  
+10:33:04    TATACONSUM   C=1125.60  VWAP=1132.76  RSI=33  Vol=0.6x  → -[-]  
+10:33:05    INDIGO       C=4648.20  VWAP=4620.28  RSI=49  Vol=0.6x  → -[-]  
+10:33:06    BAJFINANCE   C=975.05  VWAP=979.75  RSI=37  Vol=0.8x  → -[-]  
+10:33:07    HCLTECH      C=1377.90  VWAP=1374.05  RSI=40  Vol=0.2x  → -[-]  
+10:33:09    JIOFIN       C=250.20  VWAP=250.37  RSI=34  Vol=0.6x  → -[-]  
+10:33:10    EICHERMOT    C=7883.50  VWAP=7926.05  RSI=22  Vol=1.0x  → -[-]  
+10:33:11    NESTLEIND    C=1275.70  VWAP=1275.79  RSI=39  Vol=0.5x  → -[-]  
+10:33:12    BHARTIARTL   C=1892.40  VWAP=1872.48  RSI=64  Vol=0.3x  → -[-]  
+10:51:17  SCAN #19  10:51:17  phase=ACTIVE_AM  active=True
+10:51:20    BAJAJ-AUTO   C=9719.00  VWAP=9811.93  RSI=21  Vol=2.2x  → ★ SHORT[MOM]  SL=9749.95  TP=9664.83  Qty=16
+10:51:22    POWERGRID    C=296.95  VWAP=296.35  RSI=46  Vol=0.5x  → -[-]  
+10:51:23    TATACONSUM   C=1122.70  VWAP=1132.20  RSI=28  Vol=0.8x  → -[-]  
+10:51:24    INDIGO       C=4627.20  VWAP=4620.73  RSI=41  Vol=0.2x  → -[-]  
+10:51:25    BAJFINANCE   C=973.60  VWAP=979.57  RSI=33  Vol=0.5x  → -[-]  
+10:51:26    HCLTECH      C=1378.30  VWAP=1374.28  RSI=43  Vol=0.3x  → -[-]  
+10:51:27    JIOFIN       C=249.25  VWAP=250.31  RSI=25  Vol=1.0x  → -[-]  
+10:51:28    EICHERMOT    C=7858.50  VWAP=7921.44  RSI=16  Vol=0.7x  → -[-]  
+10:51:30    NESTLEIND    C=1271.70  VWAP=1275.69  RSI=25  Vol=0.4x  → -[-]  
+10:51:31    BHARTIARTL   C=1882.90  VWAP=1872.96  RSI=44  Vol=0.3x  → -[-]  
+11:00:42  SCAN #20  11:00:42  phase=ACTIVE_AM  active=True
+11:00:48  API  BAJAJ-AUTO   fetch error: Candle fetch failed: TooManyRequests
+11:00:56  API  POWERGRID    fetch error: Candle fetch failed: TooManyRequests
+11:01:05    TATACONSUM   C=1124.50  VWAP=1131.90  RSI=40  Vol=0.2x  → -[-]  
+11:01:06    INDIGO       C=4625.70  VWAP=4621.02  RSI=41  Vol=0.4x  → -[-]  
+11:01:07    BAJFINANCE   C=975.60  VWAP=979.43  RSI=48  Vol=0.6x  → -[-]  
+11:01:08    HCLTECH      C=1382.00  VWAP=1374.49  RSI=59  Vol=0.8x  → -[-]  
+11:01:09    JIOFIN       C=249.20  VWAP=250.23  RSI=31  Vol=0.7x  → -[-]  
+11:01:10    EICHERMOT    C=7872.50  VWAP=7913.13  RSI=39  Vol=0.6x  → -[-]  
+11:01:11    NESTLEIND    C=1273.10  VWAP=1275.55  RSI=36  Vol=0.6x  → -[-]  
+11:01:12    BHARTIARTL   C=1885.40  VWAP=1873.53  RSI=52  Vol=1.5x  → -[-]  
+11:03:01  SCAN #21  11:03:01  phase=ACTIVE_AM  active=True
+11:03:02  BRACKET  BAJAJ-AUTO   SL hit — position closed
+11:03:02  SL_COUNT  BAJAJ-AUTO   1 / 1
+11:03:02    BAJAJ-AUTO   C=9749.50  VWAP=9808.26  RSI=39  Vol=0.7x  → -[-]  cooldown_until_11:06
+11:03:03    POWERGRID    C=296.20  VWAP=296.40  RSI=38  Vol=1.4x  → -[-]  
+11:03:04    TATACONSUM   C=1123.20  VWAP=1131.79  RSI=35  Vol=0.6x  → -[-]  
+11:03:05    INDIGO       C=4623.30  VWAP=4621.04  RSI=39  Vol=0.5x  → -[-]  
+11:03:07    BAJFINANCE   C=980.80  VWAP=979.42  RSI=68  Vol=4.5x  → ★ LONG[MOM]  SL=977.47  TP=986.63  Qty=150
+11:03:08    HCLTECH      C=1380.90  VWAP=1374.55  RSI=53  Vol=0.5x  → -[-]  
+11:03:09    JIOFIN       C=249.55  VWAP=250.22  RSI=40  Vol=0.8x  → -[-]  
+11:03:10    EICHERMOT    C=7863.00  VWAP=7911.49  RSI=35  Vol=1.4x  → -[-]  
+11:03:12    NESTLEIND    C=1272.60  VWAP=1275.51  RSI=34  Vol=0.8x  → -[-]  
+11:03:13    BHARTIARTL   C=1887.00  VWAP=1873.65  RSI=55  Vol=0.5x  → -[-]  
+11:06:01  SCAN #22  11:06:01  phase=ACTIVE_AM  active=True
+11:06:02    BAJAJ-AUTO   C=9750.50  VWAP=9807.09  RSI=40  Vol=1.0x  → -[-]  cooldown_until_11:06
+11:06:03    POWERGRID    C=296.75  VWAP=296.43  RSI=46  Vol=5.5x  → ★ LONG[MOM]  SL=295.69  TP=298.60  Qty=473
+11:06:05    TATACONSUM   C=1122.40  VWAP=1131.63  RSI=32  Vol=0.9x  → -[-]  
+11:06:06    INDIGO       C=4618.00  VWAP=4620.95  RSI=37  Vol=0.9x  → -[-]  
+11:06:07    BAJFINANCE   C=980.10  VWAP=979.43  RSI=64  Vol=0.7x  → -[-]  in_position
+11:06:08    HCLTECH      C=1379.70  VWAP=1374.58  RSI=48  Vol=0.4x  → -[-]  
+11:06:09    JIOFIN       C=249.20  VWAP=250.20  RSI=35  Vol=1.1x  → -[-]  
+11:06:10    EICHERMOT    C=7852.00  VWAP=7906.92  RSI=31  Vol=3.1x  → -[-]  
+11:06:11    NESTLEIND    C=1270.30  VWAP=1275.40  RSI=26  Vol=1.7x  → -[-]  
+11:06:13    BHARTIARTL   C=1890.10  VWAP=1873.86  RSI=60  Vol=0.7x  → -[-]  
+11:22:52  SCAN #23  11:22:52  phase=ACTIVE_AM  active=True
+11:22:59  API  BAJAJ-AUTO   fetch error: Candle fetch failed: TooManyRequests
+11:23:01    POWERGRID    C=296.85  VWAP=296.50  RSI=47  Vol=2.9x  → -[-]  in_position
+11:23:02    TATACONSUM   C=1125.40  VWAP=1131.40  RSI=51  Vol=1.0x  → -[-]  
+11:23:03    INDIGO       C=4608.60  VWAP=4620.57  RSI=32  Vol=1.6x  → -[-]  
+11:23:05    BAJFINANCE   C=978.90  VWAP=979.43  RSI=57  Vol=0.9x  → -[-]  in_position
+11:23:06    HCLTECH      C=1376.70  VWAP=1374.66  RSI=39  Vol=0.8x  → -[-]  
+11:23:07    JIOFIN       C=248.20  VWAP=250.11  RSI=24  Vol=1.4x  → -[-]  
+11:23:08    EICHERMOT    C=7850.00  VWAP=7905.23  RSI=32  Vol=0.3x  → -[-]  
+11:23:09    NESTLEIND    C=1273.60  VWAP=1275.31  RSI=48  Vol=1.1x  → -[-]  
+11:23:10    BHARTIARTL   C=1886.90  VWAP=1874.21  RSI=52  Vol=0.4x  → -[-]  
+11:24:01  SCAN #24  11:24:01  phase=ACTIVE_AM  active=True
+11:24:02    BAJAJ-AUTO   C=9746.50  VWAP=9805.44  RSI=39  Vol=0.5x  → -[-]  sl_cap(1/1)
+11:24:03    POWERGRID    C=296.60  VWAP=296.50  RSI=44  Vol=0.6x  → -[-]  in_position
+11:24:04    TATACONSUM   C=1124.90  VWAP=1131.39  RSI=48  Vol=0.1x  → -[-]  
+11:24:05    INDIGO       C=4604.70  VWAP=4620.41  RSI=30  Vol=0.6x  → -[-]  
+11:24:06    BAJFINANCE   C=978.50  VWAP=979.41  RSI=54  Vol=1.8x  → -[-]  in_position
+11:24:07    HCLTECH      C=1376.10  VWAP=1374.66  RSI=37  Vol=0.3x  → -[-]  
+11:24:08    JIOFIN       C=248.05  VWAP=250.08  RSI=23  Vol=0.8x  → -[-]  
+11:24:10    EICHERMOT    C=7843.50  VWAP=7904.18  RSI=29  Vol=0.8x  → -[-]  
+11:24:11    NESTLEIND    C=1273.70  VWAP=1275.30  RSI=48  Vol=0.7x  → -[-]  
+11:24:12    BHARTIARTL   C=1885.10  VWAP=1874.29  RSI=48  Vol=0.5x  → -[-]  
+11:41:23  SCAN #25  11:41:23  phase=ACTIVE_AM  active=True
+11:41:24    BAJAJ-AUTO   C=9762.00  VWAP=9793.20  RSI=51  Vol=5.4x  → -[-]  sl_cap(1/1)
+11:41:25    POWERGRID    C=295.85  VWAP=296.49  RSI=35  Vol=0.9x  → -[-]  in_position
+11:41:27    TATACONSUM   C=1127.00  VWAP=1131.17  RSI=58  Vol=2.2x  → -[-]  
+11:41:28    INDIGO       C=4622.10  VWAP=4619.55  RSI=48  Vol=1.1x  → -[-]  
+11:41:29    BAJFINANCE   C=982.45  VWAP=979.82  RSI=69  Vol=0.5x  → -[-]  in_position
+11:41:30    HCLTECH      C=1371.20  VWAP=1374.58  RSI=27  Vol=1.3x  → -[-]  
+11:41:31    JIOFIN       C=247.25  VWAP=250.01  RSI=17  Vol=0.8x  → -[-]  
+11:41:32    EICHERMOT    C=7820.50  VWAP=7901.91  RSI=27  Vol=0.6x  → -[-]  
+11:41:33    NESTLEIND    C=1274.50  VWAP=1275.28  RSI=53  Vol=0.5x  → -[-]  
+11:41:34    BHARTIARTL   C=1888.90  VWAP=1874.51  RSI=56  Vol=0.7x  → -[-]  
+11:43:16  SCAN #26  11:43:16  phase=ACTIVE_AM  active=True
+11:43:17    BAJAJ-AUTO   C=9752.50  VWAP=9792.95  RSI=45  Vol=0.3x  → -[-]  sl_cap(1/1)
+11:43:18  BRACKET  POWERGRID    SL hit — position closed
+11:43:18  SL_COUNT  POWERGRID    1 / 1
+11:43:18    POWERGRID    C=295.90  VWAP=296.47  RSI=36  Vol=0.8x  → -[-]  sl_cap(1/1)
+11:43:19    TATACONSUM   C=1126.90  VWAP=1131.12  RSI=58  Vol=0.9x  → -[-]  
+11:43:21    INDIGO       C=4608.90  VWAP=4619.27  RSI=39  Vol=2.3x  → ★ SHORT[MOM]  SL=4628.81  TP=4574.06  Qty=25
+11:43:22    BAJFINANCE   C=982.05  VWAP=979.85  RSI=66  Vol=0.7x  → -[-]  in_position
+11:43:24    HCLTECH      C=1374.70  VWAP=1374.56  RSI=43  Vol=1.3x  → -[-]  
+11:43:25    JIOFIN       C=247.15  VWAP=249.98  RSI=16  Vol=0.7x  → -[-]  
+11:43:26    EICHERMOT    C=7817.50  VWAP=7900.96  RSI=26  Vol=0.5x  → -[-]  
+11:43:27    NESTLEIND    C=1273.80  VWAP=1275.26  RSI=48  Vol=1.3x  → -[-]  
+11:43:29    BHARTIARTL   C=1885.50  VWAP=1874.62  RSI=48  Vol=0.7x  → -[-]  
+11:45:01  SCAN #27  11:45:01  phase=ACTIVE_AM  active=True
+11:45:02    BAJAJ-AUTO   C=9777.00  VWAP=9792.55  RSI=59  Vol=0.7x  → -[-]  sl_cap(1/1)
+11:45:03    POWERGRID    C=295.80  VWAP=296.42  RSI=35  Vol=3.0x  → -[-]  sl_cap(1/1)
+11:45:04    TATACONSUM   C=1126.60  VWAP=1131.09  RSI=55  Vol=0.5x  → -[-]  
+11:45:05    INDIGO       C=4606.10  VWAP=4619.17  RSI=38  Vol=0.5x  → -[-]  in_position
+11:45:06    BAJFINANCE   C=983.50  VWAP=979.86  RSI=71  Vol=0.3x  → -[-]  in_position
+11:45:07    HCLTECH      C=1374.20  VWAP=1374.56  RSI=41  Vol=0.6x  → -[-]  
+11:45:08    JIOFIN       C=247.25  VWAP=249.94  RSI=20  Vol=0.9x  → -[-]  
+11:45:10    EICHERMOT    C=7824.50  VWAP=7900.47  RSI=32  Vol=0.3x  → -[-]  
+11:45:11    NESTLEIND    C=1273.30  VWAP=1275.21  RSI=45  Vol=2.3x  → -[-]  
+11:45:12    BHARTIARTL   C=1885.80  VWAP=1874.73  RSI=49  Vol=0.9x  → -[-]  
+11:48:01  SCAN #28  11:48:01  phase=ACTIVE_AM  active=True
+11:48:02    BAJAJ-AUTO   C=9780.00  VWAP=9792.24  RSI=60  Vol=1.2x  → -[-]  sl_cap(1/1)
+11:48:03    POWERGRID    C=295.60  VWAP=296.41  RSI=32  Vol=0.4x  → -[-]  sl_cap(1/1)
+11:48:04    TATACONSUM   C=1127.40  VWAP=1131.04  RSI=60  Vol=1.2x  → -[-]  
+11:48:05    INDIGO       C=4610.00  VWAP=4619.09  RSI=42  Vol=0.5x  → -[-]  in_position
+11:48:06    BAJFINANCE   C=984.10  VWAP=979.90  RSI=72  Vol=0.5x  → -[-]  in_position
+11:48:07    HCLTECH      C=1374.40  VWAP=1374.56  RSI=42  Vol=1.1x  → -[-]  
+11:48:08    JIOFIN       C=247.50  VWAP=249.91  RSI=28  Vol=0.8x  → -[-]  
+11:48:10    EICHERMOT    C=7830.50  VWAP=7899.72  RSI=37  Vol=0.5x  → -[-]  
+11:48:11    NESTLEIND    C=1273.40  VWAP=1275.18  RSI=45  Vol=1.0x  → -[-]  
+11:48:12    BHARTIARTL   C=1886.20  VWAP=1874.82  RSI=50  Vol=0.7x  → -[-]  
+11:51:01  SCAN #29  11:51:01  phase=ACTIVE_AM  active=True
+11:51:02    BAJAJ-AUTO   C=9780.00  VWAP=9791.75  RSI=60  Vol=1.9x  → -[-]  sl_cap(1/1)
+11:51:03    POWERGRID    C=296.40  VWAP=296.40  RSI=49  Vol=1.1x  → -[-]  sl_cap(1/1)
+11:51:04    TATACONSUM   C=1126.30  VWAP=1130.97  RSI=52  Vol=1.2x  → -[-]  
+11:51:05    INDIGO       C=4615.10  VWAP=4619.04  RSI=46  Vol=0.5x  → -[-]  in_position
+11:51:06    BAJFINANCE   C=983.40  VWAP=979.92  RSI=67  Vol=0.3x  → -[-]  in_position
+11:51:07    HCLTECH      C=1373.40  VWAP=1374.54  RSI=39  Vol=1.3x  → -[-]  
+11:51:08    JIOFIN       C=247.30  VWAP=249.87  RSI=26  Vol=1.2x  → -[-]  
+11:51:10    EICHERMOT    C=7818.00  VWAP=7899.11  RSI=31  Vol=0.4x  → -[-]  
+11:51:11    NESTLEIND    C=1272.30  VWAP=1275.14  RSI=38  Vol=1.4x  → -[-]  
+11:51:12    BHARTIARTL   C=1885.00  VWAP=1874.91  RSI=47  Vol=0.8x  → -[-]  
+11:54:01  SCAN #30  11:54:01  phase=ACTIVE_AM  active=True
+11:54:02    BAJAJ-AUTO   C=9775.00  VWAP=9790.21  RSI=56  Vol=3.3x  → -[-]  sl_cap(1/1)
+11:54:03    POWERGRID    C=296.10  VWAP=296.40  RSI=45  Vol=0.2x  → -[-]  sl_cap(1/1)
+11:54:04    TATACONSUM   C=1124.20  VWAP=1130.86  RSI=40  Vol=1.5x  → -[-]  
+11:54:05    INDIGO       C=4601.50  VWAP=4618.59  RSI=37  Vol=2.1x  → SHORT[MOM]  in_position
+11:54:06    BAJFINANCE   C=982.35  VWAP=979.94  RSI=60  Vol=0.4x  → -[-]  in_position
+11:54:08    HCLTECH      C=1373.00  VWAP=1374.52  RSI=38  Vol=1.4x  → -[-]  
+11:54:09    JIOFIN       C=247.10  VWAP=249.82  RSI=23  Vol=1.3x  → -[-]  
+11:54:10    EICHERMOT    C=7813.00  VWAP=7898.15  RSI=29  Vol=0.6x  → -[-]  
+11:54:11    NESTLEIND    C=1272.00  VWAP=1275.07  RSI=36  Vol=1.7x  → -[-]  
+11:54:12    BHARTIARTL   C=1885.10  VWAP=1875.06  RSI=47  Vol=1.4x  → -[-]  
+11:57:01  SCAN #31  11:57:01  phase=ACTIVE_AM  active=True
+11:57:02    BAJAJ-AUTO   C=9773.00  VWAP=9789.88  RSI=55  Vol=0.9x  → -[-]  sl_cap(1/1)
+11:57:03    POWERGRID    C=296.30  VWAP=296.40  RSI=48  Vol=0.2x  → -[-]  sl_cap(1/1)
+11:57:04    TATACONSUM   C=1123.90  VWAP=1130.81  RSI=39  Vol=0.6x  → -[-]  
+11:57:05    INDIGO       C=4605.20  VWAP=4618.53  RSI=41  Vol=0.3x  → -[-]  in_position
+11:57:07  STAGNATION EXIT  BAJFINANCE   LONG  entry=980.80  now=979.10  unrealized=-1.70  bars=10
+11:57:07    BAJFINANCE   C=979.10  VWAP=979.94  RSI=44  Vol=0.4x  → -[-]  
+11:57:08    HCLTECH      C=1373.20  VWAP=1374.49  RSI=39  Vol=2.4x  → -[-]  
+11:57:09    JIOFIN       C=246.80  VWAP=249.71  RSI=20  Vol=2.3x  → -[-]  
+11:57:10    EICHERMOT    C=7813.00  VWAP=7897.40  RSI=29  Vol=0.5x  → -[-]  
+11:57:11    NESTLEIND    C=1272.80  VWAP=1275.04  RSI=44  Vol=0.8x  → -[-]  
+11:57:12    BHARTIARTL   C=1884.80  VWAP=1875.15  RSI=46  Vol=0.9x  → -[-]  

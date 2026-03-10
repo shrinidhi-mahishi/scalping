@@ -1,0 +1,3 @@
+date,time,symbol,sector,direction,trigger,variant,price,sl,tp,atr,qty,risk,vwap,rsi,vol_ratio,phase
+2026-03-09,12:36:01,HCLTECH,IT,SHORT,PDL_BASE,Baseline,1353.91,1356.82,1346.62,2.91,184,536.24,1355.5,29.9,0.7,ACTIVE_AM
+2026-03-09,12:36:02,HCLTECH,IT,SHORT,PDL_BC50,BodyClose50,1353.91,1356.82,1346.62,2.91,184,536.24,1355.5,29.9,0.7,ACTIVE_AM

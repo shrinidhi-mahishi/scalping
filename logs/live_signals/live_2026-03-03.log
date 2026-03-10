@@ -1,0 +1,40 @@
+22:43:08  ======================================================================
+22:43:08  SESSION START  Capital=50000  RR=1:1.8  Risk=1%  ws=True
+22:43:08  Stocks: BAJAJ-AUTO, POWERGRID, TATACONSUM, INDIGO, BAJFINANCE, HCLTECH, JIOFIN, EICHERMOT, NESTLEIND, BHARTIARTL
+22:43:08  Strategy: PDL (SL=1.5x ATR) + MOM (SL=1.2x ATR)  MaxSL/day=1
+22:43:08  Telegram: enabled
+22:43:08  PHASE 1  Warm-Up — connecting to Angel One
+22:43:09  API connected
+22:43:09  Loading 5-day 3-min warmup data
+22:43:11  WARMUP  BAJAJ-AUTO   375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:14  WARMUP  POWERGRID    375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:17  WARMUP  TATACONSUM   375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:20  WARMUP  INDIGO       375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:23  WARMUP  BAJFINANCE   375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:26  WARMUP  HCLTECH      375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:30  WARMUP  JIOFIN       375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:33  WARMUP  EICHERMOT    375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:36  WARMUP  NESTLEIND    375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:39  WARMUP  BHARTIARTL   375 bars  API 2026-02-26→2026-03-02 15:27:00  cached
+22:43:41  Checking event calendar for corporate events
+22:43:41  Event calendar: all stocks cleared
+22:43:41  PDL  BAJAJ-AUTO   H=10091.50  L=9940.00
+22:43:41  PDL  POWERGRID    H=305.80  L=297.90
+22:43:41  PDL  TATACONSUM   H=1159.50  L=1134.90
+22:43:41  PDL  INDIGO       H=4920.00  L=4792.00
+22:43:41  PDL  BAJFINANCE   H=1014.90  L=993.10
+22:43:41  PDL  HCLTECH      H=1404.80  L=1382.00
+22:43:41  PDL  JIOFIN       H=259.20  L=254.65
+22:43:41  PDL  EICHERMOT    H=8230.00  L=7987.00
+22:43:41  PDL  NESTLEIND    H=1322.90  L=1286.00
+22:43:41  PDL  BHARTIARTL   H=1915.00  L=1870.10
+22:43:41  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+22:43:41  Starting WebSocket feed
+22:43:43  WS connected — subscribing 10 tokens (mode=2 Quote)
+22:43:43  WS feed started — 10 tokens subscribed
+22:43:43  PHASE  START → SHUTDOWN
+22:43:43  ======================================================================
+22:43:43  SHUTDOWN  0 signal(s), 0 stagnation exit(s), 0 scan cycles
+22:43:43  ======================================================================
+22:43:44  WS feed stopped
+22:52:30  SESSION END  user interrupt

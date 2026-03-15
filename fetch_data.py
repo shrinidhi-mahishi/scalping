@@ -8,6 +8,7 @@ Provides two data sources:
 
 import os
 import time as _time
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 from datetime import datetime, timedelta
 
 import numpy as np
@@ -131,16 +132,31 @@ class AngelOneClient:
                 f"Unknown symbol '{symbol}'. Known: {list(self.SYMBOL_TOKENS)}"
             )
 
+        api_timeout = 10
+
         for attempt in range(retries):
-            resp = self._conn.getCandleData(
-                {
-                    "exchange": exchange,
-                    "symboltoken": token,
-                    "interval": interval,
-                    "fromdate": from_date,
-                    "todate": to_date,
-                }
-            )
+            try:
+                with ThreadPoolExecutor(max_workers=1) as _tp:
+                    _fut = _tp.submit(
+                        self._conn.getCandleData,
+                        {
+                            "exchange": exchange,
+                            "symboltoken": token,
+                            "interval": interval,
+                            "fromdate": from_date,
+                            "todate": to_date,
+                        },
+                    )
+                    resp = _fut.result(timeout=api_timeout)
+            except FuturesTimeoutError:
+                if attempt < retries - 1:
+                    _time.sleep(1.0)
+                    continue
+                raise RuntimeError(
+                    f"Candle fetch timed out after {api_timeout}s"
+                )
+            except Exception as api_exc:
+                raise RuntimeError(f"Candle fetch failed: {api_exc}")
 
             if resp.get("status") and resp.get("data"):
                 break

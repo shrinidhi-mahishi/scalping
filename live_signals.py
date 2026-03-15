@@ -13,10 +13,10 @@ Daily Lifecycle:
   Phase 1  09:14  Warm-Up   — connect, fetch 5 days of 3-min data
   Phase 2  09:15  Silent    — track indicators every 3 min, NO signals
   Phase 3  09:30  Active    — trading window, signals enabled
-  Phase 4  13:00  Shutdown  — stop signals, track only until close
+  Phase 4  12:00  Shutdown  — stop signals, track only until close
 
 Entry   : Prearmed PDL trigger = prev-day High/Low ± 0.1× ATR
-Exit    : SL = 1.0× ATR, TP = 2.5R, max 1 signal per direction/day
+Exit    : SL = 1.0× ATR, TP = 2.0R, max 1 signal per direction/day
 Sizing  : 1.5% risk per trade, 5× leverage cap
 Guard   : Max 2 SL hits per stock per day — blocks further entries
 
@@ -52,16 +52,16 @@ load_dotenv()
 # ─── Stock Configuration ──────────────────────────────────────────────────
 
 STOCKS = [
-    ("JSWSTEEL", "Steel"),
-    ("HINDUNILVR", "FMCG"),
-    ("AXISBANK", "Banking"),
-    ("TATASTEEL", "Steel"),
+    ("NESTLEIND", "FMCG"),
     ("TRENT", "Retail"),
-    ("BAJAJ-AUTO", "Auto"),
-    ("BAJFINANCE", "Finance"),
-    ("HDFCBANK", "Banking"),
+    ("APOLLOHOSP", "Healthcare"),
+    ("HDFCLIFE", "Insurance"),
+    ("JSWSTEEL", "Steel"),
     ("POWERGRID", "Power"),
-    ("HCLTECH", "IT"),
+    ("HINDALCO", "Metals"),
+    ("INFY", "IT"),
+    ("HDFCBANK", "Banking"),
+    ("WIPRO", "IT"),
 ]
 
 # ─── Strategy Parameters ──────────────────────────────────────────────────
@@ -70,7 +70,7 @@ RSI_PERIOD = 9
 VOL_SMA = 20
 ATR_PERIOD = 14
 
-RR = 2.5
+RR = 2.0
 RISK_PCT = 0.015
 LEV_CAP = 5.0
 
@@ -80,14 +80,13 @@ MAX_SL_PER_DAY = 2
 
 SIGNAL_VARIANTS = [
     {"key": "baseline", "label": "Baseline", "body_close_min": None, "trigger_name": "PDL_BASE"},
-    {"key": "bodyclose50", "label": "BodyClose50", "body_close_min": 0.50, "trigger_name": "PDL_BC50"},
 ]
 
 
 # ─── Time Rules & Phases ──────────────────────────────────────────────────
 
 MKT_OPEN = time(9, 15)
-ENTRY_AM = (time(9, 30), time(13, 0))
+ENTRY_AM = (time(9, 30), time(12, 0))
 ENTRY_PM = None
 MKT_CLOSE = time(15, 0)
 
@@ -287,7 +286,6 @@ def log_signal(
 def _trigger_label(trigger: str) -> str:
     return {
         "PDL_BASE": "Prearmed PDL",
-        "PDL_BC50": "Prearmed PDL + BodyClose50",
     }.get(trigger, trigger)
 
 
@@ -378,6 +376,8 @@ def check_signal(
 
     dirs = pdl_dirs_used or set()
     buffer = atr * PDL_PREARM_BUFFER_ATR
+    tick_tol = atr * 0.05
+
     def body_close_ok(direction: str) -> bool:
         if body_close_min is None:
             return True
@@ -393,7 +393,7 @@ def check_signal(
     if prev_day_high is not None:
         long_trigger = prev_day_high + buffer
         if ("LONG" not in dirs
-                and prev_close <= prev_day_high
+                and prev_close <= prev_day_high + tick_tol
                 and h >= long_trigger
                 and c >= prev_day_high
                 and body_close_ok("LONG")):
@@ -401,7 +401,7 @@ def check_signal(
     if prev_day_low is not None:
         short_trigger = prev_day_low - buffer
         if ("SHORT" not in dirs
-                and prev_close >= prev_day_low
+                and prev_close >= prev_day_low - tick_tol
                 and l <= short_trigger
                 and c <= prev_day_low
                 and body_close_ok("SHORT")):
@@ -918,7 +918,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
     print(f"  09:14  Phase 1  Warm-Up       ✓ done")
     print(f"  09:15  Phase 2  Silent         track only, no signals")
     print(f"  09:30  Phase 3  Active         signals ON")
-    print(f"  13:00  Phase 4  Shutdown       stop")
+    print(f"  12:00  Phase 4  Shutdown       stop")
     print(f"{'═' * 60}{RST}\n")
 
     # ── Phase 1b: WebSocket Feed ─────────────────────────────────────
@@ -947,9 +947,9 @@ def live(capital: float, use_websocket: bool = True) -> None:
         f"\U0001f514 *Signal Monitor Started — Prearmed PDL*\n"
         f"Capital: ₹{capital:,.0f}\n"
         f"Stocks: {syms}\n"
-        f"Variants: Baseline, BodyClose50\n"
+        f"Variant: Baseline\n"
         f"Trigger: PDL ± {PDL_PREARM_BUFFER_ATR:.1f}× ATR | SL: {PDL_SL_MULT}× ATR | RR: 1:{RR}\n"
-        f"Schedule: 09:30–13:00 | Data: {data_mode}"
+        f"Schedule: 09:30–12:00 | Data: {data_mode}"
     )
 
     cooldowns: dict[tuple[str, str], datetime] = {}
@@ -1057,11 +1057,16 @@ def live(capital: float, use_websocket: bool = True) -> None:
                 elif phase == "MIDDAY":
                     print(f"\n{YLW}▶ {lbl} — indicators updating, signals blocked{RST}")
 
-            # Pre-market wait
+            # Pre-market wait (sleep shorter as market open approaches)
             if phase == "PRE_MARKET":
                 wait = max(int((datetime.combine(now.date(), MKT_OPEN) - now).total_seconds()), 0)
                 print(f"{DIM}[{now:%H:%M}] Pre-market. Opens in {wait // 60}m {wait % 60}s...{RST}")
-                _time.sleep(max(min(wait, 60), 1))
+                if wait <= 5:
+                    _time.sleep(max(wait, 0.2))
+                elif wait <= 120:
+                    _time.sleep(5)
+                else:
+                    _time.sleep(60)
                 continue
 
             # Align to 3-min candle grid (09:15, 09:18, 09:21, ...)
@@ -1132,14 +1137,32 @@ def live(capital: float, use_websocket: bool = True) -> None:
             if need_gap_fill:
                 reason = ", ".join(gap_fill_reasons)
                 flog.info("FETCH  REST gap-fill (%s)", reason)
-                for sym in active_syms:
+                gf_start = _time.time()
+                gf_ok = 0
+                with ThreadPoolExecutor(max_workers=3) as gf_pool:
+                    gf_futures = {
+                        gf_pool.submit(_fetch_stock_threaded, client, sym, stock_data, now): sym
+                        for sym in active_syms
+                    }
                     try:
-                        _rate_limit_wait()
-                        _fetch_latest(client, sym, stock_data, now, retries=2)
-                    except Exception as exc:
-                        flog.warning("GAP-FILL  %-11s  %s", sym, exc)
+                        for fut in as_completed(gf_futures, timeout=15):
+                            sym_f = gf_futures[fut]
+                            try:
+                                _, ok, exc = fut.result()
+                                if ok:
+                                    gf_ok += 1
+                                elif exc:
+                                    flog.warning("GAP-FILL  %-11s  %s", sym_f, exc)
+                            except Exception as gf_exc:
+                                flog.warning("GAP-FILL  %-11s  %s", sym_f, gf_exc)
+                    except TimeoutError:
+                        flog.warning("GAP-FILL  deadline exceeded (15s) — %d/%d OK", gf_ok, len(active_syms))
+                flog.info("GAP-FILL  %d/%d OK in %.1fs", gf_ok, len(active_syms), _time.time() - gf_start)
                 if ws_recovered and ws_feed is not None:
                     ws_feed.clear_outage()
+
+            ws_ok = ws_feed is not None and ws_feed.is_connected
+            ws_stale = ws_feed is not None and ws_feed.seconds_since_last_tick > WS_STALE_SEC
 
             if ws_ok and not ws_stale:
                 # ── WebSocket path: read completed bars from local buffer ──
@@ -1424,7 +1447,7 @@ def main():
 
     print(f"\n{BLD}NSE Intraday Scalping — Live Signal Generator{RST}")
     print(f"{DIM}Prearmed PDL ({PDL_PREARM_BUFFER_ATR:.1f}×ATR trigger buffer, SL {PDL_SL_MULT}×ATR)")
-    print(f"Variants: Baseline + BodyClose50 | RR 1:{RR} | Risk {RISK_PCT * 100:.1f}% | Max {MAX_SL_PER_DAY} SL/stock/day{RST}\n")
+    print(f"RR 1:{RR} | Risk {RISK_PCT * 100:.1f}% | Max {MAX_SL_PER_DAY} SL/stock/day{RST}\n")
 
     if args.dry_run:
         dry_run(args.capital)

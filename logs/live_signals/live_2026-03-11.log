@@ -1,0 +1,1729 @@
+08:05:23  ======================================================================
+08:05:23  SESSION START  Capital=50000  RR=1:2.5  Risk=1.5%  ws=True
+08:05:23  Stocks: JSWSTEEL, HINDUNILVR, AXISBANK, TATASTEEL, TRENT, BAJAJ-AUTO, BAJFINANCE, HDFCBANK, POWERGRID, HCLTECH
+08:05:23  Strategy: PDL-Only (SL=1.0x ATR)  RR=1:2.5  MaxSL/day=2
+08:05:23  Telegram: enabled
+08:05:23  PHASE 1  Warm-Up — connecting to Angel One
+08:05:24  API connected
+08:05:24  Loading 5-day 3-min warmup data
+08:05:25  WARMUP  JSWSTEEL     375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:29  WARMUP  HINDUNILVR   375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:32  WARMUP  AXISBANK     375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:35  WARMUP  TATASTEEL    375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:38  WARMUP  TRENT        375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:41  WARMUP  BAJAJ-AUTO   375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:45  WARMUP  BAJFINANCE   375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:48  WARMUP  HDFCBANK     375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:51  WARMUP  POWERGRID    375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:54  WARMUP  HCLTECH      375 bars  API 2026-03-06→2026-03-10 15:27:00  cached
+08:05:56  Checking event calendar for corporate events
+08:05:58  Event calendar: all stocks cleared
+08:05:58  PDL  JSWSTEEL     H=1219.90  L=1195.20
+08:05:58  PDL  HINDUNILVR   H=2224.00  L=2175.00
+08:05:58  PDL  AXISBANK     H=1319.50  L=1284.60
+08:05:58  PDL  TATASTEEL    H=196.64  L=192.00
+08:05:58  PDL  TRENT        H=3749.90  L=3690.00
+08:05:58  PDL  BAJAJ-AUTO   H=9637.50  L=9349.00
+08:05:58  PDL  BAJFINANCE   H=952.15  L=931.85
+08:05:58  PDL  HDFCBANK     H=856.80  L=840.60
+08:05:58  PDL  POWERGRID    H=300.05  L=293.75
+08:05:58  PDL  HCLTECH      H=1364.40  L=1345.00
+08:05:58  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+08:05:58  Starting WebSocket feed
+08:05:58  WS connected — subscribing 10 tokens (mode=2 Quote)
+08:05:58  WS feed started — 10 tokens subscribed
+08:05:59  PHASE  START → PRE_MARKET
+09:20:59  PHASE  PRE_MARKET → SILENT
+09:20:59  SCAN delay 178.9s beyond target 09:18:01
+09:20:59  MISSED 1 candle(s) (idx -1→1)
+09:20:59  SCAN #1  09:20:59  phase=SILENT  active=False  missed=1
+09:20:59  FETCH  REST gap-fill (first scan, missed 1 candle(s))
+09:20:59  GAP-FILL  JSWSTEEL     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:21:01  WS connected — subscribing 10 tokens (mode=2 Quote)
+09:21:03  FETCH  WS  14 new bars (0 clock-flushed) in 3.344s
+09:21:03    JSWSTEEL     Baseline     C=1214.30  VWAP=nan  RSI=48  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    JSWSTEEL     BodyClose50  C=1214.30  VWAP=nan  RSI=48  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    JSWSTEEL     Baseline     C=1222.00  VWAP=nan  RSI=64  Vol=0.0x  → LONG[PDL_BASE]  inactive_phase
+09:21:03    JSWSTEEL     BodyClose50  C=1222.00  VWAP=nan  RSI=64  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    HINDUNILVR   Baseline     C=2190.20  VWAP=nan  RSI=48  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    HINDUNILVR   BodyClose50  C=2190.20  VWAP=nan  RSI=48  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    AXISBANK     Baseline     C=1314.70  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    AXISBANK     BodyClose50  C=1314.70  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    AXISBANK     Baseline     C=1308.80  VWAP=nan  RSI=32  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    AXISBANK     BodyClose50  C=1308.80  VWAP=nan  RSI=32  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    TATASTEEL    Baseline     C=195.00  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    TATASTEEL    BodyClose50  C=195.00  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    TRENT        Baseline     C=3715.30  VWAP=nan  RSI=52  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    TRENT        BodyClose50  C=3715.30  VWAP=nan  RSI=52  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    BAJAJ-AUTO   Baseline     C=9610.00  VWAP=nan  RSI=57  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    BAJAJ-AUTO   BodyClose50  C=9610.00  VWAP=nan  RSI=57  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    BAJFINANCE   Baseline     C=939.80  VWAP=nan  RSI=46  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    BAJFINANCE   BodyClose50  C=939.80  VWAP=nan  RSI=46  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    BAJFINANCE   Baseline     C=940.35  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    BAJFINANCE   BodyClose50  C=940.35  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    HDFCBANK     Baseline     C=849.45  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    HDFCBANK     BodyClose50  C=849.45  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    POWERGRID    Baseline     C=298.65  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    POWERGRID    BodyClose50  C=298.65  VWAP=nan  RSI=49  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    POWERGRID    Baseline     C=300.50  VWAP=nan  RSI=69  Vol=0.0x  → LONG[PDL_BASE]  inactive_phase
+09:21:03    POWERGRID    BodyClose50  C=300.50  VWAP=nan  RSI=69  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    HCLTECH      Baseline     C=1361.50  VWAP=nan  RSI=53  Vol=0.0x  → -[-]  inactive_phase
+09:21:03    HCLTECH      BodyClose50  C=1361.50  VWAP=nan  RSI=53  Vol=0.0x  → -[-]  inactive_phase
+09:21:03  SCAN #1 complete in 3.4s
+09:21:03  SCAN #2  09:21:03  phase=SILENT  active=False  missed=0
+09:21:03  FETCH  WS  0 new bars (0 clock-flushed) in 0.001s
+09:21:03  SCAN #2 complete in 0.0s
+09:36:33  PHASE  SILENT → ACTIVE_AM
+09:36:34  SCAN delay 33.3s beyond target 09:36:01
+09:36:34  MISSED 4 candle(s) (idx 2→7)
+09:36:34  SCAN #3  09:36:33  phase=ACTIVE_AM  active=True  missed=4
+09:36:34  FETCH  REST gap-fill (missed 4 candle(s))
+09:51:39  WS stale (29s since last tick) — REST fallback
+09:51:39  API  AXISBANK     rate-limited, using cache
+09:51:41  WS error: Connection closed
+09:51:41  WS error: Connection closed
+09:51:41  WS error: Connection closed
+09:51:41  WS reconnecting in 1s (attempt 1)...
+09:51:42  FETCH  REST  9/10 OK in 908.2s
+09:51:42    JSWSTEEL     Baseline     C=1221.00  VWAP=1220.37  RSI=64  Vol=1.1x  → -[-]  inactive_phase
+09:51:42    JSWSTEEL     BodyClose50  C=1221.00  VWAP=1220.37  RSI=64  Vol=1.1x  → -[-]  inactive_phase
+09:51:42    JSWSTEEL     Baseline     C=1220.40  VWAP=1220.41  RSI=61  Vol=1.8x  → -[-]  inactive_phase
+09:51:42    JSWSTEEL     BodyClose50  C=1220.40  VWAP=1220.41  RSI=61  Vol=1.8x  → -[-]  inactive_phase
+09:51:42    JSWSTEEL     Baseline     C=1218.90  VWAP=1220.31  RSI=56  Vol=0.7x  → -[-]  
+09:51:42    JSWSTEEL     BodyClose50  C=1218.90  VWAP=1220.31  RSI=56  Vol=0.7x  → -[-]  
+09:51:42    JSWSTEEL     Baseline     C=1218.80  VWAP=1220.24  RSI=55  Vol=0.3x  → -[-]  
+09:51:42    JSWSTEEL     BodyClose50  C=1218.80  VWAP=1220.24  RSI=55  Vol=0.3x  → -[-]  
+09:51:42    JSWSTEEL     Baseline     C=1218.60  VWAP=1220.18  RSI=55  Vol=0.4x  → -[-]  
+09:51:42    JSWSTEEL     BodyClose50  C=1218.60  VWAP=1220.18  RSI=55  Vol=0.4x  → -[-]  
+09:51:42    HINDUNILVR   Baseline     C=2181.90  VWAP=2186.16  RSI=33  Vol=0.9x  → -[-]  inactive_phase
+09:51:42    HINDUNILVR   BodyClose50  C=2181.90  VWAP=2186.16  RSI=33  Vol=0.9x  → -[-]  inactive_phase
+09:51:42    HINDUNILVR   Baseline     C=2183.00  VWAP=2185.78  RSI=36  Vol=0.3x  → -[-]  inactive_phase
+09:51:42    HINDUNILVR   BodyClose50  C=2183.00  VWAP=2185.78  RSI=36  Vol=0.3x  → -[-]  inactive_phase
+09:51:42    HINDUNILVR   Baseline     C=2179.40  VWAP=2184.94  RSI=31  Vol=0.4x  → -[-]  inactive_phase
+09:51:42    HINDUNILVR   BodyClose50  C=2179.40  VWAP=2184.94  RSI=31  Vol=0.4x  → -[-]  inactive_phase
+09:51:42    HINDUNILVR   Baseline     C=2176.90  VWAP=2184.42  RSI=27  Vol=0.2x  → -[-]  
+09:51:42    HINDUNILVR   BodyClose50  C=2176.90  VWAP=2184.42  RSI=27  Vol=0.2x  → -[-]  
+09:51:42    HINDUNILVR   Baseline     C=2177.00  VWAP=2182.10  RSI=28  Vol=1.1x  → -[-]  
+09:51:42    HINDUNILVR   BodyClose50  C=2177.00  VWAP=2182.10  RSI=28  Vol=1.1x  → -[-]  
+09:51:42    HINDUNILVR   Baseline     C=2179.60  VWAP=2181.67  RSI=36  Vol=0.7x  → -[-]  
+09:51:42    HINDUNILVR   BodyClose50  C=2179.60  VWAP=2181.67  RSI=36  Vol=0.7x  → -[-]  
+09:51:42    AXISBANK     Baseline     C=1305.10  VWAP=1309.73  RSI=26  Vol=0.3x  → -[-]  inactive_phase
+09:51:42    AXISBANK     BodyClose50  C=1305.10  VWAP=1309.73  RSI=26  Vol=0.3x  → -[-]  inactive_phase
+09:51:42    AXISBANK     Baseline     C=1302.40  VWAP=1308.81  RSI=22  Vol=0.2x  → -[-]  inactive_phase
+09:51:42    AXISBANK     BodyClose50  C=1302.40  VWAP=1308.81  RSI=22  Vol=0.2x  → -[-]  inactive_phase
+09:51:42    AXISBANK     Baseline     C=1303.60  VWAP=1308.35  RSI=28  Vol=0.2x  → -[-]  
+09:51:42    AXISBANK     BodyClose50  C=1303.60  VWAP=1308.35  RSI=28  Vol=0.2x  → -[-]  
+09:51:42    AXISBANK     Baseline     C=1302.20  VWAP=1307.80  RSI=25  Vol=0.2x  → -[-]  
+09:51:42    AXISBANK     BodyClose50  C=1302.20  VWAP=1307.80  RSI=25  Vol=0.2x  → -[-]  
+09:51:42    AXISBANK     Baseline     C=1304.40  VWAP=1307.61  RSI=35  Vol=0.1x  → -[-]  
+09:51:42    AXISBANK     BodyClose50  C=1304.40  VWAP=1307.61  RSI=35  Vol=0.1x  → -[-]  
+09:51:42    TATASTEEL    Baseline     C=198.35  VWAP=197.37  RSI=85  Vol=3.6x  → -[-]  inactive_phase
+09:51:42    TATASTEEL    BodyClose50  C=198.35  VWAP=197.37  RSI=85  Vol=3.6x  → -[-]  inactive_phase
+09:51:42    TATASTEEL    Baseline     C=197.91  VWAP=197.54  RSI=76  Vol=2.1x  → -[-]  inactive_phase
+09:51:42    TATASTEEL    BodyClose50  C=197.91  VWAP=197.54  RSI=76  Vol=2.1x  → -[-]  inactive_phase
+09:51:42    TATASTEEL    Baseline     C=197.97  VWAP=197.60  RSI=77  Vol=1.6x  → -[-]  inactive_phase
+09:51:42    TATASTEEL    BodyClose50  C=197.97  VWAP=197.60  RSI=77  Vol=1.6x  → -[-]  inactive_phase
+09:51:42    TATASTEEL    Baseline     C=198.12  VWAP=197.63  RSI=78  Vol=0.7x  → -[-]  
+09:51:42    TATASTEEL    BodyClose50  C=198.12  VWAP=197.63  RSI=78  Vol=0.7x  → -[-]  
+09:51:42    TATASTEEL    Baseline     C=197.97  VWAP=197.66  RSI=74  Vol=1.0x  → -[-]  
+09:51:42    TATASTEEL    BodyClose50  C=197.97  VWAP=197.66  RSI=74  Vol=1.0x  → -[-]  
+09:51:42    TATASTEEL    Baseline     C=198.55  VWAP=197.74  RSI=78  Vol=1.2x  → -[-]  
+09:51:42    TATASTEEL    BodyClose50  C=198.55  VWAP=197.74  RSI=78  Vol=1.2x  → -[-]  
+09:51:42    TRENT        Baseline     C=3719.10  VWAP=3715.72  RSI=57  Vol=0.7x  → -[-]  inactive_phase
+09:51:42    TRENT        BodyClose50  C=3719.10  VWAP=3715.72  RSI=57  Vol=0.7x  → -[-]  inactive_phase
+09:51:42    TRENT        Baseline     C=3717.60  VWAP=3716.44  RSI=54  Vol=1.1x  → -[-]  inactive_phase
+09:51:42    TRENT        BodyClose50  C=3717.60  VWAP=3716.44  RSI=54  Vol=1.1x  → -[-]  inactive_phase
+09:51:42    TRENT        Baseline     C=3712.00  VWAP=3715.81  RSI=45  Vol=0.5x  → -[-]  inactive_phase
+09:51:42    TRENT        BodyClose50  C=3712.00  VWAP=3715.81  RSI=45  Vol=0.5x  → -[-]  inactive_phase
+09:51:42    TRENT        Baseline     C=3712.60  VWAP=3715.72  RSI=46  Vol=0.1x  → -[-]  
+09:51:42    TRENT        BodyClose50  C=3712.60  VWAP=3715.72  RSI=46  Vol=0.1x  → -[-]  
+09:51:42    TRENT        Baseline     C=3711.60  VWAP=3715.47  RSI=45  Vol=0.6x  → -[-]  
+09:51:42    TRENT        BodyClose50  C=3711.60  VWAP=3715.47  RSI=45  Vol=0.6x  → -[-]  
+09:51:42    TRENT        Baseline     C=3706.40  VWAP=3714.93  RSI=37  Vol=0.4x  → -[-]  
+09:51:42    TRENT        BodyClose50  C=3706.40  VWAP=3714.93  RSI=37  Vol=0.4x  → -[-]  
+09:51:42    BAJAJ-AUTO   Baseline     C=9576.50  VWAP=9569.53  RSI=46  Vol=0.5x  → -[-]  inactive_phase
+09:51:42    BAJAJ-AUTO   BodyClose50  C=9576.50  VWAP=9569.53  RSI=46  Vol=0.5x  → -[-]  inactive_phase
+09:51:42    BAJAJ-AUTO   Baseline     C=9577.00  VWAP=9574.68  RSI=46  Vol=1.9x  → -[-]  inactive_phase
+09:51:42    BAJAJ-AUTO   BodyClose50  C=9577.00  VWAP=9574.68  RSI=46  Vol=1.9x  → -[-]  inactive_phase
+09:51:42    BAJAJ-AUTO   Baseline     C=9610.00  VWAP=9581.73  RSI=57  Vol=1.5x  → -[-]  inactive_phase
+09:51:42    BAJAJ-AUTO   BodyClose50  C=9610.00  VWAP=9581.73  RSI=57  Vol=1.5x  → -[-]  inactive_phase
+09:51:42  STALE SIGNAL  BAJAJ-AUTO   Baseline     LONG[PDL_BASE]  bar=09:30  detected=09:36:33  backlog — skipped live alert
+09:51:42  STALE SIGNAL  BAJAJ-AUTO   BodyClose50  LONG[PDL_BC50]  bar=09:30  detected=09:36:33  backlog — skipped live alert
+09:51:42    BAJAJ-AUTO   Baseline     C=9640.00  VWAP=9590.72  RSI=62  Vol=0.5x  → -[-]  cooldown_until_10:00
+09:51:42    BAJAJ-AUTO   BodyClose50  C=9640.00  VWAP=9590.72  RSI=62  Vol=0.5x  → -[-]  cooldown_until_10:00
+09:51:42    BAJAJ-AUTO   Baseline     C=9649.50  VWAP=9594.50  RSI=64  Vol=0.4x  → -[-]  cooldown_until_10:00
+09:51:42    BAJAJ-AUTO   BodyClose50  C=9649.50  VWAP=9594.50  RSI=64  Vol=0.4x  → -[-]  cooldown_until_10:00
+09:51:42    BAJFINANCE   Baseline     C=939.20  VWAP=938.38  RSI=44  Vol=0.3x  → -[-]  inactive_phase
+09:51:42    BAJFINANCE   BodyClose50  C=939.20  VWAP=938.38  RSI=44  Vol=0.3x  → -[-]  inactive_phase
+09:51:42    BAJFINANCE   Baseline     C=937.20  VWAP=938.24  RSI=37  Vol=0.3x  → -[-]  inactive_phase
+09:51:42    BAJFINANCE   BodyClose50  C=937.20  VWAP=938.24  RSI=37  Vol=0.3x  → -[-]  inactive_phase
+09:51:42    BAJFINANCE   Baseline     C=935.85  VWAP=938.13  RSI=33  Vol=0.1x  → -[-]  
+09:51:42    BAJFINANCE   BodyClose50  C=935.85  VWAP=938.13  RSI=33  Vol=0.1x  → -[-]  
+09:51:42    BAJFINANCE   Baseline     C=934.30  VWAP=937.80  RSI=28  Vol=0.2x  → -[-]  
+09:51:42    BAJFINANCE   BodyClose50  C=934.30  VWAP=937.80  RSI=28  Vol=0.2x  → -[-]  
+09:51:42    BAJFINANCE   Baseline     C=933.50  VWAP=937.53  RSI=26  Vol=0.2x  → -[-]  
+09:51:42    BAJFINANCE   BodyClose50  C=933.50  VWAP=937.53  RSI=26  Vol=0.2x  → -[-]  
+09:51:42    HDFCBANK     Baseline     C=845.45  VWAP=845.63  RSI=28  Vol=0.6x  → -[-]  inactive_phase
+09:51:42    HDFCBANK     BodyClose50  C=845.45  VWAP=845.63  RSI=28  Vol=0.6x  → -[-]  inactive_phase
+09:51:42    HDFCBANK     Baseline     C=844.30  VWAP=845.51  RSI=24  Vol=0.4x  → -[-]  inactive_phase
+09:51:42    HDFCBANK     BodyClose50  C=844.30  VWAP=845.51  RSI=24  Vol=0.4x  → -[-]  inactive_phase
+09:51:42    HDFCBANK     Baseline     C=841.35  VWAP=844.81  RSI=17  Vol=0.7x  → -[-]  inactive_phase
+09:51:42    HDFCBANK     BodyClose50  C=841.35  VWAP=844.81  RSI=17  Vol=0.7x  → -[-]  inactive_phase
+09:51:42    HDFCBANK     Baseline     C=841.75  VWAP=844.45  RSI=21  Vol=0.5x  → -[-]  
+09:51:42    HDFCBANK     BodyClose50  C=841.75  VWAP=844.45  RSI=21  Vol=0.5x  → -[-]  
+09:51:42    HDFCBANK     Baseline     C=840.85  VWAP=843.92  RSI=19  Vol=0.7x  → -[-]  
+09:51:42    HDFCBANK     BodyClose50  C=840.85  VWAP=843.92  RSI=19  Vol=0.7x  → -[-]  
+09:51:42    HDFCBANK     Baseline     C=841.60  VWAP=843.68  RSI=25  Vol=0.5x  → -[-]  
+09:51:42    HDFCBANK     BodyClose50  C=841.60  VWAP=843.68  RSI=25  Vol=0.5x  → -[-]  
+09:51:42    POWERGRID    Baseline     C=300.65  VWAP=300.09  RSI=75  Vol=0.6x  → -[-]  inactive_phase
+09:51:42    POWERGRID    BodyClose50  C=300.65  VWAP=300.09  RSI=75  Vol=0.6x  → -[-]  inactive_phase
+09:51:42    POWERGRID    Baseline     C=300.50  VWAP=300.16  RSI=71  Vol=0.6x  → -[-]  inactive_phase
+09:51:42    POWERGRID    BodyClose50  C=300.50  VWAP=300.16  RSI=71  Vol=0.6x  → -[-]  inactive_phase
+09:51:42    POWERGRID    Baseline     C=301.30  VWAP=300.26  RSI=78  Vol=0.5x  → -[-]  
+09:51:42    POWERGRID    BodyClose50  C=301.30  VWAP=300.26  RSI=78  Vol=0.5x  → -[-]  
+09:51:42    POWERGRID    Baseline     C=300.80  VWAP=300.37  RSI=67  Vol=0.7x  → -[-]  
+09:51:42    POWERGRID    BodyClose50  C=300.80  VWAP=300.37  RSI=67  Vol=0.7x  → -[-]  
+09:51:42    POWERGRID    Baseline     C=301.50  VWAP=300.53  RSI=73  Vol=0.9x  → -[-]  
+09:51:42    POWERGRID    BodyClose50  C=301.50  VWAP=300.53  RSI=73  Vol=0.9x  → -[-]  
+09:51:42    HCLTECH      Baseline     C=1368.40  VWAP=1368.05  RSI=79  Vol=0.9x  → -[-]  inactive_phase
+09:51:42    HCLTECH      BodyClose50  C=1368.40  VWAP=1368.05  RSI=79  Vol=0.9x  → -[-]  inactive_phase
+09:51:42    HCLTECH      Baseline     C=1365.60  VWAP=1367.89  RSI=62  Vol=1.7x  → -[-]  inactive_phase
+09:51:42    HCLTECH      BodyClose50  C=1365.60  VWAP=1367.89  RSI=62  Vol=1.7x  → -[-]  inactive_phase
+09:51:42    HCLTECH      Baseline     C=1363.00  VWAP=1367.35  RSI=50  Vol=0.7x  → -[-]  inactive_phase
+09:51:42    HCLTECH      BodyClose50  C=1363.00  VWAP=1367.35  RSI=50  Vol=0.7x  → -[-]  inactive_phase
+09:51:42    HCLTECH      Baseline     C=1363.60  VWAP=1367.04  RSI=53  Vol=0.4x  → -[-]  
+09:51:42    HCLTECH      BodyClose50  C=1363.60  VWAP=1367.04  RSI=53  Vol=0.4x  → -[-]  
+09:51:42    HCLTECH      Baseline     C=1361.20  VWAP=1366.61  RSI=44  Vol=0.5x  → -[-]  
+09:51:42    HCLTECH      BodyClose50  C=1361.20  VWAP=1366.61  RSI=44  Vol=0.5x  → -[-]  
+09:51:42    HCLTECH      Baseline     C=1360.90  VWAP=1366.35  RSI=43  Vol=0.4x  → -[-]  
+09:51:42    HCLTECH      BodyClose50  C=1360.90  VWAP=1366.35  RSI=43  Vol=0.4x  → -[-]  
+09:51:42  SCAN #3 complete in 908.2s
+09:51:42  SCAN delay 41.5s beyond target 09:51:01
+09:51:42  MISSED 4 candle(s) (idx 7→12)
+09:51:42  SCAN #4  09:51:42  phase=ACTIVE_AM  active=True  missed=4
+09:51:42  FETCH  REST gap-fill (missed 4 candle(s))
+09:51:42  WS connected — subscribing 10 tokens (mode=2 Quote)
+09:51:42  GAP-FILL  JSWSTEEL     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:43  GAP-FILL  HINDUNILVR   Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:43  GAP-FILL  AXISBANK     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:43  GAP-FILL  TATASTEEL    Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:44  GAP-FILL  TRENT        Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:44  GAP-FILL  BAJAJ-AUTO   Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:44  GAP-FILL  BAJFINANCE   Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:45  GAP-FILL  HDFCBANK     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:45  GAP-FILL  POWERGRID    Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:46  GAP-FILL  HCLTECH      Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:46  WS stale (0s since last tick) — REST fallback
+09:51:46  API  JSWSTEEL     fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:46  API  HINDUNILVR   fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:47  API  AXISBANK     fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:47  API  TATASTEEL    fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:47  API  TRENT        fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:48  API  BAJAJ-AUTO   fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:48  API  BAJFINANCE   fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:48  API  HDFCBANK     fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:49  API  POWERGRID    fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:49  API  HCLTECH      fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+09:51:49  FETCH  REST  0/10 OK in 7.1s
+09:51:49  SCAN #4 complete in 7.1s
+10:00:42  SCAN delay 41.1s beyond target 10:00:01
+10:00:42  MISSED 2 candle(s) (idx 12→15)
+10:00:42  SCAN #5  10:00:42  phase=ACTIVE_AM  active=True  missed=2
+10:00:42  FETCH  REST gap-fill (missed 2 candle(s))
+10:00:42  GAP-FILL  JSWSTEEL     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:42  GAP-FILL  HINDUNILVR   Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:42  GAP-FILL  AXISBANK     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:43  GAP-FILL  TATASTEEL    Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:43  GAP-FILL  TRENT        Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:44  GAP-FILL  BAJAJ-AUTO   Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:44  GAP-FILL  BAJFINANCE   Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:44  GAP-FILL  HDFCBANK     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:45  GAP-FILL  POWERGRID    Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:45  GAP-FILL  HCLTECH      Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:45  WS stale (0s since last tick) — REST fallback
+10:00:46  API  JSWSTEEL     fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:46  API  HINDUNILVR   fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:47  API  AXISBANK     fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:47  API  TATASTEEL    fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:47  API  TRENT        fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:48  API  BAJAJ-AUTO   fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:48  API  BAJFINANCE   fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:48  API  HDFCBANK     fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:49  API  POWERGRID    fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:49  API  HCLTECH      fetch error: Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:00:49  FETCH  REST  0/10 OK in 7.2s
+10:00:49  SCAN #5 complete in 7.2s
+10:03:01  SCAN #6  10:03:01  phase=ACTIVE_AM  active=True  missed=0
+10:03:01  FETCH  WS  50 new bars (6 clock-flushed) in 0.014s
+10:03:01    JSWSTEEL     Baseline     C=1202.10  VWAP=1219.64  RSI=23  Vol=0.2x  → -[-]  
+10:03:01    JSWSTEEL     BodyClose50  C=1202.10  VWAP=1219.64  RSI=23  Vol=0.2x  → -[-]  
+10:03:01    JSWSTEEL     Baseline     C=1202.40  VWAP=1214.62  RSI=23  Vol=2.7x  → -[-]  
+10:03:01    JSWSTEEL     BodyClose50  C=1202.40  VWAP=1214.62  RSI=23  Vol=2.7x  → -[-]  
+10:03:01    JSWSTEEL     Baseline     C=1198.30  VWAP=1214.16  RSI=20  Vol=0.3x  → -[-]  
+10:03:01    JSWSTEEL     BodyClose50  C=1198.30  VWAP=1214.16  RSI=20  Vol=0.3x  → -[-]  
+10:03:01    JSWSTEEL     Baseline     C=1197.50  VWAP=1213.57  RSI=19  Vol=0.4x  → -[-]  
+10:03:01    JSWSTEEL     BodyClose50  C=1197.50  VWAP=1213.57  RSI=19  Vol=0.4x  → -[-]  
+10:03:01    HINDUNILVR   Baseline     C=2177.10  VWAP=2181.50  RSI=32  Vol=0.2x  → -[-]  
+10:03:01    HINDUNILVR   BodyClose50  C=2177.10  VWAP=2181.50  RSI=32  Vol=0.2x  → -[-]  
+10:03:01    HINDUNILVR   Baseline     C=2176.00  VWAP=2180.94  RSI=30  Vol=0.6x  → -[-]  
+10:03:01    HINDUNILVR   BodyClose50  C=2176.00  VWAP=2180.94  RSI=30  Vol=0.6x  → -[-]  
+10:03:01    HINDUNILVR   Baseline     C=2175.20  VWAP=2180.72  RSI=29  Vol=0.2x  → -[-]  
+10:03:01    HINDUNILVR   BodyClose50  C=2175.20  VWAP=2180.72  RSI=29  Vol=0.2x  → -[-]  
+10:03:01    HINDUNILVR   Baseline     C=2172.80  VWAP=2180.25  RSI=25  Vol=0.4x  → ★ SHORT[PDL_BASE]  SL=2178.90  TP=2163.73  Qty=114
+10:03:02    HINDUNILVR   BodyClose50  C=2172.80  VWAP=2180.25  RSI=25  Vol=0.4x  → ★ SHORT[PDL_BC50]  SL=2178.90  TP=2163.73  Qty=114
+10:03:02    AXISBANK     Baseline     C=1299.50  VWAP=1306.82  RSI=26  Vol=0.3x  → -[-]  
+10:03:02    AXISBANK     BodyClose50  C=1299.50  VWAP=1306.82  RSI=26  Vol=0.3x  → -[-]  
+10:03:02    AXISBANK     Baseline     C=1297.60  VWAP=1305.43  RSI=24  Vol=0.6x  → -[-]  
+10:03:02    AXISBANK     BodyClose50  C=1297.60  VWAP=1305.43  RSI=24  Vol=0.6x  → -[-]  
+10:03:02    AXISBANK     Baseline     C=1298.60  VWAP=1304.70  RSI=28  Vol=0.4x  → -[-]  
+10:03:02    AXISBANK     BodyClose50  C=1298.60  VWAP=1304.70  RSI=28  Vol=0.4x  → -[-]  
+10:03:02    AXISBANK     Baseline     C=1298.20  VWAP=1304.15  RSI=27  Vol=0.4x  → -[-]  
+10:03:02    AXISBANK     BodyClose50  C=1298.20  VWAP=1304.15  RSI=27  Vol=0.4x  → -[-]  
+10:03:02    TATASTEEL    Baseline     C=196.70  VWAP=197.57  RSI=49  Vol=1.7x  → -[-]  
+10:03:02    TATASTEEL    BodyClose50  C=196.70  VWAP=197.57  RSI=49  Vol=1.7x  → -[-]  
+10:03:02    TATASTEEL    Baseline     C=197.10  VWAP=197.52  RSI=53  Vol=1.1x  → -[-]  
+10:03:02    TATASTEEL    BodyClose50  C=197.10  VWAP=197.52  RSI=53  Vol=1.1x  → -[-]  
+10:03:02    TATASTEEL    Baseline     C=196.46  VWAP=197.46  RSI=47  Vol=0.9x  → -[-]  
+10:03:02    TATASTEEL    BodyClose50  C=196.46  VWAP=197.46  RSI=47  Vol=0.9x  → -[-]  
+10:03:02    TATASTEEL    Baseline     C=196.35  VWAP=197.38  RSI=45  Vol=1.0x  → -[-]  
+10:03:02    TATASTEEL    BodyClose50  C=196.35  VWAP=197.38  RSI=45  Vol=1.0x  → -[-]  
+10:03:02    TRENT        Baseline     C=3707.00  VWAP=3713.99  RSI=40  Vol=0.1x  → -[-]  
+10:03:02    TRENT        BodyClose50  C=3707.00  VWAP=3713.99  RSI=40  Vol=0.1x  → -[-]  
+10:03:02    TRENT        Baseline     C=3708.50  VWAP=3713.66  RSI=43  Vol=0.3x  → -[-]  
+10:03:02    TRENT        BodyClose50  C=3708.50  VWAP=3713.66  RSI=43  Vol=0.3x  → -[-]  
+10:03:02    TRENT        Baseline     C=3704.50  VWAP=3713.38  RSI=37  Vol=0.2x  → -[-]  
+10:03:02    TRENT        BodyClose50  C=3704.50  VWAP=3713.38  RSI=37  Vol=0.2x  → -[-]  
+10:03:02    TRENT        Baseline     C=3707.10  VWAP=3713.19  RSI=43  Vol=0.2x  → -[-]  
+10:03:02    TRENT        BodyClose50  C=3707.10  VWAP=3713.19  RSI=43  Vol=0.2x  → -[-]  
+10:03:02    BAJAJ-AUTO   Baseline     C=9584.00  VWAP=9600.58  RSI=45  Vol=0.6x  → -[-]  cooldown_until_10:00
+10:03:02    BAJAJ-AUTO   BodyClose50  C=9584.00  VWAP=9600.58  RSI=45  Vol=0.6x  → -[-]  cooldown_until_10:00
+10:03:02    BAJAJ-AUTO   Baseline     C=9601.00  VWAP=9600.35  RSI=49  Vol=0.4x  → -[-]  cooldown_until_10:00
+10:03:02    BAJAJ-AUTO   BodyClose50  C=9601.00  VWAP=9600.35  RSI=49  Vol=0.4x  → -[-]  cooldown_until_10:00
+10:03:02    BAJAJ-AUTO   Baseline     C=9596.00  VWAP=9600.28  RSI=48  Vol=0.5x  → -[-]  
+10:03:02    BAJAJ-AUTO   BodyClose50  C=9596.00  VWAP=9600.28  RSI=48  Vol=0.5x  → -[-]  
+10:03:02    BAJAJ-AUTO   Baseline     C=9599.00  VWAP=9600.16  RSI=49  Vol=0.3x  → -[-]  
+10:03:02    BAJAJ-AUTO   BodyClose50  C=9599.00  VWAP=9600.16  RSI=49  Vol=0.3x  → -[-]  
+10:03:02  STALE SIGNAL  BAJFINANCE   Baseline     SHORT[PDL_BASE]  bar=09:54  detected=10:03:01  backlog — skipped live alert
+10:03:02  STALE SIGNAL  BAJFINANCE   BodyClose50  SHORT[PDL_BC50]  bar=09:54  detected=10:03:01  backlog — skipped live alert
+10:03:02    BAJFINANCE   Baseline     C=931.60  VWAP=936.06  RSI=28  Vol=0.3x  → -[-]  cooldown_until_10:24
+10:03:02    BAJFINANCE   BodyClose50  C=931.60  VWAP=936.06  RSI=28  Vol=0.3x  → -[-]  cooldown_until_10:24
+10:03:02    BAJFINANCE   Baseline     C=929.80  VWAP=935.63  RSI=24  Vol=0.3x  → -[-]  cooldown_until_10:24
+10:03:02    BAJFINANCE   BodyClose50  C=929.80  VWAP=935.63  RSI=24  Vol=0.3x  → -[-]  cooldown_until_10:24
+10:03:02    BAJFINANCE   Baseline     C=928.50  VWAP=935.19  RSI=22  Vol=0.3x  → -[-]  cooldown_until_10:24
+10:03:02    BAJFINANCE   BodyClose50  C=928.50  VWAP=935.19  RSI=22  Vol=0.3x  → -[-]  cooldown_until_10:24
+10:03:02    HDFCBANK     Baseline     C=841.50  VWAP=843.52  RSI=25  Vol=0.2x  → -[-]  
+10:03:02    HDFCBANK     BodyClose50  C=841.50  VWAP=843.52  RSI=25  Vol=0.2x  → -[-]  
+10:03:02    HDFCBANK     Baseline     C=841.30  VWAP=843.30  RSI=24  Vol=0.6x  → -[-]  
+10:03:02    HDFCBANK     BodyClose50  C=841.30  VWAP=843.30  RSI=24  Vol=0.6x  → -[-]  
+10:03:02    HDFCBANK     Baseline     C=841.90  VWAP=843.26  RSI=30  Vol=0.2x  → -[-]  
+10:03:02    HDFCBANK     BodyClose50  C=841.90  VWAP=843.26  RSI=30  Vol=0.2x  → -[-]  
+10:03:02    HDFCBANK     Baseline     C=841.95  VWAP=843.21  RSI=31  Vol=0.2x  → -[-]  
+10:03:02    HDFCBANK     BodyClose50  C=841.95  VWAP=843.21  RSI=31  Vol=0.2x  → -[-]  
+10:03:02    POWERGRID    Baseline     C=299.65  VWAP=300.47  RSI=48  Vol=0.3x  → -[-]  
+10:03:02    POWERGRID    BodyClose50  C=299.65  VWAP=300.47  RSI=48  Vol=0.3x  → -[-]  
+10:03:02    POWERGRID    Baseline     C=300.05  VWAP=300.43  RSI=52  Vol=0.5x  → -[-]  
+10:03:02    POWERGRID    BodyClose50  C=300.05  VWAP=300.43  RSI=52  Vol=0.5x  → -[-]  
+10:03:02  STALE SIGNAL  POWERGRID    Baseline     LONG[PDL_BASE]  bar=10:00  detected=10:03:01  backlog — skipped live alert
+10:03:02    POWERGRID    BodyClose50  C=300.15  VWAP=300.41  RSI=53  Vol=0.3x  → -[-]  
+10:03:02    POWERGRID    Baseline     C=300.10  VWAP=300.39  RSI=52  Vol=0.4x  → -[-]  cooldown_until_10:30
+10:03:02    POWERGRID    BodyClose50  C=300.10  VWAP=300.39  RSI=52  Vol=0.4x  → -[-]  
+10:03:02    HCLTECH      Baseline     C=1354.60  VWAP=1364.78  RSI=27  Vol=0.7x  → -[-]  
+10:03:02    HCLTECH      BodyClose50  C=1354.60  VWAP=1364.78  RSI=27  Vol=0.7x  → -[-]  
+10:03:02    HCLTECH      Baseline     C=1355.20  VWAP=1363.96  RSI=30  Vol=0.6x  → -[-]  
+10:03:02    HCLTECH      BodyClose50  C=1355.20  VWAP=1363.96  RSI=30  Vol=0.6x  → -[-]  
+10:03:02    HCLTECH      Baseline     C=1354.30  VWAP=1363.53  RSI=28  Vol=0.3x  → -[-]  
+10:03:02    HCLTECH      BodyClose50  C=1354.30  VWAP=1363.53  RSI=28  Vol=0.3x  → -[-]  
+10:03:02    HCLTECH      Baseline     C=1355.20  VWAP=1362.76  RSI=33  Vol=0.7x  → -[-]  
+10:03:02    HCLTECH      BodyClose50  C=1355.20  VWAP=1362.76  RSI=33  Vol=0.7x  → -[-]  
+10:03:02  SCAN #6 complete in 1.4s
+10:06:01  SCAN #7  10:06:01  phase=ACTIVE_AM  active=True  missed=0
+10:06:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.022s
+10:06:01    JSWSTEEL     Baseline     C=1198.50  VWAP=1213.35  RSI=23  Vol=0.2x  → -[-]  
+10:06:01    JSWSTEEL     BodyClose50  C=1198.50  VWAP=1213.35  RSI=23  Vol=0.2x  → -[-]  
+10:06:01    HINDUNILVR   Baseline     C=2167.10  VWAP=2178.69  RSI=19  Vol=1.1x  → -[-]  in_position
+10:06:01    HINDUNILVR   BodyClose50  C=2167.10  VWAP=2178.69  RSI=19  Vol=1.1x  → -[-]  in_position
+10:06:01    AXISBANK     Baseline     C=1297.70  VWAP=1303.77  RSI=26  Vol=0.4x  → -[-]  
+10:06:01    AXISBANK     BodyClose50  C=1297.70  VWAP=1303.77  RSI=26  Vol=0.4x  → -[-]  
+10:06:01    TATASTEEL    Baseline     C=196.30  VWAP=197.35  RSI=45  Vol=0.5x  → -[-]  
+10:06:01    TATASTEEL    BodyClose50  C=196.30  VWAP=197.35  RSI=45  Vol=0.5x  → -[-]  
+10:06:01    TRENT        Baseline     C=3701.20  VWAP=3712.75  RSI=35  Vol=0.3x  → -[-]  
+10:06:01    TRENT        BodyClose50  C=3701.20  VWAP=3712.75  RSI=35  Vol=0.3x  → -[-]  
+10:06:01    BAJAJ-AUTO   Baseline     C=9598.50  VWAP=9599.89  RSI=49  Vol=0.5x  → -[-]  
+10:06:01    BAJAJ-AUTO   BodyClose50  C=9598.50  VWAP=9599.89  RSI=49  Vol=0.5x  → -[-]  
+10:06:01    BAJFINANCE   Baseline     C=928.00  VWAP=934.86  RSI=21  Vol=0.2x  → -[-]  cooldown_until_10:24
+10:06:01    BAJFINANCE   BodyClose50  C=928.00  VWAP=934.86  RSI=21  Vol=0.2x  → -[-]  cooldown_until_10:24
+10:06:01    HDFCBANK     Baseline     C=841.35  VWAP=843.11  RSI=28  Vol=0.4x  → -[-]  
+10:06:01    HDFCBANK     BodyClose50  C=841.35  VWAP=843.11  RSI=28  Vol=0.4x  → -[-]  
+10:06:01    POWERGRID    Baseline     C=299.55  VWAP=300.36  RSI=45  Vol=0.3x  → -[-]  cooldown_until_10:30
+10:06:01    POWERGRID    BodyClose50  C=299.55  VWAP=300.36  RSI=45  Vol=0.3x  → -[-]  
+10:06:01    HCLTECH      Baseline     C=1353.60  VWAP=1362.36  RSI=29  Vol=0.4x  → -[-]  
+10:06:01    HCLTECH      BodyClose50  C=1353.60  VWAP=1362.36  RSI=29  Vol=0.4x  → -[-]  
+10:06:01  SCAN #7 complete in 0.0s
+10:06:01  STOPPED MANUALLY  2 signal(s), 7 scans
+10:06:01    SUMMARY  10:03  SHORT  HINDUNILVR   Baseline     @ 2174.57  [PDL_BASE]
+10:06:01    SUMMARY  10:03  SHORT  HINDUNILVR   BodyClose50  @ 2174.57  [PDL_BC50]
+10:06:01  WS feed stopped
+10:06:04  ======================================================================
+10:06:04  SESSION START  Capital=50000  RR=1:2.5  Risk=1.5%  ws=True
+10:06:04  Stocks: JSWSTEEL, HINDUNILVR, AXISBANK, TATASTEEL, TRENT, BAJAJ-AUTO, BAJFINANCE, HDFCBANK, POWERGRID, HCLTECH
+10:06:04  Strategy: PDL-Only (SL=1.0x ATR)  RR=1:2.5  MaxSL/day=2
+10:06:04  Telegram: enabled
+10:06:04  PHASE 1  Warm-Up — connecting to Angel One
+10:06:05  API connected
+10:06:05  Loading 5-day 3-min warmup data
+10:06:07  WARMUP  JSWSTEEL     391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:10  WARMUP  HINDUNILVR   391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:13  WARMUP  AXISBANK     391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:17  WARMUP  TATASTEEL    391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:20  WARMUP  TRENT        391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:23  WARMUP  BAJAJ-AUTO   391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:26  WARMUP  BAJFINANCE   391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:29  WARMUP  HDFCBANK     391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:32  WARMUP  POWERGRID    391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:35  WARMUP  HCLTECH      391 bars  API 2026-03-06→2026-03-11 10:00:00  cached
+10:06:37  Checking event calendar for corporate events
+10:06:37  Event calendar: all stocks cleared
+10:06:37  PDL  JSWSTEEL     H=1219.90  L=1195.20
+10:06:37  PDL  HINDUNILVR   H=2224.00  L=2175.00
+10:06:37  PDL  AXISBANK     H=1319.50  L=1284.60
+10:06:37  PDL  TATASTEEL    H=196.64  L=192.00
+10:06:37  PDL  TRENT        H=3749.90  L=3690.00
+10:06:37  PDL  BAJAJ-AUTO   H=9637.50  L=9349.00
+10:06:37  PDL  BAJFINANCE   H=952.15  L=931.85
+10:06:37  PDL  HDFCBANK     H=856.80  L=840.60
+10:06:37  PDL  POWERGRID    H=300.05  L=293.75
+10:06:37  PDL  HCLTECH      H=1364.40  L=1345.00
+10:06:37  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+10:06:37  Starting WebSocket feed
+10:06:37  WS connected — subscribing 10 tokens (mode=2 Quote)
+10:06:37  WS feed started — 10 tokens subscribed
+10:06:38  PHASE  START → ACTIVE_AM
+10:06:39  SCAN delay 38.3s beyond target 10:06:01
+10:06:39  MISSED 17 candle(s) (idx -1→17)
+10:06:39  SCAN #1  10:06:38  phase=ACTIVE_AM  active=True  missed=17
+10:06:39  FETCH  REST gap-fill (first scan, missed 17 candle(s))
+10:06:42  GAP-FILL  10/10 OK in 3.3s
+10:06:42  FETCH  WS  0 new bars (0 clock-flushed) in 3.307s
+10:06:42    JSWSTEEL     Baseline     C=1198.90  VWAP=1212.26  RSI=27  Vol=0.1x  → -[-]  
+10:06:42    JSWSTEEL     BodyClose50  C=1198.90  VWAP=1212.26  RSI=27  Vol=0.1x  → -[-]  
+10:06:42    HINDUNILVR   Baseline     C=2166.90  VWAP=2178.65  RSI=20  Vol=1.5x  → -[-]  
+10:06:42    HINDUNILVR   BodyClose50  C=2166.90  VWAP=2178.65  RSI=20  Vol=1.5x  → -[-]  
+10:06:42    AXISBANK     Baseline     C=1297.50  VWAP=1303.56  RSI=32  Vol=0.5x  → -[-]  
+10:06:42    AXISBANK     BodyClose50  C=1297.50  VWAP=1303.56  RSI=32  Vol=0.5x  → -[-]  
+10:06:42    TATASTEEL    Baseline     C=196.31  VWAP=197.53  RSI=40  Vol=0.4x  → -[-]  
+10:06:42    TATASTEEL    BodyClose50  C=196.31  VWAP=197.53  RSI=40  Vol=0.4x  → -[-]  
+10:06:42    TRENT        Baseline     C=3701.20  VWAP=3711.66  RSI=38  Vol=0.4x  → -[-]  
+10:06:42    TRENT        BodyClose50  C=3701.20  VWAP=3711.66  RSI=38  Vol=0.4x  → -[-]  
+10:06:42    BAJAJ-AUTO   Baseline     C=9598.50  VWAP=9603.76  RSI=46  Vol=0.5x  → -[-]  
+10:06:42    BAJAJ-AUTO   BodyClose50  C=9598.50  VWAP=9603.76  RSI=46  Vol=0.5x  → -[-]  
+10:06:42    BAJFINANCE   Baseline     C=928.00  VWAP=934.36  RSI=26  Vol=0.3x  → -[-]  
+10:06:42    BAJFINANCE   BodyClose50  C=928.00  VWAP=934.36  RSI=26  Vol=0.3x  → -[-]  
+10:06:42    HDFCBANK     Baseline     C=841.40  VWAP=842.96  RSI=37  Vol=0.6x  → -[-]  
+10:06:42    HDFCBANK     BodyClose50  C=841.40  VWAP=842.96  RSI=37  Vol=0.6x  → -[-]  
+10:06:42    POWERGRID    Baseline     C=299.50  VWAP=300.48  RSI=41  Vol=0.4x  → -[-]  
+10:06:42    POWERGRID    BodyClose50  C=299.50  VWAP=300.48  RSI=41  Vol=0.4x  → -[-]  
+10:06:42    HCLTECH      Baseline     C=1353.60  VWAP=1361.95  RSI=34  Vol=0.5x  → -[-]  
+10:06:42    HCLTECH      BodyClose50  C=1353.60  VWAP=1361.95  RSI=34  Vol=0.5x  → -[-]  
+10:06:42  SCAN #1 complete in 3.3s
+10:09:01  SCAN #2  10:09:01  phase=ACTIVE_AM  active=True  missed=0
+10:09:01  FETCH  WS  10 new bars (5 clock-flushed) in 0.024s
+10:09:01    JSWSTEEL     Baseline     C=1195.30  VWAP=1211.89  RSI=22  Vol=0.4x  → -[-]  
+10:09:01    JSWSTEEL     BodyClose50  C=1195.30  VWAP=1211.89  RSI=22  Vol=0.4x  → -[-]  
+10:09:01    HINDUNILVR   Baseline     C=2165.00  VWAP=2177.77  RSI=18  Vol=1.1x  → -[-]  
+10:09:01    HINDUNILVR   BodyClose50  C=2165.00  VWAP=2177.77  RSI=18  Vol=1.1x  → -[-]  
+10:09:01    AXISBANK     Baseline     C=1297.10  VWAP=1303.32  RSI=31  Vol=0.6x  → -[-]  
+10:09:01    AXISBANK     BodyClose50  C=1297.10  VWAP=1303.32  RSI=31  Vol=0.6x  → -[-]  
+10:09:01    TATASTEEL    Baseline     C=195.84  VWAP=197.48  RSI=34  Vol=0.6x  → -[-]  
+10:09:01    TATASTEEL    BodyClose50  C=195.84  VWAP=197.48  RSI=34  Vol=0.6x  → -[-]  
+10:09:01    TRENT        Baseline     C=3697.90  VWAP=3711.26  RSI=35  Vol=0.5x  → -[-]  
+10:09:01    TRENT        BodyClose50  C=3697.90  VWAP=3711.26  RSI=35  Vol=0.5x  → -[-]  
+10:09:01    BAJAJ-AUTO   Baseline     C=9505.50  VWAP=9592.48  RSI=27  Vol=2.3x  → -[-]  
+10:09:01    BAJAJ-AUTO   BodyClose50  C=9505.50  VWAP=9592.48  RSI=27  Vol=2.3x  → -[-]  
+10:09:01    BAJFINANCE   Baseline     C=928.05  VWAP=934.21  RSI=26  Vol=0.3x  → -[-]  
+10:09:01    BAJFINANCE   BodyClose50  C=928.05  VWAP=934.21  RSI=26  Vol=0.3x  → -[-]  
+10:09:01    HDFCBANK     Baseline     C=840.85  VWAP=842.92  RSI=34  Vol=0.3x  → -[-]  
+10:09:01    HDFCBANK     BodyClose50  C=840.85  VWAP=842.92  RSI=34  Vol=0.3x  → -[-]  
+10:09:01    POWERGRID    Baseline     C=299.50  VWAP=300.45  RSI=41  Vol=0.4x  → -[-]  
+10:09:01    POWERGRID    BodyClose50  C=299.50  VWAP=300.45  RSI=41  Vol=0.4x  → -[-]  
+10:09:01    HCLTECH      Baseline     C=1350.90  VWAP=1361.37  RSI=28  Vol=0.9x  → -[-]  
+10:09:01    HCLTECH      BodyClose50  C=1350.90  VWAP=1361.37  RSI=28  Vol=0.9x  → -[-]  
+10:09:01  SCAN #2 complete in 0.1s
+10:26:45  WS connected — subscribing 10 tokens (mode=2 Quote)
+10:26:58  SCAN delay 177.9s beyond target 10:24:01
+10:26:58  MISSED 4 candle(s) (idx 18→23)
+10:26:58  SCAN #3  10:26:58  phase=ACTIVE_AM  active=True  missed=4
+10:26:58  FETCH  REST gap-fill (missed 4 candle(s))
+10:26:59  GAP-FILL  JSWSTEEL     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:26:59  GAP-FILL  HINDUNILVR   Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:26:59  GAP-FILL  AXISBANK     Candle fetch failed: Something Went Wrong, Please Try After Sometime
+10:27:02  GAP-FILL  7/10 OK in 3.3s
+10:27:02  FETCH  WS  19 new bars (0 clock-flushed) in 3.351s
+10:27:02  STALE SIGNAL  JSWSTEEL     Baseline     SHORT[PDL_BASE]  bar=10:12  detected=10:26:58  backlog — skipped live alert
+10:27:02  STALE SIGNAL  JSWSTEEL     BodyClose50  SHORT[PDL_BC50]  bar=10:12  detected=10:26:58  backlog — skipped live alert
+10:27:02    JSWSTEEL     Baseline     C=1200.00  VWAP=1209.67  RSI=40  Vol=0.0x  → -[-]  cooldown_until_10:42
+10:27:02    JSWSTEEL     BodyClose50  C=1200.00  VWAP=1209.67  RSI=40  Vol=0.0x  → -[-]  cooldown_until_10:42
+10:27:02    HINDUNILVR   Baseline     C=2169.30  VWAP=2177.06  RSI=34  Vol=1.3x  → -[-]  
+10:27:02    HINDUNILVR   BodyClose50  C=2169.30  VWAP=2177.06  RSI=34  Vol=1.3x  → -[-]  
+10:27:02    HINDUNILVR   Baseline     C=2174.90  VWAP=2177.06  RSI=49  Vol=0.0x  → -[-]  
+10:27:02    HINDUNILVR   BodyClose50  C=2174.90  VWAP=2177.06  RSI=49  Vol=0.0x  → -[-]  
+10:27:02    AXISBANK     Baseline     C=1296.30  VWAP=1303.07  RSI=29  Vol=0.7x  → -[-]  
+10:27:02    AXISBANK     BodyClose50  C=1296.30  VWAP=1303.07  RSI=29  Vol=0.7x  → -[-]  
+10:27:02    AXISBANK     Baseline     C=1291.00  VWAP=1303.04  RSI=20  Vol=0.0x  → -[-]  
+10:27:02    AXISBANK     BodyClose50  C=1291.00  VWAP=1303.04  RSI=20  Vol=0.0x  → -[-]  
+10:27:02    TATASTEEL    Baseline     C=195.81  VWAP=197.45  RSI=34  Vol=0.3x  → -[-]  
+10:27:02    TATASTEEL    BodyClose50  C=195.81  VWAP=197.45  RSI=34  Vol=0.3x  → -[-]  
+10:27:02    TATASTEEL    Baseline     C=195.95  VWAP=197.41  RSI=37  Vol=0.5x  → -[-]  
+10:27:02    TATASTEEL    BodyClose50  C=195.95  VWAP=197.41  RSI=37  Vol=0.5x  → -[-]  
+10:27:02    TATASTEEL    Baseline     C=196.14  VWAP=197.39  RSI=41  Vol=0.4x  → -[-]  
+10:27:02    TATASTEEL    BodyClose50  C=196.14  VWAP=197.39  RSI=41  Vol=0.4x  → -[-]  
+10:27:02    TATASTEEL    Baseline     C=196.11  VWAP=197.37  RSI=41  Vol=0.4x  → -[-]  
+10:27:02    TATASTEEL    BodyClose50  C=196.11  VWAP=197.37  RSI=41  Vol=0.4x  → -[-]  
+10:27:02    TATASTEEL    Baseline     C=196.21  VWAP=197.35  RSI=44  Vol=0.4x  → -[-]  
+10:27:02    TATASTEEL    BodyClose50  C=196.21  VWAP=197.35  RSI=44  Vol=0.4x  → -[-]  
+10:27:02    TATASTEEL    Baseline     C=196.21  VWAP=197.35  RSI=44  Vol=0.0x  → -[-]  
+10:27:02    TATASTEEL    BodyClose50  C=196.21  VWAP=197.35  RSI=44  Vol=0.0x  → -[-]  
+10:27:02    TRENT        Baseline     C=3700.30  VWAP=3711.00  RSI=40  Vol=0.4x  → -[-]  
+10:27:02    TRENT        BodyClose50  C=3700.30  VWAP=3711.00  RSI=40  Vol=0.4x  → -[-]  
+10:27:02    TRENT        Baseline     C=3696.80  VWAP=3710.80  RSI=35  Vol=0.3x  → -[-]  
+10:27:02    TRENT        BodyClose50  C=3696.80  VWAP=3710.80  RSI=35  Vol=0.3x  → -[-]  
+10:27:02    TRENT        Baseline     C=3699.80  VWAP=3710.43  RSI=41  Vol=0.8x  → -[-]  
+10:27:02    TRENT        BodyClose50  C=3699.80  VWAP=3710.43  RSI=41  Vol=0.8x  → -[-]  
+10:27:02    TRENT        Baseline     C=3700.20  VWAP=3710.23  RSI=42  Vol=0.5x  → -[-]  
+10:27:02    TRENT        BodyClose50  C=3700.20  VWAP=3710.23  RSI=42  Vol=0.5x  → -[-]  
+10:27:02    TRENT        Baseline     C=3695.30  VWAP=3709.82  RSI=35  Vol=1.1x  → -[-]  
+10:27:02    TRENT        BodyClose50  C=3695.30  VWAP=3709.82  RSI=35  Vol=1.1x  → -[-]  
+10:27:02    TRENT        Baseline     C=3692.30  VWAP=3709.77  RSI=32  Vol=0.1x  → -[-]  
+10:27:02    TRENT        BodyClose50  C=3692.30  VWAP=3709.77  RSI=32  Vol=0.1x  → -[-]  
+10:27:02    BAJAJ-AUTO   Baseline     C=9519.00  VWAP=9587.41  RSI=31  Vol=1.1x  → -[-]  
+10:27:02    BAJAJ-AUTO   BodyClose50  C=9519.00  VWAP=9587.41  RSI=31  Vol=1.1x  → -[-]  
+10:27:02    BAJAJ-AUTO   Baseline     C=9498.00  VWAP=9582.19  RSI=28  Vol=1.2x  → -[-]  
+10:27:02    BAJAJ-AUTO   BodyClose50  C=9498.00  VWAP=9582.19  RSI=28  Vol=1.2x  → -[-]  
+10:27:02    BAJAJ-AUTO   Baseline     C=9498.00  VWAP=9579.67  RSI=28  Vol=0.6x  → -[-]  
+10:27:02    BAJAJ-AUTO   BodyClose50  C=9498.00  VWAP=9579.67  RSI=28  Vol=0.6x  → -[-]  
+10:27:02    BAJAJ-AUTO   Baseline     C=9486.00  VWAP=9578.09  RSI=26  Vol=0.4x  → -[-]  
+10:27:02    BAJAJ-AUTO   BodyClose50  C=9486.00  VWAP=9578.09  RSI=26  Vol=0.4x  → -[-]  
+10:27:02    BAJAJ-AUTO   Baseline     C=9499.50  VWAP=9577.43  RSI=32  Vol=0.2x  → -[-]  
+10:27:02    BAJAJ-AUTO   BodyClose50  C=9499.50  VWAP=9577.43  RSI=32  Vol=0.2x  → -[-]  
+10:27:02    BAJFINANCE   Baseline     C=927.65  VWAP=933.95  RSI=25  Vol=0.6x  → -[-]  
+10:27:02    BAJFINANCE   BodyClose50  C=927.65  VWAP=933.95  RSI=25  Vol=0.6x  → -[-]  
+10:27:02    BAJFINANCE   Baseline     C=927.50  VWAP=933.77  RSI=25  Vol=0.6x  → -[-]  
+10:27:02    BAJFINANCE   BodyClose50  C=927.50  VWAP=933.77  RSI=25  Vol=0.6x  → -[-]  
+10:27:02    BAJFINANCE   Baseline     C=927.40  VWAP=933.46  RSI=24  Vol=1.1x  → -[-]  
+10:27:02    BAJFINANCE   BodyClose50  C=927.40  VWAP=933.46  RSI=24  Vol=1.1x  → -[-]  
+10:27:02    BAJFINANCE   Baseline     C=927.75  VWAP=933.28  RSI=28  Vol=0.8x  → -[-]  
+10:27:02    BAJFINANCE   BodyClose50  C=927.75  VWAP=933.28  RSI=28  Vol=0.8x  → -[-]  
+10:27:02    BAJFINANCE   Baseline     C=928.60  VWAP=933.16  RSI=37  Vol=0.7x  → -[-]  
+10:27:02    BAJFINANCE   BodyClose50  C=928.60  VWAP=933.16  RSI=37  Vol=0.7x  → -[-]  
+10:27:02    BAJFINANCE   Baseline     C=928.60  VWAP=933.14  RSI=37  Vol=0.1x  → -[-]  
+10:27:02    BAJFINANCE   BodyClose50  C=928.60  VWAP=933.14  RSI=37  Vol=0.1x  → -[-]  
+10:27:02    HDFCBANK     Baseline     C=840.50  VWAP=842.86  RSI=32  Vol=0.4x  → -[-]  
+10:27:02    HDFCBANK     BodyClose50  C=840.50  VWAP=842.86  RSI=32  Vol=0.4x  → -[-]  
+10:27:02    HDFCBANK     Baseline     C=840.90  VWAP=842.78  RSI=37  Vol=0.8x  → -[-]  
+10:27:02    HDFCBANK     BodyClose50  C=840.90  VWAP=842.78  RSI=37  Vol=0.8x  → -[-]  
+10:27:02    HDFCBANK     Baseline     C=840.80  VWAP=842.75  RSI=36  Vol=0.4x  → -[-]  
+10:27:02    HDFCBANK     BodyClose50  C=840.80  VWAP=842.75  RSI=36  Vol=0.4x  → -[-]  
+10:27:02  STALE SIGNAL  HDFCBANK     Baseline     SHORT[PDL_BASE]  bar=10:21  detected=10:26:58  backlog — skipped live alert
+10:27:02    HDFCBANK     BodyClose50  C=840.25  VWAP=842.61  RSI=32  Vol=1.4x  → -[-]  
+10:27:02    HDFCBANK     Baseline     C=840.60  VWAP=842.55  RSI=37  Vol=0.7x  → -[-]  cooldown_until_10:51
+10:27:02    HDFCBANK     BodyClose50  C=840.60  VWAP=842.55  RSI=37  Vol=0.7x  → -[-]  
+10:27:02    HDFCBANK     Baseline     C=840.55  VWAP=842.55  RSI=37  Vol=0.0x  → -[-]  cooldown_until_10:51
+10:27:02    HDFCBANK     BodyClose50  C=840.55  VWAP=842.55  RSI=37  Vol=0.0x  → -[-]  
+10:27:02    POWERGRID    Baseline     C=299.50  VWAP=300.43  RSI=41  Vol=0.4x  → -[-]  
+10:27:02    POWERGRID    BodyClose50  C=299.50  VWAP=300.43  RSI=41  Vol=0.4x  → -[-]  
+10:27:02    POWERGRID    Baseline     C=299.25  VWAP=300.41  RSI=38  Vol=0.3x  → -[-]  
+10:27:02    POWERGRID    BodyClose50  C=299.25  VWAP=300.41  RSI=38  Vol=0.3x  → -[-]  
+10:27:02    POWERGRID    Baseline     C=299.40  VWAP=300.38  RSI=41  Vol=0.6x  → -[-]  
+10:27:02    POWERGRID    BodyClose50  C=299.40  VWAP=300.38  RSI=41  Vol=0.6x  → -[-]  
+10:27:02    POWERGRID    Baseline     C=299.25  VWAP=300.36  RSI=39  Vol=0.4x  → -[-]  
+10:27:02    POWERGRID    BodyClose50  C=299.25  VWAP=300.36  RSI=39  Vol=0.4x  → -[-]  
+10:27:02    POWERGRID    Baseline     C=299.70  VWAP=300.35  RSI=49  Vol=0.5x  → -[-]  
+10:27:02    POWERGRID    BodyClose50  C=299.70  VWAP=300.35  RSI=49  Vol=0.5x  → -[-]  
+10:27:02    POWERGRID    Baseline     C=299.65  VWAP=300.35  RSI=48  Vol=0.0x  → -[-]  
+10:27:02    POWERGRID    BodyClose50  C=299.65  VWAP=300.35  RSI=48  Vol=0.0x  → -[-]  
+10:27:02    HCLTECH      Baseline     C=1350.70  VWAP=1361.20  RSI=28  Vol=0.3x  → -[-]  
+10:27:02    HCLTECH      BodyClose50  C=1350.70  VWAP=1361.20  RSI=28  Vol=0.3x  → -[-]  
+10:27:02    HCLTECH      Baseline     C=1349.70  VWAP=1360.72  RSI=26  Vol=0.8x  → -[-]  
+10:27:02    HCLTECH      BodyClose50  C=1349.70  VWAP=1360.72  RSI=26  Vol=0.8x  → -[-]  
+10:27:02    HCLTECH      Baseline     C=1353.90  VWAP=1360.40  RSI=45  Vol=0.9x  → -[-]  
+10:27:02    HCLTECH      BodyClose50  C=1353.90  VWAP=1360.40  RSI=45  Vol=0.9x  → -[-]  
+10:27:02    HCLTECH      Baseline     C=1354.40  VWAP=1360.27  RSI=47  Vol=0.5x  → -[-]  
+10:27:02    HCLTECH      BodyClose50  C=1354.40  VWAP=1360.27  RSI=47  Vol=0.5x  → -[-]  
+10:27:02    HCLTECH      Baseline     C=1356.40  VWAP=1360.23  RSI=54  Vol=0.3x  → -[-]  
+10:27:02    HCLTECH      BodyClose50  C=1356.40  VWAP=1360.23  RSI=54  Vol=0.3x  → -[-]  
+10:27:02    HCLTECH      Baseline     C=1355.60  VWAP=1360.22  RSI=51  Vol=0.0x  → -[-]  
+10:27:02    HCLTECH      BodyClose50  C=1355.60  VWAP=1360.22  RSI=51  Vol=0.0x  → -[-]  
+10:27:02  SCAN #3 complete in 3.4s
+10:27:02  SCAN #4  10:27:02  phase=ACTIVE_AM  active=True  missed=0
+10:27:02  FETCH  WS  1 new bars (1 clock-flushed) in 0.002s
+10:27:02    BAJAJ-AUTO   Baseline     C=9507.50  VWAP=9577.38  RSI=36  Vol=0.0x  → -[-]  
+10:27:02    BAJAJ-AUTO   BodyClose50  C=9507.50  VWAP=9577.38  RSI=36  Vol=0.0x  → -[-]  
+10:27:02  SCAN #4 complete in 0.0s
+10:40:15  WS error: Connection closed
+10:40:15  WS error: Connection closed
+10:40:15  WS error: Connection closed
+10:40:15  WS reconnecting in 1s (attempt 1)...
+10:40:16  WS connected — subscribing 10 tokens (mode=2 Quote)
+10:40:28  SCAN delay 87.2s beyond target 10:39:01
+10:40:28  MISSED 3 candle(s) (idx 24→28)
+10:40:28  SCAN #5  10:40:28  phase=ACTIVE_AM  active=True  missed=3
+10:40:28  FETCH  REST gap-fill (missed 3 candle(s))
+10:40:31  GAP-FILL  10/10 OK in 3.3s
+10:40:31  FETCH  WS  10 new bars (0 clock-flushed) in 3.322s
+10:40:31    JSWSTEEL     Baseline     C=1200.20  VWAP=1209.39  RSI=41  Vol=0.0x  → -[-]  cooldown_until_10:42
+10:40:31    JSWSTEEL     BodyClose50  C=1200.20  VWAP=1209.39  RSI=41  Vol=0.0x  → -[-]  cooldown_until_10:42
+10:40:31    JSWSTEEL     Baseline     C=1200.70  VWAP=1209.35  RSI=43  Vol=0.1x  → -[-]  cooldown_until_10:42
+10:40:31    JSWSTEEL     BodyClose50  C=1200.70  VWAP=1209.35  RSI=43  Vol=0.1x  → -[-]  cooldown_until_10:42
+10:40:31    JSWSTEEL     Baseline     C=1199.10  VWAP=1209.29  RSI=39  Vol=0.2x  → -[-]  cooldown_until_10:42
+10:40:31    JSWSTEEL     BodyClose50  C=1199.10  VWAP=1209.29  RSI=39  Vol=0.2x  → -[-]  cooldown_until_10:42
+10:40:31    JSWSTEEL     Baseline     C=1199.50  VWAP=1209.24  RSI=40  Vol=0.1x  → -[-]  cooldown_until_10:42
+10:40:31    JSWSTEEL     BodyClose50  C=1199.50  VWAP=1209.24  RSI=40  Vol=0.1x  → -[-]  cooldown_until_10:42
+10:40:31    HINDUNILVR   Baseline     C=2175.20  VWAP=2176.95  RSI=49  Vol=0.0x  → -[-]  
+10:40:31    HINDUNILVR   BodyClose50  C=2175.20  VWAP=2176.95  RSI=49  Vol=0.0x  → -[-]  
+10:40:31    HINDUNILVR   Baseline     C=2177.50  VWAP=2176.96  RSI=55  Vol=0.5x  → -[-]  
+10:40:31    HINDUNILVR   BodyClose50  C=2177.50  VWAP=2176.96  RSI=55  Vol=0.5x  → -[-]  
+10:40:31  STALE SIGNAL  HINDUNILVR   Baseline     SHORT[PDL_BASE]  bar=10:36  detected=10:40:28  backlog — skipped live alert
+10:40:31  STALE SIGNAL  HINDUNILVR   BodyClose50  SHORT[PDL_BC50]  bar=10:36  detected=10:40:28  backlog — skipped live alert
+10:40:31    HINDUNILVR   Baseline     C=2175.60  VWAP=2176.91  RSI=50  Vol=0.3x  → -[-]  cooldown_until_11:06
+10:40:31    HINDUNILVR   BodyClose50  C=2175.60  VWAP=2176.91  RSI=50  Vol=0.3x  → -[-]  cooldown_until_11:06
+10:40:31    AXISBANK     Baseline     C=1291.00  VWAP=1302.00  RSI=20  Vol=0.1x  → -[-]  
+10:40:31    AXISBANK     BodyClose50  C=1291.00  VWAP=1302.00  RSI=20  Vol=0.1x  → -[-]  
+10:40:31    AXISBANK     Baseline     C=1290.00  VWAP=1301.66  RSI=18  Vol=0.7x  → -[-]  
+10:40:31    AXISBANK     BodyClose50  C=1290.00  VWAP=1301.66  RSI=18  Vol=0.7x  → -[-]  
+10:40:31    AXISBANK     Baseline     C=1287.00  VWAP=1300.61  RSI=15  Vol=2.1x  → -[-]  
+10:40:31    AXISBANK     BodyClose50  C=1287.00  VWAP=1300.61  RSI=15  Vol=2.1x  → -[-]  
+10:40:31    AXISBANK     Baseline     C=1286.10  VWAP=1299.47  RSI=14  Vol=2.1x  → -[-]  
+10:40:31    AXISBANK     BodyClose50  C=1286.10  VWAP=1299.47  RSI=14  Vol=2.1x  → -[-]  
+10:40:31    TATASTEEL    Baseline     C=196.30  VWAP=197.34  RSI=46  Vol=0.0x  → -[-]  
+10:40:31    TATASTEEL    BodyClose50  C=196.30  VWAP=197.34  RSI=46  Vol=0.0x  → -[-]  
+10:40:31    TATASTEEL    Baseline     C=196.51  VWAP=197.33  RSI=52  Vol=0.6x  → -[-]  
+10:40:31    TATASTEEL    BodyClose50  C=196.51  VWAP=197.33  RSI=52  Vol=0.6x  → -[-]  
+10:40:31    TATASTEEL    Baseline     C=196.40  VWAP=197.31  RSI=49  Vol=0.7x  → -[-]  
+10:40:31    TATASTEEL    BodyClose50  C=196.40  VWAP=197.31  RSI=49  Vol=0.7x  → -[-]  
+10:40:31    TATASTEEL    Baseline     C=196.28  VWAP=197.31  RSI=45  Vol=0.3x  → -[-]  
+10:40:31    TATASTEEL    BodyClose50  C=196.28  VWAP=197.31  RSI=45  Vol=0.3x  → -[-]  
+10:40:31    TRENT        Baseline     C=3691.90  VWAP=3709.25  RSI=32  Vol=0.1x  → -[-]  
+10:40:31    TRENT        BodyClose50  C=3691.90  VWAP=3709.25  RSI=32  Vol=0.1x  → -[-]  
+10:40:31    TRENT        Baseline     C=3701.00  VWAP=3708.86  RSI=50  Vol=1.3x  → -[-]  
+10:40:31    TRENT        BodyClose50  C=3701.00  VWAP=3708.86  RSI=50  Vol=1.3x  → -[-]  
+10:40:31    TRENT        Baseline     C=3694.00  VWAP=3708.56  RSI=41  Vol=1.0x  → -[-]  
+10:40:31    TRENT        BodyClose50  C=3694.00  VWAP=3708.56  RSI=41  Vol=1.0x  → -[-]  
+10:40:31    TRENT        Baseline     C=3690.80  VWAP=3708.23  RSI=37  Vol=0.9x  → -[-]  
+10:40:31    TRENT        BodyClose50  C=3690.80  VWAP=3708.23  RSI=37  Vol=0.9x  → -[-]  
+10:40:31    BAJAJ-AUTO   Baseline     C=9505.00  VWAP=9576.25  RSI=35  Vol=0.0x  → -[-]  
+10:40:31    BAJAJ-AUTO   BodyClose50  C=9505.00  VWAP=9576.25  RSI=35  Vol=0.0x  → -[-]  
+10:40:31    BAJAJ-AUTO   Baseline     C=9505.00  VWAP=9575.49  RSI=35  Vol=0.3x  → -[-]  
+10:40:31    BAJAJ-AUTO   BodyClose50  C=9505.00  VWAP=9575.49  RSI=35  Vol=0.3x  → -[-]  
+10:40:31    BAJAJ-AUTO   Baseline     C=9494.00  VWAP=9574.77  RSI=32  Vol=0.3x  → -[-]  
+10:40:31    BAJAJ-AUTO   BodyClose50  C=9494.00  VWAP=9574.77  RSI=32  Vol=0.3x  → -[-]  
+10:40:31    BAJAJ-AUTO   Baseline     C=9491.00  VWAP=9573.45  RSI=31  Vol=0.5x  → -[-]  
+10:40:31    BAJAJ-AUTO   BodyClose50  C=9491.00  VWAP=9573.45  RSI=31  Vol=0.5x  → -[-]  
+10:40:31    BAJFINANCE   Baseline     C=929.35  VWAP=933.04  RSI=45  Vol=0.1x  → -[-]  
+10:40:31    BAJFINANCE   BodyClose50  C=929.35  VWAP=933.04  RSI=45  Vol=0.1x  → -[-]  
+10:40:31    BAJFINANCE   Baseline     C=926.55  VWAP=932.88  RSI=30  Vol=0.8x  → -[-]  
+10:40:31    BAJFINANCE   BodyClose50  C=926.55  VWAP=932.88  RSI=30  Vol=0.8x  → -[-]  
+10:40:31    BAJFINANCE   Baseline     C=925.30  VWAP=932.29  RSI=25  Vol=2.6x  → -[-]  
+10:40:31    BAJFINANCE   BodyClose50  C=925.30  VWAP=932.29  RSI=25  Vol=2.6x  → -[-]  
+10:40:31    BAJFINANCE   Baseline     C=924.70  VWAP=931.93  RSI=23  Vol=1.6x  → -[-]  
+10:40:31    BAJFINANCE   BodyClose50  C=924.70  VWAP=931.93  RSI=23  Vol=1.6x  → -[-]  
+10:40:31    HDFCBANK     Baseline     C=840.60  VWAP=842.50  RSI=37  Vol=0.0x  → -[-]  cooldown_until_10:51
+10:40:31    HDFCBANK     BodyClose50  C=840.60  VWAP=842.50  RSI=37  Vol=0.0x  → -[-]  
+10:40:31    HDFCBANK     Baseline     C=839.65  VWAP=842.45  RSI=30  Vol=0.6x  → -[-]  cooldown_until_10:51
+10:40:31  STALE SIGNAL  HDFCBANK     BodyClose50  SHORT[PDL_BC50]  bar=10:33  detected=10:40:28  backlog — skipped live alert
+10:40:31    HDFCBANK     Baseline     C=838.70  VWAP=842.32  RSI=24  Vol=1.5x  → -[-]  cooldown_until_10:51
+10:40:31    HDFCBANK     BodyClose50  C=838.70  VWAP=842.32  RSI=24  Vol=1.5x  → -[-]  cooldown_until_11:03
+10:40:31    HDFCBANK     Baseline     C=838.30  VWAP=842.18  RSI=22  Vol=1.4x  → -[-]  cooldown_until_10:51
+10:40:31    HDFCBANK     BodyClose50  C=838.30  VWAP=842.18  RSI=22  Vol=1.4x  → -[-]  cooldown_until_11:03
+10:40:31    POWERGRID    Baseline     C=299.70  VWAP=300.34  RSI=50  Vol=0.0x  → -[-]  
+10:40:31    POWERGRID    BodyClose50  C=299.70  VWAP=300.34  RSI=50  Vol=0.0x  → -[-]  
+10:40:31  STALE SIGNAL  POWERGRID    Baseline     LONG[PDL_BASE]  bar=10:33  detected=10:40:28  backlog — skipped live alert
+10:40:31  STALE SIGNAL  POWERGRID    BodyClose50  LONG[PDL_BC50]  bar=10:33  detected=10:40:28  backlog — skipped live alert
+10:40:31    POWERGRID    Baseline     C=299.75  VWAP=300.32  RSI=50  Vol=0.5x  → -[-]  cooldown_until_11:03
+10:40:31    POWERGRID    BodyClose50  C=299.75  VWAP=300.32  RSI=50  Vol=0.5x  → -[-]  cooldown_until_11:03
+10:40:31    POWERGRID    Baseline     C=299.55  VWAP=300.31  RSI=46  Vol=0.6x  → -[-]  cooldown_until_11:03
+10:40:31    POWERGRID    BodyClose50  C=299.55  VWAP=300.31  RSI=46  Vol=0.6x  → -[-]  cooldown_until_11:03
+10:40:31    HCLTECH      Baseline     C=1356.00  VWAP=1360.17  RSI=52  Vol=0.0x  → -[-]  
+10:40:31    HCLTECH      BodyClose50  C=1356.00  VWAP=1360.17  RSI=52  Vol=0.0x  → -[-]  
+10:40:31    HCLTECH      Baseline     C=1355.30  VWAP=1360.12  RSI=49  Vol=0.4x  → -[-]  
+10:40:31    HCLTECH      BodyClose50  C=1355.30  VWAP=1360.12  RSI=49  Vol=0.4x  → -[-]  
+10:40:31    HCLTECH      Baseline     C=1353.30  VWAP=1360.04  RSI=42  Vol=0.5x  → -[-]  
+10:40:31    HCLTECH      BodyClose50  C=1353.30  VWAP=1360.04  RSI=42  Vol=0.5x  → -[-]  
+10:40:31    HCLTECH      Baseline     C=1351.60  VWAP=1359.92  RSI=36  Vol=0.6x  → -[-]  
+10:40:31    HCLTECH      BodyClose50  C=1351.60  VWAP=1359.92  RSI=36  Vol=0.6x  → -[-]  
+10:40:31  SCAN #5 complete in 3.4s
+10:42:01  SCAN #6  10:42:01  phase=ACTIVE_AM  active=True  missed=0
+10:42:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.014s
+10:42:01    JSWSTEEL     Baseline     C=1200.70  VWAP=1209.20  RSI=45  Vol=0.1x  → -[-]  
+10:42:01    JSWSTEEL     BodyClose50  C=1200.70  VWAP=1209.20  RSI=45  Vol=0.1x  → -[-]  
+10:42:01    HINDUNILVR   Baseline     C=2171.20  VWAP=2176.86  RSI=41  Vol=0.4x  → -[-]  cooldown_until_11:06
+10:42:01    HINDUNILVR   BodyClose50  C=2171.20  VWAP=2176.86  RSI=41  Vol=0.4x  → -[-]  cooldown_until_11:06
+10:42:01    AXISBANK     Baseline     C=1286.60  VWAP=1299.08  RSI=17  Vol=0.8x  → -[-]  
+10:42:01    AXISBANK     BodyClose50  C=1286.60  VWAP=1299.08  RSI=17  Vol=0.8x  → -[-]  
+10:42:01    TATASTEEL    Baseline     C=196.20  VWAP=197.30  RSI=43  Vol=0.2x  → -[-]  
+10:42:01    TATASTEEL    BodyClose50  C=196.20  VWAP=197.30  RSI=43  Vol=0.2x  → -[-]  
+10:42:01    TRENT        Baseline     C=3691.80  VWAP=3707.98  RSI=39  Vol=0.7x  → -[-]  
+10:42:01    TRENT        BodyClose50  C=3691.80  VWAP=3707.98  RSI=39  Vol=0.7x  → -[-]  
+10:42:01    BAJAJ-AUTO   Baseline     C=9481.50  VWAP=9572.45  RSI=28  Vol=0.4x  → -[-]  
+10:42:01    BAJAJ-AUTO   BodyClose50  C=9481.50  VWAP=9572.45  RSI=28  Vol=0.4x  → -[-]  
+10:42:01    BAJFINANCE   Baseline     C=924.65  VWAP=931.82  RSI=23  Vol=0.5x  → -[-]  
+10:42:01    BAJFINANCE   BodyClose50  C=924.65  VWAP=931.82  RSI=23  Vol=0.5x  → -[-]  
+10:42:01    HDFCBANK     Baseline     C=838.40  VWAP=842.13  RSI=24  Vol=0.6x  → -[-]  cooldown_until_10:51
+10:42:01    HDFCBANK     BodyClose50  C=838.40  VWAP=842.13  RSI=24  Vol=0.6x  → -[-]  cooldown_until_11:03
+10:42:01    POWERGRID    Baseline     C=299.40  VWAP=300.30  RSI=43  Vol=0.3x  → -[-]  cooldown_until_11:03
+10:42:01    POWERGRID    BodyClose50  C=299.40  VWAP=300.30  RSI=43  Vol=0.3x  → -[-]  cooldown_until_11:03
+10:42:01    HCLTECH      Baseline     C=1353.90  VWAP=1359.89  RSI=47  Vol=0.2x  → -[-]  
+10:42:01    HCLTECH      BodyClose50  C=1353.90  VWAP=1359.89  RSI=47  Vol=0.2x  → -[-]  
+10:42:01  SCAN #6 complete in 0.0s
+10:45:01  SCAN #7  10:45:01  phase=ACTIVE_AM  active=True  missed=0
+10:45:01  FETCH  WS  10 new bars (6 clock-flushed) in 0.022s
+10:45:01    JSWSTEEL     Baseline     C=1199.60  VWAP=1209.16  RSI=42  Vol=0.2x  → -[-]  
+10:45:01    JSWSTEEL     BodyClose50  C=1199.60  VWAP=1209.16  RSI=42  Vol=0.2x  → -[-]  
+10:45:01    HINDUNILVR   Baseline     C=2169.70  VWAP=2176.73  RSI=38  Vol=0.7x  → -[-]  cooldown_until_11:06
+10:45:01    HINDUNILVR   BodyClose50  C=2169.70  VWAP=2176.73  RSI=38  Vol=0.7x  → -[-]  cooldown_until_11:06
+10:45:01    AXISBANK     Baseline     C=1285.00  VWAP=1298.46  RSI=15  Vol=1.2x  → -[-]  
+10:45:01    AXISBANK     BodyClose50  C=1285.00  VWAP=1298.46  RSI=15  Vol=1.2x  → -[-]  
+10:45:01    TATASTEEL    Baseline     C=195.85  VWAP=197.29  RSI=34  Vol=0.5x  → -[-]  
+10:45:01    TATASTEEL    BodyClose50  C=195.85  VWAP=197.29  RSI=34  Vol=0.5x  → -[-]  
+10:45:01    TRENT        Baseline     C=3688.00  VWAP=3707.53  RSI=35  Vol=1.2x  → ★ SHORT[PDL_BASE]  SL=3696.40  TP=3671.50  Qty=67
+10:45:02    TRENT        BodyClose50  C=3688.00  VWAP=3707.53  RSI=35  Vol=1.2x  → ★ SHORT[PDL_BC50]  SL=3696.40  TP=3671.50  Qty=67
+10:45:02    BAJAJ-AUTO   Baseline     C=9426.00  VWAP=9567.57  RSI=18  Vol=1.4x  → -[-]  
+10:45:02    BAJAJ-AUTO   BodyClose50  C=9426.00  VWAP=9567.57  RSI=18  Vol=1.4x  → -[-]  
+10:45:02    BAJFINANCE   Baseline     C=924.10  VWAP=931.71  RSI=22  Vol=0.6x  → -[-]  
+10:45:02    BAJFINANCE   BodyClose50  C=924.10  VWAP=931.71  RSI=22  Vol=0.6x  → -[-]  
+10:45:02    HDFCBANK     Baseline     C=837.90  VWAP=842.08  RSI=21  Vol=0.5x  → -[-]  cooldown_until_10:51
+10:45:02    HDFCBANK     BodyClose50  C=837.90  VWAP=842.08  RSI=21  Vol=0.5x  → -[-]  cooldown_until_11:03
+10:45:02    POWERGRID    Baseline     C=299.35  VWAP=300.29  RSI=42  Vol=0.7x  → -[-]  cooldown_until_11:03
+10:45:02    POWERGRID    BodyClose50  C=299.35  VWAP=300.29  RSI=42  Vol=0.7x  → -[-]  cooldown_until_11:03
+10:45:02    HCLTECH      Baseline     C=1354.50  VWAP=1357.95  RSI=49  Vol=10.2x  → -[-]  
+10:45:02    HCLTECH      BodyClose50  C=1354.50  VWAP=1357.95  RSI=49  Vol=10.2x  → -[-]  
+10:45:02  SCAN #7 complete in 1.8s
+10:48:01  SCAN #8  10:48:01  phase=ACTIVE_AM  active=True  missed=0
+10:48:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.019s
+10:48:01    JSWSTEEL     Baseline     C=1196.70  VWAP=1208.88  RSI=34  Vol=0.8x  → -[-]  
+10:48:01    JSWSTEEL     BodyClose50  C=1196.70  VWAP=1208.88  RSI=34  Vol=0.8x  → -[-]  
+10:48:01    HINDUNILVR   Baseline     C=2171.70  VWAP=2176.66  RSI=44  Vol=0.5x  → -[-]  cooldown_until_11:06
+10:48:01    HINDUNILVR   BodyClose50  C=2171.70  VWAP=2176.66  RSI=44  Vol=0.5x  → -[-]  cooldown_until_11:06
+10:48:01    AXISBANK     Baseline     C=1284.90  VWAP=1298.01  RSI=15  Vol=0.9x  → -[-]  
+10:48:01    AXISBANK     BodyClose50  C=1284.90  VWAP=1298.01  RSI=15  Vol=0.9x  → -[-]  
+10:48:01    TATASTEEL    Baseline     C=195.94  VWAP=197.27  RSI=38  Vol=0.5x  → -[-]  
+10:48:01    TATASTEEL    BodyClose50  C=195.94  VWAP=197.27  RSI=38  Vol=0.5x  → -[-]  
+10:48:01    TRENT        Baseline     C=3685.20  VWAP=3706.82  RSI=32  Vol=1.6x  → -[-]  in_position
+10:48:01    TRENT        BodyClose50  C=3685.20  VWAP=3706.82  RSI=32  Vol=1.6x  → -[-]  in_position
+10:48:01    BAJAJ-AUTO   Baseline     C=9441.50  VWAP=9564.83  RSI=26  Vol=0.8x  → -[-]  
+10:48:01    BAJAJ-AUTO   BodyClose50  C=9441.50  VWAP=9564.83  RSI=26  Vol=0.8x  → -[-]  
+10:48:01    BAJFINANCE   Baseline     C=922.70  VWAP=931.35  RSI=18  Vol=1.5x  → -[-]  
+10:48:01    BAJFINANCE   BodyClose50  C=922.70  VWAP=931.35  RSI=18  Vol=1.5x  → -[-]  
+10:48:01    HDFCBANK     Baseline     C=837.30  VWAP=841.94  RSI=18  Vol=1.2x  → -[-]  cooldown_until_10:51
+10:48:01    HDFCBANK     BodyClose50  C=837.30  VWAP=841.94  RSI=18  Vol=1.2x  → -[-]  cooldown_until_11:03
+10:48:01    POWERGRID    Baseline     C=299.15  VWAP=300.26  RSI=38  Vol=1.3x  → -[-]  cooldown_until_11:03
+10:48:01    POWERGRID    BodyClose50  C=299.15  VWAP=300.26  RSI=38  Vol=1.3x  → -[-]  cooldown_until_11:03
+10:48:01    HCLTECH      Baseline     C=1355.00  VWAP=1357.90  RSI=51  Vol=0.5x  → -[-]  
+10:48:01    HCLTECH      BodyClose50  C=1355.00  VWAP=1357.90  RSI=51  Vol=0.5x  → -[-]  
+10:48:01  SCAN #8 complete in 0.0s
+10:51:01  SCAN #9  10:51:01  phase=ACTIVE_AM  active=True  missed=0
+10:51:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+10:51:01    JSWSTEEL     Baseline     C=1196.40  VWAP=1208.59  RSI=33  Vol=0.8x  → -[-]  
+10:51:01    JSWSTEEL     BodyClose50  C=1196.40  VWAP=1208.59  RSI=33  Vol=0.8x  → -[-]  
+10:51:01    HINDUNILVR   Baseline     C=2173.50  VWAP=2176.60  RSI=49  Vol=0.5x  → -[-]  cooldown_until_11:06
+10:51:01    HINDUNILVR   BodyClose50  C=2173.50  VWAP=2176.60  RSI=49  Vol=0.5x  → -[-]  cooldown_until_11:06
+10:51:01    AXISBANK     Baseline     C=1285.20  VWAP=1297.71  RSI=17  Vol=0.7x  → -[-]  
+10:51:01    AXISBANK     BodyClose50  C=1285.20  VWAP=1297.71  RSI=17  Vol=0.7x  → -[-]  
+10:51:01    TATASTEEL    Baseline     C=196.10  VWAP=197.26  RSI=44  Vol=0.4x  → -[-]  
+10:51:01    TATASTEEL    BodyClose50  C=196.10  VWAP=197.26  RSI=44  Vol=0.4x  → -[-]  
+10:51:01    TRENT        Baseline     C=3683.20  VWAP=3706.17  RSI=30  Vol=1.4x  → -[-]  in_position
+10:51:01    TRENT        BodyClose50  C=3683.20  VWAP=3706.17  RSI=30  Vol=1.4x  → -[-]  in_position
+10:51:01    BAJAJ-AUTO   Baseline     C=9439.00  VWAP=9562.66  RSI=26  Vol=0.7x  → -[-]  
+10:51:01    BAJAJ-AUTO   BodyClose50  C=9439.00  VWAP=9562.66  RSI=26  Vol=0.7x  → -[-]  
+10:51:01    BAJFINANCE   Baseline     C=921.95  VWAP=931.09  RSI=16  Vol=1.1x  → -[-]  
+10:51:01    BAJFINANCE   BodyClose50  C=921.95  VWAP=931.09  RSI=16  Vol=1.1x  → -[-]  
+10:51:01    HDFCBANK     Baseline     C=838.40  VWAP=841.88  RSI=36  Vol=0.8x  → -[-]  
+10:51:01    HDFCBANK     BodyClose50  C=838.40  VWAP=841.88  RSI=36  Vol=0.8x  → -[-]  cooldown_until_11:03
+10:51:01    POWERGRID    Baseline     C=299.00  VWAP=300.24  RSI=35  Vol=1.0x  → -[-]  cooldown_until_11:03
+10:51:01    POWERGRID    BodyClose50  C=299.00  VWAP=300.24  RSI=35  Vol=1.0x  → -[-]  cooldown_until_11:03
+10:51:01    HCLTECH      Baseline     C=1354.90  VWAP=1357.87  RSI=51  Vol=0.3x  → -[-]  
+10:51:01    HCLTECH      BodyClose50  C=1354.90  VWAP=1357.87  RSI=51  Vol=0.3x  → -[-]  
+10:51:01  SCAN #9 complete in 0.0s
+10:54:01  SCAN #10  10:54:01  phase=ACTIVE_AM  active=True  missed=0
+10:54:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.023s
+10:54:01    JSWSTEEL     Baseline     C=1197.10  VWAP=1208.48  RSI=37  Vol=0.3x  → -[-]  
+10:54:01    JSWSTEEL     BodyClose50  C=1197.10  VWAP=1208.48  RSI=37  Vol=0.3x  → -[-]  
+10:54:01    HINDUNILVR   Baseline     C=2172.70  VWAP=2176.56  RSI=47  Vol=0.4x  → -[-]  cooldown_until_11:06
+10:54:01    HINDUNILVR   BodyClose50  C=2172.70  VWAP=2176.56  RSI=47  Vol=0.4x  → -[-]  cooldown_until_11:06
+10:54:01    AXISBANK     Baseline     C=1285.50  VWAP=1297.21  RSI=20  Vol=1.3x  → -[-]  
+10:54:01    AXISBANK     BodyClose50  C=1285.50  VWAP=1297.21  RSI=20  Vol=1.3x  → -[-]  
+10:54:01    TATASTEEL    Baseline     C=196.12  VWAP=197.23  RSI=45  Vol=1.6x  → -[-]  
+10:54:01    TATASTEEL    BodyClose50  C=196.12  VWAP=197.23  RSI=45  Vol=1.6x  → -[-]  
+10:54:01    TRENT        Baseline     C=3682.40  VWAP=3705.56  RSI=29  Vol=1.3x  → -[-]  in_position
+10:54:01    TRENT        BodyClose50  C=3682.40  VWAP=3705.56  RSI=29  Vol=1.3x  → -[-]  in_position
+10:54:01    BAJAJ-AUTO   Baseline     C=9430.00  VWAP=9561.27  RSI=24  Vol=0.4x  → -[-]  
+10:54:01    BAJAJ-AUTO   BodyClose50  C=9430.00  VWAP=9561.27  RSI=24  Vol=0.4x  → -[-]  
+10:54:01    BAJFINANCE   Baseline     C=920.65  VWAP=930.68  RSI=13  Vol=1.6x  → -[-]  
+10:54:01    BAJFINANCE   BodyClose50  C=920.65  VWAP=930.68  RSI=13  Vol=1.6x  → -[-]  
+10:54:01    HDFCBANK     Baseline     C=836.40  VWAP=841.59  RSI=25  Vol=2.6x  → -[-]  
+10:54:01    HDFCBANK     BodyClose50  C=836.40  VWAP=841.59  RSI=25  Vol=2.6x  → -[-]  cooldown_until_11:03
+10:54:01    POWERGRID    Baseline     C=298.95  VWAP=300.22  RSI=34  Vol=0.8x  → -[-]  cooldown_until_11:03
+10:54:01    POWERGRID    BodyClose50  C=298.95  VWAP=300.22  RSI=34  Vol=0.8x  → -[-]  cooldown_until_11:03
+10:54:01    HCLTECH      Baseline     C=1353.60  VWAP=1357.84  RSI=45  Vol=0.2x  → -[-]  
+10:54:01    HCLTECH      BodyClose50  C=1353.60  VWAP=1357.84  RSI=45  Vol=0.2x  → -[-]  
+10:54:01  SCAN #10 complete in 0.1s
+10:57:01  SCAN #11  10:57:01  phase=ACTIVE_AM  active=True  missed=0
+10:57:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.024s
+10:57:01    JSWSTEEL     Baseline     C=1198.20  VWAP=1208.40  RSI=42  Vol=0.3x  → -[-]  
+10:57:01    JSWSTEEL     BodyClose50  C=1198.20  VWAP=1208.40  RSI=42  Vol=0.3x  → -[-]  
+10:57:01    HINDUNILVR   Baseline     C=2172.50  VWAP=2176.52  RSI=46  Vol=0.4x  → -[-]  cooldown_until_11:06
+10:57:01    HINDUNILVR   BodyClose50  C=2172.50  VWAP=2176.52  RSI=46  Vol=0.4x  → -[-]  cooldown_until_11:06
+10:57:01    AXISBANK     Baseline     C=1285.90  VWAP=1296.84  RSI=23  Vol=1.0x  → -[-]  
+10:57:01    AXISBANK     BodyClose50  C=1285.90  VWAP=1296.84  RSI=23  Vol=1.0x  → -[-]  
+10:57:01    TATASTEEL    Baseline     C=196.50  VWAP=197.22  RSI=57  Vol=0.8x  → -[-]  
+10:57:01    TATASTEEL    BodyClose50  C=196.50  VWAP=197.22  RSI=57  Vol=0.8x  → -[-]  
+10:57:01    TRENT        Baseline     C=3686.50  VWAP=3705.19  RSI=39  Vol=1.0x  → -[-]  in_position
+10:57:01    TRENT        BodyClose50  C=3686.50  VWAP=3705.19  RSI=39  Vol=1.0x  → -[-]  in_position
+10:57:01    BAJAJ-AUTO   Baseline     C=9441.50  VWAP=9560.44  RSI=31  Vol=0.3x  → -[-]  
+10:57:01    BAJAJ-AUTO   BodyClose50  C=9441.50  VWAP=9560.44  RSI=31  Vol=0.3x  → -[-]  
+10:57:01    BAJFINANCE   Baseline     C=921.75  VWAP=930.49  RSI=25  Vol=0.8x  → -[-]  
+10:57:01    BAJFINANCE   BodyClose50  C=921.75  VWAP=930.49  RSI=25  Vol=0.8x  → -[-]  
+10:57:01    HDFCBANK     Baseline     C=836.30  VWAP=841.30  RSI=24  Vol=2.5x  → -[-]  
+10:57:01    HDFCBANK     BodyClose50  C=836.30  VWAP=841.30  RSI=24  Vol=2.5x  → -[-]  cooldown_until_11:03
+10:57:01    POWERGRID    Baseline     C=299.40  VWAP=300.21  RSI=48  Vol=0.8x  → -[-]  cooldown_until_11:03
+10:57:01    POWERGRID    BodyClose50  C=299.40  VWAP=300.21  RSI=48  Vol=0.8x  → -[-]  cooldown_until_11:03
+10:57:01    HCLTECH      Baseline     C=1354.50  VWAP=1357.81  RSI=50  Vol=0.3x  → -[-]  
+10:57:01    HCLTECH      BodyClose50  C=1354.50  VWAP=1357.81  RSI=50  Vol=0.3x  → -[-]  
+10:57:01  SCAN #11 complete in 0.1s
+11:00:01  SCAN #12  11:00:01  phase=ACTIVE_AM  active=True  missed=0
+11:00:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.018s
+11:00:01    JSWSTEEL     Baseline     C=1198.90  VWAP=1208.34  RSI=45  Vol=0.3x  → -[-]  
+11:00:01    JSWSTEEL     BodyClose50  C=1198.90  VWAP=1208.34  RSI=45  Vol=0.3x  → -[-]  
+11:00:01    HINDUNILVR   Baseline     C=2176.90  VWAP=2176.34  RSI=58  Vol=5.6x  → -[-]  cooldown_until_11:06
+11:00:01    HINDUNILVR   BodyClose50  C=2176.90  VWAP=2176.34  RSI=58  Vol=5.6x  → -[-]  cooldown_until_11:06
+11:00:01    AXISBANK     Baseline     C=1288.00  VWAP=1296.48  RSI=39  Vol=1.2x  → -[-]  
+11:00:01    AXISBANK     BodyClose50  C=1288.00  VWAP=1296.48  RSI=39  Vol=1.2x  → -[-]  
+11:00:02    TATASTEEL    Baseline     C=196.71  VWAP=197.21  RSI=63  Vol=1.1x  → ★ LONG[PDL_BASE]  SL=196.28  TP=197.67  Qty=1271
+11:00:02    TATASTEEL    BodyClose50  C=196.71  VWAP=197.21  RSI=63  Vol=1.1x  → ★ LONG[PDL_BC50]  SL=196.28  TP=197.67  Qty=1271
+11:00:02    TRENT        Baseline     C=3691.00  VWAP=3704.77  RSI=48  Vol=1.4x  → -[-]  in_position
+11:00:02    TRENT        BodyClose50  C=3691.00  VWAP=3704.77  RSI=48  Vol=1.4x  → -[-]  in_position
+11:00:02    BAJAJ-AUTO   Baseline     C=9459.00  VWAP=9558.57  RSI=40  Vol=0.8x  → -[-]  
+11:00:02    BAJAJ-AUTO   BodyClose50  C=9459.00  VWAP=9558.57  RSI=40  Vol=0.8x  → -[-]  
+11:00:02    BAJFINANCE   Baseline     C=921.40  VWAP=930.13  RSI=24  Vol=1.6x  → -[-]  
+11:00:02    BAJFINANCE   BodyClose50  C=921.40  VWAP=930.13  RSI=24  Vol=1.6x  → -[-]  
+11:00:02    HDFCBANK     Baseline     C=836.50  VWAP=841.19  RSI=27  Vol=1.0x  → -[-]  
+11:00:02    HDFCBANK     BodyClose50  C=836.50  VWAP=841.19  RSI=27  Vol=1.0x  → -[-]  cooldown_until_11:03
+11:00:02    POWERGRID    Baseline     C=299.50  VWAP=300.20  RSI=51  Vol=0.7x  → -[-]  cooldown_until_11:03
+11:00:02    POWERGRID    BodyClose50  C=299.50  VWAP=300.20  RSI=51  Vol=0.7x  → -[-]  cooldown_until_11:03
+11:00:02    HCLTECH      Baseline     C=1356.10  VWAP=1357.79  RSI=57  Vol=0.3x  → -[-]  
+11:00:02    HCLTECH      BodyClose50  C=1356.10  VWAP=1357.79  RSI=57  Vol=0.3x  → -[-]  
+11:00:02  SCAN #12 complete in 1.7s
+11:03:01  SCAN #13  11:03:01  phase=ACTIVE_AM  active=True  missed=0
+11:03:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.019s
+11:03:01    JSWSTEEL     Baseline     C=1199.10  VWAP=1208.28  RSI=46  Vol=0.3x  → -[-]  
+11:03:01    JSWSTEEL     BodyClose50  C=1199.10  VWAP=1208.28  RSI=46  Vol=0.3x  → -[-]  
+11:03:01    HINDUNILVR   Baseline     C=2180.00  VWAP=2176.81  RSI=64  Vol=5.7x  → -[-]  cooldown_until_11:06
+11:03:01    HINDUNILVR   BodyClose50  C=2180.00  VWAP=2176.81  RSI=64  Vol=5.7x  → -[-]  cooldown_until_11:06
+11:03:01    AXISBANK     Baseline     C=1290.00  VWAP=1296.01  RSI=50  Vol=2.1x  → -[-]  
+11:03:01    AXISBANK     BodyClose50  C=1290.00  VWAP=1296.01  RSI=50  Vol=2.1x  → -[-]  
+11:03:01    TATASTEEL    Baseline     C=196.79  VWAP=197.21  RSI=65  Vol=0.8x  → -[-]  in_position
+11:03:01    TATASTEEL    BodyClose50  C=196.79  VWAP=197.21  RSI=65  Vol=0.8x  → -[-]  in_position
+11:03:01    TRENT        Baseline     C=3685.50  VWAP=3704.41  RSI=40  Vol=1.0x  → -[-]  in_position
+11:03:01    TRENT        BodyClose50  C=3685.50  VWAP=3704.41  RSI=40  Vol=1.0x  → -[-]  in_position
+11:03:01    BAJAJ-AUTO   Baseline     C=9479.00  VWAP=9554.59  RSI=49  Vol=2.0x  → -[-]  
+11:03:01    BAJAJ-AUTO   BodyClose50  C=9479.00  VWAP=9554.59  RSI=49  Vol=2.0x  → -[-]  
+11:03:01    BAJFINANCE   Baseline     C=920.45  VWAP=929.82  RSI=21  Vol=1.4x  → -[-]  
+11:03:01    BAJFINANCE   BodyClose50  C=920.45  VWAP=929.82  RSI=21  Vol=1.4x  → -[-]  
+11:03:01    HDFCBANK     Baseline     C=836.45  VWAP=841.10  RSI=27  Vol=0.8x  → -[-]  
+11:03:01    HDFCBANK     BodyClose50  C=836.45  VWAP=841.10  RSI=27  Vol=0.8x  → -[-]  
+11:03:01    POWERGRID    Baseline     C=299.70  VWAP=300.19  RSI=56  Vol=1.5x  → -[-]  
+11:03:01    POWERGRID    BodyClose50  C=299.70  VWAP=300.19  RSI=56  Vol=1.5x  → -[-]  
+11:03:01    HCLTECH      Baseline     C=1356.40  VWAP=1357.78  RSI=58  Vol=0.3x  → -[-]  
+11:03:01    HCLTECH      BodyClose50  C=1356.40  VWAP=1357.78  RSI=58  Vol=0.3x  → -[-]  
+11:03:01  SCAN #13 complete in 0.0s
+11:06:01  SCAN #14  11:06:01  phase=ACTIVE_AM  active=True  missed=0
+11:06:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.022s
+11:06:01    JSWSTEEL     Baseline     C=1200.60  VWAP=1208.23  RSI=54  Vol=0.4x  → -[-]  
+11:06:01    JSWSTEEL     BodyClose50  C=1200.60  VWAP=1208.23  RSI=54  Vol=0.4x  → -[-]  
+11:06:01    HINDUNILVR   Baseline     C=2180.00  VWAP=2176.86  RSI=64  Vol=0.5x  → -[-]  
+11:06:01    HINDUNILVR   BodyClose50  C=2180.00  VWAP=2176.86  RSI=64  Vol=0.5x  → -[-]  
+11:06:01    AXISBANK     Baseline     C=1290.00  VWAP=1295.27  RSI=50  Vol=4.1x  → -[-]  
+11:06:01    AXISBANK     BodyClose50  C=1290.00  VWAP=1295.27  RSI=50  Vol=4.1x  → -[-]  
+11:06:01    TATASTEEL    Baseline     C=196.66  VWAP=197.21  RSI=59  Vol=0.3x  → -[-]  in_position
+11:06:01    TATASTEEL    BodyClose50  C=196.66  VWAP=197.21  RSI=59  Vol=0.3x  → -[-]  in_position
+11:06:01    TRENT        Baseline     C=3685.20  VWAP=3704.05  RSI=39  Vol=1.0x  → -[-]  in_position
+11:06:01    TRENT        BodyClose50  C=3685.20  VWAP=3704.05  RSI=39  Vol=1.0x  → -[-]  in_position
+11:06:01    BAJAJ-AUTO   Baseline     C=9492.00  VWAP=9550.98  RSI=54  Vol=2.4x  → -[-]  
+11:06:01    BAJAJ-AUTO   BodyClose50  C=9492.00  VWAP=9550.98  RSI=54  Vol=2.4x  → -[-]  
+11:06:01    BAJFINANCE   Baseline     C=921.15  VWAP=929.57  RSI=28  Vol=1.2x  → -[-]  
+11:06:01    BAJFINANCE   BodyClose50  C=921.15  VWAP=929.57  RSI=28  Vol=1.2x  → -[-]  
+11:06:01    HDFCBANK     Baseline     C=836.70  VWAP=840.94  RSI=31  Vol=1.7x  → -[-]  
+11:06:01    HDFCBANK     BodyClose50  C=836.70  VWAP=840.94  RSI=31  Vol=1.7x  → -[-]  
+11:06:01    POWERGRID    Baseline     C=299.85  VWAP=300.18  RSI=59  Vol=1.1x  → -[-]  
+11:06:01    POWERGRID    BodyClose50  C=299.85  VWAP=300.18  RSI=59  Vol=1.1x  → -[-]  
+11:06:01    HCLTECH      Baseline     C=1357.90  VWAP=1357.78  RSI=64  Vol=0.7x  → -[-]  
+11:06:01    HCLTECH      BodyClose50  C=1357.90  VWAP=1357.78  RSI=64  Vol=0.7x  → -[-]  
+11:06:01  SCAN #14 complete in 0.1s
+11:09:01  SCAN #15  11:09:01  phase=ACTIVE_AM  active=True  missed=0
+11:09:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.023s
+11:09:01    JSWSTEEL     Baseline     C=1200.00  VWAP=1208.19  RSI=51  Vol=0.3x  → -[-]  
+11:09:01    JSWSTEEL     BodyClose50  C=1200.00  VWAP=1208.19  RSI=51  Vol=0.3x  → -[-]  
+11:09:01    HINDUNILVR   Baseline     C=2180.10  VWAP=2176.88  RSI=64  Vol=0.3x  → -[-]  
+11:09:01    HINDUNILVR   BodyClose50  C=2180.10  VWAP=2176.88  RSI=64  Vol=0.3x  → -[-]  
+11:09:01    AXISBANK     Baseline     C=1290.20  VWAP=1294.78  RSI=51  Vol=3.0x  → -[-]  
+11:09:01    AXISBANK     BodyClose50  C=1290.20  VWAP=1294.78  RSI=51  Vol=3.0x  → -[-]  
+11:09:01  BRACKET  TATASTEEL    Baseline     SL hit at 11:09 — position closed
+11:09:01  SL_COUNT  TATASTEEL    Baseline     1 / 2
+11:09:01    TATASTEEL    Baseline     C=196.35  VWAP=197.20  RSI=48  Vol=0.9x  → -[-]  cooldown_until_11:30
+11:09:01  BRACKET  TATASTEEL    BodyClose50  SL hit at 11:09 — position closed
+11:09:01  SL_COUNT  TATASTEEL    BodyClose50  1 / 2
+11:09:01    TATASTEEL    BodyClose50  C=196.35  VWAP=197.20  RSI=48  Vol=0.9x  → -[-]  cooldown_until_11:30
+11:09:01    TRENT        Baseline     C=3680.00  VWAP=3703.46  RSI=33  Vol=1.4x  → -[-]  in_position
+11:09:01    TRENT        BodyClose50  C=3680.00  VWAP=3703.46  RSI=33  Vol=1.4x  → -[-]  in_position
+11:09:01    BAJAJ-AUTO   Baseline     C=9479.50  VWAP=9550.46  RSI=49  Vol=0.4x  → -[-]  
+11:09:01    BAJAJ-AUTO   BodyClose50  C=9479.50  VWAP=9550.46  RSI=49  Vol=0.4x  → -[-]  
+11:09:01    BAJFINANCE   Baseline     C=920.30  VWAP=929.37  RSI=25  Vol=0.9x  → -[-]  
+11:09:01    BAJFINANCE   BodyClose50  C=920.30  VWAP=929.37  RSI=25  Vol=0.9x  → -[-]  
+11:09:01    HDFCBANK     Baseline     C=836.15  VWAP=840.88  RSI=27  Vol=0.6x  → -[-]  
+11:09:01    HDFCBANK     BodyClose50  C=836.15  VWAP=840.88  RSI=27  Vol=0.6x  → -[-]  
+11:09:01    POWERGRID    Baseline     C=299.75  VWAP=300.17  RSI=56  Vol=1.5x  → -[-]  
+11:09:01    POWERGRID    BodyClose50  C=299.75  VWAP=300.17  RSI=56  Vol=1.5x  → -[-]  
+11:09:01    HCLTECH      Baseline     C=1357.50  VWAP=1357.78  RSI=61  Vol=0.3x  → -[-]  
+11:09:01    HCLTECH      BodyClose50  C=1357.50  VWAP=1357.78  RSI=61  Vol=0.3x  → -[-]  
+11:09:01  SCAN #15 complete in 0.1s
+11:12:01  SCAN #16  11:12:01  phase=ACTIVE_AM  active=True  missed=0
+11:12:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.021s
+11:12:01    JSWSTEEL     Baseline     C=1200.00  VWAP=1208.17  RSI=51  Vol=0.2x  → -[-]  
+11:12:01    JSWSTEEL     BodyClose50  C=1200.00  VWAP=1208.17  RSI=51  Vol=0.2x  → -[-]  
+11:12:01    HINDUNILVR   Baseline     C=2179.50  VWAP=2176.90  RSI=62  Vol=0.3x  → -[-]  
+11:12:01    HINDUNILVR   BodyClose50  C=2179.50  VWAP=2176.90  RSI=62  Vol=0.3x  → -[-]  
+11:12:01    AXISBANK     Baseline     C=1287.50  VWAP=1294.25  RSI=38  Vol=2.4x  → -[-]  
+11:12:01    AXISBANK     BodyClose50  C=1287.50  VWAP=1294.25  RSI=38  Vol=2.4x  → -[-]  
+11:12:01    TATASTEEL    Baseline     C=196.16  VWAP=197.19  RSI=43  Vol=0.9x  → -[-]  cooldown_until_11:30
+11:12:01    TATASTEEL    BodyClose50  C=196.16  VWAP=197.19  RSI=43  Vol=0.9x  → -[-]  cooldown_until_11:30
+11:12:01  BRACKET  TRENT        Baseline     TP hit at 11:12 — position closed
+11:12:01    TRENT        Baseline     C=3674.00  VWAP=3702.27  RSI=27  Vol=2.1x  → -[-]  cooldown_until_11:15
+11:12:01  BRACKET  TRENT        BodyClose50  TP hit at 11:12 — position closed
+11:12:01    TRENT        BodyClose50  C=3674.00  VWAP=3702.27  RSI=27  Vol=2.1x  → -[-]  cooldown_until_11:15
+11:12:01    BAJAJ-AUTO   Baseline     C=9464.00  VWAP=9550.03  RSI=43  Vol=0.3x  → -[-]  
+11:12:01    BAJAJ-AUTO   BodyClose50  C=9464.00  VWAP=9550.03  RSI=43  Vol=0.3x  → -[-]  
+11:12:01    BAJFINANCE   Baseline     C=918.90  VWAP=928.95  RSI=21  Vol=1.8x  → -[-]  
+11:12:01    BAJFINANCE   BodyClose50  C=918.90  VWAP=928.95  RSI=21  Vol=1.8x  → -[-]  
+11:12:01    HDFCBANK     Baseline     C=835.70  VWAP=840.75  RSI=25  Vol=1.2x  → -[-]  
+11:12:01    HDFCBANK     BodyClose50  C=835.70  VWAP=840.75  RSI=25  Vol=1.2x  → -[-]  
+11:12:01    POWERGRID    Baseline     C=299.65  VWAP=300.16  RSI=53  Vol=1.5x  → -[-]  
+11:12:01    POWERGRID    BodyClose50  C=299.65  VWAP=300.16  RSI=53  Vol=1.5x  → -[-]  
+11:12:01    HCLTECH      Baseline     C=1358.80  VWAP=1357.78  RSI=66  Vol=0.5x  → -[-]  
+11:12:01    HCLTECH      BodyClose50  C=1358.80  VWAP=1357.78  RSI=66  Vol=0.5x  → -[-]  
+11:12:01  SCAN #16 complete in 0.0s
+11:15:01  SCAN #17  11:15:01  phase=ACTIVE_AM  active=True  missed=0
+11:15:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.022s
+11:15:01    JSWSTEEL     Baseline     C=1200.80  VWAP=1208.08  RSI=55  Vol=1.0x  → -[-]  
+11:15:01    JSWSTEEL     BodyClose50  C=1200.80  VWAP=1208.08  RSI=55  Vol=1.0x  → -[-]  
+11:15:01    HINDUNILVR   Baseline     C=2178.00  VWAP=2176.91  RSI=56  Vol=0.3x  → -[-]  
+11:15:01    HINDUNILVR   BodyClose50  C=2178.00  VWAP=2176.91  RSI=56  Vol=0.3x  → -[-]  
+11:15:01    AXISBANK     Baseline     C=1285.40  VWAP=1294.11  RSI=31  Vol=0.5x  → -[-]  
+11:15:01    AXISBANK     BodyClose50  C=1285.40  VWAP=1294.11  RSI=31  Vol=0.5x  → -[-]  
+11:15:01    TATASTEEL    Baseline     C=195.99  VWAP=197.18  RSI=38  Vol=0.6x  → -[-]  cooldown_until_11:30
+11:15:01    TATASTEEL    BodyClose50  C=195.99  VWAP=197.18  RSI=38  Vol=0.6x  → -[-]  cooldown_until_11:30
+11:15:01    TRENT        Baseline     C=3676.00  VWAP=3701.30  RSI=31  Vol=1.7x  → -[-]  
+11:15:01    TRENT        BodyClose50  C=3676.00  VWAP=3701.30  RSI=31  Vol=1.7x  → -[-]  
+11:15:01    BAJAJ-AUTO   Baseline     C=9456.00  VWAP=9549.27  RSI=40  Vol=0.5x  → -[-]  
+11:15:01    BAJAJ-AUTO   BodyClose50  C=9456.00  VWAP=9549.27  RSI=40  Vol=0.5x  → -[-]  
+11:15:01    BAJFINANCE   Baseline     C=918.50  VWAP=928.73  RSI=20  Vol=0.9x  → -[-]  
+11:15:01    BAJFINANCE   BodyClose50  C=918.50  VWAP=928.73  RSI=20  Vol=0.9x  → -[-]  
+11:15:01    HDFCBANK     Baseline     C=835.60  VWAP=840.56  RSI=24  Vol=1.7x  → -[-]  
+11:15:01    HDFCBANK     BodyClose50  C=835.60  VWAP=840.56  RSI=24  Vol=1.7x  → -[-]  
+11:15:01    POWERGRID    Baseline     C=300.05  VWAP=300.16  RSI=63  Vol=1.9x  → -[-]  
+11:15:01    POWERGRID    BodyClose50  C=300.05  VWAP=300.16  RSI=63  Vol=1.9x  → -[-]  
+11:15:01    HCLTECH      Baseline     C=1359.00  VWAP=1357.80  RSI=67  Vol=0.7x  → -[-]  
+11:15:01    HCLTECH      BodyClose50  C=1359.00  VWAP=1357.80  RSI=67  Vol=0.7x  → -[-]  
+11:15:01  SCAN #17 complete in 0.0s
+11:18:01  SCAN #18  11:18:01  phase=ACTIVE_AM  active=True  missed=0
+11:18:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.020s
+11:18:01    JSWSTEEL     Baseline     C=1200.40  VWAP=1208.03  RSI=52  Vol=0.4x  → -[-]  
+11:18:01    JSWSTEEL     BodyClose50  C=1200.40  VWAP=1208.03  RSI=52  Vol=0.4x  → -[-]  
+11:18:01    HINDUNILVR   Baseline     C=2177.60  VWAP=2176.91  RSI=54  Vol=0.3x  → -[-]  
+11:18:01    HINDUNILVR   BodyClose50  C=2177.60  VWAP=2176.91  RSI=54  Vol=0.3x  → -[-]  
+11:18:01    AXISBANK     Baseline     C=1284.70  VWAP=1293.95  RSI=29  Vol=0.5x  → -[-]  
+11:18:01    AXISBANK     BodyClose50  C=1284.70  VWAP=1293.95  RSI=29  Vol=0.5x  → -[-]  
+11:18:01    TATASTEEL    Baseline     C=195.94  VWAP=197.17  RSI=37  Vol=1.0x  → -[-]  cooldown_until_11:30
+11:18:01    TATASTEEL    BodyClose50  C=195.94  VWAP=197.17  RSI=37  Vol=1.0x  → -[-]  cooldown_until_11:30
+11:18:01    TRENT        Baseline     C=3673.30  VWAP=3700.90  RSI=29  Vol=0.7x  → -[-]  
+11:18:01    TRENT        BodyClose50  C=3673.30  VWAP=3700.90  RSI=29  Vol=0.7x  → -[-]  
+11:18:01    BAJAJ-AUTO   Baseline     C=9449.00  VWAP=9548.42  RSI=38  Vol=0.6x  → -[-]  
+11:18:01    BAJAJ-AUTO   BodyClose50  C=9449.00  VWAP=9548.42  RSI=38  Vol=0.6x  → -[-]  
+11:18:01    BAJFINANCE   Baseline     C=916.20  VWAP=927.37  RSI=15  Vol=4.5x  → -[-]  
+11:18:01    BAJFINANCE   BodyClose50  C=916.20  VWAP=927.37  RSI=15  Vol=4.5x  → -[-]  
+11:18:01    HDFCBANK     Baseline     C=834.05  VWAP=840.36  RSI=17  Vol=1.5x  → -[-]  
+11:18:01    HDFCBANK     BodyClose50  C=834.05  VWAP=840.36  RSI=17  Vol=1.5x  → -[-]  
+11:18:01    POWERGRID    Baseline     C=300.30  VWAP=300.16  RSI=68  Vol=1.7x  → -[-]  
+11:18:01    POWERGRID    BodyClose50  C=300.30  VWAP=300.16  RSI=68  Vol=1.7x  → -[-]  
+11:18:01    HCLTECH      Baseline     C=1358.10  VWAP=1357.81  RSI=60  Vol=0.4x  → -[-]  
+11:18:01    HCLTECH      BodyClose50  C=1358.10  VWAP=1357.81  RSI=60  Vol=0.4x  → -[-]  
+11:18:01  SCAN #18 complete in 0.0s
+11:21:01  SCAN #19  11:21:01  phase=ACTIVE_AM  active=True  missed=0
+11:21:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.025s
+11:21:01    JSWSTEEL     Baseline     C=1200.00  VWAP=1207.99  RSI=50  Vol=0.7x  → -[-]  
+11:21:01    JSWSTEEL     BodyClose50  C=1200.00  VWAP=1207.99  RSI=50  Vol=0.7x  → -[-]  
+11:21:01    HINDUNILVR   Baseline     C=2176.00  VWAP=2176.91  RSI=48  Vol=0.5x  → -[-]  
+11:21:01    HINDUNILVR   BodyClose50  C=2176.00  VWAP=2176.91  RSI=48  Vol=0.5x  → -[-]  
+11:21:01    AXISBANK     Baseline     C=1282.00  VWAP=1293.80  RSI=23  Vol=0.5x  → ★ SHORT[PDL_BASE]  SL=1286.64  TP=1278.69  Qty=194
+11:21:03    AXISBANK     BodyClose50  C=1282.00  VWAP=1293.80  RSI=23  Vol=0.5x  → ★ SHORT[PDL_BC50]  SL=1286.64  TP=1278.69  Qty=194
+11:21:03    TATASTEEL    Baseline     C=195.83  VWAP=197.16  RSI=34  Vol=0.5x  → -[-]  cooldown_until_11:30
+11:21:03    TATASTEEL    BodyClose50  C=195.83  VWAP=197.16  RSI=34  Vol=0.5x  → -[-]  cooldown_until_11:30
+11:21:03    TRENT        Baseline     C=3670.20  VWAP=3700.36  RSI=26  Vol=0.9x  → -[-]  
+11:21:03    TRENT        BodyClose50  C=3670.20  VWAP=3700.36  RSI=26  Vol=0.9x  → -[-]  
+11:21:03    BAJAJ-AUTO   Baseline     C=9436.00  VWAP=9547.93  RSI=34  Vol=0.3x  → -[-]  
+11:21:03    BAJAJ-AUTO   BodyClose50  C=9436.00  VWAP=9547.93  RSI=34  Vol=0.3x  → -[-]  
+11:21:03    BAJFINANCE   Baseline     C=915.50  VWAP=926.47  RSI=14  Vol=2.8x  → -[-]  
+11:21:03    BAJFINANCE   BodyClose50  C=915.50  VWAP=926.47  RSI=14  Vol=2.8x  → -[-]  
+11:21:03    HDFCBANK     Baseline     C=832.15  VWAP=840.19  RSI=12  Vol=1.0x  → -[-]  
+11:21:03    HDFCBANK     BodyClose50  C=832.15  VWAP=840.19  RSI=12  Vol=1.0x  → -[-]  
+11:21:03    POWERGRID    Baseline     C=300.05  VWAP=300.16  RSI=59  Vol=1.8x  → -[-]  
+11:21:03    POWERGRID    BodyClose50  C=300.05  VWAP=300.16  RSI=59  Vol=1.8x  → -[-]  
+11:21:03    HCLTECH      Baseline     C=1356.80  VWAP=1357.80  RSI=52  Vol=0.4x  → -[-]  
+11:21:03    HCLTECH      BodyClose50  C=1356.80  VWAP=1357.80  RSI=52  Vol=0.4x  → -[-]  
+11:21:03  SCAN #19 complete in 2.4s
+11:24:01  SCAN #20  11:24:01  phase=ACTIVE_AM  active=True  missed=0
+11:24:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.022s
+11:24:01    JSWSTEEL     Baseline     C=1200.00  VWAP=1207.96  RSI=50  Vol=0.6x  → -[-]  
+11:24:01    JSWSTEEL     BodyClose50  C=1200.00  VWAP=1207.96  RSI=50  Vol=0.6x  → -[-]  
+11:24:01    HINDUNILVR   Baseline     C=2177.10  VWAP=2176.92  RSI=52  Vol=1.8x  → -[-]  
+11:24:01    HINDUNILVR   BodyClose50  C=2177.10  VWAP=2176.92  RSI=52  Vol=1.8x  → -[-]  
+11:24:01    AXISBANK     Baseline     C=1280.30  VWAP=1293.56  RSI=20  Vol=0.6x  → -[-]  in_position
+11:24:01    AXISBANK     BodyClose50  C=1280.30  VWAP=1293.56  RSI=20  Vol=0.6x  → -[-]  in_position
+11:24:01    TATASTEEL    Baseline     C=195.80  VWAP=197.15  RSI=34  Vol=0.8x  → -[-]  cooldown_until_11:30
+11:24:01    TATASTEEL    BodyClose50  C=195.80  VWAP=197.15  RSI=34  Vol=0.8x  → -[-]  cooldown_until_11:30
+11:24:01    TRENT        Baseline     C=3670.00  VWAP=3699.93  RSI=26  Vol=0.7x  → -[-]  
+11:24:01    TRENT        BodyClose50  C=3670.00  VWAP=3699.93  RSI=26  Vol=0.7x  → -[-]  
+11:24:01    BAJAJ-AUTO   Baseline     C=9461.00  VWAP=9545.08  RSI=46  Vol=2.1x  → -[-]  
+11:24:01    BAJAJ-AUTO   BodyClose50  C=9461.00  VWAP=9545.08  RSI=46  Vol=2.1x  → -[-]  
+11:24:01    BAJFINANCE   Baseline     C=916.05  VWAP=926.27  RSI=19  Vol=0.7x  → -[-]  
+11:24:01    BAJFINANCE   BodyClose50  C=916.05  VWAP=926.27  RSI=19  Vol=0.7x  → -[-]  
+11:24:01    HDFCBANK     Baseline     C=831.85  VWAP=839.99  RSI=11  Vol=1.2x  → -[-]  
+11:24:01    HDFCBANK     BodyClose50  C=831.85  VWAP=839.99  RSI=11  Vol=1.2x  → -[-]  
+11:24:01    POWERGRID    Baseline     C=300.10  VWAP=300.16  RSI=60  Vol=1.6x  → -[-]  
+11:24:01    POWERGRID    BodyClose50  C=300.10  VWAP=300.16  RSI=60  Vol=1.6x  → -[-]  
+11:24:01    HCLTECH      Baseline     C=1357.40  VWAP=1357.80  RSI=55  Vol=0.2x  → -[-]  
+11:24:01    HCLTECH      BodyClose50  C=1357.40  VWAP=1357.80  RSI=55  Vol=0.2x  → -[-]  
+11:24:01  SCAN #20 complete in 0.0s
+11:27:01  SCAN #21  11:27:01  phase=ACTIVE_AM  active=True  missed=0
+11:27:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.019s
+11:27:01    JSWSTEEL     Baseline     C=1199.70  VWAP=1207.93  RSI=47  Vol=0.5x  → -[-]  
+11:27:01    JSWSTEEL     BodyClose50  C=1199.70  VWAP=1207.93  RSI=47  Vol=0.5x  → -[-]  
+11:27:01    HINDUNILVR   Baseline     C=2175.50  VWAP=2176.90  RSI=46  Vol=0.7x  → -[-]  
+11:27:01    HINDUNILVR   BodyClose50  C=2175.50  VWAP=2176.90  RSI=46  Vol=0.7x  → -[-]  
+11:27:01    AXISBANK     Baseline     C=1281.30  VWAP=1293.08  RSI=26  Vol=1.3x  → -[-]  in_position
+11:27:01    AXISBANK     BodyClose50  C=1281.30  VWAP=1293.08  RSI=26  Vol=1.3x  → -[-]  in_position
+11:27:01    TATASTEEL    Baseline     C=195.63  VWAP=197.13  RSI=29  Vol=1.6x  → -[-]  cooldown_until_11:30
+11:27:01    TATASTEEL    BodyClose50  C=195.63  VWAP=197.13  RSI=29  Vol=1.6x  → -[-]  cooldown_until_11:30
+11:27:01    TRENT        Baseline     C=3668.30  VWAP=3699.26  RSI=24  Vol=1.2x  → -[-]  
+11:27:01    TRENT        BodyClose50  C=3668.30  VWAP=3699.26  RSI=24  Vol=1.2x  → -[-]  
+11:27:01    BAJAJ-AUTO   Baseline     C=9462.50  VWAP=9544.64  RSI=47  Vol=0.4x  → -[-]  
+11:27:01    BAJAJ-AUTO   BodyClose50  C=9462.50  VWAP=9544.64  RSI=47  Vol=0.4x  → -[-]  
+11:27:01    BAJFINANCE   Baseline     C=916.90  VWAP=926.11  RSI=27  Vol=0.6x  → -[-]  
+11:27:01    BAJFINANCE   BodyClose50  C=916.90  VWAP=926.11  RSI=27  Vol=0.6x  → -[-]  
+11:27:01    HDFCBANK     Baseline     C=831.85  VWAP=839.83  RSI=11  Vol=0.9x  → -[-]  
+11:27:01    HDFCBANK     BodyClose50  C=831.85  VWAP=839.83  RSI=11  Vol=0.9x  → -[-]  
+11:27:01    POWERGRID    Baseline     C=300.30  VWAP=300.16  RSI=65  Vol=1.4x  → -[-]  
+11:27:01    POWERGRID    BodyClose50  C=300.30  VWAP=300.16  RSI=65  Vol=1.4x  → -[-]  
+11:27:01    HCLTECH      Baseline     C=1358.60  VWAP=1357.80  RSI=61  Vol=0.2x  → -[-]  
+11:27:01    HCLTECH      BodyClose50  C=1358.60  VWAP=1357.80  RSI=61  Vol=0.2x  → -[-]  
+11:27:01  SCAN #21 complete in 0.0s
+11:30:01  SCAN #22  11:30:01  phase=ACTIVE_AM  active=True  missed=0
+11:30:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.019s
+11:30:01    JSWSTEEL     Baseline     C=1198.60  VWAP=1207.89  RSI=40  Vol=0.6x  → -[-]  
+11:30:01    JSWSTEEL     BodyClose50  C=1198.60  VWAP=1207.89  RSI=40  Vol=0.6x  → -[-]  
+11:30:01    HINDUNILVR   Baseline     C=2173.40  VWAP=2176.85  RSI=39  Vol=0.7x  → -[-]  
+11:30:01    HINDUNILVR   BodyClose50  C=2173.40  VWAP=2176.85  RSI=39  Vol=0.7x  → -[-]  
+11:30:01    AXISBANK     Baseline     C=1280.00  VWAP=1292.57  RSI=24  Vol=1.3x  → -[-]  in_position
+11:30:01    AXISBANK     BodyClose50  C=1280.00  VWAP=1292.57  RSI=24  Vol=1.3x  → -[-]  in_position
+11:30:01    TATASTEEL    Baseline     C=195.92  VWAP=197.12  RSI=43  Vol=0.5x  → -[-]  
+11:30:01    TATASTEEL    BodyClose50  C=195.92  VWAP=197.12  RSI=43  Vol=0.5x  → -[-]  
+11:30:01    TRENT        Baseline     C=3665.40  VWAP=3695.88  RSI=21  Vol=4.6x  → -[-]  
+11:30:01    TRENT        BodyClose50  C=3665.40  VWAP=3695.88  RSI=21  Vol=4.6x  → -[-]  
+11:30:01    BAJAJ-AUTO   Baseline     C=9464.50  VWAP=9544.32  RSI=48  Vol=0.3x  → -[-]  
+11:30:01    BAJAJ-AUTO   BodyClose50  C=9464.50  VWAP=9544.32  RSI=48  Vol=0.3x  → -[-]  
+11:30:01    BAJFINANCE   Baseline     C=918.00  VWAP=925.83  RSI=37  Vol=1.2x  → -[-]  
+11:30:01    BAJFINANCE   BodyClose50  C=918.00  VWAP=925.83  RSI=37  Vol=1.2x  → -[-]  
+11:30:01    HDFCBANK     Baseline     C=831.75  VWAP=839.71  RSI=11  Vol=0.7x  → -[-]  
+11:30:01    HDFCBANK     BodyClose50  C=831.75  VWAP=839.71  RSI=11  Vol=0.7x  → -[-]  
+11:30:01    POWERGRID    Baseline     C=300.45  VWAP=300.16  RSI=68  Vol=1.0x  → -[-]  
+11:30:01    POWERGRID    BodyClose50  C=300.45  VWAP=300.16  RSI=68  Vol=1.0x  → -[-]  
+11:30:01    HCLTECH      Baseline     C=1359.30  VWAP=1357.80  RSI=64  Vol=0.2x  → -[-]  
+11:30:01    HCLTECH      BodyClose50  C=1359.30  VWAP=1357.80  RSI=64  Vol=0.2x  → -[-]  
+11:30:01  SCAN #22 complete in 0.0s
+11:33:01  SCAN #23  11:33:01  phase=ACTIVE_AM  active=True  missed=0
+11:33:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.021s
+11:33:01    JSWSTEEL     Baseline     C=1196.00  VWAP=1207.76  RSI=28  Vol=1.6x  → -[-]  
+11:33:01    JSWSTEEL     BodyClose50  C=1196.00  VWAP=1207.76  RSI=28  Vol=1.6x  → -[-]  
+11:33:01    HINDUNILVR   Baseline     C=2170.70  VWAP=2176.81  RSI=32  Vol=0.4x  → -[-]  
+11:33:01    HINDUNILVR   BodyClose50  C=2170.70  VWAP=2176.81  RSI=32  Vol=0.4x  → -[-]  
+11:33:01  BRACKET  AXISBANK     Baseline     TP hit at 11:33 — position closed
+11:33:01    AXISBANK     Baseline     C=1278.70  VWAP=1292.02  RSI=21  Vol=1.3x  → -[-]  cooldown_until_11:51
+11:33:01  BRACKET  AXISBANK     BodyClose50  TP hit at 11:33 — position closed
+11:33:01    AXISBANK     BodyClose50  C=1278.70  VWAP=1292.02  RSI=21  Vol=1.3x  → -[-]  cooldown_until_11:51
+11:33:01    TATASTEEL    Baseline     C=195.60  VWAP=197.11  RSI=35  Vol=0.9x  → -[-]  
+11:33:01    TATASTEEL    BodyClose50  C=195.60  VWAP=197.11  RSI=35  Vol=0.9x  → -[-]  
+11:33:01    TRENT        Baseline     C=3667.30  VWAP=3695.40  RSI=27  Vol=0.8x  → -[-]  
+11:33:01    TRENT        BodyClose50  C=3667.30  VWAP=3695.40  RSI=27  Vol=0.8x  → -[-]  
+11:33:01    BAJAJ-AUTO   Baseline     C=9453.50  VWAP=9544.09  RSI=43  Vol=0.2x  → -[-]  
+11:33:01    BAJAJ-AUTO   BodyClose50  C=9453.50  VWAP=9544.09  RSI=43  Vol=0.2x  → -[-]  
+11:33:01    BAJFINANCE   Baseline     C=915.65  VWAP=925.60  RSI=28  Vol=0.9x  → -[-]  
+11:33:01    BAJFINANCE   BodyClose50  C=915.65  VWAP=925.60  RSI=28  Vol=0.9x  → -[-]  
+11:33:01    HDFCBANK     Baseline     C=831.40  VWAP=839.53  RSI=10  Vol=1.0x  → -[-]  
+11:33:01    HDFCBANK     BodyClose50  C=831.40  VWAP=839.53  RSI=10  Vol=1.0x  → -[-]  
+11:33:01    POWERGRID    Baseline     C=300.30  VWAP=300.16  RSI=62  Vol=1.0x  → -[-]  
+11:33:01    POWERGRID    BodyClose50  C=300.30  VWAP=300.16  RSI=62  Vol=1.0x  → -[-]  
+11:33:01    HCLTECH      Baseline     C=1357.80  VWAP=1357.81  RSI=54  Vol=0.2x  → -[-]  
+11:33:01    HCLTECH      BodyClose50  C=1357.80  VWAP=1357.81  RSI=54  Vol=0.2x  → -[-]  
+11:33:01  SCAN #23 complete in 0.0s
+11:36:01  SCAN #24  11:36:01  phase=ACTIVE_AM  active=True  missed=0
+11:36:01  FETCH  WS  10 new bars (5 clock-flushed) in 0.020s
+11:36:01    JSWSTEEL     Baseline     C=1196.60  VWAP=1207.65  RSI=33  Vol=1.2x  → -[-]  
+11:36:01    JSWSTEEL     BodyClose50  C=1196.60  VWAP=1207.65  RSI=33  Vol=1.2x  → -[-]  
+11:36:01    HINDUNILVR   Baseline     C=2171.50  VWAP=2176.78  RSI=36  Vol=0.2x  → -[-]  
+11:36:01    HINDUNILVR   BodyClose50  C=2171.50  VWAP=2176.78  RSI=36  Vol=0.2x  → -[-]  
+11:36:01    AXISBANK     Baseline     C=1276.60  VWAP=1291.58  RSI=18  Vol=1.0x  → -[-]  cooldown_until_11:51
+11:36:01    AXISBANK     BodyClose50  C=1276.60  VWAP=1291.58  RSI=18  Vol=1.0x  → -[-]  cooldown_until_11:51
+11:36:01    TATASTEEL    Baseline     C=195.30  VWAP=197.10  RSI=29  Vol=0.7x  → -[-]  
+11:36:01    TATASTEEL    BodyClose50  C=195.30  VWAP=197.10  RSI=29  Vol=0.7x  → -[-]  
+11:36:01    TRENT        Baseline     C=3657.70  VWAP=3694.78  RSI=19  Vol=0.9x  → -[-]  
+11:36:01    TRENT        BodyClose50  C=3657.70  VWAP=3694.78  RSI=19  Vol=0.9x  → -[-]  
+11:36:01    BAJAJ-AUTO   Baseline     C=9450.00  VWAP=9543.47  RSI=42  Vol=0.5x  → -[-]  
+11:36:01    BAJAJ-AUTO   BodyClose50  C=9450.00  VWAP=9543.47  RSI=42  Vol=0.5x  → -[-]  
+11:36:01    BAJFINANCE   Baseline     C=914.90  VWAP=925.30  RSI=26  Vol=1.1x  → -[-]  
+11:36:01    BAJFINANCE   BodyClose50  C=914.90  VWAP=925.30  RSI=26  Vol=1.1x  → -[-]  
+11:36:01    HDFCBANK     Baseline     C=831.05  VWAP=839.37  RSI=10  Vol=0.9x  → -[-]  
+11:36:01    HDFCBANK     BodyClose50  C=831.05  VWAP=839.37  RSI=10  Vol=0.9x  → -[-]  
+11:36:01    POWERGRID    Baseline     C=300.30  VWAP=300.17  RSI=62  Vol=1.3x  → -[-]  
+11:36:01    POWERGRID    BodyClose50  C=300.30  VWAP=300.17  RSI=62  Vol=1.3x  → -[-]  
+11:36:01    HCLTECH      Baseline     C=1357.50  VWAP=1357.80  RSI=52  Vol=0.1x  → -[-]  
+11:36:01    HCLTECH      BodyClose50  C=1357.50  VWAP=1357.80  RSI=52  Vol=0.1x  → -[-]  
+11:36:01  SCAN #24 complete in 0.0s
+11:39:01  SCAN #25  11:39:01  phase=ACTIVE_AM  active=True  missed=0
+11:39:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.020s
+11:39:01    JSWSTEEL     Baseline     C=1198.60  VWAP=1207.61  RSI=47  Vol=0.5x  → -[-]  
+11:39:01    JSWSTEEL     BodyClose50  C=1198.60  VWAP=1207.61  RSI=47  Vol=0.5x  → -[-]  
+11:39:01    HINDUNILVR   Baseline     C=2172.00  VWAP=2176.74  RSI=38  Vol=0.4x  → -[-]  
+11:39:01    HINDUNILVR   BodyClose50  C=2172.00  VWAP=2176.74  RSI=38  Vol=0.4x  → -[-]  
+11:39:01    AXISBANK     Baseline     C=1276.50  VWAP=1291.22  RSI=17  Vol=0.8x  → -[-]  cooldown_until_11:51
+11:39:01    AXISBANK     BodyClose50  C=1276.50  VWAP=1291.22  RSI=17  Vol=0.8x  → -[-]  cooldown_until_11:51
+11:39:01    TATASTEEL    Baseline     C=195.70  VWAP=197.09  RSI=43  Vol=0.8x  → -[-]  
+11:39:01    TATASTEEL    BodyClose50  C=195.70  VWAP=197.09  RSI=43  Vol=0.8x  → -[-]  
+11:39:01    TRENT        Baseline     C=3663.90  VWAP=3694.19  RSI=34  Vol=0.9x  → -[-]  
+11:39:01    TRENT        BodyClose50  C=3663.90  VWAP=3694.19  RSI=34  Vol=0.9x  → -[-]  
+11:39:01    BAJAJ-AUTO   Baseline     C=9446.50  VWAP=9541.02  RSI=40  Vol=1.9x  → -[-]  
+11:39:01    BAJAJ-AUTO   BodyClose50  C=9446.50  VWAP=9541.02  RSI=40  Vol=1.9x  → -[-]  
+11:39:01    BAJFINANCE   Baseline     C=915.75  VWAP=925.13  RSI=33  Vol=0.7x  → -[-]  
+11:39:01    BAJFINANCE   BodyClose50  C=915.75  VWAP=925.13  RSI=33  Vol=0.7x  → -[-]  
+11:39:01    HDFCBANK     Baseline     C=833.20  VWAP=839.19  RSI=41  Vol=1.3x  → -[-]  
+11:39:01    HDFCBANK     BodyClose50  C=833.20  VWAP=839.19  RSI=41  Vol=1.3x  → -[-]  
+11:39:01    POWERGRID    Baseline     C=300.40  VWAP=300.17  RSI=64  Vol=0.9x  → -[-]  
+11:39:01    POWERGRID    BodyClose50  C=300.40  VWAP=300.17  RSI=64  Vol=0.9x  → -[-]  
+11:39:01    HCLTECH      Baseline     C=1359.40  VWAP=1357.81  RSI=62  Vol=0.3x  → -[-]  
+11:39:01    HCLTECH      BodyClose50  C=1359.40  VWAP=1357.81  RSI=62  Vol=0.3x  → -[-]  
+11:39:01  SCAN #25 complete in 0.0s
+11:42:01  SCAN #26  11:42:01  phase=ACTIVE_AM  active=True  missed=0
+11:42:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.016s
+11:42:01    JSWSTEEL     Baseline     C=1199.20  VWAP=1207.58  RSI=51  Vol=0.5x  → -[-]  
+11:42:01    JSWSTEEL     BodyClose50  C=1199.20  VWAP=1207.58  RSI=51  Vol=0.5x  → -[-]  
+11:42:01    HINDUNILVR   Baseline     C=2172.70  VWAP=2176.72  RSI=42  Vol=0.2x  → -[-]  
+11:42:01    HINDUNILVR   BodyClose50  C=2172.70  VWAP=2176.72  RSI=42  Vol=0.2x  → -[-]  
+11:42:01    AXISBANK     Baseline     C=1275.70  VWAP=1290.86  RSI=16  Vol=0.8x  → -[-]  cooldown_until_11:51
+11:42:01    AXISBANK     BodyClose50  C=1275.70  VWAP=1290.86  RSI=16  Vol=0.8x  → -[-]  cooldown_until_11:51
+11:42:01    TATASTEEL    Baseline     C=195.74  VWAP=197.09  RSI=45  Vol=0.4x  → -[-]  
+11:42:01    TATASTEEL    BodyClose50  C=195.74  VWAP=197.09  RSI=45  Vol=0.4x  → -[-]  
+11:42:01    TRENT        Baseline     C=3659.40  VWAP=3693.69  RSI=29  Vol=0.7x  → -[-]  
+11:42:01    TRENT        BodyClose50  C=3659.40  VWAP=3693.69  RSI=29  Vol=0.7x  → -[-]  
+11:42:01    BAJAJ-AUTO   Baseline     C=9425.50  VWAP=9540.16  RSI=32  Vol=0.5x  → -[-]  
+11:42:01    BAJAJ-AUTO   BodyClose50  C=9425.50  VWAP=9540.16  RSI=32  Vol=0.5x  → -[-]  
+11:42:01    BAJFINANCE   Baseline     C=914.90  VWAP=924.94  RSI=30  Vol=0.8x  → -[-]  
+11:42:01    BAJFINANCE   BodyClose50  C=914.90  VWAP=924.94  RSI=30  Vol=0.8x  → -[-]  
+11:42:01    HDFCBANK     Baseline     C=832.15  VWAP=839.10  RSI=34  Vol=0.6x  → -[-]  
+11:42:01    HDFCBANK     BodyClose50  C=832.15  VWAP=839.10  RSI=34  Vol=0.6x  → -[-]  
+11:42:01    POWERGRID    Baseline     C=300.45  VWAP=300.17  RSI=66  Vol=0.8x  → -[-]  
+11:42:01    POWERGRID    BodyClose50  C=300.45  VWAP=300.17  RSI=66  Vol=0.8x  → -[-]  
+11:42:01    HCLTECH      Baseline     C=1359.20  VWAP=1357.82  RSI=60  Vol=0.2x  → -[-]  
+11:42:01    HCLTECH      BodyClose50  C=1359.20  VWAP=1357.82  RSI=60  Vol=0.2x  → -[-]  
+11:42:01  SCAN #26 complete in 0.0s
+11:45:01  SCAN #27  11:45:01  phase=ACTIVE_AM  active=True  missed=0
+11:45:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.014s
+11:45:01    JSWSTEEL     Baseline     C=1201.10  VWAP=1207.52  RSI=60  Vol=1.1x  → -[-]  
+11:45:01    JSWSTEEL     BodyClose50  C=1201.10  VWAP=1207.52  RSI=60  Vol=1.1x  → -[-]  
+11:45:01    HINDUNILVR   Baseline     C=2172.30  VWAP=2176.69  RSI=40  Vol=0.3x  → -[-]  
+11:45:01    HINDUNILVR   BodyClose50  C=2172.30  VWAP=2176.69  RSI=40  Vol=0.3x  → -[-]  
+11:45:01    AXISBANK     Baseline     C=1277.00  VWAP=1290.36  RSI=26  Vol=1.2x  → -[-]  cooldown_until_11:51
+11:45:01    AXISBANK     BodyClose50  C=1277.00  VWAP=1290.36  RSI=26  Vol=1.2x  → -[-]  cooldown_until_11:51
+11:45:01    TATASTEEL    Baseline     C=195.79  VWAP=197.08  RSI=46  Vol=0.5x  → -[-]  
+11:45:01    TATASTEEL    BodyClose50  C=195.79  VWAP=197.08  RSI=46  Vol=0.5x  → -[-]  
+11:45:01    TRENT        Baseline     C=3659.70  VWAP=3693.18  RSI=30  Vol=0.7x  → -[-]  
+11:45:01    TRENT        BodyClose50  C=3659.70  VWAP=3693.18  RSI=30  Vol=0.7x  → -[-]  
+11:45:01    BAJAJ-AUTO   Baseline     C=9421.00  VWAP=9539.31  RSI=30  Vol=0.6x  → -[-]  
+11:45:01    BAJAJ-AUTO   BodyClose50  C=9421.00  VWAP=9539.31  RSI=30  Vol=0.6x  → -[-]  
+11:45:01    BAJFINANCE   Baseline     C=915.00  VWAP=924.80  RSI=30  Vol=0.5x  → -[-]  
+11:45:01    BAJFINANCE   BodyClose50  C=915.00  VWAP=924.80  RSI=30  Vol=0.5x  → -[-]  
+11:45:01    HDFCBANK     Baseline     C=832.65  VWAP=839.04  RSI=40  Vol=0.5x  → -[-]  
+11:45:01    HDFCBANK     BodyClose50  C=832.65  VWAP=839.04  RSI=40  Vol=0.5x  → -[-]  
+11:45:01    POWERGRID    Baseline     C=300.25  VWAP=300.17  RSI=56  Vol=1.1x  → -[-]  
+11:45:01    POWERGRID    BodyClose50  C=300.25  VWAP=300.17  RSI=56  Vol=1.1x  → -[-]  
+11:45:01    HCLTECH      Baseline     C=1359.50  VWAP=1357.82  RSI=62  Vol=0.6x  → -[-]  
+11:45:01    HCLTECH      BodyClose50  C=1359.50  VWAP=1357.82  RSI=62  Vol=0.6x  → -[-]  
+11:45:01  SCAN #27 complete in 0.0s
+11:48:01  SCAN #28  11:48:01  phase=ACTIVE_AM  active=True  missed=0
+11:48:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.022s
+11:48:01    JSWSTEEL     Baseline     C=1201.70  VWAP=1207.44  RSI=63  Vol=2.0x  → -[-]  
+11:48:01    JSWSTEEL     BodyClose50  C=1201.70  VWAP=1207.44  RSI=63  Vol=2.0x  → -[-]  
+11:48:01    HINDUNILVR   Baseline     C=2171.40  VWAP=2176.67  RSI=37  Vol=0.2x  → -[-]  
+11:48:01    HINDUNILVR   BodyClose50  C=2171.40  VWAP=2176.67  RSI=37  Vol=0.2x  → -[-]  
+11:48:01    AXISBANK     Baseline     C=1276.30  VWAP=1290.03  RSI=24  Vol=0.8x  → -[-]  cooldown_until_11:51
+11:48:01    AXISBANK     BodyClose50  C=1276.30  VWAP=1290.03  RSI=24  Vol=0.8x  → -[-]  cooldown_until_11:51
+11:48:01    TATASTEEL    Baseline     C=195.80  VWAP=197.08  RSI=47  Vol=0.4x  → -[-]  
+11:48:01    TATASTEEL    BodyClose50  C=195.80  VWAP=197.08  RSI=47  Vol=0.4x  → -[-]  
+11:48:01    TRENT        Baseline     C=3660.60  VWAP=3692.85  RSI=32  Vol=0.5x  → -[-]  
+11:48:01    TRENT        BodyClose50  C=3660.60  VWAP=3692.85  RSI=32  Vol=0.5x  → -[-]  
+11:48:01    BAJAJ-AUTO   Baseline     C=9426.50  VWAP=9537.41  RSI=34  Vol=1.3x  → -[-]  
+11:48:01    BAJAJ-AUTO   BodyClose50  C=9426.50  VWAP=9537.41  RSI=34  Vol=1.3x  → -[-]  
+11:48:01    BAJFINANCE   Baseline     C=913.00  VWAP=924.55  RSI=24  Vol=0.9x  → -[-]  
+11:48:01    BAJFINANCE   BodyClose50  C=913.00  VWAP=924.55  RSI=24  Vol=0.9x  → -[-]  
+11:48:01    HDFCBANK     Baseline     C=832.35  VWAP=838.98  RSI=38  Vol=0.4x  → -[-]  
+11:48:01    HDFCBANK     BodyClose50  C=832.35  VWAP=838.98  RSI=38  Vol=0.4x  → -[-]  
+11:48:01    POWERGRID    Baseline     C=300.30  VWAP=300.17  RSI=58  Vol=1.0x  → -[-]  
+11:48:01    POWERGRID    BodyClose50  C=300.30  VWAP=300.17  RSI=58  Vol=1.0x  → -[-]  
+11:48:01    HCLTECH      Baseline     C=1359.50  VWAP=1357.84  RSI=62  Vol=1.3x  → -[-]  
+11:48:01    HCLTECH      BodyClose50  C=1359.50  VWAP=1357.84  RSI=62  Vol=1.3x  → -[-]  
+11:48:01  SCAN #28 complete in 0.0s
+11:51:01  SCAN #29  11:51:01  phase=ACTIVE_AM  active=True  missed=0
+11:51:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.020s
+11:51:01    JSWSTEEL     Baseline     C=1200.40  VWAP=1207.40  RSI=54  Vol=0.9x  → -[-]  
+11:51:01    JSWSTEEL     BodyClose50  C=1200.40  VWAP=1207.40  RSI=54  Vol=0.9x  → -[-]  
+11:51:01    HINDUNILVR   Baseline     C=2171.60  VWAP=2176.65  RSI=38  Vol=0.2x  → -[-]  
+11:51:01    HINDUNILVR   BodyClose50  C=2171.60  VWAP=2176.65  RSI=38  Vol=0.2x  → -[-]  
+11:51:01    AXISBANK     Baseline     C=1275.20  VWAP=1289.72  RSI=22  Vol=0.8x  → -[-]  
+11:51:01    AXISBANK     BodyClose50  C=1275.20  VWAP=1289.72  RSI=22  Vol=0.8x  → -[-]  
+11:51:01    TATASTEEL    Baseline     C=195.54  VWAP=197.07  RSI=39  Vol=0.6x  → -[-]  
+11:51:01    TATASTEEL    BodyClose50  C=195.54  VWAP=197.07  RSI=39  Vol=0.6x  → -[-]  
+11:51:01    TRENT        Baseline     C=3658.00  VWAP=3692.10  RSI=29  Vol=1.2x  → -[-]  
+11:51:01    TRENT        BodyClose50  C=3658.00  VWAP=3692.10  RSI=29  Vol=1.2x  → -[-]  
+11:51:01    BAJAJ-AUTO   Baseline     C=9398.50  VWAP=9530.83  RSI=25  Vol=3.6x  → -[-]  
+11:51:01    BAJAJ-AUTO   BodyClose50  C=9398.50  VWAP=9530.83  RSI=25  Vol=3.6x  → -[-]  
+11:51:01    BAJFINANCE   Baseline     C=908.70  VWAP=923.92  RSI=16  Vol=1.7x  → -[-]  
+11:51:01    BAJFINANCE   BodyClose50  C=908.70  VWAP=923.92  RSI=16  Vol=1.7x  → -[-]  
+11:51:01    HDFCBANK     Baseline     C=832.15  VWAP=838.92  RSI=36  Vol=0.4x  → -[-]  
+11:51:01    HDFCBANK     BodyClose50  C=832.15  VWAP=838.92  RSI=36  Vol=0.4x  → -[-]  
+11:51:01    POWERGRID    Baseline     C=300.20  VWAP=300.18  RSI=53  Vol=1.5x  → -[-]  
+11:51:01    POWERGRID    BodyClose50  C=300.20  VWAP=300.18  RSI=53  Vol=1.5x  → -[-]  
+11:51:01    HCLTECH      Baseline     C=1359.20  VWAP=1357.85  RSI=59  Vol=0.8x  → -[-]  
+11:51:01    HCLTECH      BodyClose50  C=1359.20  VWAP=1357.85  RSI=59  Vol=0.8x  → -[-]  
+11:51:01  SCAN #29 complete in 0.1s
+11:54:01  SCAN #30  11:54:01  phase=ACTIVE_AM  active=True  missed=0
+11:54:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.020s
+11:54:01    JSWSTEEL     Baseline     C=1201.40  VWAP=1207.38  RSI=59  Vol=0.5x  → -[-]  
+11:54:01    JSWSTEEL     BodyClose50  C=1201.40  VWAP=1207.38  RSI=59  Vol=0.5x  → -[-]  
+11:54:01    HINDUNILVR   Baseline     C=2171.20  VWAP=2176.52  RSI=37  Vol=1.1x  → -[-]  
+11:54:01    HINDUNILVR   BodyClose50  C=2171.20  VWAP=2176.52  RSI=37  Vol=1.1x  → -[-]  
+11:54:01    AXISBANK     Baseline     C=1276.00  VWAP=1289.53  RSI=28  Vol=0.5x  → -[-]  
+11:54:01    AXISBANK     BodyClose50  C=1276.00  VWAP=1289.53  RSI=28  Vol=0.5x  → -[-]  
+11:54:01    TATASTEEL    Baseline     C=195.63  VWAP=197.06  RSI=43  Vol=0.8x  → -[-]  
+11:54:01    TATASTEEL    BodyClose50  C=195.63  VWAP=197.06  RSI=43  Vol=0.8x  → -[-]  
+11:54:01    TRENT        Baseline     C=3663.80  VWAP=3691.68  RSI=42  Vol=0.7x  → -[-]  
+11:54:01    TRENT        BodyClose50  C=3663.80  VWAP=3691.68  RSI=42  Vol=0.7x  → -[-]  
+11:54:01    BAJAJ-AUTO   Baseline     C=9403.00  VWAP=9528.31  RSI=29  Vol=1.3x  → -[-]  
+11:54:01    BAJAJ-AUTO   BodyClose50  C=9403.00  VWAP=9528.31  RSI=29  Vol=1.3x  → -[-]  
+11:54:01    BAJFINANCE   Baseline     C=906.10  VWAP=923.04  RSI=13  Vol=2.0x  → -[-]  
+11:54:01    BAJFINANCE   BodyClose50  C=906.10  VWAP=923.04  RSI=13  Vol=2.0x  → -[-]  
+11:54:01    HDFCBANK     Baseline     C=832.30  VWAP=838.75  RSI=38  Vol=1.4x  → -[-]  
+11:54:01    HDFCBANK     BodyClose50  C=832.30  VWAP=838.75  RSI=38  Vol=1.4x  → -[-]  
+11:54:01    POWERGRID    Baseline     C=300.20  VWAP=300.17  RSI=53  Vol=1.3x  → -[-]  
+11:54:01    POWERGRID    BodyClose50  C=300.20  VWAP=300.17  RSI=53  Vol=1.3x  → -[-]  
+11:54:01    HCLTECH      Baseline     C=1359.50  VWAP=1357.85  RSI=61  Vol=0.6x  → -[-]  
+11:54:01    HCLTECH      BodyClose50  C=1359.50  VWAP=1357.85  RSI=61  Vol=0.6x  → -[-]  
+11:54:01  SCAN #30 complete in 0.0s
+11:57:01  SCAN #31  11:57:01  phase=ACTIVE_AM  active=True  missed=0
+11:57:01  FETCH  WS  10 new bars (6 clock-flushed) in 0.020s
+11:57:01    JSWSTEEL     Baseline     C=1200.00  VWAP=1207.36  RSI=51  Vol=0.6x  → -[-]  
+11:57:01    JSWSTEEL     BodyClose50  C=1200.00  VWAP=1207.36  RSI=51  Vol=0.6x  → -[-]  
+11:57:01    HINDUNILVR   Baseline     C=2169.40  VWAP=2176.37  RSI=30  Vol=1.1x  → -[-]  
+11:57:01    HINDUNILVR   BodyClose50  C=2169.40  VWAP=2176.37  RSI=30  Vol=1.1x  → -[-]  
+11:57:01    AXISBANK     Baseline     C=1275.10  VWAP=1289.43  RSI=25  Vol=0.3x  → -[-]  
+11:57:01    AXISBANK     BodyClose50  C=1275.10  VWAP=1289.43  RSI=25  Vol=0.3x  → -[-]  
+11:57:01    TATASTEEL    Baseline     C=195.48  VWAP=197.06  RSI=38  Vol=0.4x  → -[-]  
+11:57:01    TATASTEEL    BodyClose50  C=195.48  VWAP=197.06  RSI=38  Vol=0.4x  → -[-]  
+11:57:01    TRENT        Baseline     C=3659.20  VWAP=3691.25  RSI=36  Vol=0.7x  → -[-]  
+11:57:01    TRENT        BodyClose50  C=3659.20  VWAP=3691.25  RSI=36  Vol=0.7x  → -[-]  
+11:57:01    BAJAJ-AUTO   Baseline     C=9395.00  VWAP=9527.01  RSI=26  Vol=0.7x  → -[-]  
+11:57:01    BAJAJ-AUTO   BodyClose50  C=9395.00  VWAP=9527.01  RSI=26  Vol=0.7x  → -[-]  
+11:57:01    BAJFINANCE   Baseline     C=903.45  VWAP=921.67  RSI=11  Vol=2.7x  → -[-]  
+11:57:01    BAJFINANCE   BodyClose50  C=903.45  VWAP=921.67  RSI=11  Vol=2.7x  → -[-]  
+11:57:01    HDFCBANK     Baseline     C=832.20  VWAP=838.68  RSI=37  Vol=0.6x  → -[-]  
+11:57:01    HDFCBANK     BodyClose50  C=832.20  VWAP=838.68  RSI=37  Vol=0.6x  → -[-]  
+11:57:01    POWERGRID    Baseline     C=300.25  VWAP=300.18  RSI=55  Vol=0.7x  → -[-]  
+11:57:01    POWERGRID    BodyClose50  C=300.25  VWAP=300.18  RSI=55  Vol=0.7x  → -[-]  
+11:57:01    HCLTECH      Baseline     C=1358.80  VWAP=1357.86  RSI=54  Vol=0.7x  → -[-]  
+11:57:01    HCLTECH      BodyClose50  C=1358.80  VWAP=1357.86  RSI=54  Vol=0.7x  → -[-]  
+11:57:01  SCAN #31 complete in 0.0s
+12:00:01  SCAN #32  12:00:01  phase=ACTIVE_AM  active=True  missed=0
+12:00:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.023s
+12:00:01    JSWSTEEL     Baseline     C=1200.70  VWAP=1207.35  RSI=54  Vol=0.3x  → -[-]  
+12:00:01    JSWSTEEL     BodyClose50  C=1200.70  VWAP=1207.35  RSI=54  Vol=0.3x  → -[-]  
+12:00:01    HINDUNILVR   Baseline     C=2169.60  VWAP=2176.35  RSI=32  Vol=0.2x  → -[-]  
+12:00:01    HINDUNILVR   BodyClose50  C=2169.60  VWAP=2176.35  RSI=32  Vol=0.2x  → -[-]  
+12:00:01    AXISBANK     Baseline     C=1275.70  VWAP=1289.19  RSI=30  Vol=0.6x  → -[-]  
+12:00:01    AXISBANK     BodyClose50  C=1275.70  VWAP=1289.19  RSI=30  Vol=0.6x  → -[-]  
+12:00:01    TATASTEEL    Baseline     C=195.39  VWAP=197.02  RSI=36  Vol=3.4x  → -[-]  
+12:00:01    TATASTEEL    BodyClose50  C=195.39  VWAP=197.02  RSI=36  Vol=3.4x  → -[-]  
+12:00:01    TRENT        Baseline     C=3659.90  VWAP=3690.91  RSI=38  Vol=0.5x  → -[-]  
+12:00:01    TRENT        BodyClose50  C=3659.90  VWAP=3690.91  RSI=38  Vol=0.5x  → -[-]  
+12:00:01    BAJAJ-AUTO   Baseline     C=9401.50  VWAP=9526.09  RSI=32  Vol=0.5x  → -[-]  
+12:00:01    BAJAJ-AUTO   BodyClose50  C=9401.50  VWAP=9526.09  RSI=32  Vol=0.5x  → -[-]  
+12:00:01    BAJFINANCE   Baseline     C=903.65  VWAP=921.16  RSI=12  Vol=1.1x  → -[-]  
+12:00:01    BAJFINANCE   BodyClose50  C=903.65  VWAP=921.16  RSI=12  Vol=1.1x  → -[-]  
+12:00:01    HDFCBANK     Baseline     C=831.95  VWAP=838.62  RSI=35  Vol=0.6x  → -[-]  
+12:00:01    HDFCBANK     BodyClose50  C=831.95  VWAP=838.62  RSI=35  Vol=0.6x  → -[-]  
+12:00:01    POWERGRID    Baseline     C=300.00  VWAP=300.17  RSI=44  Vol=0.9x  → -[-]  
+12:00:01    POWERGRID    BodyClose50  C=300.00  VWAP=300.17  RSI=44  Vol=0.9x  → -[-]  
+12:00:01    HCLTECH      Baseline     C=1359.20  VWAP=1357.86  RSI=57  Vol=0.4x  → -[-]  
+12:00:01    HCLTECH      BodyClose50  C=1359.20  VWAP=1357.86  RSI=57  Vol=0.4x  → -[-]  
+12:00:01  SCAN #32 complete in 0.1s
+12:03:01  SCAN #33  12:03:01  phase=ACTIVE_AM  active=True  missed=0
+12:03:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.023s
+12:03:01    JSWSTEEL     Baseline     C=1202.50  VWAP=1207.33  RSI=62  Vol=0.6x  → -[-]  
+12:03:01    JSWSTEEL     BodyClose50  C=1202.50  VWAP=1207.33  RSI=62  Vol=0.6x  → -[-]  
+12:03:01    HINDUNILVR   Baseline     C=2170.00  VWAP=2176.32  RSI=35  Vol=0.5x  → -[-]  
+12:03:01    HINDUNILVR   BodyClose50  C=2170.00  VWAP=2176.32  RSI=35  Vol=0.5x  → -[-]  
+12:03:01    AXISBANK     Baseline     C=1276.40  VWAP=1289.01  RSI=35  Vol=0.6x  → -[-]  
+12:03:01    AXISBANK     BodyClose50  C=1276.40  VWAP=1289.01  RSI=35  Vol=0.6x  → -[-]  
+12:03:01    TATASTEEL    Baseline     C=195.76  VWAP=197.01  RSI=51  Vol=1.1x  → -[-]  
+12:03:01    TATASTEEL    BodyClose50  C=195.76  VWAP=197.01  RSI=51  Vol=1.1x  → -[-]  
+12:03:01    TRENT        Baseline     C=3664.50  VWAP=3690.63  RSI=47  Vol=0.5x  → -[-]  
+12:03:01    TRENT        BodyClose50  C=3664.50  VWAP=3690.63  RSI=47  Vol=0.5x  → -[-]  
+12:03:01    BAJAJ-AUTO   Baseline     C=9409.50  VWAP=9525.18  RSI=38  Vol=0.6x  → -[-]  
+12:03:01    BAJAJ-AUTO   BodyClose50  C=9409.50  VWAP=9525.18  RSI=38  Vol=0.6x  → -[-]  
+12:03:01    BAJFINANCE   Baseline     C=903.75  VWAP=920.52  RSI=13  Vol=1.4x  → -[-]  
+12:03:01    BAJFINANCE   BodyClose50  C=903.75  VWAP=920.52  RSI=13  Vol=1.4x  → -[-]  
+12:03:01    HDFCBANK     Baseline     C=832.45  VWAP=838.53  RSI=43  Vol=0.8x  → -[-]  
+12:03:01    HDFCBANK     BodyClose50  C=832.45  VWAP=838.53  RSI=43  Vol=0.8x  → -[-]  
+12:03:01    POWERGRID    Baseline     C=300.60  VWAP=300.18  RSI=64  Vol=0.9x  → -[-]  
+12:03:01    POWERGRID    BodyClose50  C=300.60  VWAP=300.18  RSI=64  Vol=0.9x  → -[-]  
+12:03:01    HCLTECH      Baseline     C=1360.90  VWAP=1357.88  RSI=68  Vol=1.3x  → -[-]  
+12:03:01    HCLTECH      BodyClose50  C=1360.90  VWAP=1357.88  RSI=68  Vol=1.3x  → -[-]  
+12:03:01  SCAN #33 complete in 0.1s
+12:06:01  SCAN #34  12:06:01  phase=ACTIVE_AM  active=True  missed=0
+12:06:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.021s
+12:06:01    JSWSTEEL     Baseline     C=1203.70  VWAP=1207.31  RSI=67  Vol=0.8x  → -[-]  
+12:06:01    JSWSTEEL     BodyClose50  C=1203.70  VWAP=1207.31  RSI=67  Vol=0.8x  → -[-]  
+12:06:01    HINDUNILVR   Baseline     C=2171.00  VWAP=2176.26  RSI=42  Vol=1.1x  → -[-]  
+12:06:01    HINDUNILVR   BodyClose50  C=2171.00  VWAP=2176.26  RSI=42  Vol=1.1x  → -[-]  
+12:06:01    AXISBANK     Baseline     C=1274.40  VWAP=1288.87  RSI=28  Vol=0.4x  → -[-]  
+12:06:01    AXISBANK     BodyClose50  C=1274.40  VWAP=1288.87  RSI=28  Vol=0.4x  → -[-]  
+12:06:01    TATASTEEL    Baseline     C=195.90  VWAP=197.00  RSI=55  Vol=0.9x  → -[-]  
+12:06:01    TATASTEEL    BodyClose50  C=195.90  VWAP=197.00  RSI=55  Vol=0.9x  → -[-]  
+12:06:01    TRENT        Baseline     C=3667.00  VWAP=3690.28  RSI=52  Vol=0.8x  → -[-]  
+12:06:01    TRENT        BodyClose50  C=3667.00  VWAP=3690.28  RSI=52  Vol=0.8x  → -[-]  
+12:06:01    BAJAJ-AUTO   Baseline     C=9425.50  VWAP=9524.44  RSI=48  Vol=0.7x  → -[-]  
+12:06:01    BAJAJ-AUTO   BodyClose50  C=9425.50  VWAP=9524.44  RSI=48  Vol=0.7x  → -[-]  
+12:06:01    BAJFINANCE   Baseline     C=905.95  VWAP=919.74  RSI=27  Vol=1.9x  → -[-]  
+12:06:01    BAJFINANCE   BodyClose50  C=905.95  VWAP=919.74  RSI=27  Vol=1.9x  → -[-]  
+12:06:01    HDFCBANK     Baseline     C=832.30  VWAP=838.40  RSI=41  Vol=1.3x  → -[-]  
+12:06:01    HDFCBANK     BodyClose50  C=832.30  VWAP=838.40  RSI=41  Vol=1.3x  → -[-]  
+12:06:01    POWERGRID    Baseline     C=300.85  VWAP=300.18  RSI=70  Vol=0.8x  → -[-]  
+12:06:01    POWERGRID    BodyClose50  C=300.85  VWAP=300.18  RSI=70  Vol=0.8x  → -[-]  
+12:06:01    HCLTECH      Baseline     C=1361.90  VWAP=1357.91  RSI=72  Vol=1.1x  → -[-]  
+12:06:01    HCLTECH      BodyClose50  C=1361.90  VWAP=1357.91  RSI=72  Vol=1.1x  → -[-]  
+12:06:01  SCAN #34 complete in 0.1s
+12:09:01  SCAN #35  12:09:01  phase=ACTIVE_AM  active=True  missed=0
+12:09:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.022s
+12:09:01    JSWSTEEL     Baseline     C=1201.50  VWAP=1207.28  RSI=54  Vol=1.0x  → -[-]  
+12:09:01    JSWSTEEL     BodyClose50  C=1201.50  VWAP=1207.28  RSI=54  Vol=1.0x  → -[-]  
+12:09:01    HINDUNILVR   Baseline     C=2169.10  VWAP=2176.20  RSI=34  Vol=1.0x  → -[-]  
+12:09:01    HINDUNILVR   BodyClose50  C=2169.10  VWAP=2176.20  RSI=34  Vol=1.0x  → -[-]  
+12:09:01    AXISBANK     Baseline     C=1272.50  VWAP=1288.45  RSI=23  Vol=1.3x  → -[-]  
+12:09:01    AXISBANK     BodyClose50  C=1272.50  VWAP=1288.45  RSI=23  Vol=1.3x  → -[-]  
+12:09:01    TATASTEEL    Baseline     C=195.62  VWAP=197.00  RSI=46  Vol=0.6x  → -[-]  
+12:09:01    TATASTEEL    BodyClose50  C=195.62  VWAP=197.00  RSI=46  Vol=0.6x  → -[-]  
+12:09:01    TRENT        Baseline     C=3661.90  VWAP=3689.89  RSI=43  Vol=0.8x  → -[-]  
+12:09:01    TRENT        BodyClose50  C=3661.90  VWAP=3689.89  RSI=43  Vol=0.8x  → -[-]  
+12:09:01    BAJAJ-AUTO   Baseline     C=9395.50  VWAP=9522.85  RSI=36  Vol=1.2x  → -[-]  
+12:09:01    BAJAJ-AUTO   BodyClose50  C=9395.50  VWAP=9522.85  RSI=36  Vol=1.2x  → -[-]  
+12:09:01    BAJFINANCE   Baseline     C=904.00  VWAP=919.33  RSI=23  Vol=1.0x  → -[-]  
+12:09:01    BAJFINANCE   BodyClose50  C=904.00  VWAP=919.33  RSI=23  Vol=1.0x  → -[-]  
+12:09:01    HDFCBANK     Baseline     C=832.25  VWAP=838.29  RSI=40  Vol=1.2x  → -[-]  
+12:09:01    HDFCBANK     BodyClose50  C=832.25  VWAP=838.29  RSI=40  Vol=1.2x  → -[-]  
+12:09:01    POWERGRID    Baseline     C=300.90  VWAP=300.19  RSI=70  Vol=1.0x  → -[-]  
+12:09:01    POWERGRID    BodyClose50  C=300.90  VWAP=300.19  RSI=70  Vol=1.0x  → -[-]  
+12:09:01    HCLTECH      Baseline     C=1361.00  VWAP=1357.92  RSI=63  Vol=0.7x  → -[-]  
+12:09:01    HCLTECH      BodyClose50  C=1361.00  VWAP=1357.92  RSI=63  Vol=0.7x  → -[-]  
+12:09:01  SCAN #35 complete in 0.1s
+12:12:01  SCAN #36  12:12:01  phase=ACTIVE_AM  active=True  missed=0
+12:12:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.022s
+12:12:01    JSWSTEEL     Baseline     C=1201.80  VWAP=1207.15  RSI=55  Vol=3.6x  → -[-]  
+12:12:01    JSWSTEEL     BodyClose50  C=1201.80  VWAP=1207.15  RSI=55  Vol=3.6x  → -[-]  
+12:12:01    HINDUNILVR   Baseline     C=2170.00  VWAP=2176.16  RSI=40  Vol=0.5x  → -[-]  
+12:12:01    HINDUNILVR   BodyClose50  C=2170.00  VWAP=2176.16  RSI=40  Vol=0.5x  → -[-]  
+12:12:01    AXISBANK     Baseline     C=1275.30  VWAP=1288.13  RSI=41  Vol=1.2x  → -[-]  
+12:12:01    AXISBANK     BodyClose50  C=1275.30  VWAP=1288.13  RSI=41  Vol=1.2x  → -[-]  
+12:12:01    TATASTEEL    Baseline     C=195.65  VWAP=196.99  RSI=47  Vol=1.0x  → -[-]  
+12:12:01    TATASTEEL    BodyClose50  C=195.65  VWAP=196.99  RSI=47  Vol=1.0x  → -[-]  
+12:12:01    TRENT        Baseline     C=3668.70  VWAP=3689.65  RSI=54  Vol=0.6x  → -[-]  
+12:12:01    TRENT        BodyClose50  C=3668.70  VWAP=3689.65  RSI=54  Vol=0.6x  → -[-]  
+12:12:01    BAJAJ-AUTO   Baseline     C=9418.00  VWAP=9522.15  RSI=47  Vol=0.6x  → -[-]  
+12:12:01    BAJAJ-AUTO   BodyClose50  C=9418.00  VWAP=9522.15  RSI=47  Vol=0.6x  → -[-]  
+12:12:01    BAJFINANCE   Baseline     C=904.75  VWAP=919.03  RSI=28  Vol=0.8x  → -[-]  
+12:12:01    BAJFINANCE   BodyClose50  C=904.75  VWAP=919.03  RSI=28  Vol=0.8x  → -[-]  
+12:12:01    HDFCBANK     Baseline     C=832.45  VWAP=838.18  RSI=44  Vol=1.2x  → -[-]  
+12:12:01    HDFCBANK     BodyClose50  C=832.45  VWAP=838.18  RSI=44  Vol=1.2x  → -[-]  
+12:12:01    POWERGRID    Baseline     C=300.80  VWAP=300.20  RSI=66  Vol=1.0x  → -[-]  
+12:12:01    POWERGRID    BodyClose50  C=300.80  VWAP=300.20  RSI=66  Vol=1.0x  → -[-]  
+12:12:01    HCLTECH      Baseline     C=1363.30  VWAP=1357.95  RSI=73  Vol=1.0x  → -[-]  
+12:12:01    HCLTECH      BodyClose50  C=1363.30  VWAP=1357.95  RSI=73  Vol=1.0x  → -[-]  
+12:12:01  SCAN #36 complete in 0.1s
+12:15:01  SCAN #37  12:15:01  phase=ACTIVE_AM  active=True  missed=0
+12:15:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+12:15:01    JSWSTEEL     Baseline     C=1200.90  VWAP=1207.10  RSI=50  Vol=1.2x  → -[-]  
+12:15:01    JSWSTEEL     BodyClose50  C=1200.90  VWAP=1207.10  RSI=50  Vol=1.2x  → -[-]  
+12:15:01    HINDUNILVR   Baseline     C=2170.00  VWAP=2176.13  RSI=40  Vol=0.5x  → -[-]  
+12:15:01    HINDUNILVR   BodyClose50  C=2170.00  VWAP=2176.13  RSI=40  Vol=0.5x  → -[-]  
+12:15:01    AXISBANK     Baseline     C=1274.60  VWAP=1288.06  RSI=38  Vol=0.3x  → -[-]  
+12:15:01    AXISBANK     BodyClose50  C=1274.60  VWAP=1288.06  RSI=38  Vol=0.3x  → -[-]  
+12:15:01    TATASTEEL    Baseline     C=195.52  VWAP=196.98  RSI=43  Vol=0.6x  → -[-]  
+12:15:01    TATASTEEL    BodyClose50  C=195.52  VWAP=196.98  RSI=43  Vol=0.6x  → -[-]  
+12:15:01    TRENT        Baseline     C=3668.00  VWAP=3689.46  RSI=53  Vol=0.5x  → -[-]  
+12:15:01    TRENT        BodyClose50  C=3668.00  VWAP=3689.46  RSI=53  Vol=0.5x  → -[-]  
+12:15:01    BAJAJ-AUTO   Baseline     C=9409.50  VWAP=9519.43  RSI=44  Vol=2.1x  → -[-]  
+12:15:01    BAJAJ-AUTO   BodyClose50  C=9409.50  VWAP=9519.43  RSI=44  Vol=2.1x  → -[-]  
+12:15:01    BAJFINANCE   Baseline     C=903.30  VWAP=918.80  RSI=25  Vol=0.6x  → -[-]  
+12:15:01    BAJFINANCE   BodyClose50  C=903.30  VWAP=918.80  RSI=25  Vol=0.6x  → -[-]  
+12:15:01    HDFCBANK     Baseline     C=833.00  VWAP=838.07  RSI=53  Vol=1.3x  → -[-]  
+12:15:01    HDFCBANK     BodyClose50  C=833.00  VWAP=838.07  RSI=53  Vol=1.3x  → -[-]  
+12:15:01    POWERGRID    Baseline     C=301.45  VWAP=300.22  RSI=77  Vol=1.3x  → -[-]  
+12:15:01    POWERGRID    BodyClose50  C=301.45  VWAP=300.22  RSI=77  Vol=1.3x  → -[-]  
+12:15:01    HCLTECH      Baseline     C=1363.00  VWAP=1357.97  RSI=70  Vol=1.0x  → -[-]  
+12:15:01    HCLTECH      BodyClose50  C=1363.00  VWAP=1357.97  RSI=70  Vol=1.0x  → -[-]  
+12:15:01  SCAN #37 complete in 0.0s
+12:18:01  SCAN #38  12:18:01  phase=ACTIVE_AM  active=True  missed=0
+12:18:01  FETCH  WS  10 new bars (5 clock-flushed) in 0.019s
+12:18:01    JSWSTEEL     Baseline     C=1201.60  VWAP=1207.09  RSI=54  Vol=0.3x  → -[-]  
+12:18:01    JSWSTEEL     BodyClose50  C=1201.60  VWAP=1207.09  RSI=54  Vol=0.3x  → -[-]  
+12:18:01    HINDUNILVR   Baseline     C=2170.60  VWAP=2176.11  RSI=45  Vol=0.3x  → -[-]  
+12:18:01    HINDUNILVR   BodyClose50  C=2170.60  VWAP=2176.11  RSI=45  Vol=0.3x  → -[-]  
+12:18:01    AXISBANK     Baseline     C=1275.10  VWAP=1287.99  RSI=41  Vol=0.3x  → -[-]  
+12:18:01    AXISBANK     BodyClose50  C=1275.10  VWAP=1287.99  RSI=41  Vol=0.3x  → -[-]  
+12:18:01    TATASTEEL    Baseline     C=195.77  VWAP=196.97  RSI=52  Vol=2.2x  → -[-]  
+12:18:01    TATASTEEL    BodyClose50  C=195.77  VWAP=196.97  RSI=52  Vol=2.2x  → -[-]  
+12:18:01    TRENT        Baseline     C=3669.20  VWAP=3689.24  RSI=55  Vol=0.6x  → -[-]  
+12:18:01    TRENT        BodyClose50  C=3669.20  VWAP=3689.24  RSI=55  Vol=0.6x  → -[-]  
+12:18:01    BAJAJ-AUTO   Baseline     C=9416.00  VWAP=9518.97  RSI=47  Vol=0.4x  → -[-]  
+12:18:01    BAJAJ-AUTO   BodyClose50  C=9416.00  VWAP=9518.97  RSI=47  Vol=0.4x  → -[-]  
+12:18:01    BAJFINANCE   Baseline     C=904.65  VWAP=918.54  RSI=33  Vol=0.7x  → -[-]  
+12:18:01    BAJFINANCE   BodyClose50  C=904.65  VWAP=918.54  RSI=33  Vol=0.7x  → -[-]  
+12:18:01    HDFCBANK     Baseline     C=831.90  VWAP=837.95  RSI=39  Vol=1.5x  → -[-]  
+12:18:01    HDFCBANK     BodyClose50  C=831.90  VWAP=837.95  RSI=39  Vol=1.5x  → -[-]  
+12:18:01    POWERGRID    Baseline     C=302.35  VWAP=300.30  RSI=85  Vol=2.7x  → -[-]  
+12:18:01    POWERGRID    BodyClose50  C=302.35  VWAP=300.30  RSI=85  Vol=2.7x  → -[-]  
+12:18:01    HCLTECH      Baseline     C=1362.50  VWAP=1357.99  RSI=66  Vol=0.6x  → -[-]  
+12:18:01    HCLTECH      BodyClose50  C=1362.50  VWAP=1357.99  RSI=66  Vol=0.6x  → -[-]  
+12:18:01  SCAN #38 complete in 0.0s
+12:21:01  SCAN #39  12:21:01  phase=ACTIVE_AM  active=True  missed=0
+12:21:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.022s
+12:21:01    JSWSTEEL     Baseline     C=1201.30  VWAP=1207.08  RSI=52  Vol=0.4x  → -[-]  
+12:21:01    JSWSTEEL     BodyClose50  C=1201.30  VWAP=1207.08  RSI=52  Vol=0.4x  → -[-]  
+12:21:01    HINDUNILVR   Baseline     C=2171.70  VWAP=2176.06  RSI=52  Vol=1.0x  → -[-]  
+12:21:01    HINDUNILVR   BodyClose50  C=2171.70  VWAP=2176.06  RSI=52  Vol=1.0x  → -[-]  
+12:21:01    AXISBANK     Baseline     C=1275.10  VWAP=1287.92  RSI=41  Vol=0.3x  → -[-]  
+12:21:01    AXISBANK     BodyClose50  C=1275.10  VWAP=1287.92  RSI=41  Vol=0.3x  → -[-]  
+12:21:01    TATASTEEL    Baseline     C=195.77  VWAP=196.93  RSI=52  Vol=4.1x  → -[-]  
+12:21:01    TATASTEEL    BodyClose50  C=195.77  VWAP=196.93  RSI=52  Vol=4.1x  → -[-]  
+12:21:01    TRENT        Baseline     C=3662.90  VWAP=3688.85  RSI=44  Vol=1.0x  → -[-]  
+12:21:01    TRENT        BodyClose50  C=3662.90  VWAP=3688.85  RSI=44  Vol=1.0x  → -[-]  
+12:21:01    BAJAJ-AUTO   Baseline     C=9411.00  VWAP=9518.17  RSI=45  Vol=0.6x  → -[-]  
+12:21:01    BAJAJ-AUTO   BodyClose50  C=9411.00  VWAP=9518.17  RSI=45  Vol=0.6x  → -[-]  
+12:21:01    BAJFINANCE   Baseline     C=904.55  VWAP=918.34  RSI=33  Vol=0.6x  → -[-]  
+12:21:01    BAJFINANCE   BodyClose50  C=904.55  VWAP=918.34  RSI=33  Vol=0.6x  → -[-]  
+12:21:01    HDFCBANK     Baseline     C=831.60  VWAP=837.89  RSI=36  Vol=0.6x  → -[-]  
+12:21:01    HDFCBANK     BodyClose50  C=831.60  VWAP=837.89  RSI=36  Vol=0.6x  → -[-]  
+12:21:01    POWERGRID    Baseline     C=302.20  VWAP=300.35  RSI=80  Vol=1.6x  → -[-]  
+12:21:01    POWERGRID    BodyClose50  C=302.20  VWAP=300.35  RSI=80  Vol=1.6x  → -[-]  
+12:21:01    HCLTECH      Baseline     C=1362.30  VWAP=1358.00  RSI=64  Vol=0.8x  → -[-]  
+12:21:01    HCLTECH      BodyClose50  C=1362.30  VWAP=1358.00  RSI=64  Vol=0.8x  → -[-]  
+12:21:01  SCAN #39 complete in 0.0s
+12:24:01  SCAN #40  12:24:01  phase=ACTIVE_AM  active=True  missed=0
+12:24:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.022s
+12:24:01    JSWSTEEL     Baseline     C=1201.80  VWAP=1207.06  RSI=55  Vol=0.4x  → -[-]  
+12:24:01    JSWSTEEL     BodyClose50  C=1201.80  VWAP=1207.06  RSI=55  Vol=0.4x  → -[-]  
+12:24:01    HINDUNILVR   Baseline     C=2170.80  VWAP=2176.02  RSI=46  Vol=1.1x  → -[-]  
+12:24:01    HINDUNILVR   BodyClose50  C=2170.80  VWAP=2176.02  RSI=46  Vol=1.1x  → -[-]  
+12:24:01    AXISBANK     Baseline     C=1277.40  VWAP=1287.82  RSI=53  Vol=0.5x  → -[-]  
+12:24:01    AXISBANK     BodyClose50  C=1277.40  VWAP=1287.82  RSI=53  Vol=0.5x  → -[-]  
+12:24:01    TATASTEEL    Baseline     C=195.94  VWAP=196.92  RSI=58  Vol=1.1x  → -[-]  
+12:24:01    TATASTEEL    BodyClose50  C=195.94  VWAP=196.92  RSI=58  Vol=1.1x  → -[-]  
+12:24:01    TRENT        Baseline     C=3671.90  VWAP=3688.32  RSI=58  Vol=1.7x  → -[-]  
+12:24:01    TRENT        BodyClose50  C=3671.90  VWAP=3688.32  RSI=58  Vol=1.7x  → -[-]  
+12:24:01    BAJAJ-AUTO   Baseline     C=9407.50  VWAP=9517.27  RSI=43  Vol=0.8x  → -[-]  
+12:24:01    BAJAJ-AUTO   BodyClose50  C=9407.50  VWAP=9517.27  RSI=43  Vol=0.8x  → -[-]  
+12:24:01    BAJFINANCE   Baseline     C=904.05  VWAP=918.11  RSI=31  Vol=0.8x  → -[-]  
+12:24:01    BAJFINANCE   BodyClose50  C=904.05  VWAP=918.11  RSI=31  Vol=0.8x  → -[-]  
+12:24:01    HDFCBANK     Baseline     C=832.00  VWAP=837.83  RSI=42  Vol=0.7x  → -[-]  
+12:24:01    HDFCBANK     BodyClose50  C=832.00  VWAP=837.83  RSI=42  Vol=0.7x  → -[-]  
+12:24:01    POWERGRID    Baseline     C=302.00  VWAP=300.37  RSI=73  Vol=1.0x  → -[-]  
+12:24:01    POWERGRID    BodyClose50  C=302.00  VWAP=300.37  RSI=73  Vol=1.0x  → -[-]  
+12:24:01    HCLTECH      Baseline     C=1362.60  VWAP=1358.03  RSI=65  Vol=1.1x  → -[-]  
+12:24:01    HCLTECH      BodyClose50  C=1362.60  VWAP=1358.03  RSI=65  Vol=1.1x  → -[-]  
+12:24:01  SCAN #40 complete in 0.1s
+12:27:01  SCAN #41  12:27:01  phase=ACTIVE_AM  active=True  missed=0
+12:27:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.021s
+12:27:01    JSWSTEEL     Baseline     C=1201.30  VWAP=1207.04  RSI=51  Vol=0.7x  → -[-]  
+12:27:01    JSWSTEEL     BodyClose50  C=1201.30  VWAP=1207.04  RSI=51  Vol=0.7x  → -[-]  
+12:27:01    HINDUNILVR   Baseline     C=2169.70  VWAP=2175.99  RSI=40  Vol=0.5x  → -[-]  
+12:27:01    HINDUNILVR   BodyClose50  C=2169.70  VWAP=2175.99  RSI=40  Vol=0.5x  → -[-]  
+12:27:01    AXISBANK     Baseline     C=1276.80  VWAP=1287.61  RSI=50  Vol=1.2x  → -[-]  
+12:27:01    AXISBANK     BodyClose50  C=1276.80  VWAP=1287.61  RSI=50  Vol=1.2x  → -[-]  
+12:27:01    TATASTEEL    Baseline     C=195.93  VWAP=196.91  RSI=57  Vol=0.5x  → -[-]  
+12:27:01    TATASTEEL    BodyClose50  C=195.93  VWAP=196.91  RSI=57  Vol=0.5x  → -[-]  
+12:27:01    TRENT        Baseline     C=3667.20  VWAP=3687.93  RSI=51  Vol=1.2x  → -[-]  
+12:27:01    TRENT        BodyClose50  C=3667.20  VWAP=3687.93  RSI=51  Vol=1.2x  → -[-]  
+12:27:01    BAJAJ-AUTO   Baseline     C=9400.00  VWAP=9516.46  RSI=40  Vol=0.7x  → -[-]  
+12:27:01    BAJAJ-AUTO   BodyClose50  C=9400.00  VWAP=9516.46  RSI=40  Vol=0.7x  → -[-]  
+12:27:01    BAJFINANCE   Baseline     C=899.90  VWAP=917.11  RSI=22  Vol=2.5x  → -[-]  
+12:27:01    BAJFINANCE   BodyClose50  C=899.90  VWAP=917.11  RSI=22  Vol=2.5x  → -[-]  
+12:27:01    HDFCBANK     Baseline     C=832.00  VWAP=837.76  RSI=42  Vol=1.0x  → -[-]  
+12:27:01    HDFCBANK     BodyClose50  C=832.00  VWAP=837.76  RSI=42  Vol=1.0x  → -[-]  
+12:27:01    POWERGRID    Baseline     C=301.65  VWAP=300.39  RSI=63  Vol=0.9x  → -[-]  
+12:27:01    POWERGRID    BodyClose50  C=301.65  VWAP=300.39  RSI=63  Vol=0.9x  → -[-]  
+12:27:01    HCLTECH      Baseline     C=1362.00  VWAP=1358.04  RSI=59  Vol=0.8x  → -[-]  
+12:27:01    HCLTECH      BodyClose50  C=1362.00  VWAP=1358.04  RSI=59  Vol=0.8x  → -[-]  
+12:27:01  SCAN #41 complete in 0.1s
+12:30:01  SCAN #42  12:30:01  phase=ACTIVE_AM  active=True  missed=0
+12:30:01  FETCH  WS  10 new bars (5 clock-flushed) in 0.022s
+12:30:01    JSWSTEEL     Baseline     C=1201.10  VWAP=1207.03  RSI=50  Vol=0.5x  → -[-]  
+12:30:01    JSWSTEEL     BodyClose50  C=1201.10  VWAP=1207.03  RSI=50  Vol=0.5x  → -[-]  
+12:30:01    HINDUNILVR   Baseline     C=2169.60  VWAP=2175.97  RSI=40  Vol=0.4x  → -[-]  
+12:30:01    HINDUNILVR   BodyClose50  C=2169.60  VWAP=2175.97  RSI=40  Vol=0.4x  → -[-]  
+12:30:01    AXISBANK     Baseline     C=1276.70  VWAP=1287.40  RSI=50  Vol=1.2x  → -[-]  
+12:30:01    AXISBANK     BodyClose50  C=1276.70  VWAP=1287.40  RSI=50  Vol=1.2x  → -[-]  
+12:30:01    TATASTEEL    Baseline     C=196.10  VWAP=196.90  RSI=63  Vol=1.8x  → -[-]  
+12:30:01    TATASTEEL    BodyClose50  C=196.10  VWAP=196.90  RSI=63  Vol=1.8x  → -[-]  
+12:30:01    TRENT        Baseline     C=3666.20  VWAP=3687.11  RSI=49  Vol=2.9x  → -[-]  
+12:30:01    TRENT        BodyClose50  C=3666.20  VWAP=3687.11  RSI=49  Vol=2.9x  → -[-]  
+12:30:01    BAJAJ-AUTO   Baseline     C=9378.00  VWAP=9514.50  RSI=31  Vol=1.3x  → -[-]  
+12:30:01    BAJAJ-AUTO   BodyClose50  C=9378.00  VWAP=9514.50  RSI=31  Vol=1.3x  → -[-]  
+12:30:01    BAJFINANCE   Baseline     C=897.65  VWAP=916.58  RSI=18  Vol=1.2x  → -[-]  
+12:30:01    BAJFINANCE   BodyClose50  C=897.65  VWAP=916.58  RSI=18  Vol=1.2x  → -[-]  
+12:30:01    HDFCBANK     Baseline     C=831.95  VWAP=837.71  RSI=42  Vol=0.6x  → -[-]  
+12:30:01    HDFCBANK     BodyClose50  C=831.95  VWAP=837.71  RSI=42  Vol=0.6x  → -[-]  
+12:30:01    POWERGRID    Baseline     C=301.95  VWAP=300.41  RSI=67  Vol=0.7x  → -[-]  
+12:30:01    POWERGRID    BodyClose50  C=301.95  VWAP=300.41  RSI=67  Vol=0.7x  → -[-]  
+12:30:01    HCLTECH      Baseline     C=1362.70  VWAP=1358.06  RSI=64  Vol=1.0x  → -[-]  
+12:30:01    HCLTECH      BodyClose50  C=1362.70  VWAP=1358.06  RSI=64  Vol=1.0x  → -[-]  
+12:30:01  SCAN #42 complete in 0.1s
+12:33:01  SCAN #43  12:33:01  phase=ACTIVE_AM  active=True  missed=0
+12:33:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+12:33:01    JSWSTEEL     Baseline     C=1201.20  VWAP=1207.01  RSI=51  Vol=0.5x  → -[-]  
+12:33:01    JSWSTEEL     BodyClose50  C=1201.20  VWAP=1207.01  RSI=51  Vol=0.5x  → -[-]  
+12:33:01    HINDUNILVR   Baseline     C=2169.20  VWAP=2175.89  RSI=38  Vol=1.7x  → -[-]  
+12:33:01    HINDUNILVR   BodyClose50  C=2169.20  VWAP=2175.89  RSI=38  Vol=1.7x  → -[-]  
+12:33:01    AXISBANK     Baseline     C=1277.10  VWAP=1287.32  RSI=52  Vol=0.6x  → -[-]  
+12:33:01    AXISBANK     BodyClose50  C=1277.10  VWAP=1287.32  RSI=52  Vol=0.6x  → -[-]  
+12:33:01    TATASTEEL    Baseline     C=196.07  VWAP=196.89  RSI=61  Vol=1.1x  → -[-]  
+12:33:01    TATASTEEL    BodyClose50  C=196.07  VWAP=196.89  RSI=61  Vol=1.1x  → -[-]  
+12:33:01    TRENT        Baseline     C=3674.00  VWAP=3686.11  RSI=59  Vol=4.0x  → -[-]  
+12:33:01    TRENT        BodyClose50  C=3674.00  VWAP=3686.11  RSI=59  Vol=4.0x  → -[-]  
+12:33:01    BAJAJ-AUTO   Baseline     C=9380.00  VWAP=9513.41  RSI=33  Vol=0.7x  → -[-]  
+12:33:01    BAJAJ-AUTO   BodyClose50  C=9380.00  VWAP=9513.41  RSI=33  Vol=0.7x  → -[-]  
+12:33:01    BAJFINANCE   Baseline     C=899.00  VWAP=916.17  RSI=26  Vol=1.0x  → -[-]  
+12:33:01    BAJFINANCE   BodyClose50  C=899.00  VWAP=916.17  RSI=26  Vol=1.0x  → -[-]  
+12:33:01    HDFCBANK     Baseline     C=832.00  VWAP=837.55  RSI=43  Vol=2.2x  → -[-]  
+12:33:01    HDFCBANK     BodyClose50  C=832.00  VWAP=837.55  RSI=43  Vol=2.2x  → -[-]  
+12:33:01    POWERGRID    Baseline     C=302.30  VWAP=300.43  RSI=72  Vol=1.1x  → -[-]  
+12:33:01    POWERGRID    BodyClose50  C=302.30  VWAP=300.43  RSI=72  Vol=1.1x  → -[-]  
+12:33:01    HCLTECH      Baseline     C=1363.20  VWAP=1358.08  RSI=67  Vol=0.5x  → -[-]  
+12:33:01    HCLTECH      BodyClose50  C=1363.20  VWAP=1358.08  RSI=67  Vol=0.5x  → -[-]  
+12:33:01  SCAN #43 complete in 0.0s
+12:36:01  SCAN #44  12:36:01  phase=ACTIVE_AM  active=True  missed=0
+12:36:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.023s
+12:36:01    JSWSTEEL     Baseline     C=1200.70  VWAP=1207.00  RSI=47  Vol=0.4x  → -[-]  
+12:36:01    JSWSTEEL     BodyClose50  C=1200.70  VWAP=1207.00  RSI=47  Vol=0.4x  → -[-]  
+12:36:01    HINDUNILVR   Baseline     C=2165.60  VWAP=2175.82  RSI=24  Vol=1.0x  → -[-]  
+12:36:01    HINDUNILVR   BodyClose50  C=2165.60  VWAP=2175.82  RSI=24  Vol=1.0x  → -[-]  
+12:36:01    AXISBANK     Baseline     C=1275.00  VWAP=1287.21  RSI=41  Vol=0.7x  → -[-]  
+12:36:01    AXISBANK     BodyClose50  C=1275.00  VWAP=1287.21  RSI=41  Vol=0.7x  → -[-]  
+12:36:01    TATASTEEL    Baseline     C=195.81  VWAP=196.89  RSI=49  Vol=0.4x  → -[-]  
+12:36:01    TATASTEEL    BodyClose50  C=195.81  VWAP=196.89  RSI=49  Vol=0.4x  → -[-]  
+12:36:01    TRENT        Baseline     C=3664.00  VWAP=3685.96  RSI=46  Vol=0.5x  → -[-]  
+12:36:01    TRENT        BodyClose50  C=3664.00  VWAP=3685.96  RSI=46  Vol=0.5x  → -[-]  
+12:36:01    BAJAJ-AUTO   Baseline     C=9366.00  VWAP=9511.64  RSI=28  Vol=1.0x  → -[-]  
+12:36:01    BAJAJ-AUTO   BodyClose50  C=9366.00  VWAP=9511.64  RSI=28  Vol=1.0x  → -[-]  
+12:36:01    BAJFINANCE   Baseline     C=897.65  VWAP=915.66  RSI=23  Vol=1.2x  → -[-]  
+12:36:01    BAJFINANCE   BodyClose50  C=897.65  VWAP=915.66  RSI=23  Vol=1.2x  → -[-]  
+12:36:01    HDFCBANK     Baseline     C=830.15  VWAP=837.40  RSI=25  Vol=1.6x  → -[-]  
+12:36:01    HDFCBANK     BodyClose50  C=830.15  VWAP=837.40  RSI=25  Vol=1.6x  → -[-]  
+12:36:01    POWERGRID    Baseline     C=302.70  VWAP=300.53  RSI=76  Vol=2.9x  → -[-]  
+12:36:01    POWERGRID    BodyClose50  C=302.70  VWAP=300.53  RSI=76  Vol=2.9x  → -[-]  
+12:36:01    HCLTECH      Baseline     C=1361.80  VWAP=1358.11  RSI=53  Vol=1.7x  → -[-]  
+12:36:01    HCLTECH      BodyClose50  C=1361.80  VWAP=1358.11  RSI=53  Vol=1.7x  → -[-]  
+12:36:01  SCAN #44 complete in 0.1s
+12:39:01  SCAN #45  12:39:01  phase=ACTIVE_AM  active=True  missed=0
+12:39:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.020s
+12:39:01    JSWSTEEL     Baseline     C=1200.70  VWAP=1206.98  RSI=47  Vol=0.5x  → -[-]  
+12:39:01    JSWSTEEL     BodyClose50  C=1200.70  VWAP=1206.98  RSI=47  Vol=0.5x  → -[-]  
+12:39:01    HINDUNILVR   Baseline     C=2161.60  VWAP=2174.70  RSI=17  Vol=7.8x  → -[-]  
+12:39:01    HINDUNILVR   BodyClose50  C=2161.60  VWAP=2174.70  RSI=17  Vol=7.8x  → -[-]  
+12:39:01    AXISBANK     Baseline     C=1275.40  VWAP=1287.11  RSI=44  Vol=0.6x  → -[-]  
+12:39:01    AXISBANK     BodyClose50  C=1275.40  VWAP=1287.11  RSI=44  Vol=0.6x  → -[-]  
+12:39:01    TATASTEEL    Baseline     C=195.64  VWAP=196.87  RSI=43  Vol=2.0x  → -[-]  
+12:39:01    TATASTEEL    BodyClose50  C=195.64  VWAP=196.87  RSI=43  Vol=2.0x  → -[-]  
+12:39:01    TRENT        Baseline     C=3671.30  VWAP=3685.56  RSI=54  Vol=1.4x  → -[-]  
+12:39:01    TRENT        BodyClose50  C=3671.30  VWAP=3685.56  RSI=54  Vol=1.4x  → -[-]  
+12:39:01    BAJAJ-AUTO   Baseline     C=9359.00  VWAP=9509.61  RSI=26  Vol=1.2x  → -[-]  
+12:39:01    BAJAJ-AUTO   BodyClose50  C=9359.00  VWAP=9509.61  RSI=26  Vol=1.2x  → -[-]  
+12:39:01    BAJFINANCE   Baseline     C=895.80  VWAP=915.01  RSI=20  Vol=1.4x  → -[-]  
+12:39:01    BAJFINANCE   BodyClose50  C=895.80  VWAP=915.01  RSI=20  Vol=1.4x  → -[-]  
+12:39:01    HDFCBANK     Baseline     C=830.00  VWAP=837.20  RSI=24  Vol=2.0x  → -[-]  
+12:39:01    HDFCBANK     BodyClose50  C=830.00  VWAP=837.20  RSI=24  Vol=2.0x  → -[-]  
+12:39:01    POWERGRID    Baseline     C=302.40  VWAP=300.57  RSI=68  Vol=1.2x  → -[-]  
+12:39:01    POWERGRID    BodyClose50  C=302.40  VWAP=300.57  RSI=68  Vol=1.2x  → -[-]  
+12:39:01    HCLTECH      Baseline     C=1361.40  VWAP=1358.12  RSI=50  Vol=1.0x  → -[-]  
+12:39:01    HCLTECH      BodyClose50  C=1361.40  VWAP=1358.12  RSI=50  Vol=1.0x  → -[-]  
+12:39:01  SCAN #45 complete in 0.0s
+12:42:01  SCAN #46  12:42:01  phase=ACTIVE_AM  active=True  missed=0
+12:42:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+12:42:01    JSWSTEEL     Baseline     C=1200.40  VWAP=1206.92  RSI=44  Vol=1.7x  → -[-]  
+12:42:01    JSWSTEEL     BodyClose50  C=1200.40  VWAP=1206.92  RSI=44  Vol=1.7x  → -[-]  
+12:42:01    HINDUNILVR   Baseline     C=2162.40  VWAP=2174.58  RSI=22  Vol=0.8x  → -[-]  
+12:42:01    HINDUNILVR   BodyClose50  C=2162.40  VWAP=2174.58  RSI=22  Vol=0.8x  → -[-]  
+12:42:01    AXISBANK     Baseline     C=1274.70  VWAP=1287.03  RSI=40  Vol=0.6x  → -[-]  
+12:42:01    AXISBANK     BodyClose50  C=1274.70  VWAP=1287.03  RSI=40  Vol=0.6x  → -[-]  
+12:42:01    TATASTEEL    Baseline     C=195.85  VWAP=196.87  RSI=51  Vol=0.9x  → -[-]  
+12:42:01    TATASTEEL    BodyClose50  C=195.85  VWAP=196.87  RSI=51  Vol=0.9x  → -[-]  
+12:42:01    TRENT        Baseline     C=3666.50  VWAP=3684.71  RSI=49  Vol=2.8x  → -[-]  
+12:42:01    TRENT        BodyClose50  C=3666.50  VWAP=3684.71  RSI=49  Vol=2.8x  → -[-]  
+12:42:01    BAJAJ-AUTO   Baseline     C=9381.50  VWAP=9507.33  RSI=42  Vol=1.4x  → -[-]  
+12:42:01    BAJAJ-AUTO   BodyClose50  C=9381.50  VWAP=9507.33  RSI=42  Vol=1.4x  → -[-]  
+12:42:01    BAJFINANCE   Baseline     C=898.00  VWAP=914.38  RSI=32  Vol=1.5x  → -[-]  
+12:42:01    BAJFINANCE   BodyClose50  C=898.00  VWAP=914.38  RSI=32  Vol=1.5x  → -[-]  
+12:42:01    HDFCBANK     Baseline     C=829.95  VWAP=837.05  RSI=24  Vol=1.4x  → -[-]  
+12:42:01    HDFCBANK     BodyClose50  C=829.95  VWAP=837.05  RSI=24  Vol=1.4x  → -[-]  
+12:42:01    POWERGRID    Baseline     C=302.30  VWAP=300.60  RSI=65  Vol=1.2x  → -[-]  
+12:42:01    POWERGRID    BodyClose50  C=302.30  VWAP=300.60  RSI=65  Vol=1.2x  → -[-]  
+12:42:01    HCLTECH      Baseline     C=1362.50  VWAP=1358.14  RSI=58  Vol=0.8x  → -[-]  
+12:42:01    HCLTECH      BodyClose50  C=1362.50  VWAP=1358.14  RSI=58  Vol=0.8x  → -[-]  
+12:42:01  SCAN #46 complete in 0.0s
+12:45:01  SCAN #47  12:45:01  phase=ACTIVE_AM  active=True  missed=0
+12:45:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+12:45:01    JSWSTEEL     Baseline     C=1201.60  VWAP=1206.90  RSI=55  Vol=0.5x  → -[-]  
+12:45:01    JSWSTEEL     BodyClose50  C=1201.60  VWAP=1206.90  RSI=55  Vol=0.5x  → -[-]  
+12:45:01    HINDUNILVR   Baseline     C=2162.00  VWAP=2174.52  RSI=21  Vol=0.5x  → -[-]  
+12:45:01    HINDUNILVR   BodyClose50  C=2162.00  VWAP=2174.52  RSI=21  Vol=0.5x  → -[-]  
+12:45:01    AXISBANK     Baseline     C=1275.70  VWAP=1286.93  RSI=47  Vol=0.7x  → -[-]  
+12:45:01    AXISBANK     BodyClose50  C=1275.70  VWAP=1286.93  RSI=47  Vol=0.7x  → -[-]  
+12:45:01    TATASTEEL    Baseline     C=196.13  VWAP=196.86  RSI=60  Vol=0.6x  → -[-]  
+12:45:01    TATASTEEL    BodyClose50  C=196.13  VWAP=196.86  RSI=60  Vol=0.6x  → -[-]  
+12:45:01    TRENT        Baseline     C=3670.90  VWAP=3684.50  RSI=54  Vol=0.8x  → -[-]  
+12:45:01    TRENT        BodyClose50  C=3670.90  VWAP=3684.50  RSI=54  Vol=0.8x  → -[-]  
+12:45:01    BAJAJ-AUTO   Baseline     C=9387.50  VWAP=9501.74  RSI=45  Vol=3.5x  → -[-]  
+12:45:01    BAJAJ-AUTO   BodyClose50  C=9387.50  VWAP=9501.74  RSI=45  Vol=3.5x  → -[-]  
+12:45:01    BAJFINANCE   Baseline     C=899.50  VWAP=914.16  RSI=39  Vol=0.6x  → -[-]  
+12:45:01    BAJFINANCE   BodyClose50  C=899.50  VWAP=914.16  RSI=39  Vol=0.6x  → -[-]  
+12:45:01    HDFCBANK     Baseline     C=830.00  VWAP=836.89  RSI=25  Vol=1.6x  → -[-]  
+12:45:01    HDFCBANK     BodyClose50  C=830.00  VWAP=836.89  RSI=25  Vol=1.6x  → -[-]  
+12:45:01    POWERGRID    Baseline     C=301.70  VWAP=300.63  RSI=51  Vol=1.1x  → -[-]  
+12:45:01    POWERGRID    BodyClose50  C=301.70  VWAP=300.63  RSI=51  Vol=1.1x  → -[-]  
+12:45:01    HCLTECH      Baseline     C=1364.00  VWAP=1358.18  RSI=66  Vol=1.6x  → -[-]  
+12:45:01    HCLTECH      BodyClose50  C=1364.00  VWAP=1358.18  RSI=66  Vol=1.6x  → -[-]  
+12:45:01  SCAN #47 complete in 0.1s
+12:48:01  SCAN #48  12:48:01  phase=ACTIVE_AM  active=True  missed=0
+12:48:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.014s
+12:48:01    JSWSTEEL     Baseline     C=1200.50  VWAP=1206.88  RSI=46  Vol=0.7x  → -[-]  
+12:48:01    JSWSTEEL     BodyClose50  C=1200.50  VWAP=1206.88  RSI=46  Vol=0.7x  → -[-]  
+12:48:01    HINDUNILVR   Baseline     C=2161.00  VWAP=2174.44  RSI=19  Vol=0.5x  → -[-]  
+12:48:01    HINDUNILVR   BodyClose50  C=2161.00  VWAP=2174.44  RSI=19  Vol=0.5x  → -[-]  
+12:48:01    AXISBANK     Baseline     C=1274.70  VWAP=1286.84  RSI=42  Vol=0.7x  → -[-]  
+12:48:01    AXISBANK     BodyClose50  C=1274.70  VWAP=1286.84  RSI=42  Vol=0.7x  → -[-]  
+12:48:01    TATASTEEL    Baseline     C=195.93  VWAP=196.86  RSI=53  Vol=0.8x  → -[-]  
+12:48:01    TATASTEEL    BodyClose50  C=195.93  VWAP=196.86  RSI=53  Vol=0.8x  → -[-]  
+12:48:01    TRENT        Baseline     C=3670.00  VWAP=3684.42  RSI=53  Vol=0.4x  → -[-]  
+12:48:01    TRENT        BodyClose50  C=3670.00  VWAP=3684.42  RSI=53  Vol=0.4x  → -[-]  
+12:48:01    BAJAJ-AUTO   Baseline     C=9383.00  VWAP=9501.18  RSI=43  Vol=0.4x  → -[-]  
+12:48:01    BAJAJ-AUTO   BodyClose50  C=9383.00  VWAP=9501.18  RSI=43  Vol=0.4x  → -[-]  
+12:48:01    BAJFINANCE   Baseline     C=899.00  VWAP=913.71  RSI=38  Vol=1.3x  → -[-]  
+12:48:01    BAJFINANCE   BodyClose50  C=899.00  VWAP=913.71  RSI=38  Vol=1.3x  → -[-]  
+12:48:01    HDFCBANK     Baseline     C=829.05  VWAP=836.80  RSI=19  Vol=0.8x  → -[-]  
+12:48:01    HDFCBANK     BodyClose50  C=829.05  VWAP=836.80  RSI=19  Vol=0.8x  → -[-]  
+12:48:01    POWERGRID    Baseline     C=301.35  VWAP=300.64  RSI=45  Vol=0.8x  → -[-]  
+12:48:01    POWERGRID    BodyClose50  C=301.35  VWAP=300.64  RSI=45  Vol=0.8x  → -[-]  
+12:48:01    HCLTECH      Baseline     C=1364.00  VWAP=1358.35  RSI=66  Vol=4.7x  → -[-]  
+12:48:01    HCLTECH      BodyClose50  C=1364.00  VWAP=1358.35  RSI=66  Vol=4.7x  → -[-]  
+12:48:01  SCAN #48 complete in 0.0s
+12:51:01  SCAN #49  12:51:01  phase=ACTIVE_AM  active=True  missed=0
+12:51:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.018s
+12:51:01    JSWSTEEL     Baseline     C=1199.30  VWAP=1206.77  RSI=38  Vol=3.3x  → -[-]  
+12:51:01    JSWSTEEL     BodyClose50  C=1199.30  VWAP=1206.77  RSI=38  Vol=3.3x  → -[-]  
+12:51:01    HINDUNILVR   Baseline     C=2162.60  VWAP=2174.34  RSI=31  Vol=0.6x  → -[-]  
+12:51:01    HINDUNILVR   BodyClose50  C=2162.60  VWAP=2174.34  RSI=31  Vol=0.6x  → -[-]  
+12:51:01    AXISBANK     Baseline     C=1275.00  VWAP=1286.75  RSI=44  Vol=0.7x  → -[-]  
+12:51:01    AXISBANK     BodyClose50  C=1275.00  VWAP=1286.75  RSI=44  Vol=0.7x  → -[-]  
+12:51:01    TATASTEEL    Baseline     C=195.89  VWAP=196.85  RSI=51  Vol=0.5x  → -[-]  
+12:51:01    TATASTEEL    BodyClose50  C=195.89  VWAP=196.85  RSI=51  Vol=0.5x  → -[-]  
+12:51:01    TRENT        Baseline     C=3665.40  VWAP=3683.79  RSI=47  Vol=2.1x  → -[-]  
+12:51:01    TRENT        BodyClose50  C=3665.40  VWAP=3683.79  RSI=47  Vol=2.1x  → -[-]  
+12:51:01    BAJAJ-AUTO   Baseline     C=9368.00  VWAP=9499.90  RSI=36  Vol=0.9x  → -[-]  
+12:51:01    BAJAJ-AUTO   BodyClose50  C=9368.00  VWAP=9499.90  RSI=36  Vol=0.9x  → -[-]  
+12:51:01    BAJFINANCE   Baseline     C=901.35  VWAP=913.32  RSI=48  Vol=1.2x  → -[-]  
+12:51:01    BAJFINANCE   BodyClose50  C=901.35  VWAP=913.32  RSI=48  Vol=1.2x  → -[-]  
+12:51:01    HDFCBANK     Baseline     C=829.00  VWAP=836.66  RSI=19  Vol=1.2x  → -[-]  
+12:51:01    HDFCBANK     BodyClose50  C=829.00  VWAP=836.66  RSI=19  Vol=1.2x  → -[-]  
+12:51:01    POWERGRID    Baseline     C=301.50  VWAP=300.65  RSI=48  Vol=0.9x  → -[-]  
+12:51:01    POWERGRID    BodyClose50  C=301.50  VWAP=300.65  RSI=48  Vol=0.9x  → -[-]  
+12:51:01    HCLTECH      Baseline     C=1363.70  VWAP=1358.37  RSI=63  Vol=0.7x  → -[-]  
+12:51:01    HCLTECH      BodyClose50  C=1363.70  VWAP=1358.37  RSI=63  Vol=0.7x  → -[-]  
+12:51:01  SCAN #49 complete in 0.0s
+12:54:01  SCAN #50  12:54:01  phase=ACTIVE_AM  active=True  missed=0
+12:54:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+12:54:01    JSWSTEEL     Baseline     C=1199.30  VWAP=1206.74  RSI=38  Vol=0.8x  → -[-]  
+12:54:01    JSWSTEEL     BodyClose50  C=1199.30  VWAP=1206.74  RSI=38  Vol=0.8x  → -[-]  
+12:54:01    HINDUNILVR   Baseline     C=2161.50  VWAP=2174.30  RSI=28  Vol=0.3x  → -[-]  
+12:54:01    HINDUNILVR   BodyClose50  C=2161.50  VWAP=2174.30  RSI=28  Vol=0.3x  → -[-]  
+12:54:01    AXISBANK     Baseline     C=1274.50  VWAP=1286.54  RSI=41  Vol=1.7x  → -[-]  
+12:54:01    AXISBANK     BodyClose50  C=1274.50  VWAP=1286.54  RSI=41  Vol=1.7x  → -[-]  
+12:54:01    TATASTEEL    Baseline     C=195.89  VWAP=196.85  RSI=51  Vol=0.4x  → -[-]  
+12:54:01    TATASTEEL    BodyClose50  C=195.89  VWAP=196.85  RSI=51  Vol=0.4x  → -[-]  
+12:54:01    TRENT        Baseline     C=3662.50  VWAP=3683.64  RSI=43  Vol=0.5x  → -[-]  
+12:54:01    TRENT        BodyClose50  C=3662.50  VWAP=3683.64  RSI=43  Vol=0.5x  → -[-]  
+12:54:01    BAJAJ-AUTO   Baseline     C=9367.00  VWAP=9498.98  RSI=36  Vol=0.6x  → -[-]  
+12:54:01    BAJAJ-AUTO   BodyClose50  C=9367.00  VWAP=9498.98  RSI=36  Vol=0.6x  → -[-]  
+12:54:01    BAJFINANCE   Baseline     C=902.80  VWAP=912.80  RSI=53  Vol=2.1x  → -[-]  
+12:54:01    BAJFINANCE   BodyClose50  C=902.80  VWAP=912.80  RSI=53  Vol=2.1x  → -[-]  
+12:54:01    HDFCBANK     Baseline     C=828.90  VWAP=836.56  RSI=18  Vol=0.9x  → -[-]  
+12:54:01    HDFCBANK     BodyClose50  C=828.90  VWAP=836.56  RSI=18  Vol=0.9x  → -[-]  
+12:54:01    POWERGRID    Baseline     C=301.55  VWAP=300.66  RSI=49  Vol=0.7x  → -[-]  
+12:54:01    POWERGRID    BodyClose50  C=301.55  VWAP=300.66  RSI=49  Vol=0.7x  → -[-]  
+12:54:01    HCLTECH      Baseline     C=1363.90  VWAP=1358.39  RSI=64  Vol=0.7x  → -[-]  
+12:54:01    HCLTECH      BodyClose50  C=1363.90  VWAP=1358.39  RSI=64  Vol=0.7x  → -[-]  
+12:54:01  SCAN #50 complete in 0.0s
+12:57:01  SCAN #51  12:57:01  phase=ACTIVE_AM  active=True  missed=0
+12:57:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.020s
+12:57:01    JSWSTEEL     Baseline     C=1198.30  VWAP=1206.70  RSI=32  Vol=0.9x  → -[-]  
+12:57:01    JSWSTEEL     BodyClose50  C=1198.30  VWAP=1206.70  RSI=32  Vol=0.9x  → -[-]  
+12:57:01    HINDUNILVR   Baseline     C=2160.20  VWAP=2174.24  RSI=24  Vol=0.5x  → -[-]  
+12:57:01    HINDUNILVR   BodyClose50  C=2160.20  VWAP=2174.24  RSI=24  Vol=0.5x  → -[-]  
+12:57:01    AXISBANK     Baseline     C=1273.10  VWAP=1286.36  RSI=34  Vol=1.3x  → -[-]  
+12:57:01    AXISBANK     BodyClose50  C=1273.10  VWAP=1286.36  RSI=34  Vol=1.3x  → -[-]  
+12:57:01    TATASTEEL    Baseline     C=195.63  VWAP=196.84  RSI=41  Vol=0.5x  → -[-]  
+12:57:01    TATASTEEL    BodyClose50  C=195.63  VWAP=196.84  RSI=41  Vol=0.5x  → -[-]  
+12:57:01    TRENT        Baseline     C=3660.10  VWAP=3683.50  RSI=41  Vol=0.4x  → -[-]  
+12:57:01    TRENT        BodyClose50  C=3660.10  VWAP=3683.50  RSI=41  Vol=0.4x  → -[-]  
+12:57:01    BAJAJ-AUTO   Baseline     C=9365.00  VWAP=9497.54  RSI=35  Vol=1.0x  → -[-]  
+12:57:01    BAJAJ-AUTO   BodyClose50  C=9365.00  VWAP=9497.54  RSI=35  Vol=1.0x  → -[-]  
+12:57:01    BAJFINANCE   Baseline     C=903.40  VWAP=912.62  RSI=55  Vol=0.8x  → -[-]  
+12:57:01    BAJFINANCE   BodyClose50  C=903.40  VWAP=912.62  RSI=55  Vol=0.8x  → -[-]  
+12:57:01    HDFCBANK     Baseline     C=828.20  VWAP=836.41  RSI=15  Vol=1.2x  → -[-]  
+12:57:01    HDFCBANK     BodyClose50  C=828.20  VWAP=836.41  RSI=15  Vol=1.2x  → -[-]  
+12:57:01    POWERGRID    Baseline     C=301.15  VWAP=300.66  RSI=41  Vol=0.6x  → -[-]  
+12:57:01    POWERGRID    BodyClose50  C=301.15  VWAP=300.66  RSI=41  Vol=0.6x  → -[-]  
+12:57:01    HCLTECH      Baseline     C=1363.50  VWAP=1358.40  RSI=60  Vol=0.5x  → -[-]  
+12:57:01    HCLTECH      BodyClose50  C=1363.50  VWAP=1358.40  RSI=60  Vol=0.5x  → -[-]  
+12:57:01  SCAN #51 complete in 0.0s
+13:00:01  PHASE  ACTIVE_AM → SHUTDOWN
+13:00:01  ======================================================================
+13:00:01  SHUTDOWN  6 signal(s), 51 scan cycles
+13:00:01    SUMMARY  10:45  SHORT  TRENT        Baseline     @ 3689.29  SL=3696.40  TP=3671.50
+13:00:01    SUMMARY  10:45  SHORT  TRENT        BodyClose50  @ 3689.29  SL=3696.40  TP=3671.50
+13:00:01    SUMMARY  11:00   LONG  TATASTEEL    Baseline     @ 196.68  SL=196.28  TP=197.67
+13:00:01    SUMMARY  11:00   LONG  TATASTEEL    BodyClose50  @ 196.68  SL=196.28  TP=197.67
+13:00:01    SUMMARY  11:21  SHORT  AXISBANK     Baseline     @ 1284.37  SL=1286.64  TP=1278.69
+13:00:01    SUMMARY  11:21  SHORT  AXISBANK     BodyClose50  @ 1284.37  SL=1286.64  TP=1278.69
+13:00:01  ======================================================================
+13:00:01  WS feed stopped

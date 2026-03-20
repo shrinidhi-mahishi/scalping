@@ -1,0 +1,36 @@
+{
+  "date": "2026-03-20",
+  "cooldowns": {
+    "baseline|JSWSTEEL": "2026-03-20T10:30:00",
+    "baseline|APOLLOHOSP": "2026-03-20T11:57:00",
+    "baseline|HINDALCO": "2026-03-20T12:30:00"
+  },
+  "pdl_dirs_used": {
+    "baseline|NESTLEIND": [],
+    "baseline|TRENT": [],
+    "baseline|APOLLOHOSP": [
+      "LONG"
+    ],
+    "baseline|HDFCLIFE": [],
+    "baseline|JSWSTEEL": [
+      "LONG"
+    ],
+    "baseline|POWERGRID": [],
+    "baseline|HINDALCO": [
+      "SHORT"
+    ],
+    "baseline|INFY": [],
+    "baseline|HDFCBANK": [],
+    "baseline|WIPRO": []
+  },
+  "daily_sl_counts": {
+    "baseline|JSWSTEEL": 1
+  },
+  "signal_counts": {
+    "baseline|JSWSTEEL|AM": 1,
+    "baseline|APOLLOHOSP|AM": 1,
+    "baseline|HINDALCO|AM": 1
+  },
+  "n_positions": 1,
+  "n_signals": 3
+}

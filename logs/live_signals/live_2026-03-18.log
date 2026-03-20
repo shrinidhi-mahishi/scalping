@@ -1,0 +1,773 @@
+08:51:04  ======================================================================
+08:51:04  SESSION START  Capital=50000  RR=1:2.0  Risk=1.5%  ws=True
+08:51:04  Stocks: NESTLEIND, TRENT, APOLLOHOSP, HDFCLIFE, JSWSTEEL, POWERGRID, HINDALCO, INFY, HDFCBANK, WIPRO
+08:51:04  Strategy: PDL-Only (SL=1.0x ATR)  RR=1:2.0  MaxSL/day=2
+08:51:04  Telegram: enabled
+08:51:04  PHASE 1  Warm-Up — connecting to Angel One
+08:51:05  API connected
+08:51:05  Loading 5-day 3-min warmup data
+08:51:07  WARMUP  NESTLEIND    375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:10  WARMUP  TRENT        375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:13  WARMUP  APOLLOHOSP   375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:16  WARMUP  HDFCLIFE     375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:19  WARMUP  JSWSTEEL     375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:22  WARMUP  POWERGRID    375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:25  WARMUP  HINDALCO     375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:29  WARMUP  INFY         375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:32  WARMUP  HDFCBANK     375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:35  WARMUP  WIPRO        375 bars  API 2026-03-13→2026-03-17 15:27:00  cached
+08:51:36  Checking event calendar for corporate events
+08:51:39  Event calendar: all stocks cleared
+08:51:39  PDL  NESTLEIND    H=1225.00  L=1199.10
+08:51:39  PDL  TRENT        H=3653.00  L=3550.00
+08:51:39  PDL  APOLLOHOSP   H=7574.50  L=7470.00
+08:51:39  PDL  HDFCLIFE     H=645.35  L=623.30
+08:51:39  PDL  JSWSTEEL     H=1169.30  L=1139.20
+08:51:39  PDL  POWERGRID    H=302.00  L=292.15
+08:51:39  PDL  HINDALCO     H=942.00  L=916.35
+08:51:39  PDL  INFY         H=1245.00  L=1215.10
+08:51:39  PDL  HDFCBANK     H=848.90  L=835.10
+08:51:39  PDL  WIPRO        H=195.11  L=188.25
+08:51:39  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+08:51:39  Starting WebSocket feed
+08:51:39  WS connected — subscribing 10 tokens (mode=2 Quote)
+08:51:39  WS feed started — 10 tokens subscribed
+08:51:40  PHASE  START → PRE_MARKET
+09:15:00  PHASE  PRE_MARKET → SILENT
+09:15:01  SCAN #1  09:15:00  phase=SILENT  active=False  missed=0
+09:15:01  FETCH  REST gap-fill (first scan)
+09:15:04  GAP-FILL  10/10 OK in 3.3s
+09:15:04  FETCH  WS  0 new bars (0 clock-flushed) in 3.309s
+09:15:04  SCAN #1 complete in 3.3s
+09:18:01  SCAN #2  09:18:01  phase=SILENT  active=False  missed=0
+09:18:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.014s
+09:18:01    NESTLEIND    Baseline     C=1210.60  VWAP=nan  RSI=65  Vol=0.0x  → -[-]  inactive_phase
+09:18:01    TRENT        Baseline     C=3675.10  VWAP=nan  RSI=73  Vol=0.0x  → LONG[PDL_BASE]  inactive_phase
+09:18:01    APOLLOHOSP   Baseline     C=7578.50  VWAP=nan  RSI=77  Vol=0.0x  → LONG[PDL_BASE]  inactive_phase
+09:18:01    HDFCLIFE     Baseline     C=642.75  VWAP=nan  RSI=51  Vol=0.0x  → -[-]  inactive_phase
+09:18:01    JSWSTEEL     Baseline     C=1163.50  VWAP=nan  RSI=38  Vol=0.0x  → -[-]  inactive_phase
+09:18:01    POWERGRID    Baseline     C=304.10  VWAP=nan  RSI=83  Vol=0.0x  → LONG[PDL_BASE]  inactive_phase
+09:18:01    HINDALCO     Baseline     C=927.80  VWAP=nan  RSI=25  Vol=0.0x  → -[-]  inactive_phase
+09:18:01    INFY         Baseline     C=1248.60  VWAP=nan  RSI=73  Vol=0.0x  → LONG[PDL_BASE]  inactive_phase
+09:18:01    HDFCBANK     Baseline     C=841.30  VWAP=nan  RSI=38  Vol=0.0x  → -[-]  inactive_phase
+09:18:01    WIPRO        Baseline     C=195.07  VWAP=nan  RSI=84  Vol=0.0x  → -[-]  inactive_phase
+09:18:01  SCAN #2 complete in 0.0s
+09:21:01  SCAN #3  09:21:01  phase=SILENT  active=False  missed=0
+09:21:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.019s
+09:21:01    NESTLEIND    Baseline     C=1210.40  VWAP=1209.47  RSI=64  Vol=0.3x  → -[-]  inactive_phase
+09:21:01    TRENT        Baseline     C=3667.80  VWAP=3673.97  RSI=66  Vol=1.5x  → -[-]  inactive_phase
+09:21:01    APOLLOHOSP   Baseline     C=7564.50  VWAP=7569.83  RSI=69  Vol=0.9x  → -[-]  inactive_phase
+09:21:01    HDFCLIFE     Baseline     C=644.15  VWAP=643.45  RSI=62  Vol=0.4x  → -[-]  inactive_phase
+09:21:01    JSWSTEEL     Baseline     C=1163.70  VWAP=1163.20  RSI=40  Vol=0.4x  → -[-]  inactive_phase
+09:21:01    POWERGRID    Baseline     C=303.60  VWAP=303.60  RSI=78  Vol=1.4x  → -[-]  inactive_phase
+09:21:01    HINDALCO     Baseline     C=927.95  VWAP=928.88  RSI=25  Vol=1.9x  → -[-]  inactive_phase
+09:21:01    INFY         Baseline     C=1255.50  VWAP=1253.37  RSI=79  Vol=1.1x  → -[-]  inactive_phase
+09:21:01    HDFCBANK     Baseline     C=838.80  VWAP=839.72  RSI=31  Vol=1.3x  → -[-]  inactive_phase
+09:21:01    WIPRO        Baseline     C=195.77  VWAP=195.57  RSI=86  Vol=3.0x  → LONG[PDL_BASE]  inactive_phase
+09:21:01  SCAN #3 complete in 0.0s
+09:24:01  SCAN #4  09:24:01  phase=SILENT  active=False  missed=0
+09:24:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.019s
+09:24:01    NESTLEIND    Baseline     C=1210.80  VWAP=1209.84  RSI=66  Vol=0.2x  → -[-]  inactive_phase
+09:24:01    TRENT        Baseline     C=3690.20  VWAP=3678.51  RSI=74  Vol=1.5x  → -[-]  inactive_phase
+09:24:01    APOLLOHOSP   Baseline     C=7576.50  VWAP=7571.63  RSI=72  Vol=5.9x  → LONG[PDL_BASE]  inactive_phase
+09:24:01    HDFCLIFE     Baseline     C=643.75  VWAP=643.60  RSI=58  Vol=0.5x  → -[-]  inactive_phase
+09:24:01    JSWSTEEL     Baseline     C=1162.80  VWAP=1162.72  RSI=36  Vol=0.4x  → -[-]  inactive_phase
+09:24:01    POWERGRID    Baseline     C=303.00  VWAP=303.41  RSI=72  Vol=1.3x  → -[-]  inactive_phase
+09:24:01    HINDALCO     Baseline     C=927.50  VWAP=928.20  RSI=25  Vol=1.1x  → -[-]  inactive_phase
+09:24:01    INFY         Baseline     C=1252.90  VWAP=1253.30  RSI=73  Vol=0.8x  → -[-]  inactive_phase
+09:24:01    HDFCBANK     Baseline     C=837.35  VWAP=839.15  RSI=28  Vol=0.5x  → -[-]  inactive_phase
+09:24:01    WIPRO        Baseline     C=195.67  VWAP=195.57  RSI=84  Vol=1.4x  → -[-]  inactive_phase
+09:24:01  SCAN #4 complete in 0.0s
+09:27:01  SCAN #5  09:27:01  phase=SILENT  active=False  missed=0
+09:27:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+09:27:01    NESTLEIND    Baseline     C=1209.00  VWAP=1209.72  RSI=53  Vol=0.1x  → -[-]  inactive_phase
+09:27:01    TRENT        Baseline     C=3707.10  VWAP=3687.62  RSI=78  Vol=1.9x  → -[-]  inactive_phase
+09:27:01    APOLLOHOSP   Baseline     C=7587.00  VWAP=7572.17  RSI=74  Vol=0.3x  → -[-]  inactive_phase
+09:27:01    HDFCLIFE     Baseline     C=642.30  VWAP=643.37  RSI=46  Vol=0.3x  → -[-]  inactive_phase
+09:27:01    JSWSTEEL     Baseline     C=1164.20  VWAP=1163.17  RSI=46  Vol=0.9x  → -[-]  inactive_phase
+09:27:01    POWERGRID    Baseline     C=302.25  VWAP=303.29  RSI=66  Vol=0.4x  → -[-]  inactive_phase
+09:27:01    HINDALCO     Baseline     C=930.25  VWAP=928.47  RSI=39  Vol=1.0x  → -[-]  inactive_phase
+09:27:01    INFY         Baseline     C=1254.20  VWAP=1253.33  RSI=74  Vol=0.6x  → -[-]  inactive_phase
+09:27:01    HDFCBANK     Baseline     C=836.15  VWAP=838.64  RSI=26  Vol=0.4x  → -[-]  inactive_phase
+09:27:01    WIPRO        Baseline     C=195.47  VWAP=195.54  RSI=80  Vol=1.5x  → -[-]  inactive_phase
+09:27:01  SCAN #5 complete in 0.0s
+09:30:01  PHASE  SILENT → ACTIVE_AM
+09:30:01  SCAN #6  09:30:01  phase=ACTIVE_AM  active=True  missed=0
+09:30:01  FETCH  WS  10 new bars (5 clock-flushed) in 0.016s
+09:30:01    NESTLEIND    Baseline     C=1209.20  VWAP=1209.65  RSI=54  Vol=0.1x  → -[-]  
+09:30:01    TRENT        Baseline     C=3710.90  VWAP=3694.45  RSI=79  Vol=1.6x  → -[-]  
+09:30:01    APOLLOHOSP   Baseline     C=7586.50  VWAP=7572.38  RSI=74  Vol=0.1x  → -[-]  
+09:30:01    HDFCLIFE     Baseline     C=643.00  VWAP=643.35  RSI=51  Vol=0.2x  → -[-]  
+09:30:01    JSWSTEEL     Baseline     C=1165.70  VWAP=1163.62  RSI=54  Vol=0.5x  → -[-]  
+09:30:01    POWERGRID    Baseline     C=302.45  VWAP=303.21  RSI=67  Vol=0.3x  → -[-]  
+09:30:01    HINDALCO     Baseline     C=930.15  VWAP=928.77  RSI=39  Vol=0.8x  → -[-]  
+09:30:01    INFY         Baseline     C=1257.10  VWAP=1254.36  RSI=76  Vol=0.9x  → -[-]  
+09:30:01    HDFCBANK     Baseline     C=836.75  VWAP=838.43  RSI=29  Vol=0.2x  → -[-]  
+09:30:01    WIPRO        Baseline     C=195.88  VWAP=195.60  RSI=82  Vol=1.8x  → -[-]  
+09:30:01  SCAN #6 complete in 0.0s
+09:33:01  SCAN #7  09:33:01  phase=ACTIVE_AM  active=True  missed=0
+09:33:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.021s
+09:33:01    NESTLEIND    Baseline     C=1209.20  VWAP=1209.60  RSI=54  Vol=0.3x  → -[-]  
+09:33:01    TRENT        Baseline     C=3706.00  VWAP=3696.88  RSI=75  Vol=1.0x  → -[-]  
+09:33:01    APOLLOHOSP   Baseline     C=7597.00  VWAP=7579.46  RSI=77  Vol=2.6x  → -[-]  
+09:33:01    HDFCLIFE     Baseline     C=645.20  VWAP=643.52  RSI=64  Vol=0.3x  → -[-]  
+09:33:01    JSWSTEEL     Baseline     C=1170.30  VWAP=1166.09  RSI=70  Vol=1.6x  → ★ LONG[PDL_BASE]  SL=1166.53  TP=1175.75  Qty=213
+09:33:01    POWERGRID    Baseline     C=302.75  VWAP=303.15  RSI=68  Vol=0.3x  → -[-]  
+09:33:01    HINDALCO     Baseline     C=931.70  VWAP=929.74  RSI=46  Vol=1.9x  → -[-]  
+09:33:01    INFY         Baseline     C=1256.20  VWAP=1254.65  RSI=74  Vol=0.5x  → -[-]  
+09:33:01    HDFCBANK     Baseline     C=836.75  VWAP=838.30  RSI=29  Vol=0.2x  → -[-]  
+09:33:01    WIPRO        Baseline     C=195.80  VWAP=195.65  RSI=81  Vol=1.4x  → -[-]  
+09:33:01  SCAN #7 complete in 0.8s
+09:36:01  SCAN #8  09:36:01  phase=ACTIVE_AM  active=True  missed=0
+09:36:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.022s
+09:36:01    NESTLEIND    Baseline     C=1210.10  VWAP=1209.67  RSI=59  Vol=0.1x  → -[-]  
+09:36:01    TRENT        Baseline     C=3696.50  VWAP=3697.15  RSI=67  Vol=0.8x  → -[-]  
+09:36:01    APOLLOHOSP   Baseline     C=7586.50  VWAP=7579.62  RSI=69  Vol=0.2x  → -[-]  
+09:36:01    HDFCLIFE     Baseline     C=644.45  VWAP=643.62  RSI=58  Vol=0.1x  → -[-]  
+09:36:01    JSWSTEEL     Baseline     C=1169.40  VWAP=1167.01  RSI=65  Vol=1.1x  → -[-]  in_position
+09:36:01    POWERGRID    Baseline     C=303.00  VWAP=303.13  RSI=69  Vol=0.3x  → -[-]  
+09:36:01    HINDALCO     Baseline     C=930.55  VWAP=929.92  RSI=42  Vol=0.8x  → -[-]  
+09:36:01    INFY         Baseline     C=1258.90  VWAP=1255.00  RSI=76  Vol=0.5x  → -[-]  
+09:36:01    HDFCBANK     Baseline     C=836.75  VWAP=838.18  RSI=29  Vol=0.2x  → -[-]  
+09:36:01    WIPRO        Baseline     C=195.67  VWAP=195.65  RSI=78  Vol=0.5x  → -[-]  
+09:36:01  SCAN #8 complete in 0.0s
+09:39:01  SCAN #9  09:39:01  phase=ACTIVE_AM  active=True  missed=0
+09:39:01  FETCH  WS  10 new bars (5 clock-flushed) in 0.022s
+09:39:01    NESTLEIND    Baseline     C=1208.50  VWAP=1209.54  RSI=48  Vol=0.3x  → -[-]  
+09:39:01    TRENT        Baseline     C=3692.00  VWAP=3697.00  RSI=63  Vol=0.4x  → -[-]  
+09:39:01    APOLLOHOSP   Baseline     C=7575.00  VWAP=7579.62  RSI=62  Vol=0.2x  → -[-]  
+09:39:01    HDFCLIFE     Baseline     C=642.65  VWAP=643.58  RSI=47  Vol=0.2x  → -[-]  
+09:39:01    JSWSTEEL     Baseline     C=1168.50  VWAP=1167.10  RSI=60  Vol=0.2x  → -[-]  in_position
+09:39:01    POWERGRID    Baseline     C=302.40  VWAP=303.10  RSI=63  Vol=0.3x  → -[-]  
+09:39:01    HINDALCO     Baseline     C=930.95  VWAP=930.01  RSI=44  Vol=0.6x  → -[-]  
+09:39:01    INFY         Baseline     C=1263.90  VWAP=1256.18  RSI=80  Vol=0.8x  → -[-]  
+09:39:01    HDFCBANK     Baseline     C=836.20  VWAP=838.09  RSI=27  Vol=0.2x  → -[-]  
+09:39:01    WIPRO        Baseline     C=195.98  VWAP=195.67  RSI=80  Vol=0.8x  → -[-]  
+09:39:01  SCAN #9 complete in 0.0s
+09:42:01  SCAN #10  09:42:01  phase=ACTIVE_AM  active=True  missed=0
+09:42:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.022s
+09:42:01    NESTLEIND    Baseline     C=1208.80  VWAP=1209.51  RSI=50  Vol=0.1x  → -[-]  
+09:42:01    TRENT        Baseline     C=3676.90  VWAP=3696.01  RSI=53  Vol=0.6x  → -[-]  
+09:42:01    APOLLOHOSP   Baseline     C=7574.50  VWAP=7579.45  RSI=61  Vol=0.3x  → ★ LONG[PDL_BASE]  SL=7557.87  TP=7613.29  Qty=32
+09:42:01    HDFCLIFE     Baseline     C=643.00  VWAP=643.52  RSI=49  Vol=0.2x  → -[-]  
+09:42:01    JSWSTEEL     Baseline     C=1167.40  VWAP=1167.13  RSI=55  Vol=0.3x  → -[-]  in_position
+09:42:01    POWERGRID    Baseline     C=302.70  VWAP=303.08  RSI=65  Vol=0.2x  → -[-]  
+09:42:01    HINDALCO     Baseline     C=928.65  VWAP=929.96  RSI=36  Vol=0.8x  → -[-]  
+09:42:01    INFY         Baseline     C=1265.10  VWAP=1257.00  RSI=81  Vol=0.5x  → -[-]  
+09:42:01    HDFCBANK     Baseline     C=836.85  VWAP=837.93  RSI=32  Vol=0.3x  → -[-]  
+09:42:01    WIPRO        Baseline     C=195.86  VWAP=195.68  RSI=77  Vol=0.5x  → -[-]  
+09:42:01  SCAN #10 complete in 0.8s
+09:45:01  SCAN #11  09:45:01  phase=ACTIVE_AM  active=True  missed=0
+09:45:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.017s
+09:45:01    NESTLEIND    Baseline     C=1208.60  VWAP=1209.49  RSI=48  Vol=0.0x  → -[-]  
+09:45:01    TRENT        Baseline     C=3677.10  VWAP=3695.18  RSI=53  Vol=0.4x  → -[-]  
+09:45:01    APOLLOHOSP   Baseline     C=7576.50  VWAP=7579.40  RSI=62  Vol=0.1x  → -[-]  in_position
+09:45:01    HDFCLIFE     Baseline     C=644.50  VWAP=643.59  RSI=58  Vol=0.4x  → -[-]  
+09:45:01    JSWSTEEL     Baseline     C=1169.40  VWAP=1167.50  RSI=62  Vol=1.0x  → -[-]  in_position
+09:45:01    POWERGRID    Baseline     C=302.90  VWAP=303.07  RSI=66  Vol=0.3x  → -[-]  
+09:45:01    HINDALCO     Baseline     C=928.80  VWAP=929.88  RSI=37  Vol=0.5x  → -[-]  
+09:45:01    INFY         Baseline     C=1269.90  VWAP=1258.03  RSI=84  Vol=0.6x  → -[-]  
+09:45:01    HDFCBANK     Baseline     C=836.70  VWAP=837.85  RSI=32  Vol=0.3x  → -[-]  
+09:45:01    WIPRO        Baseline     C=196.40  VWAP=195.72  RSI=80  Vol=0.9x  → -[-]  
+09:45:01  SCAN #11 complete in 0.0s
+09:48:01  SCAN #12  09:48:01  phase=ACTIVE_AM  active=True  missed=0
+09:48:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.018s
+09:48:01    NESTLEIND    Baseline     C=1206.80  VWAP=1209.32  RSI=37  Vol=0.2x  → -[-]  
+09:48:01    TRENT        Baseline     C=3682.80  VWAP=3693.77  RSI=56  Vol=1.0x  → -[-]  
+09:48:01    APOLLOHOSP   Baseline     C=7571.00  VWAP=7579.09  RSI=58  Vol=0.3x  → -[-]  in_position
+09:48:01    HDFCLIFE     Baseline     C=643.95  VWAP=643.63  RSI=54  Vol=0.3x  → -[-]  
+09:48:01    JSWSTEEL     Baseline     C=1167.10  VWAP=1167.53  RSI=51  Vol=0.3x  → -[-]  in_position
+09:48:01    POWERGRID    Baseline     C=302.45  VWAP=303.05  RSI=60  Vol=0.3x  → -[-]  
+09:48:01    HINDALCO     Baseline     C=929.55  VWAP=929.87  RSI=41  Vol=0.6x  → -[-]  
+09:48:01    INFY         Baseline     C=1270.00  VWAP=1259.21  RSI=84  Vol=0.6x  → -[-]  
+09:48:01    HDFCBANK     Baseline     C=837.05  VWAP=837.66  RSI=35  Vol=0.7x  → -[-]  
+09:48:01    WIPRO        Baseline     C=196.18  VWAP=195.75  RSI=75  Vol=0.6x  → -[-]  
+09:48:01  SCAN #12 complete in 0.0s
+09:51:01  SCAN #13  09:51:01  phase=ACTIVE_AM  active=True  missed=0
+09:51:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.023s
+09:51:01    NESTLEIND    Baseline     C=1208.40  VWAP=1209.15  RSI=49  Vol=0.2x  → -[-]  
+09:51:01    TRENT        Baseline     C=3696.90  VWAP=3693.70  RSI=64  Vol=0.6x  → -[-]  
+09:51:01    APOLLOHOSP   Baseline     C=7594.00  VWAP=7580.46  RSI=68  Vol=2.8x  → -[-]  in_position
+09:51:01    HDFCLIFE     Baseline     C=644.25  VWAP=643.68  RSI=56  Vol=0.4x  → -[-]  
+09:51:01    JSWSTEEL     Baseline     C=1168.80  VWAP=1167.55  RSI=57  Vol=0.2x  → -[-]  in_position
+09:51:01    POWERGRID    Baseline     C=302.80  VWAP=303.03  RSI=63  Vol=0.3x  → -[-]  
+09:51:01    HINDALCO     Baseline     C=930.40  VWAP=929.88  RSI=46  Vol=0.3x  → -[-]  
+09:51:01    INFY         Baseline     C=1274.90  VWAP=1260.45  RSI=87  Vol=0.7x  → -[-]  
+09:51:01    HDFCBANK     Baseline     C=837.60  VWAP=837.62  RSI=40  Vol=0.5x  → -[-]  
+09:51:01    WIPRO        Baseline     C=196.61  VWAP=195.80  RSI=78  Vol=0.8x  → -[-]  
+09:51:01  SCAN #13 complete in 0.0s
+09:54:01  SCAN #14  09:54:01  phase=ACTIVE_AM  active=True  missed=0
+09:54:01  FETCH  WS  10 new bars (6 clock-flushed) in 0.021s
+09:54:01    NESTLEIND    Baseline     C=1207.50  VWAP=1209.10  RSI=44  Vol=0.1x  → -[-]  
+09:54:01    TRENT        Baseline     C=3697.40  VWAP=3693.83  RSI=64  Vol=0.4x  → -[-]  
+09:54:01    APOLLOHOSP   Baseline     C=7590.00  VWAP=7580.60  RSI=65  Vol=0.2x  → -[-]  in_position
+09:54:01    HDFCLIFE     Baseline     C=644.15  VWAP=643.70  RSI=55  Vol=0.2x  → -[-]  
+09:54:01    JSWSTEEL     Baseline     C=1168.50  VWAP=1167.56  RSI=56  Vol=0.1x  → -[-]  in_position
+09:54:01    POWERGRID    Baseline     C=302.30  VWAP=303.01  RSI=57  Vol=0.3x  → -[-]  
+09:54:01    HINDALCO     Baseline     C=931.10  VWAP=929.91  RSI=50  Vol=0.3x  → -[-]  
+09:54:01    INFY         Baseline     C=1271.00  VWAP=1261.16  RSI=75  Vol=0.6x  → -[-]  
+09:54:01    HDFCBANK     Baseline     C=836.15  VWAP=837.58  RSI=33  Vol=0.3x  → -[-]  
+09:54:01    WIPRO        Baseline     C=196.23  VWAP=195.82  RSI=70  Vol=0.6x  → -[-]  
+09:54:01  SCAN #14 complete in 0.0s
+09:57:01  SCAN #15  09:57:01  phase=ACTIVE_AM  active=True  missed=0
+09:57:01  FETCH  WS  10 new bars (5 clock-flushed) in 0.020s
+09:57:01    NESTLEIND    Baseline     C=1205.00  VWAP=1208.75  RSI=33  Vol=0.3x  → -[-]  
+09:57:01    TRENT        Baseline     C=3692.90  VWAP=3693.84  RSI=60  Vol=0.3x  → -[-]  
+09:57:01  BRACKET  APOLLOHOSP   Baseline     SL hit at 09:57 — P&L ₹-591.12  (day total ₹-591.12)
+09:57:01  SL_COUNT  APOLLOHOSP   Baseline     1 / 2
+09:57:01    APOLLOHOSP   Baseline     C=7559.00  VWAP=7579.76  RSI=47  Vol=0.8x  → -[-]  cooldown_until_10:12
+09:57:01    HDFCLIFE     Baseline     C=643.20  VWAP=643.66  RSI=48  Vol=0.6x  → -[-]  
+09:57:01  BRACKET  JSWSTEEL     Baseline     SL hit at 09:57 — P&L ₹-654.40  (day total ₹-1245.52)
+09:57:01  SL_COUNT  JSWSTEEL     Baseline     1 / 2
+09:57:01    JSWSTEEL     Baseline     C=1164.30  VWAP=1167.51  RSI=41  Vol=0.2x  → -[-]  cooldown_until_10:03
+09:57:01    POWERGRID    Baseline     C=301.40  VWAP=302.94  RSI=47  Vol=0.5x  → -[-]  
+09:57:01    HINDALCO     Baseline     C=927.75  VWAP=929.82  RSI=36  Vol=1.0x  → -[-]  
+09:57:01    INFY         Baseline     C=1270.00  VWAP=1261.62  RSI=73  Vol=0.5x  → -[-]  
+09:57:01    HDFCBANK     Baseline     C=833.60  VWAP=837.33  RSI=24  Vol=0.6x  → ★ SHORT[PDL_BASE]  SL=836.87  TP=830.98  Qty=299
+09:57:01    WIPRO        Baseline     C=195.86  VWAP=195.83  RSI=62  Vol=0.6x  → -[-]  
+09:57:01  SCAN #15 complete in 0.8s
+10:00:01  SCAN #16  10:00:01  phase=ACTIVE_AM  active=True  missed=0
+10:00:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.021s
+10:00:01    NESTLEIND    Baseline     C=1205.50  VWAP=1208.49  RSI=37  Vol=0.3x  → -[-]  
+10:00:01    TRENT        Baseline     C=3691.20  VWAP=3693.81  RSI=58  Vol=0.3x  → -[-]  
+10:00:01    APOLLOHOSP   Baseline     C=7556.00  VWAP=7579.17  RSI=45  Vol=0.3x  → -[-]  cooldown_until_10:12
+10:00:01    HDFCLIFE     Baseline     C=641.10  VWAP=643.45  RSI=36  Vol=0.8x  → -[-]  
+10:00:01    JSWSTEEL     Baseline     C=1163.50  VWAP=1167.33  RSI=38  Vol=0.5x  → -[-]  cooldown_until_10:03
+10:00:01    POWERGRID    Baseline     C=301.45  VWAP=302.87  RSI=48  Vol=0.5x  → -[-]  
+10:00:01    HINDALCO     Baseline     C=926.70  VWAP=929.63  RSI=33  Vol=0.9x  → -[-]  
+10:00:01    INFY         Baseline     C=1271.60  VWAP=1262.11  RSI=74  Vol=0.6x  → -[-]  
+10:00:01    HDFCBANK     Baseline     C=833.80  VWAP=837.10  RSI=26  Vol=0.6x  → -[-]  in_position
+10:00:01    WIPRO        Baseline     C=196.08  VWAP=195.83  RSI=65  Vol=0.7x  → -[-]  
+10:00:01  SCAN #16 complete in 0.0s
+10:03:01  SCAN #17  10:03:01  phase=ACTIVE_AM  active=True  missed=0
+10:03:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.023s
+10:03:01    NESTLEIND    Baseline     C=1206.50  VWAP=1208.35  RSI=43  Vol=0.2x  → -[-]  
+10:03:01    TRENT        Baseline     C=3695.50  VWAP=3693.82  RSI=61  Vol=0.4x  → -[-]  
+10:03:01    APOLLOHOSP   Baseline     C=7549.50  VWAP=7578.84  RSI=42  Vol=0.2x  → -[-]  cooldown_until_10:12
+10:03:01    HDFCLIFE     Baseline     C=640.50  VWAP=643.36  RSI=33  Vol=0.3x  → -[-]  
+10:03:01    JSWSTEEL     Baseline     C=1161.40  VWAP=1167.17  RSI=33  Vol=0.4x  → -[-]  
+10:03:01    POWERGRID    Baseline     C=300.95  VWAP=302.81  RSI=42  Vol=0.4x  → -[-]  
+10:03:01    HINDALCO     Baseline     C=924.85  VWAP=929.25  RSI=28  Vol=1.4x  → -[-]  
+10:03:01    INFY         Baseline     C=1272.80  VWAP=1262.52  RSI=76  Vol=0.5x  → -[-]  
+10:03:01    HDFCBANK     Baseline     C=833.75  VWAP=837.00  RSI=26  Vol=0.4x  → -[-]  in_position
+10:03:01    WIPRO        Baseline     C=196.05  VWAP=195.85  RSI=64  Vol=0.5x  → -[-]  
+10:03:01  SCAN #17 complete in 0.0s
+10:06:01  SCAN #18  10:06:01  phase=ACTIVE_AM  active=True  missed=0
+10:06:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.023s
+10:06:01    NESTLEIND    Baseline     C=1206.40  VWAP=1208.24  RSI=43  Vol=0.3x  → -[-]  
+10:06:01    TRENT        Baseline     C=3692.50  VWAP=3693.82  RSI=58  Vol=0.4x  → -[-]  
+10:06:01    APOLLOHOSP   Baseline     C=7542.50  VWAP=7578.59  RSI=39  Vol=0.1x  → -[-]  cooldown_until_10:12
+10:06:01    HDFCLIFE     Baseline     C=640.50  VWAP=643.22  RSI=33  Vol=0.5x  → -[-]  
+10:06:01    JSWSTEEL     Baseline     C=1160.90  VWAP=1167.01  RSI=32  Vol=0.3x  → -[-]  
+10:06:01    POWERGRID    Baseline     C=300.65  VWAP=302.75  RSI=40  Vol=0.3x  → -[-]  
+10:06:01    HINDALCO     Baseline     C=923.85  VWAP=928.98  RSI=26  Vol=0.9x  → -[-]  
+10:06:01    INFY         Baseline     C=1272.00  VWAP=1262.83  RSI=73  Vol=0.5x  → -[-]  
+10:06:01    HDFCBANK     Baseline     C=832.80  VWAP=836.88  RSI=23  Vol=0.4x  → -[-]  in_position
+10:06:01    WIPRO        Baseline     C=195.85  VWAP=195.85  RSI=59  Vol=0.7x  → -[-]  
+10:06:01  SCAN #18 complete in 0.0s
+10:09:01  SCAN #19  10:09:01  phase=ACTIVE_AM  active=True  missed=0
+10:09:01  FETCH  WS  10 new bars (6 clock-flushed) in 0.020s
+10:09:01    NESTLEIND    Baseline     C=1207.70  VWAP=1208.21  RSI=51  Vol=0.2x  → -[-]  
+10:09:01    TRENT        Baseline     C=3694.60  VWAP=3693.81  RSI=60  Vol=0.5x  → -[-]  
+10:09:01    APOLLOHOSP   Baseline     C=7557.00  VWAP=7573.74  RSI=48  Vol=3.3x  → -[-]  cooldown_until_10:12
+10:09:01    HDFCLIFE     Baseline     C=641.25  VWAP=643.16  RSI=40  Vol=0.4x  → -[-]  
+10:09:01    JSWSTEEL     Baseline     C=1161.40  VWAP=1166.94  RSI=34  Vol=0.2x  → -[-]  
+10:09:01    POWERGRID    Baseline     C=301.10  VWAP=302.70  RSI=46  Vol=0.4x  → -[-]  
+10:09:01    HINDALCO     Baseline     C=925.35  VWAP=928.74  RSI=35  Vol=1.0x  → -[-]  
+10:09:01    INFY         Baseline     C=1272.90  VWAP=1263.10  RSI=74  Vol=0.5x  → -[-]  
+10:09:01    HDFCBANK     Baseline     C=833.60  VWAP=836.79  RSI=30  Vol=0.4x  → -[-]  in_position
+10:09:01    WIPRO        Baseline     C=196.16  VWAP=195.86  RSI=64  Vol=0.8x  → -[-]  
+10:09:01  SCAN #19 complete in 0.0s
+10:12:01  SCAN #20  10:12:01  phase=ACTIVE_AM  active=True  missed=0
+10:12:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.022s
+10:12:01    NESTLEIND    Baseline     C=1206.30  VWAP=1208.13  RSI=43  Vol=0.5x  → -[-]  
+10:12:01    TRENT        Baseline     C=3694.40  VWAP=3693.82  RSI=60  Vol=0.3x  → -[-]  
+10:12:01    APOLLOHOSP   Baseline     C=7568.50  VWAP=7573.64  RSI=54  Vol=0.2x  → -[-]  
+10:12:01    HDFCLIFE     Baseline     C=640.75  VWAP=643.10  RSI=37  Vol=0.4x  → -[-]  
+10:12:01    JSWSTEEL     Baseline     C=1160.60  VWAP=1166.83  RSI=32  Vol=0.3x  → -[-]  
+10:12:01    POWERGRID    Baseline     C=301.40  VWAP=302.66  RSI=50  Vol=0.5x  → -[-]  
+10:12:01    HINDALCO     Baseline     C=923.65  VWAP=928.52  RSI=30  Vol=0.9x  → -[-]  
+10:12:01    INFY         Baseline     C=1274.60  VWAP=1263.66  RSI=76  Vol=1.0x  → -[-]  
+10:12:01    HDFCBANK     Baseline     C=832.40  VWAP=836.58  RSI=26  Vol=0.9x  → -[-]  in_position
+10:12:01    WIPRO        Baseline     C=196.30  VWAP=195.87  RSI=66  Vol=0.4x  → -[-]  
+10:12:01  SCAN #20 complete in 0.0s
+10:15:01  SCAN #21  10:15:01  phase=ACTIVE_AM  active=True  missed=0
+10:15:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.013s
+10:15:01    NESTLEIND    Baseline     C=1205.60  VWAP=1207.83  RSI=40  Vol=2.2x  → -[-]  
+10:15:01    TRENT        Baseline     C=3694.20  VWAP=3693.81  RSI=59  Vol=0.5x  → -[-]  
+10:15:01    APOLLOHOSP   Baseline     C=7571.00  VWAP=7573.61  RSI=56  Vol=0.1x  → -[-]  
+10:15:01    HDFCLIFE     Baseline     C=640.45  VWAP=642.99  RSI=35  Vol=0.8x  → -[-]  
+10:15:01    JSWSTEEL     Baseline     C=1162.30  VWAP=1166.75  RSI=41  Vol=0.3x  → -[-]  
+10:15:01  SAME-BAR EXIT  POWERGRID    LONG on entry bar — SL
+10:15:01    POWERGRID    Baseline     C=302.20  VWAP=302.62  RSI=58  Vol=1.0x  → ★ LONG[PDL_BASE]  SL=301.30  TP=303.64  Qty=827
+10:15:01    HINDALCO     Baseline     C=925.10  VWAP=928.39  RSI=38  Vol=0.7x  → -[-]  
+10:15:01    INFY         Baseline     C=1274.60  VWAP=1263.89  RSI=76  Vol=0.5x  → -[-]  
+10:15:01    HDFCBANK     Baseline     C=833.10  VWAP=836.52  RSI=32  Vol=0.3x  → -[-]  in_position
+10:15:01    WIPRO        Baseline     C=196.46  VWAP=195.88  RSI=68  Vol=0.4x  → -[-]  
+10:15:01  SCAN #21 complete in 0.8s
+10:18:01  SCAN #22  10:18:01  phase=ACTIVE_AM  active=True  missed=0
+10:18:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+10:18:01    NESTLEIND    Baseline     C=1206.80  VWAP=1207.79  RSI=48  Vol=0.4x  → -[-]  
+10:18:01    TRENT        Baseline     C=3695.90  VWAP=3693.84  RSI=61  Vol=0.4x  → -[-]  
+10:18:01    APOLLOHOSP   Baseline     C=7564.00  VWAP=7572.80  RSI=51  Vol=2.1x  → -[-]  
+10:18:01    HDFCLIFE     Baseline     C=641.45  VWAP=642.97  RSI=45  Vol=0.2x  → -[-]  
+10:18:01    JSWSTEEL     Baseline     C=1163.40  VWAP=1166.72  RSI=47  Vol=0.2x  → -[-]  
+10:18:01    POWERGRID    Baseline     C=302.45  VWAP=302.61  RSI=61  Vol=0.8x  → -[-]  cooldown_until_10:45
+10:18:01    HINDALCO     Baseline     C=925.00  VWAP=928.24  RSI=38  Vol=0.9x  → -[-]  
+10:18:01    INFY         Baseline     C=1276.50  VWAP=1264.50  RSI=79  Vol=1.0x  → -[-]  
+10:18:01    HDFCBANK     Baseline     C=834.85  VWAP=836.47  RSI=46  Vol=0.5x  → -[-]  in_position
+10:18:01    WIPRO        Baseline     C=196.64  VWAP=195.90  RSI=70  Vol=0.8x  → -[-]  
+10:18:01  SCAN #22 complete in 0.0s
+10:21:01  SCAN #23  10:21:01  phase=ACTIVE_AM  active=True  missed=0
+10:21:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.021s
+10:21:01    NESTLEIND    Baseline     C=1208.40  VWAP=1207.79  RSI=56  Vol=1.0x  → -[-]  
+10:21:01    TRENT        Baseline     C=3702.80  VWAP=3694.05  RSI=67  Vol=0.7x  → -[-]  
+10:21:01    APOLLOHOSP   Baseline     C=7568.00  VWAP=7572.75  RSI=54  Vol=0.1x  → -[-]  
+10:21:01    HDFCLIFE     Baseline     C=642.15  VWAP=642.95  RSI=51  Vol=0.4x  → -[-]  
+10:21:01    JSWSTEEL     Baseline     C=1164.60  VWAP=1166.69  RSI=52  Vol=0.2x  → -[-]  
+10:21:01    POWERGRID    Baseline     C=302.65  VWAP=302.61  RSI=63  Vol=0.5x  → -[-]  cooldown_until_10:45
+10:21:01    HINDALCO     Baseline     C=926.60  VWAP=928.19  RSI=46  Vol=0.5x  → -[-]  
+10:21:01    INFY         Baseline     C=1277.10  VWAP=1264.88  RSI=80  Vol=0.7x  → -[-]  
+10:21:01    HDFCBANK     Baseline     C=834.95  VWAP=836.43  RSI=46  Vol=0.6x  → -[-]  in_position
+10:21:01    WIPRO        Baseline     C=196.73  VWAP=195.98  RSI=72  Vol=1.8x  → -[-]  
+10:21:01  SCAN #23 complete in 0.0s
+10:24:01  SCAN #24  10:24:01  phase=ACTIVE_AM  active=True  missed=0
+10:24:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.022s
+10:24:01    NESTLEIND    Baseline     C=1208.40  VWAP=1207.80  RSI=56  Vol=0.3x  → -[-]  
+10:24:01    TRENT        Baseline     C=3703.10  VWAP=3694.13  RSI=68  Vol=0.2x  → -[-]  
+10:24:01    APOLLOHOSP   Baseline     C=7564.00  VWAP=7572.74  RSI=51  Vol=0.0x  → -[-]  
+10:24:01    HDFCLIFE     Baseline     C=642.40  VWAP=642.95  RSI=53  Vol=0.2x  → -[-]  
+10:24:01    JSWSTEEL     Baseline     C=1166.90  VWAP=1166.68  RSI=61  Vol=0.5x  → -[-]  
+10:24:01    POWERGRID    Baseline     C=302.90  VWAP=302.62  RSI=65  Vol=0.7x  → -[-]  cooldown_until_10:45
+10:24:01    HINDALCO     Baseline     C=927.50  VWAP=928.16  RSI=51  Vol=0.6x  → -[-]  
+10:24:01    INFY         Baseline     C=1277.50  VWAP=1265.24  RSI=80  Vol=0.7x  → -[-]  
+10:24:01  BRACKET  HDFCBANK     Baseline     SL hit at 10:24 — P&L ₹-586.88  (day total ₹-1832.40)
+10:24:01  SL_COUNT  HDFCBANK     Baseline     1 / 2
+10:24:01    HDFCBANK     Baseline     C=836.50  VWAP=836.42  RSI=56  Vol=0.9x  → -[-]  cooldown_until_10:27
+10:24:01    WIPRO        Baseline     C=196.75  VWAP=195.99  RSI=72  Vol=0.7x  → -[-]  
+10:24:01  SCAN #24 complete in 0.0s
+10:27:01  SCAN #25  10:27:01  phase=ACTIVE_AM  active=True  missed=0
+10:27:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.023s
+10:27:01    NESTLEIND    Baseline     C=1206.90  VWAP=1207.78  RSI=47  Vol=1.1x  → -[-]  
+10:27:01    TRENT        Baseline     C=3705.60  VWAP=3694.31  RSI=70  Vol=0.5x  → -[-]  
+10:27:01    APOLLOHOSP   Baseline     C=7567.00  VWAP=7572.70  RSI=53  Vol=0.2x  → -[-]  
+10:27:01    HDFCLIFE     Baseline     C=641.30  VWAP=642.91  RSI=44  Vol=0.7x  → -[-]  
+10:27:01    JSWSTEEL     Baseline     C=1166.90  VWAP=1166.68  RSI=61  Vol=0.2x  → -[-]  
+10:27:01    POWERGRID    Baseline     C=303.05  VWAP=302.65  RSI=67  Vol=1.9x  → -[-]  cooldown_until_10:45
+10:27:01    HINDALCO     Baseline     C=927.55  VWAP=928.15  RSI=51  Vol=0.4x  → -[-]  
+10:27:01    INFY         Baseline     C=1279.80  VWAP=1265.77  RSI=83  Vol=1.0x  → -[-]  
+10:27:01    HDFCBANK     Baseline     C=837.15  VWAP=836.44  RSI=59  Vol=0.9x  → -[-]  
+10:27:01    WIPRO        Baseline     C=196.70  VWAP=196.01  RSI=70  Vol=0.4x  → -[-]  
+10:27:01  SCAN #25 complete in 0.0s
+10:30:01  SCAN #26  10:30:01  phase=ACTIVE_AM  active=True  missed=0
+10:30:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.021s
+10:30:01    NESTLEIND    Baseline     C=1205.40  VWAP=1207.71  RSI=40  Vol=0.9x  → -[-]  
+10:30:01    TRENT        Baseline     C=3701.80  VWAP=3694.43  RSI=62  Vol=0.5x  → -[-]  
+10:30:01    APOLLOHOSP   Baseline     C=7564.50  VWAP=7572.67  RSI=51  Vol=0.1x  → -[-]  
+10:30:01    HDFCLIFE     Baseline     C=641.70  VWAP=642.87  RSI=48  Vol=0.9x  → -[-]  
+10:30:01    JSWSTEEL     Baseline     C=1165.90  VWAP=1166.68  RSI=55  Vol=0.1x  → -[-]  
+10:30:01    POWERGRID    Baseline     C=302.70  VWAP=302.65  RSI=60  Vol=0.9x  → -[-]  cooldown_until_10:45
+10:30:01    HINDALCO     Baseline     C=925.65  VWAP=928.13  RSI=42  Vol=0.3x  → -[-]  
+10:30:01    INFY         Baseline     C=1278.00  VWAP=1266.42  RSI=73  Vol=1.3x  → -[-]  
+10:30:01    HDFCBANK     Baseline     C=837.35  VWAP=836.46  RSI=61  Vol=0.9x  → -[-]  
+10:30:01    WIPRO        Baseline     C=196.61  VWAP=196.01  RSI=66  Vol=0.3x  → -[-]  
+10:30:01  SCAN #26 complete in 0.0s
+10:33:01  SCAN #27  10:33:01  phase=ACTIVE_AM  active=True  missed=0
+10:33:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.022s
+10:33:01    NESTLEIND    Baseline     C=1206.40  VWAP=1207.41  RSI=46  Vol=3.6x  → -[-]  
+10:33:01    TRENT        Baseline     C=3704.10  VWAP=3694.57  RSI=65  Vol=0.6x  → -[-]  
+10:33:01    APOLLOHOSP   Baseline     C=7559.00  VWAP=7572.59  RSI=46  Vol=0.2x  → -[-]  
+10:33:01    HDFCLIFE     Baseline     C=642.45  VWAP=642.86  RSI=54  Vol=0.3x  → -[-]  
+10:33:01    JSWSTEEL     Baseline     C=1167.30  VWAP=1166.68  RSI=61  Vol=0.4x  → -[-]  
+10:33:01    POWERGRID    Baseline     C=303.45  VWAP=302.67  RSI=68  Vol=1.1x  → -[-]  cooldown_until_10:45
+10:33:01    HINDALCO     Baseline     C=927.50  VWAP=928.11  RSI=51  Vol=0.7x  → -[-]  
+10:33:01    INFY         Baseline     C=1277.00  VWAP=1266.63  RSI=69  Vol=0.6x  → -[-]  
+10:33:01    HDFCBANK     Baseline     C=837.45  VWAP=836.47  RSI=61  Vol=0.6x  → -[-]  
+10:33:01    WIPRO        Baseline     C=196.46  VWAP=196.03  RSI=60  Vol=1.1x  → -[-]  
+10:33:01  SCAN #27 complete in 0.0s
+10:36:01  SCAN #28  10:36:01  phase=ACTIVE_AM  active=True  missed=0
+10:36:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.019s
+10:36:01    NESTLEIND    Baseline     C=1206.50  VWAP=1207.38  RSI=47  Vol=1.0x  → -[-]  
+10:36:01    TRENT        Baseline     C=3704.80  VWAP=3694.88  RSI=66  Vol=1.4x  → -[-]  
+10:36:01    APOLLOHOSP   Baseline     C=7554.50  VWAP=7572.55  RSI=43  Vol=0.1x  → -[-]  
+10:36:01    HDFCLIFE     Baseline     C=642.15  VWAP=642.85  RSI=51  Vol=0.4x  → -[-]  
+10:36:01    JSWSTEEL     Baseline     C=1165.80  VWAP=1166.67  RSI=53  Vol=0.6x  → -[-]  
+10:36:01    POWERGRID    Baseline     C=302.85  VWAP=302.68  RSI=58  Vol=1.3x  → -[-]  cooldown_until_10:45
+10:36:01    HINDALCO     Baseline     C=926.95  VWAP=928.06  RSI=49  Vol=1.8x  → -[-]  
+10:36:01    INFY         Baseline     C=1276.00  VWAP=1266.81  RSI=64  Vol=0.5x  → -[-]  
+10:36:01    HDFCBANK     Baseline     C=836.95  VWAP=836.48  RSI=57  Vol=0.8x  → -[-]  
+10:36:01    WIPRO        Baseline     C=196.24  VWAP=196.04  RSI=53  Vol=0.7x  → -[-]  
+10:36:01  SCAN #28 complete in 0.0s
+10:39:01  SCAN #29  10:39:01  phase=ACTIVE_AM  active=True  missed=0
+10:39:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.011s
+10:39:01    NESTLEIND    Baseline     C=1207.40  VWAP=1207.38  RSI=52  Vol=1.2x  → -[-]  
+10:39:01    TRENT        Baseline     C=3706.90  VWAP=3695.00  RSI=68  Vol=0.5x  → -[-]  
+10:39:01    APOLLOHOSP   Baseline     C=7568.50  VWAP=7572.51  RSI=55  Vol=0.2x  → -[-]  
+10:39:01    HDFCLIFE     Baseline     C=642.45  VWAP=642.85  RSI=54  Vol=0.3x  → -[-]  
+10:39:01    JSWSTEEL     Baseline     C=1165.80  VWAP=1166.66  RSI=53  Vol=0.5x  → -[-]  
+10:39:01    POWERGRID    Baseline     C=303.00  VWAP=302.69  RSI=59  Vol=0.7x  → -[-]  cooldown_until_10:45
+10:39:01    HINDALCO     Baseline     C=927.60  VWAP=928.05  RSI=52  Vol=0.5x  → -[-]  
+10:39:01    INFY         Baseline     C=1277.70  VWAP=1266.93  RSI=68  Vol=0.4x  → -[-]  
+10:39:01    HDFCBANK     Baseline     C=836.75  VWAP=836.49  RSI=55  Vol=0.4x  → -[-]  
+10:39:01    WIPRO        Baseline     C=196.59  VWAP=196.04  RSI=61  Vol=0.7x  → -[-]  
+10:39:01  SCAN #29 complete in 0.0s
+10:42:01  SCAN #30  10:42:01  phase=ACTIVE_AM  active=True  missed=0
+10:42:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.023s
+10:42:01    NESTLEIND    Baseline     C=1208.50  VWAP=1207.42  RSI=58  Vol=1.3x  → -[-]  
+10:42:01    TRENT        Baseline     C=3706.30  VWAP=3695.13  RSI=67  Vol=0.6x  → -[-]  
+10:42:01    APOLLOHOSP   Baseline     C=7563.50  VWAP=7572.44  RSI=50  Vol=0.4x  → -[-]  
+10:42:01    HDFCLIFE     Baseline     C=642.75  VWAP=642.84  RSI=56  Vol=0.4x  → -[-]  
+10:42:01    JSWSTEEL     Baseline     C=1165.60  VWAP=1166.66  RSI=52  Vol=0.2x  → -[-]  
+10:42:01    POWERGRID    Baseline     C=303.05  VWAP=302.70  RSI=60  Vol=1.4x  → -[-]  cooldown_until_10:45
+10:42:01    HINDALCO     Baseline     C=927.30  VWAP=928.02  RSI=50  Vol=1.7x  → -[-]  
+10:42:01    INFY         Baseline     C=1277.50  VWAP=1267.08  RSI=67  Vol=0.5x  → -[-]  
+10:42:01    HDFCBANK     Baseline     C=836.50  VWAP=836.50  RSI=52  Vol=1.1x  → -[-]  
+10:42:01    WIPRO        Baseline     C=196.55  VWAP=196.05  RSI=60  Vol=0.4x  → -[-]  
+10:42:01  SCAN #30 complete in 0.0s
+10:45:01  SCAN #31  10:45:01  phase=ACTIVE_AM  active=True  missed=0
+10:45:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.015s
+10:45:01    NESTLEIND    Baseline     C=1208.40  VWAP=1207.42  RSI=58  Vol=0.2x  → -[-]  
+10:45:01    TRENT        Baseline     C=3698.70  VWAP=3695.24  RSI=51  Vol=0.9x  → -[-]  
+10:45:01    APOLLOHOSP   Baseline     C=7565.00  VWAP=7572.39  RSI=52  Vol=0.2x  → -[-]  
+10:45:01    HDFCLIFE     Baseline     C=641.60  VWAP=642.83  RSI=45  Vol=0.6x  → -[-]  
+10:45:01    JSWSTEEL     Baseline     C=1164.50  VWAP=1166.64  RSI=46  Vol=0.5x  → -[-]  
+10:45:01    POWERGRID    Baseline     C=302.35  VWAP=302.70  RSI=49  Vol=1.5x  → -[-]  
+10:45:01    HINDALCO     Baseline     C=926.50  VWAP=927.94  RSI=46  Vol=1.6x  → -[-]  
+10:45:01    INFY         Baseline     C=1276.80  VWAP=1267.16  RSI=63  Vol=0.3x  → -[-]  
+10:45:01    HDFCBANK     Baseline     C=837.05  VWAP=836.50  RSI=57  Vol=0.3x  → -[-]  
+10:45:01    WIPRO        Baseline     C=196.79  VWAP=196.06  RSI=65  Vol=0.6x  → -[-]  
+10:45:01  SCAN #31 complete in 0.0s
+10:48:01  SCAN #32  10:48:01  phase=ACTIVE_AM  active=True  missed=0
+10:48:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.021s
+10:48:01    NESTLEIND    Baseline     C=1209.40  VWAP=1207.50  RSI=63  Vol=1.3x  → -[-]  
+10:48:01    TRENT        Baseline     C=3701.90  VWAP=3695.31  RSI=56  Vol=0.7x  → -[-]  
+10:48:01    APOLLOHOSP   Baseline     C=7558.00  VWAP=7572.24  RSI=46  Vol=0.4x  → -[-]  
+10:48:01    HDFCLIFE     Baseline     C=642.55  VWAP=642.81  RSI=54  Vol=1.0x  → -[-]  
+10:48:01    JSWSTEEL     Baseline     C=1166.00  VWAP=1166.63  RSI=54  Vol=0.7x  → -[-]  
+10:48:01    POWERGRID    Baseline     C=302.45  VWAP=302.70  RSI=50  Vol=1.1x  → -[-]  
+10:48:01    HINDALCO     Baseline     C=926.45  VWAP=927.93  RSI=46  Vol=0.3x  → -[-]  
+10:48:01    INFY         Baseline     C=1280.40  VWAP=1267.71  RSI=72  Vol=1.7x  → -[-]  
+10:48:01    HDFCBANK     Baseline     C=837.15  VWAP=836.51  RSI=58  Vol=0.5x  → -[-]  
+10:48:01    WIPRO        Baseline     C=197.13  VWAP=196.10  RSI=72  Vol=1.5x  → -[-]  
+10:48:01  SCAN #32 complete in 0.0s
+10:51:01  SCAN #33  10:51:01  phase=ACTIVE_AM  active=True  missed=0
+10:51:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.020s
+10:51:01    NESTLEIND    Baseline     C=1212.10  VWAP=1207.67  RSI=73  Vol=1.4x  → -[-]  
+10:51:01    TRENT        Baseline     C=3705.00  VWAP=3695.55  RSI=60  Vol=1.4x  → -[-]  
+10:51:01    APOLLOHOSP   Baseline     C=7566.50  VWAP=7572.19  RSI=53  Vol=0.3x  → -[-]  
+10:51:01    HDFCLIFE     Baseline     C=642.65  VWAP=642.81  RSI=55  Vol=1.1x  → -[-]  
+10:51:01    JSWSTEEL     Baseline     C=1166.60  VWAP=1166.63  RSI=57  Vol=0.4x  → -[-]  
+10:51:01    POWERGRID    Baseline     C=302.20  VWAP=302.69  RSI=46  Vol=0.8x  → -[-]  
+10:51:01    HINDALCO     Baseline     C=926.35  VWAP=927.91  RSI=45  Vol=0.4x  → -[-]  
+10:51:01    INFY         Baseline     C=1282.40  VWAP=1268.06  RSI=76  Vol=1.0x  → -[-]  
+10:51:01    HDFCBANK     Baseline     C=838.25  VWAP=836.56  RSI=66  Vol=1.5x  → -[-]  
+10:51:01    WIPRO        Baseline     C=197.26  VWAP=196.14  RSI=74  Vol=1.7x  → -[-]  
+10:51:01  SCAN #33 complete in 0.0s
+10:54:01  SCAN #34  10:54:01  phase=ACTIVE_AM  active=True  missed=0
+10:54:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.023s
+10:54:01    NESTLEIND    Baseline     C=1211.20  VWAP=1207.79  RSI=66  Vol=0.9x  → -[-]  
+10:54:01    TRENT        Baseline     C=3706.10  VWAP=3695.67  RSI=62  Vol=0.7x  → -[-]  
+10:54:01    APOLLOHOSP   Baseline     C=7564.50  VWAP=7572.15  RSI=51  Vol=0.3x  → -[-]  
+10:54:01    HDFCLIFE     Baseline     C=642.50  VWAP=642.81  RSI=53  Vol=0.6x  → -[-]  
+10:54:01    JSWSTEEL     Baseline     C=1167.80  VWAP=1166.65  RSI=62  Vol=1.3x  → -[-]  
+10:54:01    POWERGRID    Baseline     C=302.25  VWAP=302.68  RSI=47  Vol=0.7x  → -[-]  
+10:54:01    HINDALCO     Baseline     C=926.45  VWAP=927.89  RSI=46  Vol=0.5x  → -[-]  
+10:54:01    INFY         Baseline     C=1283.40  VWAP=1268.39  RSI=78  Vol=0.9x  → -[-]  
+10:54:01    HDFCBANK     Baseline     C=838.50  VWAP=836.66  RSI=68  Vol=2.1x  → -[-]  
+10:54:01    WIPRO        Baseline     C=197.17  VWAP=196.17  RSI=70  Vol=1.0x  → -[-]  
+10:54:01  SCAN #34 complete in 0.1s
+10:57:01  SCAN #35  10:57:01  phase=ACTIVE_AM  active=True  missed=0
+10:57:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.014s
+10:57:01    NESTLEIND    Baseline     C=1207.50  VWAP=1207.86  RSI=46  Vol=2.4x  → -[-]  
+10:57:01    TRENT        Baseline     C=3712.10  VWAP=3695.93  RSI=69  Vol=1.1x  → -[-]  
+10:57:01    APOLLOHOSP   Baseline     C=7561.50  VWAP=7572.12  RSI=48  Vol=0.2x  → -[-]  
+10:57:01    HDFCLIFE     Baseline     C=643.15  VWAP=642.81  RSI=59  Vol=0.6x  → -[-]  
+10:57:01    JSWSTEEL     Baseline     C=1172.50  VWAP=1166.80  RSI=76  Vol=2.4x  → -[-]  
+10:57:01    POWERGRID    Baseline     C=302.40  VWAP=302.68  RSI=50  Vol=0.4x  → -[-]  
+10:57:01    HINDALCO     Baseline     C=927.45  VWAP=927.88  RSI=54  Vol=0.7x  → -[-]  
+10:57:01    INFY         Baseline     C=1281.00  VWAP=1268.90  RSI=65  Vol=1.6x  → -[-]  
+10:57:01    HDFCBANK     Baseline     C=839.10  VWAP=836.76  RSI=71  Vol=1.8x  → -[-]  
+10:57:01    WIPRO        Baseline     C=197.15  VWAP=196.18  RSI=69  Vol=0.6x  → -[-]  
+10:57:01  SCAN #35 complete in 0.0s
+11:00:01  SCAN #36  11:00:01  phase=ACTIVE_AM  active=True  missed=0
+11:00:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.022s
+11:00:01    NESTLEIND    Baseline     C=1206.80  VWAP=1207.74  RSI=43  Vol=3.7x  → -[-]  
+11:00:01    TRENT        Baseline     C=3711.20  VWAP=3696.22  RSI=67  Vol=1.1x  → -[-]  
+11:00:01    APOLLOHOSP   Baseline     C=7565.50  VWAP=7570.03  RSI=52  Vol=10.2x  → -[-]  
+11:00:01    HDFCLIFE     Baseline     C=643.10  VWAP=642.81  RSI=58  Vol=1.1x  → -[-]  
+11:00:01    JSWSTEEL     Baseline     C=1172.10  VWAP=1166.93  RSI=73  Vol=1.8x  → -[-]  
+11:00:01    POWERGRID    Baseline     C=302.85  VWAP=302.68  RSI=58  Vol=1.2x  → -[-]  
+11:00:01    HINDALCO     Baseline     C=926.55  VWAP=927.87  RSI=47  Vol=0.6x  → -[-]  
+11:00:01    INFY         Baseline     C=1282.30  VWAP=1269.03  RSI=68  Vol=0.4x  → -[-]  
+11:00:01    HDFCBANK     Baseline     C=838.85  VWAP=836.84  RSI=68  Vol=1.8x  → -[-]  
+11:00:01    WIPRO        Baseline     C=197.12  VWAP=196.20  RSI=67  Vol=0.8x  → -[-]  
+11:00:01  SCAN #36 complete in 0.0s
+11:03:01  SCAN #37  11:03:01  phase=ACTIVE_AM  active=True  missed=0
+11:03:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.025s
+11:03:01    NESTLEIND    Baseline     C=1205.00  VWAP=1207.63  RSI=37  Vol=1.5x  → -[-]  
+11:03:01    TRENT        Baseline     C=3708.00  VWAP=3696.42  RSI=59  Vol=1.0x  → -[-]  
+11:03:01    APOLLOHOSP   Baseline     C=7559.00  VWAP=7569.72  RSI=46  Vol=1.8x  → -[-]  
+11:03:01    HDFCLIFE     Baseline     C=643.25  VWAP=642.82  RSI=60  Vol=1.0x  → -[-]  
+11:03:01    JSWSTEEL     Baseline     C=1173.00  VWAP=1166.98  RSI=75  Vol=0.7x  → -[-]  
+11:03:01    POWERGRID    Baseline     C=302.90  VWAP=302.68  RSI=59  Vol=1.4x  → -[-]  
+11:03:01    HINDALCO     Baseline     C=925.95  VWAP=927.83  RSI=43  Vol=0.9x  → -[-]  
+11:03:01    INFY         Baseline     C=1281.80  VWAP=1269.15  RSI=66  Vol=0.4x  → -[-]  
+11:03:01    HDFCBANK     Baseline     C=839.00  VWAP=836.91  RSI=69  Vol=1.5x  → -[-]  
+11:03:01    WIPRO        Baseline     C=197.28  VWAP=196.21  RSI=71  Vol=0.7x  → -[-]  
+11:03:01  SCAN #37 complete in 0.1s
+11:06:01  SCAN #38  11:06:01  phase=ACTIVE_AM  active=True  missed=0
+11:06:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.023s
+11:06:01    NESTLEIND    Baseline     C=1204.20  VWAP=1207.31  RSI=34  Vol=3.2x  → -[-]  
+11:06:01    TRENT        Baseline     C=3708.80  VWAP=3696.55  RSI=61  Vol=0.7x  → -[-]  
+11:06:01    APOLLOHOSP   Baseline     C=7550.00  VWAP=7569.60  RSI=38  Vol=0.3x  → -[-]  
+11:06:01    HDFCLIFE     Baseline     C=642.85  VWAP=642.82  RSI=54  Vol=1.3x  → -[-]  
+11:06:01    JSWSTEEL     Baseline     C=1172.30  VWAP=1167.04  RSI=71  Vol=0.9x  → -[-]  
+11:06:01    POWERGRID    Baseline     C=302.75  VWAP=302.69  RSI=55  Vol=0.8x  → -[-]  
+11:06:01    HINDALCO     Baseline     C=925.90  VWAP=927.80  RSI=42  Vol=0.6x  → -[-]  
+11:06:01    INFY         Baseline     C=1281.00  VWAP=1269.27  RSI=62  Vol=0.4x  → -[-]  
+11:06:01    HDFCBANK     Baseline     C=838.65  VWAP=836.93  RSI=63  Vol=0.7x  → -[-]  
+11:06:01    WIPRO        Baseline     C=197.34  VWAP=196.25  RSI=72  Vol=1.4x  → -[-]  
+11:06:01  SCAN #38 complete in 0.0s
+11:09:01  SCAN #39  11:09:01  phase=ACTIVE_AM  active=True  missed=0
+11:09:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.021s
+11:09:01    NESTLEIND    Baseline     C=1204.90  VWAP=1207.24  RSI=39  Vol=0.9x  → -[-]  
+11:09:01    TRENT        Baseline     C=3706.00  VWAP=3696.68  RSI=54  Vol=1.0x  → -[-]  
+11:09:01    APOLLOHOSP   Baseline     C=7555.00  VWAP=7569.52  RSI=44  Vol=0.2x  → -[-]  
+11:09:01    HDFCLIFE     Baseline     C=643.15  VWAP=642.83  RSI=57  Vol=0.8x  → -[-]  
+11:09:01    JSWSTEEL     Baseline     C=1174.90  VWAP=1167.42  RSI=77  Vol=4.3x  → -[-]  
+11:09:01    POWERGRID    Baseline     C=302.85  VWAP=302.69  RSI=57  Vol=0.6x  → -[-]  
+11:09:01    HINDALCO     Baseline     C=927.45  VWAP=927.79  RSI=55  Vol=1.2x  → -[-]  
+11:09:01    INFY         Baseline     C=1280.20  VWAP=1269.36  RSI=58  Vol=0.4x  → -[-]  
+11:09:01    HDFCBANK     Baseline     C=838.10  VWAP=836.95  RSI=55  Vol=0.5x  → -[-]  
+11:09:01    WIPRO        Baseline     C=197.14  VWAP=196.26  RSI=62  Vol=0.6x  → -[-]  
+11:09:01  SCAN #39 complete in 0.0s
+11:12:01  SCAN #40  11:12:01  phase=ACTIVE_AM  active=True  missed=0
+11:12:01  FETCH  WS  10 new bars (5 clock-flushed) in 0.023s
+11:12:01    NESTLEIND    Baseline     C=1202.90  VWAP=1207.12  RSI=32  Vol=0.9x  → -[-]  
+11:12:01    TRENT        Baseline     C=3705.50  VWAP=3696.77  RSI=53  Vol=0.7x  → -[-]  
+11:12:01    APOLLOHOSP   Baseline     C=7549.00  VWAP=7569.47  RSI=39  Vol=0.1x  → -[-]  
+11:12:01    HDFCLIFE     Baseline     C=643.05  VWAP=642.83  RSI=56  Vol=0.4x  → -[-]  
+11:12:01    JSWSTEEL     Baseline     C=1173.70  VWAP=1167.49  RSI=69  Vol=0.9x  → -[-]  
+11:12:01    POWERGRID    Baseline     C=302.60  VWAP=302.69  RSI=51  Vol=0.9x  → -[-]  
+11:12:01    HINDALCO     Baseline     C=927.40  VWAP=927.78  RSI=55  Vol=0.8x  → -[-]  
+11:12:01    INFY         Baseline     C=1281.90  VWAP=1269.48  RSI=63  Vol=0.5x  → -[-]  
+11:12:01    HDFCBANK     Baseline     C=837.70  VWAP=836.96  RSI=50  Vol=0.8x  → -[-]  
+11:12:01    WIPRO        Baseline     C=197.23  VWAP=196.27  RSI=64  Vol=0.6x  → -[-]  
+11:12:01  SCAN #40 complete in 0.0s
+11:15:01  SCAN #41  11:15:01  phase=ACTIVE_AM  active=True  missed=0
+11:15:01  FETCH  WS  10 new bars (4 clock-flushed) in 0.018s
+11:15:01    NESTLEIND    Baseline     C=1201.50  VWAP=1205.83  RSI=28  Vol=6.5x  → -[-]  
+11:15:01    TRENT        Baseline     C=3710.40  VWAP=3696.96  RSI=62  Vol=1.1x  → -[-]  
+11:15:01    APOLLOHOSP   Baseline     C=7548.00  VWAP=7569.40  RSI=38  Vol=0.1x  → -[-]  
+11:15:01    HDFCLIFE     Baseline     C=643.10  VWAP=642.83  RSI=57  Vol=1.3x  → -[-]  
+11:15:01    JSWSTEEL     Baseline     C=1174.00  VWAP=1167.52  RSI=70  Vol=0.3x  → -[-]  
+11:15:01    POWERGRID    Baseline     C=302.80  VWAP=302.69  RSI=55  Vol=0.6x  → -[-]  
+11:15:01    HINDALCO     Baseline     C=927.85  VWAP=927.78  RSI=58  Vol=0.4x  → -[-]  
+11:15:01    INFY         Baseline     C=1282.10  VWAP=1269.60  RSI=64  Vol=0.6x  → -[-]  
+11:15:01    HDFCBANK     Baseline     C=838.35  VWAP=836.98  RSI=58  Vol=0.7x  → -[-]  
+11:15:01    WIPRO        Baseline     C=197.09  VWAP=196.28  RSI=57  Vol=0.9x  → -[-]  
+11:15:01  SCAN #41 complete in 0.0s
+11:18:01  SCAN #42  11:18:01  phase=ACTIVE_AM  active=True  missed=0
+11:18:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.024s
+11:18:01    NESTLEIND    Baseline     C=1201.80  VWAP=1205.76  RSI=30  Vol=0.4x  → -[-]  
+11:18:01    TRENT        Baseline     C=3711.00  VWAP=3697.49  RSI=63  Vol=3.0x  → -[-]  
+11:18:01    APOLLOHOSP   Baseline     C=7545.50  VWAP=7569.33  RSI=36  Vol=0.2x  → -[-]  
+11:18:01    HDFCLIFE     Baseline     C=642.80  VWAP=642.83  RSI=51  Vol=0.6x  → -[-]  
+11:18:01    JSWSTEEL     Baseline     C=1176.40  VWAP=1168.18  RSI=76  Vol=5.4x  → -[-]  
+11:18:01    POWERGRID    Baseline     C=302.60  VWAP=302.69  RSI=50  Vol=0.6x  → -[-]  
+11:18:01    HINDALCO     Baseline     C=927.30  VWAP=927.77  RSI=53  Vol=0.6x  → -[-]  
+11:18:01    INFY         Baseline     C=1282.20  VWAP=1269.74  RSI=64  Vol=0.7x  → -[-]  
+11:18:01    HDFCBANK     Baseline     C=838.05  VWAP=836.99  RSI=53  Vol=0.6x  → -[-]  
+11:18:01    WIPRO        Baseline     C=197.22  VWAP=196.29  RSI=62  Vol=0.5x  → -[-]  
+11:18:01  SCAN #42 complete in 0.1s
+11:21:01  SCAN #43  11:21:01  phase=ACTIVE_AM  active=True  missed=0
+11:21:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.020s
+11:21:01    NESTLEIND    Baseline     C=1202.10  VWAP=1205.72  RSI=32  Vol=0.3x  → -[-]  
+11:21:01    TRENT        Baseline     C=3711.30  VWAP=3697.94  RSI=63  Vol=2.3x  → -[-]  
+11:21:01    APOLLOHOSP   Baseline     C=7549.50  VWAP=7569.25  RSI=42  Vol=0.2x  → -[-]  
+11:21:01    HDFCLIFE     Baseline     C=642.85  VWAP=642.83  RSI=52  Vol=0.5x  → -[-]  
+11:21:01    JSWSTEEL     Baseline     C=1179.30  VWAP=1169.65  RSI=81  Vol=7.3x  → -[-]  
+11:21:01    POWERGRID    Baseline     C=302.55  VWAP=302.69  RSI=49  Vol=1.1x  → -[-]  
+11:21:01    HINDALCO     Baseline     C=928.25  VWAP=927.78  RSI=60  Vol=1.1x  → -[-]  
+11:21:01    INFY         Baseline     C=1286.10  VWAP=1270.24  RSI=75  Vol=1.9x  → -[-]  
+11:21:01    HDFCBANK     Baseline     C=838.90  VWAP=837.01  RSI=62  Vol=0.6x  → -[-]  
+11:21:01    WIPRO        Baseline     C=197.81  VWAP=196.33  RSI=75  Vol=1.9x  → -[-]  
+11:21:01  SCAN #43 complete in 0.0s
+11:24:01  SCAN #44  11:24:01  phase=ACTIVE_AM  active=True  missed=0
+11:24:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.021s
+11:24:01    NESTLEIND    Baseline     C=1204.20  VWAP=1205.67  RSI=45  Vol=0.7x  → -[-]  
+11:24:01    TRENT        Baseline     C=3713.00  VWAP=3698.69  RSI=66  Vol=3.4x  → -[-]  
+11:24:01    APOLLOHOSP   Baseline     C=7544.00  VWAP=7569.17  RSI=37  Vol=0.2x  → -[-]  
+11:24:01    HDFCLIFE     Baseline     C=642.95  VWAP=642.84  RSI=54  Vol=1.5x  → -[-]  
+11:24:01    JSWSTEEL     Baseline     C=1179.00  VWAP=1169.79  RSI=79  Vol=0.8x  → -[-]  
+11:24:01    POWERGRID    Baseline     C=302.65  VWAP=302.68  RSI=52  Vol=0.6x  → -[-]  
+11:24:01    HINDALCO     Baseline     C=926.65  VWAP=927.77  RSI=46  Vol=0.5x  → -[-]  
+11:24:01    INFY         Baseline     C=1284.70  VWAP=1270.47  RSI=67  Vol=1.0x  → -[-]  
+11:24:01    HDFCBANK     Baseline     C=839.50  VWAP=837.10  RSI=67  Vol=1.8x  → -[-]  
+11:24:01    WIPRO        Baseline     C=197.61  VWAP=196.35  RSI=66  Vol=0.9x  → -[-]  
+11:24:01  SCAN #44 complete in 0.0s
+11:27:01  SCAN #45  11:27:01  phase=ACTIVE_AM  active=True  missed=0
+11:27:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.025s
+11:27:01    NESTLEIND    Baseline     C=1203.60  VWAP=1205.64  RSI=43  Vol=0.5x  → -[-]  
+11:27:01    TRENT        Baseline     C=3706.50  VWAP=3699.05  RSI=49  Vol=2.2x  → -[-]  
+11:27:01    APOLLOHOSP   Baseline     C=7546.00  VWAP=7569.03  RSI=40  Vol=0.3x  → -[-]  
+11:27:01    HDFCLIFE     Baseline     C=642.75  VWAP=642.84  RSI=50  Vol=0.7x  → -[-]  
+11:27:01    JSWSTEEL     Baseline     C=1178.30  VWAP=1169.83  RSI=74  Vol=0.2x  → -[-]  
+11:27:01    POWERGRID    Baseline     C=302.45  VWAP=302.68  RSI=46  Vol=0.7x  → -[-]  
+11:27:01    HINDALCO     Baseline     C=927.00  VWAP=927.76  RSI=49  Vol=0.7x  → -[-]  
+11:27:01    INFY         Baseline     C=1284.70  VWAP=1270.68  RSI=67  Vol=0.9x  → -[-]  
+11:27:01    HDFCBANK     Baseline     C=838.75  VWAP=837.12  RSI=57  Vol=0.6x  → -[-]  
+11:27:01    WIPRO        Baseline     C=197.60  VWAP=196.37  RSI=66  Vol=0.7x  → -[-]  
+11:27:01  SCAN #45 complete in 0.1s
+11:30:01  SCAN #46  11:30:01  phase=ACTIVE_AM  active=True  missed=0
+11:30:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.013s
+11:30:01    NESTLEIND    Baseline     C=1202.90  VWAP=1205.55  RSI=40  Vol=0.9x  → -[-]  
+11:30:01    TRENT        Baseline     C=3705.50  VWAP=3699.09  RSI=47  Vol=0.3x  → -[-]  
+11:30:01    APOLLOHOSP   Baseline     C=7550.00  VWAP=7568.99  RSI=46  Vol=0.1x  → -[-]  
+11:30:01    HDFCLIFE     Baseline     C=642.45  VWAP=642.83  RSI=44  Vol=0.7x  → -[-]  
+11:30:01    JSWSTEEL     Baseline     C=1177.60  VWAP=1169.98  RSI=70  Vol=0.9x  → -[-]  
+11:30:01    POWERGRID    Baseline     C=302.30  VWAP=302.68  RSI=42  Vol=1.2x  → -[-]  
+11:30:01    HINDALCO     Baseline     C=929.00  VWAP=927.78  RSI=62  Vol=1.2x  → -[-]  
+11:30:01    INFY         Baseline     C=1288.10  VWAP=1270.99  RSI=75  Vol=1.3x  → -[-]  
+11:30:01    HDFCBANK     Baseline     C=838.90  VWAP=837.15  RSI=58  Vol=0.9x  → -[-]  
+11:30:01    WIPRO        Baseline     C=197.74  VWAP=196.39  RSI=69  Vol=0.7x  → -[-]  
+11:30:01  SCAN #46 complete in 0.0s
+11:33:01  SCAN #47  11:33:01  phase=ACTIVE_AM  active=True  missed=0
+11:33:01  FETCH  WS  10 new bars (6 clock-flushed) in 0.023s
+11:33:01    NESTLEIND    Baseline     C=1202.70  VWAP=1205.50  RSI=39  Vol=0.5x  → -[-]  
+11:33:01    TRENT        Baseline     C=3706.90  VWAP=3699.21  RSI=50  Vol=0.9x  → -[-]  
+11:33:01    APOLLOHOSP   Baseline     C=7542.00  VWAP=7568.95  RSI=38  Vol=0.1x  → -[-]  
+11:33:01    HDFCLIFE     Baseline     C=642.25  VWAP=642.83  RSI=41  Vol=0.4x  → -[-]  
+11:33:01    JSWSTEEL     Baseline     C=1176.20  VWAP=1170.09  RSI=61  Vol=0.8x  → -[-]  
+11:33:01    POWERGRID    Baseline     C=301.80  VWAP=302.66  RSI=32  Vol=1.5x  → -[-]  
+11:33:01    HINDALCO     Baseline     C=929.75  VWAP=927.80  RSI=66  Vol=0.9x  → -[-]  
+11:33:01    INFY         Baseline     C=1286.90  VWAP=1271.31  RSI=68  Vol=1.3x  → -[-]  
+11:33:01    HDFCBANK     Baseline     C=839.65  VWAP=837.17  RSI=65  Vol=0.5x  → -[-]  
+11:33:01    WIPRO        Baseline     C=197.69  VWAP=196.40  RSI=66  Vol=0.8x  → -[-]  
+11:33:01  SCAN #47 complete in 0.0s
+11:36:01  SCAN #48  11:36:01  phase=ACTIVE_AM  active=True  missed=0
+11:36:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.023s
+11:36:01    NESTLEIND    Baseline     C=1202.80  VWAP=1205.15  RSI=40  Vol=4.3x  → -[-]  
+11:36:01    TRENT        Baseline     C=3705.30  VWAP=3699.33  RSI=47  Vol=1.2x  → -[-]  
+11:36:01    APOLLOHOSP   Baseline     C=7538.50  VWAP=7568.82  RSI=35  Vol=0.3x  → -[-]  
+11:36:01    HDFCLIFE     Baseline     C=642.20  VWAP=642.82  RSI=40  Vol=0.8x  → -[-]  
+11:36:01    JSWSTEEL     Baseline     C=1175.20  VWAP=1170.14  RSI=56  Vol=0.4x  → -[-]  
+11:36:01    POWERGRID    Baseline     C=301.60  VWAP=302.64  RSI=29  Vol=0.9x  → -[-]  
+11:36:01    HINDALCO     Baseline     C=929.15  VWAP=927.82  RSI=60  Vol=0.9x  → -[-]  
+11:36:01    INFY         Baseline     C=1287.00  VWAP=1271.86  RSI=69  Vol=2.2x  → -[-]  
+11:36:01    HDFCBANK     Baseline     C=839.20  VWAP=837.20  RSI=58  Vol=0.8x  → -[-]  
+11:36:01    WIPRO        Baseline     C=197.69  VWAP=196.41  RSI=66  Vol=0.6x  → -[-]  
+11:36:01  SCAN #48 complete in 0.1s
+11:39:01  SCAN #49  11:39:01  phase=ACTIVE_AM  active=True  missed=0
+11:39:01  FETCH  WS  10 new bars (3 clock-flushed) in 0.016s
+11:39:01    NESTLEIND    Baseline     C=1207.10  VWAP=1205.17  RSI=62  Vol=1.2x  → -[-]  
+11:39:01    TRENT        Baseline     C=3706.10  VWAP=3699.38  RSI=49  Vol=0.5x  → -[-]  
+11:39:01    APOLLOHOSP   Baseline     C=7548.50  VWAP=7568.71  RSI=48  Vol=0.2x  → -[-]  
+11:39:01    HDFCLIFE     Baseline     C=642.75  VWAP=642.82  RSI=53  Vol=1.6x  → -[-]  
+11:39:01    JSWSTEEL     Baseline     C=1179.00  VWAP=1171.31  RSI=68  Vol=6.0x  → -[-]  
+11:39:01    POWERGRID    Baseline     C=301.85  VWAP=302.63  RSI=38  Vol=0.8x  → -[-]  
+11:39:01    HINDALCO     Baseline     C=930.20  VWAP=927.86  RSI=66  Vol=1.1x  → -[-]  
+11:39:01    INFY         Baseline     C=1287.70  VWAP=1272.05  RSI=71  Vol=0.8x  → -[-]  
+11:39:01    HDFCBANK     Baseline     C=840.35  VWAP=837.25  RSI=67  Vol=0.9x  → -[-]  
+11:39:01    WIPRO        Baseline     C=197.78  VWAP=196.43  RSI=69  Vol=0.9x  → -[-]  
+11:39:01  SCAN #49 complete in 0.0s
+11:42:01  SCAN #50  11:42:01  phase=ACTIVE_AM  active=True  missed=0
+11:42:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.022s
+11:42:01    NESTLEIND    Baseline     C=1206.90  VWAP=1205.19  RSI=61  Vol=0.3x  → -[-]  
+11:42:01    TRENT        Baseline     C=3692.00  VWAP=3699.26  RSI=27  Vol=2.2x  → -[-]  
+11:42:01    APOLLOHOSP   Baseline     C=7554.00  VWAP=7568.47  RSI=54  Vol=0.8x  → -[-]  
+11:42:01    HDFCLIFE     Baseline     C=643.30  VWAP=642.82  RSI=62  Vol=1.4x  → -[-]  
+11:42:01    JSWSTEEL     Baseline     C=1180.90  VWAP=1171.42  RSI=72  Vol=0.5x  → -[-]  
+11:42:01    POWERGRID    Baseline     C=301.90  VWAP=302.62  RSI=39  Vol=0.8x  → -[-]  
+11:42:01    HINDALCO     Baseline     C=931.80  VWAP=928.01  RSI=72  Vol=2.7x  → -[-]  
+11:42:01    INFY         Baseline     C=1288.00  VWAP=1272.27  RSI=72  Vol=0.9x  → -[-]  
+11:42:01    HDFCBANK     Baseline     C=840.80  VWAP=837.29  RSI=70  Vol=0.8x  → -[-]  
+11:42:01    WIPRO        Baseline     C=197.98  VWAP=196.45  RSI=74  Vol=0.7x  → -[-]  
+11:42:01  SCAN #50 complete in 0.0s
+11:45:01  SCAN #51  11:45:01  phase=ACTIVE_AM  active=True  missed=0
+11:45:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.018s
+11:45:01    NESTLEIND    Baseline     C=1205.60  VWAP=1205.23  RSI=53  Vol=0.9x  → -[-]  
+11:45:01    TRENT        Baseline     C=3695.20  VWAP=3699.16  RSI=34  Vol=1.2x  → -[-]  
+11:45:01    APOLLOHOSP   Baseline     C=7545.50  VWAP=7567.99  RSI=45  Vol=1.3x  → -[-]  
+11:45:01    HDFCLIFE     Baseline     C=643.00  VWAP=642.83  RSI=55  Vol=1.0x  → -[-]  
+11:45:01    JSWSTEEL     Baseline     C=1179.50  VWAP=1171.46  RSI=65  Vol=0.2x  → -[-]  
+11:45:01    POWERGRID    Baseline     C=301.85  VWAP=302.61  RSI=38  Vol=0.8x  → -[-]  
+11:45:01    HINDALCO     Baseline     C=931.40  VWAP=928.05  RSI=69  Vol=0.9x  → -[-]  
+11:45:01    INFY         Baseline     C=1288.70  VWAP=1272.76  RSI=74  Vol=1.8x  → -[-]  
+11:45:01    HDFCBANK     Baseline     C=841.00  VWAP=837.36  RSI=71  Vol=1.0x  → -[-]  
+11:45:01    WIPRO        Baseline     C=197.67  VWAP=196.47  RSI=58  Vol=1.0x  → -[-]  
+11:45:01  SCAN #51 complete in 0.0s
+11:48:01  SCAN #52  11:48:01  phase=ACTIVE_AM  active=True  missed=0
+11:48:01  FETCH  WS  10 new bars (2 clock-flushed) in 0.011s
+11:48:01    NESTLEIND    Baseline     C=1208.80  VWAP=1205.32  RSI=65  Vol=1.1x  → -[-]  
+11:48:01    TRENT        Baseline     C=3677.00  VWAP=3698.62  RSI=21  Vol=1.8x  → -[-]  
+11:48:01    APOLLOHOSP   Baseline     C=7546.00  VWAP=7567.93  RSI=46  Vol=0.1x  → -[-]  
+11:48:01    HDFCLIFE     Baseline     C=642.90  VWAP=642.83  RSI=53  Vol=0.6x  → -[-]  
+11:48:01    JSWSTEEL     Baseline     C=1178.70  VWAP=1171.53  RSI=61  Vol=0.4x  → -[-]  
+11:48:01    POWERGRID    Baseline     C=301.10  VWAP=302.59  RSI=26  Vol=1.3x  → -[-]  
+11:48:01    HINDALCO     Baseline     C=930.70  VWAP=928.08  RSI=62  Vol=0.6x  → -[-]  
+11:48:01    INFY         Baseline     C=1287.90  VWAP=1273.00  RSI=67  Vol=1.0x  → -[-]  
+11:48:01    HDFCBANK     Baseline     C=841.35  VWAP=837.44  RSI=74  Vol=1.2x  → -[-]  
+11:48:01    WIPRO        Baseline     C=197.59  VWAP=196.48  RSI=55  Vol=0.8x  → -[-]  
+11:48:01  SCAN #52 complete in 0.0s
+11:51:01  SCAN #53  11:51:01  phase=ACTIVE_AM  active=True  missed=0
+11:51:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.022s
+11:51:01    NESTLEIND    Baseline     C=1208.10  VWAP=1205.59  RSI=61  Vol=2.3x  → -[-]  
+11:51:01    TRENT        Baseline     C=3673.00  VWAP=3698.25  RSI=19  Vol=0.8x  → -[-]  
+11:51:01    APOLLOHOSP   Baseline     C=7563.50  VWAP=7567.77  RSI=62  Vol=0.8x  → -[-]  
+11:51:01    HDFCLIFE     Baseline     C=643.80  VWAP=642.84  RSI=66  Vol=1.1x  → -[-]  
+11:51:01    JSWSTEEL     Baseline     C=1179.10  VWAP=1171.57  RSI=62  Vol=0.2x  → -[-]  
+11:51:01    POWERGRID    Baseline     C=301.20  VWAP=302.57  RSI=29  Vol=0.9x  → -[-]  
+11:51:01    HINDALCO     Baseline     C=930.45  VWAP=928.09  RSI=60  Vol=0.5x  → -[-]  
+11:51:01    INFY         Baseline     C=1285.60  VWAP=1273.30  RSI=53  Vol=1.5x  → -[-]  
+11:51:01    HDFCBANK     Baseline     C=841.15  VWAP=837.57  RSI=70  Vol=1.9x  → -[-]  
+11:51:01    WIPRO        Baseline     C=197.44  VWAP=196.49  RSI=48  Vol=0.8x  → -[-]  
+11:51:01  SCAN #53 complete in 0.0s
+11:54:01  SCAN #54  11:54:01  phase=ACTIVE_AM  active=True  missed=0
+11:54:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.023s
+11:54:01    NESTLEIND    Baseline     C=1208.80  VWAP=1205.61  RSI=64  Vol=0.2x  → -[-]  
+11:54:01    TRENT        Baseline     C=3671.10  VWAP=3697.94  RSI=18  Vol=0.6x  → -[-]  
+11:54:01    APOLLOHOSP   Baseline     C=7554.50  VWAP=7567.69  RSI=53  Vol=0.4x  → -[-]  
+11:54:01    HDFCLIFE     Baseline     C=644.10  VWAP=642.87  RSI=69  Vol=2.4x  → -[-]  
+11:54:01    JSWSTEEL     Baseline     C=1179.90  VWAP=1171.61  RSI=65  Vol=0.2x  → -[-]  
+11:54:01    POWERGRID    Baseline     C=301.10  VWAP=302.55  RSI=28  Vol=1.3x  → -[-]  
+11:54:01    HINDALCO     Baseline     C=931.50  VWAP=928.16  RSI=66  Vol=1.5x  → -[-]  
+11:54:01    INFY         Baseline     C=1284.60  VWAP=1273.41  RSI=48  Vol=0.7x  → -[-]  
+11:54:01    HDFCBANK     Baseline     C=840.35  VWAP=837.59  RSI=58  Vol=0.5x  → -[-]  
+11:54:01    WIPRO        Baseline     C=197.44  VWAP=196.49  RSI=48  Vol=0.4x  → -[-]  
+11:54:01  SCAN #54 complete in 0.0s
+11:57:01  SCAN #55  11:57:01  phase=ACTIVE_AM  active=True  missed=0
+11:57:01  FETCH  WS  10 new bars (1 clock-flushed) in 0.016s
+11:57:01    NESTLEIND    Baseline     C=1208.00  VWAP=1205.62  RSI=59  Vol=0.2x  → -[-]  
+11:57:01    TRENT        Baseline     C=3673.60  VWAP=3697.75  RSI=23  Vol=0.4x  → -[-]  
+11:57:01    APOLLOHOSP   Baseline     C=7560.50  VWAP=7567.42  RSI=57  Vol=1.6x  → -[-]  
+11:57:01    HDFCLIFE     Baseline     C=643.35  VWAP=642.93  RSI=55  Vol=7.5x  → -[-]  
+11:57:01    JSWSTEEL     Baseline     C=1180.80  VWAP=1171.68  RSI=68  Vol=0.3x  → -[-]  
+11:57:01    POWERGRID    Baseline     C=301.50  VWAP=302.53  RSI=41  Vol=0.7x  → -[-]  
+11:57:01    HINDALCO     Baseline     C=932.40  VWAP=928.22  RSI=70  Vol=1.2x  → -[-]  
+11:57:01    INFY         Baseline     C=1283.00  VWAP=1273.55  RSI=41  Vol=1.0x  → -[-]  
+11:57:01    HDFCBANK     Baseline     C=840.50  VWAP=837.62  RSI=60  Vol=0.5x  → -[-]  
+11:57:01    WIPRO        Baseline     C=197.36  VWAP=196.50  RSI=45  Vol=0.5x  → -[-]  
+11:57:01  SCAN #55 complete in 0.0s
+12:00:01  SCAN #56  12:00:01  phase=ACTIVE_AM  active=True  missed=0
+12:00:01  FETCH  WS  10 new bars (0 clock-flushed) in 0.016s
+12:00:01    NESTLEIND    Baseline     C=1206.50  VWAP=1205.64  RSI=51  Vol=0.4x  → -[-]  
+12:00:01    TRENT        Baseline     C=3669.20  VWAP=3697.32  RSI=21  Vol=0.9x  → -[-]  
+12:00:01    APOLLOHOSP   Baseline     C=7561.00  VWAP=7567.40  RSI=58  Vol=0.3x  → -[-]  
+12:00:01    HDFCLIFE     Baseline     C=643.50  VWAP=642.96  RSI=57  Vol=3.0x  → -[-]  
+12:00:01    JSWSTEEL     Baseline     C=1179.70  VWAP=1171.73  RSI=61  Vol=0.3x  → -[-]  
+12:00:01    POWERGRID    Baseline     C=301.30  VWAP=302.51  RSI=37  Vol=1.3x  → -[-]  
+12:00:01    HINDALCO     Baseline     C=931.90  VWAP=928.24  RSI=65  Vol=0.4x  → -[-]  
+12:00:01    INFY         Baseline     C=1282.50  VWAP=1273.62  RSI=39  Vol=0.6x  → -[-]  
+12:00:01    HDFCBANK     Baseline     C=840.65  VWAP=837.64  RSI=61  Vol=0.5x  → -[-]  
+12:00:01    WIPRO        Baseline     C=197.12  VWAP=196.51  RSI=37  Vol=1.2x  → -[-]  
+12:00:01  SCAN #56 complete in 0.0s
+12:03:01  PHASE  ACTIVE_AM → SHUTDOWN
+12:03:01  ======================================================================
+12:03:01  SHUTDOWN  4 signal(s), 56 scan cycles
+12:03:01    SUMMARY  09:33   LONG  JSWSTEEL     Baseline     @ 1169.61  SL=1166.53  TP=1175.75
+12:03:01    SUMMARY  09:42   LONG  APOLLOHOSP   Baseline     @ 7576.35  SL=7557.87  TP=7613.29
+12:03:01    SUMMARY  09:57  SHORT  HDFCBANK     Baseline     @ 834.90  SL=836.87  TP=830.98
+12:03:01    SUMMARY  10:15   LONG  POWERGRID    Baseline     @ 302.08  SL=301.30  TP=303.64
+12:03:01  ======================================================================
+12:03:01  WS feed stopped

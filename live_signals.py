@@ -5,7 +5,9 @@ Streams live data via Angel One WebSocket, computes indicators in
 real-time (pandas/numpy), and sends BUY/SHORT alerts to console + Telegram.
 
 STRATEGY:
-  Prearmed PDL — park a breakout trigger just beyond yesterday's High/Low.
+  PDL Breakout — trigger is placed just beyond yesterday's High/Low.
+  The trigger buffer (0.1× ATR) uses the current bar's ATR, so it
+  adjusts slightly through the day as volatility evolves.
   Signal fires when the completed 3-minute bar trades through that trigger
   and still closes through the base prev-day level.
 
@@ -28,14 +30,16 @@ Usage:
 
 import argparse
 import csv
+import json
 import logging
 import os
 import sys
 import threading
 import time as _time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import date, datetime, time, timedelta
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import numpy as np
 import pandas as pd
@@ -52,16 +56,16 @@ load_dotenv()
 # ─── Stock Configuration ──────────────────────────────────────────────────
 
 STOCKS = [
-    ("NESTLEIND", "FMCG"),
     ("TRENT", "Retail"),
-    ("APOLLOHOSP", "Healthcare"),
     ("HDFCLIFE", "Insurance"),
+    ("GRASIM", "Cement"),
+    ("APOLLOHOSP", "Healthcare"),
+    ("TCS", "IT"),
+    ("SHRIRAMFIN", "Finance"),
     ("JSWSTEEL", "Steel"),
-    ("POWERGRID", "Power"),
-    ("HINDALCO", "Metals"),
-    ("INFY", "IT"),
+    ("BAJAJFINSV", "Finance"),
+    ("NESTLEIND", "FMCG"),
     ("HDFCBANK", "Banking"),
-    ("WIPRO", "IT"),
 ]
 
 # ─── Strategy Parameters ──────────────────────────────────────────────────
@@ -101,6 +105,17 @@ DATA_DIR = Path(__file__).parent / "data"
 LOG_DIR = Path(__file__).parent / "logs"
 LIVE_LOG_DIR = LOG_DIR / "live_signals"
 SIGNALS_DIR = LOG_DIR / "signals"
+STATE_FILE = LOG_DIR / ".live_state.json"
+
+MAX_CONCURRENT_POSITIONS = 5
+MAX_DAILY_LOSS = 3000.0
+
+IST = ZoneInfo("Asia/Kolkata")
+
+
+def _now() -> datetime:
+    """Return current time in IST as a naive datetime (for consistency with pandas)."""
+    return datetime.now(IST).replace(tzinfo=None)
 
 logging.getLogger().handlers = []
 logging.getLogger().addHandler(logging.NullHandler())
@@ -126,13 +141,67 @@ def _attach_log_file():
     LIVE_LOG_DIR.mkdir(parents=True, exist_ok=True)
     flog.handlers = [h for h in flog.handlers if not isinstance(h, logging.FileHandler)]
     fh = logging.FileHandler(
-        LIVE_LOG_DIR / f"live_{datetime.now():%Y-%m-%d}.log", encoding="utf-8",
+        LIVE_LOG_DIR / f"live_{_now():%Y-%m-%d}.log", encoding="utf-8",
     )
     fh.setFormatter(logging.Formatter("%(asctime)s  %(message)s", datefmt="%H:%M:%S"))
     flog.addHandler(fh)
 
 
 flog = _init_file_logger()
+
+
+def _save_state(session_date, cooldowns, pdl_dirs_used, daily_sl_counts,
+                open_positions, signal_counts, today_signals):
+    """Persist intraday state to disk for restart recovery."""
+    try:
+        state = {
+            "date": str(session_date),
+            "cooldowns": {f"{k[0]}|{k[1]}": v.isoformat() for k, v in cooldowns.items()},
+            "pdl_dirs_used": {f"{k[0]}|{k[1]}": list(v) for k, v in pdl_dirs_used.items()},
+            "daily_sl_counts": {f"{k[0]}|{k[1]}": v for k, v in daily_sl_counts.items()},
+            "signal_counts": {f"{k[0]}|{k[1]}|{k[2]}": v for k, v in signal_counts.items()},
+            "n_positions": len(open_positions),
+            "n_signals": len(today_signals),
+        }
+        STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        STATE_FILE.write_text(json.dumps(state, indent=2))
+    except Exception:
+        pass
+
+
+def _load_state(session_date):
+    """Load persisted state if it exists and matches the session date."""
+    if not STATE_FILE.exists():
+        return None
+    try:
+        state = json.loads(STATE_FILE.read_text())
+        if state.get("date") != str(session_date):
+            return None
+        cooldowns = {}
+        for k, v in state.get("cooldowns", {}).items():
+            parts = k.split("|", 1)
+            cooldowns[(parts[0], parts[1])] = datetime.fromisoformat(v)
+        pdl_dirs = {}
+        for k, v in state.get("pdl_dirs_used", {}).items():
+            parts = k.split("|", 1)
+            pdl_dirs[(parts[0], parts[1])] = set(v)
+        sl_counts = {}
+        for k, v in state.get("daily_sl_counts", {}).items():
+            parts = k.split("|", 1)
+            sl_counts[(parts[0], parts[1])] = v
+        sig_counts = {}
+        for k, v in state.get("signal_counts", {}).items():
+            parts = k.split("|", 2)
+            sig_counts[(parts[0], parts[1], parts[2])] = v
+        return {
+            "cooldowns": cooldowns,
+            "pdl_dirs_used": pdl_dirs,
+            "daily_sl_counts": sl_counts,
+            "signal_counts": sig_counts,
+        }
+    except Exception:
+        return None
+
 
 _LOG_COLUMNS = [
     "date", "time", "symbol", "sector", "direction", "trigger", "variant", "price",
@@ -152,13 +221,19 @@ def get_phase(t: time) -> str:
         return "PRE_MARKET"
     if t < ENTRY_AM[0]:
         return "SILENT"
-    if t <= ENTRY_AM[1]:
+    if t < ENTRY_AM[1]:
+        return "ACTIVE_AM"
+    bar_grace = (datetime.combine(datetime.min, ENTRY_AM[1]) + BAR_INTERVAL).time()
+    if t <= bar_grace:
         return "ACTIVE_AM"
     if ENTRY_PM is None:
         return "SHUTDOWN"
     if t < ENTRY_PM[0]:
         return "MIDDAY"
-    if t <= ENTRY_PM[1]:
+    if t < ENTRY_PM[1]:
+        return "ACTIVE_PM"
+    bar_grace_pm = (datetime.combine(datetime.min, ENTRY_PM[1]) + BAR_INTERVAL).time()
+    if t <= bar_grace_pm:
         return "ACTIVE_PM"
     return "SHUTDOWN"
 
@@ -210,7 +285,7 @@ def log_signal(
 ) -> None:
     """Append one signal row to the daily CSV log file."""
     SIGNALS_DIR.mkdir(parents=True, exist_ok=True)
-    stamp = ts or datetime.now()
+    stamp = ts or _now()
     log_date = stamp.strftime("%Y-%m-%d")
     log_file = SIGNALS_DIR / f"signals_{log_date}.csv"
 
@@ -426,7 +501,7 @@ def print_signal(
     clr = GRN if direction == "LONG" else RED
     arrow = "▲" if direction == "LONG" else "▼"
     trig_lbl = _trigger_label(trigger)
-    stamp = (ts or datetime.now()).strftime("%H:%M:%S")
+    stamp = (ts or _now()).strftime("%H:%M:%S")
     print(f"\n{'=' * 60}")
     print(f"{clr}{BLD}  {arrow} {direction} [{trig_lbl}] — {sym} ({sec}) · {variant}  [{stamp}]{RST}")
     print(f"{'=' * 60}")
@@ -475,7 +550,7 @@ def _check_bracket_hit(pos: dict, bar_high: float, bar_low: float) -> str | None
 
 
 def print_dashboard(rows: list[dict], phase: str) -> None:
-    now = datetime.now()
+    now = _now()
     phase_lbl = PHASES.get(phase, phase)
     if phase in ("ACTIVE_AM", "ACTIVE_PM"):
         phase_str = f"{GRN}{phase_lbl}{RST}"
@@ -557,7 +632,7 @@ def fetch_prev_day_levels(
 def load_warmup(client: AngelOneClient | None) -> dict[str, pd.DataFrame]:
     """Load 3-min warmup data: prefer fresh API data, fall back to cache."""
     data: dict[str, pd.DataFrame] = {}
-    today = datetime.now().date()
+    today = _now().date()
     for sym, _ in STOCKS:
         cache = _cache_path(sym)
 
@@ -769,6 +844,7 @@ def dry_run(capital: float) -> None:
         for i in df.index[day_mask]:
             idx = df.index.get_loc(i)
             row = df.iloc[idx]
+            bar_done = bar_completed_at(i)
 
             for cfg in SIGNAL_VARIANTS:
                 state_key = (cfg["key"], sym)
@@ -779,11 +855,13 @@ def dry_run(capital: float) -> None:
                         if hit == "SL":
                             daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
                         del current_positions[state_key]
+
+                if state_key in current_positions:
                     continue
 
-                if not in_entry_window(i.time()):
+                if not in_entry_window(bar_done.time()):
                     continue
-                on_cooldown = state_key in cooldowns and i < cooldowns[state_key]
+                on_cooldown = state_key in cooldowns and bar_done < cooldowns[state_key]
                 if on_cooldown:
                     continue
                 if daily_sl_counts.get(state_key, 0) >= MAX_SL_PER_DAY:
@@ -798,7 +876,7 @@ def dry_run(capital: float) -> None:
                 )
                 if result["signal"]:
                     signals_found += 1
-                    cooldowns[state_key] = i + COOLDOWN
+                    cooldowns[state_key] = bar_done + COOLDOWN
                     pdl_dirs_used[state_key].add(result["signal"])
                     current_positions[state_key] = {
                         "direction": result["signal"],
@@ -814,7 +892,7 @@ def dry_run(capital: float) -> None:
                         r["vol_ratio"], r.get("sl_mult", 1.0), ts=r["ts"],
                         variant=r["variant"],
                     )
-                    phase = get_phase(i.time())
+                    phase = get_phase(bar_done.time())
                     log_signal(
                         sym, sec, r["signal"], r["trigger"], r["variant"], r["price"],
                         r["sl"], r["tp"], r["atr"], r["qty"], r["rsi"],
@@ -831,7 +909,7 @@ def dry_run(capital: float) -> None:
 
 
 def live(capital: float, use_websocket: bool = True) -> None:
-    now_t = datetime.now().time()
+    now_t = _now().time()
     shutdown_at = ENTRY_AM[1] if ENTRY_PM is None else MKT_CLOSE
     if now_t > shutdown_at:
         window = f"{ENTRY_AM[0]:%H:%M}–{shutdown_at:%H:%M}"
@@ -839,7 +917,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
         print(f"{YLW}Trading window is {window}.{RST}")
         print(f"{YLW}Waiting for next trading day (warmup starts at 09:00)...{RST}\n")
         while True:
-            now = datetime.now()
+            now = _now()
             if now.weekday() < 5 and time(9, 0) <= now.time() < shutdown_at:
                 break
             _time.sleep(60)
@@ -899,7 +977,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
         flog.warning("Event calendar failed: %s — no stocks excluded", e)
 
     print(f"\n{CYN}[pdl] Computing prev-day breakout levels{RST}")
-    pdl_levels = fetch_prev_day_levels(stock_data, datetime.now().date())
+    pdl_levels = fetch_prev_day_levels(stock_data, _now().date())
 
     active_stocks = [(s, sec) for s, sec in STOCKS if s in stock_data]
     syms = ", ".join(s for s, _ in active_stocks)
@@ -962,14 +1040,25 @@ def live(capital: float, use_websocket: bool = True) -> None:
         for sym, _ in STOCKS
     }
     today_signals: list[dict] = []
-    current_date = datetime.now().date()
+    realized_pnl: float = 0.0
+
+    saved = _load_state(_now().date())
+    if saved:
+        cooldowns = saved["cooldowns"]
+        pdl_dirs_used = saved["pdl_dirs_used"]
+        daily_sl_counts = saved["daily_sl_counts"]
+        signal_counts = saved["signal_counts"]
+        flog.info("STATE RESTORED  cooldowns=%d  dirs=%d  sl_counts=%d  sig_counts=%d",
+                  len(cooldowns), len(pdl_dirs_used), len(daily_sl_counts), len(signal_counts))
+        print(f"  {GRN}[state] Restored session state from previous run{RST}")
+    current_date = _now().date()
     last_phase = ""
     scan_count = 0
     last_scan_candle = -1
 
     try:
         while True:
-            now = datetime.now()
+            now = _now()
             t = now.time()
             phase = get_phase(t)
 
@@ -987,6 +1076,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
                     for sym, _ in STOCKS
                 }
                 today_signals.clear()
+                realized_pnl = 0.0
                 scan_count = 0
                 last_scan_candle = -1
                 last_phase = ""
@@ -1070,7 +1160,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
                 continue
 
             # Align to 3-min candle grid (09:15, 09:18, 09:21, ...)
-            now_ts = datetime.now()
+            now_ts = _now()
             _base = now_ts.replace(hour=9, minute=15, second=0, microsecond=0)
             _elapsed = (now_ts - _base).total_seconds()
             _candle_idx = int(_elapsed / 180) if _elapsed >= 0 else -1
@@ -1079,7 +1169,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
                 nxt = _base + timedelta(
                     seconds=(last_scan_candle + 1) * 180 + POLL_BUFFER_SEC
                 )
-                wait_s = max(0, (nxt - datetime.now()).total_seconds())
+                wait_s = max(0, (nxt - _now()).total_seconds())
                 lbl = PHASES.get(phase, "")
                 m, s = divmod(int(wait_s), 60)
                 sys.stdout.write(
@@ -1096,10 +1186,10 @@ def live(capital: float, use_websocket: bool = True) -> None:
             scan_bar_completed_ts = pd.Timestamp(
                 _base + timedelta(seconds=_candle_idx * 180)
             )
-            _wait_poll = (_poll_at - datetime.now()).total_seconds()
+            _wait_poll = (_poll_at - _now()).total_seconds()
             if _wait_poll > 0:
                 _time.sleep(_wait_poll)
-            scan_delay = max(0.0, (datetime.now() - _poll_at).total_seconds())
+            scan_delay = max(0.0, (_now() - _poll_at).total_seconds())
             if scan_delay > 5:
                 flog.warning("SCAN delay %.1fs beyond target %s", scan_delay, _poll_at.strftime("%H:%M:%S"))
 
@@ -1268,9 +1358,17 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                 pos = open_positions[state_key]
                                 hit = _check_bracket_hit(pos, bar_row["high"], bar_row["low"])
                                 if hit:
+                                    exit_price = pos["sl"] if hit == "SL" else pos["tp"]
+                                    pos_qty = int(pos.get("qty", 0) or 0)
+                                    if pos["direction"] == "LONG":
+                                        hit_pnl = (exit_price - pos["entry_price"]) * pos_qty
+                                    else:
+                                        hit_pnl = (pos["entry_price"] - exit_price) * pos_qty
+                                    realized_pnl += hit_pnl
                                     flog.info(
-                                        "BRACKET  %-11s  %-11s  %s hit at %s — position closed",
+                                        "BRACKET  %-11s  %-11s  %s hit at %s — P&L ₹%+.2f  (day total ₹%+.2f)",
                                         sym, cfg["label"], hit, bar_completed_ts.strftime("%H:%M"),
+                                        float(hit_pnl), float(realized_pnl),
                                     )
                                     if hit == "SL":
                                         daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
@@ -1305,6 +1403,9 @@ def live(capital: float, use_websocket: bool = True) -> None:
                             at_signal_cap = signal_counts.get(count_key, 0) >= MAX_SIGNALS_PER_STOCK
                             at_sl_cap = daily_sl_counts.get(state_key, 0) >= MAX_SL_PER_DAY
 
+                            at_pos_cap = len(open_positions) >= MAX_CONCURRENT_POSITIONS
+                            at_loss_cap = realized_pnl <= -MAX_DAILY_LOSS
+
                             if (
                                 bar_is_active
                                 and result["signal"]
@@ -1312,6 +1413,8 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                 and not already_in_position
                                 and not at_signal_cap
                                 and not at_sl_cap
+                                and not at_pos_cap
+                                and not at_loss_cap
                             ):
                                 if not is_latest_bar or not is_current_scan_bar:
                                     cooldowns[state_key] = bar_completed_ts + COOLDOWN
@@ -1349,7 +1452,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                 cooldowns[state_key] = bar_completed_ts + COOLDOWN
                                 signal_counts[count_key] = signal_counts.get(count_key, 0) + 1
                                 sym_pdl_dirs.add(r["signal"])
-                                open_positions[state_key] = {
+                                new_pos = {
                                     "direction": r["signal"],
                                     "entry_price": r["price"],
                                     "entry_atr": r["atr"],
@@ -1361,6 +1464,16 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                     "last_bracket_ts": bar_ts,
                                     "variant": r["variant"],
                                 }
+                                same_bar_hit = _check_bracket_hit(new_pos, bar_row["high"], bar_row["low"])
+                                if same_bar_hit:
+                                    flog.warning(
+                                        "SAME-BAR EXIT  %-11s  %s on entry bar — %s",
+                                        sym, r["signal"], same_bar_hit,
+                                    )
+                                    if same_bar_hit == "SL":
+                                        daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
+                                else:
+                                    open_positions[state_key] = new_pos
                                 today_signals.append({
                                     "sym": sym,
                                     "dir": r["signal"],
@@ -1388,6 +1501,10 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                     reason = f"max_signals_{session_key}({signal_counts.get(count_key, 0)})"
                                 elif at_sl_cap:
                                     reason = f"sl_cap({daily_sl_counts.get(state_key, 0)}/{MAX_SL_PER_DAY})"
+                                elif at_pos_cap:
+                                    reason = f"max_positions({len(open_positions)}/{MAX_CONCURRENT_POSITIONS})"
+                                elif at_loss_cap:
+                                    reason = f"daily_loss_cap(₹{realized_pnl:+,.0f})"
                                 elif raw_sig != "-":
                                     reason = "blocked"
                                 result["signal"] = None
@@ -1405,6 +1522,8 @@ def live(capital: float, use_websocket: bool = True) -> None:
             scan_elapsed = _time.time() - scan_start
             flog.info("SCAN #%d complete in %.1fs", scan_count, scan_elapsed)
             print_dashboard(dashboard, phase)
+            _save_state(current_date, cooldowns, pdl_dirs_used, daily_sl_counts,
+                        open_positions, signal_counts, today_signals)
 
     except KeyboardInterrupt:
         n = len(today_signals)

@@ -1,4 +1,17 @@
 {
-  "cached_at": "2026-03-20T08:58:44.847891",
-  "events": {}
+  "cached_at": "2026-04-07T09:01:14.908587",
+  "events": {
+    "2026-04-09": [
+      {
+        "sym": "TCS",
+        "category": "board_meeting",
+        "detail": "Board Meeting Intimation"
+      },
+      {
+        "sym": "TCS",
+        "category": "results",
+        "detail": "Financial Results/Dividend"
+      }
+    ]
+  }
 }

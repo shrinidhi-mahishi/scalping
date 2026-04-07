@@ -15,12 +15,13 @@ Daily Lifecycle:
   Phase 1  09:14  Warm-Up   — connect, fetch 5 days of 3-min data
   Phase 2  09:15  Silent    — track indicators every 3 min, NO signals
   Phase 3  09:30  Active    — trading window, signals enabled
-  Phase 4  12:00  Shutdown  — stop signals, track only until close
+  Phase 4  13:00  Shutdown  — stop signals, track only until close
 
 Entry   : Prearmed PDL trigger = prev-day High/Low ± 0.1× ATR
-Exit    : SL = 1.0× ATR, TP = 2.0R, max 1 signal per direction/day
+Exit    : SL = 1.0× ATR, TP = 2.0R, max 2 signals per stock per session
 Sizing  : 1.5% risk per trade, 5× leverage cap
 Guard   : Max 2 SL hits per stock per day — blocks further entries
+Fill    : Min 50% fill ratio AND ₹100 gross TP to keep partial fills
 
 Usage:
     python live_signals.py                  # default ₹50,000 capital
@@ -30,6 +31,7 @@ Usage:
 
 import argparse
 import csv
+import ipaddress
 import json
 import logging
 import os
@@ -48,33 +50,35 @@ from dotenv import load_dotenv
 
 from event_calendar import get_excluded_stocks
 from fetch_data import AngelOneClient, load_csv
+from order_manager import (
+    place_bracket_order, wait_for_fill_or_cancel,
+    place_sl_order, place_tp_order, cancel_order, place_market_exit_order,
+)
 from websocket_feed import WebSocketFeed
 
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).with_name(".env"))
 
 
 # ─── Stock Configuration ──────────────────────────────────────────────────
 
 STOCKS = [
-    ("TRENT", "Retail"),
+    ("HINDUNILVR", "FMCG"),
+    ("AXISBANK", "Banking"),
     ("HDFCLIFE", "Insurance"),
-    ("GRASIM", "Cement"),
-    ("APOLLOHOSP", "Healthcare"),
-    ("TCS", "IT"),
-    ("SHRIRAMFIN", "Finance"),
-    ("JSWSTEEL", "Steel"),
     ("BAJAJFINSV", "Finance"),
-    ("NESTLEIND", "FMCG"),
-    ("HDFCBANK", "Banking"),
+    ("JSWSTEEL", "Steel"),
+    ("SBIN", "Banking"),
+    ("MARUTI", "Auto"),
+    ("TRENT", "Retail"),
+    ("SHRIRAMFIN", "Finance"),
+    ("TCS", "IT"),
 ]
 
 # ─── Strategy Parameters ──────────────────────────────────────────────────
 
-RSI_PERIOD = 9
-VOL_SMA = 20
 ATR_PERIOD = 14
 
-RR = 2.0
+RR = 1.5
 RISK_PCT = 0.015
 LEV_CAP = 5.0
 
@@ -90,7 +94,8 @@ SIGNAL_VARIANTS = [
 # ─── Time Rules & Phases ──────────────────────────────────────────────────
 
 MKT_OPEN = time(9, 15)
-ENTRY_AM = (time(9, 30), time(12, 0))
+## Update market close time here
+ENTRY_AM = (time(9, 30), time(13, 00))
 ENTRY_PM = None
 MKT_CLOSE = time(15, 0)
 
@@ -107,8 +112,12 @@ LIVE_LOG_DIR = LOG_DIR / "live_signals"
 SIGNALS_DIR = LOG_DIR / "signals"
 STATE_FILE = LOG_DIR / ".live_state.json"
 
-MAX_CONCURRENT_POSITIONS = 5
+MAX_CONCURRENT_POSITIONS = 3
 MAX_DAILY_LOSS = 3000.0
+ENABLE_AUTO_TRADE = True
+PARTIAL_EXIT_TIMEOUT_SEC = 15
+MIN_FILL_RATIO = 0.50
+MIN_ACTUAL_GROSS_TARGET = 100.0
 
 IST = ZoneInfo("Asia/Kolkata")
 
@@ -151,16 +160,28 @@ flog = _init_file_logger()
 
 
 def _save_state(session_date, cooldowns, pdl_dirs_used, daily_sl_counts,
-                open_positions, signal_counts, today_signals):
+                open_positions, signal_counts, today_signals,
+                realized_pnl: float = 0.0):
     """Persist intraday state to disk for restart recovery."""
     try:
+        serialized_positions = {}
+        for (vk, sym), pos in open_positions.items():
+            pos_copy = {}
+            for pk, pv in pos.items():
+                if isinstance(pv, (pd.Timestamp, datetime)):
+                    pos_copy[pk] = pv.isoformat()
+                else:
+                    pos_copy[pk] = pv
+            serialized_positions[f"{vk}|{sym}"] = pos_copy
+
         state = {
             "date": str(session_date),
             "cooldowns": {f"{k[0]}|{k[1]}": v.isoformat() for k, v in cooldowns.items()},
             "pdl_dirs_used": {f"{k[0]}|{k[1]}": list(v) for k, v in pdl_dirs_used.items()},
             "daily_sl_counts": {f"{k[0]}|{k[1]}": v for k, v in daily_sl_counts.items()},
             "signal_counts": {f"{k[0]}|{k[1]}|{k[2]}": v for k, v in signal_counts.items()},
-            "n_positions": len(open_positions),
+            "open_positions": serialized_positions,
+            "realized_pnl": realized_pnl,
             "n_signals": len(today_signals),
         }
         STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -193,11 +214,25 @@ def _load_state(session_date):
         for k, v in state.get("signal_counts", {}).items():
             parts = k.split("|", 2)
             sig_counts[(parts[0], parts[1], parts[2])] = v
+
+        positions = {}
+        for k, pos in state.get("open_positions", {}).items():
+            parts = k.split("|", 1)
+            for time_key in ("entry_time", "last_bracket_ts"):
+                if time_key in pos and isinstance(pos[time_key], str):
+                    try:
+                        pos[time_key] = pd.Timestamp(pos[time_key])
+                    except Exception:
+                        pass
+            positions[(parts[0], parts[1])] = pos
+
         return {
             "cooldowns": cooldowns,
             "pdl_dirs_used": pdl_dirs,
             "daily_sl_counts": sl_counts,
             "signal_counts": sig_counts,
+            "open_positions": positions,
+            "realized_pnl": float(state.get("realized_pnl", 0.0)),
         }
     except Exception:
         return None
@@ -205,7 +240,7 @@ def _load_state(session_date):
 
 _LOG_COLUMNS = [
     "date", "time", "symbol", "sector", "direction", "trigger", "variant", "price",
-    "sl", "tp", "atr", "qty", "risk", "vwap", "rsi", "vol_ratio", "phase",
+    "sl", "tp", "atr", "qty", "risk", "phase",
 ]
 
 PHASES = {
@@ -248,6 +283,9 @@ BLD, DIM, RST = "\033[1m", "\033[2m", "\033[0m"
 
 TG_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TG_CHAT = os.getenv("TELEGRAM_CHAT_ID", "")
+ANGEL_REGISTERED_IPS = [
+    ip.strip() for ip in os.getenv("ANGEL_REGISTERED_IPS", "").split(",") if ip.strip()
+]
 
 _TELEGRAM_SETUP = """\
   To enable Telegram alerts, add these to your .env file:
@@ -276,12 +314,65 @@ def send_telegram(msg: str) -> None:
         print(f"{DIM}  [tg] send failed: {exc}{RST}")
 
 
+def _fetch_public_ip() -> str | None:
+    """Best-effort public IP lookup for startup diagnostics."""
+    for url in ("https://api.ipify.org", "https://checkip.amazonaws.com"):
+        try:
+            resp = requests.get(url, timeout=5)
+            if not resp.ok:
+                continue
+            candidate = resp.text.strip()
+            ipaddress.ip_address(candidate)
+            return candidate
+        except Exception:
+            continue
+    return None
+
+
+def _startup_order_path_check(auto_trade_active: bool) -> None:
+    """Print current public IP and warn if it is not in the registered allowlist."""
+    public_ip = _fetch_public_ip()
+    if public_ip:
+        print(f"{CYN}[net] Public IP: {public_ip}{RST}")
+        flog.info("NET  public_ip=%s", public_ip)
+    else:
+        print(f"{YLW}[net] Could not determine public IP{RST}")
+        flog.warning("NET  public_ip lookup failed")
+
+    if not auto_trade_active:
+        return
+
+    if not ANGEL_REGISTERED_IPS:
+        print(f"{YLW}[net] ANGEL_REGISTERED_IPS not set — cannot pre-verify IP whitelist for order placement{RST}")
+        flog.warning("NET  ANGEL_REGISTERED_IPS not configured; cannot pre-verify order IP")
+        return
+
+    registered = ", ".join(ANGEL_REGISTERED_IPS)
+    if public_ip and public_ip in ANGEL_REGISTERED_IPS:
+        print(f"{GRN}[net] Public IP matches registered Angel IPs ({registered}){RST}")
+        flog.info("NET  public_ip matched registered_ips=%s", registered)
+    else:
+        print(f"{RED}{BLD}[net] WARNING — current IP is not in ANGEL_REGISTERED_IPS{RST}")
+        print(f"{RED}      Registered: {registered}{RST}")
+        print(f"{RED}      Orders are likely to fail with 'Unregistered IP address'.{RST}")
+        flog.error(
+            "NET  public_ip mismatch current=%s registered=%s — order placement likely to fail",
+            public_ip, registered,
+        )
+        send_telegram(
+            f"⚠️ *Startup IP Warning*\n"
+            f"Current public IP: `{public_ip or 'unknown'}`\n"
+            f"Registered IPs: `{registered}`\n"
+            f"Auto-trade orders are likely to fail with *Unregistered IP address*."
+        )
+
+
 # ─── Signal Log ──────────────────────────────────────────────────────────
 
 
 def log_signal(
-    sym, sec, direction, trigger, variant, price, sl, tp, atr, qty, rsi, vwap,
-    vol_ratio, ts=None, phase="",
+    sym, sec, direction, trigger, variant, price, sl, tp, atr, qty,
+    ts=None, phase="",
 ) -> None:
     """Append one signal row to the daily CSV log file."""
     SIGNALS_DIR.mkdir(parents=True, exist_ok=True)
@@ -304,9 +395,6 @@ def log_signal(
         "atr": round(atr, 2),
         "qty": qty,
         "risk": round(qty * abs(price - sl), 2),
-        "vwap": round(vwap, 2),
-        "rsi": round(rsi, 1),
-        "vol_ratio": round(vol_ratio, 1),
         "phase": phase,
     }
 
@@ -339,9 +427,6 @@ def log_signal(
                             "atr": old.get("atr", ""),
                             "qty": old.get("qty", ""),
                             "risk": old.get("risk", ""),
-                            "vwap": old.get("vwap", ""),
-                            "rsi": old.get("rsi", ""),
-                            "vol_ratio": old.get("vol_ratio", ""),
                             "phase": old.get("phase", ""),
                         }
                         migrated_rows.append(migrated)
@@ -368,39 +453,13 @@ def _trigger_label(trigger: str) -> str:
 
 
 def compute_indicators(df: pd.DataFrame) -> pd.DataFrame:
-    """Calculate all strategy indicators on a 3-min OHLCV DataFrame."""
+    """Calculate ATR on a 3-min OHLCV DataFrame (the only indicator used)."""
     out = df.copy()
-
-    tp = (out["high"] + out["low"] + out["close"]) / 3.0
-    tp_vol = tp * out["volume"]
-    day = out.index.date
-    out["vwap"] = tp_vol.groupby(day).cumsum() / out["volume"].groupby(day).cumsum()
-
-    delta = out["close"].diff()
-    gain = delta.clip(lower=0)
-    loss = (-delta).clip(lower=0)
-    avg_g = gain.ewm(
-        alpha=1.0 / RSI_PERIOD, min_periods=RSI_PERIOD, adjust=False
-    ).mean()
-    avg_l = loss.ewm(
-        alpha=1.0 / RSI_PERIOD, min_periods=RSI_PERIOD, adjust=False
-    ).mean()
-    rs = avg_g / avg_l.replace(0, np.nan)
-    out["rsi"] = 100.0 - 100.0 / (1.0 + rs)
-
-    out["vol_sma"] = out["volume"].rolling(VOL_SMA).mean()
-
     pc = out["close"].shift(1)
     tr = np.maximum(out["high"], pc) - np.minimum(out["low"], pc)
     out["atr"] = tr.ewm(
         alpha=1.0 / ATR_PERIOD, min_periods=ATR_PERIOD, adjust=False
     ).mean()
-
-    out["body"] = (out["close"] - out["open"]).abs()
-    out["range"] = out["high"] - out["low"]
-    out["body_ratio"] = out["body"] / out["range"].replace(0, np.nan)
-    out["vol_ratio"] = out["volume"] / out["vol_sma"].replace(0, np.nan)
-
     return out
 
 
@@ -491,12 +550,21 @@ def calc_qty(capital: float, atr: float, price: float) -> int:
     return max(min(risk_q, max_q), 1)
 
 
+def gross_target_rupees(direction: str, entry_price: float, tp_price: float, qty: int) -> float:
+    """Return the gross TP rupee potential for a filled position."""
+    if direction == "LONG":
+        gross = (tp_price - entry_price) * qty
+    else:
+        gross = (entry_price - tp_price) * qty
+    return max(float(gross), 0.0)
+
+
 # ─── Display ──────────────────────────────────────────────────────────────
 
 
 def print_signal(
     sym, sec, direction, trigger, price, atr, qty, sl, tp,
-    rsi, vwap, vol_ratio, sl_mult, ts=None, variant="",
+    sl_mult, ts=None, variant="",
 ):
     clr = GRN if direction == "LONG" else RED
     arrow = "▲" if direction == "LONG" else "▼"
@@ -509,25 +577,18 @@ def print_signal(
     print(f"  SL     : ₹{sl:,.2f}  ({sl_mult}× ATR = ₹{atr * sl_mult:.2f})")
     print(f"  TP     : ₹{tp:,.2f}  (RR 1:{RR})")
     print(f"  Qty    : {qty}  (risk ₹{qty * atr * sl_mult:,.0f})")
-    print(f"  {'─' * 25}")
-    print(f"  VWAP   : ₹{vwap:,.2f}")
-    print(f"  RSI(9) : {rsi:.1f}")
-    print(f"  Vol    : {vol_ratio:.1f}× avg")
     print(f"{'=' * 60}\n")
 
 
-def format_tg_signal(sym, sec, direction, trigger, variant, price, atr, qty, sl, tp, rsi, vwap, vol_ratio, sl_mult):
+def format_tg_signal(sym, sec, direction, trigger, variant, price, atr, qty, sl, tp, sl_mult):
     icon = "\U0001f7e2" if direction == "LONG" else "\U0001f534"
     trig_lbl = _trigger_label(trigger)
     return (
         f"{icon} *{direction} [{trig_lbl}] — {sym}* ({sec})\n"
-        f"Variant: {variant}\n\n"
         f"Price: ₹{price:,.2f}\n"
         f"SL: ₹{sl:,.2f} | TP: ₹{tp:,.2f}\n"
         f"Qty: {qty} | Risk: ₹{qty * atr * sl_mult:,.0f}\n"
-        f"RR: 1:{RR}\n\n"
-        f"VWAP: ₹{vwap:,.2f} | RSI: {rsi:.1f}\n"
-        f"Vol: {vol_ratio:.1f}× avg"
+        f"RR: 1:{RR}"
     )
 
 
@@ -560,28 +621,15 @@ def print_dashboard(rows: list[dict], phase: str) -> None:
         phase_str = f"{DIM}{phase_lbl}{RST}"
 
     print(f"\n{CYN}[{now:%H:%M:%S}]{RST} {phase_str}")
-    print(
-        f"  {'Symbol':<11} {'Close':>9}  {'VWAP':>9}  "
-        f"{'RSI':>5}  {'Vol':>5}  {'Body':>5}  Signal"
-    )
-    print(f"  {'─' * 62}")
+    print(f"  {'Symbol':<11} {'Close':>9}  Signal")
+    print(f"  {'─' * 35}")
     for r in rows:
-        rsi_s = f"{r['rsi']:.0f}" if not pd.isna(r.get("rsi", float("nan"))) else "  -"
-        vr = r.get("vol_r", float("nan"))
-        vol_s = f"{vr:.1f}x" if not pd.isna(vr) else "  -"
-        br = r.get("body_r", 0)
-        body_s = f"{br:.0%}" if br > 0 else "  -"
-
         sig = ""
         if r.get("signal"):
             c = GRN if r["signal"] == "LONG" else RED
             trig = r.get("trigger", "")
             sig = f"{c}{BLD}{r['signal']}[{trig}]{RST}"
-
-        print(
-            f"  {r['sym']:<11} ₹{r['close']:>8,.2f}  ₹{r['vwap']:>8,.2f}  "
-            f"{rsi_s:>5}  {vol_s:>5}  {body_s:>5}  {sig}"
-        )
+        print(f"  {r['sym']:<11} ₹{r['close']:>8,.2f}  {sig}")
 
 
 # ─── Timing Helpers ────────────────────────────────────────────────────────
@@ -667,15 +715,24 @@ def load_warmup(client: AngelOneClient | None) -> dict[str, pd.DataFrame]:
                     break
                 except Exception as exc:
                     if attempt < 2:
-                        flog.warning("WARMUP  %-11s  attempt %d failed: %s — retrying in %ds", sym, attempt + 1, exc, 3 * (attempt + 1))
+                        flog.warning(
+                            "WARMUP  %-11s  attempt %d failed: %s — retrying in %ds",
+                            sym, attempt + 1, exc, 3 * (attempt + 1),
+                        )
                         _time.sleep(3.0 * (attempt + 1))
                     else:
                         if cache.exists():
                             try:
                                 df = load_csv(str(cache))
                                 data[sym] = df
-                                print(f"  {YLW}{sym:<11} {len(df):>6} bars  (stale cache: {df.index[-1]:%Y-%m-%d}){RST}")
-                                flog.warning("WARMUP  %-11s  %d bars  stale_cache=%s (API: %s)", sym, len(df), df.index[-1].date(), exc)
+                                print(
+                                    f"  {YLW}{sym:<11} {len(df):>6} bars  "
+                                    f"(stale cache: {df.index[-1]:%Y-%m-%d}){RST}"
+                                )
+                                flog.warning(
+                                    "WARMUP  %-11s  %d bars  stale_cache=%s (API: %s)",
+                                    sym, len(df), df.index[-1].date(), exc,
+                                )
                                 fetched = True
                             except Exception:
                                 pass
@@ -706,23 +763,10 @@ def scan_bar(sym, sec, df, bar_idx, capital,
         body_close_min=body_close_min, trigger_name=trigger_name,
     )
 
-    vol_r = row.get("vol_ratio", float("nan"))
-    if pd.isna(vol_r):
-        vol_r = (
-            row["volume"] / row["vol_sma"]
-            if row["vol_sma"] > 0 and not pd.isna(row["vol_sma"])
-            else float("nan")
-        )
-    body_r = row.get("body_ratio", 0) if not pd.isna(row.get("body_ratio", float("nan"))) else 0
-
     result = {
         "sym": sym,
         "sec": sec,
         "close": row["close"],
-        "vwap": row["vwap"],
-        "rsi": row["rsi"],
-        "vol_r": vol_r,
-        "body_r": body_r,
         "signal": sig,
         "trigger": trigger,
         "variant": variant_label,
@@ -740,9 +784,8 @@ def scan_bar(sym, sec, df, bar_idx, capital,
         q = calc_qty(capital, sl_dist, p)
         sl = p - sl_dist if sig == "LONG" else p + sl_dist
         tp = p + sl_dist * RR if sig == "LONG" else p - sl_dist * RR
-        vr = vol_r if not pd.isna(vol_r) else 0
         result.update(price=p, atr=a, qty=q, sl=sl, tp=tp,
-                      vol_ratio=vr, ts=ts, sl_mult=PDL_SL_MULT)
+                      ts=ts, sl_mult=PDL_SL_MULT)
 
     return result
 
@@ -888,15 +931,15 @@ def dry_run(capital: float) -> None:
                     r = result
                     print_signal(
                         sym, sec, r["signal"], r["trigger"], r["price"], r["atr"],
-                        r["qty"], r["sl"], r["tp"], r["rsi"], r["vwap"],
-                        r["vol_ratio"], r.get("sl_mult", 1.0), ts=r["ts"],
+                        r["qty"], r["sl"], r["tp"],
+                        r.get("sl_mult", 1.0), ts=r["ts"],
                         variant=r["variant"],
                     )
                     phase = get_phase(bar_done.time())
                     log_signal(
                         sym, sec, r["signal"], r["trigger"], r["variant"], r["price"],
-                        r["sl"], r["tp"], r["atr"], r["qty"], r["rsi"],
-                        r["vwap"], r["vol_ratio"], ts=i, phase=phase,
+                        r["sl"], r["tp"], r["atr"], r["qty"],
+                        ts=i, phase=phase,
                     )
 
     log_file = SIGNALS_DIR / f"signals_{scan_date}.csv"
@@ -908,7 +951,7 @@ def dry_run(capital: float) -> None:
 # ─── Live Loop (Phase-Based Architecture) ─────────────────────────────────
 
 
-def live(capital: float, use_websocket: bool = True) -> None:
+def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -> None:
     now_t = _now().time()
     shutdown_at = ENTRY_AM[1] if ENTRY_PM is None else MKT_CLOSE
     if now_t > shutdown_at:
@@ -925,11 +968,20 @@ def live(capital: float, use_websocket: bool = True) -> None:
 
     _attach_log_file()
 
+    auto_trade_active = auto_trade and ENABLE_AUTO_TRADE
+
     flog.info("=" * 70)
-    flog.info("SESSION START  Capital=%.0f  RR=1:%.1f  Risk=%.1f%%  ws=%s",
-              capital, RR, RISK_PCT * 100, use_websocket)
+    flog.info("SESSION START  Capital=%.0f  RR=1:%.1f  Risk=%.1f%%  ws=%s  auto_trade=%s",
+              capital, RR, RISK_PCT * 100, use_websocket, auto_trade_active)
     flog.info("Stocks: %s", ", ".join(s for s, _ in STOCKS))
     flog.info("Strategy: PDL-Only (SL=%.1fx ATR)  RR=1:%.1f  MaxSL/day=%d", PDL_SL_MULT, RR, MAX_SL_PER_DAY)
+
+    if auto_trade_active:
+        print(f"{GRN}{BLD}[trade] AUTO-TRADE ENABLED — real orders will be placed{RST}")
+        flog.info("AUTO-TRADE: ENABLED — bracket orders will be placed via Angel One")
+    elif auto_trade and not ENABLE_AUTO_TRADE:
+        print(f"{YLW}[trade] --auto-trade flag set but ENABLE_AUTO_TRADE=False in code — alert only{RST}")
+        flog.warning("AUTO-TRADE: disabled by ENABLE_AUTO_TRADE constant")
 
     if TG_TOKEN and TG_CHAT:
         print(f"{GRN}[tg] Telegram notifications enabled{RST}")
@@ -946,6 +998,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
     client = AngelOneClient()
     client.connect()
     flog.info("API connected")
+    _startup_order_path_check(auto_trade_active)
 
     print(f"\n{CYN}[data] Fetching {WARMUP_3MIN_DAYS}-day 3-min candles (indicator warmup){RST}")
     flog.info("Loading %d-day 3-min warmup data", WARMUP_3MIN_DAYS)
@@ -996,7 +1049,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
     print(f"  09:14  Phase 1  Warm-Up       ✓ done")
     print(f"  09:15  Phase 2  Silent         track only, no signals")
     print(f"  09:30  Phase 3  Active         signals ON")
-    print(f"  12:00  Phase 4  Shutdown       stop")
+    print(f"  13:00  Phase 4  Shutdown       stop")
     print(f"{'═' * 60}{RST}\n")
 
     # ── Phase 1b: WebSocket Feed ─────────────────────────────────────
@@ -1027,7 +1080,7 @@ def live(capital: float, use_websocket: bool = True) -> None:
         f"Stocks: {syms}\n"
         f"Variant: Baseline\n"
         f"Trigger: PDL ± {PDL_PREARM_BUFFER_ATR:.1f}× ATR | SL: {PDL_SL_MULT}× ATR | RR: 1:{RR}\n"
-        f"Schedule: 09:30–12:00 | Data: {data_mode}"
+        f"Schedule: 09:30–13:00 | Data: {data_mode}"
     )
 
     cooldowns: dict[tuple[str, str], datetime] = {}
@@ -1048,9 +1101,20 @@ def live(capital: float, use_websocket: bool = True) -> None:
         pdl_dirs_used = saved["pdl_dirs_used"]
         daily_sl_counts = saved["daily_sl_counts"]
         signal_counts = saved["signal_counts"]
-        flog.info("STATE RESTORED  cooldowns=%d  dirs=%d  sl_counts=%d  sig_counts=%d",
-                  len(cooldowns), len(pdl_dirs_used), len(daily_sl_counts), len(signal_counts))
+        if saved.get("open_positions"):
+            open_positions = saved["open_positions"]
+        realized_pnl = saved.get("realized_pnl", 0.0)
+        flog.info("STATE RESTORED  cooldowns=%d  dirs=%d  sl_counts=%d  sig_counts=%d  positions=%d  pnl=₹%.2f",
+                  len(cooldowns), len(pdl_dirs_used), len(daily_sl_counts), len(signal_counts),
+                  len(open_positions), realized_pnl)
         print(f"  {GRN}[state] Restored session state from previous run{RST}")
+        if open_positions:
+            for (vk, sym), pos in open_positions.items():
+                print(f"  {GRN}[state]   {sym:<11} {pos['direction']:>5}  entry ₹{pos['entry_price']:,.2f}  "
+                      f"SL ₹{pos['sl']:,.2f}  TP ₹{pos['tp']:,.2f}  qty={pos.get('qty', '?')}{RST}")
+                flog.info("STATE POS  %-11s  %s  entry=%.2f  SL=%.2f  TP=%.2f  sl_oid=%s  tp_oid=%s",
+                          sym, pos["direction"], pos["entry_price"], pos["sl"], pos["tp"],
+                          pos.get("sl_order_id"), pos.get("tp_order_id"))
     current_date = _now().date()
     last_phase = ""
     scan_count = 0
@@ -1108,6 +1172,70 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                 s["variant"], s["price"], s["sl"], s["tp"],
                             )
                         print(f"{DIM}  Log saved: {log_file}{RST}")
+                    if auto_trade_active and open_positions:
+                        flog.info("SHUTDOWN CLEANUP  reconciling %d open position(s)", len(open_positions))
+                        try:
+                            _shutdown_book = client._conn.orderBook()
+                            _shutdown_orders = {}
+                            if _shutdown_book and _shutdown_book.get("status") and _shutdown_book.get("data"):
+                                _shutdown_orders = {o["orderid"]: o for o in _shutdown_book["data"]}
+                        except Exception as _bk_exc:
+                            flog.warning("SHUTDOWN CLEANUP  orderBook failed: %s", _bk_exc)
+                            _shutdown_orders = {}
+
+                        for (variant_key, op_sym), op_pos in list(open_positions.items()):
+                            sl_oid = op_pos.get("sl_order_id")
+                            tp_oid = op_pos.get("tp_order_id")
+
+                            broker_hit = None
+                            if sl_oid and sl_oid in _shutdown_orders:
+                                if _shutdown_orders[sl_oid].get("orderstatus", "").lower() in ("complete", "filled"):
+                                    broker_hit = "SL"
+                            if not broker_hit and tp_oid and tp_oid in _shutdown_orders:
+                                if _shutdown_orders[tp_oid].get("orderstatus", "").lower() in ("complete", "filled"):
+                                    broker_hit = "TP"
+
+                            if broker_hit:
+                                remaining_oid = tp_oid if broker_hit == "SL" else sl_oid
+                                remaining_variety = "NORMAL" if broker_hit == "SL" else "STOPLOSS"
+                                if remaining_oid:
+                                    cancel_order(client._conn, remaining_oid, remaining_variety)
+                                    flog.info("SHUTDOWN CANCEL  %-11s  %s order_id=%s (%s hit)",
+                                              op_sym, remaining_variety, remaining_oid, broker_hit)
+                                exit_price = op_pos["sl"] if broker_hit == "SL" else op_pos["tp"]
+                                pos_qty = int(op_pos.get("qty", 0) or 0)
+                                if op_pos["direction"] == "LONG":
+                                    hit_pnl = (exit_price - op_pos["entry_price"]) * pos_qty
+                                else:
+                                    hit_pnl = (op_pos["entry_price"] - exit_price) * pos_qty
+                                realized_pnl += hit_pnl
+                                flog.info("SHUTDOWN EXIT P&L  %-11s  %s  ₹%+.2f", op_sym, broker_hit, float(hit_pnl))
+                                del open_positions[(variant_key, op_sym)]
+                            else:
+                                sl_live = False
+                                tp_live = False
+                                if sl_oid and sl_oid in _shutdown_orders:
+                                    sl_status = _shutdown_orders[sl_oid].get("orderstatus", "").lower()
+                                    sl_live = sl_status in ("open", "trigger pending", "pending")
+                                if tp_oid and tp_oid in _shutdown_orders:
+                                    tp_status = _shutdown_orders[tp_oid].get("orderstatus", "").lower()
+                                    tp_live = tp_status in ("open", "trigger pending", "pending")
+
+                                if sl_live or tp_live:
+                                    flog.warning(
+                                        "SHUTDOWN KEEP PROTECTION  %-11s  sl=%s(live=%s)  tp=%s(live=%s) — NOT cancelling",
+                                        op_sym, sl_oid, sl_live, tp_oid, tp_live,
+                                    )
+                                    send_telegram(
+                                        f"\u26a0\ufe0f *POSITION STILL OPEN AT SHUTDOWN* — {op_sym}\n"
+                                        f"Direction: `{op_pos['direction']}`\n"
+                                        f"Entry: `₹{op_pos['entry_price']:,.2f}` × {op_pos.get('qty', '?')}\n"
+                                        f"SL: `₹{op_pos['sl']:,.2f}` {'(live)' if sl_live else '(not live)'}\n"
+                                        f"TP: `₹{op_pos['tp']:,.2f}` {'(live)' if tp_live else '(not live)'}\n"
+                                        f"SL/TP orders LEFT ACTIVE on exchange.\n"
+                                        f"Monitor manually or let broker handle."
+                                    )
+
                     if open_positions:
                         print(f"\n  {YLW}{BLD}⚠ OPEN POSITIONS AT SHUTDOWN:{RST}")
                         op_lines = []
@@ -1319,6 +1447,16 @@ def live(capital: float, use_websocket: bool = True) -> None:
                 n_ok = sum(1 for v in fetch_ok.values() if v)
                 flog.info("FETCH  REST  %d/%d OK in %.1fs", n_ok, len(active_syms), _time.time() - scan_start)
 
+            # Fetch broker order book once per scan (for position tracking)
+            _broker_orders: dict | None = None
+            if auto_trade_active and open_positions:
+                try:
+                    _book = client._conn.orderBook()
+                    if _book and _book.get("status") and _book.get("data"):
+                        _broker_orders = {o["orderid"]: o for o in _book["data"]}
+                except Exception as _bk_exc:
+                    flog.warning("BROKER BOOK  failed: %s", _bk_exc)
+
             # Phase B: Sequential signal processing
             for sym, sec in STOCKS:
                 if sym not in stock_data:
@@ -1356,8 +1494,56 @@ def live(capital: float, use_websocket: bool = True) -> None:
 
                             if state_key in open_positions:
                                 pos = open_positions[state_key]
+
+                                if auto_trade_active and _broker_orders is not None:
+                                    broker_hit = None
+                                    sl_oid = pos.get("sl_order_id")
+                                    tp_oid = pos.get("tp_order_id")
+                                    if sl_oid and sl_oid in _broker_orders:
+                                        if _broker_orders[sl_oid].get("orderstatus", "").lower() in ("complete", "filled"):
+                                            broker_hit = "SL"
+                                    if not broker_hit and tp_oid and tp_oid in _broker_orders:
+                                        if _broker_orders[tp_oid].get("orderstatus", "").lower() in ("complete", "filled"):
+                                            broker_hit = "TP"
+                                    if broker_hit:
+                                        flog.info("BROKER EXIT  %-11s  %s filled on broker — cleaning up", sym, broker_hit)
+                                        if broker_hit == "SL" and tp_oid:
+                                            cancel_order(client._conn, tp_oid, "NORMAL")
+                                        elif broker_hit == "TP" and sl_oid:
+                                            cancel_order(client._conn, sl_oid, "STOPLOSS")
+                                        exit_price = pos["sl"] if broker_hit == "SL" else pos["tp"]
+                                        pos_qty = int(pos.get("qty", 0) or 0)
+                                        if pos["direction"] == "LONG":
+                                            hit_pnl = (exit_price - pos["entry_price"]) * pos_qty
+                                        else:
+                                            hit_pnl = (pos["entry_price"] - exit_price) * pos_qty
+                                        realized_pnl += hit_pnl
+                                        flog.info("BROKER EXIT P&L  %-11s  %s  ₹%+.2f", sym, broker_hit, float(hit_pnl))
+                                        if broker_hit == "SL":
+                                            daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
+                                        del open_positions[state_key]
+                                        continue
+
                                 hit = _check_bracket_hit(pos, bar_row["high"], bar_row["low"])
                                 if hit:
+                                    if auto_trade_active and _broker_orders is not None:
+                                        sl_oid = pos.get("sl_order_id")
+                                        tp_oid = pos.get("tp_order_id")
+                                        check_oid = sl_oid if hit == "SL" else tp_oid
+                                        if check_oid:
+                                            broker_st = _broker_orders.get(check_oid)
+                                            broker_filled = (
+                                                broker_st
+                                                and broker_st.get("orderstatus", "").lower() in ("complete", "filled")
+                                            ) if broker_st else False
+                                            if not broker_filled:
+                                                flog.info(
+                                                    "BRACKET DETECT  %-11s  %s on bar but broker order not filled yet — skipping cancel",
+                                                    sym, hit,
+                                                )
+                                                pos["last_bracket_ts"] = bar_ts
+                                                continue
+
                                     exit_price = pos["sl"] if hit == "SL" else pos["tp"]
                                     pos_qty = int(pos.get("qty", 0) or 0)
                                     if pos["direction"] == "LONG":
@@ -1376,6 +1562,15 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                             "SL_COUNT  %-11s  %-11s  %d / %d",
                                             sym, cfg["label"], daily_sl_counts[state_key], MAX_SL_PER_DAY,
                                         )
+                                        remaining_id = pos.get("tp_order_id")
+                                        if remaining_id and auto_trade_active:
+                                            cancel_order(client._conn, remaining_id, "NORMAL")
+                                            flog.info("CANCEL TP  %-11s  order_id=%s (SL hit)", sym, remaining_id)
+                                    else:
+                                        remaining_id = pos.get("sl_order_id")
+                                        if remaining_id and auto_trade_active:
+                                            cancel_order(client._conn, remaining_id, "STOPLOSS")
+                                            flog.info("CANCEL SL  %-11s  order_id=%s (TP hit)", sym, remaining_id)
                                     del open_positions[state_key]
                                 else:
                                     pos["last_bracket_ts"] = bar_ts
@@ -1390,9 +1585,6 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                 latest_dashboard_result = result
 
                             r = result
-                            rsi_str = f"{r['rsi']:.0f}" if not pd.isna(r.get("rsi", float("nan"))) else "-"
-                            vr = r.get("vol_r", float("nan"))
-                            vol_str = f"{vr:.1f}x" if not pd.isna(vr) else "-"
                             raw_sig = r.get("signal") or "-"
                             raw_trig = r.get("trigger") or "-"
 
@@ -1402,7 +1594,6 @@ def live(capital: float, use_websocket: bool = True) -> None:
                             count_key = (cfg["key"], sym, session_key)
                             at_signal_cap = signal_counts.get(count_key, 0) >= MAX_SIGNALS_PER_STOCK
                             at_sl_cap = daily_sl_counts.get(state_key, 0) >= MAX_SL_PER_DAY
-
                             at_pos_cap = len(open_positions) >= MAX_CONCURRENT_POSITIONS
                             at_loss_cap = realized_pnl <= -MAX_DAILY_LOSS
 
@@ -1435,60 +1626,365 @@ def live(capital: float, use_websocket: bool = True) -> None:
 
                                 print_signal(
                                     sym, sec, r["signal"], r["trigger"], r["price"],
-                                    r["atr"], r["qty"], r["sl"], r["tp"], r["rsi"],
-                                    r["vwap"], r["vol_ratio"], r.get("sl_mult", 1.0),
-                                    variant=r["variant"],
+                                    r["atr"], r["qty"], r["sl"], r["tp"],
+                                    r.get("sl_mult", 1.0), variant=r["variant"],
                                 )
                                 send_telegram(format_tg_signal(
                                     sym, sec, r["signal"], r["trigger"], r["variant"], r["price"],
-                                    r["atr"], r["qty"], r["sl"], r["tp"], r["rsi"],
-                                    r["vwap"], r["vol_ratio"], r.get("sl_mult", 1.0),
+                                    r["atr"], r["qty"], r["sl"], r["tp"],
+                                    r.get("sl_mult", 1.0),
                                 ))
                                 log_signal(
                                     sym, sec, r["signal"], r["trigger"], r["variant"], r["price"],
-                                    r["sl"], r["tp"], r["atr"], r["qty"], r["rsi"],
-                                    r["vwap"], r["vol_ratio"], phase=bar_phase,
+                                    r["sl"], r["tp"], r["atr"], r["qty"],
+                                    phase=bar_phase,
                                 )
-                                cooldowns[state_key] = bar_completed_ts + COOLDOWN
-                                signal_counts[count_key] = signal_counts.get(count_key, 0) + 1
-                                sym_pdl_dirs.add(r["signal"])
-                                new_pos = {
-                                    "direction": r["signal"],
-                                    "entry_price": r["price"],
-                                    "entry_atr": r["atr"],
-                                    "qty": r["qty"],
-                                    "sl": r["sl"],
-                                    "tp": r["tp"],
-                                    "entry_scan": scan_count,
-                                    "entry_time": bar_completed_ts,
-                                    "last_bracket_ts": bar_ts,
-                                    "variant": r["variant"],
-                                }
-                                same_bar_hit = _check_bracket_hit(new_pos, bar_row["high"], bar_row["low"])
-                                if same_bar_hit:
-                                    flog.warning(
-                                        "SAME-BAR EXIT  %-11s  %s on entry bar — %s",
-                                        sym, r["signal"], same_bar_hit,
+
+                                position_taken = not auto_trade_active
+                                signal_consumed = True
+                                tracked_entry_price = r["price"]
+                                tracked_qty = r["qty"]
+                                logged_qty = r["qty"]
+                                position_note = ""
+
+                                if auto_trade_active:
+                                    position_taken = False
+                                    order_result = place_bracket_order(
+                                        client._conn, sym, r["signal"],
+                                        r["price"], r["sl"], r["tp"], r["qty"],
+                                        atr=r["atr"],
+                                        bar_close=float(r["close"]),
                                     )
-                                    if same_bar_hit == "SL":
-                                        daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
-                                else:
-                                    open_positions[state_key] = new_pos
-                                today_signals.append({
-                                    "sym": sym,
-                                    "dir": r["signal"],
-                                    "trigger": r["trigger"],
-                                    "variant": r["variant"],
-                                    "price": r["price"],
-                                    "sl": r["sl"],
-                                    "tp": r["tp"],
-                                    "time": now,
-                                })
-                                flog.info(
-                                    "  %-11s  %-11s  C=%.2f  VWAP=%.2f  RSI=%s  Vol=%s  → ★ %s[%s]  SL=%.2f  TP=%.2f  Qty=%d",
-                                    sym, r["variant"], r["close"], r["vwap"], rsi_str,
-                                    vol_str, r["signal"], r["trigger"], r["sl"], r["tp"], r["qty"],
-                                )
+                                    if order_result["success"]:
+                                        next_bar_expiry = (
+                                            bar_completed_ts + BAR_INTERVAL
+                                        ).to_pydatetime() if hasattr(bar_completed_ts, 'to_pydatetime') else None
+                                        fill_result = wait_for_fill_or_cancel(
+                                            client._conn, sym, order_result["order_id"],
+                                            bar_expiry_ts=next_bar_expiry,
+                                        )
+                                        if fill_result["filled"]:
+                                            fill_qty = fill_result["filled_qty"]
+                                            fill_px = fill_result["fill_price"]
+                                            tracked_qty = fill_qty if fill_qty > 0 else r["qty"]
+                                            tracked_entry_price = fill_px if fill_px > 0 else r["price"]
+                                            logged_qty = tracked_qty
+                                            fill_is_partial = tracked_qty < r["qty"]
+                                            fill_ratio = tracked_qty / max(int(r["qty"]) or 1, 1)
+                                            actual_gross_target = gross_target_rupees(
+                                                r["signal"], tracked_entry_price, r["tp"], tracked_qty,
+                                            )
+
+                                            keep_partial = (
+                                                not fill_is_partial
+                                                or (
+                                                    fill_ratio >= MIN_FILL_RATIO
+                                                    and actual_gross_target >= MIN_ACTUAL_GROSS_TARGET
+                                                )
+                                            )
+
+                                            if fill_is_partial and not keep_partial:
+                                                position_note = (
+                                                    "partial_rejected("
+                                                    f"{tracked_qty}/{r['qty']},"
+                                                    f"ratio={fill_ratio:.0%},"
+                                                    f"tp=₹{actual_gross_target:,.0f})"
+                                                )
+                                                flog.warning(
+                                                    "PARTIAL FILL REJECTED  %-11s  %d/%d (%.0f%%)  "
+                                                    "gross_tp=₹%.2f  thresholds=%.0f%%/₹%.2f",
+                                                    sym, tracked_qty, r["qty"], fill_ratio * 100.0,
+                                                    actual_gross_target,
+                                                    MIN_FILL_RATIO * 100.0, MIN_ACTUAL_GROSS_TARGET,
+                                                )
+                                                exit_result = place_market_exit_order(
+                                                    client._conn, sym, r["signal"], tracked_qty,
+                                                    ref_price=tracked_entry_price,
+                                                )
+                                                if exit_result["success"]:
+                                                    flat_result = wait_for_fill_or_cancel(
+                                                        client._conn,
+                                                        sym,
+                                                        exit_result["order_id"],
+                                                        timeout_sec=PARTIAL_EXIT_TIMEOUT_SEC,
+                                                    )
+                                                    exit_filled_qty = int(flat_result.get("filled_qty", 0) or 0)
+                                                    exit_fill_px = float(flat_result.get("fill_price", 0) or 0)
+                                                    if flat_result["filled"] and exit_filled_qty > 0:
+                                                        flattened_qty = min(exit_filled_qty, tracked_qty)
+                                                        if r["signal"] == "LONG":
+                                                            flat_pnl = (
+                                                                exit_fill_px - tracked_entry_price
+                                                            ) * flattened_qty
+                                                        else:
+                                                            flat_pnl = (
+                                                                tracked_entry_price - exit_fill_px
+                                                            ) * flattened_qty
+                                                        realized_pnl += flat_pnl
+                                                        if flattened_qty >= tracked_qty:
+                                                            signal_consumed = False
+                                                            send_telegram(
+                                                                f"\u26a0\ufe0f *PARTIAL FILL REJECTED* — {sym} {r['signal']}\n"
+                                                                f"Entry: `{order_result['order_id']}` @ ₹{tracked_entry_price:,.2f} × "
+                                                                f"{tracked_qty}/{r['qty']}\n"
+                                                                f"Fill ratio: `{fill_ratio:.0%}` | Gross TP: `₹{actual_gross_target:,.2f}`\n"
+                                                                f"Flattened: `{exit_result['order_id']}` @ ₹{exit_fill_px:,.2f} × {flattened_qty}\n"
+                                                                f"Realized: `₹{flat_pnl:+,.2f}`"
+                                                            )
+                                                            tracked_qty = flattened_qty
+                                                            logged_qty = flattened_qty
+                                                        else:
+                                                            tracked_qty -= flattened_qty
+                                                            logged_qty = tracked_qty
+                                                            actual_gross_target = gross_target_rupees(
+                                                                r["signal"], tracked_entry_price, r["tp"], tracked_qty,
+                                                            )
+                                                            position_note = (
+                                                                "partial_exit_incomplete("
+                                                                f"remaining={tracked_qty}/{r['qty']},"
+                                                                f"tp=₹{actual_gross_target:,.0f})"
+                                                            )
+                                                            flog.warning(
+                                                                "PARTIAL EXIT INCOMPLETE  %-11s  exited=%d  remaining=%d",
+                                                                sym, flattened_qty, tracked_qty,
+                                                            )
+                                                            send_telegram(
+                                                                f"\u26a0\ufe0f *PARTIAL FILL BELOW THRESHOLD* — {sym} {r['signal']}\n"
+                                                                f"Entry: `{order_result['order_id']}` @ ₹{tracked_entry_price:,.2f}\n"
+                                                                f"Rejected fill: `{flattened_qty + tracked_qty}/{r['qty']}` | "
+                                                                f"Flattened: `{flattened_qty}`\n"
+                                                                f"Remaining protected qty: `{tracked_qty}`"
+                                                            )
+                                                            keep_partial = True
+                                                    else:
+                                                        position_note = (
+                                                            "partial_exit_failed("
+                                                            f"{tracked_qty}/{r['qty']})"
+                                                        )
+                                                        flog.error(
+                                                            "PARTIAL EXIT FAILED  %-11s  flatten order did not fill (%s)",
+                                                            sym, flat_result.get("status", "unknown"),
+                                                        )
+                                                        send_telegram(
+                                                            f"\u26a0\ufe0f *PARTIAL FILL BELOW THRESHOLD* — {sym} {r['signal']}\n"
+                                                            f"Entry: `{order_result['order_id']}` @ ₹{tracked_entry_price:,.2f} × "
+                                                            f"{tracked_qty}/{r['qty']}\n"
+                                                            f"Flatten attempt failed: `{flat_result.get('status', 'unknown')}`\n"
+                                                            f"Keeping remaining qty protected with SL/TP"
+                                                        )
+                                                        keep_partial = True
+                                                else:
+                                                    position_note = (
+                                                        "partial_exit_order_failed("
+                                                        f"{tracked_qty}/{r['qty']})"
+                                                    )
+                                                    flog.error(
+                                                        "PARTIAL EXIT ORDER FAILED  %-11s  %s",
+                                                        sym, exit_result["message"],
+                                                    )
+                                                    send_telegram(
+                                                        f"\u26a0\ufe0f *PARTIAL FILL BELOW THRESHOLD* — {sym} {r['signal']}\n"
+                                                        f"Entry: `{order_result['order_id']}` @ ₹{tracked_entry_price:,.2f} × "
+                                                        f"{tracked_qty}/{r['qty']}\n"
+                                                        f"Flatten order failed: `{exit_result['message']}`\n"
+                                                        f"Keeping remaining qty protected with SL/TP"
+                                                    )
+                                                    keep_partial = True
+
+                                            if keep_partial and tracked_qty > 0:
+                                                sl_result = place_sl_order(
+                                                    client._conn, sym, r["signal"],
+                                                    r["sl"], tracked_qty,
+                                                )
+                                                tp_result = place_tp_order(
+                                                    client._conn, sym, r["signal"],
+                                                    r["tp"], tracked_qty,
+                                                )
+                                                sl_msg = f"\nSL: `{sl_result['order_id']}`" if sl_result["success"] else f"\nSL FAILED: {sl_result['message']}"
+                                                tp_msg = f"\nTP: `{tp_result['order_id']}`" if tp_result["success"] else f"\nTP FAILED: {tp_result['message']}"
+                                                r["_sl_order_id"] = sl_result.get("order_id")
+                                                r["_tp_order_id"] = tp_result.get("order_id")
+                                                if sl_result["success"] and tp_result["success"]:
+                                                    fill_title = (
+                                                        "\u2705 *ORDER PARTIAL FILLED*"
+                                                        if fill_is_partial
+                                                        else "\u2705 *ORDER FILLED*"
+                                                    )
+                                                    fill_qty_msg = (
+                                                        f"{tracked_qty}/{r['qty']}"
+                                                        if fill_is_partial
+                                                        else f"{tracked_qty}"
+                                                    )
+                                                    send_telegram(
+                                                        f"{fill_title} — {sym} {r['signal']}\n"
+                                                        f"Entry: `{order_result['order_id']}` @ ₹{tracked_entry_price:,.2f} × {fill_qty_msg}\n"
+                                                        f"SL: ₹{r['sl']:,.2f} | TP: ₹{r['tp']:,.2f}"
+                                                        f"{sl_msg}{tp_msg}"
+                                                    )
+                                                    position_taken = True
+                                                else:
+                                                    position_note = (
+                                                        "protection_failed("
+                                                        f"sl={'ok' if sl_result['success'] else 'fail'},"
+                                                        f"tp={'ok' if tp_result['success'] else 'fail'})"
+                                                    )
+                                                    flog.error(
+                                                        "PROTECTION FAILED  %-11s  sl=%s  tp=%s — attempting emergency flatten",
+                                                        sym, sl_result["success"], tp_result["success"],
+                                                    )
+                                                    emergency_exit = place_market_exit_order(
+                                                        client._conn, sym, r["signal"], tracked_qty,
+                                                        ref_price=tracked_entry_price,
+                                                    )
+                                                    exit_status = "order_failed"
+                                                    exit_fill_px = 0.0
+                                                    flattened_qty = 0
+                                                    if emergency_exit["success"]:
+                                                        flat_result = wait_for_fill_or_cancel(
+                                                            client._conn,
+                                                            sym,
+                                                            emergency_exit["order_id"],
+                                                            timeout_sec=PARTIAL_EXIT_TIMEOUT_SEC,
+                                                        )
+                                                        exit_status = flat_result.get("status", "unknown")
+                                                        exit_fill_px = float(flat_result.get("fill_price", 0) or 0)
+                                                        flattened_qty = min(
+                                                            int(flat_result.get("filled_qty", 0) or 0),
+                                                            tracked_qty,
+                                                        )
+                                                        if flattened_qty > 0:
+                                                            if r["signal"] == "LONG":
+                                                                flat_pnl = (
+                                                                    exit_fill_px - tracked_entry_price
+                                                                ) * flattened_qty
+                                                            else:
+                                                                flat_pnl = (
+                                                                    tracked_entry_price - exit_fill_px
+                                                                ) * flattened_qty
+                                                            realized_pnl += flat_pnl
+                                                        if flat_result["filled"] and flattened_qty >= tracked_qty:
+                                                            if sl_result["success"] and r.get("_sl_order_id"):
+                                                                cancel_order(client._conn, r["_sl_order_id"], "STOPLOSS")
+                                                            if tp_result["success"] and r.get("_tp_order_id"):
+                                                                cancel_order(client._conn, r["_tp_order_id"], "NORMAL")
+                                                            logged_qty = flattened_qty
+                                                            send_telegram(
+                                                                f"\u26a0\ufe0f *PROTECTION FAILED — POSITION FLATTENED* — {sym} {r['signal']}\n"
+                                                                f"Entry: `{order_result['order_id']}` @ ₹{tracked_entry_price:,.2f} × {flattened_qty}\n"
+                                                                f"SL status: `{'ok' if sl_result['success'] else 'failed'}` | "
+                                                                f"TP status: `{'ok' if tp_result['success'] else 'failed'}`\n"
+                                                                f"Emergency exit: `{emergency_exit['order_id']}` @ ₹{exit_fill_px:,.2f}\n"
+                                                                f"Realized: `₹{flat_pnl:+,.2f}`"
+                                                            )
+                                                        else:
+                                                            remaining_qty = max(tracked_qty - flattened_qty, 0)
+                                                            logged_qty = remaining_qty or tracked_qty
+                                                            send_telegram(
+                                                                f"\u26a0\ufe0f *MANUAL ACTION REQUIRED* — {sym} {r['signal']}\n"
+                                                                f"Protective order placement failed.\n"
+                                                                f"SL status: `{'ok' if sl_result['success'] else 'failed'}` | "
+                                                                f"TP status: `{'ok' if tp_result['success'] else 'failed'}`\n"
+                                                                f"Emergency exit status: `{exit_status}`\n"
+                                                                f"Filled to flatten: `{flattened_qty}/{tracked_qty}`\n"
+                                                                f"Remaining qty may still be live. Check broker immediately."
+                                                            )
+                                                    else:
+                                                        send_telegram(
+                                                            f"\u26a0\ufe0f *MANUAL ACTION REQUIRED* — {sym} {r['signal']}\n"
+                                                            f"Protective order placement failed and emergency exit order was rejected.\n"
+                                                            f"SL status: `{'ok' if sl_result['success'] else 'failed'}` | "
+                                                            f"TP status: `{'ok' if tp_result['success'] else 'failed'}`\n"
+                                                            f"Exit error: `{emergency_exit['message']}`\n"
+                                                            f"Check broker immediately."
+                                                        )
+                                        else:
+                                            position_note = (
+                                                f"entry_not_filled({fill_result.get('status', 'unknown')})"
+                                            )
+                                            flog.warning(
+                                                "POSITION SKIP  %-11s  entry order not filled (%s) — "
+                                                "signal logged but no open position recorded",
+                                                sym, fill_result.get("status", "unknown"),
+                                            )
+                                            send_telegram(
+                                                f"\u23f3 *ORDER NOT FILLED* — {sym} {r['signal']}\n"
+                                                f"Status: `{fill_result['status']}`\n"
+                                                f"Order cancelled after timeout"
+                                            )
+                                    else:
+                                        position_note = "entry_order_failed"
+                                        flog.error("AUTO-TRADE FAILED  %-11s  %s", sym, order_result["message"])
+                                        flog.warning(
+                                            "POSITION SKIP  %-11s  entry order failed — "
+                                            "signal logged but no open position recorded",
+                                            sym,
+                                        )
+                                        send_telegram(
+                                            f"\u274c *ORDER FAILED* — {sym} {r['signal']}\n"
+                                            f"Error: {order_result['message']}\n"
+                                            f"Manual entry needed: ₹{r['price']:,.2f}"
+                                        )
+
+                                if signal_consumed:
+                                    cooldowns[state_key] = bar_completed_ts + COOLDOWN
+                                    signal_counts[count_key] = signal_counts.get(count_key, 0) + 1
+                                    sym_pdl_dirs.add(r["signal"])
+
+                                if position_taken:
+                                    new_pos = {
+                                        "direction": r["signal"],
+                                        "entry_price": tracked_entry_price,
+                                        "entry_atr": r["atr"],
+                                        "qty": tracked_qty,
+                                        "sl": r["sl"],
+                                        "tp": r["tp"],
+                                        "entry_scan": scan_count,
+                                        "entry_time": bar_completed_ts,
+                                        "last_bracket_ts": bar_ts,
+                                        "variant": r["variant"],
+                                        "sl_order_id": r.get("_sl_order_id"),
+                                        "tp_order_id": r.get("_tp_order_id"),
+                                    }
+                                    same_bar_hit = _check_bracket_hit(new_pos, bar_row["high"], bar_row["low"])
+                                    if same_bar_hit:
+                                        flog.warning(
+                                            "SAME-BAR EXIT  %-11s  %s on entry bar — %s",
+                                            sym, r["signal"], same_bar_hit,
+                                        )
+                                        if same_bar_hit == "SL":
+                                            daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
+                                        if auto_trade_active:
+                                            remaining_sl = new_pos.get("sl_order_id")
+                                            remaining_tp = new_pos.get("tp_order_id")
+                                            if same_bar_hit == "SL" and remaining_tp:
+                                                cancel_order(client._conn, remaining_tp, "NORMAL")
+                                                flog.info("CANCEL TP  %-11s  order_id=%s (same-bar SL)", sym, remaining_tp)
+                                            elif same_bar_hit == "TP" and remaining_sl:
+                                                cancel_order(client._conn, remaining_sl, "STOPLOSS")
+                                                flog.info("CANCEL SL  %-11s  order_id=%s (same-bar TP)", sym, remaining_sl)
+                                    else:
+                                        open_positions[state_key] = new_pos
+
+                                if signal_consumed or position_taken:
+                                    today_signals.append({
+                                        "sym": sym,
+                                        "dir": r["signal"],
+                                        "trigger": r["trigger"],
+                                        "variant": r["variant"],
+                                        "price": tracked_entry_price if position_taken else r["price"],
+                                        "sl": r["sl"],
+                                        "tp": r["tp"],
+                                        "time": now,
+                                        "status": "filled" if position_taken else "signal_only",
+                                    })
+
+                                    flog.info(
+                                        "  %-11s  %-11s  C=%.2f  → ★ %s[%s]  SL=%.2f  TP=%.2f  Qty=%d%s",
+                                        sym, r["variant"], r["close"],
+                                        r["signal"], r["trigger"], r["sl"], r["tp"],
+                                        logged_qty,
+                                        f"  {position_note}" if position_note else "",
+                                    )
                             else:
                                 reason = ""
                                 if not bar_is_active:
@@ -1509,9 +2005,9 @@ def live(capital: float, use_websocket: bool = True) -> None:
                                     reason = "blocked"
                                 result["signal"] = None
                                 flog.debug(
-                                    "  %-11s  %-11s  C=%.2f  VWAP=%.2f  RSI=%s  Vol=%s  → %s[%s]  %s",
-                                    sym, r["variant"], r["close"], r["vwap"], rsi_str,
-                                    vol_str, raw_sig, raw_trig, reason,
+                                    "  %-11s  %-11s  C=%.2f  → %s[%s]  %s",
+                                    sym, r["variant"], r["close"],
+                                    raw_sig, raw_trig, reason,
                                 )
 
                     last_processed_bar_ts[sym] = latest_pending_ts
@@ -1523,7 +2019,8 @@ def live(capital: float, use_websocket: bool = True) -> None:
             flog.info("SCAN #%d complete in %.1fs", scan_count, scan_elapsed)
             print_dashboard(dashboard, phase)
             _save_state(current_date, cooldowns, pdl_dirs_used, daily_sl_counts,
-                        open_positions, signal_counts, today_signals)
+                        open_positions, signal_counts, today_signals,
+                        realized_pnl)
 
     except KeyboardInterrupt:
         n = len(today_signals)
@@ -1551,8 +2048,8 @@ def main():
         description="Live NSE Intraday Scalping Signal Generator",
     )
     parser.add_argument(
-        "--capital", type=float, default=50_000,
-        help="Trading capital in INR (default: 50000)",
+        "--capital", type=float, default=15_000,
+        help="Trading capital in INR (default: 10000)",
     )
     parser.add_argument(
         "--dry-run", action="store_true",
@@ -1561,6 +2058,10 @@ def main():
     parser.add_argument(
         "--no-websocket", action="store_true",
         help="Disable WebSocket feed, use REST polling only",
+    )
+    parser.add_argument(
+        "--auto-trade", action="store_true",
+        help="Enable automatic bracket order placement via Angel One",
     )
     args = parser.parse_args()
 
@@ -1572,7 +2073,8 @@ def main():
         dry_run(args.capital)
     else:
         try:
-            live(args.capital, use_websocket=not args.no_websocket)
+            live(args.capital, use_websocket=not args.no_websocket,
+                 auto_trade=args.auto_trade)
         except KeyboardInterrupt:
             flog.info("SESSION END  user interrupt")
             print(f"\n{YLW}Session ended by user.{RST}")

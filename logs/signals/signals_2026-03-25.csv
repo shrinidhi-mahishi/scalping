@@ -1,0 +1,2 @@
+date,time,symbol,sector,direction,trigger,variant,price,sl,tp,atr,qty,risk,vwap,rsi,vol_ratio,phase
+2026-03-25,09:30:02,TRENT,Retail,LONG,PDL_BASE,Baseline,3452.22,3440.06,3476.53,12.16,12,145.89,3433.86,89.3,1.7,ACTIVE_AM

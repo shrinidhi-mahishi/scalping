@@ -10,12 +10,20 @@ import os
 import time as _time
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 from datetime import datetime, timedelta
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 
-load_dotenv()
+_ENV_FILE = Path(__file__).with_name(".env")
+_ANGEL_ENV_KEYS = (
+    "ANGEL_API_KEY",
+    "ANGEL_CLIENT_ID",
+    "ANGEL_PASSWORD",
+    "ANGEL_TOTP_SECRET",
+)
+_RAW_PROCESS_ENV = {key: os.getenv(key) for key in _ANGEL_ENV_KEYS}
 
 
 # ─── Angel One Client ────────────────────────────────────────────────────────
@@ -76,13 +84,43 @@ class AngelOneClient:
     }
 
     def __init__(self):
-        self.api_key = os.getenv("ANGEL_API_KEY")
-        self.client_id = os.getenv("ANGEL_CLIENT_ID")
-        self.password = os.getenv("ANGEL_PASSWORD")
-        self.totp_secret = os.getenv("ANGEL_TOTP_SECRET")
+        file_vals = dotenv_values(_ENV_FILE) if _ENV_FILE.exists() else {}
+        self._env_creds = {
+            "api_key": _RAW_PROCESS_ENV.get("ANGEL_API_KEY"),
+            "client_id": _RAW_PROCESS_ENV.get("ANGEL_CLIENT_ID"),
+            "password": _RAW_PROCESS_ENV.get("ANGEL_PASSWORD"),
+            "totp_secret": _RAW_PROCESS_ENV.get("ANGEL_TOTP_SECRET"),
+        }
+        self._file_creds = {
+            "api_key": file_vals.get("ANGEL_API_KEY"),
+            "client_id": file_vals.get("ANGEL_CLIENT_ID"),
+            "password": file_vals.get("ANGEL_PASSWORD"),
+            "totp_secret": file_vals.get("ANGEL_TOTP_SECRET"),
+        }
+        self.api_key = self._env_creds["api_key"] or self._file_creds["api_key"]
+        self.client_id = self._env_creds["client_id"] or self._file_creds["client_id"]
+        self.password = self._env_creds["password"] or self._file_creds["password"]
+        self.totp_secret = self._env_creds["totp_secret"] or self._file_creds["totp_secret"]
         self._conn = None
         self.feed_token: str | None = None
         self.jwt_token: str | None = None
+        self.credential_source: str | None = None
+
+    def _credential_candidates(self):
+        """Return ordered credential sources to try for Angel One login."""
+        candidates = []
+        seen = set()
+        for source, creds in (("env", self._env_creds), ("file", self._file_creds)):
+            values = (
+                creds.get("api_key"),
+                creds.get("client_id"),
+                creds.get("password"),
+                creds.get("totp_secret"),
+            )
+            if all(values) and values not in seen:
+                seen.add(values)
+                candidates.append((source, creds))
+        return candidates
 
     def connect(self):
         import logging as _logging
@@ -102,18 +140,57 @@ class AngelOneClient:
         from SmartApi import SmartConnect
         import pyotp
 
-        self._conn = SmartConnect(api_key=self.api_key)
-        totp = pyotp.TOTP(self.totp_secret).now()
-        resp = self._conn.generateSession(self.client_id, self.password, totp)
+        candidates = self._credential_candidates()
+        if not candidates:
+            raise ConnectionError(
+                "Angel One credentials not found. Update trading/.env or export "
+                "ANGEL_API_KEY, ANGEL_CLIENT_ID, ANGEL_PASSWORD, and ANGEL_TOTP_SECRET."
+            )
 
-        if not resp.get("status"):
-            raise ConnectionError(f"Angel One login failed: {resp.get('message')}")
+        attempts = []
+        auth_error_fragments = (
+            "invalid api key",
+            "app not found",
+            "invalid client",
+            "invalid password",
+            "invalid otp",
+            "invalid totp",
+            "invalid pin",
+        )
+        resp = None
+
+        for source, creds in candidates:
+            self.api_key = creds["api_key"]
+            self.client_id = creds["client_id"]
+            self.password = creds["password"]
+            self.totp_secret = creds["totp_secret"]
+
+            self._conn = SmartConnect(api_key=self.api_key)
+            totp = pyotp.TOTP(self.totp_secret).now()
+            resp = self._conn.generateSession(self.client_id, self.password, totp)
+
+            if resp.get("status"):
+                self.credential_source = source
+                break
+
+            msg = str(resp.get("message", "Unknown error"))
+            attempts.append(f"{source}={msg}")
+            if not any(fragment in msg.lower() for fragment in auth_error_fragments):
+                break
+
+        if not resp or not resp.get("status"):
+            attempted = "; ".join(attempts) if attempts else "no valid credential source"
+            raise ConnectionError(
+                "Angel One login failed. Tried "
+                f"{attempted}. Update trading/.env or export fresh ANGEL_* vars."
+            )
 
         data = resp.get("data", {})
         self.jwt_token = data.get("jwtToken")
         self.feed_token = data.get("feedToken")
 
-        print(f"[Angel One] Logged in as {self.client_id}")
+        src = f" via {self.credential_source}" if self.credential_source else ""
+        print(f"[Angel One] Logged in as {self.client_id}{src}")
         return self
 
     def fetch_candles(

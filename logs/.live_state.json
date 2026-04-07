@@ -1,36 +1,37 @@
 {
-  "date": "2026-03-20",
+  "date": "2026-04-07",
   "cooldowns": {
-    "baseline|JSWSTEEL": "2026-03-20T10:30:00",
-    "baseline|APOLLOHOSP": "2026-03-20T11:57:00",
-    "baseline|HINDALCO": "2026-03-20T12:30:00"
+    "baseline|TCS": "2026-04-07T10:21:00",
+    "baseline|TRENT": "2026-04-07T11:00:00",
+    "baseline|MARUTI": "2026-04-07T14:03:00"
   },
   "pdl_dirs_used": {
-    "baseline|NESTLEIND": [],
-    "baseline|TRENT": [],
-    "baseline|APOLLOHOSP": [
-      "LONG"
-    ],
+    "baseline|HINDUNILVR": [],
+    "baseline|AXISBANK": [],
     "baseline|HDFCLIFE": [],
-    "baseline|JSWSTEEL": [
+    "baseline|BAJAJFINSV": [],
+    "baseline|JSWSTEEL": [],
+    "baseline|SBIN": [],
+    "baseline|MARUTI": [
       "LONG"
     ],
-    "baseline|POWERGRID": [],
-    "baseline|HINDALCO": [
-      "SHORT"
+    "baseline|TRENT": [
+      "LONG"
     ],
-    "baseline|INFY": [],
-    "baseline|HDFCBANK": [],
-    "baseline|WIPRO": []
+    "baseline|SHRIRAMFIN": [],
+    "baseline|TCS": [
+      "LONG"
+    ]
   },
   "daily_sl_counts": {
-    "baseline|JSWSTEEL": 1
+    "baseline|MARUTI": 1
   },
   "signal_counts": {
-    "baseline|JSWSTEEL|AM": 1,
-    "baseline|APOLLOHOSP|AM": 1,
-    "baseline|HINDALCO|AM": 1
+    "baseline|TCS|AM": 1,
+    "baseline|TRENT|AM": 1,
+    "baseline|MARUTI|AM": 1
   },
-  "n_positions": 1,
-  "n_signals": 3
+  "open_positions": {},
+  "realized_pnl": 311.50647700822446,
+  "n_signals": 1
 }

@@ -1,16 +1,33 @@
 {
-  "cached_at": "2026-04-07T09:01:14.908587",
+  "cached_at": "2026-04-21T09:34:23.735618",
   "events": {
-    "2026-04-09": [
+    "2026-04-24": [
       {
-        "sym": "TCS",
+        "sym": "SHRIRAMFIN",
         "category": "board_meeting",
         "detail": "Board Meeting Intimation"
       },
       {
-        "sym": "TCS",
+        "sym": "SHRIRAMFIN",
+        "category": "results",
+        "detail": "Financial Results/Dividend/Fund Raising/Other business matters"
+      }
+    ],
+    "2026-04-21": [
+      {
+        "sym": "HCLTECH",
+        "category": "board_meeting",
+        "detail": "Board Meeting Intimation"
+      },
+      {
+        "sym": "HCLTECH",
         "category": "results",
         "detail": "Financial Results/Dividend"
+      },
+      {
+        "sym": "HCLTECH",
+        "category": "board_meeting",
+        "detail": "Board Meeting Intimation"
       }
     ]
   }

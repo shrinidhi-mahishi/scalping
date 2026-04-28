@@ -25,6 +25,8 @@ TICK_BANDS = [
 ]
 FILL_TIMEOUT_SEC = 60
 FILL_POLL_SEC = 3
+FINAL_STATUS_WAIT_SEC = 8
+FINAL_STATUS_POLL_SEC = 1
 
 TRADING_SYMBOL_SUFFIX = {
     "M&M": "M%26M-EQ",
@@ -256,6 +258,95 @@ def cancel_order(conn, order_id: str, variety: str = "NORMAL") -> bool:
         return False
 
 
+def _confirm_terminal_order_state(
+    conn,
+    sym: str,
+    order_id: str,
+    *,
+    filled_qty_hint: int = 0,
+    fill_price_hint: float = 0.0,
+    status_hint: str = "unknown",
+    wait_sec: int = FINAL_STATUS_WAIT_SEC,
+    poll_sec: int = FINAL_STATUS_POLL_SEC,
+) -> dict:
+    """Poll for a broker-confirmed final order state after timeout/cancel.
+
+    This avoids telling the user "not filled" while the broker still shows the
+    order as open or while a late fill/cancel acknowledgement is propagating.
+    """
+    deadline = _time.monotonic() + wait_sec
+    last_status = status_hint or "unknown"
+    last_filled_qty = int(filled_qty_hint or 0)
+    last_fill_price = float(fill_price_hint or 0.0)
+
+    while True:
+        status = get_order_status(conn, order_id)
+        if status is not None:
+            order_status = str(status.get("orderstatus", "")).lower() or last_status
+            filled_qty = int(status.get("filledshares", 0) or last_filled_qty)
+            fill_price = float(status.get("averageprice", 0) or last_fill_price)
+
+            last_status = order_status
+            last_filled_qty = filled_qty
+            last_fill_price = fill_price
+
+            if order_status in ("complete", "filled"):
+                flog.info(
+                    "ORDER FINAL  %-11s  order_id=%s  status=%s  qty=%d  avg=%.2f",
+                    sym, order_id, order_status, filled_qty, fill_price,
+                )
+                return {
+                    "filled": True,
+                    "filled_qty": filled_qty,
+                    "fill_price": fill_price,
+                    "status": order_status,
+                    "cancelled": False,
+                    "resolved": True,
+                }
+
+            if order_status == "cancelled":
+                flog.info(
+                    "ORDER FINAL  %-11s  order_id=%s  status=cancelled  qty=%d  avg=%.2f",
+                    sym, order_id, filled_qty, fill_price,
+                )
+                return {
+                    "filled": filled_qty > 0,
+                    "filled_qty": filled_qty,
+                    "fill_price": fill_price,
+                    "status": "partial" if filled_qty > 0 else "cancelled",
+                    "cancelled": True,
+                    "resolved": True,
+                }
+
+            if order_status == "rejected":
+                flog.info("ORDER FINAL  %-11s  order_id=%s  status=rejected", sym, order_id)
+                return {
+                    "filled": False,
+                    "filled_qty": 0,
+                    "fill_price": 0.0,
+                    "status": "rejected",
+                    "cancelled": False,
+                    "resolved": True,
+                }
+
+        if _time.monotonic() >= deadline:
+            break
+        _time.sleep(poll_sec)
+
+    flog.warning(
+        "ORDER FINAL UNCERTAIN  %-11s  order_id=%s  status=%s  qty=%d  avg=%.2f",
+        sym, order_id, last_status, last_filled_qty, last_fill_price,
+    )
+    return {
+        "filled": last_filled_qty > 0,
+        "filled_qty": last_filled_qty,
+        "fill_price": last_fill_price,
+        "status": last_status,
+        "cancelled": False,
+        "resolved": False,
+    }
+
+
 def place_sl_order(
     conn,
     sym: str,
@@ -389,7 +480,7 @@ def wait_for_fill_or_cancel(
 ) -> dict:
     """Poll order status and cancel if not filled within timeout or bar expiry.
 
-    Returns dict with: filled, filled_qty, fill_price, status, cancelled
+    Returns dict with: filled, filled_qty, fill_price, status, cancelled, resolved
     """
     from datetime import datetime
     from zoneinfo import ZoneInfo
@@ -427,21 +518,26 @@ def wait_for_fill_or_cancel(
             flog.info("ORDER FILLED  %-11s  order_id=%s  qty=%d  avg=%.2f  in %.1fs",
                        sym, order_id, filled_qty, fill_price, elapsed)
             return {"filled": True, "filled_qty": filled_qty,
-                    "fill_price": fill_price, "status": order_status, "cancelled": False}
+                    "fill_price": fill_price, "status": order_status, "cancelled": False, "resolved": True}
 
         if order_status in ("rejected", "cancelled"):
             flog.warning("ORDER %s  %-11s  order_id=%s", order_status.upper(), sym, order_id)
             return {"filled": False, "filled_qty": 0,
-                    "fill_price": 0, "status": order_status, "cancelled": order_status == "cancelled"}
+                    "fill_price": 0, "status": order_status, "cancelled": order_status == "cancelled", "resolved": True}
 
         _time.sleep(FILL_POLL_SEC)
 
     if filled_qty > 0:
         flog.info("ORDER PARTIAL  %-11s  filled=%d  cancelling remainder", sym, filled_qty)
-        cancel_order(conn, order_id)
-        return {"filled": True, "filled_qty": filled_qty,
-                "fill_price": fill_price, "status": "partial", "cancelled": True}
 
-    cancel_order(conn, order_id)
-    return {"filled": False, "filled_qty": 0,
-            "fill_price": 0, "status": final_status, "cancelled": True}
+    cancel_requested = cancel_order(conn, order_id)
+    confirmed = _confirm_terminal_order_state(
+        conn,
+        sym,
+        order_id,
+        filled_qty_hint=filled_qty,
+        fill_price_hint=fill_price,
+        status_hint=final_status,
+    )
+    confirmed["cancelled"] = bool(confirmed.get("cancelled")) or cancel_requested
+    return confirmed

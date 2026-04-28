@@ -18,13 +18,16 @@ Daily Lifecycle:
   Phase 4  13:00  Shutdown  — stop signals, track only until close
 
 Entry   : Prearmed PDL trigger = prev-day High/Low ± 0.1× ATR
-Exit    : SL = 1.0× ATR, TP = 2.0R, max 2 signals per stock per session
+Confirm : Signal bar must close beyond trigger by 0.05× ATR
+          LONG after 10:00 must close beyond trigger by 0.20× ATR
+          SHORT after 10:00 must close beyond trigger by 0.10× ATR
+Exit    : SL = 1.0× ATR, TP = 1.5R, max 2 signals per stock per session
 Sizing  : 1.5% risk per trade, 5× leverage cap
 Guard   : Max 2 SL hits per stock per day — blocks further entries
 Fill    : Min 50% fill ratio AND ₹100 gross TP to keep partial fills
 
 Usage:
-    python live_signals.py                  # default ₹50,000 capital
+    python live_signals.py                  # default ₹25,000 capital
     python live_signals.py --capital 100000 # custom capital
     python live_signals.py --dry-run        # scan last session, no live loop
 """
@@ -53,6 +56,7 @@ from fetch_data import AngelOneClient, load_csv
 from order_manager import (
     place_bracket_order, wait_for_fill_or_cancel,
     place_sl_order, place_tp_order, cancel_order, place_market_exit_order,
+    round_to_tick, _entry_buffer,
 )
 from websocket_feed import WebSocketFeed
 
@@ -62,16 +66,16 @@ load_dotenv(dotenv_path=Path(__file__).with_name(".env"))
 # ─── Stock Configuration ──────────────────────────────────────────────────
 
 STOCKS = [
-    ("HINDUNILVR", "FMCG"),
-    ("AXISBANK", "Banking"),
-    ("HDFCLIFE", "Insurance"),
-    ("BAJAJFINSV", "Finance"),
-    ("JSWSTEEL", "Steel"),
-    ("SBIN", "Banking"),
-    ("MARUTI", "Auto"),
-    ("TRENT", "Retail"),
-    ("SHRIRAMFIN", "Finance"),
     ("TCS", "IT"),
+    ("HCLTECH", "IT"),
+    ("SHRIRAMFIN", "Finance"),
+    ("NTPC", "Power"),
+    ("BAJAJ-AUTO", "Auto"),
+    ("ADANIPORTS", "Ports"),
+    ("HDFCLIFE", "Insurance"),
+    ("COALINDIA", "Mining"),
+    ("ADANIENT", "Infra"),
+    ("MARUTI", "Auto"),
 ]
 
 # ─── Strategy Parameters ──────────────────────────────────────────────────
@@ -83,6 +87,9 @@ RISK_PCT = 0.015
 LEV_CAP = 5.0
 
 PDL_PREARM_BUFFER_ATR = 0.10
+PDL_CLOSE_EXT_ATR = 0.05
+POST_10_LONG_CLOSE_EXT_ATR = 0.20
+POST_10_SHORT_CLOSE_EXT_ATR = 0.10
 PDL_SL_MULT = 1.0
 MAX_SL_PER_DAY = 2
 
@@ -105,6 +112,10 @@ MAX_SIGNALS_PER_STOCK = 2
 WARMUP_3MIN_DAYS = 5
 POLL_BUFFER_SEC = 1
 WS_STALE_SEC = 20
+EARLY_STRONG_CLOSE_END = time(10, 0)
+EARLY_BODY_CLOSE_MIN = 0.60
+POST_10_LONG_CLOSE_EXT_START = time(10, 0)
+POST_10_SHORT_CLOSE_EXT_START = time(10, 0)
 
 DATA_DIR = Path(__file__).parent / "data"
 LOG_DIR = Path(__file__).parent / "logs"
@@ -118,6 +129,7 @@ ENABLE_AUTO_TRADE = True
 PARTIAL_EXIT_TIMEOUT_SEC = 15
 MIN_FILL_RATIO = 0.50
 MIN_ACTUAL_GROSS_TARGET = 100.0
+MIN_REMAINING_REWARD_ATR = 0.3
 
 IST = ZoneInfo("Asia/Kolkata")
 
@@ -160,7 +172,7 @@ flog = _init_file_logger()
 
 
 def _save_state(session_date, cooldowns, pdl_dirs_used, daily_sl_counts,
-                open_positions, signal_counts, today_signals,
+                open_positions, pending_entries, signal_counts, today_signals,
                 realized_pnl: float = 0.0):
     """Persist intraday state to disk for restart recovery."""
     try:
@@ -174,6 +186,16 @@ def _save_state(session_date, cooldowns, pdl_dirs_used, daily_sl_counts,
                     pos_copy[pk] = pv
             serialized_positions[f"{vk}|{sym}"] = pos_copy
 
+        serialized_pending = {}
+        for (vk, sym), pending in pending_entries.items():
+            pending_copy = {}
+            for pk, pv in pending.items():
+                if isinstance(pv, (pd.Timestamp, datetime)):
+                    pending_copy[pk] = pv.isoformat()
+                else:
+                    pending_copy[pk] = pv
+            serialized_pending[f"{vk}|{sym}"] = pending_copy
+
         state = {
             "date": str(session_date),
             "cooldowns": {f"{k[0]}|{k[1]}": v.isoformat() for k, v in cooldowns.items()},
@@ -181,6 +203,7 @@ def _save_state(session_date, cooldowns, pdl_dirs_used, daily_sl_counts,
             "daily_sl_counts": {f"{k[0]}|{k[1]}": v for k, v in daily_sl_counts.items()},
             "signal_counts": {f"{k[0]}|{k[1]}|{k[2]}": v for k, v in signal_counts.items()},
             "open_positions": serialized_positions,
+            "pending_entries": serialized_pending,
             "realized_pnl": realized_pnl,
             "n_signals": len(today_signals),
         }
@@ -226,12 +249,24 @@ def _load_state(session_date):
                         pass
             positions[(parts[0], parts[1])] = pos
 
+        pending_entries = {}
+        for k, pending in state.get("pending_entries", {}).items():
+            parts = k.split("|", 1)
+            for time_key in ("entry_time", "bar_ts"):
+                if time_key in pending and isinstance(pending[time_key], str):
+                    try:
+                        pending[time_key] = pd.Timestamp(pending[time_key])
+                    except Exception:
+                        pass
+            pending_entries[(parts[0], parts[1])] = pending
+
         return {
             "cooldowns": cooldowns,
             "pdl_dirs_used": pdl_dirs,
             "daily_sl_counts": sl_counts,
             "signal_counts": sig_counts,
             "open_positions": positions,
+            "pending_entries": pending_entries,
             "realized_pnl": float(state.get("realized_pnl", 0.0)),
         }
     except Exception:
@@ -443,6 +478,58 @@ def log_signal(
         writer.writerow(row)
 
 
+def _update_signal_csv_row(
+    *,
+    signal_time: datetime | pd.Timestamp | None,
+    sym: str,
+    direction: str,
+    variant: str,
+    price: float | None = None,
+    sl: float | None = None,
+    tp: float | None = None,
+) -> None:
+    """Best-effort in-place update of an existing daily signal row.
+
+    We keep the CSV schema stable and only refresh price/sl/tp for the matching
+    row so post-session review reflects broker-confirmed reconciliations.
+    """
+    if signal_time is None:
+        return
+    stamp = pd.Timestamp(signal_time)
+    log_file = SIGNALS_DIR / f"signals_{stamp:%Y-%m-%d}.csv"
+    if not log_file.exists():
+        return
+    try:
+        with open(log_file, newline="") as f:
+            rows = list(csv.DictReader(f))
+        if not rows:
+            return
+        target_time = stamp.strftime("%H:%M:%S")
+        updated = False
+        for row in rows:
+            if (
+                row.get("time") == target_time
+                and row.get("symbol") == sym
+                and row.get("direction") == direction
+                and row.get("variant", "") == (variant or "")
+            ):
+                if price is not None:
+                    row["price"] = f"{float(price):.2f}"
+                if sl is not None:
+                    row["sl"] = f"{float(sl):.2f}"
+                if tp is not None:
+                    row["tp"] = f"{float(tp):.2f}"
+                updated = True
+                break
+        if updated:
+            with open(log_file, "w", newline="") as f:
+                writer = csv.DictWriter(f, fieldnames=_LOG_COLUMNS)
+                writer.writeheader()
+                writer.writerows(rows)
+    except Exception as exc:
+        flog.warning("SIGNAL CSV UPDATE FAILED  %s %s %s: %s", sym, direction, target_time, exc)
+
+
 def _trigger_label(trigger: str) -> str:
     return {
         "PDL_BASE": "Prearmed PDL",
@@ -491,6 +578,7 @@ def check_signal(
     pdl_dirs_used: set | None = None,
     body_close_min: float | None = None,
     trigger_name: str = "PDL_BASE",
+    bar_completed_time: time | None = None,
     **_kwargs,
 ) -> tuple[str | None, str | None]:
     """Evaluate the prearmed PDL trigger on a completed bar.
@@ -526,18 +614,20 @@ def check_signal(
 
     if prev_day_high is not None:
         long_trigger = prev_day_high + buffer
+        long_close_extension = atr * _effective_close_extension_atr("LONG", bar_completed_time)
         if ("LONG" not in dirs
                 and prev_close <= prev_day_high + tick_tol
                 and h >= long_trigger
-                and c >= prev_day_high
+                and c >= long_trigger + long_close_extension
                 and body_close_ok("LONG")):
             return "LONG", trigger_name
     if prev_day_low is not None:
         short_trigger = prev_day_low - buffer
+        short_close_extension = atr * _effective_close_extension_atr("SHORT", bar_completed_time)
         if ("SHORT" not in dirs
                 and prev_close >= prev_day_low - tick_tol
                 and l <= short_trigger
-                and c <= prev_day_low
+                and c <= short_trigger - short_close_extension
                 and body_close_ok("SHORT")):
             return "SHORT", trigger_name
 
@@ -557,6 +647,45 @@ def gross_target_rupees(direction: str, entry_price: float, tp_price: float, qty
     else:
         gross = (entry_price - tp_price) * qty
     return max(float(gross), 0.0)
+
+
+def _effective_body_close_min(
+    base_body_close_min: float | None,
+    bar_completed_time: time,
+) -> float | None:
+    """Return the body-close requirement for a completed bar.
+
+    Baseline behavior now requires a stronger close only during the first 30
+    minutes of the active session (09:30–10:00). Variant-specific filters, if
+    supplied, take precedence.
+    """
+    if base_body_close_min is not None:
+        return base_body_close_min
+    if ENTRY_AM:
+        early_cutoff = min(ENTRY_AM[1], EARLY_STRONG_CLOSE_END)
+        if ENTRY_AM[0] <= bar_completed_time <= early_cutoff:
+            return EARLY_BODY_CLOSE_MIN
+    return None
+
+
+def _effective_close_extension_atr(
+    direction: str,
+    bar_completed_time: time | None,
+) -> float:
+    """Return the close-beyond-trigger extension in ATR units for a bar."""
+    if (
+        direction == "LONG"
+        and bar_completed_time is not None
+        and bar_completed_time >= POST_10_LONG_CLOSE_EXT_START
+    ):
+        return POST_10_LONG_CLOSE_EXT_ATR
+    if (
+        direction == "SHORT"
+        and bar_completed_time is not None
+        and bar_completed_time >= POST_10_SHORT_CLOSE_EXT_START
+    ):
+        return POST_10_SHORT_CLOSE_EXT_ATR
+    return PDL_CLOSE_EXT_ATR
 
 
 # ─── Display ──────────────────────────────────────────────────────────────
@@ -608,6 +737,374 @@ def _check_bracket_hit(pos: dict, bar_high: float, bar_low: float) -> str | None
         if bar_low <= pos["tp"]:
             return "TP"
     return None
+
+
+def _update_today_signal_for_order(
+    today_signals: list[dict],
+    *,
+    order_id: str | None,
+    sym: str,
+    direction: str,
+    variant: str,
+    price: float,
+    sl: float,
+    tp: float,
+    status: str,
+    trigger: str = "PDL_BASE",
+    fill_time: datetime | None = None,
+    fallback_time: datetime | pd.Timestamp | None = None,
+) -> None:
+    """Update an existing today_signals row for an entry order, or append one."""
+    if fill_time is None:
+        fill_time = _now()
+    for existing in reversed(today_signals):
+        if order_id and existing.get("order_id") == order_id:
+            existing["price"] = price
+            existing["sl"] = sl
+            existing["tp"] = tp
+            existing["status"] = status
+            existing["fill_time"] = fill_time
+            existing["trigger"] = existing.get("trigger") or trigger
+            return
+
+    today_signals.append({
+        "sym": sym,
+        "dir": direction,
+        "trigger": trigger,
+        "variant": variant,
+        "price": price,
+        "sl": sl,
+        "tp": tp,
+        "time": fallback_time if fallback_time is not None else fill_time,
+        "status": status,
+        "order_id": order_id,
+        "fill_time": fill_time,
+    })
+
+
+def _reconcile_late_filled_entry(
+    conn,
+    sym: str,
+    pending: dict,
+    *,
+    fill_qty: int,
+    fill_price: float,
+) -> dict:
+    """Attach protection (or flatten) for an entry that filled after timeout.
+
+    Returns:
+      status: open | closed | manual
+      position: open-position dict when protection is attached
+      pnl_delta: realized P&L booked during flatten/immediate broker exit
+      sl_hit: True when the reconciled close was an SL
+    """
+    direction = pending.get("direction")
+    variant = pending.get("variant", "Baseline")
+    requested_qty = int(pending.get("requested_qty", 0) or 0)
+    tracked_qty = int(fill_qty or requested_qty or 0)
+    tracked_entry_price = float(fill_price or pending.get("signal_price") or 0.0)
+    sl_price = float(pending.get("sl", 0) or 0.0)
+    tp_price = float(pending.get("tp", 0) or 0.0)
+    atr = float(pending.get("atr", 0) or 0.0)
+    entry_oid = pending.get("entry_order_id")
+
+    result = {"status": "manual", "position": None, "pnl_delta": 0.0, "sl_hit": False}
+
+    if not direction or tracked_qty <= 0 or tracked_entry_price <= 0 or sl_price <= 0 or tp_price <= 0:
+        flog.error(
+            "LATE FILL INVALID  %-11s  direction=%s qty=%s entry=%.2f sl=%.2f tp=%.2f",
+            sym, direction, tracked_qty, tracked_entry_price, sl_price, tp_price,
+        )
+        send_telegram(
+            f"\u26a0\ufe0f *MANUAL ACTION REQUIRED* — {sym}\n"
+            f"Late fill detected but reconciliation data is incomplete.\n"
+            f"Entry order: `{entry_oid or 'unknown'}`\n"
+            f"Check broker immediately."
+        )
+        return result
+
+    fill_ratio = tracked_qty / max(requested_qty or tracked_qty, 1)
+    actual_gross_target = gross_target_rupees(direction, tracked_entry_price, tp_price, tracked_qty)
+    fill_is_partial = requested_qty > 0 and tracked_qty < requested_qty
+    reject_late_fill = (
+        fill_ratio < MIN_FILL_RATIO
+        or actual_gross_target < MIN_ACTUAL_GROSS_TARGET
+    )
+
+    if reject_late_fill:
+        reject_reasons = []
+        if fill_ratio < MIN_FILL_RATIO:
+            reject_reasons.append(f"fill_ratio={fill_ratio:.0%}<min={MIN_FILL_RATIO:.0%}")
+        if actual_gross_target < MIN_ACTUAL_GROSS_TARGET:
+            reject_reasons.append(f"gross_tp=₹{actual_gross_target:,.2f}<min=₹{MIN_ACTUAL_GROSS_TARGET:,.2f}")
+        reject_msg = ", ".join(reject_reasons)
+        flog.warning(
+            "LATE FILL REJECTED  %-11s  qty=%d/%d  entry=%.2f  %s",
+            sym, tracked_qty, requested_qty, tracked_entry_price, reject_msg,
+        )
+        exit_result = place_market_exit_order(
+            conn, sym, direction, tracked_qty,
+            ref_price=tracked_entry_price,
+        )
+        if exit_result["success"]:
+            flat_result = wait_for_fill_or_cancel(
+                conn,
+                sym,
+                exit_result["order_id"],
+                timeout_sec=PARTIAL_EXIT_TIMEOUT_SEC,
+            )
+            exit_filled_qty = int(flat_result.get("filled_qty", 0) or 0)
+            exit_fill_px = float(flat_result.get("fill_price", 0) or 0)
+            if flat_result["filled"] and exit_filled_qty > 0:
+                flattened_qty = min(exit_filled_qty, tracked_qty)
+                if direction == "LONG":
+                    flat_pnl = (exit_fill_px - tracked_entry_price) * flattened_qty
+                else:
+                    flat_pnl = (tracked_entry_price - exit_fill_px) * flattened_qty
+                result["pnl_delta"] += flat_pnl
+                if flattened_qty >= tracked_qty:
+                    result["status"] = "closed"
+                    send_telegram(
+                        f"\u26a0\ufe0f *LATE ENTRY FILLED — FLATTENED* — {sym} {direction}\n"
+                        f"Entry: `{entry_oid}` @ ₹{tracked_entry_price:,.2f} × {tracked_qty}\n"
+                        f"Detected after timeout/cancel path.\n"
+                        f"Reason: `{reject_msg}`\n"
+                        f"Flattened: `{exit_result['order_id']}` @ ₹{exit_fill_px:,.2f}\n"
+                        f"Realized: `₹{flat_pnl:+,.2f}`"
+                    )
+                    return result
+                tracked_qty -= flattened_qty
+                flog.warning(
+                    "LATE FILL PARTIAL FLATTEN  %-11s  exited=%d  remaining=%d",
+                    sym, flattened_qty, tracked_qty,
+                )
+                send_telegram(
+                    f"\u26a0\ufe0f *LATE ENTRY FILLED — PARTIAL FLATTEN* — {sym} {direction}\n"
+                    f"Entry: `{entry_oid}` @ ₹{tracked_entry_price:,.2f}\n"
+                    f"Reason: `{reject_msg}`\n"
+                    f"Flattened: `{flattened_qty}` | Remaining to protect: `{tracked_qty}`"
+                )
+                actual_gross_target = gross_target_rupees(direction, tracked_entry_price, tp_price, tracked_qty)
+            else:
+                send_telegram(
+                    f"\u26a0\ufe0f *MANUAL ACTION REQUIRED* — {sym} {direction}\n"
+                    f"Late fill detected after timeout/cancel path.\n"
+                    f"Flatten attempt status: `{flat_result.get('status', 'unknown')}`\n"
+                    f"Check broker immediately."
+                )
+                return result
+        else:
+            send_telegram(
+                f"\u26a0\ufe0f *MANUAL ACTION REQUIRED* — {sym} {direction}\n"
+                f"Late fill detected after timeout/cancel path.\n"
+                f"Emergency flatten failed: `{exit_result['message']}`\n"
+                f"Check broker immediately."
+            )
+            return result
+
+    low_reward_partial_flatten = False
+
+    # Re-check remaining reward using the actual fill price, not a synthetic
+    # re-buffered entry. If full flatten fails, we fall through and protect the
+    # remaining qty rather than pretending the trade is fully closed.
+    if atr > 0:
+        if direction == "LONG":
+            remaining_reward = tp_price - tracked_entry_price
+        else:
+            remaining_reward = tracked_entry_price - tp_price
+        min_reward = atr * MIN_REMAINING_REWARD_ATR
+        if remaining_reward < min_reward:
+            flog.warning(
+                "LATE FILL LOW REWARD  %-11s  remaining=%.2f < min=%.2f (%.0f%% ATR) — flattening instead of protecting",
+                sym, remaining_reward, min_reward, MIN_REMAINING_REWARD_ATR * 100,
+            )
+            exit_result = place_market_exit_order(
+                conn, sym, direction, tracked_qty,
+                ref_price=tracked_entry_price,
+            )
+            if exit_result["success"]:
+                flat_result = wait_for_fill_or_cancel(
+                    conn, sym, exit_result["order_id"],
+                    timeout_sec=PARTIAL_EXIT_TIMEOUT_SEC,
+                )
+                exit_filled_qty = int(flat_result.get("filled_qty", 0) or 0)
+                exit_fill_px = float(flat_result.get("fill_price", 0) or 0)
+                if flat_result["filled"] and exit_filled_qty > 0:
+                    flattened_qty = min(exit_filled_qty, tracked_qty)
+                    pnl = (
+                        (exit_fill_px - tracked_entry_price) * flattened_qty
+                        if direction == "LONG"
+                        else (tracked_entry_price - exit_fill_px) * flattened_qty
+                    )
+                    result["pnl_delta"] += pnl
+                    if flattened_qty >= tracked_qty:
+                        result["status"] = "closed"
+                        send_telegram(
+                            f"\u26a0\ufe0f *LATE ENTRY FILLED — LOW REWARD FLATTEN* — {sym} {direction}\n"
+                            f"Entry @ ₹{tracked_entry_price:,.2f} × {tracked_qty}\n"
+                            f"Remaining reward ₹{remaining_reward:.2f} < min ₹{min_reward:.2f}\n"
+                            f"Flattened: `{exit_result['order_id']}` @ ₹{exit_fill_px:,.2f}\n"
+                            f"Realized: `₹{pnl:+,.2f}`"
+                        )
+                        return result
+                    tracked_qty -= flattened_qty
+                    low_reward_partial_flatten = True
+                    flog.warning(
+                        "LATE FILL LOW REWARD PARTIAL FLATTEN  %-11s  exited=%d  remaining=%d",
+                        sym, flattened_qty, tracked_qty,
+                    )
+                    send_telegram(
+                        f"\u26a0\ufe0f *LATE ENTRY FILLED — LOW REWARD PARTIAL FLATTEN* — {sym} {direction}\n"
+                        f"Entry @ ₹{tracked_entry_price:,.2f}\n"
+                        f"Remaining reward ₹{remaining_reward:.2f} < min ₹{min_reward:.2f}\n"
+                        f"Flattened: `{flattened_qty}` | Remaining protected qty: `{tracked_qty}`"
+                    )
+            if not low_reward_partial_flatten:
+                # Only bail out on a true flatten failure (flatten order not filled
+                # or flatten order placement failed). If we did a partial flatten,
+                # low_reward_partial_flatten is True and we fall through to
+                # place_sl_order() to protect the remaining qty.
+                send_telegram(
+                    f"\u26a0\ufe0f *MANUAL ACTION REQUIRED* — {sym} {direction}\n"
+                    f"Late fill detected. Remaining reward too small and flatten failed.\n"
+                    f"Check broker immediately."
+                )
+                return result
+
+    sl_result = place_sl_order(conn, sym, direction, sl_price, tracked_qty)
+    tp_result = place_tp_order(conn, sym, direction, tp_price, tracked_qty)
+    if sl_result["success"] and tp_result["success"]:
+        sl_oid = sl_result.get("order_id")
+        tp_oid = tp_result.get("order_id")
+        try:
+            _imm_book = conn.orderBook()
+            _imm_orders = (
+                {o["orderid"]: o for o in _imm_book["data"]}
+                if _imm_book and _imm_book.get("data")
+                else {}
+            )
+            sl_filled = (
+                sl_oid and sl_oid in _imm_orders
+                and _imm_orders[sl_oid].get("orderstatus", "").lower() in ("complete", "filled")
+            )
+            tp_filled = (
+                tp_oid and tp_oid in _imm_orders
+                and _imm_orders[tp_oid].get("orderstatus", "").lower() in ("complete", "filled")
+            )
+            if tp_filled and sl_oid:
+                cancel_order(conn, sl_oid, "STOPLOSS")
+                pnl = (
+                    (tp_price - tracked_entry_price) * tracked_qty
+                    if direction == "LONG"
+                    else (tracked_entry_price - tp_price) * tracked_qty
+                )
+                result["status"] = "closed"
+                result["pnl_delta"] += pnl
+                send_telegram(
+                    f"\u2705 *LATE ENTRY FILLED — TP ALREADY HIT* — {sym} {direction}\n"
+                    f"Entry: `{entry_oid}` @ ₹{tracked_entry_price:,.2f} × {tracked_qty}\n"
+                    f"TP: `₹{tp_price:,.2f}`\n"
+                    f"Realized: `₹{pnl:+,.2f}`"
+                )
+                return result
+            if sl_filled and tp_oid:
+                cancel_order(conn, tp_oid, "NORMAL")
+                pnl = (
+                    (sl_price - tracked_entry_price) * tracked_qty
+                    if direction == "LONG"
+                    else (tracked_entry_price - sl_price) * tracked_qty
+                )
+                result["status"] = "closed"
+                result["pnl_delta"] += pnl
+                result["sl_hit"] = True
+                send_telegram(
+                    f"\u26a0\ufe0f *LATE ENTRY FILLED — SL ALREADY HIT* — {sym} {direction}\n"
+                    f"Entry: `{entry_oid}` @ ₹{tracked_entry_price:,.2f} × {tracked_qty}\n"
+                    f"SL: `₹{sl_price:,.2f}`\n"
+                    f"Realized: `₹{pnl:+,.2f}`"
+                )
+                return result
+        except Exception as exc:
+            flog.warning("LATE FILL IMM RECONCILE  %-11s  %s", sym, exc)
+
+        entry_time = pending.get("entry_time")
+        if isinstance(entry_time, str):
+            entry_time = pd.Timestamp(entry_time)
+        bar_ts = pending.get("bar_ts", entry_time)
+        if isinstance(bar_ts, str):
+            bar_ts = pd.Timestamp(bar_ts)
+
+        result["status"] = "open"
+        result["position"] = {
+            "direction": direction,
+            "entry_price": tracked_entry_price,
+            "entry_atr": atr,
+            "qty": tracked_qty,
+            "sl": sl_price,
+            "tp": tp_price,
+            "entry_scan": pending.get("entry_scan", 0),
+            "entry_time": entry_time if entry_time is not None else _now(),
+            "last_bracket_ts": bar_ts if bar_ts is not None else _now(),
+            "variant": variant,
+            "sl_order_id": sl_oid,
+            "tp_order_id": tp_oid,
+        }
+        fill_label = "PARTIAL" if fill_is_partial else "FULL"
+        send_telegram(
+            f"\u2705 *LATE ENTRY FILLED — PROTECTED* — {sym} {direction}\n"
+            f"Fill: `{fill_label}` | Entry: `{entry_oid}` @ ₹{tracked_entry_price:,.2f} × {tracked_qty}\n"
+            f"{'Full flatten did not complete; remaining qty protected.\\n' if low_reward_partial_flatten else 'Detected after timeout/cancel path.\\n'}"
+            f"SL: `₹{sl_price:,.2f}` (`{sl_oid}`)\n"
+            f"TP: `₹{tp_price:,.2f}` (`{tp_oid}`)"
+        )
+        flog.info(
+            "LATE FILL PROTECTED  %-11s  %s  entry=%.2f  qty=%d  sl_oid=%s  tp_oid=%s",
+            sym, direction, tracked_entry_price, tracked_qty, sl_oid, tp_oid,
+        )
+        return result
+
+    flog.error(
+        "LATE FILL PROTECTION FAILED  %-11s  sl=%s  tp=%s",
+        sym, sl_result["success"], tp_result["success"],
+    )
+    emergency_exit = place_market_exit_order(
+        conn, sym, direction, tracked_qty,
+        ref_price=tracked_entry_price,
+    )
+    if emergency_exit["success"]:
+        flat_result = wait_for_fill_or_cancel(
+            conn,
+            sym,
+            emergency_exit["order_id"],
+            timeout_sec=PARTIAL_EXIT_TIMEOUT_SEC,
+        )
+        exit_filled_qty = int(flat_result.get("filled_qty", 0) or 0)
+        exit_fill_px = float(flat_result.get("fill_price", 0) or 0)
+        if flat_result["filled"] and exit_filled_qty > 0:
+            flattened_qty = min(exit_filled_qty, tracked_qty)
+            pnl = (
+                (exit_fill_px - tracked_entry_price) * flattened_qty
+                if direction == "LONG"
+                else (tracked_entry_price - exit_fill_px) * flattened_qty
+            )
+            result["pnl_delta"] += pnl
+            if flattened_qty >= tracked_qty:
+                result["status"] = "closed"
+                send_telegram(
+                    f"\u26a0\ufe0f *LATE ENTRY FILLED — FLATTENED* — {sym} {direction}\n"
+                    f"Protection placement failed after late fill.\n"
+                    f"Flattened: `{emergency_exit['order_id']}` @ ₹{exit_fill_px:,.2f}\n"
+                    f"Realized: `₹{pnl:+,.2f}`"
+                )
+                return result
+
+    send_telegram(
+        f"\u26a0\ufe0f *MANUAL ACTION REQUIRED* — {sym} {direction}\n"
+        f"Late fill detected after timeout/cancel path.\n"
+        f"Protection placement failed and automatic flatten could not be confirmed.\n"
+        f"Check broker immediately."
+    )
+    return result
 
 
 def print_dashboard(rows: list[dict], phase: str) -> None:
@@ -757,10 +1254,16 @@ def scan_bar(sym, sec, df, bar_idx, capital,
     row = df.iloc[bar_idx]
     prev_row = df.iloc[bar_idx - 1] if bar_idx != 0 and abs(bar_idx) < len(df) else None
     ts = df.index[bar_idx]
+    effective_body_close_min = _effective_body_close_min(
+        body_close_min,
+        bar_completed_at(ts).time(),
+            )
 
     sig, trigger = check_signal(
         row, prev_row, prev_day_high, prev_day_low, pdl_dirs_used,
-        body_close_min=body_close_min, trigger_name=trigger_name,
+        body_close_min=effective_body_close_min,
+        trigger_name=trigger_name,
+        bar_completed_time=bar_completed_at(ts).time(),
     )
 
     result = {
@@ -1045,6 +1548,7 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
     if excluded_stocks:
         print(f"  Skipped : {', '.join(excluded_stocks.keys())} (events)")
     print(f"  SL      : {PDL_SL_MULT}× ATR  |  Cooldown : {int(COOLDOWN.total_seconds()//60)} min")
+    print(f"  Filter  : First 30 min require 60% body close through PDL")
     print(f"  {'─' * 56}")
     print(f"  09:14  Phase 1  Warm-Up       ✓ done")
     print(f"  09:15  Phase 2  Silent         track only, no signals")
@@ -1079,12 +1583,16 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
         f"Capital: ₹{capital:,.0f}\n"
         f"Stocks: {syms}\n"
         f"Variant: Baseline\n"
-        f"Trigger: PDL ± {PDL_PREARM_BUFFER_ATR:.1f}× ATR | SL: {PDL_SL_MULT}× ATR | RR: 1:{RR}\n"
+        f"Trigger: PDL ± {PDL_PREARM_BUFFER_ATR:.1f}× ATR | Close > trigger by {PDL_CLOSE_EXT_ATR:.2f}× ATR\n"
+        f"Post-10 LONG: close > trigger by {POST_10_LONG_CLOSE_EXT_ATR:.2f}× ATR\n"
+        f"Post-10 SHORT: close > trigger by {POST_10_SHORT_CLOSE_EXT_ATR:.2f}× ATR | SL: {PDL_SL_MULT}× ATR | RR: 1:{RR}\n"
+        f"Opening filter: first 30 min require 60% body close through PDL\n"
         f"Schedule: 09:30–13:00 | Data: {data_mode}"
     )
 
     cooldowns: dict[tuple[str, str], datetime] = {}
     open_positions: dict[tuple[str, str], dict] = {}
+    pending_entries: dict[tuple[str, str], dict] = {}
     signal_counts: dict[tuple[str, str, str], int] = {}
     pdl_dirs_used: dict[tuple[str, str], set[str]] = {}
     daily_sl_counts: dict[tuple[str, str], int] = {}
@@ -1103,10 +1611,12 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
         signal_counts = saved["signal_counts"]
         if saved.get("open_positions"):
             open_positions = saved["open_positions"]
+        if saved.get("pending_entries"):
+            pending_entries = saved["pending_entries"]
         realized_pnl = saved.get("realized_pnl", 0.0)
-        flog.info("STATE RESTORED  cooldowns=%d  dirs=%d  sl_counts=%d  sig_counts=%d  positions=%d  pnl=₹%.2f",
+        flog.info("STATE RESTORED  cooldowns=%d  dirs=%d  sl_counts=%d  sig_counts=%d  positions=%d  pending=%d  pnl=₹%.2f",
                   len(cooldowns), len(pdl_dirs_used), len(daily_sl_counts), len(signal_counts),
-                  len(open_positions), realized_pnl)
+                  len(open_positions), len(pending_entries), realized_pnl)
         print(f"  {GRN}[state] Restored session state from previous run{RST}")
         if open_positions:
             for (vk, sym), pos in open_positions.items():
@@ -1115,6 +1625,17 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                 flog.info("STATE POS  %-11s  %s  entry=%.2f  SL=%.2f  TP=%.2f  sl_oid=%s  tp_oid=%s",
                           sym, pos["direction"], pos["entry_price"], pos["sl"], pos["tp"],
                           pos.get("sl_order_id"), pos.get("tp_order_id"))
+        if pending_entries:
+            for (vk, sym), pending in pending_entries.items():
+                flog.info(
+                    "STATE PENDING  %-11s  %s  order_id=%s  sl=%.2f  tp=%.2f  qty=%s",
+                    sym,
+                    pending.get("direction"),
+                    pending.get("entry_order_id"),
+                    float(pending.get("sl", 0) or 0),
+                    float(pending.get("tp", 0) or 0),
+                    pending.get("requested_qty"),
+                )
     current_date = _now().date()
     last_phase = ""
     scan_count = 0
@@ -1132,6 +1653,7 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                 current_date = now.date()
                 cooldowns.clear()
                 open_positions.clear()
+                pending_entries.clear()
                 signal_counts.clear()
                 pdl_dirs_used.clear()
                 daily_sl_counts.clear()
@@ -1172,8 +1694,11 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                                 s["variant"], s["price"], s["sl"], s["tp"],
                             )
                         print(f"{DIM}  Log saved: {log_file}{RST}")
-                    if auto_trade_active and open_positions:
-                        flog.info("SHUTDOWN CLEANUP  reconciling %d open position(s)", len(open_positions))
+                    if auto_trade_active and (open_positions or pending_entries):
+                        flog.info(
+                            "SHUTDOWN CLEANUP  reconciling %d open position(s) and %d pending entry(ies)",
+                            len(open_positions), len(pending_entries),
+                        )
                         try:
                             _shutdown_book = client._conn.orderBook()
                             _shutdown_orders = {}
@@ -1182,6 +1707,113 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                         except Exception as _bk_exc:
                             flog.warning("SHUTDOWN CLEANUP  orderBook failed: %s", _bk_exc)
                             _shutdown_orders = {}
+
+                        refresh_shutdown_orders = False
+                        for state_key, pending in list(pending_entries.items()):
+                            op_sym = state_key[1]
+                            entry_oid = pending.get("entry_order_id")
+                            broker_entry = _shutdown_orders.get(entry_oid) if entry_oid else None
+                            if broker_entry is None:
+                                send_telegram(
+                                    f"\u26a0\ufe0f *PENDING ENTRY UNRESOLVED AT SHUTDOWN* — {op_sym} {pending.get('direction', '')}\n"
+                                    f"Entry order: `{entry_oid or 'unknown'}`\n"
+                                    f"Broker state could not be confirmed before shutdown.\n"
+                                    f"Check order book manually."
+                                )
+                                del pending_entries[state_key]
+                                continue
+
+                            broker_status = str(broker_entry.get("orderstatus", "")).lower()
+                            broker_fill_qty = int(broker_entry.get("filledshares", 0) or 0)
+                            broker_fill_px = float(broker_entry.get("averageprice", 0) or 0)
+
+                            if broker_status in ("complete", "filled") and broker_fill_qty > 0:
+                                flog.info(
+                                    "SHUTDOWN LATE FILL  %-11s  order_id=%s  qty=%d  avg=%.2f",
+                                    op_sym, entry_oid, broker_fill_qty, broker_fill_px,
+                                )
+                                late_result = _reconcile_late_filled_entry(
+                                    client._conn,
+                                    op_sym,
+                                    pending,
+                                    fill_qty=broker_fill_qty,
+                                    fill_price=broker_fill_px,
+                                )
+                                realized_pnl += float(late_result.get("pnl_delta", 0.0) or 0.0)
+                                if late_result.get("sl_hit"):
+                                    daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
+                                _update_today_signal_for_order(
+                                    today_signals,
+                                    order_id=entry_oid,
+                                    sym=op_sym,
+                                    direction=pending.get("direction", ""),
+                                    variant=pending.get("variant", "Baseline"),
+                                    price=broker_fill_px if broker_fill_px > 0 else float(pending.get("signal_price", 0) or 0),
+                                    sl=float(pending.get("sl", 0) or 0),
+                                    tp=float(pending.get("tp", 0) or 0),
+                                    status=f"late_fill_{late_result.get('status', 'manual')}",
+                                    trigger=pending.get("trigger", "PDL_BASE"),
+                                    fill_time=_now(),
+                                    fallback_time=pending.get("entry_time"),
+                                )
+                                _update_signal_csv_row(
+                                    signal_time=pending.get("entry_time"),
+                                    sym=op_sym,
+                                    direction=pending.get("direction", ""),
+                                    variant=pending.get("variant", "Baseline"),
+                                    price=broker_fill_px if broker_fill_px > 0 else float(pending.get("signal_price", 0) or 0),
+                                    sl=float(pending.get("sl", 0) or 0),
+                                    tp=float(pending.get("tp", 0) or 0),
+                                )
+                                if late_result.get("position") is not None:
+                                    open_positions[state_key] = late_result["position"]
+                                    refresh_shutdown_orders = True
+                                del pending_entries[state_key]
+                            elif broker_status in ("cancelled", "rejected"):
+                                flog.info(
+                                    "SHUTDOWN PENDING CLEARED  %-11s  order_id=%s  broker=%s",
+                                    op_sym, entry_oid, broker_status,
+                                )
+                                send_telegram(
+                                    f"\u23f3 *ORDER NOT FILLED* — {op_sym} {pending.get('direction', '')}\n"
+                                    f"Status: `{broker_status}`\n"
+                                    f"Broker confirmed no fill before shutdown."
+                                )
+                                _update_today_signal_for_order(
+                                    today_signals,
+                                    order_id=entry_oid,
+                                    sym=op_sym,
+                                    direction=pending.get("direction", ""),
+                                    variant=pending.get("variant", "Baseline"),
+                                    price=float(pending.get("signal_price", 0) or 0),
+                                    sl=float(pending.get("sl", 0) or 0),
+                                    tp=float(pending.get("tp", 0) or 0),
+                                    status=f"not_filled_{broker_status}",
+                                    trigger=pending.get("trigger", "PDL_BASE"),
+                                    fill_time=_now(),
+                                    fallback_time=pending.get("entry_time"),
+                                )
+                                del pending_entries[state_key]
+                            else:
+                                send_telegram(
+                                    f"\u26a0\ufe0f *PENDING ENTRY UNRESOLVED AT SHUTDOWN* — {op_sym} {pending.get('direction', '')}\n"
+                                    f"Entry order: `{entry_oid or 'unknown'}`\n"
+                                    f"Broker status: `{broker_status}`\n"
+                                    f"Check order book manually."
+                                )
+                                # Issue 3 fix: explicitly remove unresolved pending entries
+                                # from persisted state so a next-day restart does not
+                                # pick them up (the date check already handles this, but
+                                # removing them here keeps the state file clean).
+                                del pending_entries[state_key]
+
+                        if refresh_shutdown_orders:
+                            try:
+                                _shutdown_book = client._conn.orderBook()
+                                if _shutdown_book and _shutdown_book.get("status") and _shutdown_book.get("data"):
+                                    _shutdown_orders = {o["orderid"]: o for o in _shutdown_book["data"]}
+                            except Exception as _bk_exc:
+                                flog.warning("SHUTDOWN CLEANUP  refresh orderBook failed: %s", _bk_exc)
 
                         for (variant_key, op_sym), op_pos in list(open_positions.items()):
                             sl_oid = op_pos.get("sl_order_id")
@@ -1265,6 +1897,17 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                             + "\n\nManually check SL/TP bracket orders."
                         )
 
+                    _save_state(
+                        current_date,
+                        cooldowns,
+                        pdl_dirs_used,
+                        daily_sl_counts,
+                        open_positions,
+                        pending_entries,
+                        signal_counts,
+                        today_signals,
+                        realized_pnl,
+                            )
                     flog.info("=" * 70)
                     send_telegram(f"\U0001f4f4 Shutdown. {n} signal(s) today.")
                     if ws_feed is not None:
@@ -1449,7 +2092,7 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
 
             # Fetch broker order book once per scan (for position tracking)
             _broker_orders: dict | None = None
-            if auto_trade_active and open_positions:
+            if auto_trade_active and (open_positions or pending_entries):
                 try:
                     _book = client._conn.orderBook()
                     if _book and _book.get("status") and _book.get("data"):
@@ -1491,6 +2134,81 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                         for cfg in SIGNAL_VARIANTS:
                             state_key = (cfg["key"], sym)
                             sym_pdl_dirs = pdl_dirs_used.setdefault(state_key, set())
+
+                            if auto_trade_active and _broker_orders is not None and state_key in pending_entries:
+                                pending = pending_entries[state_key]
+                                entry_oid = pending.get("entry_order_id")
+                                broker_entry = _broker_orders.get(entry_oid) if entry_oid else None
+                                if broker_entry is not None:
+                                    broker_status = str(broker_entry.get("orderstatus", "")).lower()
+                                    broker_fill_qty = int(broker_entry.get("filledshares", 0) or 0)
+                                    broker_fill_px = float(broker_entry.get("averageprice", 0) or 0)
+                                    if broker_status in ("complete", "filled") and broker_fill_qty > 0:
+                                        flog.info(
+                                            "LATE FILL DETECTED  %-11s  order_id=%s  qty=%d  avg=%.2f",
+                                            sym, entry_oid, broker_fill_qty, broker_fill_px,
+                                        )
+                                        late_result = _reconcile_late_filled_entry(
+                                            client._conn,
+                                            sym,
+                                            pending,
+                                            fill_qty=broker_fill_qty,
+                                            fill_price=broker_fill_px,
+                                        )
+                                        realized_pnl += float(late_result.get("pnl_delta", 0.0) or 0.0)
+                                        if late_result.get("sl_hit"):
+                                            daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
+                                        _update_today_signal_for_order(
+                                            today_signals,
+                                            order_id=entry_oid,
+                                            sym=sym,
+                                            direction=pending.get("direction", ""),
+                                            variant=pending.get("variant", "Baseline"),
+                                            price=broker_fill_px if broker_fill_px > 0 else float(pending.get("signal_price", 0) or 0),
+                                            sl=float(pending.get("sl", 0) or 0),
+                                            tp=float(pending.get("tp", 0) or 0),
+                                            status=f"late_fill_{late_result.get('status', 'manual')}",
+                                            trigger=pending.get("trigger", "PDL_BASE"),
+                                            fill_time=_now(),
+                                            fallback_time=pending.get("entry_time"),
+                                        )
+                                        _update_signal_csv_row(
+                                            signal_time=pending.get("entry_time"),
+                                            sym=sym,
+                                            direction=pending.get("direction", ""),
+                                            variant=pending.get("variant", "Baseline"),
+                                            price=broker_fill_px if broker_fill_px > 0 else float(pending.get("signal_price", 0) or 0),
+                                            sl=float(pending.get("sl", 0) or 0),
+                                            tp=float(pending.get("tp", 0) or 0),
+                                        )
+                                        if late_result.get("position") is not None:
+                                            open_positions[state_key] = late_result["position"]
+                                        del pending_entries[state_key]
+                                    elif broker_status in ("cancelled", "rejected"):
+                                        flog.info(
+                                            "PENDING ENTRY CLEARED  %-11s  order_id=%s  broker=%s",
+                                            sym, entry_oid, broker_status,
+                                        )
+                                        send_telegram(
+                                            f"\u23f3 *ORDER NOT FILLED* — {sym} {pending.get('direction', '')}\n"
+                                            f"Status: `{broker_status}`\n"
+                                            f"Broker confirmed no fill before closeout."
+                                        )
+                                        _update_today_signal_for_order(
+                                            today_signals,
+                                            order_id=entry_oid,
+                                            sym=sym,
+                                            direction=pending.get("direction", ""),
+                                            variant=pending.get("variant", "Baseline"),
+                                            price=float(pending.get("signal_price", 0) or 0),
+                                            sl=float(pending.get("sl", 0) or 0),
+                                            tp=float(pending.get("tp", 0) or 0),
+                                            status=f"not_filled_{broker_status}",
+                                            trigger=pending.get("trigger", "PDL_BASE"),
+                                            fill_time=_now(),
+                                            fallback_time=pending.get("entry_time"),
+                                        )
+                                        del pending_entries[state_key]
 
                             if state_key in open_positions:
                                 pos = open_positions[state_key]
@@ -1589,6 +2307,7 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                             raw_trig = r.get("trigger") or "-"
 
                             on_cooldown = state_key in cooldowns and bar_completed_ts < cooldowns[state_key]
+                            entry_pending = state_key in pending_entries
                             already_in_position = state_key in open_positions
                             session_key = "AM" if bar_phase == "ACTIVE_AM" else "PM"
                             count_key = (cfg["key"], sym, session_key)
@@ -1602,6 +2321,7 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                                 and result["signal"]
                                 and not on_cooldown
                                 and not already_in_position
+                                and not entry_pending
                                 and not at_signal_cap
                                 and not at_sl_cap
                                 and not at_pos_cap
@@ -1641,21 +2361,57 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                                 )
 
                                 position_taken = not auto_trade_active
+                                trade_filled = not auto_trade_active
                                 signal_consumed = True
                                 tracked_entry_price = r["price"]
                                 tracked_qty = r["qty"]
                                 logged_qty = r["qty"]
                                 position_note = ""
+                                tracked_order_id = None
 
                                 if auto_trade_active:
                                     position_taken = False
-                                    order_result = place_bracket_order(
-                                        client._conn, sym, r["signal"],
-                                        r["price"], r["sl"], r["tp"], r["qty"],
-                                        atr=r["atr"],
-                                        bar_close=float(r["close"]),
-                                    )
-                                    if order_result["success"]:
+                                    trade_filled = False
+                                    bar_close_f = float(r["close"])
+                                    entry_buf = _entry_buffer(r["atr"]) if r["atr"] > 0 else 0.10
+                                    if r["signal"] == "LONG":
+                                        planned_entry_price = round_to_tick(bar_close_f + entry_buf)
+                                        remaining_reward = r["tp"] - planned_entry_price
+                                    else:
+                                        planned_entry_price = round_to_tick(bar_close_f - entry_buf)
+                                        remaining_reward = planned_entry_price - r["tp"]
+                                    min_reward = r["atr"] * MIN_REMAINING_REWARD_ATR
+                                    if remaining_reward < min_reward:
+                                        position_note = (
+                                            f"skip_low_reward("
+                                            f"remaining={remaining_reward:.2f},"
+                                            f"min={min_reward:.2f},"
+                                            f"entry={planned_entry_price:.2f},"
+                                            f"tp={r['tp']:.2f})"
+                                        )
+                                        flog.warning(
+                                            "LOW REWARD SKIP  %-11s  %s  remaining=%.2f < min=%.2f (%.1f%% ATR)  "
+                                            "planned_entry=%.2f  tp=%.2f — entry too close to TP, skipping order",
+                                            sym, r["signal"], remaining_reward, min_reward,
+                                            MIN_REMAINING_REWARD_ATR * 100, planned_entry_price, r["tp"],
+                                        )
+                                        send_telegram(
+                                            f"\u23ed\ufe0f *SKIP LOW REWARD* — {sym} {r['signal']}\n"
+                                            f"Planned entry: `₹{planned_entry_price:,.2f}` | TP: `₹{r['tp']:,.2f}`\n"
+                                            f"Remaining: `₹{remaining_reward:,.2f}` < min `₹{min_reward:,.2f}` "
+                                            f"({MIN_REMAINING_REWARD_ATR:.0%} ATR)\n"
+                                            f"Signal logged but order skipped"
+                                        )
+                                        order_result = None
+                                    else:
+                                        order_result = place_bracket_order(
+                                            client._conn, sym, r["signal"],
+                                            r["price"], r["sl"], r["tp"], r["qty"],
+                                            atr=r["atr"],
+                                            bar_close=bar_close_f,
+                                        )
+                                    if order_result is not None and order_result["success"]:
+                                        tracked_order_id = order_result["order_id"]
                                         next_bar_expiry = (
                                             bar_completed_ts + BAR_INTERVAL
                                         ).to_pydatetime() if hasattr(bar_completed_ts, 'to_pydatetime') else None
@@ -1821,7 +2577,66 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                                                         f"SL: ₹{r['sl']:,.2f} | TP: ₹{r['tp']:,.2f}"
                                                         f"{sl_msg}{tp_msg}"
                                                     )
+                                                    trade_filled = True
                                                     position_taken = True
+
+                                                    _imm_sl_oid = sl_result.get("order_id")
+                                                    _imm_tp_oid = tp_result.get("order_id")
+                                                    try:
+                                                        _imm_book = client._conn.orderBook()
+                                                        _imm_orders = (
+                                                            {o["orderid"]: o for o in _imm_book["data"]}
+                                                            if _imm_book and _imm_book.get("data")
+                                                            else {}
+                                                        )
+                                                        _imm_sl_filled = (
+                                                            _imm_sl_oid
+                                                            and _imm_sl_oid in _imm_orders
+                                                            and _imm_orders[_imm_sl_oid].get("orderstatus", "").lower()
+                                                            in ("complete", "filled")
+                                                        )
+                                                        _imm_tp_filled = (
+                                                            _imm_tp_oid
+                                                            and _imm_tp_oid in _imm_orders
+                                                            and _imm_orders[_imm_tp_oid].get("orderstatus", "").lower()
+                                                            in ("complete", "filled")
+                                                        )
+                                                        if _imm_tp_filled and _imm_sl_oid:
+                                                            cancel_order(client._conn, _imm_sl_oid, "STOPLOSS")
+                                                            flog.info(
+                                                                "IMM RECONCILE  %-11s  TP already filled — cancelled SL %s",
+                                                                sym, _imm_sl_oid,
+                                                            )
+                                                            position_note = "immediate_tp"
+                                                            exit_price = r["tp"]
+                                                            pos_qty = tracked_qty
+                                                            if r["signal"] == "LONG":
+                                                                hit_pnl = (exit_price - tracked_entry_price) * pos_qty
+                                                            else:
+                                                                hit_pnl = (tracked_entry_price - exit_price) * pos_qty
+                                                            realized_pnl += hit_pnl
+                                                            flog.info("IMM RECONCILE P&L  %-11s  TP  ₹%+.2f", sym, float(hit_pnl))
+                                                            position_taken = False
+                                                        elif _imm_sl_filled and _imm_tp_oid:
+                                                            cancel_order(client._conn, _imm_tp_oid, "NORMAL")
+                                                            flog.info(
+                                                                "IMM RECONCILE  %-11s  SL already filled — cancelled TP %s",
+                                                                sym, _imm_tp_oid,
+                                                            )
+                                                            position_note = "immediate_sl"
+                                                            exit_price = r["sl"]
+                                                            pos_qty = tracked_qty
+                                                            if r["signal"] == "LONG":
+                                                                hit_pnl = (exit_price - tracked_entry_price) * pos_qty
+                                                            else:
+                                                                hit_pnl = (tracked_entry_price - exit_price) * pos_qty
+                                                            realized_pnl += hit_pnl
+                                                            daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
+                                                            flog.info("IMM RECONCILE P&L  %-11s  SL  ₹%+.2f", sym, float(hit_pnl))
+                                                            position_taken = False
+                                                    except Exception as _imm_exc:
+                                                        flog.warning("IMM RECONCILE  %-11s  check failed: %s", sym, _imm_exc)
+
                                                 else:
                                                     position_note = (
                                                         "protection_failed("
@@ -1898,20 +2713,46 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                                                             f"Check broker immediately."
                                                         )
                                         else:
-                                            position_note = (
-                                                f"entry_not_filled({fill_result.get('status', 'unknown')})"
-                                            )
-                                            flog.warning(
-                                                "POSITION SKIP  %-11s  entry order not filled (%s) — "
-                                                "signal logged but no open position recorded",
-                                                sym, fill_result.get("status", "unknown"),
-                                            )
-                                            send_telegram(
-                                                f"\u23f3 *ORDER NOT FILLED* — {sym} {r['signal']}\n"
-                                                f"Status: `{fill_result['status']}`\n"
-                                                f"Order cancelled after timeout"
-                                            )
-                                    else:
+                                            fill_status = fill_result.get("status", "unknown")
+                                            if fill_result.get("resolved", False) and fill_status in ("cancelled", "rejected"):
+                                                position_note = f"entry_not_filled({fill_status})"
+                                                flog.warning(
+                                                    "POSITION SKIP  %-11s  entry order not filled (%s) — "
+                                                    "signal logged but no open position recorded",
+                                                    sym, fill_status,
+                                                )
+                                                send_telegram(
+                                                    f"\u23f3 *ORDER NOT FILLED* — {sym} {r['signal']}\n"
+                                                    f"Status: `{fill_status}`\n"
+                                                    f"Broker confirmed no fill before closeout."
+                                                )
+                                            else:
+                                                position_note = f"entry_pending({fill_status})"
+                                                pending_entries[state_key] = {
+                                                    "direction": r["signal"],
+                                                    "variant": r["variant"],
+                                                    "trigger": r["trigger"],
+                                                    "requested_qty": r["qty"],
+                                                    "signal_price": r["price"],
+                                                    "sl": r["sl"],
+                                                    "tp": r["tp"],
+                                                    "atr": r["atr"],
+                                                    "entry_order_id": order_result["order_id"],
+                                                    "entry_time": bar_completed_ts,
+                                                    "bar_ts": bar_ts,
+                                                    "entry_scan": scan_count,
+                                                }
+                                                flog.warning(
+                                                    "ENTRY PENDING  %-11s  order_id=%s  unresolved after timeout/cancel (%s) — monitoring broker",
+                                                    sym, order_result["order_id"], fill_status,
+                                                )
+                                                send_telegram(
+                                                    f"\u23f3 *ENTRY STATUS PENDING* — {sym} {r['signal']}\n"
+                                                    f"Entry order: `{order_result['order_id']}`\n"
+                                                    f"Broker status after timeout/cancel: `{fill_status}`\n"
+                                                    f"Bot will keep monitoring and will auto-protect the trade if it fills late."
+                                                )
+                                    elif order_result is not None:
                                         position_note = "entry_order_failed"
                                         flog.error("AUTO-TRADE FAILED  %-11s  %s", sym, order_result["message"])
                                         flog.warning(
@@ -1951,31 +2792,31 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                                             "SAME-BAR EXIT  %-11s  %s on entry bar — %s",
                                             sym, r["signal"], same_bar_hit,
                                         )
-                                        if same_bar_hit == "SL":
-                                            daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
                                         if auto_trade_active:
-                                            remaining_sl = new_pos.get("sl_order_id")
-                                            remaining_tp = new_pos.get("tp_order_id")
-                                            if same_bar_hit == "SL" and remaining_tp:
-                                                cancel_order(client._conn, remaining_tp, "NORMAL")
-                                                flog.info("CANCEL TP  %-11s  order_id=%s (same-bar SL)", sym, remaining_tp)
-                                            elif same_bar_hit == "TP" and remaining_sl:
-                                                cancel_order(client._conn, remaining_sl, "STOPLOSS")
-                                                flog.info("CANCEL SL  %-11s  order_id=%s (same-bar TP)", sym, remaining_sl)
+                                            flog.info(
+                                                "SAME-BAR SKIP  %-11s  auto-trade active — "
+                                                "broker handles SL/TP, keeping position tracked",
+                                                sym,
+                                            )
+                                            open_positions[state_key] = new_pos
+                                        else:
+                                            if same_bar_hit == "SL":
+                                                daily_sl_counts[state_key] = daily_sl_counts.get(state_key, 0) + 1
                                     else:
                                         open_positions[state_key] = new_pos
 
-                                if signal_consumed or position_taken:
+                                if signal_consumed or position_taken or trade_filled:
                                     today_signals.append({
                                         "sym": sym,
                                         "dir": r["signal"],
                                         "trigger": r["trigger"],
                                         "variant": r["variant"],
-                                        "price": tracked_entry_price if position_taken else r["price"],
+                                        "price": tracked_entry_price if trade_filled else r["price"],
                                         "sl": r["sl"],
                                         "tp": r["tp"],
                                         "time": now,
-                                        "status": "filled" if position_taken else "signal_only",
+                                        "status": "filled" if trade_filled else "signal_only",
+                                        "order_id": tracked_order_id,
                                     })
 
                                     flog.info(
@@ -1989,6 +2830,8 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
                                 reason = ""
                                 if not bar_is_active:
                                     reason = "inactive_phase"
+                                elif entry_pending:
+                                    reason = "entry_pending"
                                 elif already_in_position:
                                     reason = "in_position"
                                 elif on_cooldown:
@@ -2019,7 +2862,7 @@ def live(capital: float, use_websocket: bool = True, auto_trade: bool = False) -
             flog.info("SCAN #%d complete in %.1fs", scan_count, scan_elapsed)
             print_dashboard(dashboard, phase)
             _save_state(current_date, cooldowns, pdl_dirs_used, daily_sl_counts,
-                        open_positions, signal_counts, today_signals,
+                        open_positions, pending_entries, signal_counts, today_signals,
                         realized_pnl)
 
     except KeyboardInterrupt:
@@ -2048,8 +2891,8 @@ def main():
         description="Live NSE Intraday Scalping Signal Generator",
     )
     parser.add_argument(
-        "--capital", type=float, default=15_000,
-        help="Trading capital in INR (default: 10000)",
+        "--capital", type=float, default=25_000,
+        help="Trading capital in INR (default: 25000)",
     )
     parser.add_argument(
         "--dry-run", action="store_true",
@@ -2067,7 +2910,8 @@ def main():
 
     print(f"\n{BLD}NSE Intraday Scalping — Live Signal Generator{RST}")
     print(f"{DIM}Prearmed PDL ({PDL_PREARM_BUFFER_ATR:.1f}×ATR trigger buffer, SL {PDL_SL_MULT}×ATR)")
-    print(f"RR 1:{RR} | Risk {RISK_PCT * 100:.1f}% | Max {MAX_SL_PER_DAY} SL/stock/day{RST}\n")
+    print(f"RR 1:{RR} | Risk {RISK_PCT * 100:.1f}% | Max {MAX_SL_PER_DAY} SL/stock/day | Close > trigger by {PDL_CLOSE_EXT_ATR:.2f} ATR")
+    print(f"{DIM}Post-10 LONG close > trigger by {POST_10_LONG_CLOSE_EXT_ATR:.2f} ATR | Post-10 SHORT close > trigger by {POST_10_SHORT_CLOSE_EXT_ATR:.2f} ATR | First 30 min need 60% close{RST}\n")
 
     if args.dry_run:
         dry_run(args.capital)

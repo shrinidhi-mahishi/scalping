@@ -1,0 +1,1550 @@
+09:06:54  ======================================================================
+09:06:54  SESSION START  Capital=25000  RR=1:1.5  Risk=1.5%  ws=True  auto_trade=True
+09:06:54  Stocks: HINDUNILVR, AXISBANK, HDFCLIFE, BAJAJFINSV, JSWSTEEL, SBIN, HCLTECH, TRENT, SHRIRAMFIN, TCS
+09:06:54  Strategy: PDL-Only (SL=1.0x ATR)  RR=1:1.5  MaxSL/day=2
+09:06:54  AUTO-TRADE: ENABLED — bracket orders will be placed via Angel One
+09:06:54  Telegram: enabled
+09:06:54  PHASE 1  Warm-Up — connecting to Angel One
+09:06:54  API connected
+09:06:55  NET  public_ip=49.37.179.65
+09:06:55  NET  public_ip mismatch current=49.37.179.65 registered=152.57.29.200, 152.57.127.20, 152.57.115.48, 49.37.176.21 — order placement likely to fail
+09:06:56  Loading 5-day 3-min warmup data
+09:06:57  WARMUP  HINDUNILVR   250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:00  WARMUP  AXISBANK     250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:04  WARMUP  HDFCLIFE     250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:07  WARMUP  BAJAJFINSV   250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:10  WARMUP  JSWSTEEL     250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:13  WARMUP  SBIN         250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:16  WARMUP  HCLTECH      250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:19  WARMUP  TRENT        250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:23  WARMUP  SHRIRAMFIN   250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:26  WARMUP  TCS          250 bars  API 2026-04-13→2026-04-15 15:27:00  cached
+09:07:27  Checking event calendar for corporate events
+09:07:30  EVENT SKIP  HDFCLIFE        RESULTS: Financial Results/Dividend
+09:07:30  PDL  HINDUNILVR   H=2168.00  L=2140.90
+09:07:30  PDL  AXISBANK     H=1384.50  L=1349.00
+09:07:30  PDL  BAJAJFINSV   H=1839.20  L=1814.20
+09:07:30  PDL  JSWSTEEL     H=1232.00  L=1210.60
+09:07:30  PDL  SBIN         H=1088.00  L=1068.20
+09:07:30  PDL  HCLTECH      H=1474.90  L=1437.10
+09:07:30  PDL  TRENT        H=3999.00  L=3910.00
+09:07:30  PDL  SHRIRAMFIN   H=1043.50  L=1016.45
+09:07:30  PDL  TCS          H=2559.00  L=2493.40
+09:07:30  Warm-up complete: 10 stocks loaded (1 excluded), PDL levels for 9
+09:07:30  Starting WebSocket feed
+09:07:30  WS connected — subscribing 9 tokens (mode=2 Quote)
+09:07:30  WS feed started — 9 tokens subscribed
+09:07:32  PHASE  START → PRE_MARKET
+09:15:00  PHASE  PRE_MARKET → SILENT
+09:15:01  SCAN #1  09:15:00  phase=SILENT  active=False  missed=0
+09:15:01  FETCH  REST gap-fill (first scan)
+09:15:03  GAP-FILL  9/9 OK in 3.0s
+09:15:03  FETCH  WS  0 new bars (0 clock-flushed) in 2.992s
+09:15:04  SCAN #1 complete in 3.0s
+09:18:01  SCAN #2  09:18:01  phase=SILENT  active=False  missed=0
+09:18:01  FETCH  WS  9 new bars (7 clock-flushed) in 0.020s
+09:18:01    HINDUNILVR   Baseline     C=2154.00  → -[-]  inactive_phase
+09:18:01    AXISBANK     Baseline     C=1362.10  → -[-]  inactive_phase
+09:18:01    BAJAJFINSV   Baseline     C=1838.70  → -[-]  inactive_phase
+09:18:01    JSWSTEEL     Baseline     C=1232.60  → LONG[PDL_BASE]  inactive_phase
+09:18:01    SBIN         Baseline     C=1083.20  → -[-]  inactive_phase
+09:18:01    HCLTECH      Baseline     C=1451.40  → -[-]  inactive_phase
+09:18:01    TRENT        Baseline     C=4019.70  → LONG[PDL_BASE]  inactive_phase
+09:18:01    SHRIRAMFIN   Baseline     C=1027.00  → -[-]  inactive_phase
+09:18:01    TCS          Baseline     C=2574.40  → LONG[PDL_BASE]  inactive_phase
+09:18:01  SCAN #2 complete in 0.0s
+09:21:01  SCAN #3  09:21:01  phase=SILENT  active=False  missed=0
+09:21:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.015s
+09:21:01    HINDUNILVR   Baseline     C=2155.50  → -[-]  inactive_phase
+09:21:01    AXISBANK     Baseline     C=1362.30  → -[-]  inactive_phase
+09:21:01    BAJAJFINSV   Baseline     C=1842.50  → LONG[PDL_BASE]  inactive_phase
+09:21:01    JSWSTEEL     Baseline     C=1234.80  → -[-]  inactive_phase
+09:21:01    SBIN         Baseline     C=1080.60  → -[-]  inactive_phase
+09:21:01    HCLTECH      Baseline     C=1460.10  → -[-]  inactive_phase
+09:21:01    TRENT        Baseline     C=4022.00  → -[-]  inactive_phase
+09:21:01    SHRIRAMFIN   Baseline     C=1027.60  → -[-]  inactive_phase
+09:21:01    TCS          Baseline     C=2578.20  → -[-]  inactive_phase
+09:21:01  SCAN #3 complete in 0.0s
+09:24:01  SCAN #4  09:24:01  phase=SILENT  active=False  missed=0
+09:24:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.018s
+09:24:01    HINDUNILVR   Baseline     C=2161.50  → -[-]  inactive_phase
+09:24:01    AXISBANK     Baseline     C=1359.10  → -[-]  inactive_phase
+09:24:01    BAJAJFINSV   Baseline     C=1843.40  → -[-]  inactive_phase
+09:24:01    JSWSTEEL     Baseline     C=1232.50  → -[-]  inactive_phase
+09:24:01    SBIN         Baseline     C=1079.50  → -[-]  inactive_phase
+09:24:01    HCLTECH      Baseline     C=1464.30  → -[-]  inactive_phase
+09:24:01    TRENT        Baseline     C=4030.80  → -[-]  inactive_phase
+09:24:01    SHRIRAMFIN   Baseline     C=1026.15  → -[-]  inactive_phase
+09:24:01    TCS          Baseline     C=2585.30  → -[-]  inactive_phase
+09:24:01  SCAN #4 complete in 0.0s
+09:27:01  SCAN #5  09:27:01  phase=SILENT  active=False  missed=0
+09:27:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.020s
+09:27:01    HINDUNILVR   Baseline     C=2159.90  → -[-]  inactive_phase
+09:27:01    AXISBANK     Baseline     C=1361.00  → -[-]  inactive_phase
+09:27:01    BAJAJFINSV   Baseline     C=1843.00  → -[-]  inactive_phase
+09:27:01    JSWSTEEL     Baseline     C=1235.70  → -[-]  inactive_phase
+09:27:01    SBIN         Baseline     C=1079.45  → -[-]  inactive_phase
+09:27:01    HCLTECH      Baseline     C=1460.40  → -[-]  inactive_phase
+09:27:01    TRENT        Baseline     C=4030.00  → -[-]  inactive_phase
+09:27:01    SHRIRAMFIN   Baseline     C=1026.80  → -[-]  inactive_phase
+09:27:01    TCS          Baseline     C=2586.80  → -[-]  inactive_phase
+09:27:01  SCAN #5 complete in 0.0s
+09:30:01  PHASE  SILENT → ACTIVE_AM
+09:30:01  SCAN #6  09:30:01  phase=ACTIVE_AM  active=True  missed=0
+09:30:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.014s
+09:30:01    HINDUNILVR   Baseline     C=2162.00  → -[-]  
+09:30:01    AXISBANK     Baseline     C=1360.50  → -[-]  
+09:30:01    BAJAJFINSV   Baseline     C=1838.00  → -[-]  
+09:30:01    JSWSTEEL     Baseline     C=1234.80  → -[-]  
+09:30:01    SBIN         Baseline     C=1079.90  → -[-]  
+09:30:01    HCLTECH      Baseline     C=1457.60  → -[-]  
+09:30:01    TRENT        Baseline     C=4024.20  → -[-]  
+09:30:01    SHRIRAMFIN   Baseline     C=1024.45  → -[-]  
+09:30:01    TCS          Baseline     C=2586.70  → -[-]  
+09:30:01  SCAN #6 complete in 0.0s
+09:33:01  SCAN #7  09:33:01  phase=ACTIVE_AM  active=True  missed=0
+09:33:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.019s
+09:33:01    HINDUNILVR   Baseline     C=2157.90  → -[-]  
+09:33:01    AXISBANK     Baseline     C=1356.50  → -[-]  
+09:33:01  ORDER  BAJAJFINSV   BUY  qty=67  limit=1840.00  buf=0.10  SL=1835.73  TP=1845.38  sym=BAJAJFINSV-EQ
+09:33:02  ORDER RAW RESP  BAJAJFINSV   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'BAJAJFINSV-EQ', 'orderid': '260416000106515', 'uniqueorderid': '8bdc965b-00db-4dc8-9337-c86316d0440f'}}
+09:33:02  ORDER OK  BAJAJFINSV   order_id=260416000106515
+09:33:08  ORDER FILLED  BAJAJFINSV   order_id=260416000106515  qty=67  avg=1840.00  in 6.3s
+09:33:08  SL ORDER  BAJAJFINSV   SELL  qty=67  trigger=1835.70  limit=1832.10
+09:33:08  SL ORDER RAW  BAJAJFINSV   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'BAJAJFINSV-EQ', 'orderid': '260416000107337', 'uniqueorderid': '8502f69e-837d-497a-8d01-ecfa7fa1a7ef'}}
+09:33:09  SL ORDER OK  BAJAJFINSV   order_id=260416000107337  exchange=trigger pending
+09:33:09  TP ORDER  BAJAJFINSV   SELL  qty=67  limit=1845.40
+09:33:10  TP ORDER RAW  BAJAJFINSV   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'BAJAJFINSV-EQ', 'orderid': '260416000107488', 'uniqueorderid': 'a82e308f-faac-4ec9-a650-f67cd8ee1e38'}}
+09:33:11  TP ORDER OK  BAJAJFINSV   order_id=260416000107488  exchange=open
+09:33:12    BAJAJFINSV   Baseline     C=1839.90  → ★ LONG[PDL_BASE]  SL=1835.73  TP=1845.38  Qty=67
+09:33:12    JSWSTEEL     Baseline     C=1237.20  → -[-]  
+09:33:12    SBIN         Baseline     C=1078.55  → -[-]  
+09:33:12    HCLTECH      Baseline     C=1452.40  → -[-]  
+09:33:12    TRENT        Baseline     C=4009.60  → -[-]  
+09:33:12    SHRIRAMFIN   Baseline     C=1023.00  → -[-]  
+09:33:12    TCS          Baseline     C=2581.50  → -[-]  
+09:33:12  SCAN #7 complete in 11.1s
+09:36:01  SCAN #8  09:36:01  phase=ACTIVE_AM  active=True  missed=0
+09:36:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.021s
+09:36:01    HINDUNILVR   Baseline     C=2156.20  → -[-]  
+09:36:01    AXISBANK     Baseline     C=1357.80  → -[-]  
+09:36:01    BAJAJFINSV   Baseline     C=1839.50  → -[-]  in_position
+09:36:01    JSWSTEEL     Baseline     C=1237.90  → -[-]  
+09:36:01    SBIN         Baseline     C=1078.30  → -[-]  
+09:36:01    HCLTECH      Baseline     C=1452.90  → -[-]  
+09:36:01    TRENT        Baseline     C=3994.00  → -[-]  
+09:36:01    SHRIRAMFIN   Baseline     C=1022.55  → -[-]  
+09:36:01    TCS          Baseline     C=2582.60  → -[-]  
+09:36:01  SCAN #8 complete in 0.2s
+09:39:01  SCAN #9  09:39:01  phase=ACTIVE_AM  active=True  missed=0
+09:39:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.021s
+09:39:01    HINDUNILVR   Baseline     C=2148.70  → -[-]  
+09:39:01    AXISBANK     Baseline     C=1354.10  → -[-]  
+09:39:01  BROKER EXIT  BAJAJFINSV   SL filled on broker — cleaning up
+09:39:01  ORDER CANCELLED  order_id=260416000107488
+09:39:01  BROKER EXIT P&L  BAJAJFINSV   SL  ₹-286.33
+09:39:01    JSWSTEEL     Baseline     C=1237.40  → -[-]  
+09:39:01    SBIN         Baseline     C=1075.50  → -[-]  
+09:39:01    HCLTECH      Baseline     C=1450.00  → -[-]  
+09:39:01    TRENT        Baseline     C=3981.00  → -[-]  
+09:39:01    SHRIRAMFIN   Baseline     C=1021.70  → -[-]  
+09:39:01    TCS          Baseline     C=2583.30  → -[-]  
+09:39:01  SCAN #9 complete in 0.4s
+09:42:01  SCAN #10  09:42:01  phase=ACTIVE_AM  active=True  missed=0
+09:42:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.020s
+09:42:01    HINDUNILVR   Baseline     C=2146.90  → -[-]  
+09:42:01    AXISBANK     Baseline     C=1355.40  → -[-]  
+09:42:01    BAJAJFINSV   Baseline     C=1837.70  → -[-]  cooldown_until_10:03
+09:42:01    JSWSTEEL     Baseline     C=1241.00  → -[-]  
+09:42:01    SBIN         Baseline     C=1075.30  → -[-]  
+09:42:01    HCLTECH      Baseline     C=1443.40  → -[-]  
+09:42:01    TRENT        Baseline     C=3966.90  → -[-]  
+09:42:01    SHRIRAMFIN   Baseline     C=1022.75  → -[-]  
+09:42:01    TCS          Baseline     C=2581.60  → -[-]  
+09:42:01  SCAN #10 complete in 0.0s
+09:45:01  SCAN #11  09:45:01  phase=ACTIVE_AM  active=True  missed=0
+09:45:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.020s
+09:45:01    HINDUNILVR   Baseline     C=2145.00  → -[-]  
+09:45:01    AXISBANK     Baseline     C=1352.10  → -[-]  
+09:45:01    BAJAJFINSV   Baseline     C=1840.00  → -[-]  cooldown_until_10:03
+09:45:01    JSWSTEEL     Baseline     C=1241.00  → -[-]  
+09:45:01    SBIN         Baseline     C=1075.35  → -[-]  
+09:45:01    HCLTECH      Baseline     C=1446.90  → -[-]  
+09:45:01    TRENT        Baseline     C=3958.20  → -[-]  
+09:45:01    SHRIRAMFIN   Baseline     C=1022.65  → -[-]  
+09:45:01    TCS          Baseline     C=2583.20  → -[-]  
+09:45:01  SCAN #11 complete in 0.0s
+09:48:01  SCAN #12  09:48:01  phase=ACTIVE_AM  active=True  missed=0
+09:48:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.021s
+09:48:01    HINDUNILVR   Baseline     C=2147.70  → -[-]  
+09:48:01    AXISBANK     Baseline     C=1355.70  → -[-]  
+09:48:01    BAJAJFINSV   Baseline     C=1845.40  → -[-]  cooldown_until_10:03
+09:48:01    JSWSTEEL     Baseline     C=1240.60  → -[-]  
+09:48:01    SBIN         Baseline     C=1076.25  → -[-]  
+09:48:01    HCLTECH      Baseline     C=1444.70  → -[-]  
+09:48:01    TRENT        Baseline     C=3969.90  → -[-]  
+09:48:01    SHRIRAMFIN   Baseline     C=1026.80  → -[-]  
+09:48:01    TCS          Baseline     C=2584.00  → -[-]  
+09:48:01  SCAN #12 complete in 0.0s
+09:51:01  SCAN #13  09:51:01  phase=ACTIVE_AM  active=True  missed=0
+09:51:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.007s
+09:51:01    HINDUNILVR   Baseline     C=2151.90  → -[-]  
+09:51:01    AXISBANK     Baseline     C=1354.50  → -[-]  
+09:51:01    BAJAJFINSV   Baseline     C=1847.00  → -[-]  cooldown_until_10:03
+09:51:01    JSWSTEEL     Baseline     C=1239.20  → -[-]  
+09:51:01    SBIN         Baseline     C=1077.55  → -[-]  
+09:51:01    HCLTECH      Baseline     C=1442.70  → -[-]  
+09:51:01    TRENT        Baseline     C=3971.00  → -[-]  
+09:51:01    SHRIRAMFIN   Baseline     C=1027.20  → -[-]  
+09:51:01    TCS          Baseline     C=2582.60  → -[-]  
+09:51:01  SCAN #13 complete in 0.0s
+09:54:01  SCAN #14  09:54:01  phase=ACTIVE_AM  active=True  missed=0
+09:54:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.007s
+09:54:01    HINDUNILVR   Baseline     C=2154.40  → -[-]  
+09:54:01    AXISBANK     Baseline     C=1351.10  → -[-]  
+09:54:01    BAJAJFINSV   Baseline     C=1846.60  → -[-]  cooldown_until_10:03
+09:54:01    JSWSTEEL     Baseline     C=1237.10  → -[-]  
+09:54:01    SBIN         Baseline     C=1076.30  → -[-]  
+09:54:01    HCLTECH      Baseline     C=1441.10  → -[-]  
+09:54:01    TRENT        Baseline     C=3955.20  → -[-]  
+09:54:01    SHRIRAMFIN   Baseline     C=1025.45  → -[-]  
+09:54:01    TCS          Baseline     C=2580.50  → -[-]  
+09:54:01  SCAN #14 complete in 0.0s
+09:57:01  SCAN #15  09:57:01  phase=ACTIVE_AM  active=True  missed=0
+09:57:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.015s
+09:57:01    HINDUNILVR   Baseline     C=2151.60  → -[-]  
+09:57:01    AXISBANK     Baseline     C=1350.40  → -[-]  
+09:57:01    BAJAJFINSV   Baseline     C=1846.00  → -[-]  cooldown_until_10:03
+09:57:01    JSWSTEEL     Baseline     C=1234.00  → -[-]  
+09:57:01    SBIN         Baseline     C=1076.70  → -[-]  
+09:57:01    HCLTECH      Baseline     C=1441.90  → -[-]  
+09:57:01    TRENT        Baseline     C=3951.40  → -[-]  
+09:57:01    SHRIRAMFIN   Baseline     C=1025.20  → -[-]  
+09:57:01    TCS          Baseline     C=2583.50  → -[-]  
+09:57:01  SCAN #15 complete in 0.0s
+10:00:01  SCAN #16  10:00:01  phase=ACTIVE_AM  active=True  missed=0
+10:00:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.019s
+10:00:01    HINDUNILVR   Baseline     C=2149.10  → -[-]  
+10:00:01    AXISBANK     Baseline     C=1349.10  → -[-]  
+10:00:01    BAJAJFINSV   Baseline     C=1846.10  → -[-]  cooldown_until_10:03
+10:00:01    JSWSTEEL     Baseline     C=1231.70  → -[-]  
+10:00:01    SBIN         Baseline     C=1075.20  → -[-]  
+10:00:01    HCLTECH      Baseline     C=1441.60  → -[-]  
+10:00:01    TRENT        Baseline     C=3952.00  → -[-]  
+10:00:01    SHRIRAMFIN   Baseline     C=1022.40  → -[-]  
+10:00:01    TCS          Baseline     C=2577.60  → -[-]  
+10:00:01  SCAN #16 complete in 0.0s
+10:03:01  SCAN #17  10:03:01  phase=ACTIVE_AM  active=True  missed=0
+10:03:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.019s
+10:03:01    HINDUNILVR   Baseline     C=2150.90  → -[-]  
+10:03:01    AXISBANK     Baseline     C=1351.30  → -[-]  
+10:03:01    BAJAJFINSV   Baseline     C=1847.00  → -[-]  
+10:03:01  ORDER  JSWSTEEL     BUY  qty=101  limit=1232.10  buf=0.10  SL=1229.37  TP=1236.68  sym=JSWSTEEL-EQ
+10:03:01  ORDER RAW RESP  JSWSTEEL     {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'JSWSTEEL-EQ', 'orderid': '260416000214902', 'uniqueorderid': '2e7a82de-a9a3-49b4-812b-7f22f679c20f'}}
+10:03:01  ORDER OK  JSWSTEEL     order_id=260416000214902
+10:04:04  ORDER EXPIRY  JSWSTEEL     timeout  order_id=260416000214902  elapsed=63s  filled=0
+10:04:04  ORDER CANCELLED  order_id=260416000214902
+10:04:05  ORDER FINAL  JSWSTEEL     order_id=260416000214902  status=cancelled  qty=0  avg=0.00
+10:04:05  POSITION SKIP  JSWSTEEL     entry order not filled (cancelled) — signal logged but no open position recorded
+10:04:05    JSWSTEEL     Baseline     C=1232.00  → ★ LONG[PDL_BASE]  SL=1229.37  TP=1236.68  Qty=101  entry_not_filled(cancelled)
+10:04:05    SBIN         Baseline     C=1075.00  → -[-]  
+10:04:05    HCLTECH      Baseline     C=1437.70  → -[-]  
+10:04:05    TRENT        Baseline     C=3962.90  → -[-]  
+10:04:05    SHRIRAMFIN   Baseline     C=1023.35  → -[-]  
+10:04:05    TCS          Baseline     C=2576.80  → -[-]  
+10:04:05  SCAN #17 complete in 64.8s
+10:06:01  SCAN #18  10:06:01  phase=ACTIVE_AM  active=True  missed=0
+10:06:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.017s
+10:06:01    HINDUNILVR   Baseline     C=2148.20  → -[-]  
+10:06:01    AXISBANK     Baseline     C=1349.70  → -[-]  
+10:06:01    BAJAJFINSV   Baseline     C=1848.80  → -[-]  
+10:06:01    JSWSTEEL     Baseline     C=1232.80  → -[-]  cooldown_until_10:33
+10:06:01    SBIN         Baseline     C=1075.00  → -[-]  
+10:06:01  ORDER  HCLTECH      SELL  qty=68  limit=1436.90  buf=0.15  SL=1441.99  TP=1428.40  sym=HCLTECH-EQ
+10:06:01  ORDER RAW RESP  HCLTECH      {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HCLTECH-EQ', 'orderid': '260416000222599', 'uniqueorderid': 'e3abf50c-286d-4dc2-8533-f0ea0d198480'}}
+10:06:01  ORDER OK  HCLTECH      order_id=260416000222599
+10:06:02  ORDER FILLED  HCLTECH      order_id=260416000222599  qty=68  avg=1436.96  in 0.0s
+10:06:02  SL ORDER  HCLTECH      BUY  qty=68  trigger=1442.00  limit=1444.90
+10:06:02  SL ORDER RAW  HCLTECH      {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HCLTECH-EQ', 'orderid': '260416000222615', 'uniqueorderid': '66db257f-2bc7-448c-8955-a7dba3f98b4b'}}
+10:06:03  SL ORDER OK  HCLTECH      order_id=260416000222615  exchange=trigger pending
+10:06:03  TP ORDER  HCLTECH      BUY  qty=68  limit=1428.40
+10:06:03  TP ORDER RAW  HCLTECH      {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HCLTECH-EQ', 'orderid': '260416000222659', 'uniqueorderid': '144f8708-5989-4968-994d-2d8ec80ce208'}}
+10:06:04  TP ORDER OK  HCLTECH      order_id=260416000222659  exchange=open
+10:06:05    HCLTECH      Baseline     C=1437.00  → ★ SHORT[PDL_BASE]  SL=1441.99  TP=1428.40  Qty=68
+10:06:05    TRENT        Baseline     C=3968.30  → -[-]  
+10:06:05    SHRIRAMFIN   Baseline     C=1024.50  → -[-]  
+10:06:05    TCS          Baseline     C=2577.10  → -[-]  
+10:06:05  SCAN #18 complete in 4.4s
+10:09:01  SCAN #19  10:09:01  phase=ACTIVE_AM  active=True  missed=0
+10:09:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.018s
+10:09:01    HINDUNILVR   Baseline     C=2148.10  → -[-]  
+10:09:01    AXISBANK     Baseline     C=1350.30  → -[-]  
+10:09:01    BAJAJFINSV   Baseline     C=1850.80  → -[-]  
+10:09:01    JSWSTEEL     Baseline     C=1234.30  → -[-]  cooldown_until_10:33
+10:09:01    SBIN         Baseline     C=1076.70  → -[-]  
+10:09:01    HCLTECH      Baseline     C=1438.20  → -[-]  in_position
+10:09:01    TRENT        Baseline     C=3974.00  → -[-]  
+10:09:01    SHRIRAMFIN   Baseline     C=1024.05  → -[-]  
+10:09:01    TCS          Baseline     C=2576.50  → -[-]  
+10:09:01  SCAN #19 complete in 0.2s
+10:12:01  SCAN #20  10:12:01  phase=ACTIVE_AM  active=True  missed=0
+10:12:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.012s
+10:12:01    HINDUNILVR   Baseline     C=2147.80  → -[-]  
+10:12:01    AXISBANK     Baseline     C=1352.40  → -[-]  
+10:12:01    BAJAJFINSV   Baseline     C=1851.10  → -[-]  
+10:12:01    JSWSTEEL     Baseline     C=1232.70  → -[-]  cooldown_until_10:33
+10:12:01    SBIN         Baseline     C=1077.15  → -[-]  
+10:12:01    HCLTECH      Baseline     C=1439.20  → -[-]  in_position
+10:12:01    TRENT        Baseline     C=3966.30  → -[-]  
+10:12:01    SHRIRAMFIN   Baseline     C=1023.75  → -[-]  
+10:12:01    TCS          Baseline     C=2580.00  → -[-]  
+10:12:01  SCAN #20 complete in 0.2s
+10:15:01  SCAN #21  10:15:01  phase=ACTIVE_AM  active=True  missed=0
+10:15:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.007s
+10:15:01    HINDUNILVR   Baseline     C=2147.90  → -[-]  
+10:15:01    AXISBANK     Baseline     C=1353.10  → -[-]  
+10:15:01    BAJAJFINSV   Baseline     C=1853.80  → -[-]  
+10:15:01    JSWSTEEL     Baseline     C=1233.80  → -[-]  cooldown_until_10:33
+10:15:01    SBIN         Baseline     C=1075.85  → -[-]  
+10:15:01    HCLTECH      Baseline     C=1439.70  → -[-]  in_position
+10:15:01    TRENT        Baseline     C=3966.40  → -[-]  
+10:15:01    SHRIRAMFIN   Baseline     C=1024.95  → -[-]  
+10:15:01    TCS          Baseline     C=2571.50  → -[-]  
+10:15:01  SCAN #21 complete in 0.2s
+10:18:01  SCAN #22  10:18:01  phase=ACTIVE_AM  active=True  missed=0
+10:18:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.013s
+10:18:01    HINDUNILVR   Baseline     C=2145.00  → -[-]  
+10:18:01    AXISBANK     Baseline     C=1350.30  → -[-]  
+10:18:01    BAJAJFINSV   Baseline     C=1852.90  → -[-]  
+10:18:01    JSWSTEEL     Baseline     C=1234.00  → -[-]  cooldown_until_10:33
+10:18:01    SBIN         Baseline     C=1074.55  → -[-]  
+10:18:01    HCLTECH      Baseline     C=1440.10  → -[-]  in_position
+10:18:01    TRENT        Baseline     C=3971.20  → -[-]  
+10:18:01    SHRIRAMFIN   Baseline     C=1027.00  → -[-]  
+10:18:01    TCS          Baseline     C=2573.40  → -[-]  
+10:18:01  SCAN #22 complete in 0.2s
+10:21:01  SCAN #23  10:21:01  phase=ACTIVE_AM  active=True  missed=0
+10:21:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.017s
+10:21:01    HINDUNILVR   Baseline     C=2147.00  → -[-]  
+10:21:01    AXISBANK     Baseline     C=1349.90  → -[-]  
+10:21:01    BAJAJFINSV   Baseline     C=1851.00  → -[-]  
+10:21:01    JSWSTEEL     Baseline     C=1233.20  → -[-]  cooldown_until_10:33
+10:21:01    SBIN         Baseline     C=1076.50  → -[-]  
+10:21:01  BROKER EXIT  HCLTECH      SL filled on broker — cleaning up
+10:21:01  ORDER CANCELLED  order_id=260416000222659
+10:21:01  BROKER EXIT P&L  HCLTECH      SL  ₹-342.16
+10:21:01    TRENT        Baseline     C=3972.00  → -[-]  
+10:21:01    SHRIRAMFIN   Baseline     C=1025.30  → -[-]  
+10:21:01    TCS          Baseline     C=2579.70  → -[-]  
+10:21:01  SCAN #23 complete in 0.4s
+10:24:01  SCAN #24  10:24:01  phase=ACTIVE_AM  active=True  missed=0
+10:24:01  FETCH  WS  9 new bars (6 clock-flushed) in 0.023s
+10:24:01    HINDUNILVR   Baseline     C=2147.80  → -[-]  
+10:24:01  ORDER  AXISBANK     SELL  qty=92  limit=1348.60  buf=0.10  SL=1351.87  TP=1343.90  sym=AXISBANK-EQ
+10:24:02  ORDER RAW RESP  AXISBANK     {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'AXISBANK-EQ', 'orderid': '260416000261359', 'uniqueorderid': 'd4b93ada-06e1-4256-b0c8-943bda5ff7b2'}}
+10:24:02  ORDER OK  AXISBANK     order_id=260416000261359
+10:24:05  ORDER FILLED  AXISBANK     order_id=260416000261359  qty=92  avg=1348.60  in 3.1s
+10:24:05  SL ORDER  AXISBANK     BUY  qty=92  trigger=1351.90  limit=1354.60
+10:24:05  SL ORDER RAW  AXISBANK     {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'AXISBANK-EQ', 'orderid': '260416000261431', 'uniqueorderid': 'e93d37fc-b80e-4eeb-a6a9-59fa89282711'}}
+10:24:06  SL ORDER OK  AXISBANK     order_id=260416000261431  exchange=trigger pending
+10:24:06  TP ORDER  AXISBANK     BUY  qty=92  limit=1343.90
+10:24:06  TP ORDER RAW  AXISBANK     {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'AXISBANK-EQ', 'orderid': '260416000261451', 'uniqueorderid': '6a62d97b-8e1a-42b8-ae22-ce03db98d2bd'}}
+10:24:07  TP ORDER OK  AXISBANK     order_id=260416000261451  exchange=open
+10:24:08    AXISBANK     Baseline     C=1348.70  → ★ SHORT[PDL_BASE]  SL=1351.87  TP=1343.90  Qty=92
+10:24:08    BAJAJFINSV   Baseline     C=1850.70  → -[-]  
+10:24:08    JSWSTEEL     Baseline     C=1231.50  → -[-]  cooldown_until_10:33
+10:24:08    SBIN         Baseline     C=1075.80  → -[-]  
+10:24:08    HCLTECH      Baseline     C=1442.10  → -[-]  cooldown_until_10:36
+10:24:08    TRENT        Baseline     C=3969.60  → -[-]  
+10:24:08    SHRIRAMFIN   Baseline     C=1025.80  → -[-]  
+10:24:08    TCS          Baseline     C=2580.00  → -[-]  
+10:24:08  SCAN #24 complete in 7.8s
+10:27:01  SCAN #25  10:27:01  phase=ACTIVE_AM  active=True  missed=0
+10:27:01  FETCH  WS  9 new bars (8 clock-flushed) in 0.019s
+10:27:01    HINDUNILVR   Baseline     C=2150.40  → -[-]  
+10:27:01    AXISBANK     Baseline     C=1348.80  → -[-]  in_position
+10:27:01    BAJAJFINSV   Baseline     C=1852.00  → -[-]  
+10:27:01    JSWSTEEL     Baseline     C=1231.40  → -[-]  cooldown_until_10:33
+10:27:01    SBIN         Baseline     C=1076.20  → -[-]  
+10:27:01    HCLTECH      Baseline     C=1438.30  → -[-]  cooldown_until_10:36
+10:27:01    TRENT        Baseline     C=3979.10  → -[-]  
+10:27:01    SHRIRAMFIN   Baseline     C=1027.40  → -[-]  
+10:27:01    TCS          Baseline     C=2574.40  → -[-]  
+10:27:01  SCAN #25 complete in 0.2s
+10:30:01  SCAN #26  10:30:01  phase=ACTIVE_AM  active=True  missed=0
+10:30:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.021s
+10:30:01    HINDUNILVR   Baseline     C=2148.00  → -[-]  
+10:30:01    AXISBANK     Baseline     C=1347.20  → -[-]  in_position
+10:30:01    BAJAJFINSV   Baseline     C=1849.20  → -[-]  
+10:30:01    JSWSTEEL     Baseline     C=1231.60  → -[-]  cooldown_until_10:33
+10:30:01    SBIN         Baseline     C=1075.35  → -[-]  
+10:30:01    HCLTECH      Baseline     C=1439.30  → -[-]  cooldown_until_10:36
+10:30:01    TRENT        Baseline     C=3983.40  → -[-]  
+10:30:01    SHRIRAMFIN   Baseline     C=1026.90  → -[-]  
+10:30:01    TCS          Baseline     C=2573.80  → -[-]  
+10:30:01  SCAN #26 complete in 0.2s
+10:33:01  SCAN #27  10:33:01  phase=ACTIVE_AM  active=True  missed=0
+10:33:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.020s
+10:33:01    HINDUNILVR   Baseline     C=2149.00  → -[-]  
+10:33:01    AXISBANK     Baseline     C=1345.80  → -[-]  in_position
+10:33:01    BAJAJFINSV   Baseline     C=1850.20  → -[-]  
+10:33:01    JSWSTEEL     Baseline     C=1233.40  → -[-]  
+10:33:01    SBIN         Baseline     C=1076.05  → -[-]  
+10:33:01    HCLTECH      Baseline     C=1438.00  → -[-]  cooldown_until_10:36
+10:33:01    TRENT        Baseline     C=3991.10  → -[-]  
+10:33:01    SHRIRAMFIN   Baseline     C=1027.65  → -[-]  
+10:33:01    TCS          Baseline     C=2575.50  → -[-]  
+10:33:01  SCAN #27 complete in 0.2s
+10:36:01  SCAN #28  10:36:01  phase=ACTIVE_AM  active=True  missed=0
+10:36:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.020s
+10:36:01    HINDUNILVR   Baseline     C=2151.30  → -[-]  
+10:36:01    AXISBANK     Baseline     C=1348.10  → -[-]  in_position
+10:36:01    BAJAJFINSV   Baseline     C=1850.00  → -[-]  
+10:36:01    JSWSTEEL     Baseline     C=1229.20  → -[-]  
+10:36:01    SBIN         Baseline     C=1076.00  → -[-]  
+10:36:01    HCLTECH      Baseline     C=1440.50  → -[-]  
+10:36:01  LOW REWARD SKIP  TRENT        LONG  remaining=-3.39 < min=3.66 (30.0% ATR)  planned_entry=4021.90  tp=4018.51 — entry too close to TP, skipping order
+10:36:02    TRENT        Baseline     C=4021.50  → ★ LONG[PDL_BASE]  SL=3988.02  TP=4018.51  Qty=30  skip_low_reward(remaining=-3.39,min=3.66,entry=4021.90,tp=4018.51)
+10:36:02    SHRIRAMFIN   Baseline     C=1027.50  → -[-]  
+10:36:02    TCS          Baseline     C=2575.00  → -[-]  
+10:36:02  SCAN #28 complete in 1.6s
+10:39:01  SCAN #29  10:39:01  phase=ACTIVE_AM  active=True  missed=0
+10:39:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.017s
+10:39:01    HINDUNILVR   Baseline     C=2152.70  → -[-]  
+10:39:01    AXISBANK     Baseline     C=1346.50  → -[-]  in_position
+10:39:01    BAJAJFINSV   Baseline     C=1848.80  → -[-]  
+10:39:01    JSWSTEEL     Baseline     C=1226.10  → -[-]  
+10:39:01    SBIN         Baseline     C=1076.15  → -[-]  
+10:39:01    HCLTECH      Baseline     C=1441.90  → -[-]  
+10:39:01    TRENT        Baseline     C=4028.30  → -[-]  cooldown_until_11:06
+10:39:01    SHRIRAMFIN   Baseline     C=1027.90  → -[-]  
+10:39:01    TCS          Baseline     C=2576.80  → -[-]  
+10:39:01  SCAN #29 complete in 0.2s
+10:42:01  SCAN #30  10:42:01  phase=ACTIVE_AM  active=True  missed=0
+10:42:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.017s
+10:42:01    HINDUNILVR   Baseline     C=2154.00  → -[-]  
+10:42:01    AXISBANK     Baseline     C=1345.90  → -[-]  in_position
+10:42:01    BAJAJFINSV   Baseline     C=1849.00  → -[-]  
+10:42:01    JSWSTEEL     Baseline     C=1225.50  → -[-]  
+10:42:01    SBIN         Baseline     C=1076.25  → -[-]  
+10:42:01    HCLTECH      Baseline     C=1442.80  → -[-]  
+10:42:01    TRENT        Baseline     C=4040.20  → -[-]  cooldown_until_11:06
+10:42:01    SHRIRAMFIN   Baseline     C=1028.30  → -[-]  
+10:42:01    TCS          Baseline     C=2577.00  → -[-]  
+10:42:01  SCAN #30 complete in 0.2s
+10:45:01  SCAN #31  10:45:01  phase=ACTIVE_AM  active=True  missed=0
+10:45:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.017s
+10:45:01    HINDUNILVR   Baseline     C=2153.90  → -[-]  
+10:45:01    AXISBANK     Baseline     C=1345.70  → -[-]  in_position
+10:45:01    BAJAJFINSV   Baseline     C=1849.70  → -[-]  
+10:45:01    JSWSTEEL     Baseline     C=1225.90  → -[-]  
+10:45:01    SBIN         Baseline     C=1075.90  → -[-]  
+10:45:01    HCLTECH      Baseline     C=1440.00  → -[-]  
+10:45:01    TRENT        Baseline     C=4063.00  → -[-]  cooldown_until_11:06
+10:45:01    SHRIRAMFIN   Baseline     C=1028.45  → -[-]  
+10:45:01    TCS          Baseline     C=2576.70  → -[-]  
+10:45:01  SCAN #31 complete in 0.2s
+10:48:01  SCAN #32  10:48:01  phase=ACTIVE_AM  active=True  missed=0
+10:48:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.020s
+10:48:01    HINDUNILVR   Baseline     C=2152.60  → -[-]  
+10:48:01    AXISBANK     Baseline     C=1345.60  → -[-]  in_position
+10:48:01    BAJAJFINSV   Baseline     C=1849.80  → -[-]  
+10:48:01    JSWSTEEL     Baseline     C=1225.60  → -[-]  
+10:48:01    SBIN         Baseline     C=1075.75  → -[-]  
+10:48:01    HCLTECH      Baseline     C=1441.40  → -[-]  
+10:48:01    TRENT        Baseline     C=4077.90  → -[-]  cooldown_until_11:06
+10:48:01    SHRIRAMFIN   Baseline     C=1028.10  → -[-]  
+10:48:01    TCS          Baseline     C=2579.00  → -[-]  
+10:48:01  SCAN #32 complete in 0.2s
+10:51:01  SCAN #33  10:51:01  phase=ACTIVE_AM  active=True  missed=0
+10:51:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.024s
+10:51:01    HINDUNILVR   Baseline     C=2151.90  → -[-]  
+10:51:01    AXISBANK     Baseline     C=1346.90  → -[-]  in_position
+10:51:01    BAJAJFINSV   Baseline     C=1851.00  → -[-]  
+10:51:01    JSWSTEEL     Baseline     C=1224.50  → -[-]  
+10:51:01    SBIN         Baseline     C=1075.00  → -[-]  
+10:51:01    HCLTECH      Baseline     C=1441.90  → -[-]  
+10:51:01    TRENT        Baseline     C=4080.00  → -[-]  cooldown_until_11:06
+10:51:01    SHRIRAMFIN   Baseline     C=1029.15  → -[-]  
+10:51:01    TCS          Baseline     C=2577.80  → -[-]  
+10:51:01  SCAN #33 complete in 0.2s
+10:54:01  SCAN #34  10:54:01  phase=ACTIVE_AM  active=True  missed=0
+10:54:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.018s
+10:54:01    HINDUNILVR   Baseline     C=2150.00  → -[-]  
+10:54:01    AXISBANK     Baseline     C=1347.70  → -[-]  in_position
+10:54:01    BAJAJFINSV   Baseline     C=1853.00  → -[-]  
+10:54:01    JSWSTEEL     Baseline     C=1224.00  → -[-]  
+10:54:01    SBIN         Baseline     C=1074.90  → -[-]  
+10:54:01    HCLTECH      Baseline     C=1441.80  → -[-]  
+10:54:01    TRENT        Baseline     C=4079.80  → -[-]  cooldown_until_11:06
+10:54:01    SHRIRAMFIN   Baseline     C=1028.25  → -[-]  
+10:54:01    TCS          Baseline     C=2575.40  → -[-]  
+10:54:01  SCAN #34 complete in 0.2s
+10:57:01  SCAN #35  10:57:01  phase=ACTIVE_AM  active=True  missed=0
+10:57:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.018s
+10:57:01    HINDUNILVR   Baseline     C=2150.00  → -[-]  
+10:57:01    AXISBANK     Baseline     C=1347.20  → -[-]  in_position
+10:57:01    BAJAJFINSV   Baseline     C=1852.70  → -[-]  
+10:57:01    JSWSTEEL     Baseline     C=1222.40  → -[-]  
+10:57:01    SBIN         Baseline     C=1074.85  → -[-]  
+10:57:01    HCLTECH      Baseline     C=1440.60  → -[-]  
+10:57:01    TRENT        Baseline     C=4085.30  → -[-]  cooldown_until_11:06
+10:57:01    SHRIRAMFIN   Baseline     C=1027.80  → -[-]  
+10:57:01    TCS          Baseline     C=2572.90  → -[-]  
+10:57:01  SCAN #35 complete in 0.4s
+11:00:01  SCAN #36  11:00:01  phase=ACTIVE_AM  active=True  missed=0
+11:00:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.014s
+11:00:01    HINDUNILVR   Baseline     C=2149.90  → -[-]  
+11:00:01    AXISBANK     Baseline     C=1350.00  → -[-]  in_position
+11:00:01    BAJAJFINSV   Baseline     C=1853.00  → -[-]  
+11:00:01    JSWSTEEL     Baseline     C=1223.60  → -[-]  
+11:00:01    SBIN         Baseline     C=1074.25  → -[-]  
+11:00:01    HCLTECH      Baseline     C=1441.90  → -[-]  
+11:00:01    TRENT        Baseline     C=4086.00  → -[-]  cooldown_until_11:06
+11:00:01    SHRIRAMFIN   Baseline     C=1028.55  → -[-]  
+11:00:01    TCS          Baseline     C=2573.50  → -[-]  
+11:00:01  SCAN #36 complete in 0.2s
+11:03:01  SCAN #37  11:03:01  phase=ACTIVE_AM  active=True  missed=0
+11:03:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.021s
+11:03:01    HINDUNILVR   Baseline     C=2149.80  → -[-]  
+11:03:01    AXISBANK     Baseline     C=1350.80  → -[-]  in_position
+11:03:01    BAJAJFINSV   Baseline     C=1853.90  → -[-]  
+11:03:01    JSWSTEEL     Baseline     C=1223.40  → -[-]  
+11:03:01    SBIN         Baseline     C=1074.85  → -[-]  
+11:03:01    HCLTECH      Baseline     C=1442.20  → -[-]  
+11:03:01    TRENT        Baseline     C=4083.00  → -[-]  cooldown_until_11:06
+11:03:01    SHRIRAMFIN   Baseline     C=1029.00  → -[-]  
+11:03:01    TCS          Baseline     C=2575.70  → -[-]  
+11:03:01  SCAN #37 complete in 0.2s
+11:06:01  SCAN #38  11:06:01  phase=ACTIVE_AM  active=True  missed=0
+11:06:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.020s
+11:06:01    HINDUNILVR   Baseline     C=2150.00  → -[-]  
+11:06:01  BROKER EXIT  AXISBANK     SL filled on broker — cleaning up
+11:06:01  ORDER CANCELLED  order_id=260416000261451
+11:06:01  BROKER EXIT P&L  AXISBANK     SL  ₹-300.54
+11:06:01    BAJAJFINSV   Baseline     C=1854.00  → -[-]  
+11:06:01    JSWSTEEL     Baseline     C=1221.80  → -[-]  
+11:06:01    SBIN         Baseline     C=1074.60  → -[-]  
+11:06:01    HCLTECH      Baseline     C=1442.40  → -[-]  
+11:06:01    TRENT        Baseline     C=4088.00  → -[-]  
+11:06:01    SHRIRAMFIN   Baseline     C=1030.65  → -[-]  
+11:06:01    TCS          Baseline     C=2576.90  → -[-]  
+11:06:01  SCAN #38 complete in 0.5s
+11:09:01  SCAN #39  11:09:01  phase=ACTIVE_AM  active=True  missed=0
+11:09:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.021s
+11:09:01    HINDUNILVR   Baseline     C=2150.90  → -[-]  
+11:09:01    AXISBANK     Baseline     C=1353.70  → -[-]  
+11:09:01    BAJAJFINSV   Baseline     C=1852.30  → -[-]  
+11:09:01    JSWSTEEL     Baseline     C=1219.00  → -[-]  
+11:09:01    SBIN         Baseline     C=1074.95  → -[-]  
+11:09:01    HCLTECH      Baseline     C=1442.90  → -[-]  
+11:09:01    TRENT        Baseline     C=4089.00  → -[-]  
+11:09:01    SHRIRAMFIN   Baseline     C=1030.85  → -[-]  
+11:09:01    TCS          Baseline     C=2579.70  → -[-]  
+11:09:01  SCAN #39 complete in 0.0s
+11:12:01  SCAN #40  11:12:01  phase=ACTIVE_AM  active=True  missed=0
+11:12:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.022s
+11:12:01    HINDUNILVR   Baseline     C=2149.60  → -[-]  
+11:12:01    AXISBANK     Baseline     C=1353.10  → -[-]  
+11:12:01    BAJAJFINSV   Baseline     C=1850.00  → -[-]  
+11:12:01    JSWSTEEL     Baseline     C=1219.60  → -[-]  
+11:12:01    SBIN         Baseline     C=1074.85  → -[-]  
+11:12:01    HCLTECH      Baseline     C=1444.70  → -[-]  
+11:12:01    TRENT        Baseline     C=4076.40  → -[-]  
+11:12:01    SHRIRAMFIN   Baseline     C=1029.65  → -[-]  
+11:12:01    TCS          Baseline     C=2577.90  → -[-]  
+11:12:01  SCAN #40 complete in 0.0s
+11:15:01  SCAN #41  11:15:01  phase=ACTIVE_AM  active=True  missed=0
+11:15:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.018s
+11:15:01    HINDUNILVR   Baseline     C=2150.00  → -[-]  
+11:15:01    AXISBANK     Baseline     C=1354.50  → -[-]  
+11:15:01    BAJAJFINSV   Baseline     C=1846.30  → -[-]  
+11:15:01    JSWSTEEL     Baseline     C=1218.90  → -[-]  
+11:15:01    SBIN         Baseline     C=1074.85  → -[-]  
+11:15:01    HCLTECH      Baseline     C=1445.50  → -[-]  
+11:15:01    TRENT        Baseline     C=4084.20  → -[-]  
+11:15:01    SHRIRAMFIN   Baseline     C=1029.80  → -[-]  
+11:15:01    TCS          Baseline     C=2578.90  → -[-]  
+11:15:01  SCAN #41 complete in 0.0s
+11:18:01  SCAN #42  11:18:01  phase=ACTIVE_AM  active=True  missed=0
+11:18:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.019s
+11:18:01    HINDUNILVR   Baseline     C=2149.60  → -[-]  
+11:18:01    AXISBANK     Baseline     C=1354.00  → -[-]  
+11:18:01    BAJAJFINSV   Baseline     C=1846.60  → -[-]  
+11:18:01    JSWSTEEL     Baseline     C=1217.80  → -[-]  
+11:18:01    SBIN         Baseline     C=1073.65  → -[-]  
+11:18:01    HCLTECH      Baseline     C=1443.70  → -[-]  
+11:18:01    TRENT        Baseline     C=4074.30  → -[-]  
+11:18:01    SHRIRAMFIN   Baseline     C=1030.05  → -[-]  
+11:18:01    TCS          Baseline     C=2577.90  → -[-]  
+11:18:01  SCAN #42 complete in 0.0s
+11:21:01  SCAN #43  11:21:01  phase=ACTIVE_AM  active=True  missed=0
+11:21:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.021s
+11:21:01    HINDUNILVR   Baseline     C=2149.90  → -[-]  
+11:21:01    AXISBANK     Baseline     C=1356.40  → -[-]  
+11:21:01    BAJAJFINSV   Baseline     C=1845.40  → -[-]  
+11:21:01    JSWSTEEL     Baseline     C=1221.90  → -[-]  
+11:21:01    SBIN         Baseline     C=1074.35  → -[-]  
+11:21:01    HCLTECH      Baseline     C=1446.10  → -[-]  
+11:21:01    TRENT        Baseline     C=4072.50  → -[-]  
+11:21:01    SHRIRAMFIN   Baseline     C=1031.35  → -[-]  
+11:21:01    TCS          Baseline     C=2581.70  → -[-]  
+11:21:01  SCAN #43 complete in 0.0s
+11:24:01  SCAN #44  11:24:01  phase=ACTIVE_AM  active=True  missed=0
+11:24:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.022s
+11:24:01    HINDUNILVR   Baseline     C=2153.90  → -[-]  
+11:24:01    AXISBANK     Baseline     C=1356.90  → -[-]  
+11:24:01    BAJAJFINSV   Baseline     C=1847.00  → -[-]  
+11:24:01    JSWSTEEL     Baseline     C=1225.50  → -[-]  
+11:24:01    SBIN         Baseline     C=1074.80  → -[-]  
+11:24:01    HCLTECH      Baseline     C=1445.30  → -[-]  
+11:24:01    TRENT        Baseline     C=4070.90  → -[-]  
+11:24:01    SHRIRAMFIN   Baseline     C=1030.55  → -[-]  
+11:24:01    TCS          Baseline     C=2579.40  → -[-]  
+11:24:01  SCAN #44 complete in 0.0s
+11:27:01  SCAN #45  11:27:01  phase=ACTIVE_AM  active=True  missed=0
+11:27:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.008s
+11:27:01    HINDUNILVR   Baseline     C=2150.50  → -[-]  
+11:27:01    AXISBANK     Baseline     C=1355.80  → -[-]  
+11:27:01    BAJAJFINSV   Baseline     C=1845.70  → -[-]  
+11:27:01    JSWSTEEL     Baseline     C=1221.00  → -[-]  
+11:27:01    SBIN         Baseline     C=1073.95  → -[-]  
+11:27:01    HCLTECH      Baseline     C=1442.90  → -[-]  
+11:27:01    TRENT        Baseline     C=4055.00  → -[-]  
+11:27:01    SHRIRAMFIN   Baseline     C=1030.00  → -[-]  
+11:27:01    TCS          Baseline     C=2578.90  → -[-]  
+11:27:01  SCAN #45 complete in 0.0s
+11:30:01  SCAN #46  11:30:01  phase=ACTIVE_AM  active=True  missed=0
+11:30:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.012s
+11:30:01    HINDUNILVR   Baseline     C=2149.60  → -[-]  
+11:30:01    AXISBANK     Baseline     C=1355.00  → -[-]  
+11:30:01    BAJAJFINSV   Baseline     C=1844.20  → -[-]  
+11:30:01    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+11:30:01    SBIN         Baseline     C=1073.65  → -[-]  
+11:30:01    HCLTECH      Baseline     C=1443.70  → -[-]  
+11:30:01    TRENT        Baseline     C=4054.90  → -[-]  
+11:30:01    SHRIRAMFIN   Baseline     C=1032.45  → -[-]  
+11:30:01    TCS          Baseline     C=2580.30  → -[-]  
+11:30:01  SCAN #46 complete in 0.0s
+11:33:01  SCAN #47  11:33:01  phase=ACTIVE_AM  active=True  missed=0
+11:33:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.007s
+11:33:01    HINDUNILVR   Baseline     C=2148.20  → -[-]  
+11:33:01    AXISBANK     Baseline     C=1354.50  → -[-]  
+11:33:01    BAJAJFINSV   Baseline     C=1843.50  → -[-]  
+11:33:01    JSWSTEEL     Baseline     C=1219.20  → -[-]  
+11:33:01    SBIN         Baseline     C=1073.45  → -[-]  
+11:33:01    HCLTECH      Baseline     C=1443.30  → -[-]  
+11:33:01    TRENT        Baseline     C=4054.00  → -[-]  
+11:33:01    SHRIRAMFIN   Baseline     C=1032.50  → -[-]  
+11:33:01    TCS          Baseline     C=2581.00  → -[-]  
+11:33:01  SCAN #47 complete in 0.0s
+11:36:01  SCAN #48  11:36:01  phase=ACTIVE_AM  active=True  missed=0
+11:36:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.020s
+11:36:01    HINDUNILVR   Baseline     C=2149.00  → -[-]  
+11:36:01    AXISBANK     Baseline     C=1354.40  → -[-]  
+11:36:01    BAJAJFINSV   Baseline     C=1844.00  → -[-]  
+11:36:01    JSWSTEEL     Baseline     C=1219.80  → -[-]  
+11:36:01    SBIN         Baseline     C=1072.95  → -[-]  
+11:36:01    HCLTECH      Baseline     C=1442.70  → -[-]  
+11:36:01    TRENT        Baseline     C=4055.90  → -[-]  
+11:36:01    SHRIRAMFIN   Baseline     C=1033.50  → -[-]  
+11:36:01    TCS          Baseline     C=2581.80  → -[-]  
+11:36:01  SCAN #48 complete in 0.0s
+11:39:01  SCAN #49  11:39:01  phase=ACTIVE_AM  active=True  missed=0
+11:39:01  FETCH  WS  9 new bars (6 clock-flushed) in 0.020s
+11:39:01    HINDUNILVR   Baseline     C=2149.10  → -[-]  
+11:39:01    AXISBANK     Baseline     C=1354.10  → -[-]  
+11:39:01    BAJAJFINSV   Baseline     C=1843.60  → -[-]  
+11:39:01    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+11:39:01    SBIN         Baseline     C=1072.00  → -[-]  
+11:39:01    HCLTECH      Baseline     C=1441.70  → -[-]  
+11:39:01    TRENT        Baseline     C=4049.50  → -[-]  
+11:39:01    SHRIRAMFIN   Baseline     C=1033.25  → -[-]  
+11:39:01    TCS          Baseline     C=2579.90  → -[-]  
+11:39:01  SCAN #49 complete in 0.0s
+11:42:01  SCAN #50  11:42:01  phase=ACTIVE_AM  active=True  missed=0
+11:42:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.017s
+11:42:01    HINDUNILVR   Baseline     C=2149.50  → -[-]  
+11:42:01    AXISBANK     Baseline     C=1352.70  → -[-]  
+11:42:01    BAJAJFINSV   Baseline     C=1843.60  → -[-]  
+11:42:01    JSWSTEEL     Baseline     C=1219.70  → -[-]  
+11:42:01    SBIN         Baseline     C=1070.90  → -[-]  
+11:42:01    HCLTECH      Baseline     C=1442.30  → -[-]  
+11:42:01    TRENT        Baseline     C=4046.10  → -[-]  
+11:42:01    SHRIRAMFIN   Baseline     C=1029.95  → -[-]  
+11:42:01    TCS          Baseline     C=2578.10  → -[-]  
+11:42:01  SCAN #50 complete in 0.0s
+11:45:01  SCAN #51  11:45:01  phase=ACTIVE_AM  active=True  missed=0
+11:45:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.020s
+11:45:01    HINDUNILVR   Baseline     C=2147.00  → -[-]  
+11:45:01    AXISBANK     Baseline     C=1351.20  → -[-]  
+11:45:01    BAJAJFINSV   Baseline     C=1840.30  → -[-]  
+11:45:01    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+11:45:01    SBIN         Baseline     C=1070.00  → -[-]  
+11:45:01    HCLTECH      Baseline     C=1442.10  → -[-]  
+11:45:01    TRENT        Baseline     C=4044.40  → -[-]  
+11:45:01    SHRIRAMFIN   Baseline     C=1029.75  → -[-]  
+11:45:01    TCS          Baseline     C=2575.60  → -[-]  
+11:45:01  SCAN #51 complete in 0.0s
+11:48:01  SCAN #52  11:48:01  phase=ACTIVE_AM  active=True  missed=0
+11:48:01  FETCH  WS  9 new bars (6 clock-flushed) in 0.020s
+11:48:01    HINDUNILVR   Baseline     C=2146.40  → -[-]  
+11:48:01    AXISBANK     Baseline     C=1350.20  → -[-]  
+11:48:01    BAJAJFINSV   Baseline     C=1839.00  → -[-]  
+11:48:01    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+11:48:01  ORDER  SBIN         SELL  qty=117  limit=1068.10  buf=0.10  SL=1069.45  TP=1065.97  sym=SBIN-EQ
+11:48:01  ORDER RAW RESP  SBIN         {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'SBIN-EQ', 'orderid': '260416000414182', 'uniqueorderid': 'e5cd3259-63b6-46c3-8df2-71022e8c1808'}}
+11:48:01  ORDER OK  SBIN         order_id=260416000414182
+11:48:17  ORDER FILLED  SBIN         order_id=260416000414182  qty=117  avg=1068.10  in 15.7s
+11:48:17  SL ORDER  SBIN         BUY  qty=117  trigger=1069.50  limit=1071.70
+11:48:17  SL ORDER RAW  SBIN         {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'SBIN-EQ', 'orderid': '260416000415410', 'uniqueorderid': '386b326b-8fc9-4bca-b5b3-aeb50cce2420'}}
+11:48:19  SL ORDER OK  SBIN         order_id=260416000415410  exchange=trigger pending
+11:48:19  TP ORDER  SBIN         BUY  qty=117  limit=1066.00
+11:48:19  TP ORDER RAW  SBIN         {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'SBIN-EQ', 'orderid': '260416000415492', 'uniqueorderid': '52be004c-7a5f-4739-99e8-0c17082ec974'}}
+11:48:20  TP ORDER OK  SBIN         order_id=260416000415492  exchange=open
+11:48:24  SAME-BAR EXIT  SBIN         SHORT on entry bar — SL
+11:48:24  SAME-BAR SKIP  SBIN         auto-trade active — broker handles SL/TP, keeping position tracked
+11:48:24    SBIN         Baseline     C=1068.20  → ★ SHORT[PDL_BASE]  SL=1069.45  TP=1065.97  Qty=117
+11:48:24    HCLTECH      Baseline     C=1441.20  → -[-]  
+11:48:24    TRENT        Baseline     C=4032.00  → -[-]  
+11:48:24    SHRIRAMFIN   Baseline     C=1026.80  → -[-]  
+11:48:24    TCS          Baseline     C=2570.10  → -[-]  
+11:48:24  SCAN #52 complete in 23.5s
+11:51:01  SCAN #53  11:51:01  phase=ACTIVE_AM  active=True  missed=0
+11:51:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.016s
+11:51:01    HINDUNILVR   Baseline     C=2145.60  → -[-]  
+11:51:01    AXISBANK     Baseline     C=1350.20  → -[-]  
+11:51:01    BAJAJFINSV   Baseline     C=1839.40  → -[-]  
+11:51:01    JSWSTEEL     Baseline     C=1220.40  → -[-]  
+11:51:01  BROKER EXIT  SBIN         SL filled on broker — cleaning up
+11:51:01  ORDER CANCELLED  order_id=260416000415492
+11:51:01  BROKER EXIT P&L  SBIN         SL  ₹-158.15
+11:51:01    HCLTECH      Baseline     C=1443.40  → -[-]  
+11:51:01    TRENT        Baseline     C=4027.00  → -[-]  
+11:51:01    SHRIRAMFIN   Baseline     C=1026.00  → -[-]  
+11:51:01    TCS          Baseline     C=2572.30  → -[-]  
+11:51:01  SCAN #53 complete in 0.4s
+11:54:01  SCAN #54  11:54:01  phase=ACTIVE_AM  active=True  missed=0
+11:54:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.018s
+11:54:01    HINDUNILVR   Baseline     C=2145.00  → -[-]  
+11:54:01    AXISBANK     Baseline     C=1351.00  → -[-]  
+11:54:01    BAJAJFINSV   Baseline     C=1841.00  → -[-]  
+11:54:01    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+11:54:01    SBIN         Baseline     C=1069.00  → -[-]  cooldown_until_12:18
+11:54:01    HCLTECH      Baseline     C=1444.70  → -[-]  
+11:54:01    TRENT        Baseline     C=4024.70  → -[-]  
+11:54:01    SHRIRAMFIN   Baseline     C=1029.70  → -[-]  
+11:54:01    TCS          Baseline     C=2572.40  → -[-]  
+11:54:01  SCAN #54 complete in 0.0s
+11:57:01  SCAN #55  11:57:01  phase=ACTIVE_AM  active=True  missed=0
+11:57:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.020s
+11:57:01    HINDUNILVR   Baseline     C=2145.00  → -[-]  
+11:57:01    AXISBANK     Baseline     C=1349.70  → -[-]  
+11:57:01    BAJAJFINSV   Baseline     C=1835.30  → -[-]  
+11:57:01    JSWSTEEL     Baseline     C=1222.50  → -[-]  
+11:57:01    SBIN         Baseline     C=1067.30  → -[-]  cooldown_until_12:18
+11:57:01    HCLTECH      Baseline     C=1444.60  → -[-]  
+11:57:01    TRENT        Baseline     C=4025.50  → -[-]  
+11:57:01    SHRIRAMFIN   Baseline     C=1027.15  → -[-]  
+11:57:01    TCS          Baseline     C=2573.00  → -[-]  
+11:57:01  SCAN #55 complete in 0.0s
+12:00:01  SCAN #56  12:00:01  phase=ACTIVE_AM  active=True  missed=0
+12:00:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.019s
+12:00:01    HINDUNILVR   Baseline     C=2144.90  → -[-]  
+12:00:01    AXISBANK     Baseline     C=1348.00  → -[-]  
+12:00:01    BAJAJFINSV   Baseline     C=1831.50  → -[-]  
+12:00:01    JSWSTEEL     Baseline     C=1221.90  → -[-]  
+12:00:01    SBIN         Baseline     C=1066.30  → -[-]  cooldown_until_12:18
+12:00:01    HCLTECH      Baseline     C=1442.00  → -[-]  
+12:00:01    TRENT        Baseline     C=4023.40  → -[-]  
+12:00:01    SHRIRAMFIN   Baseline     C=1027.15  → -[-]  
+12:00:01    TCS          Baseline     C=2567.00  → -[-]  
+12:00:01  SCAN #56 complete in 0.0s
+12:03:01  SCAN #57  12:03:01  phase=ACTIVE_AM  active=True  missed=0
+12:03:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.017s
+12:03:01    HINDUNILVR   Baseline     C=2141.30  → -[-]  
+12:03:01    AXISBANK     Baseline     C=1346.80  → -[-]  
+12:03:01    BAJAJFINSV   Baseline     C=1830.10  → -[-]  
+12:03:01    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+12:03:01    SBIN         Baseline     C=1065.90  → -[-]  cooldown_until_12:18
+12:03:01    HCLTECH      Baseline     C=1440.20  → -[-]  
+12:03:01    TRENT        Baseline     C=4019.30  → -[-]  
+12:03:01    SHRIRAMFIN   Baseline     C=1025.15  → -[-]  
+12:03:01    TCS          Baseline     C=2561.80  → -[-]  
+12:03:01  SCAN #57 complete in 0.0s
+12:06:01  SCAN #58  12:06:01  phase=ACTIVE_AM  active=True  missed=0
+12:06:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.018s
+12:06:01  ORDER  HINDUNILVR   SELL  qty=58  limit=2139.80  buf=0.10  SL=2142.85  TP=2137.44  sym=HINDUNILVR-EQ
+12:06:01  ORDER RAW RESP  HINDUNILVR   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HINDUNILVR-EQ', 'orderid': '260416000470821', 'uniqueorderid': '8a25e621-fba1-4bf4-b01e-fec5f143c974'}}
+12:06:01  ORDER OK  HINDUNILVR   order_id=260416000470821
+12:06:02  ORDER FILLED  HINDUNILVR   order_id=260416000470821  qty=58  avg=2139.91  in 0.0s
+12:06:02  SL ORDER  HINDUNILVR   BUY  qty=58  trigger=2142.80  limit=2147.10
+12:06:02  SL ORDER RAW  HINDUNILVR   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HINDUNILVR-EQ', 'orderid': '260416000470856', 'uniqueorderid': 'bc4f6555-2244-4506-b48e-127054a2ed4b'}}
+12:06:03  SL ORDER OK  HINDUNILVR   order_id=260416000470856  exchange=trigger pending
+12:06:03  TP ORDER  HINDUNILVR   BUY  qty=58  limit=2137.40
+12:06:03  TP ORDER RAW  HINDUNILVR   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HINDUNILVR-EQ', 'orderid': '260416000470939', 'uniqueorderid': 'cc728d2a-cf40-4f70-ae5c-31c572d38ff8'}}
+12:06:04  TP ORDER OK  HINDUNILVR   order_id=260416000470939  exchange=open
+12:06:05    HINDUNILVR   Baseline     C=2139.90  → ★ SHORT[PDL_BASE]  SL=2142.85  TP=2137.44  Qty=58
+12:06:05    AXISBANK     Baseline     C=1348.00  → -[-]  
+12:06:05    BAJAJFINSV   Baseline     C=1829.80  → -[-]  
+12:06:05    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+12:06:05    SBIN         Baseline     C=1065.80  → -[-]  cooldown_until_12:18
+12:06:05    HCLTECH      Baseline     C=1438.00  → -[-]  
+12:06:05    TRENT        Baseline     C=4025.00  → -[-]  
+12:06:05    SHRIRAMFIN   Baseline     C=1024.55  → -[-]  
+12:06:05    TCS          Baseline     C=2559.40  → -[-]  
+12:06:05  SCAN #58 complete in 4.5s
+12:09:01  SCAN #59  12:09:01  phase=ACTIVE_AM  active=True  missed=0
+12:09:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.019s
+12:09:01    HINDUNILVR   Baseline     C=2141.10  → -[-]  in_position
+12:09:01    AXISBANK     Baseline     C=1347.00  → -[-]  
+12:09:01    BAJAJFINSV   Baseline     C=1829.80  → -[-]  
+12:09:01    JSWSTEEL     Baseline     C=1220.40  → -[-]  
+12:09:01    SBIN         Baseline     C=1065.75  → -[-]  cooldown_until_12:18
+12:09:01    HCLTECH      Baseline     C=1438.30  → -[-]  
+12:09:01    TRENT        Baseline     C=4025.10  → -[-]  
+12:09:01    SHRIRAMFIN   Baseline     C=1026.10  → -[-]  
+12:09:01    TCS          Baseline     C=2563.00  → -[-]  
+12:09:01  SCAN #59 complete in 0.2s
+12:12:01  SCAN #60  12:12:01  phase=ACTIVE_AM  active=True  missed=0
+12:12:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.021s
+12:12:01    HINDUNILVR   Baseline     C=2140.00  → -[-]  in_position
+12:12:01    AXISBANK     Baseline     C=1349.30  → -[-]  
+12:12:01    BAJAJFINSV   Baseline     C=1831.00  → -[-]  
+12:12:01    JSWSTEEL     Baseline     C=1220.20  → -[-]  
+12:12:01    SBIN         Baseline     C=1066.25  → -[-]  cooldown_until_12:18
+12:12:01    HCLTECH      Baseline     C=1436.80  → -[-]  
+12:12:01    TRENT        Baseline     C=4041.50  → -[-]  
+12:12:01    SHRIRAMFIN   Baseline     C=1027.35  → -[-]  
+12:12:01    TCS          Baseline     C=2564.60  → -[-]  
+12:12:01  SCAN #60 complete in 0.2s
+12:15:01  SCAN #61  12:15:01  phase=ACTIVE_AM  active=True  missed=0
+12:15:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.022s
+12:15:01    HINDUNILVR   Baseline     C=2140.00  → -[-]  in_position
+12:15:01    AXISBANK     Baseline     C=1348.70  → -[-]  
+12:15:01    BAJAJFINSV   Baseline     C=1831.10  → -[-]  
+12:15:01    JSWSTEEL     Baseline     C=1222.20  → -[-]  
+12:15:01    SBIN         Baseline     C=1067.00  → -[-]  cooldown_until_12:18
+12:15:01    HCLTECH      Baseline     C=1435.40  → -[-]  
+12:15:01    TRENT        Baseline     C=4037.30  → -[-]  
+12:15:01    SHRIRAMFIN   Baseline     C=1026.85  → -[-]  
+12:15:01    TCS          Baseline     C=2565.30  → -[-]  
+12:15:01  SCAN #61 complete in 0.2s
+12:18:01  SCAN #62  12:18:01  phase=ACTIVE_AM  active=True  missed=0
+12:18:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.020s
+12:18:01    HINDUNILVR   Baseline     C=2139.20  → -[-]  in_position
+12:18:01    AXISBANK     Baseline     C=1348.40  → -[-]  
+12:18:01    BAJAJFINSV   Baseline     C=1829.30  → -[-]  
+12:18:01    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+12:18:01    SBIN         Baseline     C=1065.05  → -[-]  
+12:18:01    HCLTECH      Baseline     C=1438.40  → -[-]  
+12:18:01    TRENT        Baseline     C=4033.10  → -[-]  
+12:18:01    SHRIRAMFIN   Baseline     C=1023.35  → -[-]  
+12:18:01    TCS          Baseline     C=2563.00  → -[-]  
+12:18:01  SCAN #62 complete in 0.2s
+12:21:01  SCAN #63  12:21:01  phase=ACTIVE_AM  active=True  missed=0
+12:21:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.019s
+12:21:01    HINDUNILVR   Baseline     C=2140.00  → -[-]  in_position
+12:21:01    AXISBANK     Baseline     C=1348.10  → -[-]  
+12:21:01    BAJAJFINSV   Baseline     C=1830.30  → -[-]  
+12:21:01    JSWSTEEL     Baseline     C=1222.70  → -[-]  
+12:21:01    SBIN         Baseline     C=1065.85  → -[-]  
+12:21:01    HCLTECH      Baseline     C=1440.70  → -[-]  
+12:21:01    TRENT        Baseline     C=4035.90  → -[-]  
+12:21:01    SHRIRAMFIN   Baseline     C=1025.55  → -[-]  
+12:21:01    TCS          Baseline     C=2565.30  → -[-]  
+12:21:01  SCAN #63 complete in 0.2s
+12:24:01  SCAN #64  12:24:01  phase=ACTIVE_AM  active=True  missed=0
+12:24:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.020s
+12:24:01    HINDUNILVR   Baseline     C=2140.00  → -[-]  in_position
+12:24:01    AXISBANK     Baseline     C=1345.70  → -[-]  
+12:24:01    BAJAJFINSV   Baseline     C=1830.60  → -[-]  
+12:24:01    JSWSTEEL     Baseline     C=1223.10  → -[-]  
+12:24:01    SBIN         Baseline     C=1064.85  → -[-]  
+12:24:01    HCLTECH      Baseline     C=1440.70  → -[-]  
+12:24:01    TRENT        Baseline     C=4037.20  → -[-]  
+12:24:01    SHRIRAMFIN   Baseline     C=1024.45  → -[-]  
+12:24:01    TCS          Baseline     C=2562.60  → -[-]  
+12:24:01  SCAN #64 complete in 0.2s
+12:27:01  SCAN #65  12:27:01  phase=ACTIVE_AM  active=True  missed=0
+12:27:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.020s
+12:27:01    HINDUNILVR   Baseline     C=2139.70  → -[-]  in_position
+12:27:01    AXISBANK     Baseline     C=1346.20  → -[-]  
+12:27:01    BAJAJFINSV   Baseline     C=1830.80  → -[-]  
+12:27:01    JSWSTEEL     Baseline     C=1222.40  → -[-]  
+12:27:01    SBIN         Baseline     C=1066.15  → -[-]  
+12:27:01    HCLTECH      Baseline     C=1440.00  → -[-]  
+12:27:01    TRENT        Baseline     C=4035.80  → -[-]  
+12:27:01    SHRIRAMFIN   Baseline     C=1024.30  → -[-]  
+12:27:01    TCS          Baseline     C=2564.50  → -[-]  
+12:27:01  SCAN #65 complete in 0.2s
+12:30:01  SCAN #66  12:30:01  phase=ACTIVE_AM  active=True  missed=0
+12:30:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.020s
+12:30:01    HINDUNILVR   Baseline     C=2139.30  → -[-]  in_position
+12:30:01    AXISBANK     Baseline     C=1346.30  → -[-]  
+12:30:01    BAJAJFINSV   Baseline     C=1830.90  → -[-]  
+12:30:01    JSWSTEEL     Baseline     C=1223.10  → -[-]  
+12:30:01    SBIN         Baseline     C=1064.50  → -[-]  
+12:30:01    HCLTECH      Baseline     C=1440.00  → -[-]  
+12:30:01    TRENT        Baseline     C=4034.60  → -[-]  
+12:30:01    SHRIRAMFIN   Baseline     C=1024.35  → -[-]  
+12:30:01    TCS          Baseline     C=2564.70  → -[-]  
+12:30:01  SCAN #66 complete in 0.2s
+12:33:01  SCAN #67  12:33:01  phase=ACTIVE_AM  active=True  missed=0
+12:33:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.019s
+12:33:01    HINDUNILVR   Baseline     C=2140.00  → -[-]  in_position
+12:33:01    AXISBANK     Baseline     C=1346.80  → -[-]  
+12:33:01    BAJAJFINSV   Baseline     C=1830.80  → -[-]  
+12:33:01    JSWSTEEL     Baseline     C=1222.50  → -[-]  
+12:33:01    SBIN         Baseline     C=1063.90  → -[-]  
+12:33:01    HCLTECH      Baseline     C=1440.00  → -[-]  
+12:33:01    TRENT        Baseline     C=4031.30  → -[-]  
+12:33:01    SHRIRAMFIN   Baseline     C=1024.40  → -[-]  
+12:33:01    TCS          Baseline     C=2564.60  → -[-]  
+12:33:01  SCAN #67 complete in 0.2s
+12:36:01  SCAN #68  12:36:01  phase=ACTIVE_AM  active=True  missed=0
+12:36:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.021s
+12:36:01    HINDUNILVR   Baseline     C=2139.50  → -[-]  in_position
+12:36:01    AXISBANK     Baseline     C=1345.80  → -[-]  
+12:36:01    BAJAJFINSV   Baseline     C=1830.00  → -[-]  
+12:36:01    JSWSTEEL     Baseline     C=1222.10  → -[-]  
+12:36:01    SBIN         Baseline     C=1062.80  → -[-]  
+12:36:01    HCLTECH      Baseline     C=1440.00  → -[-]  
+12:36:01    TRENT        Baseline     C=4025.70  → -[-]  
+12:36:01    SHRIRAMFIN   Baseline     C=1023.25  → -[-]  
+12:36:01    TCS          Baseline     C=2563.30  → -[-]  
+12:36:01  SCAN #68 complete in 0.2s
+12:39:01  SCAN #69  12:39:01  phase=ACTIVE_AM  active=True  missed=0
+12:39:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.016s
+12:39:01    HINDUNILVR   Baseline     C=2140.00  → -[-]  in_position
+12:39:01    AXISBANK     Baseline     C=1346.20  → -[-]  
+12:39:01    BAJAJFINSV   Baseline     C=1832.80  → -[-]  
+12:39:01    JSWSTEEL     Baseline     C=1220.50  → -[-]  
+12:39:01    SBIN         Baseline     C=1063.00  → -[-]  
+12:39:01    HCLTECH      Baseline     C=1440.00  → -[-]  
+12:39:01    TRENT        Baseline     C=4028.60  → -[-]  
+12:39:01    SHRIRAMFIN   Baseline     C=1024.05  → -[-]  
+12:39:01    TCS          Baseline     C=2560.80  → -[-]  
+12:39:01  SCAN #69 complete in 0.2s
+12:42:01  SCAN #70  12:42:01  phase=ACTIVE_AM  active=True  missed=0
+12:42:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.020s
+12:42:01    HINDUNILVR   Baseline     C=2140.00  → -[-]  in_position
+12:42:01    AXISBANK     Baseline     C=1347.40  → -[-]  
+12:42:01    BAJAJFINSV   Baseline     C=1833.70  → -[-]  
+12:42:01    JSWSTEEL     Baseline     C=1223.40  → -[-]  
+12:42:01    SBIN         Baseline     C=1063.60  → -[-]  
+12:42:01    HCLTECH      Baseline     C=1441.90  → -[-]  
+12:42:01    TRENT        Baseline     C=4030.50  → -[-]  
+12:42:01    SHRIRAMFIN   Baseline     C=1025.35  → -[-]  
+12:42:01    TCS          Baseline     C=2565.60  → -[-]  
+12:42:01  SCAN #70 complete in 0.3s
+12:45:01  SCAN #71  12:45:01  phase=ACTIVE_AM  active=True  missed=0
+12:45:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.019s
+12:45:04    HINDUNILVR   Baseline     C=2139.00  → -[-]  in_position
+12:45:04    AXISBANK     Baseline     C=1346.40  → -[-]  
+12:45:04    BAJAJFINSV   Baseline     C=1833.50  → -[-]  
+12:45:04    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+12:45:04    SBIN         Baseline     C=1063.00  → -[-]  
+12:45:04    HCLTECH      Baseline     C=1441.40  → -[-]  
+12:45:04    TRENT        Baseline     C=4029.90  → -[-]  
+12:45:04    SHRIRAMFIN   Baseline     C=1024.90  → -[-]  
+12:45:04    TCS          Baseline     C=2564.10  → -[-]  
+12:45:04  SCAN #71 complete in 3.7s
+12:48:01  SCAN #72  12:48:01  phase=ACTIVE_AM  active=True  missed=0
+12:48:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.021s
+12:48:01    HINDUNILVR   Baseline     C=2139.00  → -[-]  in_position
+12:48:01    AXISBANK     Baseline     C=1345.80  → -[-]  
+12:48:01    BAJAJFINSV   Baseline     C=1831.40  → -[-]  
+12:48:01    JSWSTEEL     Baseline     C=1222.30  → -[-]  
+12:48:01    SBIN         Baseline     C=1062.50  → -[-]  
+12:48:01    HCLTECH      Baseline     C=1441.10  → -[-]  
+12:48:01    TRENT        Baseline     C=4031.90  → -[-]  
+12:48:01    SHRIRAMFIN   Baseline     C=1025.00  → -[-]  
+12:48:01    TCS          Baseline     C=2564.80  → -[-]  
+12:48:01  SCAN #72 complete in 0.2s
+12:51:01  SCAN #73  12:51:01  phase=ACTIVE_AM  active=True  missed=0
+12:51:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.020s
+12:51:01    HINDUNILVR   Baseline     C=2138.80  → -[-]  in_position
+12:51:01    AXISBANK     Baseline     C=1345.80  → -[-]  
+12:51:01    BAJAJFINSV   Baseline     C=1830.90  → -[-]  
+12:51:01    JSWSTEEL     Baseline     C=1221.30  → -[-]  
+12:51:01    SBIN         Baseline     C=1063.10  → -[-]  
+12:51:01    HCLTECH      Baseline     C=1441.30  → -[-]  
+12:51:01    TRENT        Baseline     C=4031.90  → -[-]  
+12:51:01    SHRIRAMFIN   Baseline     C=1024.95  → -[-]  
+12:51:01    TCS          Baseline     C=2565.90  → -[-]  
+12:51:01  SCAN #73 complete in 0.3s
+12:54:01  SCAN #74  12:54:01  phase=ACTIVE_AM  active=True  missed=0
+12:54:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.019s
+12:54:01    HINDUNILVR   Baseline     C=2138.80  → -[-]  in_position
+12:54:01    AXISBANK     Baseline     C=1345.90  → -[-]  
+12:54:01    BAJAJFINSV   Baseline     C=1830.00  → -[-]  
+12:54:01    JSWSTEEL     Baseline     C=1222.10  → -[-]  
+12:54:01    SBIN         Baseline     C=1063.20  → -[-]  
+12:54:01    HCLTECH      Baseline     C=1441.60  → -[-]  
+12:54:01    TRENT        Baseline     C=4030.70  → -[-]  
+12:54:01    SHRIRAMFIN   Baseline     C=1025.40  → -[-]  
+12:54:01    TCS          Baseline     C=2566.10  → -[-]  
+12:54:01  SCAN #74 complete in 0.4s
+12:57:01  SCAN #75  12:57:01  phase=ACTIVE_AM  active=True  missed=0
+12:57:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.007s
+12:57:01    HINDUNILVR   Baseline     C=2138.00  → -[-]  in_position
+12:57:01    AXISBANK     Baseline     C=1345.00  → -[-]  
+12:57:01    BAJAJFINSV   Baseline     C=1826.10  → -[-]  
+12:57:01    JSWSTEEL     Baseline     C=1221.40  → -[-]  
+12:57:01    SBIN         Baseline     C=1063.35  → -[-]  
+12:57:01    HCLTECH      Baseline     C=1441.50  → -[-]  
+12:57:01    TRENT        Baseline     C=4028.70  → -[-]  
+12:57:01    SHRIRAMFIN   Baseline     C=1024.10  → -[-]  
+12:57:01    TCS          Baseline     C=2564.90  → -[-]  
+12:57:01  SCAN #75 complete in 0.4s
+13:00:01  SCAN #76  13:00:01  phase=ACTIVE_AM  active=True  missed=0
+13:00:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.017s
+13:00:01  BROKER EXIT  HINDUNILVR   TP filled on broker — cleaning up
+13:00:01  ORDER CANCELLED  order_id=260416000470856
+13:00:01  BROKER EXIT P&L  HINDUNILVR   TP  ₹+143.37
+13:00:01    AXISBANK     Baseline     C=1346.70  → -[-]  
+13:00:01    BAJAJFINSV   Baseline     C=1829.10  → -[-]  
+13:00:01    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+13:00:01    SBIN         Baseline     C=1064.00  → -[-]  
+13:00:01    HCLTECH      Baseline     C=1443.20  → -[-]  
+13:00:01    TRENT        Baseline     C=4032.50  → -[-]  
+13:00:01    SHRIRAMFIN   Baseline     C=1025.90  → -[-]  
+13:00:01    TCS          Baseline     C=2567.80  → -[-]  
+13:00:01  SCAN #76 complete in 0.7s
+13:03:01  PHASE  ACTIVE_AM → SHUTDOWN
+13:03:01  ======================================================================
+13:03:01  SHUTDOWN  7 signal(s), 76 scan cycles
+13:03:01    SUMMARY  09:33   LONG  BAJAJFINSV   Baseline     @ 1840.00  SL=1835.73  TP=1845.38
+13:03:01    SUMMARY  10:03   LONG  JSWSTEEL     Baseline     @ 1232.29  SL=1229.37  TP=1236.68
+13:03:01    SUMMARY  10:06  SHORT  HCLTECH      Baseline     @ 1436.96  SL=1441.99  TP=1428.40
+13:03:01    SUMMARY  10:24  SHORT  AXISBANK     Baseline     @ 1348.60  SL=1351.87  TP=1343.90
+13:03:01    SUMMARY  10:36   LONG  TRENT        Baseline     @ 4000.22  SL=3988.02  TP=4018.51
+13:03:01    SUMMARY  11:48  SHORT  SBIN         Baseline     @ 1068.10  SL=1069.45  TP=1065.97
+13:03:01    SUMMARY  12:06  SHORT  HINDUNILVR   Baseline     @ 2139.91  SL=2142.85  TP=2137.44
+13:03:01  ======================================================================
+13:03:01  WS feed stopped
+13:11:25  ======================================================================
+13:11:25  SESSION START  Capital=25000  RR=1:1.5  Risk=1.5%  ws=True  auto_trade=True
+13:11:25  Stocks: HINDUNILVR, AXISBANK, HDFCLIFE, BAJAJFINSV, JSWSTEEL, SBIN, HCLTECH, TRENT, SHRIRAMFIN, TCS
+13:11:25  Strategy: PDL-Only (SL=1.0x ATR)  RR=1:1.5  MaxSL/day=2
+13:11:25  AUTO-TRADE: ENABLED — bracket orders will be placed via Angel One
+13:11:25  Telegram: enabled
+13:11:25  PHASE 1  Warm-Up — connecting to Angel One
+13:11:27  API connected
+13:11:27  NET  public_ip=49.37.179.65
+13:11:27  NET  public_ip mismatch current=49.37.179.65 registered=152.57.29.200, 152.57.127.20, 152.57.115.48, 49.37.176.21 — order placement likely to fail
+13:11:28  Loading 5-day 3-min warmup data
+13:11:28  WARMUP  HINDUNILVR   8266 bars  cache=2026-04-16
+13:11:28  WARMUP  AXISBANK     8267 bars  cache=2026-04-16
+13:11:28  WARMUP  HDFCLIFE     8267 bars  cache=2026-04-16
+13:11:28  WARMUP  BAJAJFINSV   8267 bars  cache=2026-04-16
+13:11:28  WARMUP  JSWSTEEL     7767 bars  cache=2026-04-16
+13:11:28  WARMUP  SBIN         8267 bars  cache=2026-04-16
+13:11:28  WARMUP  HCLTECH      8267 bars  cache=2026-04-16
+13:11:28  WARMUP  TRENT        8268 bars  cache=2026-04-16
+13:11:28  WARMUP  SHRIRAMFIN   8268 bars  cache=2026-04-16
+13:11:28  WARMUP  TCS          8268 bars  cache=2026-04-16
+13:11:28  Checking event calendar for corporate events
+13:11:28  EVENT SKIP  HDFCLIFE        RESULTS: Financial Results/Dividend
+13:11:28  PDL  HINDUNILVR   H=2168.00  L=2140.90
+13:11:28  PDL  AXISBANK     H=1384.50  L=1349.00
+13:11:28  PDL  BAJAJFINSV   H=1839.20  L=1814.20
+13:11:28  PDL  JSWSTEEL     H=1232.00  L=1210.60
+13:11:28  PDL  SBIN         H=1088.00  L=1068.20
+13:11:28  PDL  HCLTECH      H=1474.90  L=1437.10
+13:11:28  PDL  TRENT        H=3999.00  L=3910.00
+13:11:28  PDL  SHRIRAMFIN   H=1043.50  L=1016.45
+13:11:28  PDL  TCS          H=2559.00  L=2493.40
+13:11:28  Warm-up complete: 10 stocks loaded (1 excluded), PDL levels for 9
+13:11:28  Starting WebSocket feed
+13:11:28  WS connected — subscribing 9 tokens (mode=2 Quote)
+13:11:29  WS feed started — 9 tokens subscribed
+13:11:29  STATE RESTORED  cooldowns=7  dirs=9  sl_counts=4  sig_counts=7  positions=0  pending=0  pnl=₹-943.81
+13:11:29  PHASE  START → ACTIVE_AM
+13:11:30  SCAN delay 149.6s beyond target 13:09:01
+13:11:30  MISSED 78 candle(s) (idx -1→78)
+13:11:30  SCAN #1  13:11:29  phase=ACTIVE_AM  active=True  missed=78
+13:11:30  FETCH  REST gap-fill (first scan, missed 78 candle(s))
+13:11:33  GAP-FILL  9/9 OK in 3.0s
+13:11:33  FETCH  WS  0 new bars (0 clock-flushed) in 2.979s
+13:11:33    HINDUNILVR   Baseline     C=2150.10  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2149.60  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2149.80  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2153.80  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2150.50  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2149.60  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2148.20  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2149.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2149.10  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2149.50  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2147.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2146.20  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2145.60  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2145.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2145.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2144.90  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2141.30  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2140.10  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2141.10  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2140.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2140.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2139.20  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2140.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2140.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2139.70  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2139.30  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2140.00  → -[-]  cooldown_until_12:36
+13:11:33    HINDUNILVR   Baseline     C=2139.50  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2140.00  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2139.90  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2139.30  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2139.00  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2138.80  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2138.80  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2138.00  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2137.70  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2138.10  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2136.10  → -[-]  
+13:11:33    HINDUNILVR   Baseline     C=2135.80  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1354.50  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1354.70  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1356.40  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1356.90  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1355.80  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1355.30  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1354.50  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1354.40  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1354.00  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1352.70  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1351.20  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1350.20  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1350.30  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1351.00  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1349.70  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1347.60  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1346.80  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1348.00  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1347.00  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1349.30  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1347.90  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1348.40  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1348.10  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1345.70  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1346.20  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1346.30  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1347.50  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1345.30  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1346.50  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1347.40  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1346.50  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1345.80  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1345.80  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1345.90  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1345.00  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1346.70  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1347.50  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1346.80  → -[-]  
+13:11:33    AXISBANK     Baseline     C=1346.40  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1846.30  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1846.60  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1845.40  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1847.00  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1845.70  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1844.20  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1843.50  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1844.00  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1843.90  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1843.60  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1840.30  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1839.00  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1839.40  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1841.00  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1835.30  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1831.50  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.10  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1829.90  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1829.00  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1831.00  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1831.10  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1829.30  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.30  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.60  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.80  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.90  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.80  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.20  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1832.80  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1833.70  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1833.50  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1833.00  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.90  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1830.00  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1826.10  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1829.10  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1827.90  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1828.40  → -[-]  
+13:11:33    BAJAJFINSV   Baseline     C=1824.30  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1219.10  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1217.80  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.90  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1225.50  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.00  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1219.00  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1219.80  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1219.70  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1219.90  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.30  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1222.30  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.60  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.40  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.20  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1222.20  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.40  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1222.70  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1223.10  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1222.40  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1223.10  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1222.50  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.90  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.50  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1223.40  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1222.00  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1222.20  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.30  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1222.10  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.50  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.80  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1220.30  → -[-]  
+13:11:33    JSWSTEEL     Baseline     C=1221.10  → -[-]  
+13:11:33    SBIN         Baseline     C=1074.75  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1073.65  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1074.25  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1074.90  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1073.95  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1074.00  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1073.70  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1072.95  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1071.95  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1070.95  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1070.15  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1068.20  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1068.80  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1069.00  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1067.50  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1066.75  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1065.90  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1065.95  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1065.75  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1066.25  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1067.15  → -[-]  cooldown_until_12:18
+13:11:33    SBIN         Baseline     C=1065.45  → -[-]  
+13:11:33    SBIN         Baseline     C=1065.85  → -[-]  
+13:11:33    SBIN         Baseline     C=1064.85  → -[-]  
+13:11:33    SBIN         Baseline     C=1066.20  → -[-]  
+13:11:33    SBIN         Baseline     C=1064.50  → -[-]  
+13:11:33    SBIN         Baseline     C=1064.00  → -[-]  
+13:11:33    SBIN         Baseline     C=1062.55  → -[-]  
+13:11:33    SBIN         Baseline     C=1063.00  → -[-]  
+13:11:33    SBIN         Baseline     C=1063.75  → -[-]  
+13:11:33    SBIN         Baseline     C=1063.20  → -[-]  
+13:11:33    SBIN         Baseline     C=1062.60  → -[-]  
+13:11:33    SBIN         Baseline     C=1063.20  → -[-]  
+13:11:33    SBIN         Baseline     C=1063.20  → -[-]  
+13:11:33    SBIN         Baseline     C=1063.50  → -[-]  
+13:11:33    SBIN         Baseline     C=1064.00  → -[-]  
+13:11:33    SBIN         Baseline     C=1064.00  → -[-]  
+13:11:33    SBIN         Baseline     C=1066.90  → -[-]  
+13:11:33    SBIN         Baseline     C=1067.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1445.80  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1443.90  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1446.10  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1445.30  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1443.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1443.80  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1443.10  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1442.90  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1441.70  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1442.30  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1442.20  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1441.50  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1443.40  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1444.80  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1444.70  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1442.20  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1440.10  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1438.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1438.30  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1436.80  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1435.80  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1438.40  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1440.70  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1440.70  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1440.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1440.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1440.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1440.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1440.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1441.90  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1441.40  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1441.10  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1441.30  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1441.60  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1441.10  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1443.20  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1444.90  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1445.00  → -[-]  
+13:11:33    HCLTECH      Baseline     C=1443.40  → -[-]  
+13:11:33    TRENT        Baseline     C=4084.20  → -[-]  
+13:11:33    TRENT        Baseline     C=4074.30  → -[-]  
+13:11:33    TRENT        Baseline     C=4072.50  → -[-]  
+13:11:33    TRENT        Baseline     C=4070.90  → -[-]  
+13:11:33    TRENT        Baseline     C=4055.00  → -[-]  
+13:11:33    TRENT        Baseline     C=4054.90  → -[-]  
+13:11:33    TRENT        Baseline     C=4054.00  → -[-]  
+13:11:33    TRENT        Baseline     C=4055.90  → -[-]  
+13:11:33    TRENT        Baseline     C=4048.90  → -[-]  
+13:11:33    TRENT        Baseline     C=4046.10  → -[-]  
+13:11:33    TRENT        Baseline     C=4044.40  → -[-]  
+13:11:33    TRENT        Baseline     C=4032.00  → -[-]  
+13:11:33    TRENT        Baseline     C=4027.00  → -[-]  
+13:11:33    TRENT        Baseline     C=4024.70  → -[-]  
+13:11:33    TRENT        Baseline     C=4025.50  → -[-]  
+13:11:33    TRENT        Baseline     C=4023.40  → -[-]  
+13:11:33    TRENT        Baseline     C=4019.30  → -[-]  
+13:11:33    TRENT        Baseline     C=4024.50  → -[-]  
+13:11:33    TRENT        Baseline     C=4025.10  → -[-]  
+13:11:33    TRENT        Baseline     C=4040.90  → -[-]  
+13:11:33    TRENT        Baseline     C=4037.50  → -[-]  
+13:11:33    TRENT        Baseline     C=4033.10  → -[-]  
+13:11:33    TRENT        Baseline     C=4035.90  → -[-]  
+13:11:33    TRENT        Baseline     C=4037.20  → -[-]  
+13:11:33    TRENT        Baseline     C=4035.80  → -[-]  
+13:11:33    TRENT        Baseline     C=4034.60  → -[-]  
+13:11:33    TRENT        Baseline     C=4031.30  → -[-]  
+13:11:33    TRENT        Baseline     C=4025.30  → -[-]  
+13:11:33    TRENT        Baseline     C=4028.60  → -[-]  
+13:11:33    TRENT        Baseline     C=4030.50  → -[-]  
+13:11:33    TRENT        Baseline     C=4029.70  → -[-]  
+13:11:33    TRENT        Baseline     C=4031.90  → -[-]  
+13:11:33    TRENT        Baseline     C=4031.90  → -[-]  
+13:11:33    TRENT        Baseline     C=4030.70  → -[-]  
+13:11:33    TRENT        Baseline     C=4028.70  → -[-]  
+13:11:33    TRENT        Baseline     C=4032.50  → -[-]  
+13:11:33    TRENT        Baseline     C=4034.50  → -[-]  
+13:11:33    TRENT        Baseline     C=4034.60  → -[-]  
+13:11:33    TRENT        Baseline     C=4035.90  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1029.65  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1030.05  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1031.35  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1030.45  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1030.00  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1032.45  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1032.55  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1033.50  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1033.00  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1029.95  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1029.75  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1026.40  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1026.00  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1029.70  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1027.15  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1027.15  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1025.15  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1024.85  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1026.10  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1027.35  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1026.85  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1023.35  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1025.55  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1024.45  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1024.30  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1024.25  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1024.15  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1023.05  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1023.75  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1025.30  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1024.65  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1025.00  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1024.95  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1025.40  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1024.10  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1025.90  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1025.40  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1026.65  → -[-]  
+13:11:33    SHRIRAMFIN   Baseline     C=1025.85  → -[-]  
+13:11:33    TCS          Baseline     C=2578.90  → -[-]  
+13:11:33    TCS          Baseline     C=2577.30  → -[-]  
+13:11:33    TCS          Baseline     C=2581.70  → -[-]  
+13:11:33    TCS          Baseline     C=2579.40  → -[-]  
+13:11:33    TCS          Baseline     C=2578.90  → -[-]  
+13:11:33    TCS          Baseline     C=2580.30  → -[-]  
+13:11:33    TCS          Baseline     C=2581.00  → -[-]  
+13:11:33    TCS          Baseline     C=2581.80  → -[-]  
+13:11:33    TCS          Baseline     C=2579.90  → -[-]  
+13:11:33    TCS          Baseline     C=2578.10  → -[-]  
+13:11:33    TCS          Baseline     C=2575.60  → -[-]  
+13:11:33    TCS          Baseline     C=2570.10  → -[-]  
+13:11:33    TCS          Baseline     C=2572.30  → -[-]  
+13:11:33    TCS          Baseline     C=2572.90  → -[-]  
+13:11:33    TCS          Baseline     C=2573.00  → -[-]  
+13:11:33    TCS          Baseline     C=2567.00  → -[-]  
+13:11:33    TCS          Baseline     C=2560.90  → -[-]  
+13:11:33    TCS          Baseline     C=2560.10  → -[-]  
+13:11:33    TCS          Baseline     C=2563.00  → -[-]  
+13:11:33    TCS          Baseline     C=2564.60  → -[-]  
+13:11:33    TCS          Baseline     C=2565.30  → -[-]  
+13:11:33    TCS          Baseline     C=2563.10  → -[-]  
+13:11:33    TCS          Baseline     C=2565.30  → -[-]  
+13:11:33    TCS          Baseline     C=2562.60  → -[-]  
+13:11:33    TCS          Baseline     C=2564.50  → -[-]  
+13:11:33    TCS          Baseline     C=2564.70  → -[-]  
+13:11:33    TCS          Baseline     C=2565.00  → -[-]  
+13:11:33    TCS          Baseline     C=2563.30  → -[-]  
+13:11:33    TCS          Baseline     C=2560.80  → -[-]  
+13:11:33    TCS          Baseline     C=2565.60  → -[-]  
+13:11:33    TCS          Baseline     C=2564.10  → -[-]  
+13:11:33    TCS          Baseline     C=2564.20  → -[-]  
+13:11:33    TCS          Baseline     C=2565.90  → -[-]  
+13:11:33    TCS          Baseline     C=2566.10  → -[-]  
+13:11:33    TCS          Baseline     C=2564.90  → -[-]  
+13:11:33    TCS          Baseline     C=2567.60  → -[-]  
+13:11:33    TCS          Baseline     C=2567.10  → -[-]  
+13:11:33    TCS          Baseline     C=2569.00  → -[-]  
+13:11:33    TCS          Baseline     C=2566.80  → -[-]  
+13:11:33  SCAN #1 complete in 3.0s
+13:12:01  SCAN #2  13:12:01  phase=ACTIVE_AM  active=True  missed=0
+13:12:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.018s
+13:12:01    HINDUNILVR   Baseline     C=2134.00  → -[-]  
+13:12:01    AXISBANK     Baseline     C=1345.10  → -[-]  
+13:12:01    BAJAJFINSV   Baseline     C=1824.60  → -[-]  
+13:12:01    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+13:12:01    SBIN         Baseline     C=1066.60  → -[-]  
+13:12:01    HCLTECH      Baseline     C=1443.50  → -[-]  
+13:12:01    TRENT        Baseline     C=4035.00  → -[-]  
+13:12:01    SHRIRAMFIN   Baseline     C=1026.15  → -[-]  
+13:12:01    TCS          Baseline     C=2567.60  → -[-]  
+13:12:01  SCAN #2 complete in 0.0s
+13:15:01  SCAN #3  13:15:01  phase=ACTIVE_AM  active=True  missed=0
+13:15:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.021s
+13:15:01    HINDUNILVR   Baseline     C=2131.00  → -[-]  
+13:15:01    AXISBANK     Baseline     C=1346.80  → -[-]  
+13:15:01    BAJAJFINSV   Baseline     C=1825.20  → -[-]  
+13:15:01    JSWSTEEL     Baseline     C=1220.00  → -[-]  
+13:15:01    SBIN         Baseline     C=1067.00  → -[-]  
+13:15:01    HCLTECH      Baseline     C=1443.00  → -[-]  
+13:15:01    TRENT        Baseline     C=4037.90  → -[-]  
+13:15:01    SHRIRAMFIN   Baseline     C=1023.60  → -[-]  
+13:15:01    TCS          Baseline     C=2568.70  → -[-]  
+13:15:01  SCAN #3 complete in 0.0s
+13:18:01  SCAN #4  13:18:01  phase=ACTIVE_AM  active=True  missed=0
+13:18:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.016s
+13:18:01    HINDUNILVR   Baseline     C=2132.80  → -[-]  
+13:18:01    AXISBANK     Baseline     C=1345.10  → -[-]  
+13:18:01    BAJAJFINSV   Baseline     C=1827.70  → -[-]  
+13:18:01    JSWSTEEL     Baseline     C=1219.10  → -[-]  
+13:18:01    SBIN         Baseline     C=1067.60  → -[-]  
+13:18:01    HCLTECH      Baseline     C=1444.10  → -[-]  
+13:18:01    TRENT        Baseline     C=4044.60  → -[-]  
+13:18:01    SHRIRAMFIN   Baseline     C=1023.60  → -[-]  
+13:18:01    TCS          Baseline     C=2569.90  → -[-]  
+13:18:01  SCAN #4 complete in 0.0s
+13:21:01  SCAN #5  13:21:01  phase=ACTIVE_AM  active=True  missed=0
+13:21:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.012s
+13:21:01    HINDUNILVR   Baseline     C=2131.00  → -[-]  
+13:21:01    AXISBANK     Baseline     C=1347.10  → -[-]  
+13:21:01    BAJAJFINSV   Baseline     C=1825.90  → -[-]  
+13:21:01    JSWSTEEL     Baseline     C=1218.40  → -[-]  
+13:21:01    SBIN         Baseline     C=1067.35  → -[-]  
+13:21:01    HCLTECH      Baseline     C=1442.90  → -[-]  
+13:21:01    TRENT        Baseline     C=4044.60  → -[-]  
+13:21:01    SHRIRAMFIN   Baseline     C=1024.20  → -[-]  
+13:21:01    TCS          Baseline     C=2568.80  → -[-]  
+13:21:01  SCAN #5 complete in 0.0s
+13:24:01  SCAN #6  13:24:01  phase=ACTIVE_AM  active=True  missed=0
+13:24:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.013s
+13:24:01    HINDUNILVR   Baseline     C=2132.00  → -[-]  
+13:24:01    AXISBANK     Baseline     C=1346.20  → -[-]  
+13:24:01    BAJAJFINSV   Baseline     C=1825.90  → -[-]  
+13:24:01    JSWSTEEL     Baseline     C=1217.00  → -[-]  
+13:24:01    SBIN         Baseline     C=1066.80  → -[-]  
+13:24:01    HCLTECH      Baseline     C=1441.90  → -[-]  
+13:24:01    TRENT        Baseline     C=4040.00  → -[-]  
+13:24:01    SHRIRAMFIN   Baseline     C=1021.05  → -[-]  
+13:24:01    TCS          Baseline     C=2565.00  → -[-]  
+13:24:01  SCAN #6 complete in 0.0s
+13:27:01  SCAN #7  13:27:01  phase=ACTIVE_AM  active=True  missed=0
+13:27:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.021s
+13:27:01    HINDUNILVR   Baseline     C=2131.90  → -[-]  
+13:27:01    AXISBANK     Baseline     C=1346.00  → -[-]  
+13:27:01    BAJAJFINSV   Baseline     C=1825.50  → -[-]  
+13:27:01    JSWSTEEL     Baseline     C=1216.60  → -[-]  
+13:27:01    SBIN         Baseline     C=1066.05  → -[-]  
+13:27:01    HCLTECH      Baseline     C=1443.00  → -[-]  
+13:27:01    TRENT        Baseline     C=4042.10  → -[-]  
+13:27:01    SHRIRAMFIN   Baseline     C=1019.05  → -[-]  
+13:27:01    TCS          Baseline     C=2565.00  → -[-]  
+13:27:01  SCAN #7 complete in 0.0s
+13:30:01  SCAN #8  13:30:01  phase=ACTIVE_AM  active=True  missed=0
+13:30:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.025s
+13:30:01    HINDUNILVR   Baseline     C=2130.50  → -[-]  
+13:30:01    AXISBANK     Baseline     C=1345.70  → -[-]  
+13:30:01    BAJAJFINSV   Baseline     C=1824.90  → -[-]  
+13:30:01    JSWSTEEL     Baseline     C=1216.10  → -[-]  
+13:30:01    SBIN         Baseline     C=1066.10  → -[-]  
+13:30:01    HCLTECH      Baseline     C=1442.90  → -[-]  
+13:30:01    TRENT        Baseline     C=4046.00  → -[-]  
+13:30:01    SHRIRAMFIN   Baseline     C=1018.00  → -[-]  
+13:30:01    TCS          Baseline     C=2567.10  → -[-]  
+13:30:01  SCAN #8 complete in 0.0s
+13:33:01  SCAN #9  13:33:01  phase=ACTIVE_AM  active=True  missed=0
+13:33:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.017s
+13:33:01    HINDUNILVR   Baseline     C=2130.00  → -[-]  
+13:33:01    AXISBANK     Baseline     C=1345.60  → -[-]  
+13:33:01    BAJAJFINSV   Baseline     C=1824.50  → -[-]  
+13:33:01    JSWSTEEL     Baseline     C=1216.20  → -[-]  
+13:33:01    SBIN         Baseline     C=1067.20  → -[-]  
+13:33:01    HCLTECH      Baseline     C=1444.40  → -[-]  
+13:33:01    TRENT        Baseline     C=4047.90  → -[-]  
+13:33:01    SHRIRAMFIN   Baseline     C=1018.15  → -[-]  
+13:33:01    TCS          Baseline     C=2568.70  → -[-]  
+13:33:01  SCAN #9 complete in 0.0s
+13:36:01  SCAN #10  13:36:01  phase=ACTIVE_AM  active=True  missed=0
+13:36:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.021s
+13:36:01    HINDUNILVR   Baseline     C=2131.20  → -[-]  
+13:36:01    AXISBANK     Baseline     C=1345.20  → -[-]  
+13:36:01    BAJAJFINSV   Baseline     C=1825.80  → -[-]  
+13:36:01    JSWSTEEL     Baseline     C=1214.30  → -[-]  
+13:36:01    SBIN         Baseline     C=1067.35  → -[-]  
+13:36:01    HCLTECH      Baseline     C=1447.20  → -[-]  
+13:36:01    TRENT        Baseline     C=4046.50  → -[-]  
+13:36:01    SHRIRAMFIN   Baseline     C=1017.50  → -[-]  
+13:36:01    TCS          Baseline     C=2568.60  → -[-]  
+13:36:01  SCAN #10 complete in 0.0s
+13:39:01  SCAN #11  13:39:01  phase=ACTIVE_AM  active=True  missed=0
+13:39:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.017s
+13:39:01    HINDUNILVR   Baseline     C=2132.50  → -[-]  
+13:39:01    AXISBANK     Baseline     C=1345.30  → -[-]  
+13:39:01    BAJAJFINSV   Baseline     C=1824.50  → -[-]  
+13:39:01    JSWSTEEL     Baseline     C=1213.80  → -[-]  
+13:39:01    SBIN         Baseline     C=1067.50  → -[-]  
+13:39:01    HCLTECH      Baseline     C=1446.60  → -[-]  
+13:39:01    TRENT        Baseline     C=4046.90  → -[-]  
+13:39:01    SHRIRAMFIN   Baseline     C=1016.55  → -[-]  
+13:39:01    TCS          Baseline     C=2568.70  → -[-]  
+13:39:01  SCAN #11 complete in 0.0s
+14:20:10  WS connected — subscribing 9 tokens (mode=2 Quote)
+14:20:11  PHASE  ACTIVE_AM → SHUTDOWN
+14:20:11  ======================================================================
+14:20:11  SHUTDOWN  0 signal(s), 11 scan cycles
+14:20:11  ======================================================================
+14:20:12  WS error: Connection closed
+14:20:12  WS feed stopped
+14:20:12  WS error: Connection closed

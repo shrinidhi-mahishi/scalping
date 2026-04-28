@@ -1,0 +1,358 @@
+09:17:54  ======================================================================
+09:17:54  SESSION START  Capital=25000  RR=1:1.5  Risk=1.5%  ws=True  auto_trade=True
+09:17:54  Stocks: HINDUNILVR, AXISBANK, HDFCLIFE, BAJAJFINSV, JSWSTEEL, SBIN, HCLTECH, TRENT, SHRIRAMFIN, TCS
+09:17:54  Strategy: PDL-Only (SL=1.0x ATR)  RR=1:1.5  MaxSL/day=2
+09:17:54  AUTO-TRADE: ENABLED — bracket orders will be placed via Angel One
+09:17:54  Telegram: enabled
+09:17:54  PHASE 1  Warm-Up — connecting to Angel One
+09:17:55  API connected
+09:17:56  NET  public_ip=49.37.178.70
+09:17:56  NET  public_ip mismatch current=49.37.178.70 registered=152.57.29.200, 152.57.127.20, 152.57.115.48, 49.37.176.21 — order placement likely to fail
+09:17:56  Loading 5-day 3-min warmup data
+09:17:58  WARMUP  HINDUNILVR   375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:01  WARMUP  AXISBANK     375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:04  WARMUP  HDFCLIFE     375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:08  WARMUP  BAJAJFINSV   375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:11  WARMUP  JSWSTEEL     375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:14  WARMUP  SBIN         375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:17  WARMUP  HCLTECH      375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:20  WARMUP  TRENT        375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:23  WARMUP  SHRIRAMFIN   375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:27  WARMUP  TCS          375 bars  API 2026-04-09→2026-04-13 15:27:00  cached
+09:18:28  Checking event calendar for corporate events
+09:18:30  Event calendar: all stocks cleared
+09:18:30  PDL  HINDUNILVR   H=2140.70  L=2113.50
+09:18:30  PDL  AXISBANK     H=1366.90  L=1315.30
+09:18:30  PDL  HDFCLIFE     H=622.95  L=592.00
+09:18:30  PDL  BAJAJFINSV   H=1792.10  L=1748.30
+09:18:30  PDL  JSWSTEEL     H=1213.40  L=1189.30
+09:18:30  PDL  SBIN         H=1067.25  L=1030.00
+09:18:30  PDL  HCLTECH      H=1447.80  L=1417.50
+09:18:30  PDL  TRENT        H=3899.80  L=3813.00
+09:18:30  PDL  SHRIRAMFIN   H=1015.50  L=988.80
+09:18:30  PDL  TCS          H=2504.90  L=2470.00
+09:18:30  Warm-up complete: 10 stocks loaded (0 excluded), PDL levels for 10
+09:18:30  Starting WebSocket feed
+09:18:31  WS connected — subscribing 10 tokens (mode=2 Quote)
+09:18:31  WS feed started — 10 tokens subscribed
+09:18:32  PHASE  START → SILENT
+09:18:32  SCAN delay 31.0s beyond target 09:18:01
+09:18:32  MISSED 1 candle(s) (idx -1→1)
+09:18:32  SCAN #1  09:18:32  phase=SILENT  active=False  missed=1
+09:18:32  FETCH  REST gap-fill (first scan, missed 1 candle(s))
+09:18:35  GAP-FILL  10/10 OK in 3.3s
+09:18:35  FETCH  WS  10 new bars (10 clock-flushed) in 3.336s
+09:18:35    HINDUNILVR   Baseline     C=2127.20  → -[-]  inactive_phase
+09:18:35    AXISBANK     Baseline     C=1353.60  → -[-]  inactive_phase
+09:18:35    HDFCLIFE     Baseline     C=619.10  → -[-]  inactive_phase
+09:18:35    BAJAJFINSV   Baseline     C=1788.30  → -[-]  inactive_phase
+09:18:35    JSWSTEEL     Baseline     C=1204.20  → -[-]  inactive_phase
+09:18:35    SBIN         Baseline     C=1063.55  → -[-]  inactive_phase
+09:18:35    HCLTECH      Baseline     C=1429.40  → -[-]  inactive_phase
+09:18:35    TRENT        Baseline     C=3875.40  → -[-]  inactive_phase
+09:18:35    SHRIRAMFIN   Baseline     C=1004.10  → -[-]  inactive_phase
+09:18:35    TCS          Baseline     C=2472.60  → -[-]  inactive_phase
+09:18:35  SCAN #1 complete in 3.3s
+09:21:01  SCAN #2  09:21:00  phase=SILENT  active=False  missed=0
+09:21:01  WS stale (150s since last tick) — REST fallback
+09:21:04  FETCH  REST  10/10 OK in 3.3s
+09:21:04  SCAN #2 complete in 3.3s
+09:24:01  SCAN #3  09:24:01  phase=SILENT  active=False  missed=0
+09:24:01  WS stale (327s since last tick) — REST fallback
+09:24:04  FETCH  REST  10/10 OK in 3.3s
+09:24:04  SCAN #3 complete in 3.3s
+09:27:01  SCAN #4  09:27:01  phase=SILENT  active=False  missed=0
+09:27:01  WS stale (507s since last tick) — REST fallback
+09:27:04  FETCH  REST  10/10 OK in 3.3s
+09:27:04  SCAN #4 complete in 3.3s
+09:30:01  PHASE  SILENT → ACTIVE_AM
+09:30:02  SCAN #5  09:30:01  phase=ACTIVE_AM  active=True  missed=0
+09:30:02  WS stale (688s since last tick) — REST fallback
+09:30:05  FETCH  REST  10/10 OK in 3.3s
+09:30:05  SCAN #5 complete in 3.3s
+09:33:01  SCAN #6  09:33:01  phase=ACTIVE_AM  active=True  missed=0
+09:33:01  WS stale (867s since last tick) — REST fallback
+09:33:04  FETCH  REST  10/10 OK in 3.3s
+09:33:04  SCAN #6 complete in 3.3s
+09:36:01  SCAN #7  09:36:01  phase=ACTIVE_AM  active=True  missed=0
+09:36:01  WS stale (1047s since last tick) — REST fallback
+09:36:04  FETCH  REST  10/10 OK in 3.3s
+09:36:04  SCAN #7 complete in 3.3s
+09:39:01  SCAN #8  09:39:01  phase=ACTIVE_AM  active=True  missed=0
+09:39:01  WS stale (1227s since last tick) — REST fallback
+09:39:04  FETCH  REST  10/10 OK in 3.3s
+09:39:04  SCAN #8 complete in 3.3s
+09:42:01  SCAN #9  09:42:01  phase=ACTIVE_AM  active=True  missed=0
+09:42:01  WS stale (1407s since last tick) — REST fallback
+09:42:04  FETCH  REST  10/10 OK in 3.3s
+09:42:04  SCAN #9 complete in 3.3s
+09:45:01  SCAN #10  09:45:01  phase=ACTIVE_AM  active=True  missed=0
+09:45:01  WS stale (1587s since last tick) — REST fallback
+09:45:04  FETCH  REST  10/10 OK in 3.3s
+09:45:04  SCAN #10 complete in 3.3s
+09:48:01  SCAN #11  09:48:00  phase=ACTIVE_AM  active=True  missed=0
+09:48:01  WS stale (1767s since last tick) — REST fallback
+09:48:04  FETCH  REST  10/10 OK in 3.3s
+09:48:04  SCAN #11 complete in 3.3s
+09:51:01  SCAN #12  09:51:01  phase=ACTIVE_AM  active=True  missed=0
+09:51:01  WS stale (1947s since last tick) — REST fallback
+09:51:04  FETCH  REST  10/10 OK in 3.3s
+09:51:04  SCAN #12 complete in 3.3s
+09:54:01  SCAN #13  09:54:01  phase=ACTIVE_AM  active=True  missed=0
+09:54:01  WS stale (2127s since last tick) — REST fallback
+09:54:04  FETCH  REST  10/10 OK in 3.3s
+09:54:04  SCAN #13 complete in 3.3s
+09:57:01  SCAN #14  09:57:01  phase=ACTIVE_AM  active=True  missed=0
+09:57:01  WS stale (2307s since last tick) — REST fallback
+09:57:04  FETCH  REST  10/10 OK in 3.3s
+09:57:04  SCAN #14 complete in 3.3s
+10:00:01  SCAN #15  10:00:01  phase=ACTIVE_AM  active=True  missed=0
+10:00:01  WS stale (2487s since last tick) — REST fallback
+10:00:04  FETCH  REST  10/10 OK in 3.3s
+10:00:04  SCAN #15 complete in 3.3s
+10:03:01  SCAN #16  10:03:01  phase=ACTIVE_AM  active=True  missed=0
+10:03:01  WS stale (2667s since last tick) — REST fallback
+10:03:04  FETCH  REST  10/10 OK in 3.3s
+10:03:04  SCAN #16 complete in 3.3s
+10:06:01  SCAN #17  10:06:00  phase=ACTIVE_AM  active=True  missed=0
+10:06:01  WS stale (2847s since last tick) — REST fallback
+10:06:02  API  SBIN         rate-limited, using cache
+10:06:04  FETCH  REST  9/10 OK in 3.3s
+10:06:04  SCAN #17 complete in 3.3s
+10:09:01  SCAN #18  10:09:01  phase=ACTIVE_AM  active=True  missed=0
+10:09:01  WS stale (3027s since last tick) — REST fallback
+10:09:04  FETCH  REST  10/10 OK in 3.3s
+10:09:04  SCAN #18 complete in 3.3s
+10:12:01  SCAN #19  10:12:00  phase=ACTIVE_AM  active=True  missed=0
+10:12:01  WS stale (3207s since last tick) — REST fallback
+10:12:04  FETCH  REST  10/10 OK in 3.3s
+10:12:04  SCAN #19 complete in 3.3s
+10:15:01  SCAN #20  10:15:01  phase=ACTIVE_AM  active=True  missed=0
+10:15:01  WS stale (3387s since last tick) — REST fallback
+10:15:04  FETCH  REST  10/10 OK in 3.3s
+10:15:04  SCAN #20 complete in 3.3s
+10:18:01  SCAN #21  10:18:01  phase=ACTIVE_AM  active=True  missed=0
+10:18:01  WS stale (3567s since last tick) — REST fallback
+10:18:04  FETCH  REST  10/10 OK in 3.3s
+10:18:04  SCAN #21 complete in 3.3s
+10:21:01  SCAN #22  10:21:01  phase=ACTIVE_AM  active=True  missed=0
+10:21:01  WS stale (3747s since last tick) — REST fallback
+10:21:04  FETCH  REST  10/10 OK in 3.3s
+10:21:04  SCAN #22 complete in 3.3s
+10:24:01  SCAN #23  10:24:01  phase=ACTIVE_AM  active=True  missed=0
+10:24:01  WS stale (3927s since last tick) — REST fallback
+10:24:04  FETCH  REST  10/10 OK in 3.3s
+10:24:04  SCAN #23 complete in 3.3s
+10:27:01  SCAN #24  10:27:01  phase=ACTIVE_AM  active=True  missed=0
+10:27:01  WS stale (4107s since last tick) — REST fallback
+10:27:04  FETCH  REST  10/10 OK in 3.3s
+10:27:04  SCAN #24 complete in 3.3s
+10:30:01  SCAN #25  10:30:01  phase=ACTIVE_AM  active=True  missed=0
+10:30:01  WS stale (4287s since last tick) — REST fallback
+10:30:04  FETCH  REST  10/10 OK in 3.3s
+10:30:04  SCAN #25 complete in 3.3s
+10:33:01  SCAN #26  10:33:01  phase=ACTIVE_AM  active=True  missed=0
+10:33:01  WS stale (4467s since last tick) — REST fallback
+10:33:04  FETCH  REST  10/10 OK in 3.3s
+10:33:04  SCAN #26 complete in 3.3s
+10:36:01  SCAN #27  10:36:01  phase=ACTIVE_AM  active=True  missed=0
+10:36:01  WS stale (4647s since last tick) — REST fallback
+10:36:04  FETCH  REST  10/10 OK in 3.3s
+10:36:04  SCAN #27 complete in 3.3s
+10:39:01  SCAN #28  10:39:01  phase=ACTIVE_AM  active=True  missed=0
+10:39:01  WS stale (4827s since last tick) — REST fallback
+10:39:04  FETCH  REST  10/10 OK in 3.3s
+10:39:04  SCAN #28 complete in 3.3s
+10:42:01  SCAN #29  10:42:01  phase=ACTIVE_AM  active=True  missed=0
+10:42:01  WS stale (5007s since last tick) — REST fallback
+10:42:04  FETCH  REST  10/10 OK in 3.3s
+10:42:04  SCAN #29 complete in 3.4s
+10:45:01  SCAN #30  10:45:01  phase=ACTIVE_AM  active=True  missed=0
+10:45:01  WS stale (5187s since last tick) — REST fallback
+10:45:04  FETCH  REST  10/10 OK in 3.3s
+10:45:04  SCAN #30 complete in 3.3s
+10:48:01  SCAN #31  10:48:01  phase=ACTIVE_AM  active=True  missed=0
+10:48:01  WS stale (5367s since last tick) — REST fallback
+10:48:04  FETCH  REST  10/10 OK in 3.3s
+10:48:04  SCAN #31 complete in 3.3s
+10:51:01  SCAN #32  10:51:01  phase=ACTIVE_AM  active=True  missed=0
+10:51:01  WS stale (5547s since last tick) — REST fallback
+10:51:04  FETCH  REST  10/10 OK in 3.3s
+10:51:04  SCAN #32 complete in 3.3s
+10:54:01  SCAN #33  10:54:01  phase=ACTIVE_AM  active=True  missed=0
+10:54:01  WS stale (5727s since last tick) — REST fallback
+10:54:04  FETCH  REST  10/10 OK in 3.3s
+10:54:04  SCAN #33 complete in 3.3s
+10:57:01  SCAN #34  10:57:01  phase=ACTIVE_AM  active=True  missed=0
+10:57:01  WS stale (5907s since last tick) — REST fallback
+10:57:04  FETCH  REST  10/10 OK in 3.3s
+10:57:04  SCAN #34 complete in 3.3s
+11:00:01  SCAN #35  11:00:01  phase=ACTIVE_AM  active=True  missed=0
+11:00:01  WS stale (6087s since last tick) — REST fallback
+11:00:04  FETCH  REST  10/10 OK in 3.3s
+11:00:04  SCAN #35 complete in 3.3s
+11:03:01  SCAN #36  11:03:01  phase=ACTIVE_AM  active=True  missed=0
+11:03:01  WS stale (6267s since last tick) — REST fallback
+11:03:04  FETCH  REST  10/10 OK in 3.3s
+11:03:04  SCAN #36 complete in 3.4s
+11:06:01  SCAN #37  11:06:01  phase=ACTIVE_AM  active=True  missed=0
+11:06:01  WS stale (6447s since last tick) — REST fallback
+11:06:04  FETCH  REST  10/10 OK in 3.3s
+11:06:04  SCAN #37 complete in 3.3s
+11:09:01  SCAN #38  11:09:01  phase=ACTIVE_AM  active=True  missed=0
+11:09:01  WS stale (6627s since last tick) — REST fallback
+11:09:04  FETCH  REST  10/10 OK in 3.3s
+11:09:04  SCAN #38 complete in 3.3s
+11:12:01  SCAN #39  11:12:01  phase=ACTIVE_AM  active=True  missed=0
+11:12:01  WS stale (6807s since last tick) — REST fallback
+11:12:04  FETCH  REST  10/10 OK in 3.3s
+11:12:04  SCAN #39 complete in 3.3s
+11:15:01  SCAN #40  11:15:01  phase=ACTIVE_AM  active=True  missed=0
+11:15:01  WS stale (6987s since last tick) — REST fallback
+11:15:04  FETCH  REST  10/10 OK in 3.3s
+11:15:04  SCAN #40 complete in 3.3s
+11:18:01  SCAN #41  11:18:01  phase=ACTIVE_AM  active=True  missed=0
+11:18:01  WS stale (7167s since last tick) — REST fallback
+11:18:04  FETCH  REST  10/10 OK in 3.3s
+11:18:04  SCAN #41 complete in 3.3s
+11:21:01  SCAN #42  11:21:01  phase=ACTIVE_AM  active=True  missed=0
+11:21:01  WS stale (7347s since last tick) — REST fallback
+11:21:04  FETCH  REST  10/10 OK in 3.3s
+11:21:04  SCAN #42 complete in 3.3s
+11:24:01  SCAN #43  11:24:01  phase=ACTIVE_AM  active=True  missed=0
+11:24:01  WS stale (7527s since last tick) — REST fallback
+11:24:04  FETCH  REST  10/10 OK in 3.3s
+11:24:04  SCAN #43 complete in 3.3s
+11:27:01  SCAN #44  11:27:01  phase=ACTIVE_AM  active=True  missed=0
+11:27:01  WS stale (7707s since last tick) — REST fallback
+11:27:04  FETCH  REST  10/10 OK in 3.3s
+11:27:04  SCAN #44 complete in 3.3s
+11:30:01  SCAN #45  11:30:01  phase=ACTIVE_AM  active=True  missed=0
+11:30:01  WS stale (7887s since last tick) — REST fallback
+11:30:04  FETCH  REST  10/10 OK in 3.3s
+11:30:04  SCAN #45 complete in 3.3s
+11:33:01  SCAN #46  11:33:01  phase=ACTIVE_AM  active=True  missed=0
+11:33:01  WS stale (8067s since last tick) — REST fallback
+11:33:04  FETCH  REST  10/10 OK in 3.3s
+11:33:04  SCAN #46 complete in 3.3s
+11:36:01  SCAN #47  11:36:01  phase=ACTIVE_AM  active=True  missed=0
+11:36:01  WS stale (8247s since last tick) — REST fallback
+11:36:04  FETCH  REST  10/10 OK in 3.3s
+11:36:04  SCAN #47 complete in 3.3s
+11:39:01  SCAN #48  11:39:01  phase=ACTIVE_AM  active=True  missed=0
+11:39:01  WS stale (8427s since last tick) — REST fallback
+11:39:04  FETCH  REST  10/10 OK in 3.3s
+11:39:04  SCAN #48 complete in 3.3s
+11:42:01  SCAN #49  11:42:01  phase=ACTIVE_AM  active=True  missed=0
+11:42:01  WS stale (8607s since last tick) — REST fallback
+11:42:04  FETCH  REST  10/10 OK in 3.3s
+11:42:04  SCAN #49 complete in 3.3s
+11:45:01  SCAN #50  11:45:01  phase=ACTIVE_AM  active=True  missed=0
+11:45:01  WS stale (8787s since last tick) — REST fallback
+11:45:04  FETCH  REST  10/10 OK in 3.3s
+11:45:04  SCAN #50 complete in 3.3s
+11:48:01  SCAN #51  11:48:01  phase=ACTIVE_AM  active=True  missed=0
+11:48:01  WS stale (8967s since last tick) — REST fallback
+11:48:04  FETCH  REST  10/10 OK in 3.3s
+11:48:04  SCAN #51 complete in 3.3s
+11:51:01  SCAN #52  11:51:01  phase=ACTIVE_AM  active=True  missed=0
+11:51:01  WS stale (9147s since last tick) — REST fallback
+11:51:04  FETCH  REST  10/10 OK in 3.3s
+11:51:04  SCAN #52 complete in 3.3s
+11:54:01  SCAN #53  11:54:01  phase=ACTIVE_AM  active=True  missed=0
+11:54:01  WS stale (9327s since last tick) — REST fallback
+11:54:04  FETCH  REST  10/10 OK in 3.3s
+11:54:04  SCAN #53 complete in 3.3s
+11:57:01  SCAN #54  11:57:01  phase=ACTIVE_AM  active=True  missed=0
+11:57:01  WS stale (9507s since last tick) — REST fallback
+11:57:04  FETCH  REST  10/10 OK in 3.3s
+11:57:04  SCAN #54 complete in 3.3s
+12:00:01  SCAN #55  12:00:01  phase=ACTIVE_AM  active=True  missed=0
+12:00:01  WS stale (9687s since last tick) — REST fallback
+12:00:04  FETCH  REST  10/10 OK in 3.3s
+12:00:04  SCAN #55 complete in 3.3s
+12:03:01  SCAN #56  12:03:01  phase=ACTIVE_AM  active=True  missed=0
+12:03:01  WS stale (9867s since last tick) — REST fallback
+12:03:04  FETCH  REST  10/10 OK in 3.3s
+12:03:04  SCAN #56 complete in 3.3s
+12:06:01  SCAN #57  12:06:01  phase=ACTIVE_AM  active=True  missed=0
+12:06:01  WS stale (10047s since last tick) — REST fallback
+12:06:04  FETCH  REST  10/10 OK in 3.3s
+12:06:04  SCAN #57 complete in 3.3s
+12:09:01  SCAN #58  12:09:01  phase=ACTIVE_AM  active=True  missed=0
+12:09:01  WS stale (10227s since last tick) — REST fallback
+12:09:04  FETCH  REST  10/10 OK in 3.3s
+12:09:04  SCAN #58 complete in 3.3s
+12:12:01  SCAN #59  12:12:01  phase=ACTIVE_AM  active=True  missed=0
+12:12:01  WS stale (10407s since last tick) — REST fallback
+12:12:04  FETCH  REST  10/10 OK in 3.3s
+12:12:04  SCAN #59 complete in 3.3s
+12:15:01  SCAN #60  12:15:01  phase=ACTIVE_AM  active=True  missed=0
+12:15:01  WS stale (10587s since last tick) — REST fallback
+12:15:04  FETCH  REST  10/10 OK in 3.3s
+12:15:04  SCAN #60 complete in 3.3s
+12:18:01  SCAN #61  12:18:01  phase=ACTIVE_AM  active=True  missed=0
+12:18:01  WS stale (10767s since last tick) — REST fallback
+12:18:04  FETCH  REST  10/10 OK in 3.3s
+12:18:04  SCAN #61 complete in 3.3s
+12:21:01  SCAN #62  12:21:01  phase=ACTIVE_AM  active=True  missed=0
+12:21:01  WS stale (10947s since last tick) — REST fallback
+12:21:04  FETCH  REST  10/10 OK in 3.3s
+12:21:04  SCAN #62 complete in 3.3s
+12:24:01  SCAN #63  12:24:01  phase=ACTIVE_AM  active=True  missed=0
+12:24:01  WS stale (11127s since last tick) — REST fallback
+12:24:04  FETCH  REST  10/10 OK in 3.3s
+12:24:04  SCAN #63 complete in 3.3s
+12:27:01  SCAN #64  12:27:01  phase=ACTIVE_AM  active=True  missed=0
+12:27:01  WS stale (11307s since last tick) — REST fallback
+12:27:04  FETCH  REST  10/10 OK in 3.3s
+12:27:04  SCAN #64 complete in 3.3s
+12:30:01  SCAN #65  12:30:01  phase=ACTIVE_AM  active=True  missed=0
+12:30:01  WS stale (11487s since last tick) — REST fallback
+12:30:04  FETCH  REST  10/10 OK in 3.3s
+12:30:04  SCAN #65 complete in 3.3s
+12:33:01  SCAN #66  12:33:00  phase=ACTIVE_AM  active=True  missed=0
+12:33:01  WS stale (11668s since last tick) — REST fallback
+12:33:04  FETCH  REST  10/10 OK in 3.3s
+12:33:04  SCAN #66 complete in 3.3s
+12:36:01  SCAN #67  12:36:01  phase=ACTIVE_AM  active=True  missed=0
+12:36:01  WS stale (11848s since last tick) — REST fallback
+12:36:04  FETCH  REST  10/10 OK in 3.3s
+12:36:04  SCAN #67 complete in 3.3s
+12:39:01  SCAN #68  12:39:01  phase=ACTIVE_AM  active=True  missed=0
+12:39:01  WS stale (12028s since last tick) — REST fallback
+12:39:04  FETCH  REST  10/10 OK in 3.3s
+12:39:04  SCAN #68 complete in 3.3s
+12:42:01  SCAN #69  12:42:01  phase=ACTIVE_AM  active=True  missed=0
+12:42:01  WS stale (12208s since last tick) — REST fallback
+12:42:04  FETCH  REST  10/10 OK in 3.3s
+12:42:04  SCAN #69 complete in 3.3s
+12:45:01  SCAN #70  12:45:01  phase=ACTIVE_AM  active=True  missed=0
+12:45:01  WS stale (12388s since last tick) — REST fallback
+12:45:04  FETCH  REST  10/10 OK in 3.3s
+12:45:04  SCAN #70 complete in 3.3s
+12:48:01  SCAN #71  12:48:01  phase=ACTIVE_AM  active=True  missed=0
+12:48:01  WS stale (12568s since last tick) — REST fallback
+12:48:04  FETCH  REST  10/10 OK in 3.3s
+12:48:04  SCAN #71 complete in 3.3s
+12:51:01  SCAN #72  12:51:01  phase=ACTIVE_AM  active=True  missed=0
+12:51:01  WS stale (12747s since last tick) — REST fallback
+12:51:04  FETCH  REST  10/10 OK in 3.3s
+12:51:04  SCAN #72 complete in 3.3s
+12:54:01  SCAN #73  12:54:01  phase=ACTIVE_AM  active=True  missed=0
+12:54:01  WS stale (12927s since last tick) — REST fallback
+12:54:04  FETCH  REST  10/10 OK in 3.3s
+12:54:04  SCAN #73 complete in 3.3s
+12:57:01  SCAN #74  12:57:01  phase=ACTIVE_AM  active=True  missed=0
+12:57:01  WS stale (13107s since last tick) — REST fallback
+12:57:04  FETCH  REST  10/10 OK in 3.3s
+12:57:04  SCAN #74 complete in 3.3s
+13:00:01  SCAN #75  13:00:01  phase=ACTIVE_AM  active=True  missed=0
+13:00:01  WS stale (13287s since last tick) — REST fallback
+13:00:04  FETCH  REST  10/10 OK in 3.3s
+13:00:04  SCAN #75 complete in 3.3s
+13:03:01  PHASE  ACTIVE_AM → SHUTDOWN
+13:03:01  ======================================================================
+13:03:01  SHUTDOWN  0 signal(s), 75 scan cycles
+13:03:01  ======================================================================
+13:03:01  WS feed stopped

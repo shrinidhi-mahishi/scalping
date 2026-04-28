@@ -1,37 +1,39 @@
 {
-  "date": "2026-04-07",
+  "date": "2026-04-21",
   "cooldowns": {
-    "baseline|TCS": "2026-04-07T10:21:00",
-    "baseline|TRENT": "2026-04-07T11:00:00",
-    "baseline|MARUTI": "2026-04-07T14:03:00"
+    "baseline|HDFCLIFE": "2026-04-21T10:12:00",
+    "baseline|NTPC": "2026-04-21T10:27:00",
+    "baseline|ADANIPORTS": "2026-04-21T10:39:00"
   },
   "pdl_dirs_used": {
-    "baseline|HINDUNILVR": [],
-    "baseline|AXISBANK": [],
-    "baseline|HDFCLIFE": [],
-    "baseline|BAJAJFINSV": [],
-    "baseline|JSWSTEEL": [],
-    "baseline|SBIN": [],
-    "baseline|MARUTI": [
-      "LONG"
-    ],
-    "baseline|TRENT": [
-      "LONG"
-    ],
+    "baseline|TCS": [],
     "baseline|SHRIRAMFIN": [],
-    "baseline|TCS": [
+    "baseline|NTPC": [
       "LONG"
-    ]
+    ],
+    "baseline|BAJAJ-AUTO": [],
+    "baseline|ADANIPORTS": [
+      "LONG"
+    ],
+    "baseline|HDFCLIFE": [
+      "SHORT"
+    ],
+    "baseline|COALINDIA": [],
+    "baseline|ADANIENT": [],
+    "baseline|MARUTI": []
   },
   "daily_sl_counts": {
-    "baseline|MARUTI": 1
+    "baseline|HDFCLIFE": 1,
+    "baseline|NTPC": 1,
+    "baseline|ADANIPORTS": 1
   },
   "signal_counts": {
-    "baseline|TCS|AM": 1,
-    "baseline|TRENT|AM": 1,
-    "baseline|MARUTI|AM": 1
+    "baseline|HDFCLIFE|AM": 1,
+    "baseline|NTPC|AM": 1,
+    "baseline|ADANIPORTS|AM": 1
   },
   "open_positions": {},
-  "realized_pnl": 311.50647700822446,
-  "n_signals": 1
+  "pending_entries": {},
+  "realized_pnl": -1146.5405442251388,
+  "n_signals": 3
 }

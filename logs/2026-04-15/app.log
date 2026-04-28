@@ -1,0 +1,14 @@
+[E 260415 10:35:05 smartConnect:246] Error occurred while making a POST request to https://apiconnect.angelone.in/rest/secure/angelbroking/order/v1/cancelOrder. Error: Access denied: Unregistered IP address. Register your IP before retrying.. URL: https://apiconnect.angelone.in/rest/secure/angelbroking/order/v1/cancelOrder, Headers: {'Content-type': 'application/json', 'X-ClientLocalIP': '127.0.0.1', 'X-ClientPublicIP': '106.193.147.98', 'X-MACAddress': 'd6:5f:2a:36:ed:61', 'Accept': 'application/json', 'X-PrivateKey': 'pVNeTKiS', 'X-UserType': 'USER', 'X-SourceID': 'WEB'}, Request: {'variety': 'NORMAL', 'orderid': '260415000234521'}, Response: {'success': False, 'message': 'Access denied: Unregistered IP address. Register your IP before retrying.', 'errorCode': 'AG7002', 'data': ''}
+[W 260415 11:30:13 smartWebSocketV2:318] Attempting to resubscribe/reconnect (Attempt 1)...
+[W 260415 12:00:43 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 12:00:43 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 12:00:43 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 12:17:33 smartWebSocketV2:318] Attempting to resubscribe/reconnect (Attempt 1)...
+[W 260415 12:35:28 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 12:35:28 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 12:35:28 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 12:51:37 smartWebSocketV2:318] Attempting to resubscribe/reconnect (Attempt 1)...
+[W 260415 13:07:51 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 13:07:51 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 13:07:51 smartWebSocketV2:342] Connection closed due to max retry attempts reached.
+[W 260415 13:07:57 smartWebSocketV2:318] Attempting to resubscribe/reconnect (Attempt 1)...

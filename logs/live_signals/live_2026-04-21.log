@@ -1,0 +1,288 @@
+09:33:47  ======================================================================
+09:33:47  SESSION START  Capital=25000  RR=1:1.5  Risk=1.5%  ws=True  auto_trade=True
+09:33:47  Stocks: TCS, HCLTECH, SHRIRAMFIN, NTPC, BAJAJ-AUTO, ADANIPORTS, HDFCLIFE, COALINDIA, ADANIENT, MARUTI
+09:33:47  Strategy: PDL-Only (SL=1.0x ATR)  RR=1:1.5  MaxSL/day=2
+09:33:47  AUTO-TRADE: ENABLED — bracket orders will be placed via Angel One
+09:33:47  Telegram: enabled
+09:33:47  PHASE 1  Warm-Up — connecting to Angel One
+09:33:48  API connected
+09:33:48  NET  public_ip=49.37.183.214
+09:33:48  NET  public_ip mismatch current=49.37.183.214 registered=152.57.29.200, 152.57.127.20, 152.57.115.48, 49.37.176.21 — order placement likely to fail
+09:33:49  Loading 5-day 3-min warmup data
+09:33:51  WARMUP  TCS          380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:33:54  WARMUP  HCLTECH      380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:33:57  WARMUP  SHRIRAMFIN   380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:34:00  WARMUP  NTPC         380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:34:03  WARMUP  BAJAJ-AUTO   380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:34:06  WARMUP  ADANIPORTS   380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:34:09  WARMUP  HDFCLIFE     380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:34:13  WARMUP  COALINDIA    380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:34:16  WARMUP  ADANIENT     380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:34:19  WARMUP  MARUTI       380 bars  API 2026-04-16→2026-04-21 09:27:00  cached
+09:34:21  Checking event calendar for corporate events
+09:34:23  EVENT SKIP  HCLTECH         RESULTS: Financial Results/Dividend
+09:34:23  PDL  TCS          H=2594.00  L=2561.20
+09:34:23  PDL  SHRIRAMFIN   H=1049.95  L=1026.00
+09:34:23  PDL  NTPC         H=400.85  L=390.65
+09:34:23  PDL  BAJAJ-AUTO   H=9862.50  L=9690.00
+09:34:23  PDL  ADANIPORTS   H=1600.50  L=1566.10
+09:34:23  PDL  HDFCLIFE     H=617.00  L=605.35
+09:34:23  PDL  COALINDIA    H=443.70  L=433.30
+09:34:23  PDL  ADANIENT     H=2280.10  L=2202.20
+09:34:23  PDL  MARUTI       H=13533.00  L=13329.00
+09:34:23  Warm-up complete: 10 stocks loaded (1 excluded), PDL levels for 9
+09:34:23  Starting WebSocket feed
+09:34:23  WS connected — subscribing 9 tokens (mode=2 Quote)
+09:34:24  WS feed started — 9 tokens subscribed
+09:34:24  PHASE  START → ACTIVE_AM
+09:34:25  SCAN delay 84.6s beyond target 09:33:01
+09:34:25  MISSED 6 candle(s) (idx -1→6)
+09:34:25  SCAN #1  09:34:24  phase=ACTIVE_AM  active=True  missed=6
+09:34:25  FETCH  REST gap-fill (first scan, missed 6 candle(s))
+09:34:28  GAP-FILL  9/9 OK in 3.0s
+09:34:28  FETCH  WS  0 new bars (0 clock-flushed) in 2.968s
+09:34:28    TCS          Baseline     C=2575.00  → -[-]  
+09:34:28    SHRIRAMFIN   Baseline     C=1055.10  → -[-]  
+09:34:28    NTPC         Baseline     C=402.15  → -[-]  
+09:34:28    BAJAJ-AUTO   Baseline     C=9804.50  → -[-]  
+09:34:28    ADANIPORTS   Baseline     C=1598.50  → -[-]  
+09:34:28    HDFCLIFE     Baseline     C=607.40  → -[-]  
+09:34:28    COALINDIA    Baseline     C=444.05  → -[-]  
+09:34:28    ADANIENT     Baseline     C=2240.00  → -[-]  
+09:34:28    MARUTI       Baseline     C=13500.00  → -[-]  
+09:34:28  SCAN #1 complete in 3.0s
+09:36:01  SCAN #2  09:36:01  phase=ACTIVE_AM  active=True  missed=0
+09:36:01  FETCH  WS  9 new bars (6 clock-flushed) in 0.007s
+09:36:01    TCS          Baseline     C=2574.50  → -[-]  
+09:36:01    SHRIRAMFIN   Baseline     C=1055.20  → -[-]  
+09:36:01    NTPC         Baseline     C=402.45  → -[-]  
+09:36:01    BAJAJ-AUTO   Baseline     C=9819.00  → -[-]  
+09:36:01    ADANIPORTS   Baseline     C=1595.80  → -[-]  
+09:36:01    HDFCLIFE     Baseline     C=606.95  → -[-]  
+09:36:01    COALINDIA    Baseline     C=444.25  → -[-]  
+09:36:01    ADANIENT     Baseline     C=2240.00  → -[-]  
+09:36:01    MARUTI       Baseline     C=13500.00  → -[-]  
+09:36:01  SCAN #2 complete in 0.0s
+09:39:01  SCAN #3  09:39:01  phase=ACTIVE_AM  active=True  missed=0
+09:39:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.020s
+09:39:01    TCS          Baseline     C=2573.50  → -[-]  
+09:39:01    SHRIRAMFIN   Baseline     C=1053.70  → -[-]  
+09:39:01    NTPC         Baseline     C=402.30  → -[-]  
+09:39:01    BAJAJ-AUTO   Baseline     C=9801.00  → -[-]  
+09:39:01    ADANIPORTS   Baseline     C=1595.90  → -[-]  
+09:39:01    HDFCLIFE     Baseline     C=605.65  → -[-]  
+09:39:01    COALINDIA    Baseline     C=444.10  → -[-]  
+09:39:01    ADANIENT     Baseline     C=2240.00  → -[-]  
+09:39:01    MARUTI       Baseline     C=13492.00  → -[-]  
+09:39:01  SCAN #3 complete in 0.0s
+09:42:01  SCAN #4  09:42:01  phase=ACTIVE_AM  active=True  missed=0
+09:42:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.017s
+09:42:01    TCS          Baseline     C=2574.60  → -[-]  
+09:42:01    SHRIRAMFIN   Baseline     C=1051.95  → -[-]  
+09:42:01    NTPC         Baseline     C=401.15  → -[-]  
+09:42:01    BAJAJ-AUTO   Baseline     C=9796.50  → -[-]  
+09:42:01    ADANIPORTS   Baseline     C=1596.20  → -[-]  
+09:42:01  ORDER  HDFCLIFE     SELL  qty=206  limit=604.40  buf=0.10  SL=606.52  TP=603.28  sym=HDFCLIFE-EQ
+09:42:01  ORDER RAW RESP  HDFCLIFE     {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HDFCLIFE-EQ', 'orderid': '260421000123837', 'uniqueorderid': '8d747448-22cd-4ec1-baad-173193b30f44'}}
+09:42:01  ORDER OK  HDFCLIFE     order_id=260421000123837
+09:42:02  ORDER FILLED  HDFCLIFE     order_id=260421000123837  qty=206  avg=604.45  in 0.0s
+09:42:02  SL ORDER  HDFCLIFE     BUY  qty=206  trigger=606.50  limit=607.70
+09:42:02  SL ORDER RAW  HDFCLIFE     {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HDFCLIFE-EQ', 'orderid': '260421000123851', 'uniqueorderid': '175bdd3f-179c-4f62-b6f3-1a6170b426bc'}}
+09:42:03  SL ORDER OK  HDFCLIFE     order_id=260421000123851  exchange=trigger pending
+09:42:03  TP ORDER  HDFCLIFE     BUY  qty=206  limit=603.30
+09:42:03  TP ORDER RAW  HDFCLIFE     {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'HDFCLIFE-EQ', 'orderid': '260421000123921', 'uniqueorderid': 'fe0eb08f-1f47-4964-ae76-7f7ae6a1f8e5'}}
+09:42:04  TP ORDER OK  HDFCLIFE     order_id=260421000123921  exchange=open
+09:42:05    HDFCLIFE     Baseline     C=604.50  → ★ SHORT[PDL_BASE]  SL=606.52  TP=603.28  Qty=206
+09:42:05    COALINDIA    Baseline     C=444.25  → -[-]  
+09:42:05    ADANIENT     Baseline     C=2240.00  → -[-]  
+09:42:05    MARUTI       Baseline     C=13482.00  → -[-]  
+09:42:05  SCAN #4 complete in 4.4s
+09:45:01  SCAN #5  09:45:01  phase=ACTIVE_AM  active=True  missed=0
+09:45:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.022s
+09:45:01    TCS          Baseline     C=2574.20  → -[-]  
+09:45:01    SHRIRAMFIN   Baseline     C=1051.70  → -[-]  
+09:45:01    NTPC         Baseline     C=401.30  → -[-]  
+09:45:01    BAJAJ-AUTO   Baseline     C=9797.00  → -[-]  
+09:45:01    ADANIPORTS   Baseline     C=1592.00  → -[-]  
+09:45:01    HDFCLIFE     Baseline     C=604.60  → -[-]  in_position
+09:45:01    COALINDIA    Baseline     C=444.10  → -[-]  
+09:45:01    ADANIENT     Baseline     C=2240.40  → -[-]  
+09:45:01    MARUTI       Baseline     C=13496.00  → -[-]  
+09:45:01  SCAN #5 complete in 0.2s
+09:48:01  SCAN #6  09:48:01  phase=ACTIVE_AM  active=True  missed=0
+09:48:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.020s
+09:48:01    TCS          Baseline     C=2577.00  → -[-]  
+09:48:01    SHRIRAMFIN   Baseline     C=1052.90  → -[-]  
+09:48:01    NTPC         Baseline     C=401.35  → -[-]  
+09:48:01    BAJAJ-AUTO   Baseline     C=9818.00  → -[-]  
+09:48:01    ADANIPORTS   Baseline     C=1598.80  → -[-]  
+09:48:01  BROKER EXIT  HDFCLIFE     SL filled on broker — cleaning up
+09:48:01  ORDER CANCELLED  order_id=260421000123921
+09:48:01  BROKER EXIT P&L  HDFCLIFE     SL  ₹-425.78
+09:48:01    COALINDIA    Baseline     C=444.50  → -[-]  
+09:48:01    ADANIENT     Baseline     C=2251.00  → -[-]  
+09:48:01    MARUTI       Baseline     C=13518.00  → -[-]  
+09:48:01  SCAN #6 complete in 0.4s
+09:51:01  SCAN #7  09:51:01  phase=ACTIVE_AM  active=True  missed=0
+09:51:01  FETCH  WS  9 new bars (7 clock-flushed) in 0.021s
+09:51:01    TCS          Baseline     C=2579.80  → -[-]  
+09:51:01    SHRIRAMFIN   Baseline     C=1054.05  → -[-]  
+09:51:01    NTPC         Baseline     C=401.35  → -[-]  
+09:51:01    BAJAJ-AUTO   Baseline     C=9816.50  → -[-]  
+09:51:01    ADANIPORTS   Baseline     C=1599.20  → -[-]  
+09:51:01    HDFCLIFE     Baseline     C=605.00  → -[-]  cooldown_until_10:12
+09:51:01    COALINDIA    Baseline     C=444.00  → -[-]  
+09:51:01    ADANIENT     Baseline     C=2246.60  → -[-]  
+09:51:01    MARUTI       Baseline     C=13518.00  → -[-]  
+09:51:01  SCAN #7 complete in 0.0s
+09:54:01  SCAN #8  09:54:01  phase=ACTIVE_AM  active=True  missed=0
+09:54:01  FETCH  WS  9 new bars (5 clock-flushed) in 0.022s
+09:54:01    TCS          Baseline     C=2580.30  → -[-]  
+09:54:01    SHRIRAMFIN   Baseline     C=1050.80  → -[-]  
+09:54:01    NTPC         Baseline     C=400.65  → -[-]  
+09:54:01    BAJAJ-AUTO   Baseline     C=9807.50  → -[-]  
+09:54:01    ADANIPORTS   Baseline     C=1597.60  → -[-]  
+09:54:01    HDFCLIFE     Baseline     C=604.25  → -[-]  cooldown_until_10:12
+09:54:01    COALINDIA    Baseline     C=444.00  → -[-]  
+09:54:01    ADANIENT     Baseline     C=2241.60  → -[-]  
+09:54:01    MARUTI       Baseline     C=13511.00  → -[-]  
+09:54:01  SCAN #8 complete in 0.0s
+09:57:01  SCAN #9  09:57:01  phase=ACTIVE_AM  active=True  missed=0
+09:57:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.019s
+09:57:01    TCS          Baseline     C=2578.90  → -[-]  
+09:57:01    SHRIRAMFIN   Baseline     C=1055.85  → -[-]  
+09:57:01  ORDER  NTPC         BUY  qty=311  limit=401.20  buf=0.10  SL=400.09  TP=402.20  sym=NTPC-EQ
+09:57:01  ORDER RAW RESP  NTPC         {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NTPC-EQ', 'orderid': '260421000170978', 'uniqueorderid': '5559f488-098c-453e-b344-cf1cc1be7a8e'}}
+09:57:01  ORDER OK  NTPC         order_id=260421000170978
+09:57:02  ORDER FILLED  NTPC         order_id=260421000170978  qty=311  avg=401.20  in 0.0s
+09:57:02  SL ORDER  NTPC         SELL  qty=311  trigger=400.10  limit=399.30
+09:57:02  SL ORDER RAW  NTPC         {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NTPC-EQ', 'orderid': '260421000170990', 'uniqueorderid': '793e83f1-bd5c-4759-893a-00e0a40b7fcc'}}
+09:57:03  SL ORDER OK  NTPC         order_id=260421000170990  exchange=trigger pending
+09:57:03  TP ORDER  NTPC         SELL  qty=311  limit=402.20
+09:57:03  TP ORDER RAW  NTPC         {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NTPC-EQ', 'orderid': '260421000171048', 'uniqueorderid': 'a57e739e-ffd7-4bd0-95c4-af70ba3131eb'}}
+09:57:05  TP ORDER OK  NTPC         order_id=260421000171048  exchange=open
+09:57:05  IMM RECONCILE  NTPC         check failed: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+09:57:05    NTPC         Baseline     C=401.10  → ★ LONG[PDL_BASE]  SL=400.09  TP=402.20  Qty=311
+09:57:05    BAJAJ-AUTO   Baseline     C=9802.00  → -[-]  
+09:57:05    ADANIPORTS   Baseline     C=1598.40  → -[-]  
+09:57:05    HDFCLIFE     Baseline     C=604.55  → -[-]  cooldown_until_10:12
+09:57:05    COALINDIA    Baseline     C=444.10  → -[-]  
+09:57:05    ADANIENT     Baseline     C=2242.60  → -[-]  
+09:57:05    MARUTI       Baseline     C=13521.00  → -[-]  
+09:57:05  SCAN #9 complete in 4.8s
+10:00:01  SCAN #10  10:00:01  phase=ACTIVE_AM  active=True  missed=0
+10:00:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.020s
+10:00:01    TCS          Baseline     C=2581.70  → -[-]  
+10:00:01    SHRIRAMFIN   Baseline     C=1057.85  → -[-]  
+10:00:01    NTPC         Baseline     C=401.10  → -[-]  in_position
+10:00:01    BAJAJ-AUTO   Baseline     C=9800.00  → -[-]  
+10:00:01    ADANIPORTS   Baseline     C=1598.50  → -[-]  
+10:00:01    HDFCLIFE     Baseline     C=603.30  → -[-]  cooldown_until_10:12
+10:00:01    COALINDIA    Baseline     C=444.25  → -[-]  
+10:00:01    ADANIENT     Baseline     C=2243.00  → -[-]  
+10:00:01    MARUTI       Baseline     C=13532.00  → -[-]  
+10:00:01  SCAN #10 complete in 0.2s
+10:03:01  SCAN #11  10:03:01  phase=ACTIVE_AM  active=True  missed=0
+10:03:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.022s
+10:03:04    TCS          Baseline     C=2581.50  → -[-]  
+10:03:04    SHRIRAMFIN   Baseline     C=1056.05  → -[-]  
+10:03:04    NTPC         Baseline     C=401.80  → -[-]  in_position
+10:03:04    BAJAJ-AUTO   Baseline     C=9813.50  → -[-]  
+10:03:04    ADANIPORTS   Baseline     C=1598.40  → -[-]  
+10:03:04    HDFCLIFE     Baseline     C=603.15  → -[-]  cooldown_until_10:12
+10:03:04    COALINDIA    Baseline     C=444.25  → -[-]  
+10:03:04    ADANIENT     Baseline     C=2246.20  → -[-]  
+10:03:04    MARUTI       Baseline     C=13517.00  → -[-]  
+10:03:04  SCAN #11 complete in 3.3s
+10:06:01  SCAN #12  10:06:01  phase=ACTIVE_AM  active=True  missed=0
+10:06:01  FETCH  WS  9 new bars (0 clock-flushed) in 0.022s
+10:06:01    TCS          Baseline     C=2584.00  → -[-]  
+10:06:01    SHRIRAMFIN   Baseline     C=1058.35  → -[-]  
+10:06:01    NTPC         Baseline     C=401.40  → -[-]  in_position
+10:06:01    BAJAJ-AUTO   Baseline     C=9823.00  → -[-]  
+10:06:01    ADANIPORTS   Baseline     C=1598.90  → -[-]  
+10:06:01    HDFCLIFE     Baseline     C=604.80  → -[-]  cooldown_until_10:12
+10:06:01    COALINDIA    Baseline     C=444.40  → -[-]  
+10:06:01    ADANIENT     Baseline     C=2248.00  → -[-]  
+10:06:01    MARUTI       Baseline     C=13504.00  → -[-]  
+10:06:01  SCAN #12 complete in 0.2s
+10:09:01  SCAN #13  10:09:01  phase=ACTIVE_AM  active=True  missed=0
+10:09:01  FETCH  WS  9 new bars (1 clock-flushed) in 0.019s
+10:09:02    TCS          Baseline     C=2591.50  → -[-]  
+10:09:02    SHRIRAMFIN   Baseline     C=1058.15  → -[-]  
+10:09:02    NTPC         Baseline     C=401.05  → -[-]  in_position
+10:09:02    BAJAJ-AUTO   Baseline     C=9833.00  → -[-]  
+10:09:03  ORDER  ADANIPORTS   BUY  qty=78  limit=1602.10  buf=0.10  SL=1597.08  TP=1606.57  sym=ADANIPORTS-EQ
+10:09:03  ORDER RAW RESP  ADANIPORTS   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'ADANIPORTS-EQ', 'orderid': '260421000198264', 'uniqueorderid': '25f93323-355b-4a99-a149-9fbf26515760'}}
+10:09:03  ORDER OK  ADANIPORTS   order_id=260421000198264
+10:09:03  ORDER FILLED  ADANIPORTS   order_id=260421000198264  qty=78  avg=1601.90  in 0.0s
+10:09:03  SL ORDER  ADANIPORTS   SELL  qty=78  trigger=1597.10  limit=1593.90
+10:09:03  SL ORDER RAW  ADANIPORTS   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'ADANIPORTS-EQ', 'orderid': '260421000198288', 'uniqueorderid': '81319e29-b59e-4613-ace0-30610c64e2bb'}}
+10:09:04  SL ORDER OK  ADANIPORTS   order_id=260421000198288  exchange=trigger pending
+10:09:04  TP ORDER  ADANIPORTS   SELL  qty=78  limit=1606.60
+10:09:04  TP ORDER RAW  ADANIPORTS   {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'ADANIPORTS-EQ', 'orderid': '260421000198341', 'uniqueorderid': '87bfae12-cfb7-4923-b418-a625a5be6912'}}
+10:09:06  TP ORDER OK  ADANIPORTS   order_id=260421000198341  exchange=open
+10:09:06  IMM RECONCILE  ADANIPORTS   check failed: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+10:09:06    ADANIPORTS   Baseline     C=1602.00  → ★ LONG[PDL_BASE]  SL=1597.08  TP=1606.57  Qty=78
+10:09:06    HDFCLIFE     Baseline     C=604.60  → -[-]  cooldown_until_10:12
+10:09:06    COALINDIA    Baseline     C=444.45  → -[-]  
+10:09:06    ADANIENT     Baseline     C=2248.90  → -[-]  
+10:09:06    MARUTI       Baseline     C=13505.00  → -[-]  
+10:09:06  SCAN #13 complete in 5.9s
+10:12:01  SCAN #14  10:12:01  phase=ACTIVE_AM  active=True  missed=0
+10:12:01  FETCH  WS  9 new bars (4 clock-flushed) in 0.019s
+10:12:01    TCS          Baseline     C=2590.10  → -[-]  
+10:12:01    SHRIRAMFIN   Baseline     C=1053.90  → -[-]  
+10:12:01    NTPC         Baseline     C=400.85  → -[-]  in_position
+10:12:01    BAJAJ-AUTO   Baseline     C=9821.00  → -[-]  
+10:12:01    ADANIPORTS   Baseline     C=1598.90  → -[-]  in_position
+10:12:01    HDFCLIFE     Baseline     C=605.70  → -[-]  
+10:12:01    COALINDIA    Baseline     C=444.80  → -[-]  
+10:12:01    ADANIENT     Baseline     C=2244.00  → -[-]  
+10:12:01    MARUTI       Baseline     C=13504.00  → -[-]  
+10:12:01  SCAN #14 complete in 0.2s
+10:15:01  SCAN #15  10:15:01  phase=ACTIVE_AM  active=True  missed=0
+10:15:01  FETCH  WS  9 new bars (2 clock-flushed) in 0.011s
+10:15:01    TCS          Baseline     C=2589.50  → -[-]  
+10:15:01    SHRIRAMFIN   Baseline     C=1053.20  → -[-]  
+10:15:01  BROKER EXIT  NTPC         SL filled on broker — cleaning up
+10:15:01  ORDER CANCELLED  order_id=260421000171048
+10:15:01  BROKER EXIT P&L  NTPC         SL  ₹-345.19
+10:15:01    BAJAJ-AUTO   Baseline     C=9858.50  → -[-]  
+10:15:01    ADANIPORTS   Baseline     C=1598.40  → -[-]  in_position
+10:15:01    HDFCLIFE     Baseline     C=605.60  → -[-]  
+10:15:01    COALINDIA    Baseline     C=444.80  → -[-]  
+10:15:01    ADANIENT     Baseline     C=2249.40  → -[-]  
+10:15:01    MARUTI       Baseline     C=13512.00  → -[-]  
+10:15:01  SCAN #15 complete in 0.4s
+10:18:01  SCAN #16  10:18:01  phase=ACTIVE_AM  active=True  missed=0
+10:18:01  FETCH  WS  9 new bars (3 clock-flushed) in 0.021s
+10:18:01    TCS          Baseline     C=2589.10  → -[-]  
+10:18:01    SHRIRAMFIN   Baseline     C=1050.80  → -[-]  
+10:18:01    NTPC         Baseline     C=400.15  → -[-]  cooldown_until_10:27
+10:18:01    BAJAJ-AUTO   Baseline     C=9854.00  → -[-]  
+10:18:01  BROKER EXIT  ADANIPORTS   SL filled on broker — cleaning up
+10:18:01  ORDER CANCELLED  order_id=260421000198341
+10:18:01  BROKER EXIT P&L  ADANIPORTS   SL  ₹-375.58
+10:18:01    HDFCLIFE     Baseline     C=605.50  → -[-]  
+10:18:01    COALINDIA    Baseline     C=444.90  → -[-]  
+10:18:01    ADANIENT     Baseline     C=2246.60  → -[-]  
+10:18:01    MARUTI       Baseline     C=13514.00  → -[-]  
+10:18:01  SCAN #16 complete in 0.4s
+10:21:01  SCAN #17  10:21:01  phase=ACTIVE_AM  active=True  missed=0
+10:21:01  FETCH  WS  9 new bars (6 clock-flushed) in 0.019s
+10:21:01    TCS          Baseline     C=2587.00  → -[-]  
+10:21:01    SHRIRAMFIN   Baseline     C=1050.20  → -[-]  
+10:21:01    NTPC         Baseline     C=400.00  → -[-]  cooldown_until_10:27
+10:21:01    BAJAJ-AUTO   Baseline     C=9840.00  → -[-]  
+10:21:01    ADANIPORTS   Baseline     C=1596.10  → -[-]  cooldown_until_10:39
+10:21:01    HDFCLIFE     Baseline     C=605.30  → -[-]  
+10:21:01    COALINDIA    Baseline     C=444.80  → -[-]  
+10:21:01    ADANIENT     Baseline     C=2242.10  → -[-]  
+10:21:01    MARUTI       Baseline     C=13510.00  → -[-]  
+10:21:01  SCAN #17 complete in 0.0s
+10:22:28  STOPPED MANUALLY  3 signal(s), 17 scans
+10:22:28    SUMMARY  09:42  SHORT  HDFCLIFE     Baseline     @ 604.45  [PDL_BASE]
+10:22:28    SUMMARY  09:57   LONG  NTPC         Baseline     @ 401.20  [PDL_BASE]
+10:22:28    SUMMARY  10:09   LONG  ADANIPORTS   Baseline     @ 1601.90  [PDL_BASE]
+10:22:28  WS feed stopped

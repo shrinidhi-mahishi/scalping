@@ -1,0 +1,312 @@
+15:10:59  ======================================================================
+15:10:59  SESSION START  Capital=50000  RR=1:1.5  MaxSL/day=2  MaxDailyLoss=2000
+15:10:59  Strategy: PDL (buffer=0.10×ATR  SL=1.0×ATR)  SILVERMIC 1-lot
+15:10:59  PHASE 1  Warm-Up — connecting
+15:11:01  API connected
+15:11:01  CONTRACT  SILVERMIC30APR26FUT  token=466029
+15:11:01  WARMUP  SILVERMIC  704 bars  API 2026-04-06→2026-04-08 15:09:00  cached
+15:11:01  PDL  H=238222.0  L=227000.0
+15:11:02  PHASE  START → WARMUP
+15:11:32  STOPPED MANUALLY  0 signal(s)  virtual_pnl=₹+0
+15:11:41  SESSION END  user interrupt
+15:11:45  ======================================================================
+15:11:45  SESSION START  Capital=50000  RR=1:1.5  MaxSL/day=2  MaxDailyLoss=2000
+15:11:45  Strategy: PDL (buffer=0.10×ATR  SL=1.0×ATR)  SILVERMIC 1-lot
+15:11:45  PHASE 1  Warm-Up — connecting
+15:11:59  API connected
+15:12:00  CONTRACT  SILVERMIC30APR26FUT  token=466029
+15:12:00  WARMUP  SILVERMIC  704 bars  cache=2026-04-08
+15:12:00  PDL  H=238222.0  L=227000.0
+15:12:01  PHASE  START → ACTIVE
+15:12:02  MISSED 124 candle(s) (idx -1→124)
+15:12:02  SCAN #1  15:12:01  phase=ACTIVE
+15:12:02  SCAN #1 complete in 0.5s
+15:15:02  SCAN #2  15:15:02  phase=ACTIVE
+15:15:05  SCAN #2 complete in 3.9s
+15:18:02  SCAN #3  15:18:02  phase=ACTIVE
+15:18:02  SCAN #3 complete in 0.3s
+15:21:02  SCAN #4  15:21:02  phase=ACTIVE
+15:21:02  SCAN #4 complete in 0.2s
+15:24:02  SCAN #5  15:24:02  phase=ACTIVE
+15:24:02  SCAN #5 complete in 0.3s
+15:27:02  SCAN #6  15:27:02  phase=ACTIVE
+15:27:09  SCAN #6 complete in 7.6s
+15:30:02  SCAN #7  15:30:02  phase=ACTIVE
+15:30:02  SCAN #7 complete in 0.2s
+15:33:02  SCAN #8  15:33:02  phase=ACTIVE
+15:33:02  SCAN #8 complete in 0.4s
+15:36:02  SCAN #9  15:36:02  phase=ACTIVE
+15:36:02  SCAN #9 complete in 0.3s
+15:39:02  SCAN #10  15:39:02  phase=ACTIVE
+15:39:02  SCAN #10 complete in 0.3s
+15:42:02  SCAN #11  15:42:02  phase=ACTIVE
+15:42:02  SCAN #11 complete in 0.3s
+15:45:02  SCAN #12  15:45:02  phase=ACTIVE
+15:45:02  SCAN #12 complete in 0.2s
+15:48:02  SCAN #13  15:48:02  phase=ACTIVE
+15:48:02  SCAN #13 complete in 0.4s
+15:51:02  SCAN #14  15:51:02  phase=ACTIVE
+15:51:02  SCAN #14 complete in 0.2s
+15:54:02  SCAN #15  15:54:02  phase=ACTIVE
+15:54:02  SCAN #15 complete in 0.3s
+15:57:02  SCAN #16  15:57:02  phase=ACTIVE
+15:57:02  SCAN #16 complete in 0.3s
+16:00:02  SCAN #17  16:00:02  phase=ACTIVE
+16:00:02  SCAN #17 complete in 0.3s
+16:03:02  SCAN #18  16:03:02  phase=ACTIVE
+16:03:02  SCAN #18 complete in 0.3s
+16:06:02  SCAN #19  16:06:02  phase=ACTIVE
+16:06:02  SCAN #19 complete in 0.3s
+16:09:02  SCAN #20  16:09:02  phase=ACTIVE
+16:09:02  SCAN #20 complete in 0.2s
+16:12:02  SCAN #21  16:12:02  phase=ACTIVE
+16:12:02  SCAN #21 complete in 0.3s
+16:15:02  SCAN #22  16:15:02  phase=ACTIVE
+16:15:02  SCAN #22 complete in 0.3s
+16:18:02  SCAN #23  16:18:02  phase=ACTIVE
+16:18:02  SCAN #23 complete in 0.3s
+16:21:02  SCAN #24  16:21:02  phase=ACTIVE
+16:21:02  SCAN #24 complete in 0.4s
+16:24:02  SCAN #25  16:24:02  phase=ACTIVE
+16:24:02  SCAN #25 complete in 0.3s
+16:27:02  SCAN #26  16:27:02  phase=ACTIVE
+16:27:02  SCAN #26 complete in 0.3s
+16:30:02  SCAN #27  16:30:02  phase=ACTIVE
+16:30:02  SCAN #27 complete in 0.4s
+16:33:02  SCAN #28  16:33:02  phase=ACTIVE
+16:33:02  SCAN #28 complete in 0.3s
+16:36:02  SCAN #29  16:36:02  phase=ACTIVE
+16:36:02  SCAN #29 complete in 0.3s
+16:39:02  SCAN #30  16:39:02  phase=ACTIVE
+16:39:02  SCAN #30 complete in 0.3s
+16:42:02  SCAN #31  16:42:02  phase=ACTIVE
+16:42:02  SCAN #31 complete in 0.4s
+16:45:02  SCAN #32  16:45:02  phase=ACTIVE
+16:45:02  SCAN #32 complete in 0.3s
+16:48:02  SCAN #33  16:48:02  phase=ACTIVE
+16:48:02  SCAN #33 complete in 0.3s
+16:51:02  SCAN #34  16:51:02  phase=ACTIVE
+16:51:02  SCAN #34 complete in 0.5s
+16:54:02  SCAN #35  16:54:02  phase=ACTIVE
+16:54:02  SCAN #35 complete in 0.3s
+16:57:02  SCAN #36  16:57:02  phase=ACTIVE
+16:57:02  SCAN #36 complete in 0.4s
+17:00:02  SCAN #37  17:00:02  phase=ACTIVE
+17:00:02  SCAN #37 complete in 0.3s
+17:03:02  SCAN #38  17:03:02  phase=ACTIVE
+17:03:02  SCAN #38 complete in 0.3s
+17:06:02  SCAN #39  17:06:02  phase=ACTIVE
+17:06:02  SCAN #39 complete in 0.4s
+17:09:02  SCAN #40  17:09:02  phase=ACTIVE
+17:09:02  SCAN #40 complete in 0.3s
+17:12:02  SCAN #41  17:12:02  phase=ACTIVE
+17:12:02  SCAN #41 complete in 0.3s
+17:15:02  SCAN #42  17:15:02  phase=ACTIVE
+17:15:02  SCAN #42 complete in 0.3s
+17:18:02  SCAN #43  17:18:02  phase=ACTIVE
+17:18:02  SCAN #43 complete in 0.3s
+17:21:02  SCAN #44  17:21:02  phase=ACTIVE
+17:21:02  SCAN #44 complete in 0.4s
+17:24:02  SCAN #45  17:24:02  phase=ACTIVE
+17:24:02  SCAN #45 complete in 0.3s
+17:27:02  SCAN #46  17:27:02  phase=ACTIVE
+17:27:02  SCAN #46 complete in 0.4s
+17:30:02  SCAN #47  17:30:02  phase=ACTIVE
+17:30:02  SCAN #47 complete in 0.3s
+17:33:02  SCAN #48  17:33:02  phase=ACTIVE
+17:33:02  SCAN #48 complete in 0.2s
+19:13:26  ======================================================================
+19:13:26  SESSION START  Capital=50000  RR=1:1.5  MaxSL/day=2  MaxDailyLoss=2000
+19:13:26  Strategy: PDL (buffer=0.10×ATR  SL=1.0×ATR)  SILVERMIC 1-lot
+19:13:26  PHASE 1  Warm-Up — connecting
+19:13:27  API connected
+19:13:28  CONTRACT  SILVERMIC30APR26FUT  token=466029
+19:13:28  WARMUP  SILVERMIC  704 bars  cache=2026-04-08
+19:13:28  PDL  H=238222.0  L=227000.0
+19:13:28  STATE RESTORED  sl_count=0  signals=0  pnl=₹0
+19:13:28  PHASE  START → ACTIVE
+19:13:29  MISSED 204 candle(s) (idx -1→204)
+19:13:29  SCAN #1  19:13:28  phase=ACTIVE
+19:13:30  SCAN #1 complete in 0.3s
+19:15:02  SCAN #2  19:15:00  phase=ACTIVE
+19:15:02  SCAN #2 complete in 0.3s
+19:18:02  SCAN #3  19:18:02  phase=ACTIVE
+19:18:02  SCAN #3 complete in 0.3s
+19:21:02  SCAN #4  19:21:02  phase=ACTIVE
+19:21:02  SCAN #4 complete in 0.5s
+19:24:02  SCAN #5  19:24:02  phase=ACTIVE
+19:24:02  SCAN #5 complete in 0.3s
+19:27:02  SCAN #6  19:27:02  phase=ACTIVE
+19:27:02  SCAN #6 complete in 0.4s
+19:30:02  SCAN #7  19:30:02  phase=ACTIVE
+19:30:02  SCAN #7 complete in 0.4s
+19:33:02  SCAN #8  19:33:02  phase=ACTIVE
+19:33:02  SCAN #8 complete in 0.3s
+19:36:02  SCAN #9  19:36:02  phase=ACTIVE
+19:36:02  SCAN #9 complete in 0.3s
+19:39:02  SCAN #10  19:39:02  phase=ACTIVE
+19:39:02  SCAN #10 complete in 0.3s
+19:42:02  SCAN #11  19:42:02  phase=ACTIVE
+19:42:02  SCAN #11 complete in 0.2s
+19:45:02  SCAN #12  19:45:02  phase=ACTIVE
+19:45:02  SCAN #12 complete in 0.4s
+19:48:02  SCAN #13  19:48:02  phase=ACTIVE
+19:48:02  SCAN #13 complete in 0.2s
+19:51:02  SCAN #14  19:51:02  phase=ACTIVE
+19:51:02  SCAN #14 complete in 0.3s
+19:54:02  SCAN #15  19:54:02  phase=ACTIVE
+19:54:02  SCAN #15 complete in 0.4s
+19:57:02  SCAN #16  19:57:02  phase=ACTIVE
+19:57:02  SCAN #16 complete in 0.3s
+20:00:02  SCAN #17  20:00:02  phase=ACTIVE
+20:00:02  SCAN #17 complete in 0.4s
+20:03:02  SCAN #18  20:03:02  phase=ACTIVE
+20:03:02  SCAN #18 complete in 0.3s
+20:06:02  SCAN #19  20:06:02  phase=ACTIVE
+20:06:02  SCAN #19 complete in 0.3s
+20:09:02  SCAN #20  20:09:02  phase=ACTIVE
+20:09:02  SCAN #20 complete in 0.4s
+20:12:02  SCAN #21  20:12:02  phase=ACTIVE
+20:12:02  SCAN #21 complete in 0.4s
+20:15:02  SCAN #22  20:15:02  phase=ACTIVE
+20:15:02  SCAN #22 complete in 0.3s
+20:18:02  SCAN #23  20:18:02  phase=ACTIVE
+20:18:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:18:02  SCAN #23 complete in 0.0s
+20:21:02  SCAN #24  20:21:02  phase=ACTIVE
+20:21:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:21:02  SCAN #24 complete in 0.0s
+20:24:02  SCAN #25  20:24:02  phase=ACTIVE
+20:24:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:24:02  SCAN #25 complete in 0.0s
+20:27:02  SCAN #26  20:27:02  phase=ACTIVE
+20:27:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:27:02  SCAN #26 complete in 0.0s
+20:30:02  SCAN #27  20:30:02  phase=ACTIVE
+20:30:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:30:02  SCAN #27 complete in 0.0s
+20:33:02  SCAN #28  20:33:02  phase=ACTIVE
+20:33:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:33:02  SCAN #28 complete in 0.0s
+20:36:02  SCAN #29  20:36:02  phase=ACTIVE
+20:36:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:36:02  SCAN #29 complete in 0.0s
+20:39:02  SCAN #30  20:39:02  phase=ACTIVE
+20:39:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:39:02  SCAN #30 complete in 0.0s
+20:42:02  SCAN #31  20:42:02  phase=ACTIVE
+20:42:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:42:02  SCAN #31 complete in 0.0s
+20:45:02  SCAN #32  20:45:02  phase=ACTIVE
+20:45:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:45:02  SCAN #32 complete in 0.0s
+20:48:02  SCAN #33  20:48:02  phase=ACTIVE
+20:48:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:48:02  SCAN #33 complete in 0.0s
+20:51:02  SCAN #34  20:51:02  phase=ACTIVE
+20:51:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:51:02  SCAN #34 complete in 0.0s
+20:54:02  SCAN #35  20:54:02  phase=ACTIVE
+20:54:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:54:02  SCAN #35 complete in 0.0s
+20:57:02  SCAN #36  20:57:02  phase=ACTIVE
+20:57:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+20:57:02  SCAN #36 complete in 0.0s
+21:00:02  SCAN #37  21:00:02  phase=ACTIVE
+21:00:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+21:00:02  SCAN #37 complete in 0.0s
+21:03:02  SCAN #38  21:03:02  phase=ACTIVE
+21:03:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+21:03:02  SCAN #38 complete in 0.0s
+21:06:02  SCAN #39  21:06:02  phase=ACTIVE
+21:06:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+21:06:02  SCAN #39 complete in 0.0s
+21:09:02  SCAN #40  21:09:02  phase=ACTIVE
+21:09:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+21:09:02  SCAN #40 complete in 0.0s
+21:12:02  SCAN #41  21:12:02  phase=ACTIVE
+21:12:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+21:12:02  SCAN #41 complete in 0.0s
+21:15:02  SCAN #42  21:15:02  phase=ACTIVE
+21:15:02  FETCH failed: MCX candle fetch failed: HTTPSConnectionPool(host='apiconnect.angelone.in', port=443): Max retries exceeded with url: /rest/secure/angelbroking/historical/v1/getCandleData (Caused by NameResolutionError("HTTPSConnection(host='apiconnect.angelone.in', port=443): Failed to resolve 'apiconnect.angelone.in' ([Errno 8] nodename nor servname provided, or not known)"))
+21:15:02  SCAN #42 complete in 0.0s
+21:18:02  SCAN #43  21:18:02  phase=ACTIVE
+21:18:02  SCAN #43 complete in 0.7s
+21:21:02  SCAN #44  21:21:02  phase=ACTIVE
+21:21:02  SCAN #44 complete in 0.5s
+21:24:02  SCAN #45  21:24:02  phase=ACTIVE
+21:24:02  SCAN #45 complete in 0.2s
+21:27:02  SCAN #46  21:27:02  phase=ACTIVE
+21:27:02  SCAN #46 complete in 0.3s
+21:30:02  SCAN #47  21:30:02  phase=ACTIVE
+21:30:02  SCAN #47 complete in 0.4s
+21:33:02  SCAN #48  21:33:02  phase=ACTIVE
+21:33:02  SCAN #48 complete in 0.4s
+21:36:02  SCAN #49  21:36:02  phase=ACTIVE
+21:36:02  SCAN #49 complete in 0.4s
+21:39:02  SCAN #50  21:39:02  phase=ACTIVE
+21:39:02  SCAN #50 complete in 0.3s
+21:42:02  SCAN #51  21:42:02  phase=ACTIVE
+21:42:02  SCAN #51 complete in 0.3s
+21:45:02  SCAN #52  21:45:02  phase=ACTIVE
+21:45:02  SCAN #52 complete in 0.2s
+21:48:02  SCAN #53  21:48:02  phase=ACTIVE
+21:48:02  SCAN #53 complete in 0.3s
+21:51:02  SCAN #54  21:51:02  phase=ACTIVE
+21:51:02  SCAN #54 complete in 0.4s
+21:54:02  SCAN #55  21:54:02  phase=ACTIVE
+21:54:02  SCAN #55 complete in 0.3s
+21:57:02  SCAN #56  21:57:02  phase=ACTIVE
+21:57:02  SCAN #56 complete in 0.3s
+22:00:02  SCAN #57  22:00:02  phase=ACTIVE
+22:00:02  SCAN #57 complete in 0.5s
+22:03:02  SCAN #58  22:03:02  phase=ACTIVE
+22:03:02  SCAN #58 complete in 0.3s
+22:06:02  SCAN #59  22:06:02  phase=ACTIVE
+22:06:02  SCAN #59 complete in 0.3s
+22:09:02  SCAN #60  22:09:02  phase=ACTIVE
+22:09:06  SCAN #60 complete in 4.1s
+22:12:02  SCAN #61  22:12:02  phase=ACTIVE
+22:12:02  SCAN #61 complete in 0.8s
+22:15:02  SCAN #62  22:15:02  phase=ACTIVE
+22:15:02  SCAN #62 complete in 0.3s
+22:18:02  SCAN #63  22:18:02  phase=ACTIVE
+22:18:02  SCAN #63 complete in 0.7s
+22:21:02  SCAN #64  22:21:02  phase=ACTIVE
+22:21:03  SCAN #64 complete in 1.4s
+22:24:02  SCAN #65  22:24:02  phase=ACTIVE
+22:24:02  SCAN #65 complete in 0.3s
+22:27:02  SCAN #66  22:27:02  phase=ACTIVE
+22:27:02  SCAN #66 complete in 0.6s
+22:30:02  SCAN #67  22:30:02  phase=ACTIVE
+22:30:02  SCAN #67 complete in 0.3s
+22:33:02  PHASE  ACTIVE → WIND_DOWN
+22:33:02  SCAN #68  22:33:02  phase=WIND_DOWN
+22:33:02  SCAN #68 complete in 0.3s
+22:36:02  SCAN #69  22:36:02  phase=WIND_DOWN
+22:36:02  SCAN #69 complete in 0.4s
+22:39:02  SCAN #70  22:39:02  phase=WIND_DOWN
+22:39:02  SCAN #70 complete in 0.3s
+22:42:02  SCAN #71  22:42:02  phase=WIND_DOWN
+22:42:02  SCAN #71 complete in 0.4s
+22:45:02  SCAN #72  22:45:02  phase=WIND_DOWN
+22:45:02  SCAN #72 complete in 0.3s
+22:48:02  SCAN #73  22:48:02  phase=WIND_DOWN
+22:48:02  SCAN #73 complete in 0.7s
+22:51:02  SCAN #74  22:51:02  phase=WIND_DOWN
+22:51:02  SCAN #74 complete in 0.3s
+22:54:02  SCAN #75  22:54:02  phase=WIND_DOWN
+22:54:02  SCAN #75 complete in 0.3s
+22:57:02  SCAN #76  22:57:02  phase=WIND_DOWN
+22:57:02  SCAN #76 complete in 0.4s
+23:00:02  SCAN #77  23:00:02  phase=WIND_DOWN
+23:00:02  SCAN #77 complete in 0.3s
+23:03:02  SCAN #78  23:03:02  phase=WIND_DOWN
+23:03:02  SCAN #78 complete in 0.3s
+23:06:02  SCAN #79  23:06:02  phase=WIND_DOWN
+23:06:02  SCAN #79 complete in 0.4s
+23:09:02  SCAN #80  23:09:02  phase=WIND_DOWN
+23:09:02  SCAN #80 complete in 0.3s
+23:10:02  PHASE  WIND_DOWN → SHUTDOWN
+23:10:02  ======================================================================
+23:10:02  SHUTDOWN  0 signal(s)  virtual_pnl=₹+0

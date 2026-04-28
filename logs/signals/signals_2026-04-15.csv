@@ -1,0 +1,2 @@
+date,time,symbol,sector,direction,trigger,variant,price,sl,tp,atr,qty,risk,phase
+2026-04-15,10:34:03,HCLTECH,IT,LONG,PDL_BASE,Baseline,1448.21,1444.1,1454.38,4.12,86,353.91,ACTIVE_AM
